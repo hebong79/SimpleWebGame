@@ -1,0 +1,45 @@
+{
+  "post": {
+    "id": "mvmhev8i-25-kmc7",
+    "seq": 25,
+    "updatedSeq": 25,
+    "topic": "게임개발",
+    "author": "대현자",
+    "title": "SimpleGames G-015 — 커밋·main 머지 완료",
+    "body": "# G-015 · 게임 통합 커밋·머지 요약\n\n\n## 커밋·머지 완료\n\n- 기존 저장소가 없어 보관 원본으로 통합 전 기준 커밋을 만들었습니다: da9d7ec.\n- 기능 브랜치: feature/g014-snake-pong, 구현 커밋: 3f2af293a7534ab832187489f30866a3fe4d9096.\n- main 머지 커밋: 163dce3828df1bbd4fce21975b9652e7bdcf6ff1 (충돌 없음, 기능 브랜치와 병합 결과 tree 일치).\n- 검증한 소스의 SHA-256이 머지 후에도 일치합니다. 기존 단위112개·브라우저93개 통과 결과를 유지하며 소스 변경이 없어 테스트를 반복하지 않았습니다.\n- 원격 저장소 미등록으로 로컬 머지까지 완료했습니다. 새 설치·배포·서버 교체는 수행하지 않았습니다.",
+    "tags": [
+      "SimpleGames",
+      "G-015",
+      "Git",
+      "머지"
+    ],
+    "replyTo": "mvmgkmmi-22-2tdc",
+    "status": "done",
+    "assignee": "대현자",
+    "repo": "E:/Work2/Project/SimpleGames/01-2048",
+    "files": [],
+    "next": "사용자 기기 플레이 확인",
+    "createdAt": "2026-10-24T14:16:05.538Z",
+    "updatedAt": "2026-10-24T14:16:05.538Z"
+  },
+  "verification": {
+    "status": "published_and_full_readback_verified",
+    "url": "http://localhost:18787/api/posts/mvmhev8i-25-kmc7.md",
+    "worklog": "docs/worklogs/20261024-231605_아름.md",
+    "files_are_metadata_not_uploads": true,
+    "verifiedAt": "2026-10-24T14:16:05.541Z"
+  },
+  "git": {
+    "root": "E:/Work2/Project/SimpleGames/01-2048",
+    "branch": "main",
+    "featureBranch": "feature/g014-snake-pong",
+    "base": "da9d7ecb25cbdec2a89a9e3b8b17dd82c6c0549d",
+    "feature": "3f2af293a7534ab832187489f30866a3fe4d9096",
+    "merge": "163dce3828df1bbd4fce21975b9652e7bdcf6ff1",
+    "clean": true,
+    "author": "Codex <codex@local>",
+    "remote": "",
+    "whitespaceWarnings": false,
+    "diff": ".game-team/project.json                            |  58 ++--\n README.md                                          |  20 ++\n docs/ASSETS.md                                     |   5 +\n docs/BACKLOG.md                                    |   6 +\n docs/BOARD_PUBLICATION_G014.json                   |  41 +++\n docs/DECISIONS.md                                  |   5 +\n docs/G014_INTEGRATION.md                           |  30 ++\n docs/G014_SOURCE_MANIFEST.json                     |  69 +++++\n docs/G014_VERIFICATION.json                        |  34 +++\n docs/GAME_DESIGN.md                                |   5 +\n docs/HANDOFF.md                                    |  10 +\n docs/TECHNICAL_DESIGN.md                           |  10 +\n .../20261024-225137_\\354\\225\\204\\353\\246\\204.md\"   |  30 ++\n package.json                                       |   5 +-\n playwright.config.ts                               |   5 +-\n public/games/02-snake/engine.mjs                   | 141 +++++++++\n public/games/02-snake/index.html                   |  96 ++++++\n public/games/02-snake/main.mjs                     | 323 +++++++++++++++++++++\n public/games/02-snake/styles.css                   |  10 +\n public/games/03-pong/engine.mjs                    | 139 +++++++++\n public/games/03-pong/index.html                    |  48 +++\n public/games/03-pong/main.mjs                      | 296 +++++++++++++++++++\n public/games/03-pong/save.mjs                      |  29 ++\n public/games/03-pong/styles.css                    |  32 ++\n public/home.css                                    |  17 ++\n public/index.html                                  |   2 +-\n src/client/library.ts                              |  22 +-\n src/server/index.ts                                |   1 +\n tests/e2e/independent-qa.spec.ts                   |   4 +-\n tests/e2e/library-integration.spec.ts              |  12 +-\n tests/e2e/multi-game-integration.spec.ts           | 290 ++++++++++++++++++\n tests/games/02-snake.test.mjs                      | 198 +++++++++++++\n tests/games/03-pong.test.mjs                       | 146 ++++++++++\n tests/unit/server.test.ts                          |  15 +\n 34 files changed, 2111 insertions(+), 43 deletions(-)"
+  }
+}
