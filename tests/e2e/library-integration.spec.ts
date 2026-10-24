@@ -25,12 +25,12 @@ test.afterEach(async ({ page }, info) => {
   expect(evidence.external, 'external requests').toEqual([]);
 });
 
-test('18 library 30 entries pagination search genre state sorting and zero reset', async ({ page }) => {
+test('18 library 32 entries pagination search genre state sorting and zero reset', async ({ page }) => {
   await page.goto('/'); await expect(page.locator('.game-card')).toHaveCount(12);
-  await expect(page.locator('#result-count')).toHaveText('30개');
+  await expect(page.locator('#result-count')).toHaveText('32개');
   await page.locator('#load-more').click(); await expect(page.locator('.game-card')).toHaveCount(24);
-  await page.locator('#load-more').click(); await expect(page.locator('.game-card')).toHaveCount(30);
-  const all = await ids(page); expect(new Set(all).size).toBe(30);
+  await page.locator('#load-more').click(); await expect(page.locator('.game-card')).toHaveCount(32);
+  const all = await ids(page); expect(new Set(all).size).toBe(32);
   const byDuration = await page.locator('.game-card').evaluateAll(cards => cards.map(card => ({ id: (card as HTMLElement).dataset.id, minutes: Number(card.querySelector('.duration')!.textContent!.match(/\d+/)![0]) })).sort((a, b) => a.minutes - b.minutes).map(card => card.id));
   await expect(page.locator('a.card-action[href="/game.html"],a.card-action[href="game.html"]')).toHaveCount(1);
   await expect(page.locator('button.card-action:disabled')).toHaveCount(29); await expect(page.locator('#load-more')).toBeHidden();
@@ -62,7 +62,7 @@ test('19 library favorites keyboard persistence compound filter removal and bloc
 });
 
 test('20 actual home game score exits through result then home and record persists', async ({ page }) => {
-  await page.goto('/'); expect(await profile(page)).toBeNull(); await page.locator('a.card-action').click();
+  await page.goto('/'); expect(await profile(page)).toBeNull(); await page.locator('.game-card[data-id="number-garden"] a.card-action').click();
   await expect(page).toHaveURL(/\/game\.html$/); await expect(page.locator('#board')).toBeFocused();
   expect((await board(page)).filter(Boolean)).toHaveLength(2); await page.keyboard.press('ArrowLeft'); await expect(page.locator('#score')).toHaveText('4');
   const before = await board(page); await page.locator('#pause-button').click();
@@ -73,7 +73,7 @@ test('20 actual home game score exits through result then home and record persis
   await expect(page.getByRole('button', { name: '이어서하기', exact: true })).toHaveCount(0);
   expect(await profile(page)).toMatchObject({ gamesStarted: 1, gamesFinished: 0, totalMoves: 1, totalScore: 4, bestScore: 4 });
   await page.locator('#result-home').click(); await expect(page).toHaveURL(/\/(?:index\.html)?$/);
-  await expect(page.locator('#game-grid')).toBeVisible(); await page.locator('a.card-action').click();
+  await expect(page.locator('#game-grid')).toBeVisible(); await page.locator('.game-card[data-id="number-garden"] a.card-action').click();
   await expect(page.locator('#score')).toHaveText('0'); await expect(page.locator('#best-score')).toHaveText('4'); expect((await profile(page)).gamesStarted).toBe(2);
 });
 

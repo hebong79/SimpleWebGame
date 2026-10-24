@@ -1,0 +1,69 @@
+{
+  "sourceProject": "E:/Work2/Codex/Games/게임제작-001",
+  "destinationProject": "E:/Work2/Project/SimpleGames/01-2048",
+  "files": [
+    {
+      "source": "games/02-snake/index.html",
+      "target": "public/games/02-snake/index.html",
+      "sha256": "34f0e7bf066bd67caab30ae9aea4df0cf64200a93358e2148b3e904f8286d297",
+      "integrated_sha256": "0441872b984e8818c41cf9369e39795a0646481ff02c39ded5a7a8c3617e48c5",
+      "original_preserved": true
+    },
+    {
+      "source": "games/02-snake/styles.css",
+      "target": "public/games/02-snake/styles.css",
+      "sha256": "dbb862b65dfcf0172d61597d24f0486e891e0b020bd0efe2084f72464366aa7c",
+      "integrated_sha256": "dbb862b65dfcf0172d61597d24f0486e891e0b020bd0efe2084f72464366aa7c",
+      "original_preserved": true
+    },
+    {
+      "source": "games/02-snake/main.mjs",
+      "target": "public/games/02-snake/main.mjs",
+      "sha256": "1c055a34bca05e1ea19ab37f666b28e4dcaa4489d019e4a52c540b92d7769516",
+      "integrated_sha256": "1c055a34bca05e1ea19ab37f666b28e4dcaa4489d019e4a52c540b92d7769516",
+      "original_preserved": true
+    },
+    {
+      "source": "games/02-snake/engine.mjs",
+      "target": "public/games/02-snake/engine.mjs",
+      "sha256": "fbf96a0164bbdce782ba9628b0d712841d6f13f68ff11faf7b31160a861a0281",
+      "integrated_sha256": "fbf96a0164bbdce782ba9628b0d712841d6f13f68ff11faf7b31160a861a0281",
+      "original_preserved": true
+    },
+    {
+      "source": "games/03-pong/index.html",
+      "target": "public/games/03-pong/index.html",
+      "sha256": "a487919538589de15558cfde4c4cd071763854eb204797b1b24708779d1acc4d",
+      "integrated_sha256": "8fe818416694ba305d72ff14575073ad7aed750bc6df329598e6ab8591e8fc46",
+      "original_preserved": true
+    },
+    {
+      "source": "games/03-pong/styles.css",
+      "target": "public/games/03-pong/styles.css",
+      "sha256": "0356562305ce45c09a33ea849b072c59bb67a309461dea0709d876606526c0e8",
+      "integrated_sha256": "b23c8f73dff23f7718fa99287c0d48bb1bc71abc00619ae5a26ecbf1cf243d72",
+      "original_preserved": true
+    },
+    {
+      "source": "games/03-pong/main.mjs",
+      "target": "public/games/03-pong/main.mjs",
+      "sha256": "0ca641ed99a13caf8299e239aec52604d4f8985ee8a80eb6dbe1360f3ffc7843",
+      "integrated_sha256": "ce7bf6067a6dcfa7424c69939ebcde11cae21c7acb9fc0f3235df8da13eb16c0",
+      "original_preserved": true
+    },
+    {
+      "source": "games/03-pong/engine.mjs",
+      "target": "public/games/03-pong/engine.mjs",
+      "sha256": "2e1f279a1cee0af913059ee04f7151f3aa294052c65f421b32262d5569315cfd",
+      "integrated_sha256": "2e1f279a1cee0af913059ee04f7151f3aa294052c65f421b32262d5569315cfd",
+      "original_preserved": true
+    },
+    {
+      "source": "games/03-pong/save.mjs",
+      "target": "public/games/03-pong/save.mjs",
+      "sha256": "0a158d2fb9ff2d5a0c4864f1128722d720794207215010c5b788310b16213a30",
+      "integrated_sha256": "0a158d2fb9ff2d5a0c4864f1128722d720794207215010c5b788310b16213a30",
+      "original_preserved": true
+    }
+  ]
+}

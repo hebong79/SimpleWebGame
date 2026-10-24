@@ -2,7 +2,7 @@ import { test, expect, type Page } from '@playwright/test';
 import { mkdir, writeFile } from 'node:fs/promises';
 
 const KEY = 'number-garden:profile:v1';
-const out = 'artifacts/g013-qa';
+const out = process.env.GAME_TEST_ARTIFACT_DIR ?? 'artifacts/g013-qa';
 const blank = () => Array.from({length:4}, () => [0,0,0,0]);
 const profile = (patch = {}) => ({ version:1,bestScore:0,bestTile:0,gamesStarted:0,gamesFinished:0,gamesWon:0,totalMoves:0,totalScore:0,unlockedGardens:['seed'],selectedGarden:'seed',muted:true,...patch });
 const errors = new WeakMap<Page, string[]>();
@@ -52,7 +52,7 @@ test.afterEach(async ({page},info) => {
 test('01 home selection auto start restart cancel confirm reload records',async ({page})=>{
   await page.goto('/'); await expect(page.locator('#game-grid')).toBeVisible();
   await page.keyboard.press('ArrowLeft'); expect(await saved(page)).toBeNull();
-  await page.locator('a.card-action').click(); await expect(page).toHaveURL(/\/game\.html$/);
+  await page.locator('.game-card[data-id="number-garden"] a.card-action').click(); await expect(page).toHaveURL(/\/game\.html$/);
   await expect(page.locator('#board')).toBeFocused();
   await page.locator('#help-button').click(); await expect(page.locator('#dialog-content')).toContainText('24px');
   await page.getByRole('button',{name:'도움말 닫기',exact:true}).click();

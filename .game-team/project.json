@@ -19,8 +19,14 @@
   ],
   "mode": "on-demand-delegate-task",
   "runtime_or_engine_installed": true,
-  "last_verified_at": "2026-10-23T23:48:17.2807321+09:00",
-  "unit_tests_passed": 47,
-  "browser_tests_passed": 75,
-  "manual_acceptance_pending": true
+  "last_verified_at": "2026-10-24T13:51:37.488Z",
+  "unit_tests_passed": 112,
+  "browser_tests_passed": 93,
+  "manual_acceptance_pending": true,
+  "playable_games": [
+    "number-garden",
+    "little-dragon",
+    "neon-rally"
+  ],
+  "catalog_total": 32
 }

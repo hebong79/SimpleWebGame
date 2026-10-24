@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "private": true,
   "type": "module",
-  "description": "Standalone PC and mobile 2048 garden puzzle",
+  "description": "SimpleGames library with 2048, Snake and Pong for PC and mobile",
   "engines": {
     "node": ">=24.0.0"
   },
@@ -13,7 +13,8 @@
     "start": "node dist/src/server/index.js",
     "preview": "node scripts/preview_prototype.mjs",
     "dev": "npm run build && npm start",
-    "test": "npm run build && node --test dist/tests/unit/*.test.js",
+    "test": "npm run build && node --test dist/tests/unit/*.test.js && npm run test:games",
+    "test:games": "node --test tests/games/*.test.mjs",
     "test:e2e": "playwright test",
     "verify": "npm run test && npm run test:e2e"
   },

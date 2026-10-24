@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#090f20">
+  <meta name="description" content="네온 코트에서 즐기는 7점 승부. 키보드와 터치로 플레이하는 1인용 퐁.">
+  <title>네온 랠리 · 퐁</title>
+  <link rel="icon" href="/assets/favicon.svg">
+  <link rel="stylesheet" href="./styles.css">
+  <script type="module" src="./main.mjs"></script>
+</head>
+<body>
+  <div class="app">
+    <nav class="topbar" aria-label="상단 메뉴">
+      <a class="back-link" href="/">← <span>작은 쉼표</span></a>
+      <span class="series">ARCADE COLLECTION <span class="series-number">03</span></span>
+      <button id="mute" class="sound-button" type="button" aria-pressed="false">소리 켜짐</button>
+    </nav>
+    <header class="page-header">
+      <div><p class="eyebrow"><span class="signal-dot"></span> ONE COURT. ENDLESS RALLIES.</p><h1>네온 <span>랠리</span><span class="title-tag">PONG</span></h1><p class="subtitle">받아내고, 되돌리고, 한 점 더. 빛나는 코트 위 7점 승부.</p></div>
+      <div class="records" aria-label="선택한 난이도의 개인 기록"><div><span class="record-label">누적 승리</span><strong id="wins">0</strong><span class="record-unit">WINS</span></div><div><span class="record-label">최장 랠리</span><strong id="best">0</strong><span class="record-unit">HITS</span></div></div>
+    </header>
+    <main class="game-layout">
+      <section class="match" aria-label="퐁 경기">
+        <div class="match-top"><span><span class="signal-dot"></span> NEON ARENA</span><span id="status-label" class="status-label">경기 준비</span></div>
+        <div class="scoreboard" aria-label="현재 경기 점수"><div class="competitor player"><span class="player-mark">Ⅰ</span><div><strong>플레이어</strong><span>YOU / LEFT</span></div><b id="player-score">0</b></div><div class="score-rule"><span>FIRST TO</span><strong>7</strong><span>선취 승리</span></div><div class="competitor opponent"><b id="ai-score">0</b><div><strong>컴퓨터</strong><span id="ai-level">AI / NORMAL</span></div><span class="player-mark">Ⅱ</span></div></div>
+        <div id="arena" class="arena" tabindex="0" role="region" aria-label="경기장. W S 또는 위 아래 방향키로 이동, P 또는 Escape로 일시정지.">
+          <canvas id="court" width="960" height="540" aria-label="왼쪽 플레이어와 오른쪽 컴퓨터가 공을 주고받는 퐁 경기장">Canvas를 지원하는 브라우저에서 플레이해 주세요.</canvas>
+          <div id="countdown" class="countdown" hidden><span id="serve-label">첫 서브</span><strong>1</strong></div>
+          <div id="overlay" class="overlay">
+            <div class="overlay-card"><span id="overlay-kicker" class="overlay-kicker">READY TO RALLY</span><h2 id="overlay-title">당신의 코트를 <br>지켜주세요.</h2><p id="overlay-copy">왼쪽 패들로 공을 받아내세요.<br>먼저 7점을 얻으면 승리합니다.</p><button id="primary-action" class="primary-button" type="button">경기 시작 <span>↗</span></button><p id="overlay-hint" class="overlay-hint">W / S · ↑ / ↓ · 왼쪽 영역 드래그</p></div>
+          </div>
+        </div>
+        <div class="match-bottom"><span class="rally-label"><span class="tiny-diamond"></span>현재 랠리 <strong id="rally">0</strong></span><span id="speed" class="speed">300 <small>PX/S</small></span><span class="touch-hint">왼쪽 영역을 드래그 ↕</span></div>
+        <div class="match-actions"><button id="pause" type="button" class="secondary-button" disabled>Ⅱ 일시정지</button><button id="restart" type="button" class="text-button">↻ 새 경기</button><span class="keyboard-hint"><kbd>P</kbd> 일시정지 / 재개</span></div>
+        <p id="announcement" class="sr-only" role="status" aria-live="polite"></p>
+      </section>
+      <aside class="sidebar" aria-label="설정과 조작 안내">
+        <section class="panel"><div class="section-heading"><span class="section-index">01</span><h2>경기 설정</h2></div><fieldset id="difficulty" class="choice-control" aria-describedby="difficulty-help"><legend>상대 난이도</legend><div class="choice-options"><button type="button" data-value="easy" aria-pressed="false">쉬움 · AI 220 px/s</button><button type="button" data-value="normal" aria-pressed="false">보통 · AI 300 px/s</button></div></fieldset><p class="field-help" id="difficulty-help">경기 시작 전에 선택할 수 있어요.</p><div class="rules-strip"><span>7점 선취</span><span>득점 후 1초 서브</span></div></section>
+        <section class="panel"><div class="section-heading"><span class="section-index">02</span><h2>코트 꾸미기</h2><span class="cosmetic-tag">외형</span></div><fieldset id="paddle-theme" class="choice-control theme-row"><legend>패들</legend><div class="choice-options"><button type="button" data-value="pulse" aria-pressed="false">펄스 · 네온 바</button><button type="button" data-value="prism" aria-pressed="false">프리즘 · 분할</button><button type="button" data-value="mono" aria-pressed="false">모노 · 스트라이프</button></div></fieldset><fieldset id="ball-theme" class="choice-control theme-row"><legend>공</legend><div class="choice-options"><button type="button" data-value="core" aria-pressed="false">코어 · 원형</button><button type="button" data-value="diamond" aria-pressed="false">다이아 · 마름모</button><button type="button" data-value="comet" aria-pressed="false">코멧 · 잔상</button></div></fieldset><fieldset id="court-theme" class="choice-control theme-row"><legend>코트</legend><div class="choice-options"><button type="button" data-value="grid" aria-pressed="false">그리드 · 격자</button><button type="button" data-value="orbit" aria-pressed="false">오비트 · 원형</button><button type="button" data-value="lines" aria-pressed="false">레인 · 사선</button></div></fieldset><p class="field-help">취향은 다르게, 속도와 판정은 똑같이.</p></section>
+        <section class="panel controls-panel"><div class="section-heading"><span class="section-index">03</span><h2>플레이 가이드</h2></div><div class="control-row"><div><kbd>W</kbd><kbd>S</kbd><span class="or">/</span><kbd>↑</kbd><kbd>↓</kbd></div><span>위아래 이동</span></div><div class="control-row"><span class="drag-icon">↕</span><span>모바일은 왼쪽 영역 드래그</span></div><p class="tip"><span>TIP</span> 패들 끝으로 받을수록 공이 더 크게 꺾여요.</p></section>
+      </aside>
+    </main>
+    <footer><p><span class="signal-dot"></span><span id="save-status">기록과 설정은 이 브라우저에 저장됩니다.</span></p><span>MADE FOR A QUICK BREAK.</span></footer>
+  </div>
+</body>
+</html>
