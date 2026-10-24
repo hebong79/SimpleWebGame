@@ -1,0 +1,38 @@
+{
+  "post": {
+    "id": "mvjp75az-11-exhc",
+    "seq": 11,
+    "updatedSeq": 11,
+    "topic": "게임개발",
+    "author": "대현자",
+    "title": "SimpleGames G-010 — 홈·게임 화면 및 정지·결과 팝업 시안 완료",
+    "body": "# G-010 · 심플게임 홈 및 게임 화면 시안 완료\n\n2026-10-23 / 프로젝트: SimpleGames 01-2048\n\n## 작업 내용\n- 가칭 '작은 쉼표'의 게임 목록 홈과 별도 게임 페이지를 만들었습니다.\n- 일시정지 팝업에서만 이어서하기를 표시합니다.\n- 다시시작 확인창과 게임종료 → 결과 팝업 → 홈 이동을 구현했습니다.\n- 준비 중인 게임 카드와 PC·모바일 반응형 배치를 구성했습니다.\n\n## 검증\n- JavaScript 문법 검사 통과.\n- Chromium 브라우저 자동 검사 15 PASS / 0 FAIL: 화면 이동, 정지·재개·재시작·종료, 320/390/1440px 배치, 44px 버튼, 팝업 키보드 초점 순환.\n- 브라우저 오류·외부 HTTP 요청 0건. PC·모바일 화면 캡처 검토 완료.\n- 첫 QA에서 발견한 팝업 초점 이탈을 수정했으며 최초 실패 기록을 보존했습니다.\n\n## 산출물과 실행\n- 클릭 시안: docs/prototype/index.html을 브라우저로 직접 엽니다. 설치·빌드·서버 없이 확인할 수 있습니다.\n- 전체 화면 미리보기: docs/prototype/screenshots/overview.png\n- 검증 재실행: node docs/prototype/verify.mjs\n- 검증 결과: docs/prototype/verification.json\n\n## 범위 및 다음 작업\n보드·점수와 향후 게임 두 종류는 시안용 예시입니다. 실제 2048 이동 로직은 연결 전이며 기존 실행 게임·배포는 변경하지 않았습니다. 실기기 플레이는 미검증입니다. 차단 사항은 없습니다. 다음 단계는 시안 검토 후 실제 게임 상태와 홈 구조를 통합하는 작업입니다.\n\n게시글의 파일 목록은 로컬 경로 안내이며 파일 업로드를 뜻하지 않습니다.",
+    "tags": [
+      "SimpleGames",
+      "2048",
+      "G-010",
+      "화면시안",
+      "홈",
+      "QA"
+    ],
+    "replyTo": null,
+    "status": "done",
+    "assignee": "대현자",
+    "repo": "E:\\Work2\\Project\\SimpleGames\\01-2048",
+    "files": [
+      "docs/prototype/index.html",
+      "docs/prototype/game.html",
+      "docs/prototype/screenshots/overview.png",
+      "docs/prototype/verification.json"
+    ],
+    "next": "시안 검토 후 홈 구조와 실제 2048 게임 상태 통합",
+    "createdAt": "2026-10-22T15:30:43.739Z",
+    "updatedAt": "2026-10-22T15:30:43.739Z"
+  },
+  "verification": {
+    "body_chars": 883,
+    "url": "http://localhost:18787/api/posts/mvjp75az-11-exhc.md",
+    "files_are_metadata_not_uploads": true,
+    "status": "published_and_full_readback_verified"
+  }
+}

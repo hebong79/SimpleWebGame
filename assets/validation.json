@@ -1,0 +1,97 @@
+{
+  "status": "PASS",
+  "runtime_svg_count": 15,
+  "tile_count": 11,
+  "garden_count": 3,
+  "favicon_count": 1,
+  "dimensions": {
+    "favicon.svg": [
+      64,
+      64
+    ],
+    "gardens/bloom.svg": [
+      960,
+      640
+    ],
+    "gardens/grove.svg": [
+      960,
+      640
+    ],
+    "gardens/seed.svg": [
+      960,
+      640
+    ],
+    "tiles/tile-1024.svg": [
+      128,
+      128
+    ],
+    "tiles/tile-128.svg": [
+      128,
+      128
+    ],
+    "tiles/tile-16.svg": [
+      128,
+      128
+    ],
+    "tiles/tile-2.svg": [
+      128,
+      128
+    ],
+    "tiles/tile-2048.svg": [
+      128,
+      128
+    ],
+    "tiles/tile-256.svg": [
+      128,
+      128
+    ],
+    "tiles/tile-32.svg": [
+      128,
+      128
+    ],
+    "tiles/tile-4.svg": [
+      128,
+      128
+    ],
+    "tiles/tile-512.svg": [
+      128,
+      128
+    ],
+    "tiles/tile-64.svg": [
+      128,
+      128
+    ],
+    "tiles/tile-8.svg": [
+      128,
+      128
+    ]
+  },
+  "sha256": {
+    "favicon.svg": "f0e28e8ff226f43828057339a41ee461d0093fcfbbeabe129ab3008bb53054a1",
+    "gardens/bloom.svg": "f0c524fda60c9a600c2e52b448ba9eb7dcce0fd8dc868bdc2e5f94fd511e18ab",
+    "gardens/grove.svg": "19fc9218dcbf1a258ec66a17bdb2a98f14005c7a3a1b4c1ccd38a6ccf5096307",
+    "gardens/seed.svg": "8e316a8482cec822ac4873e349743deff8907afbc59766c70f4386037c2ed779",
+    "tiles/tile-1024.svg": "f587027a89c6958e9fea4d69c0e97a91c02f07fb93076db69c565fa4847b84e5",
+    "tiles/tile-128.svg": "3b5789fbacb7a09ceda8ef74ebbc97f30a46061bc113808ffe274e57279ed2e5",
+    "tiles/tile-16.svg": "80f466c185b979b642115317688e2a1d414001197adcd587728be6ac00dc85d6",
+    "tiles/tile-2.svg": "533877afe18f8ecda3633b1b16922be4b99fde657c73cb8e70a9ba407eef2865",
+    "tiles/tile-2048.svg": "882832855d103adcff44ee569fe6fbe861eb02c6a4838e4b0c01d601f2c55b54",
+    "tiles/tile-256.svg": "098e757c172d81884c3450886a39acf37efc5174f25c650bf3bcf91dc28cb38a",
+    "tiles/tile-32.svg": "3d76ac103371596ed224449e318ed1cd20450108f4415e32e0b920e793cda607",
+    "tiles/tile-4.svg": "eb0fa963b3f39bfb3b0a3f95f32ecf33ea948a31bbd4751ac40db99abb0ea2ed",
+    "tiles/tile-512.svg": "973f2e91d5f27ad1b903b724a370a06bb693af3e6754ea8a7b223bfa2bfa5c08",
+    "tiles/tile-64.svg": "fe0dee9f609276e90aadeae12bd13216b4fc20daba034099944500f3e9bfdf78",
+    "tiles/tile-8.svg": "fa41fe27254330acbddab7d7b4903bc80ea37fa66d96f9432ddfc4176be0c985"
+  },
+  "checks": [
+    "exact paths",
+    "XML parse",
+    "dimensions/viewBox",
+    "distinct content",
+    "deterministic exact regeneration",
+    "no tile text/opaque rectangle",
+    "no scripts/events/animation/remote refs/embedded rasters/fonts",
+    "contact sheet XML"
+  ],
+  "visual_check": "See assets/contact-sheet.png and docs/ASSETS.md; not a gameplay test."
+}

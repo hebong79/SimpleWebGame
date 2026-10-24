@@ -1,0 +1,25 @@
+{
+  "name": "number-garden-2048",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Standalone PC and mobile 2048 garden puzzle",
+  "engines": {
+    "node": ">=24.0.0"
+  },
+  "scripts": {
+    "build": "node scripts/build.mjs",
+    "typecheck": "tsc --noEmit",
+    "start": "node dist/src/server/index.js",
+    "preview": "node scripts/preview_prototype.mjs",
+    "dev": "npm run build && npm start",
+    "test": "npm run build && node --test dist/tests/unit/*.test.js",
+    "test:e2e": "playwright test",
+    "verify": "npm run test && npm run test:e2e"
+  },
+  "devDependencies": {
+    "typescript": "7.0.2",
+    "@types/node": "24.10.1",
+    "@playwright/test": "1.64.1"
+  }
+}

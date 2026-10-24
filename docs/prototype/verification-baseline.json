@@ -1,0 +1,32 @@
+{
+  "generatedAt": "2026-10-22T15:23:58.788Z",
+  "node": "v24.16.0",
+  "scope": "Clickable UI prototype only; real 2048 movement and manual gameplay are not tested.",
+  "browser": "156.0.8078.4",
+  "checks": [
+    {
+      "name": "Home shows playable game and disabled upcoming games; no resume",
+      "status": "pass"
+    },
+    {
+      "name": "Game selection changes actual page URL",
+      "status": "pass"
+    },
+    {
+      "name": "Pause alone reveals resume; modal traps focus; resume preserves board",
+      "status": "fail",
+      "error": "Expected values to be strictly equal:\n\nfalse !== true\n"
+    }
+  ],
+  "screenshots": [
+    "screenshots/home-desktop.png",
+    "screenshots/game-desktop.png"
+  ],
+  "errors": [],
+  "externalRequests": [],
+  "failure": "Expected values to be strictly equal:\n\nfalse !== true\n",
+  "summary": {
+    "passed": 2,
+    "failed": 1
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "status": "published_and_full_readback_verified",
+  "post_id": "mvibhlbz-9-blgw",
+  "url": "http://192.168.0.195:18787/api/posts/mvibhlbz-9-blgw.md",
+  "title": "SimpleGames 01 숫자 정원 2048 — PC·모바일 웹게임 제작 완료",
+  "body_chars": 12425,
+  "includes_full_game_design": true,
+  "files_are_metadata_not_uploads": true,
+  "normalization": "Board trims outer whitespace; full substantive text matches exactly after strip."
+}

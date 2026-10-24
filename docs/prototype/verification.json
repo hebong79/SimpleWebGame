@@ -1,0 +1,86 @@
+{
+  "generatedAt": "2026-10-22T15:52:05.748Z",
+  "node": "v24.16.0",
+  "scope": "Clickable UI prototype only; real 2048 movement and manual gameplay are not tested.",
+  "browser": "156.0.8078.4",
+  "checks": [
+    {
+      "name": "Home shows playable game and disabled upcoming games; no resume",
+      "status": "pass"
+    },
+    {
+      "name": "Game selection changes actual page URL",
+      "status": "pass"
+    },
+    {
+      "name": "Pause alone reveals resume; modal traps focus; resume preserves board",
+      "status": "pass"
+    },
+    {
+      "name": "Restart cancellation from play preserves board and score",
+      "status": "pass"
+    },
+    {
+      "name": "Restart cancellation from paused returns to pause",
+      "status": "pass"
+    },
+    {
+      "name": "Restart confirmation resets example score and board",
+      "status": "pass"
+    },
+    {
+      "name": "Exit shows result first, forbids resume and Escape dismissal, then navigates home",
+      "status": "pass"
+    },
+    {
+      "name": "Paused exit reaches results without resume",
+      "status": "pass"
+    },
+    {
+      "name": "All in-game home links route through result popup",
+      "status": "pass"
+    },
+    {
+      "name": "Natural-end preview uses blocked reason and result restart starts fresh",
+      "status": "pass"
+    },
+    {
+      "name": "320px home/play/pause/restart/result fit and all buttons meet 44px",
+      "status": "pass"
+    },
+    {
+      "name": "390px home/play/pause/restart/result fit and all buttons meet 44px",
+      "status": "pass"
+    },
+    {
+      "name": "No browser runtime errors or external HTTP requests",
+      "status": "pass"
+    },
+    {
+      "name": "Overview contact sheet generated from verified screenshots",
+      "status": "pass"
+    },
+    {
+      "name": "All dialogs retain initial and cycling keyboard focus",
+      "status": "pass"
+    }
+  ],
+  "screenshots": [
+    "screenshots/home-desktop.png",
+    "screenshots/game-desktop.png",
+    "screenshots/paused-desktop.png",
+    "screenshots/result-desktop.png",
+    "screenshots/home-mobile.png",
+    "screenshots/game-mobile.png",
+    "screenshots/paused-mobile.png",
+    "screenshots/result-mobile.png",
+    "screenshots/overview.png"
+  ],
+  "errors": [],
+  "externalRequests": [],
+  "focusViolations": [],
+  "summary": {
+    "passed": 15,
+    "failed": 0
+  }
+}

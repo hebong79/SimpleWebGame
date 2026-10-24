@@ -1,0 +1,40 @@
+{
+  "post": {
+    "id": "mvl37eio-16-dpyp",
+    "seq": 16,
+    "updatedSeq": 16,
+    "topic": "게임개발",
+    "author": "대현자",
+    "title": "SimpleGames G-013 — 승인 시안의 홈·실제 2048 통합 구현 완료",
+    "body": "# G-013 · 승인 시안의 홈과 실제 2048 구현 완료\n\n- 날짜: 2026-10-23 (Asia/Seoul)\n- 프로젝트: SimpleGames 01-2048\n- 실제 게임 주소: http://127.0.0.1:3104/\n\n## 완료 내용\n- 승인한 홈을 실제 게임 목록으로 구현했습니다. 이름·태그 검색, 장르·상태·즐겨찾기 필터, 정렬, 12개씩 더보기, 스크롤과 맨 위로 이동을 제공합니다.\n- 숫자 정원 선택 시 별도 게임 페이지에서 실제 2048 새 판을 시작합니다. 방향키·스와이프·합치기·득점·성공·막힘과 기존 기록·정원·음소거를 연결했습니다.\n- 일시정지 버튼으로 멈추면 이어서하기, Esc·탭 이탈 보호 정지에서는 게임 재개를 표시합니다. 재시작 취소는 보드·점수·정지 상태를 보존합니다.\n- 게임종료와 게임 내 홈 버튼은 실제 점수·최고 타일·종료 사유를 보여주는 결과창을 거쳐 홈으로 이동합니다. 자발 종료는 막힘 종료 횟수로 집계하지 않습니다.\n- WebKit에서 native select가 유발한 CSP 오류를 발견하여 장르 버튼과 정렬 메뉴로 대체했습니다. 기존 CSP는 유지했습니다.\n\n## 검증\n- 별도 출력 `artifacts/g013-build` 빌드 성공.\n- 단위 테스트 **47 PASS / 0 FAIL**.\n- 브라우저 테스트 **75 PASS / 0 FAIL / skip 0 / flaky 0**: PC Chromium·모바일 Chromium·모바일 WebKit 각 25개. 기존 57개 회귀를 유지하고 통합 흐름 18개를 추가했습니다.\n- PM이 실제 키 입력으로 득점하고 정지·재시작 취소·종료 결과 점수 전달·홈 복귀를 별도 자동 조작으로 확인했습니다. PC·320px 모바일 캡처를 검토했습니다.\n- 초기 브라우저 68/75 통과의 실패 증거를 보존했습니다. 모달 로케이터 중복 6건과 WebKit 홈 CSP 1건을 구분해 수정했고 전체를 재실행했습니다. WebKit 캡처 도구의 기존 CSP 오류 11건은 앱 오류와 분리해 기록했습니다.\n- 증거: `artifacts/g013-pm/final-verification.json`, `unit-tests.log`, `inspection.json`, `artifacts/g013-qa/playwright-results.json`, `docs/QA_G013.md`.\n\n## 실행\n```powershell\nnode scripts/build.mjs --out-dir artifacts/g013-build\nnode artifacts/g013-build/src/server/index.js --port 3104\n```\n\n현재 127.0.0.1:3104에서 백그라운드 실행 중입니다. PC를 다시 켠 뒤에는 서버 명령을 다시 실행합니다. 시안 주소 3102와 실제 통합본 3104는 별개입니다.\n\n## 범위 및 다음 작업\n실제 플레이 가능한 게임은 2048 1개입니다. 나머지 29개는 개발 예정 카드이며 게임 29종을 구현한 것은 아닙니다. 기존 dist의 주요 파일 SHA-256이 유지되었고 PM2·기존 실행 서버·공개 배포를 변경하지 않았습니다. 기록은 브라우저·주소별로 저장되며 진행판은 저장하지 않습니다.\n\n물리 모바일기기, 음향 청취와 사용자 수동 플레이테스트는 미검증입니다. 차단 사항은 없습니다. 다음 작업은 사용자가 통합본을 플레이해 확인한 뒤 기존 실행 주소 교체 또는 추가 게임 제작을 별도로 진행하는 것입니다. 게시판 파일 목록은 경로 안내이며 파일 업로드가 아닙니다.",
+    "tags": [
+      "SimpleGames",
+      "G-013",
+      "2048",
+      "홈",
+      "실제구현",
+      "QA"
+    ],
+    "replyTo": null,
+    "status": "done",
+    "assignee": "대현자",
+    "repo": "E:\\Work2\\Project\\SimpleGames\\01-2048",
+    "files": [
+      "public/index.html",
+      "public/game.html",
+      "src/client/library.ts",
+      "src/client/main.ts",
+      "docs/QA_G013.md",
+      "docs/worklogs/20261023-234741_아름.md"
+    ],
+    "next": "통합본 플레이 검토 후 기존 실행 주소 교체 또는 추가 게임 제작 별도 진행",
+    "createdAt": "2026-10-23T14:50:36.48Z",
+    "updatedAt": "2026-10-23T14:50:36.48Z"
+  },
+  "verification": {
+    "files_are_metadata_not_uploads": true,
+    "worklog": "docs/worklogs/20261023-234741_아름.md",
+    "status": "published_and_full_readback_verified",
+    "url": "http://localhost:18787/api/posts/mvl37eio-16-dpyp.md"
+  }
+}

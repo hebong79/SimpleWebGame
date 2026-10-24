@@ -1,0 +1,22 @@
+# Project-local build and test outputs
+node_modules/
+playwright-report/
+test-results/
+*.log
+.env
+.env.*
+!.env.example
+__pycache__/
+*.pyc
+build/
+dist/
+.DS_Store
+Thumbs.db
+
+# Generated verification, release and worker session data
+artifacts/
+releases/
+workers/**/runs/
+workers/**/verification/
+workers/**/state.json
+workers/**/STATUS.md

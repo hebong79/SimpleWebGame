@@ -1,0 +1,135 @@
+{
+  "status": "PASS",
+  "renderer": "C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe",
+  "render_commands": "See assets/render_assets.py",
+  "number_safe_rectangle": [
+    20,
+    40,
+    108,
+    84
+  ],
+  "renders": [
+    {
+      "source": "assets/contact-sheet.svg",
+      "screenshot": "assets/contact-sheet.png",
+      "dimensions": [
+        1560,
+        1090
+      ],
+      "bytes": 217298,
+      "exit_code": 0
+    },
+    {
+      "source": "assets/ornament-alpha-atlas.svg",
+      "screenshot": "assets/ornament-alpha-atlas.png",
+      "dimensions": [
+        1408,
+        256
+      ],
+      "bytes": 30584,
+      "exit_code": 0
+    }
+  ],
+  "tile_pixel_checks": [
+    {
+      "value": 2,
+      "center_alpha_min_max": [
+        0,
+        0
+      ],
+      "transparent_ratio": 0.9852,
+      "nonempty": true
+    },
+    {
+      "value": 4,
+      "center_alpha_min_max": [
+        0,
+        0
+      ],
+      "transparent_ratio": 0.9877,
+      "nonempty": true
+    },
+    {
+      "value": 8,
+      "center_alpha_min_max": [
+        0,
+        0
+      ],
+      "transparent_ratio": 0.9852,
+      "nonempty": true
+    },
+    {
+      "value": 16,
+      "center_alpha_min_max": [
+        0,
+        0
+      ],
+      "transparent_ratio": 0.9747,
+      "nonempty": true
+    },
+    {
+      "value": 32,
+      "center_alpha_min_max": [
+        0,
+        0
+      ],
+      "transparent_ratio": 0.9653,
+      "nonempty": true
+    },
+    {
+      "value": 64,
+      "center_alpha_min_max": [
+        0,
+        0
+      ],
+      "transparent_ratio": 0.9546,
+      "nonempty": true
+    },
+    {
+      "value": 128,
+      "center_alpha_min_max": [
+        0,
+        0
+      ],
+      "transparent_ratio": 0.9661,
+      "nonempty": true
+    },
+    {
+      "value": 256,
+      "center_alpha_min_max": [
+        0,
+        0
+      ],
+      "transparent_ratio": 0.9431,
+      "nonempty": true
+    },
+    {
+      "value": 512,
+      "center_alpha_min_max": [
+        0,
+        0
+      ],
+      "transparent_ratio": 0.921,
+      "nonempty": true
+    },
+    {
+      "value": 1024,
+      "center_alpha_min_max": [
+        0,
+        0
+      ],
+      "transparent_ratio": 0.9351,
+      "nonempty": true
+    },
+    {
+      "value": 2048,
+      "center_alpha_min_max": [
+        0,
+        0
+      ],
+      "transparent_ratio": 0.9028,
+      "nonempty": true
+    }
+  ],
+  "scope": "Asset rendering and central-alpha checks only; not game/UI/device acceptance."
+}

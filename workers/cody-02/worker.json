@@ -1,0 +1,15 @@
+{
+  "schemaVersion": 1,
+  "workerId": "cody-02",
+  "displayName": "코디 02",
+  "pm": "대현자",
+  "projectRoot": "E:/Work2/Project/SimpleGames/01-2048",
+  "model": "gpt-6.1-sol",
+  "codexExecutable": "C:/Users/hebon/.vscode/extensions/openai.chatgpt-26.1007.21434-win32-x64/bin/windows-x86_64/codex.exe",
+  "defaultSandbox": "read-only",
+  "mode": "on-demand",
+  "timeoutSeconds": 180,
+  "forbiddenSessionIds": [
+    "01a16428-a3ce-7a10-a8b6-73d159372174"
+  ]
+}

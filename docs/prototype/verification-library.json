@@ -1,0 +1,548 @@
+{
+  "generatedAt": "2026-10-22T15:52:57.216Z",
+  "node": "v24.16.0",
+  "scope": "Local file UI library prototype; real 2048 gameplay, builds and physical devices are not tested.",
+  "checks": [
+    {
+      "name": "Catalog has 30 unique examples, one preview and 29 upcoming entries",
+      "status": "pass"
+    },
+    {
+      "name": "Initial 12 then 24 then all 30 retain order without omissions or duplicates",
+      "status": "pass"
+    },
+    {
+      "name": "Title and tag search update exact counts and preserve continuous input focus",
+      "status": "pass"
+    },
+    {
+      "name": "Genre and state filters use AND semantics and accurate facet totals",
+      "status": "pass"
+    },
+    {
+      "name": "Condition changes reset display limit to 12",
+      "status": "pass"
+    },
+    {
+      "name": "Default, Korean name and shortest-duration sorting are deterministic",
+      "status": "pass"
+    },
+    {
+      "name": "Favorites keyboard toggle preserves focus, filters AND with search and genre, and reload persists",
+      "status": "pass"
+    },
+    {
+      "name": "No-match search shows zero results and reset restores default controls",
+      "status": "pass"
+    },
+    {
+      "name": "320px layout, 44px controls, scrolling, sticky tools and genre accessibility",
+      "status": "pass"
+    },
+    {
+      "name": "390px layout, 44px controls, scrolling, sticky tools and genre accessibility",
+      "status": "pass"
+    },
+    {
+      "name": "768px layout, 44px controls, scrolling, sticky tools and genre accessibility",
+      "status": "pass"
+    },
+    {
+      "name": "1440px layout, 44px controls, scrolling, sticky tools and genre accessibility",
+      "status": "pass"
+    },
+    {
+      "name": "Blocked localStorage falls back without uncaught errors; favorites remain usable",
+      "status": "pass"
+    },
+    {
+      "name": "Catalog extension to 31 derives counts and paging from data length",
+      "status": "pass"
+    },
+    {
+      "name": "Library has no runtime errors or external HTTP requests",
+      "status": "pass"
+    },
+    {
+      "name": "Desktop and mobile overview generated from verified viewport captures",
+      "status": "pass"
+    }
+  ],
+  "screenshots": [
+    "screenshots-library/home-desktop.png",
+    "screenshots-library/home-desktop-full.png",
+    "screenshots-library/all-games-bottom.png",
+    "screenshots-library/search-desktop.png",
+    "screenshots-library/favorites-desktop.png",
+    "screenshots-library/empty-desktop.png",
+    "screenshots-library/home-mobile.png",
+    "screenshots-library/home-mobile-full.png",
+    "screenshots-library/overview.png"
+  ],
+  "errors": [],
+  "externalRequests": [],
+  "layout": [
+    {
+      "width": 320,
+      "viewport": 320,
+      "document": 320,
+      "body": 320,
+      "toolsHeight": 122,
+      "viewportHeight": 900
+    },
+    {
+      "width": 320,
+      "viewport": 320,
+      "document": 320,
+      "body": 320,
+      "toolsHeight": 122,
+      "viewportHeight": 900
+    },
+    {
+      "width": 390,
+      "viewport": 390,
+      "document": 390,
+      "body": 390,
+      "toolsHeight": 122,
+      "viewportHeight": 900
+    },
+    {
+      "width": 390,
+      "viewport": 390,
+      "document": 390,
+      "body": 390,
+      "toolsHeight": 122,
+      "viewportHeight": 900
+    },
+    {
+      "width": 768,
+      "viewport": 768,
+      "document": 768,
+      "body": 768,
+      "toolsHeight": 131,
+      "viewportHeight": 900
+    },
+    {
+      "width": 768,
+      "viewport": 768,
+      "document": 768,
+      "body": 768,
+      "toolsHeight": 131,
+      "viewportHeight": 900
+    },
+    {
+      "width": 1440,
+      "viewport": 1440,
+      "document": 1440,
+      "body": 1440,
+      "toolsHeight": 131,
+      "viewportHeight": 900
+    },
+    {
+      "width": 1440,
+      "viewport": 1440,
+      "document": 1440,
+      "body": 1440,
+      "toolsHeight": 131,
+      "viewportHeight": 900
+    }
+  ],
+  "browser": "156.0.8078.4",
+  "catalog": [
+    {
+      "id": "number-garden",
+      "title": "숫자 정원",
+      "genre": "숫자",
+      "description": "같은 숫자를 합치며 키우는 작은 정원",
+      "tags": [
+        "2048",
+        "합치기",
+        "정원"
+      ],
+      "minutes": 3,
+      "maxMinutes": 10,
+      "status": "preview"
+    },
+    {
+      "id": "memory-pieces",
+      "title": "기억의 조각",
+      "genre": "기억",
+      "description": "뒤집고 기억하며 찾아내는 한 쌍",
+      "tags": [
+        "카드",
+        "맞추기"
+      ],
+      "minutes": 2,
+      "maxMinutes": 5,
+      "status": "upcoming"
+    },
+    {
+      "id": "leisure-line",
+      "title": "한 줄의 여유",
+      "genre": "퍼즐",
+      "description": "빈칸을 채우고 한 줄을 비우는 시간",
+      "tags": [
+        "블록",
+        "채우기"
+      ],
+      "minutes": 3,
+      "maxMinutes": 8,
+      "status": "upcoming"
+    },
+    {
+      "id": "color-walk",
+      "title": "색의 산책",
+      "genre": "퍼즐",
+      "description": "같은 색을 이어 완성하는 작은 풍경",
+      "tags": [
+        "색깔",
+        "연결"
+      ],
+      "minutes": 2,
+      "maxMinutes": 5,
+      "status": "upcoming"
+    },
+    {
+      "id": "morning-sudoku",
+      "title": "아침 스도쿠",
+      "genre": "숫자",
+      "description": "차분하게 채워가는 아홉 개의 숫자",
+      "tags": [
+        "스도쿠",
+        "논리"
+      ],
+      "minutes": 5,
+      "maxMinutes": 15,
+      "status": "upcoming"
+    },
+    {
+      "id": "leaf-cards",
+      "title": "잎새 찾기",
+      "genre": "기억",
+      "description": "흩어진 잎 사이에서 같은 모양 찾기",
+      "tags": [
+        "카드",
+        "자연"
+      ],
+      "minutes": 2,
+      "maxMinutes": 4,
+      "status": "upcoming"
+    },
+    {
+      "id": "raindrop",
+      "title": "빗방울 톡톡",
+      "genre": "순발력",
+      "description": "떨어지는 빗방울에 가볍게 톡",
+      "tags": [
+        "터치",
+        "반응"
+      ],
+      "minutes": 1,
+      "maxMinutes": 3,
+      "status": "upcoming"
+    },
+    {
+      "id": "garden-gomoku",
+      "title": "정원 오목",
+      "genre": "보드",
+      "description": "다섯 개의 돌로 이어가는 한 수",
+      "tags": [
+        "오목",
+        "전략"
+      ],
+      "minutes": 5,
+      "maxMinutes": 10,
+      "status": "upcoming"
+    },
+    {
+      "id": "little-maze",
+      "title": "작은 미로",
+      "genre": "퍼즐",
+      "description": "구불구불한 길 끝에서 만나는 출구",
+      "tags": [
+        "미로",
+        "길찾기"
+      ],
+      "minutes": 2,
+      "maxMinutes": 6,
+      "status": "upcoming"
+    },
+    {
+      "id": "make-ten",
+      "title": "열이 되는 순간",
+      "genre": "숫자",
+      "description": "숫자 두 개를 골라 만드는 작은 열",
+      "tags": [
+        "덧셈",
+        "짝짓기"
+      ],
+      "minutes": 2,
+      "maxMinutes": 5,
+      "status": "upcoming"
+    },
+    {
+      "id": "shape-note",
+      "title": "모양 노트",
+      "genre": "기억",
+      "description": "잠깐 본 모양을 마음속에 담아두기",
+      "tags": [
+        "도형",
+        "기억력"
+      ],
+      "minutes": 1,
+      "maxMinutes": 4,
+      "status": "upcoming"
+    },
+    {
+      "id": "balloon",
+      "title": "풍선 산책",
+      "genre": "순발력",
+      "description": "두둥실 떠오르는 풍선을 따라 톡",
+      "tags": [
+        "풍선",
+        "터치"
+      ],
+      "minutes": 1,
+      "maxMinutes": 3,
+      "status": "upcoming"
+    },
+    {
+      "id": "leaf-reversi",
+      "title": "초록 뒤집기",
+      "genre": "보드",
+      "description": "한 수씩 달라지는 초록빛 보드",
+      "tags": [
+        "리버시",
+        "전략"
+      ],
+      "minutes": 5,
+      "maxMinutes": 12,
+      "status": "upcoming"
+    },
+    {
+      "id": "sliding-view",
+      "title": "한 칸의 풍경",
+      "genre": "퍼즐",
+      "description": "조각을 밀어 맞추는 작은 풍경화",
+      "tags": [
+        "슬라이드",
+        "조각"
+      ],
+      "minutes": 3,
+      "maxMinutes": 7,
+      "status": "upcoming"
+    },
+    {
+      "id": "number-road",
+      "title": "숫자 오솔길",
+      "genre": "숫자",
+      "description": "하나부터 차례로 이어가는 숫자 길",
+      "tags": [
+        "순서",
+        "연결"
+      ],
+      "minutes": 2,
+      "maxMinutes": 4,
+      "status": "upcoming"
+    },
+    {
+      "id": "forest-melody",
+      "title": "숲의 멜로디",
+      "genre": "기억",
+      "description": "짧은 리듬을 기억해 다시 두드리기",
+      "tags": [
+        "리듬",
+        "순서"
+      ],
+      "minutes": 2,
+      "maxMinutes": 5,
+      "status": "upcoming"
+    },
+    {
+      "id": "star-catch",
+      "title": "별 하나 콕",
+      "genre": "순발력",
+      "description": "반짝이는 순간을 놓치지 않고 콕",
+      "tags": [
+        "타이밍",
+        "반응"
+      ],
+      "minutes": 1,
+      "maxMinutes": 2,
+      "status": "upcoming"
+    },
+    {
+      "id": "afternoon-cards",
+      "title": "오후의 카드",
+      "genre": "보드",
+      "description": "한 장씩 정리하는 나만의 카드 시간",
+      "tags": [
+        "솔리테어",
+        "카드"
+      ],
+      "minutes": 5,
+      "maxMinutes": 15,
+      "status": "upcoming"
+    },
+    {
+      "id": "waterway",
+      "title": "물길 잇기",
+      "genre": "퍼즐",
+      "description": "조각난 물길을 이어 꽃에게 물 주기",
+      "tags": [
+        "연결",
+        "회전"
+      ],
+      "minutes": 3,
+      "maxMinutes": 8,
+      "status": "upcoming"
+    },
+    {
+      "id": "tiny-calculation",
+      "title": "작은 셈",
+      "genre": "숫자",
+      "description": "부담 없이 풀어보는 짧은 숫자 문제",
+      "tags": [
+        "계산",
+        "두뇌"
+      ],
+      "minutes": 1,
+      "maxMinutes": 3,
+      "status": "upcoming"
+    },
+    {
+      "id": "word-basket",
+      "title": "단어 바구니",
+      "genre": "기억",
+      "description": "잠깐 스친 단어들을 다시 모아보기",
+      "tags": [
+        "단어",
+        "기억력"
+      ],
+      "minutes": 2,
+      "maxMinutes": 5,
+      "status": "upcoming"
+    },
+    {
+      "id": "green-signal",
+      "title": "초록 신호",
+      "genre": "순발력",
+      "description": "초록불이 켜지는 순간 가볍게 누르기",
+      "tags": [
+        "반응",
+        "타이밍"
+      ],
+      "minutes": 1,
+      "maxMinutes": 2,
+      "status": "upcoming"
+    },
+    {
+      "id": "round-checkers",
+      "title": "동그란 한 수",
+      "genre": "보드",
+      "description": "작은 말들과 함께하는 차분한 승부",
+      "tags": [
+        "체커",
+        "전략"
+      ],
+      "minutes": 5,
+      "maxMinutes": 10,
+      "status": "upcoming"
+    },
+    {
+      "id": "constellation",
+      "title": "별자리 잇기",
+      "genre": "퍼즐",
+      "description": "떨어진 별들을 하나의 선으로 잇기",
+      "tags": [
+        "선긋기",
+        "연결"
+      ],
+      "minutes": 2,
+      "maxMinutes": 6,
+      "status": "upcoming"
+    },
+    {
+      "id": "falling-leaves",
+      "title": "낙엽 받기",
+      "genre": "순발력",
+      "description": "바람에 내려앉는 잎을 바구니에 쏙",
+      "tags": [
+        "낙엽",
+        "받기"
+      ],
+      "minutes": 1,
+      "maxMinutes": 3,
+      "status": "upcoming"
+    },
+    {
+      "id": "quiet-chess",
+      "title": "고요한 체스",
+      "genre": "보드",
+      "description": "다음 한 수를 생각하는 조용한 시간",
+      "tags": [
+        "체스",
+        "전략"
+      ],
+      "minutes": 10,
+      "maxMinutes": 20,
+      "status": "upcoming"
+    },
+    {
+      "id": "mirror-lake",
+      "title": "거울 호수",
+      "genre": "퍼즐",
+      "description": "반대편의 모양을 닮도록 맞춰보기",
+      "tags": [
+        "대칭",
+        "도형"
+      ],
+      "minutes": 3,
+      "maxMinutes": 6,
+      "status": "upcoming"
+    },
+    {
+      "id": "pebble-stack",
+      "title": "조약돌 쌓기",
+      "genre": "순발력",
+      "description": "흔들리지 않게 조심조심 쌓는 돌탑",
+      "tags": [
+        "균형",
+        "타이밍"
+      ],
+      "minutes": 2,
+      "maxMinutes": 4,
+      "status": "upcoming"
+    },
+    {
+      "id": "pocket-tangram",
+      "title": "주머니 칠교",
+      "genre": "퍼즐",
+      "description": "일곱 조각에 숨어 있는 모양 찾기",
+      "tags": [
+        "칠교",
+        "조각"
+      ],
+      "minutes": 3,
+      "maxMinutes": 10,
+      "status": "upcoming"
+    },
+    {
+      "id": "dice-picnic",
+      "title": "주사위 소풍",
+      "genre": "보드",
+      "description": "가벼운 선택으로 완성하는 주사위 한 판",
+      "tags": [
+        "주사위",
+        "선택"
+      ],
+      "minutes": 5,
+      "maxMinutes": 10,
+      "status": "upcoming"
+    }
+  ],
+  "summary": {
+    "passed": 16,
+    "failed": 0
+  }
+}
