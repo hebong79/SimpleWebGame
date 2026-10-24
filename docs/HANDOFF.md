@@ -1,5 +1,15 @@
 # 숫자 정원 · 2048 — 최종 인수인계
 
+## 최신 작업 — G-014 스네이크·퐁 통합 완료
+
+- 공통 홈에서 2048·꼬마 용 간식 여행·네온 랠리를 고릅니다. 총 32개·플레이 가능 3개·준비 중 29개. 검색·장르·상태·즐겨찾기·정렬·더보기를 유지하고 각 카드의 실행 경로를 분리했습니다.
+- 실행 중: http://127.0.0.1:3105/ . 재실행은 node artifacts/g014-build/src/server/index.js --port 3105 입니다. 소스 변경 후 node scripts/build.mjs --out-dir artifacts/g014-build로 빌드합니다. 기존 dist·PM2·3101/3104 서버와 원본 게임을 교체하지 않았습니다.
+- 실제 검증: 타입 검사/통합 빌드 성공, 2048·서버48개와 두 게임 엔진64개(합계112개), PC Chromium·모바일 Chromium·모바일 WebKit 브라우저93개 모두 통과. 실패·skip·flaky0. 새 게임의 입력/득점/정지·재개/설정/홈 복귀/저장 분리와320px·가로 화면을 검사했습니다. PM이 PC·모바일 캡처를 직접 검토했습니다. 독립 QA 소스 리뷰에서 확정 결함은 없습니다.
+- 초기84/93의 실패 증거를 보존했습니다. 기존 단일 링크 검사와 새 검사의 초점 대기를 수정했고, WebKit에서 실제 재현한 native select/CSP 충돌은 퐁의 난이도·외형 버튼 그룹으로 해결했습니다. CSP/게임 엔진/저장 키는 유지합니다.
+- 증거: docs/G014_VERIFICATION.json, docs/G014_SOURCE_MANIFEST.json, artifacts/g014-pm/unit-tests.log, e2e-final.log, inspection.json, pong-inspection.json, artifacts/g014-qa/final/playwright-results.json. 상세: docs/G014_INTEGRATION.md. 작업 기록: docs/worklogs/20261024-225137_아름.md.
+- 실물 모바일 터치·음향 청취·Firefox는 미검증입니다. WebKit의 모바일 드래그는 터치 탭+포인터 드래그, Chromium 모바일은 실제 자동 터치 입력입니다. 다른 포트의 기록 자동 이전, 기존 서버 교체, 릴리즈 ZIP 재생성·공개 배포는 수행하지 않았습니다.
+- 다음 작업: 3105 통합본을 사용자 기기에서 플레이해 확인합니다. 차단 사항 없음. 완료 게시: mvmgkmmi-22-2tdc · http://localhost:18787/api/posts/mvmgkmmi-22-2tdc.md (제목·본문·done 상태와 Markdown 원문 재조회 확인).
+
 ## 최신 시험 — 2026-10-24 15:12 VS Code cody-02 관련 세션 (미연결)
 
 - 사용자의 이름 지정 후 연결 시험 요청에 따라 새 VS Code 세션 `01a16c83-f55f-79c1-8e70-cceed850221d`를 식별했습니다(source vscode, 모델 gpt-6.1-sol, 프로젝트 일치). 기존 CLI 워커 UUID와 다릅니다.

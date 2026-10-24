@@ -1,4 +1,4 @@
-// Game catalog: 2048 is playable; all other entries are upcoming concepts.
+// Each playable game supplies its own same-origin launch URL.
 // Original CSS artwork and the project's original garden SVG are reused.
 export {};
 interface CatalogGame {
@@ -10,6 +10,7 @@ interface CatalogGame {
   minutes: number;
   maxMinutes: number;
   status: 'available' | 'upcoming';
+  href?: string;
 }
 type SortOrder = 'default' | 'name' | 'duration';
 interface LibraryState {
@@ -21,7 +22,9 @@ interface LibraryState {
   limit: number;
 }
 const GAME_CATALOG: CatalogGame[] = [
-  { id: 'number-garden', title: '숫자 정원', genre: '숫자', description: '같은 숫자를 합치며 키우는 작은 정원', tags: ['2048', '합치기', '정원'], minutes: 3, maxMinutes: 10, status: 'available' },
+  { id: 'number-garden', title: '숫자 정원', genre: '숫자', description: '같은 숫자를 합치며 키우는 작은 정원', tags: ['2048', '합치기', '정원'], minutes: 3, maxMinutes: 10, status: 'available', href: '/game.html' },
+  { id: 'little-dragon', title: '꼬마 용 간식 여행', genre: '순발력', description: '간식을 모으며 자라는 용과 나만의 코스튬', tags: ['스네이크', 'snake', '용', '간식', '코스튬'], minutes: 1, maxMinutes: 3, status: 'available', href: '/games/02-snake/index.html' },
+  { id: 'neon-rally', title: '네온 랠리', genre: '순발력', description: '키보드와 터치로 받아치는 7점 선취 퐁', tags: ['퐁', 'pong', '패들', '랠리', 'AI'], minutes: 1, maxMinutes: 3, status: 'available', href: '/games/03-pong/index.html' },
   { id: 'memory-pieces', title: '기억의 조각', genre: '기억', description: '뒤집고 기억하며 찾아내는 한 쌍', tags: ['카드', '맞추기'], minutes: 2, maxMinutes: 5, status: 'upcoming' },
   { id: 'leisure-line', title: '한 줄의 여유', genre: '퍼즐', description: '빈칸을 채우고 한 줄을 비우는 시간', tags: ['블록', '채우기'], minutes: 3, maxMinutes: 8, status: 'upcoming' },
   { id: 'color-walk', title: '색의 산책', genre: '퍼즐', description: '같은 색을 이어 완성하는 작은 풍경', tags: ['색깔', '연결'], minutes: 2, maxMinutes: 5, status: 'upcoming' },
@@ -117,7 +120,17 @@ function artwork(game: CatalogGame, index: number): HTMLDivElement {
   const art = create('div', `card-art art-${genreArtwork[game.genre] ?? 'puzzle'}`);
   art.setAttribute('aria-hidden', 'true');
   art.style.setProperty('--variation', String(index % 4));
-  if (game.status === 'available') {
+  if (game.id === 'little-dragon') {
+    art.classList.add('art-snake');
+    const mini = create('div', 'mini-snake');
+    for (let i = 0; i < 6; i++) mini.append(create('i', ''));
+    art.append(mini, create('span', 'mini-snack'));
+  } else if (game.id === 'neon-rally') {
+    art.classList.add('art-pong');
+    const mini = create('div', 'mini-court');
+    for (let i = 0; i < 3; i++) mini.append(create('i', ''));
+    art.append(mini);
+  } else if (game.id === 'number-garden') {
     art.classList.add('art-garden');
     const mini = create('div', 'mini-numbers');
     ['2', '4', '8', '16'].forEach(value => mini.append(create('i', '', value)));
@@ -162,7 +175,8 @@ function createCard(game: CatalogGame): HTMLElement {
   let action: HTMLAnchorElement | HTMLButtonElement;
   if (game.status === 'available') {
     const link = create('a', 'button card-action primary', '게임 시작 ↗');
-    link.href = '/game.html';
+    if (!game.href) throw new Error(`Playable game is missing a launch URL: ${game.id}`);
+    link.href = game.href;
     link.setAttribute('aria-label', `${game.title} 게임 시작`);
     action = link;
   } else {

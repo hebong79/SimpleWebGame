@@ -38,6 +38,9 @@ test('static server validates raw paths, methods, headers, MIME and symlink cont
   await mkdir(join(root, 'assets'), { recursive: true });
   await writeFile(join(root, 'index.html'), '<!doctype html><title>Garden</title>');
   await writeFile(join(root, 'style.css'), 'body{color:green}');
+  await mkdir(join(root, 'games', '02-snake'), { recursive: true });
+  await writeFile(join(root, 'games', '02-snake', 'index.html'), '<title>Snake</title>');
+  await writeFile(join(root, 'games', '02-snake', 'engine.mjs'), 'export const size = 20;');
   await writeFile(join(root, 'assets', 'leaf.svg'), '<svg xmlns="http://www.w3.org/2000/svg"/>');
   await writeFile(join(folder, 'private.html'), 'DO_NOT_SERVE');
   const server = createGameServer(root);
@@ -65,6 +68,18 @@ test('static server validates raw paths, methods, headers, MIME and symlink cont
     const r = await fetchRaw(port, '/', 'POST');
     assert.equal(r.status, 405); assert.equal(r.headers.allow, 'GET, HEAD');
     assert.equal((await fetchRaw(port, '/missing.svg', 'HEAD')).body, '');
+  });
+  await t.test('nested game pages and ES modules retain MIME, HEAD and CSP protections', async () => {
+    assert.equal((await fetchRaw(port, '/games/02-snake/index.html')).status, 200);
+    const module = await fetchRaw(port, '/games/02-snake/engine.mjs');
+    assert.equal(module.status, 200);
+    assert.match(String(module.headers['content-type']), /text\/javascript/);
+    assert.equal(module.body, 'export const size = 20;');
+    assert.match(String(module.headers['content-security-policy']), /connect-src 'none'/);
+    const head = await fetchRaw(port, '/games/02-snake/engine.mjs', 'HEAD');
+    assert.equal(head.status, 200); assert.equal(head.body, '');
+    assert.equal(Number(head.headers['content-length']), Buffer.byteLength(module.body));
+    assert.equal((await fetchRaw(port, '/games/02-snake/')).status, 404);
   });
   const attacks = ['/../private.html','/%2e%2e/private.html','/%252e%252e/private.html','/%','/%00index.html','/assets%5c..%5cprivate.html','/C:/private.html','//server/private.html','/index.html:stream','/.env','/.git/config','/../public/index.html','/src/server/index.ts','/assets/%2e%2e/%2e%2e/private.html'];
   for (const path of attacks) await t.test(`reject raw path ${path}`, async () => {

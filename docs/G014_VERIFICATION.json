@@ -1,0 +1,34 @@
+{
+  "task": "G-014",
+  "status": "DONE",
+  "verifiedAt": "2026-10-24T13:51:37.488Z",
+  "typecheck": "PASS",
+  "build": "artifacts/g014-build",
+  "tests": {
+    "unitAndServer": 48,
+    "snakeAndPongEngines": 64,
+    "browser": 93,
+    "unexpected": 0,
+    "flaky": 0,
+    "skipped": 0
+  },
+  "engineTestCommand": "node --test tests/games/*.test.mjs",
+  "engineEvidence": "PM actual execution: 64 PASS / 0 FAIL; separate raw log was not saved.",
+  "browserReport": "artifacts/g014-qa/final/playwright-results.json",
+  "sourceReview": "Independent planner and QA reviewed source; QA findings were empty, including the final Pong button change.",
+  "url": "http://127.0.0.1:3105/",
+  "catalog": {
+    "total": 32,
+    "available": 3,
+    "upcoming": 29
+  },
+  "worklog": "docs/worklogs/20261024-225137_아름.md",
+  "manualLimits": [
+    "physical Android/iPhone touch",
+    "audio listening",
+    "Firefox",
+    "all devices and safe-area combinations"
+  ],
+  "sourceOriginalsPreserved": true,
+  "existingServersReplaced": false
+}

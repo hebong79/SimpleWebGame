@@ -1,5 +1,15 @@
 # 숫자 정원 — 기술 설계
 
+## G-014 통합 계약
+
+- 기존 TypeScript 홈·2048·서버 구조를 유지하고 검증된 ES 모듈 게임을 public/games/02-snake 및 public/games/03-pong에 독립적으로 넣습니다. CSS/DOM/입력은 페이지별로 분리됩니다. TypeScript strict 설정과 외부 의존성은 변경하지 않습니다.
+- CatalogGame.href로 /game.html, /games/02-snake/index.html, /games/03-pong/index.html을 구분합니다. 독립 게임을 iframe으로 삽입하지 않습니다.
+- 서버에는 .mjs의 text/javascript MIME만 추가합니다. 기존 경로 검증·공개 public 루트·CSP와 디렉터리 404 계약을 유지합니다. data: favicon 대신 기존 /assets/favicon.svg를 재사용합니다.
+- 빌드의 public 재귀 복사가 새 게임 런타임을 포함합니다. 검증 도구/캡처는 공개 폴더에 복사하지 않습니다. 새 엔진 검사는 tests/games/*.test.mjs에서 실제 public 게임 엔진을 import합니다.
+- 기록 키: number-garden:profile:v1, little-dragon.snake.v1, neon-rally.pong.v1, 즐겨찾기 simplegames.library.favorites.v1. 포트가 다르면 같은 브라우저여도 기록을 공유하지 않습니다.
+- 검증은 artifacts/g014-build 출력과 전용 보고 경로를 사용합니다. 기존 dist/PM2/서버는 교체하지 않습니다.
+
+
 ## G-013 통합 계약
 
 - `public/index.html`, `public/home.css`, `src/client/library.ts`가 게임 목록을 담당합니다. 컴파일된 `/scripts/library.js`를 모듈로 로드합니다. 게임 등록 데이터에 따른 검색·필터·정렬·12개씩 더보기와 독립 즐겨찾기 저장을 제공합니다.

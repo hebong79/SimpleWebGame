@@ -79,6 +79,23 @@ h1 { font-size: clamp(27px,3vw,35px); font-weight: 650; letter-spacing: -1.5px; 
 .mini-numbers i { display: grid; place-items: center; background: #f5f0da; border-radius: 4px; font-style: normal; font-size: 15px; font-weight: 700; }
 .mini-numbers i:nth-child(3) { background: #d5dfb9; }
 .mini-numbers i:last-child { background: #91aa70; color: #fffbee; }
+.art-snake { background-color: #dce8cf; background-image: linear-gradient(#b6cba344 1px, transparent 1px), linear-gradient(90deg,#b6cba344 1px,transparent 1px); background-size: 24px 24px; }
+.mini-snake { position: absolute; width: 168px; height: 72px; left: calc(50% - 84px); top: calc(50% - 36px); }
+.mini-snake i { position: absolute; width: 27px; height: 27px; border-radius: 9px; background: #65965c; }
+.mini-snake i:nth-child(1) { left: 0; top: 42px; border-radius: 15px 9px 9px 15px; }
+.mini-snake i:nth-child(2) { left: 24px; top: 42px; }
+.mini-snake i:nth-child(3) { left: 48px; top: 42px; }
+.mini-snake i:nth-child(4) { left: 48px; top: 18px; }
+.mini-snake i:nth-child(5) { left: 72px; top: 18px; }
+.mini-snake i:nth-child(6) { left: 96px; top: 18px; width: 32px; background: #83b673; border-radius: 9px 16px 16px 9px; }
+.mini-snake i:nth-child(6)::after { content: ''; position: absolute; width: 5px; height: 5px; border-radius: 50%; background: #284d3c; right: 7px; top: 6px; }
+.mini-snack { position: absolute; width: 18px; height: 20px; border-radius: 45%; background: #d98082; left: calc(50% + 66px); top: calc(50% - 18px); transform: rotate(-12deg); }
+.art-pong { background: #121e33; }
+.mini-court { position: absolute; width: 190px; height: 86px; left: calc(50% - 95px); top: calc(50% - 43px); border: 1px solid #4e637c; border-radius: 5px; }
+.mini-court::before { content: ''; position: absolute; left: 50%; height: 100%; border-left: 1px dashed #4e637c; }
+.mini-court i { position: absolute; width: 7px; height: 35px; border-radius: 4px; background: #65f5cf; left: 18px; top: 36px; }
+.mini-court i:nth-child(2) { left: auto; right: 18px; top: 14px; background: #ff91ba; }
+.mini-court i:nth-child(3) { width: 10px; height: 10px; border-radius: 50%; left: 118px; top: 29px; background: #edf3ff; box-shadow: -8px 3px 0 #edf3ff44; }
 .art-shapes { position: absolute; inset: 14px 40px 12px; display: flex; align-items: center; justify-content: center; gap: 7px; transform: rotate(calc(-8deg + var(--variation) * 5deg)); }
 .art-shapes i { display: block; width: 44px; height: 52px; border-radius: 8px; background: #b1c39a; font-style: normal; }
 .art-puzzle { background: #e3e7db; }
