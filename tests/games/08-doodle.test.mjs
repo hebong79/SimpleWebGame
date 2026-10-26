@@ -39,6 +39,46 @@ test('storage getItem throws independently',()=>{const r=createRecords(()=>({get
 test('storage setItem throws once, memory record/settings survive, no retry writes',()=>{let calls=0;const r=createRecords(()=>({getItem:()=>null,setItem(){calls++;throw Error('quota');}}));r.settle(result(1,15));r.settle(result(2,20));r.mute(false);assert.equal(r.snapshot().blocked,true);assert.equal(r.snapshot().record.totalScore,35);assert.equal(calls,1);});
 test('corrupt JSON and old/negative/unsafe/mismatched/zero-play records recover',()=>{const invalid=['{',JSON.stringify({...defaultRecord(),version:2}),JSON.stringify({...defaultRecord(),plays:-1}),JSON.stringify({...defaultRecord(),totalScore:Infinity}),JSON.stringify({...defaultRecord(),bestMetric:10}),JSON.stringify({...defaultRecord(),plays:1}),JSON.stringify({...defaultRecord(),totalMetric:Number.MAX_SAFE_INTEGER+1})];for(const raw of invalid){const store=memory(raw),r=createRecords(()=>store);assert.equal(r.snapshot().recovered,true);assert.deepEqual(r.snapshot().record,defaultRecord());assert.equal(store.calls.length,1);}});
 test('record statistic cross-field constraints and derived ownership/type repair',()=>{const valid=settleRecord(defaultRecord(),result(1,500,'fall',9)).record;assert.equal(validateRecord(valid).recovered,false);for(const change of [{bestScore:499},{totalScore:501},{totalMetric:4999},{totalMetric:6000},{losses:0},{plays:0}])assert.equal(validateRecord({...valid,...change}).recovered,true);const fixed=validateRecord({...valid,unlockedSets:['explorer'],equipped:{ears:'explorer-ears',body:'star-body',bag:42},muted:'no'});assert.equal(fixed.record.bestScore,500);assert.deepEqual(fixed.record.unlockedSets,['basic','star','carrot']);assert.deepEqual(fixed.record.equipped,{ears:'none',body:'star-body',bag:'none'});assert.equal(fixed.record.muted,true);});
+test('FIX08 exact history rejects impossible minimum and maximum, retains boundary histories',()=>{
+  const record=(bm,t,tm,p)=>({...defaultRecord(),bestMetric:bm,bestScore:Math.floor(bm/10),totalScore:t,totalMetric:tm,plays:p,losses:p});
+  for(const bad of [record(109,11,110,2),record(109,11,118,2),record(10,2,30,3)]){
+    const checked=validateRecord(bad);assert.equal(checked.recovered,true);assert.deepEqual(checked.record,defaultRecord());
+    const store=memory(JSON.stringify(bad)),loaded=createRecords(()=>store);assert.equal(loaded.snapshot().recovered,true);assert.deepEqual(loaded.snapshot().record,defaultRecord());assert.equal(store.calls.length,1);
+  }
+  for(const valid of [record(109,11,119,2),record(109,11,128,2),record(10,2,20,3),record(10,2,29,3),record(10,3,30,3),record(9,0,27,3),record(0,0,0,3)])assert.equal(validateRecord(valid).recovered,false,JSON.stringify(valid));
+});
+test('FIX08 exhaustive small histories match validator in both directions',t=>{
+  const possible=new Set();let sequences=0,candidates=0,accepted=0,rejected=0;
+  const key=(p,bm,score,metric)=>`${p}/${bm}/${score}/${metric}`;
+  function enumerate(p,bm,score,metric){possible.add(key(p,bm,score,metric));sequences++;if(p===3)return;for(let m=0;m<=29;m++)enumerate(p+1,Math.max(bm,m),score+Math.floor(m/10),metric+m);}
+  enumerate(0,0,0,0);
+  for(let p=0;p<=3;p++)for(let bm=0;bm<=29;bm++)for(let score=0;score<=p*Math.floor(bm/10)+1;score++)for(let metric=0;metric<=p*bm+1;metric++){
+    const record={...defaultRecord(),plays:p,losses:p,bestMetric:bm,bestScore:Math.floor(bm/10),totalMetric:metric,totalScore:score};
+    const expected=possible.has(key(p,bm,score,metric)),actual=!validateRecord(record).recovered;candidates++;if(actual)accepted++;else rejected++;
+    assert.equal(actual,expected,`p=${p} best=${bm} score=${score} metric=${metric}`);
+  }
+  assert.ok(accepted>0&&rejected>0);t.diagnostic(JSON.stringify({sequences,distinctHistories:possible.size,candidates,accepted,rejected}));
+});
+test('FIX08 MAX_SAFE plays and metric use constant-size exact feasibility',()=>{
+  const max=Number.MAX_SAFE_INTEGER,record=(bm,t,tm,p)=>{const b=Math.floor(bm/10);return {...defaultRecord(),bestMetric:bm,bestScore:b,totalScore:t,totalMetric:tm,plays:p,losses:p,unlockedSets:ownedSets(b,t)};};
+  for(const valid of [defaultRecord(),record(0,0,0,1),record(9,0,9,1),record(max,Math.floor(max/10),max,1),record(0,0,0,max),record(1,0,max,max),record(10,1,10,max),record(max,Math.floor(max/10),max,max)])assert.equal(validateRecord(valid).recovered,false);
+  for(const bad of [record(9,0,8,1),record(10,1,11,1),record(max,Math.floor(max/10)+1,max,max)])assert.equal(validateRecord(bad).recovered,true);
+});
+test('FIX08 generated completed histories always reload, including safe-integer boundaries',()=>{
+  let seed=0x8128;const random=()=>{seed=(Math.imul(seed,1664525)+1013904223)>>>0;return seed;};
+  for(let history=0;history<120;history++){
+    const store=memory(),records=createRecords(()=>store);
+    for(let round=1;round<=60;round++){
+      const metric=random()%1000000;records.settle({round,metric,score:Math.floor(metric/10),reason:random()%2?'fall':'quit'});
+      if(round%7===0)records.mute(false);
+      const current=records.snapshot().record,loaded=createRecords(()=>store);assert.equal(loaded.snapshot().recovered,false);assert.deepEqual(loaded.snapshot().record,current);
+    }
+  }
+  const max=Number.MAX_SAFE_INTEGER;
+  for(const metric of [max,max-1,max-9,max-10]){
+    const r=settleRecord(defaultRecord(),{metric,score:Math.floor(metric/10),reason:'fall'}).record;assert.equal(validateRecord(r).recovered,false);
+  }
+});
 test('settlement exactly once, loss/quit and totals accumulate only at results',()=>{const store=memory(),r=createRecords(()=>store);assert.equal(r.snapshot().record.plays,0);r.settle(result(1,99,'fall',9));assert.equal(r.settle(result(1,99,'fall',9)).duplicate,true);r.settle(result(2,100,'quit',1));const s=r.snapshot().record;assert.equal(s.plays,2);assert.equal(s.losses,1);assert.equal(s.quits,1);assert.equal(s.totalScore,199);assert.equal(s.totalMetric,2000);assert.equal(s.bestMetric,1001);assert.equal(s.bestScore,100);assert.equal(store.calls.filter(x=>x[0]==='set').length,2);assert.ok(store.calls.every(x=>x[1]===STORAGE_KEY));});
 test('exact unlock thresholds best 99/100/499/500 and total 1999+1',()=>{assert.deepEqual(ownedSets(99,1999),['basic']);assert.deepEqual(ownedSets(100,1999),['basic','star']);assert.deepEqual(ownedSets(499,1999),['basic','star']);assert.deepEqual(ownedSets(500,1999),['basic','star','carrot']);let record=defaultRecord();for(let i=1;i<=4;i++)record=settleRecord(record,result(i,i===4?499:500)).record;assert.equal(record.totalScore,1999);assert.equal(record.unlockedSets.includes('explorer'),false);record=settleRecord(record,result(5,1)).record;assert.equal(record.totalScore,2000);assert.equal(record.unlockedSets.includes('explorer'),true);});
 test('MAX_SAFE atomic overflow preserves ALL fields and session stops accumulating, settings allowed',()=>{const max=Number.MAX_SAFE_INTEGER;const base={...defaultRecord(),bestScore:Math.floor(max/10),totalScore:Math.floor(max/10),bestMetric:max,totalMetric:max,plays:1,losses:1};base.unlockedSets=ownedSets(base.bestScore,base.totalScore);assert.equal(validateRecord(base).recovered,false);const store=memory(JSON.stringify(base)),r=createRecords(()=>store);const out=r.settle(result(1,0,'quit',1));assert.equal(out.saturated,true);assert.deepEqual(r.snapshot().record,base);assert.equal(store.calls.filter(x=>x[0]==='set').length,0);assert.equal(r.settle(result(1,0,'quit',1)).duplicate,true);r.settle(result(2,0));assert.deepEqual(r.snapshot().record,base);r.mute(false);assert.equal(r.snapshot().record.totalMetric,max);assert.equal(r.snapshot().record.muted,false);assert.equal(store.calls.filter(x=>x[0]==='set').length,1);assert.equal(r.snapshot().saturated,true);});

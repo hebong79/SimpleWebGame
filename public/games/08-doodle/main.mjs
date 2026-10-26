@@ -6,7 +6,7 @@ const names={basic:'기본 토끼',star:'별빛',explorer:'탐험가',carrot:'�
 const poseNames={idle:'기본 자세',rise:'상승',fall:'하강',land:'착지',hit:'실패'};
 const stateNames={ready:'준비',playing:'도약 중',paused:'잠깐 쉬기',result:'도약 종료'};
 let last=performance.now(), activeDialog=null, returnFocus=null, confirmAction=null, resultInfo=null, resultAt=-Infinity, previewPose='idle';
-let audio=null, multi=false, gesture=null, liveAnnouncement='';
+let audio=null, multi=false, gesture=null, liveAnnouncement='', dialogRevision=0;
 const tones=new Set(), pointers=new Map(), held=new Set(), pressTimes=new WeakMap(), suppressedClicks=new WeakSet();
 function setText(id,value){const node=typeof id==='string'?$(id):id;const text=String(value);if(node.textContent!==text)node.textContent=text;}
 function attr(node,key,value){const text=String(value);if(node.getAttribute(key)!==text)node.setAttribute(key,text);}
@@ -54,9 +54,21 @@ function render(){
 }
 function resume(){if(activeDialog)closeDialog();releaseInput();if(engine.resume()){last=performance.now();$('game-area').focus({preventScroll:true});}render();}
 function start(button){if(activeDialog||multi)return;pump();const s=engine.snapshot();if(s.state==='paused'){resume();return;}if(s.state==='result'&&(pressTimes.get(button)??performance.now())<resultAt)return;if(s.state!=='ready'&&s.state!=='result')return;audioGesture();resultInfo=null;liveAnnouncement='';engine.start();last=performance.now();$('game-area').focus({preventScroll:true});render();}
-function closeDialog(){if(!activeDialog)return;const id=activeDialog;activeDialog=null;$(id).close();if(id==='wardrobe')wardrobe.cancel();releaseInput();last=performance.now();if(returnFocus?.isConnected)returnFocus.focus({preventScroll:true});render();}
-function openDialog(id){pump();engine.pause('menu');releaseInput();if(!activeDialog)returnFocus=document.activeElement;if(activeDialog){if(activeDialog==='wardrobe')wardrobe.cancel();$(activeDialog).close();}activeDialog=id;$(id).showModal();render();}
-function requestAction(action){pump();const s=engine.snapshot();if(['playing','paused'].includes(s.state)){confirmAction=action;setText('confirm-copy',`현재 ${s.score}점 · ${s.metric}px를 중도 종료 기록으로 한 번 저장한 뒤 ${action==='home'?'홈으로 돌아갑니다.':'준비 화면으로 돌아갑니다.'}`);openDialog('confirm');}else if(action==='home')location.assign('/');else{if(activeDialog)closeDialog();engine.ready();liveAnnouncement='';render();}}
+function externalFocus(node){return node instanceof HTMLElement&&node.isConnected&&node.tabIndex>=0&&!node.matches(':disabled,[aria-disabled="true"]')&&!node.closest('dialog,[hidden],[inert]')&&node.getClientRects().length>0&&getComputedStyle(node).visibility==='visible';}
+function restoreFocus(){const target=[returnFocus,$('menu-open'),$('game-area')].find(externalFocus);target?.focus({preventScroll:true});}
+function repairFocus(revision){if(revision===dialogRevision&&!activeDialog&&!externalFocus(document.activeElement))restoreFocus();}
+function closeDialog(){if(!activeDialog)return;const id=activeDialog,revision=++dialogRevision;activeDialog=null;$(id).close();if(id==='wardrobe')wardrobe.cancel();releaseInput();last=performance.now();render();restoreFocus();requestAnimationFrame(()=>repairFocus(revision));}
+function openDialog(id,trigger){
+  pump();engine.pause('menu');releaseInput();
+  // Pointer clicks need not focus buttons in WebKit. Keep the actual external
+  // opener through menu -> child transitions, never a soon-to-be-hidden button.
+  if(!activeDialog)returnFocus=externalFocus(trigger)?trigger:externalFocus(document.activeElement)?document.activeElement:null;
+  if(activeDialog){if(activeDialog==='wardrobe')wardrobe.cancel();$(activeDialog).close();}
+  activeDialog=id;dialogRevision++;
+  // Give native dialog restoration the same valid opener as our explicit path.
+  restoreFocus();$(id).showModal();render();
+}
+function requestAction(action,trigger){pump();const s=engine.snapshot();if(['playing','paused'].includes(s.state)){confirmAction=action;setText('confirm-copy',`현재 ${s.score}점 · ${s.metric}px를 중도 종료 기록으로 한 번 저장한 뒤 ${action==='home'?'홈으로 돌아갑니다.':'준비 화면으로 돌아갑니다.'}`);openDialog('confirm',trigger);}else if(action==='home')location.assign('/');else{if(activeDialog)closeDialog();engine.ready();liveAnnouncement='';render();}}
 function wardrobeRender(){
   const draft=wardrobe.snapshot(),record=records.snapshot().record,s=engine.snapshot(),pending=pendingUnlocks(s.score,record);
   const descriptions={basic:'항상 보유',star:`한 판 100점 · 완료 최고 ${record.bestScore}`,carrot:`한 판 500점 · 완료 최고 ${record.bestScore}`,explorer:`누적 2000점 · 완료 누적 ${record.totalScore}`};
@@ -66,19 +78,19 @@ function wardrobeRender(){
   setText('preview-label',`${poseNames[previewPose]} · 조합 미리보기`);drawBunny('preview',draft,previewPose);
   $('wardrobe-apply').disabled=!wardrobe.canApply();setText('wardrobe-notice',wardrobe.canApply()?'선택 적용을 누르면 부위 조합을 한 번 저장합니다. 차림은 물리와 점수를 바꾸지 않아요.':'잠긴 차림은 미리보기만 가능합니다. 진행 중인 해금은 이번 판 종료 후 확정됩니다.');
 }
-function openWardrobe(){openDialog('wardrobe');wardrobe.open();previewPose='idle';wardrobeRender();}
+function openWardrobe(trigger){openDialog('wardrobe',trigger);wardrobe.open();previewPose='idle';wardrobeRender();}
 function onClick(id,callback){$(id).addEventListener('click',event=>{if(multi||suppressedClicks.has(event.currentTarget)){event.preventDefault();return;}callback(event);});}
 for(const part of PARTS){for(const set of SETS){const button=document.createElement('button');button.type='button';button.dataset.item=set==='basic'?'none':`${set}-${part}`;button.addEventListener('click',()=>{wardrobe.previewPart(part,button.dataset.item);wardrobeRender();});$(`part-${part}`).append(button);}}
 for(const button of document.querySelectorAll('[data-set]'))button.addEventListener('click',()=>{wardrobe.previewSet(button.dataset.set);wardrobeRender();});
 for(const button of document.querySelectorAll('[data-pose]'))button.addEventListener('click',()=>{previewPose=button.dataset.pose;wardrobeRender();});
-for(const id of ['wardrobe-open','result-wardrobe','menu-wardrobe'])onClick(id,openWardrobe);
-for(const id of ['help','menu-help'])onClick(id,()=>openDialog('help-dialog'));
+for(const id of ['wardrobe-open','result-wardrobe','menu-wardrobe'])onClick(id,event=>openWardrobe(event.currentTarget));
+for(const id of ['help','menu-help'])onClick(id,event=>openDialog('help-dialog',event.currentTarget));
 onClick('wardrobe-apply',()=>{if(wardrobe.apply())closeDialog();});
 for(const id of ['wardrobe-cancel','close-help','menu-close','confirm-cancel'])onClick(id,closeDialog);
-onClick('menu-open',()=>openDialog('menu'));onClick('menu-resume',resume);
+onClick('menu-open',event=>openDialog('menu',event.currentTarget));onClick('menu-resume',resume);
 onClick('confirm-ok',()=>{const action=confirmAction;closeDialog();process(engine.quit(),performance.now());if(action==='home')location.assign('/');else{engine.ready();liveAnnouncement='이전 도약을 정산했어요. 새 판은 직접 시작해 주세요.';render();}});
-for(const id of ['home','result-home','menu-home'])onClick(id,event=>{event.preventDefault();requestAction('home');});
-for(const id of ['restart','menu-restart'])onClick(id,()=>requestAction('restart'));
+for(const id of ['home','result-home','menu-home'])onClick(id,event=>{event.preventDefault();requestAction('home',event.currentTarget);});
+for(const id of ['restart','menu-restart'])onClick(id,event=>requestAction('restart',event.currentTarget));
 onClick('primary',()=>start($('primary')));
 onClick('pause',()=>{if(engine.snapshot().state==='paused')resume();else pause();});
 onClick('mute',()=>{records.mute(!records.snapshot().record.muted);silence();audioGesture();render();});
@@ -109,6 +121,7 @@ document.addEventListener('keyup',event=>{held.delete(event.code);if(directions[
 $('game-area').addEventListener('focusout',event=>{if(!event.currentTarget.contains(event.relatedTarget))releaseInput();});
 for(const dialog of document.querySelectorAll('dialog')){
   dialog.addEventListener('cancel',event=>{event.preventDefault();closeDialog();});
+  dialog.addEventListener('close',()=>{if(activeDialog===dialog.id&&!dialog.open)closeDialog();else repairFocus(dialogRevision);});
   dialog.addEventListener('keydown',event=>{if(event.key!=='Tab'||event.ctrlKey||event.altKey||event.metaKey)return;const nodes=[...dialog.querySelectorAll('button:not(:disabled),a[href],[tabindex="0"]')].filter(node=>node.getClientRects().length&&!node.closest('[hidden]'));const first=nodes[0],lastNode=nodes.at(-1);if(!first){event.preventDefault();return;}if(event.shiftKey&&(document.activeElement===first||!nodes.includes(document.activeElement))){event.preventDefault();lastNode.focus();}else if(!event.shiftKey&&(document.activeElement===lastNode||!nodes.includes(document.activeElement))){event.preventDefault();first.focus();}});
 }
 window.addEventListener('blur',()=>{protect('blur');pointers.clear();multi=false;});

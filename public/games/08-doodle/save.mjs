@@ -15,7 +15,21 @@ export function validateRecord(input) {
   const empty=()=>({record:defaultRecord(),recovered:true});
   if(!input||typeof input!=='object'||Array.isArray(input)||input.version!==1||!FIELDS.every(k=>safe(input[k])))return empty();
   const {bestScore:b,totalScore:t,bestMetric:bm,totalMetric:tm,plays:p,losses:l,quits:q}=input;
-  if(BigInt(l)+BigInt(q)!==BigInt(p)||b!==Math.floor(bm/10)||b>t||bm>tm||BigInt(tm)>BigInt(bm)*BigInt(p)||BigInt(t)>BigInt(b)*BigInt(p)||BigInt(tm)<10n*BigInt(t)||BigInt(tm)>10n*BigInt(t)+9n*BigInt(p)||(!p&&FIELDS.some(k=>input[k]!==0)))return empty();
+  const B=BigInt(bm),best=BigInt(b),P=BigInt(p),total=BigInt(t),metric=BigInt(tm);
+  if(BigInt(l)+BigInt(q)!==P||best!==B/10n)return empty();
+  if(P===0n){if(FIELDS.some(k=>input[k]!==0))return empty();}
+  else {
+    // Reserve one actual best round. Every remaining quotient is in [0,best].
+    const n=P-1n,scores=total-best,remaining=metric-B;
+    if(scores<0n||scores>n*best)return empty();
+    // At least k rounds must have quotient best; their remainder is <= B%10,
+    // not 9. Distributing scores below best first attains this minimum k.
+    const excess=scores-n*(best-1n),k=excess>0n?excess:0n;
+    const minimum=10n*scores,maximum=minimum+9n*n-(9n-B%10n)*k;
+    // For that score allocation the independent remainder intervals fill every
+    // integer between the two bounds (also covers best=0 and single rounds).
+    if(remaining<minimum||remaining>maximum)return empty();
+  }
   const record=defaultRecord();for(const k of FIELDS)record[k]=input[k];record.unlockedSets=ownedSets(b,t);
   let recovered=!Array.isArray(input.unlockedSets)||input.unlockedSets.length!==record.unlockedSets.length||!record.unlockedSets.every(set=>input.unlockedSets.includes(set));
   for(const part of PARTS) {
