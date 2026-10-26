@@ -18,3 +18,11 @@
 - When work is complete, publish a concise Korean work summary to http://localhost:18787/ as requested by the user on 2026-10-23. Include changes, actual verification, limitations and next steps. Read back the created post and record its ID/link in docs/HANDOFF.md. Avoid duplicate posts; do not include secrets. This authorizes completion summaries, not game deployment.
 - Shared team updates are NOT silently applied: compare and explicitly update the local TEAM snapshot.
 - Engine: Node.js 24.16.0 + TypeScript, HTML DOM/CSS; target: PC browser + mobile touch browser. Unknown values must be resolved before engine-specific implementation.
+
+## 운영 반영 완료 기준 (G020)
+
+- 일반적인 게임 제작/추가의 최종 목표는 기존 실사용 `http://192.168.0.195:3116/`에서 새 게임이 즉시 선택·실행되는 상태입니다. 설계/개발 지시만 요청한 작업은 그 단계 완료와 운영 미반영을 구분합니다.
+- 구현자 ACK/자체 단위 PASS에서 전체 작업을 닫지 않습니다. PM은 배정 때 구현 인수→홈 등록→새 빌드/독립QA→승인된 Git/운영 반영→실제3116 실행 확인을 후속 일감과 의존성으로 함께 등록합니다.
+- CLI exit0/PM2 online/후보 빌드 검사는 운영 반영 증거가 아닙니다. 실제 PM2 script/PID/LISTEN·HTTP 바이트·사용자 주소의 카드 클릭/시작/입력/정지/홈 복귀를 확인한 뒤에만 운영 완료로 보고합니다.
+- 실제 시계의80ms trusted 누름과 모바일 WebKit/CSP 검사를 초기 smoke에 넣습니다. 가상시계/순간 클릭만으로 실제 입력을 대신하지 않습니다.
+- 구체 절차는 `docs/G020_RELEASE_COMPLETION_CHECKLIST.md`를 따릅니다. 기존 운영 변경 승인·단일 앱 범위·과거 증거/기록 보존 규칙은 그대로 유지하며, 상주 감시/자동 배포가 설치됐다고 주장하지 않습니다.
