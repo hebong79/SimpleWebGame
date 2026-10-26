@@ -2,34 +2,94 @@
   "version": "2.0.0",
   "tasks": [
     {
+      "label": "SimpleGames: 6개 게임 서버 시작 (3102)",
+      "type": "process",
+      "command": "node",
+      "args": [
+        "${workspaceFolder}/scripts/serve_local.mjs"
+      ],
+      "options": {
+        "cwd": "${workspaceFolder}"
+      },
+      "isBackground": true,
+      "problemMatcher": [],
+      "presentation": {
+        "reveal": "always",
+        "focus": false,
+        "panel": "dedicated",
+        "clear": false
+      },
+      "runOptions": {
+        "instanceLimit": 1
+      }
+    },
+    {
       "label": "cody-02: 상태 보기",
       "type": "process",
       "command": "node",
-      "args": ["${workspaceFolder}/workers/cody-02/worker.mjs", "status"],
-      "options": { "cwd": "${workspaceFolder}" },
+      "args": [
+        "${workspaceFolder}/workers/cody-02/worker.mjs",
+        "status"
+      ],
+      "options": {
+        "cwd": "${workspaceFolder}"
+      },
       "problemMatcher": [],
-      "presentation": { "reveal": "always", "focus": false, "panel": "dedicated", "clear": true },
-      "runOptions": { "instanceLimit": 1 }
+      "presentation": {
+        "reveal": "always",
+        "focus": false,
+        "panel": "dedicated",
+        "clear": true
+      },
+      "runOptions": {
+        "instanceLimit": 1
+      }
     },
     {
       "label": "cody-02: 연결 시험 (모델 사용량 발생)",
       "type": "process",
       "command": "node",
-      "args": ["${workspaceFolder}/workers/cody-02/worker.mjs", "smoke"],
-      "options": { "cwd": "${workspaceFolder}" },
+      "args": [
+        "${workspaceFolder}/workers/cody-02/worker.mjs",
+        "smoke"
+      ],
+      "options": {
+        "cwd": "${workspaceFolder}"
+      },
       "problemMatcher": [],
-      "presentation": { "reveal": "always", "focus": false, "panel": "dedicated", "clear": true },
-      "runOptions": { "instanceLimit": 1 }
+      "presentation": {
+        "reveal": "always",
+        "focus": false,
+        "panel": "dedicated",
+        "clear": true
+      },
+      "runOptions": {
+        "instanceLimit": 1
+      }
     },
     {
       "label": "cody-02: PM 작업 실행 (읽기 전용)",
       "type": "process",
       "command": "node",
-      "args": ["${workspaceFolder}/workers/cody-02/worker.mjs", "run", "--task", "${input:cody02TaskFile}"],
-      "options": { "cwd": "${workspaceFolder}" },
+      "args": [
+        "${workspaceFolder}/workers/cody-02/worker.mjs",
+        "run",
+        "--task",
+        "${input:cody02TaskFile}"
+      ],
+      "options": {
+        "cwd": "${workspaceFolder}"
+      },
       "problemMatcher": [],
-      "presentation": { "reveal": "always", "focus": false, "panel": "dedicated", "clear": true },
-      "runOptions": { "instanceLimit": 1 }
+      "presentation": {
+        "reveal": "always",
+        "focus": false,
+        "panel": "dedicated",
+        "clear": true
+      },
+      "runOptions": {
+        "instanceLimit": 1
+      }
     }
   ],
   "inputs": [

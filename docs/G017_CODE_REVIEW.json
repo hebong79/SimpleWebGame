@@ -1,0 +1,50 @@
+{
+  "passed": false,
+  "security_concerns": [],
+  "logic_errors": [
+    {
+      "id": "G017-REVIEW-001",
+      "severity": "medium",
+      "file": "README.md",
+      "lines": "42",
+      "finding": "3116을 과거 검증 기록/별도 실행 주소로 묶고 현재 주접속 주소는 3102 하나라고 설명하지만, docs/HANDOFF.md 3~9행에는 사용자 요청으로 유지 중인 PM2 LAN 서버 0.0.0.0:3116과 접속 주소가 최신 실행으로 명시되어 있습니다. 이번 작업은 해당 서버를 교체하지 않으므로 현재 운영 상태와 README 설명이 일치하지 않습니다.",
+      "requested_change": "3102는 이번 로컬 실행기의 기본 주소라고 한정하고, 별도로 유지되는 PM2 3116 LAN 서버는 변경하지 않았음을 구분해 주세요. ecosystem.config.cjs 및 HANDOFF는 수정하지 마세요."
+    }
+  ],
+  "suggestions": [
+    {
+      "id": "G017-REVIEW-S01",
+      "file": "scripts/build.mjs:18-23; scripts/serve_local.mjs:7,26-37",
+      "finding": "새 빌드 실패 후 기존 서버를 가져오는 fallback은 없습니다. 다만 고정 출력 디렉터리에 컴파일/복사하며 이전 출력의 정리나 새 디렉터리로의 교체는 명시되어 있지 않습니다.",
+      "suggestion": "후속 작업에서는 삭제·이름 변경된 소스/공개 파일이 재빌드 후 남지 않는 사례를 별도 검증해 주세요. 필요하면 실행기 소유 출력만 대상으로 한 새 디렉터리 빌드/성공 후 전환 방식을 검토하시되 기존 검증 산출물은 삭제하지 마세요."
+    },
+    {
+      "id": "G017-REVIEW-S02",
+      "file": "tests/launch-local.test.mjs:75-97; start-game.cmd:3",
+      "finding": "종료 검사는 IPC 메시지로 모의 서버의 SIGINT/SIGTERM 이벤트를 발생시키는 fixture이며 실제 Windows 콘솔 신호/실제 소켓 종료 검사는 아닙니다. start-game.cmd는 기존과 같이 cd 실패 검사를 하지 않지만 start-local.bat에는 해당 검사가 있습니다.",
+      "suggestion": "모의 종료 검사를 실제 콘솔 종료 검증으로 확대 해석하지 마시고, 후속 보완 시 start-game.cmd에도 cd 실패 시 즉시 비정상 종료하는 방어를 맞춰 주세요."
+    }
+  ],
+  "summary": "실행기 보안·빌드 실패 차단·종료코드 전달·포트 충돌 처리 및 기존 VS Code 작업 보존은 정적 검토상 적절합니다. 다만 유지 중인 PM2 3116 LAN 서버와 README의 현재 주소 설명이 충돌하므로 문서 일치 항목은 불통과입니다. 구현 원본은 수정하지 않았습니다.",
+  "scope": "G017-INDEPENDENT-REVIEW 읽기 전용 정적 검토입니다. 지정 파일과 AGENTS/TEAM 및 프로젝트 문서의 관련 부분을 읽었습니다. 요청에 적힌 artifacts/g17-pm/before는 존재하지 않아 실제 발견한 artifacts/g017-pm/before의 package.json, README.md, .vscode/tasks.json, start-game.cmd와 비교했습니다. Python으로 파일 SHA256과 JSON 구조를 확인했으며 기존 VS Code tasks 3개와 inputs의 완전 보존을 확인했습니다. 하드코딩 비밀·새 쉘인젝션 경로를 찾지 못했습니다. spawnSync는 Node 실행파일/고정 스크립트 인수 및 shell:false를 사용하고 포트는 숫자 범위만 허용합니다. 실행기는 HOST/PORT 환경변수를 읽지 않고 127.0.0.1에만 bind하며, 서버 모듈의 직접 실행용 parseOptions/HOST 처리는 import 가드로 실행되지 않습니다. 공개 루트는 artifacts/local-server-build/public이며 기존 서버의 경로/실경로 경계 검사를 재사용합니다. SIGINT/SIGTERM 처리에서는 이 서버의 연결만 닫고, 포트 충돌 시 다른 프로세스 종료나 임의 포트 fallback 없이 exitCode=1을 설정합니다. 빌드 실패 시 import 전에 중단하고 양수 종료코드를 보존합니다. 두 Windows 배치는 Node 종료코드를 저장한 뒤 exit /b로 반환합니다. README의 npm/Windows/VS Code 실행 명령은 실제 설정과 일치하지만 PM2 3116의 현재 상태 설명은 별도 지적했습니다. builder FINAL_RESULT.json은 기존 자기검증 보고로만 읽었으며 29개 테스트/18개 HTTP 검사를 독립 재실행한 것으로 주장하지 않습니다. 재위임·설치·네트워크·빌드·테스트·서버 실행·프로세스 종료·게임/소스 수정·Git 작업은 하지 않았습니다. ecosystem.config.cjs, PM2 3116 LAN 서버 및 docs/HANDOFF.md는 변경하지 않았습니다. 브라우저 수용·게임 전체 수용·게시판 완료 판정은 범위 밖입니다. 유일한 쓰기는 이 검토 보고서입니다.",
+  "files_sha256": {
+    "AGENTS.md": "38b42575e37dd91563afbaa9ec9c85472b604a230a40d0d3caf74b717f1c019d",
+    ".game-team/TEAM.md": "0a3c4739364fc3de89b69f3c7875d237fdcd10711e59e9a1fa229bc64cc42af5",
+    ".game-team/project.json": "248d7e13c2c90682524f915514ddbacb53177faa3000bb1aab27ce10cfb07abb",
+    "scripts/serve_local.mjs": "de5c523115b7abbec4b63bd55115c386a700ece512340318c6718d1259478f20",
+    "scripts/build.mjs": "5a8f45a58183be08cdbab9e66458017ef59d097001290352e001173c33a8b3d3",
+    "src/server/index.ts": "07981d63620ea7cc3633766fc657996f47fa0e513506d31a8dc3f09bede5de4c",
+    "package.json": "6c5e97fc0e9735395d0e59dec47e0a62d517d76bb35f41c7a83d39892c66e8b1",
+    "start-local.bat": "f8d589ffcab51ef158e82c9a58561e9b770789a68545cec9ec436ac03dd2a26d",
+    "start-game.cmd": "d842603e982191fa4b3cbb6d695b5b5849882deb8872bd6ac72e545a84aea2dc",
+    "README.md": "d47185b750513bf02f4e3a3f0cb932170cbcdf39417f4d7f8adf02ca7676d8e0",
+    ".vscode/tasks.json": "094a71c01bc9894507bc17582201792c8a5730734cb146eacfb601824350ecbe",
+    "tests/launch-local.test.mjs": "f5b1bd924c46fbf57608dac90fa382ed49139c4e574edc327cf34b396ed5ffdd",
+    "artifacts/g017-builder/FINAL_RESULT.json": "6225388023f094b9dee8de8ecc34b1f64fc0c0e2a843100be0de94fad0b84c2a",
+    "docs/HANDOFF.md": "565476f1868f3463ebfb520f29cc71961ddc7b0054d003533f185a56d2608afb",
+    "artifacts/g017-pm/before/package.json": "f2e15651c6720b9649170c47eafd9d3c3007c63e017107472b5b380b0aff10e3",
+    "artifacts/g017-pm/before/README.md": "2d27443a1af397740948f4d8e02975e8ad131439f209cd188e3f60d10aa03961",
+    "artifacts/g017-pm/before/.vscode/tasks.json": "59b9328a8196f7f646f17a86188a88536bd03465cbc2ec725b80e617c50ef3d9",
+    "artifacts/g017-pm/before/start-game.cmd": "bb5bea6ac46728033b7438533712d3812a7f86bbc841b4e186eb606725aec069"
+  }
+}

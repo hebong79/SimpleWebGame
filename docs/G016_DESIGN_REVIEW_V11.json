@@ -1,0 +1,169 @@
+{
+  "task_id": "G016-DESIGN-QA-V11",
+  "status": "PASSED_DESIGN_ONLY",
+  "reviewed_at": "2026-10-25T02:57:03.523023+09:00",
+  "reviewer_role": "대현자 PM과 분리된 독립 설계 재검토입니다.",
+  "passed": true,
+  "summary": "G016-DQ-01의 누적 기록 정의와 확인한 중도 종료 집계 순서가 v1.1에서 해결되었습니다. 8개 독립 사례의 통계·점수를 재계산하여 모두 일치함을 확인했습니다. 원안 및 공통 사양과 차단할 만한 모순은 발견하지 못했습니다. 이는 설계 게이트 통과이며 게임 구현·빌드·플레이 통과가 아닙니다.",
+  "scope": {
+    "method": "지정 로컬 문서와 시안 HTML/SVG 전체의 읽기 전용 정적 교차 검토, Python 산술 및 SHA256 검증입니다.",
+    "allowed_write_path": "E:/Work2/Project/SimpleGames/01-2048/docs/G016_DESIGN_REVIEW_V11.json",
+    "original_review_preserved": "docs/G016_DESIGN_REVIEW.json의 passed:false 및 원문을 그대로 보존합니다. 이 보고서는 별도 버전 판단입니다.",
+    "precedence": "docs/G016_IMPLEMENTATION_CONTRACT.md:16-18에서 v1.1의 5.1을 초기 v1.0 해석보다 우선 적용하도록 명시했습니다. docs/G016_DESIGN_ADDENDUM.md의 5.1 본문과 설계서의 5.1 본문이 동일함을 문자열 비교로 확인했습니다."
+  },
+  "resolved_findings": [
+    {
+      "id": "G016-DQ-01",
+      "status": "resolved_in_design",
+      "title": "누적 기록 및 자발 종료 집계의 기대값 누락이 해결되었습니다.",
+      "resolution": [
+        "plays는 시작 횟수가 아니라 확정된 결과 수입니다. 시작 전 ready, 확인 취소, pause/blur, 결과 재표시/reload는 가산하지 않으며 시작한 판의 승리·목숨 소진·확인한 중도 종료는 각각 한 번만 집계합니다.",
+        "bestStage는 통과 횟수가 아닌 확정 결과에서 도달한 최고 단계이며, stage1 중단은1, stage2 진입 직후 종료는2로 정의되었습니다.",
+        "totalBricks는 보너스 포함 score에서 역산하지 않고 실제 제거 수를 결과 때 한 번 누적합니다. stage2/3 진입 즉시 종료는32/64개, 승리는96개로 확정되었습니다.",
+        "진행/정지 중 새 임무·홈 확인은 quit 확정 → 통계 한 번 반영 및 저장 시도 → 새 ready 또는 홈 이동 순서입니다. 취소는 기존 판을 paused로 보존하며 통계·보너스를 추가하지 않습니다.",
+        "wins는 stage3 완료만, bestScore는 확정 결과의 최댓값만 반영하며, 개인 최고 표시는 엄격한 증가에서만 허용합니다.",
+        "B18이 설계5.1의 8개 사례와 중도 종료 저장 후 초기화를 명시적으로 수용 기준에 연결하고 구현 계약이 반영·시험을 요구합니다."
+      ],
+      "evidence": [
+        {"file": "E:/Work2/Project/SimpleGames/01-2048/docs/G016_DESIGN_REVIEW.json", "lines": "18-43", "basis": "기존 유일한 차단 결함과 재검토 요구사항입니다."},
+        {"file": "E:/Work2/Project/SimpleGames/01-2048/docs/G016_GAME_DESIGN.md", "lines": "48-56,61-74", "basis": "필드 의미·갱신 조건·quit 집계 순서·8개 독립 사례·중복 방지가 명시되어 있습니다."},
+        {"file": "E:/Work2/Project/SimpleGames/01-2048/docs/G016_DESIGN_ADDENDUM.md", "lines": "3-29", "basis": "설계5.1과 동일한 보완·예상값입니다."},
+        {"file": "E:/Work2/Project/SimpleGames/01-2048/docs/G016_ACCEPTANCE.md", "lines": "24", "basis": "B18이 8개 독립 사례의 기대 통계와 저장 후 초기화를 직접 참조합니다."},
+        {"file": "E:/Work2/Project/SimpleGames/01-2048/docs/G016_IMPLEMENTATION_CONTRACT.md", "lines": "16-18,22-24", "basis": "v1.1 우선 적용과 구현·시험·API 문서화의 책임 경계를 명시합니다."}
+      ]
+    },
+    {
+      "id": "G016-DS-01",
+      "status": "clarified_in_design",
+      "title": "정지 상태의 경기 입력 무효와 상태 전이 버튼을 구분했습니다.",
+      "evidence": [
+        {"file": "E:/Work2/Project/SimpleGames/01-2048/docs/G016_ACCEPTANCE.md", "lines": "17", "basis": "B11의 입력 무효라는 포괄 문구입니다."},
+        {"file": "E:/Work2/Project/SimpleGames/01-2048/docs/G016_GAME_DESIGN.md", "lines": "20,26,30-31,58", "basis": "시간·이동·발사는 정지하고 임무 시작·계속하기·재도전은 허용한다고 해석 범위를 확정하여 앞선 상태 전이 정의와의 모순을 해소했습니다."}
+      ]
+    },
+    {
+      "id": "G016-DS-02",
+      "status": "clarified_in_design",
+      "title": "정상 저장값 부재와 손상 내용·실제 Storage 예외를 구분했습니다.",
+      "evidence": [
+        {"file": "E:/Work2/Project/SimpleGames/01-2048/docs/G016_GAME_DESIGN.md", "lines": "44-45,57", "basis": "getItem의 실제 null은 정상 기본값·무경고, 문자열 null/손상 JSON/구버전은 복구 대상, getter/getItem/setItem 예외는 지속 경고·메모리 기록 유지로 구분합니다. 설정·스킨 변경 저장과 다른 키 접근 금지도 유지합니다."},
+        {"file": "E:/Work2/Project/SimpleGames/01-2048/docs/G016_IMPLEMENTATION_CONTRACT.md", "lines": "18", "basis": "정상 첫 방문 null을 저장 불가로 취급하지 않도록 구현 계약에 연결했습니다."}
+      ]
+    },
+    {
+      "id": "G016-DS-03",
+      "status": "clarified_in_acceptance_not_runtime_verified",
+      "title": "모바일 안전 여백과 짧은 화면의 접근성 수용 조건을 보강했습니다.",
+      "evidence": [
+        {"file": "E:/Work2/Project/SimpleGames/01-2048/docs/G016_GAME_DESIGN.md", "lines": "59", "basis": "320px 및 가로667×375에서 결과·확인창 스크롤 접근, 모든 실제 터치 버튼의 가로·세로44CSSpx 이상을 명시합니다."},
+        {"file": "E:/Work2/Project/SimpleGames/01-2048/docs/G016_ACCEPTANCE.md", "lines": "28", "basis": "B22가 가로세로44px·safe-area·짧은 가로 화면 모달 접근을 반영했습니다."},
+        {"file": "E:/Work2/Project/SimpleGames/01-2048/docs/g016-breakout-design/index.html", "lines": "1-2", "basis": "viewport-fit=cover와 body의 네 방향 env(safe-area-inset-*)가 정적으로 존재합니다. 실제 레이아웃 통과를 의미하지는 않습니다."}
+      ]
+    }
+  ],
+  "blocking_findings": [],
+  "confirmed_matches": [
+    {
+      "topic": "원안의 고정 규칙·점수·범위",
+      "evidence": [
+        {"file": "D:/Work/Game/Game-001/simple-games-20/games/04_breakout.md", "lines": "47-58,62-76,80-88"},
+        {"file": "E:/Work2/Project/SimpleGames/01-2048/docs/G016_GAME_DESIGN.md", "lines": "9-22,35-45"},
+        {"file": "E:/Work2/Project/SimpleGames/01-2048/docs/G016_ACCEPTANCE.md", "lines": "8-29"}
+      ],
+      "result": "720×960、패들120、공r9、목숨3、단계별32개·내구도1、3단계、300/350/400논리px/s、벽돌10점과 통과시 남은목숨×50이 일치합니다. 수동 재발사·통과 우선·중복 금지·관통 방지·장비3종·아이템/보스 제외도 유지합니다."
+    },
+    {
+      "topic": "입력 및 단위의 경계",
+      "evidence": [
+        {"file": "D:/Work/Game/Game-001/simple-games-20/공통_제작사양과_코스튬.md", "lines": "13-19"},
+        {"file": "E:/Work2/Project/SimpleGames/01-2048/docs/G016_GAME_DESIGN.md", "lines": "12,20,25-31,58-59"}
+      ],
+      "result": "물리는 논리px 및 초, CSS 입력 이동은 CSSpx, 탭 시간은ms로 구분됩니다. 하단35% 시작·primary pointer·8CSSpx 초과 드래그·350ms 이내 탭·CSS→논리 좌표 환산·초점 한정 키보드·추가 손가락/취소/blur 입력 해제·명시적 재개가 구현 가능한 수용 계약으로 제시되어 있습니다."
+    },
+    {
+      "topic": "저장 경계와 선행 정의의 정합성",
+      "evidence": [
+        {"file": "D:/Work/Game/Game-001/simple-games-20/공통_제작사양과_코스튬.md", "lines": "23-25"},
+        {"file": "E:/Work2/Project/SimpleGames/01-2048/docs/G016_GAME_DESIGN.md", "lines": "31-32,44-59,74"},
+        {"file": "E:/Work2/Project/SimpleGames/01-2048/docs/G016_IMPLEMENTATION_CONTRACT.md", "lines": "16-18"}
+      ],
+      "result": "v1.1은 새 규칙을 원안과 충돌시켜 추가한 것이 아니라 기존 미정인 누적 기록·quit 의미를 확정했습니다. 결과1회·새판은 현재판만 초기화·기록/설정 보존과 일치합니다. ready/blur/숨김은 확정 결과가 아니며 진행 중 판의 종료 후 복원은 첫 범위 밖입니다. 저장은 별도 version1 키, 안전정수·범위·theme/boolean 검사로 제한됩니다."
+    },
+    {
+      "topic": "시안과 실제 구현의 경계",
+      "evidence": [
+        {"file": "E:/Work2/Project/SimpleGames/01-2048/docs/G016_GAME_DESIGN.md", "lines": "17,35,59"},
+        {"file": "E:/Work2/Project/SimpleGames/01-2048/docs/G016_IMPLEMENTATION_CONTRACT.md", "lines": "7,22-24"},
+        {"file": "E:/Work2/Project/SimpleGames/01-2048/docs/g016-breakout-design/index.html", "lines": "2-4"},
+        {"file": "E:/Work2/Project/SimpleGames/01-2048/docs/g016-breakout-design/cosmic-kit.svg", "lines": "1"},
+        {"file": "E:/Work2/Project/SimpleGames/01-2048/docs/g016-breakout-design/REVIEW.md", "lines": "5-6,15"}
+      ],
+      "result": "시안의 샘플240/1260과 강제 상태 전환은 출하 대상이 아닙니다. 벡터 키트의 패들y820과 실제 물리y884의 차이는5.1이 실제 물리값 우선으로 명시했습니다. 디자인 toolbar의32px 버튼은 미출하 시안 제어이므로 실제 버튼44CSSpx 계약 위반으로 판정하지 않습니다. 물리 없는 시안은 설계 자료로만 취급했습니다."
+    }
+  ],
+  "suggestions": [
+    {
+      "id": "G016-DS-04",
+      "classification": "기존 비차단 제안이 남아 있습니다. 설계 불일치나 구현 결함을 확인한 것은 아닙니다.",
+      "title": "구현 문서에서 남은 엔진 경계 정책을 확정해 주세요.",
+      "evidence": [
+        {"file": "E:/Work2/Project/SimpleGames/01-2048/docs/G016_GAME_DESIGN.md", "lines": "12-13,19-21"},
+        {"file": "E:/Work2/Project/SimpleGames/01-2048/docs/G016_IMPLEMENTATION_CONTRACT.md", "lines": "22-24"}
+      ],
+      "suggestion": "유효하지 않은 dt의 no-op/예외 처리, 바닥 이탈의 정확한 비교 경계, 최초 launch 방향과 최소 수직 성분, 동시 접촉 반사 정책은 여전히 구현 선택입니다. 구현 담당자의 API 문서와 경계 시험에서 일치 여부를 검증해 주세요. 독립 QA가 새 수치를 대신 정하지는 않습니다."
+    },
+    {
+      "id": "G016-V11-S01",
+      "classification": "8개 독립 사례를 대체하지 않는 비차단 시험 보강 제안입니다.",
+      "title": "기존 누적값과 저장 실패·안전정수 상한도 후속 구현 QA에서 검증해 주세요.",
+      "evidence": [
+        {"file": "E:/Work2/Project/SimpleGames/01-2048/docs/G016_GAME_DESIGN.md", "lines": "44-45,50-57,61-74"},
+        {"file": "E:/Work2/Project/SimpleGames/01-2048/docs/G016_ACCEPTANCE.md", "lines": "24-25"}
+      ],
+      "suggestion": "표는 빈 저장에서 시작하는 사례입니다. 기존 bestStage3/bestScore1410 뒤 stage1 quit, 여러 확정 결과의 totalBricks 누적, 동점의 새 기록 미표시, 상한 근처 누적, setItem 실패 후 새판/홈 이동 전 메모리 집계1회 보존도 시험해 주세요. 서로 다른 탭의 동시 갱신 정책은 현재 명시되어 있지 않으므로 별도 동시성 보장을 통과로 보고하지 마세요."
+    }
+  ],
+  "verification": {
+    "original_hash_matches_design": true,
+    "addendum_body_equals_design_section_5_1": true,
+    "independent_cases_checked": 8,
+    "independent_cases_matched": 8,
+    "case_column_order": ["plays", "wins", "totalBricks", "bestStage", "bestScore"],
+    "case_results": [
+      {"file_line": 65, "case": "ready 표시만 하고 홈", "actual": [0,0,0,0,0], "recalculated": [0,0,0,0,0], "matched": true},
+      {"file_line": 66, "case": "시작 후 발사 전 중도 종료 확인", "actual": [1,0,0,1,0], "recalculated": [1,0,0,1,0], "matched": true},
+      {"file_line": 67, "case": "stage1 5벽돌 제거 후 새임무/홈 확인", "actual": [1,0,5,1,50], "recalculated": [1,0,5,1,50], "matched": true},
+      {"file_line": 68, "case": "5벽돌 제거 후 중도 종료 확인창 취소", "actual": [0,0,0,0,0], "recalculated": [0,0,0,0,0], "matched": true},
+      {"file_line": 69, "case": "3목숨 stage2 진입 즉시 종료", "actual": [1,0,32,2,470], "recalculated": [1,0,32,2,470], "matched": true},
+      {"file_line": 70, "case": "3목숨 stage3 진입 즉시 종료", "actual": [1,0,64,3,940], "recalculated": [1,0,64,3,940], "matched": true},
+      {"file_line": 71, "case": "3목숨 유지 3stage 완료", "actual": [1,1,96,3,1410], "recalculated": [1,1,96,3,1410], "matched": true},
+      {"file_line": 72, "case": "stage1 5벽돌 제거 후 목숨 소진", "actual": [1,0,5,1,50], "recalculated": [1,0,5,1,50], "matched": true}
+    ],
+    "arithmetic": {"bricks_per_stage": 32, "total_bricks_per_win": 96, "three_lives_stage_score": 470, "max_score": 1410, "rightmost_brick_edge": 672, "horizontal_margins": [48,48]},
+    "game_tests_executed": [],
+    "integrity_method": "최초 SHA256 스냅샷을 inspected_files에 기록했습니다. 저장 후 JSON 파싱과 필수 필드·사례 수를 검사하고 각 검토 파일의 SHA256을 재계산하여 이 목록과 비교합니다."
+  },
+  "inspected_files": [
+    {"path": "D:/Work/Game/Game-001/simple-games-20/games/04_breakout.md", "lines": "1-92", "sha256": "a9e6eb26606d5f92fc113d4ddcc81da1730541290849a6ac531c5b4c029239c2"},
+    {"path": "D:/Work/Game/Game-001/simple-games-20/공통_제작사양과_코스튬.md", "lines": "1-72", "sha256": "2d38b6ff110ffcbc0a81c748e3c1fdf4f001ce0d558ca32144fb010607fc7965"},
+    {"path": "E:/Work2/Project/SimpleGames/01-2048/docs/G016_GAME_DESIGN.md", "lines": "1-80", "sha256": "68f387f707ba5375272957b64bb21a4becbf940d2a56a18b5304c048497f0b8c"},
+    {"path": "E:/Work2/Project/SimpleGames/01-2048/docs/G016_ACCEPTANCE.md", "lines": "1-34", "sha256": "211e3415477d8c0d482c16176a4695e0fea4aa4f33329304de8d86c7372a23bc"},
+    {"path": "E:/Work2/Project/SimpleGames/01-2048/docs/G016_IMPLEMENTATION_CONTRACT.md", "lines": "1-27", "sha256": "de51c5df5cb89bdcd94481289185db8a6d4946f2f7b1e47e0227da1827014210"},
+    {"path": "E:/Work2/Project/SimpleGames/01-2048/docs/G016_DESIGN_ADDENDUM.md", "lines": "1-29", "sha256": "9b950fea4d2a16cff3ac318b09ee7ad3b5b6f313b4074847419a5c78ea40450b"},
+    {"path": "E:/Work2/Project/SimpleGames/01-2048/docs/G016_DESIGN_REVIEW.json", "lines": "1-136", "sha256": "0a1f8eabf60ac300b65a86a43b4d006737d75c0f0d05deea042374737a188bc5"},
+    {"path": "E:/Work2/Project/SimpleGames/01-2048/docs/g016-breakout-design/index.html", "lines": "1-5", "sha256": "8c06eed36ab55913e5dbd377b0419f6a6ea0adf384670c375df536421cd2c1f1", "method": "긴 행을1800자 단위로 나누어 전체 텍스트를 확인했습니다. 렌더링하지 않았습니다."},
+    {"path": "E:/Work2/Project/SimpleGames/01-2048/docs/g016-breakout-design/cosmic-kit.svg", "lines": "1", "sha256": "a6a5e5790749069180b14c336fc36e91a78cc870709ed13c2460994cc5a27cf1", "method": "긴 행 전체를 분할하여 확인했습니다."},
+    {"path": "E:/Work2/Project/SimpleGames/01-2048/docs/g016-breakout-design/REVIEW.md", "lines": "1-15", "sha256": "0031a9c59b90151d9695c3a0e0e23937c21838cd37fa530ec90d3c988ad688a8"},
+    {"path": "E:/Work2/Project/SimpleGames/01-2048/AGENTS.md", "lines": "1-20", "sha256": "38b42575e37dd91563afbaa9ec9c85472b604a230a40d0d3caf74b717f1c019d", "scope": "작업 경계 참고입니다. 이번 단일 보고서 쓰기 허용과 네트워크 금지에 따라 인수인계·작업일지·게시판은 수정하지 않습니다."},
+    {"path": "E:/Work2/Project/SimpleGames/01-2048/.game-team/TEAM.md", "lines": "1-54", "sha256": "0a3c4739364fc3de89b69f3c7875d237fdcd10711e59e9a1fa229bc64cc42af5", "scope": "독립 QA·소유권·실측 구분의 작업 경계 참고입니다."},
+    {"path": "E:/Work2/Project/SimpleGames/01-2048/.game-team/project.json", "lines": "1-32", "sha256": "248d7e13c2c90682524f915514ddbacb53177faa3000bb1aab27ce10cfb07abb", "scope": "기존 프로젝트의 참고 상태이며 네 번째 게임의 구현 완료 증거로 사용하지 않았습니다."}
+  ],
+  "limits": [
+    "게임 구현·플레이 통과를 판정하지 않았습니다. cody-01의 Windows 샌드박스 권한 오류 후 승인 대기이며 실제 게임 구현이 아직 생성되지 않았다는 상태는 사용자 제공 맥락입니다. 이 검토는 게임 소스·구현 산출물의 존재나 완성도를 별도로 검사하지 않았습니다.",
+    "설계의 8개 사례를 문서에서 파싱해 수학적으로 재계산한 것이며 실제 엔진·저장 모듈의 실행 시험이 아닙니다.",
+    "브라우저 렌더링·자동 터치·실물 기기·실제 음향·빌드·서버 실행·회귀 시험은 수행하지 않았습니다. REVIEW.md의 Chromium 캡처와 색 대비는 작성자의 기록이며 이번 독립 재실행 결과가 아닙니다.",
+    "ready/paused/finished·중복 결과·Storage 예외·누적 상한·정확한 충돌 경계는 구현 후 단위/브라우저 QA에서 실제 검증해야 합니다. 설계 통과가 B01-B28 전체 통과나 배포 승인을 뜻하지 않습니다.",
+    "입력으로 지정된 문서·시안과 작업 경계3개 파일만 검토했습니다. 기존 README·홈 소스·테스트의 현 상태나 통합 결과는 이번 범위에 포함하지 않았습니다.",
+    "유일한 쓰기 대상은 이 JSON입니다. 원본 독립 FAIL 보고서·원안·공통 사양·설계·소스·테스트는 수정하지 않았으며 stash/reset/checkout/commit/delete·재위임·상주작업·네트워크·모델/전역설정 변경은 하지 않았습니다."
+  ]
+}

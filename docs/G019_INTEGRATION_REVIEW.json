@@ -1,0 +1,64 @@
+{
+  "passed": true,
+  "security_concerns": [],
+  "logic_errors": [],
+  "suggestions": [
+    {
+      "id": "G019-INT-S01",
+      "severity": "non_blocking",
+      "path": "tests/e2e/live-server.spec.ts:365-396; src/client/library.ts:147-154",
+      "suggestion": "카드의 kit.svg#sparrow-fly0 참조는 실제 SVG 심볼·same-origin·스크립트/외부참조 부재를 확인했습니다. 다만 HTTP 대상목록에는 이 SVG가 없으며 카드 실렌더/원본바이트 단언도 없습니다. PM 실제 브라우저 검증에서 카드 아트가 보이는지 별도 확인하시고, 후속 시험에는 SVG GET/HEAD MIME·CSP와 참조 심볼 렌더 단언을 추가해 주세요. 이번 검토는 화면 시각 수용을 대신하지 않습니다."
+    },
+    {
+      "id": "G019-INT-S02",
+      "severity": "non_blocking",
+      "path": "tests/launch-local.test.mjs:27; ecosystem.config.cjs:3-7",
+      "suggestion": "런처 원본 시험은 g017-builder 아래 새 UUID fixture를 만드므로 이번에는 동일 단언을 유지한 복사본에서 import/root/fixture 출력경로만 허용 디렉터리로 치환하여 29/29를 실제 실행했습니다. 서버 객체는 EventEmitter 대역이고 실제 포트를 열지 않습니다. 이를 실제 서버 재시작 검증으로 표현하지 마세요. PM2 전환 후에는 해당 게임 1개의 실제 실행경로·3116 소유 PID·새 빌드 HTTP 본문을 확인하고, g016-build 롤백을 유지해 주세요."
+    },
+    {
+      "id": "G019-INT-S03",
+      "severity": "non_blocking",
+      "path": ".game-team/project.json; docs/GAME_DESIGN.md; docs/HANDOFF.md",
+      "suggestion": "맥락 문서에는 여전히 33/4/29 및 05·06 구현 진행 중 상태가 남아 있습니다. PM 최종 수용·운영 실측 후 실제 결과와 미검증 범위에 맞춰 갱신해 주세요. 이는 현재 코드의 확정 결함으로 처리하지 않았습니다."
+    }
+  ],
+  "inputs_sha256": {
+    "src/client/library.ts": "13c53f7068b6428bc792fd9049b6ec8816d31181a9fa958588e3bb662bb8d1a0",
+    "public/home.css": "e2f27808f15d47f9f9ccca4e72a6705990a326a0b255f0c86fc48775372cfbce",
+    "package.json": "5b7c7c1f73e8b9f12624bdd2565d82b7782743b89e95b82cde992ee6d8284649",
+    "ecosystem.config.cjs": "400060fb6ecb1451b89ab024e9c3eed6d15bad60e59c22bc621936669a097469",
+    "scripts/serve_local.mjs": "de5c523115b7abbec4b63bd55115c386a700ece512340318c6718d1259478f20",
+    "start-local.bat": "f8d589ffcab51ef158e82c9a58561e9b770789a68545cec9ec436ac03dd2a26d",
+    "start-game.cmd": "552f75f3719fcf74f89cf6ce4576c8c778ee0b83423bcc96ceebaaefe025db02",
+    ".vscode/tasks.json": "94e65f098ec3760299d3a1282460b3f313faf5080df2d387bb185b6751e16726",
+    "tests/launch-local.test.mjs": "f5b1bd924c46fbf57608dac90fa382ed49139c4e574edc327cf34b396ed5ffdd",
+    "tests/e2e/live-server.spec.ts": "bcf7245190baff7ed2e4bf867e839d89c3bf036fad54c49c86cd5f9f3c7892fd",
+    "tests/e2e/library-integration.spec.ts": "fae02b03048645b32d2a2b6fa5e47b832d668d6124090bbf7053aa9f228402e5",
+    "tests/e2e/multi-game-integration.spec.ts": "74c8891312781628ae8d72575f1f945898270723754f373eb801890357d69dce",
+    "tests/e2e/breakout-integration.spec.ts": "7588fbcd93b6dc0cb9e6b1842018fc424361b44864c952189a30796f041a270d",
+    "public/games/04-breakout/engine.mjs": "ece64fca5586d42cf278e877abe34135998aca7b8b4212171d11f6fa3075e9a2",
+    "public/games/04-breakout/index.html": "d89f7dc2cbb217bd326cb92742bb895e12b62a508ed3cee70051bab90d613c9c",
+    "public/games/04-breakout/main.mjs": "ee1fa24a4f320ec69d26b5a6f8feba1d47e4e5bdd63db465cfedc716be10c7b8",
+    "public/games/04-breakout/save.mjs": "add5965c29c45dc69129893660ee5bcf43e8971acf1d21d227151e63e702331c",
+    "public/games/04-breakout/styles.css": "c7164559af8f19a1b01c3a32c104f7e8b9f364f4a489ac0ac6de4625d86be512",
+    "tests/games/04-breakout.test.mjs": "f5d68ae91a56bca7e91165a4bb51813eaf5d8ee27fb2acb6fe343382532de5e8",
+    "AGENTS.md": "38b42575e37dd91563afbaa9ec9c85472b604a230a40d0d3caf74b717f1c019d",
+    ".game-team/TEAM.md": "0a3c4739364fc3de89b69f3c7875d237fdcd10711e59e9a1fa229bc64cc42af5",
+    ".game-team/project.json": "ff84d69af8fc5421bba2d8d5a73fe02f149fa6dbb63105ac29746b86a2027189",
+    "docs/GAME_DESIGN.md": "af262ffb26c4c771f9ee94085d1342ee529bd19a78b0e9aef2fec2607d129e90",
+    "docs/BACKLOG.md": "158b5ccf9bffff8e7c55b333b4bd51e67a66e3b1e589b769d413aa47f6c87724",
+    "docs/DECISIONS.md": "ca0008a4b8168e2a98ef9a1d0a6fa1de40528d111075b8867d83c3e28fd8bed1",
+    "docs/HANDOFF.md": "4983fc82e860b29bbc641ff4169a79e37790efe0435a47c3bba6e677c0870939",
+    "docs/G016_QA_REVIEW.json": "984b5caad48f05328dc0a3a7dc0c6e69e520d4b32004a6b400af8928e1f52a25",
+    "docs/G016_INTEGRATION_REVIEW.json": "c5f2bf4d803ec67131e98a5d57fb218bd19bcebea306a515784dc1f2a626ea94",
+    "artifacts/g019-pm/integration-review-inputs.json": "d014ecf8b82ddb0042087354e2cc11eea11bf0cc0fba0adb1d8085ef8c1259b2",
+    "artifacts/g019-pm/integration-diff.patch": "8bb5e840041efaf9c99eb7b9cc903b0376f1d95d02dbc7e984e4c0ba4d86132d",
+    "artifacts/g019-pm/static-security-scan.json": "b86bdfe996538ed02730f0564923a384785e1c914124931c6fefd48a5d4ba836",
+    "scripts/build.mjs": "5a8f45a58183be08cdbab9e66458017ef59d097001290352e001173c33a8b3d3",
+    "src/server/index.ts": "07981d63620ea7cc3633766fc657996f47fa0e513506d31a8dc3f09bede5de4c",
+    "package-lock.json": "20b47cd647dabf189913efa4a40a0a6fdcee6f0ad15f135794f4c3fdbdf6743f",
+    "tsconfig.json": "d503973e2f457229facb1d5ef77d9561676f5d2c2aa3667be9fe131d6f51281d",
+    "public/games/06-flappy/assets/kit.svg": "f7d12fc5f09a6729097b5f775533585162016217cd66f09e177d60ac640687ec"
+  },
+  "summary": "G019-INTEGRATION-REVIEW: 기록된 입력 해시 조건에서 통합 정적/단위 게이트를 통과했습니다. 지정 실제파일19개 전부 manifest와 일치하고, 보존 diff의 추적7개 차이 및 비추적12개 본문이 현재 실제파일과 일치함을 직접 검증했습니다. 카탈로그35/플레이6/준비29, HEAD 기존32레코드 내용·순서 보존, 유일한 same-origin 실행href6개와 실제 대상파일을 확인했습니다. 공통 DOM은 textContent/고정href이며 신규 카드 CSS 및 자체SVG에 실행코드·원격자산을 추가하지 않습니다. package-lock/서버/빌드스크립트는 HEAD와 같고 runtime npm 의존성은 없으며, 서버 public-root/realpath 경계·엄격CSP를 확인했습니다. 런처는 고정 loopback·고정 격리빌드·shell:false·빌드실패시 서버 import 금지·포트충돌시 명시실패이며 환경 HOST/PORT를 무시합니다. ecosystem은 해당 게임 하나만 g019-build/3116/기존 LAN host로 지정합니다. 04소스5개와 단위시험1개 SHA256이 G016_QA_REVIEW 및 G016_INTEGRATION_REVIEW 양쪽에 모두 일치하여 이전 독립 소스 검토를 그6개 해시 조건부로만 재사용했습니다. 변경된 공통 카탈로그/통합시험/런처/운영설정은 이번에 직접 검토했으며 이전 worker PASS를 그대로 복사하지 않았습니다. 실제 재실행: 경로만 격리한 런처29/29, 원본04단위41/41, 프로젝트 noEmit 타입검사 exit0, 정적검증 exit0입니다. 증거는 artifacts/g019-integration-review/{static-checks.json,launcher-isolated.test.mjs,launcher-test.log,breakout-unit.log,typecheck.log,rollback-hashes.json}입니다. 구 g016-build73파일은 해시목록 생성 후 최종 재대조까지 변경0입니다. 새05/06 게임소스 내부는 별도 독립QA 범위로 중복 검토하지 않았고 카드가 참조하는 SVG만 공통의존으로 읽었습니다. 브라우저·HTTP·실기기·실청취·운영 PM2 전환·Git 커밋/병합은 이번 검토에서 실행/수용하지 않았습니다. 04의 기존 전체수용 보류와 과거QA보존사고는 해소됐다고 판정하지 않습니다. 작성은 docs/G019_INTEGRATION_REVIEW.json 및 artifacts/g019-integration-review/**뿐이며 소스/Git/서버/PM2/설치/외부망/재위임 변경은 없습니다."
+}

@@ -1,0 +1,108 @@
+{
+  "passed": false,
+  "security_concerns": [],
+  "logic_errors": [
+    {
+      "id": "G019-06-INPUT-01",
+      "severity": "medium",
+      "blocking": true,
+      "files": ["public/games/06-flappy/main.mjs:66", "public/games/06-flappy/main.mjs:75"],
+      "acceptance": ["G018-06-AC16", "G018_06_GAME_DESIGN.md §3 키 repeat 제외"],
+      "title": "날갯짓 버튼에 초점이 있으면 Enter 자동 반복이 추가 flap을 발생시킵니다.",
+      "cause": "문서 keydown 처리에서 버튼의 repeat는 토큰 갱신만 생략하고 기본 버튼 활성화를 막지 않습니다. flight-field가 아닌 대상은 이후 repeat/held 검사 전에 반환합니다. flap의 click 리스너는 detail===0이면 반복 여부나 새로운 DOWN을 검사하지 않고 playing 상태의 intent를 실행합니다.",
+      "reproduction": [
+        "풍선 참새를 시작하고 '톡! 날갯짓' 버튼에 키보드 초점을 둡니다.",
+        "Enter를 누른 채 유지해 OS 키 반복을 발생시킵니다. 자동 재현은 page.keyboard.down('Enter'), 가상 100ms, page.keyboard.down('Enter') 순서입니다.",
+        "두 번째 keydown은 isTrusted=true, repeat=true이고, 브라우저가 isTrusted=true, detail=0인 click을 추가 발생시킵니다.",
+        "같은 시작 위치와 같은 125ms 경과를 가진 대조군보다 새 flap으로 더 상승합니다. 키를 놓지 않았으므로 새로운 DOWN으로 취급하면 안 됩니다."
+      ],
+      "expected": "첫 눌림의 flap만 반영하고 Enter 자동 반복으로 발생한 버튼 click은 무시해야 합니다.",
+      "actual": {
+        "same_before_transform": "translate(72 274.11458333333354)",
+        "control_after_transform": "translate(72 270.9479166666669)",
+        "repeat_after_transform": "translate(72 270.1979166666669)",
+        "control_trusted_clicks": 1,
+        "repeat_trusted_clicks": 2,
+        "page_errors": []
+      },
+      "evidence": ["artifacts/g019-review06/independent.mjs", "artifacts/g019-review06/independent-results.json", "artifacts/g019-review06/independent.log"],
+      "recommended_fix": "버튼 키보드 경로에도 repeat 기본 활성화 차단 또는 새 DOWN별 1회 소비를 적용하고, Enter 유지 회귀시험을 추가해 주세요. 리뷰어는 소스를 수정하지 않았습니다."
+    }
+  ],
+  "suggestions": [
+    {
+      "id": "G019-06-S01",
+      "blocking": false,
+      "detail": "기존 45개 시험은 engine/save 중심이며 main.mjs의 실제 버튼 키보드 활성화를 실행하지 않습니다. focused flap의 Enter 반복 및 Space 유지, pointercancel/다중 터치 후 후속 합성 click을 브라우저 회귀로 보강해 주세요."
+    },
+    {
+      "id": "G019-06-S02",
+      "blocking": false,
+      "detail": "이번 Chromium 검사는 서버 없이 실제 파일 바이트를 route.fulfill한 제한된 DOM 검증입니다. 운영 HTTP/CSP, 실제 저장 권한, 반응형 시각검사, 모바일 WebKit/실물 기기/실청취, 홈 통합과 기존 게임 회귀는 검증하지 않았으며 PM의 별도 수용 대상입니다."
+    }
+  ],
+  "tests": {
+    "scope": "독립 정적 검토 + 원본 단위시험 실제 실행 + 리뷰어 작성 6개 경계검사 + 오프라인 Chromium 네이티브 키보드 재현입니다. 구현자 PASS를 복사하지 않았습니다.",
+    "unit": {
+      "command": "node --test tests/games/06-flappy.test.mjs",
+      "node": "v24.16.0",
+      "exit_code": 0,
+      "total": 45,
+      "passed": 45,
+      "failed": 0,
+      "skipped": 0,
+      "evidence": "artifacts/g019-review06/unit.log"
+    },
+    "syntax": {
+      "engine.mjs": 0,
+      "save.mjs": 0,
+      "main.mjs": 0,
+      "evidence": "artifacts/g019-review06/execution.json"
+    },
+    "independent": {
+      "command": "node artifacts/g019-review06/independent.mjs",
+      "exit_code": 1,
+      "total": 7,
+      "passed": 6,
+      "failed": 1,
+      "evidence": "artifacts/g019-review06/independent-results.json",
+      "failed_case": "native repeated Enter on focused flap button must not flap again",
+      "browser_mode": "설치된 headless Chromium, 정지된 Playwright 가상시계, 모든 HTTP 요청을 실제 로컬 public 파일 바이트로 충족했습니다. 테스트 서버를 시작하거나 외부 네트워크 요청을 전달하지 않았습니다. 게임 모듈/물리 상태를 수정하지 않았으며 Enter 이벤트는 브라우저 네이티브 trusted 입력입니다. 초기 시작만 DOM button.click()으로 설정했습니다."
+    },
+    "requested_checks": {
+      "curved_circular_sweep": "PASS: 기존 원형 tangent/코너 위양성/포물선 검사 및 독립 곡선 코너 접촉의 원거리 제곱 확인을 통과했습니다.",
+      "same_tick_collision_priority": "PASS: collision이 있는 tick의 새 passed 배열은 비어 있고, lost 후 결과 중복이 없습니다.",
+      "fixed_tick": "PASS: 30/60/120 FPS 원본시험 및 독립 30/120 분할의 위치/아치/결과/점수/시간 일치입니다. remainder의 1e-17 수준 부동소수 차이는 결함으로 판정하지 않았습니다.",
+      "retry_500ms_fresh_input": "PASS(unit): 499ms 거부, 500ms 새 토큰 허용, 이전 세대/조기 DOWN 거부를 원본 및 독립 검사에서 확인했습니다. 결과 재도전의 모든 실제 브라우저 입력 조합은 미검증입니다.",
+      "wardrobe_mix_and_cancel": "PASS(unit/static): 소유한 head/body/ankle 교차 조합 적용 및 draft 취소의 저장 추가 0을 독립 확인했습니다. DOM 연결과 ID를 검토했으나 옷장 전체 시각 흐름은 미실행입니다.",
+      "cumulative_deduplication": "PASS: 완료 round별 1회 합산, quit/collision 분리, 99+1 해금 및 미완료판 합산 0을 확인했습니다.",
+      "storage_saturation": "PASS: 전체 레코드 원자 보존, 정산시도 중복 차단, 세션 포화 후 추가 정산 차단, 설정 저장 허용을 확인했습니다.",
+      "security_dom_storage": "정적 검토에서 외부 전송/eval/동적 HTML 삽입/타 저장키 삭제를 발견하지 못했습니다. 저장 값은 유효성/소유권 검증 후 textContent 및 제한된 로컬 SVG ID에 연결됩니다. 운영 CSP/실제 권한 시험을 했다는 의미는 아닙니다.",
+      "keyboard_repeat_dom": "FAIL: G019-06-INPUT-01을 실제 trusted Enter repeat로 재현했습니다."
+    },
+    "initial_attempts": {
+      "evidence": ["artifacts/g019-review06/initial-independent-results.json", "artifacts/g019-review06/initial-independent.log", "artifacts/g019-review06/initial-independent-exit.json"],
+      "explanation": "최초 독립 harness는 remainder까지 exact deepEqual하여 1.04e-17 차이를 실패로 냈고, 첫 브라우저 대조는 자동 진행 시계로 시작 위치가 달랐습니다. 원본 실패를 보존하고 리뷰어 전용 harness만 보정했습니다. remainder 허용오차와 정지 시계를 적용한 최종 실행에서 6개 경계검사는 통과했고, 같은 시작 위치에서 Enter 반복 결함은 다시 재현됐습니다. 동일 결함 두 번째 재현 후 추가 반복/수정 없이 보고합니다."
+    },
+    "input_integrity": {
+      "unchanged": true,
+      "evidence": "artifacts/g019-review06/input-integrity.json",
+      "detail": "아래 해시 대상의 실행 전후 바이트가 모두 같습니다. 게임 소스/기존시험/설정/Git/서버/PM2/기존 artifacts를 수정하지 않았습니다."
+    }
+  },
+  "inputs_sha256": {
+    "AGENTS.md": "38b42575e37dd91563afbaa9ec9c85472b604a230a40d0d3caf74b717f1c019d",
+    ".game-team/TEAM.md": "0a3c4739364fc3de89b69f3c7875d237fdcd10711e59e9a1fa229bc64cc42af5",
+    "docs/G018_06_ACCEPTANCE.md": "9c18d11673fb68157a45766fa763535292b96fa6bf18c4912f22cb8c97f7fd86",
+    "docs/G018_06_IMPLEMENTATION.md": "12e473f7534e495a08c8cdac929bcdf5cb0212f69de4467ccf2d47bda70c2b67",
+    "docs/G018_IMPLEMENTATION_NOTES.md": "c83c4baddba31a225a7d2efcec354bb5abae9b05f22c179d7da21369170b30b1",
+    "tests/games/06-flappy.test.mjs": "d2d3ecaf26cb11bac9fe7b7722b41c48f1e69d54838b17564dc52d1a2e897195",
+    "public/games/06-flappy/assets/kit.svg": "f7d12fc5f09a6729097b5f775533585162016217cd66f09e177d60ac640687ec",
+    "public/games/06-flappy/engine.mjs": "eb3de4090b95064745839eb992f9579c8b1d4df5c81709eccb84009116017581",
+    "public/games/06-flappy/index.html": "92d5b8352c91d9875dbbdc1b5d492d0ade60c4070c5274750bd6096581296afa",
+    "public/games/06-flappy/main.mjs": "298f54998b1219733eeccc6f25ef8b973942077fc7dc5aa9f76e44d9eb3c18de",
+    "public/games/06-flappy/save.mjs": "b28d7944288fc6ca0746b6296e2b765e621d88559468a2ebb0cfb48d06251444",
+    "public/games/06-flappy/styles.css": "08724fd46b9ee11713af6101a8b07c802b2243f47a0332c3bf93d58f97db091e"
+  },
+  "summary": "독립 검토는 FAIL입니다. 원본 단위 45/45와 추가 경계검사 6/6은 통과했지만, 날갯짓 버튼 초점에서 Enter 자동 반복이 추가 flap을 발생시키는 계약 위반 1건을 오프라인 Chromium trusted 입력으로 재현했습니다. 해당 입력 결함 수정 및 독립 재검증 전 배포 게이트 PASS를 드릴 수 없습니다. 허용된 보고서와 전용 증거만 작성했습니다."
+}

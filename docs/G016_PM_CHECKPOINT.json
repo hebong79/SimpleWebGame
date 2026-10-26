@@ -1,0 +1,25 @@
+{
+  "task_id": "G016-PM-CHECKPOINT",
+  "status": "AWAITING_INDEPENDENT_BROWSER_AND_INTEGRATION_REVIEWS",
+  "verified_at": "2026-10-25T14:22:53.156717+09:00",
+  "unit_total": 174,
+  "unit_failed": 0,
+  "browser_regression_passed": 99,
+  "browser_failed": 0,
+  "browser_skipped": 0,
+  "source_and_unit_independent_pass": true,
+  "full_game_acceptance": false,
+  "local_test_url": "http://127.0.0.1:3116/games/04-breakout/index.html",
+  "build_dir": "artifacts/g016-build",
+  "limitations": [
+    "독립 신규 게임 HTTP/브라우저 QA 결과 대기",
+    "독립 PM 통합 코드 리뷰 결과 대기",
+    "실물기기·실청취·플레이1~4분 인간실측 미검증",
+    "최종 패키지·납품 게시 미완료"
+  ],
+  "tool_issues": [
+    "Playwright 첫 호출은 미지원 --test-ignore 옵션으로 실행 전 종료; --help 확인 후 지원 파일 필터로 재실행하여99/99 통과. regression-1.log 보존.",
+    "browser_exec Page.captureScreenshot 시간초과. 별도 headless Playwright 실제 HTTP 화면7개 캡처·레이아웃·콘솔·CSP/요청 검사 성공.",
+    "PM inspection 집계 첫 시도는 홈의 선택적 UI status 누락 KeyError로 쓰기 전 종료. get으로 집계 수정 후7개 정상 확인."
+  ]
+}

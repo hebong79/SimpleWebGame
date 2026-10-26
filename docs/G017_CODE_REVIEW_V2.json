@@ -1,0 +1,164 @@
+{
+  "passed": true,
+  "security_concerns": [],
+  "logic_errors": [],
+  "suggestions": [
+    {
+      "id": "G017-RECHECK-S01",
+      "severity": "non-blocking",
+      "file": "tests/e2e/live-server.spec.ts:6-9",
+      "finding": "PNG 디코더가 playwright-core 설치 디렉터리의 비공개 lib/utilsBundle.js 경로와 PNG 내보내기에 결합되어 있습니다. package-lock.json에서 Playwright 1.64.1로 고정된 비런타임 테스트 의존이며 게임 런타임에는 추가되지 않습니다.",
+      "suggestion": "Playwright 버전 변경 시 이 helper의 호환성을 재검증하시고, 필요 시 공개 PNG 디코더 의존으로 분리하는 후속 개선을 검토해 주세요."
+    },
+    {
+      "id": "G017-REVIEW-S01-CARRIED",
+      "severity": "non-blocking",
+      "file": "scripts/serve_local.mjs:7,26-37",
+      "finding": "원본 검토의 고정 빌드 출력 내 삭제·이름변경 파일 잔존 검증 제안은 이번 제한 재검토에서 해결 또는 재실행하지 않았습니다.",
+      "suggestion": "별도 후속 검증으로 유지해 주세요. 이번 주소 정정 및 관측 helper 수용의 차단 항목은 아닙니다."
+    }
+  ],
+  "summary": "통과입니다. README는 3116을 현재 실사용 PM2/LAN 서버, 3102를 별도 개발 서버로 구분하고 설정·프로세스·방화벽 무변경을 명시하여 원본 G017-REVIEW-001 주소 오류를 해소했습니다. start-game.cmd는 cd 실패 직후 exit /b 1입니다. 실제 Canvas PNG 관측과 정상 UI 입력을 사용하는 테스트 및 2 origin × 3 프로젝트 × 3 시나리오 18건의 기존 통과 증거를 확인했으며 차단 보안·논리 문제는 발견하지 못했습니다.",
+  "scope": "G017-RECHECK 새 독립 검토 컨텍스트의 제한 정적·증거 재검토입니다. 지정 파일, AGENTS/TEAM, 두 verified config 및 lockfile만 추가 참조했습니다. serve_local.mjs SHA256은 원본 FAIL 보고서의 값과 일치합니다. README의 3116 무변경 설명은 명확하며, 실행기는 기본 3102/127.0.0.1이고 PM2·방화벽을 관리하지 않습니다. 과거 전체 게임소스·PM2 운영상태·방화벽 무변경을 새로 실측한 것은 아닙니다. pixel observer는 실제 HTMLCanvasElement.toDataURL PNG를 Node에서 디코드하며 Canvas 또는 게임상태를 쓰지 않습니다. 용 눈동자와 패들 위치는 렌더 픽셀에서 계산합니다. 게임상태 setter·RNG 대체·저장소 직접 조작·HTTP 응답 모킹·skip가 없습니다. clock.install/pauseAt/runFor는 시간/프레임 진행 제어이며 게임상태 setter가 아닙니다. CSP 관찰용 init script/binding만 추가하며 CSP를 완화하지 않습니다. console 전체를 보존하고 error/warning/warn 심각도를 모두 단언합니다. 메시지/URL 기반 제외나 CSP 예외가 없습니다. 의도적인 private 404는 APIRequestContext로 따로 검사하고 브라우저 자산 실패 단언은 유지합니다. baseURL origin을 사용하고 GAME_LIVE_ORIGIN 지정 시 엄격 일치합니다. 3 브라우저 프로젝트는 Chromium 2환경과 WebKit 1환경이며 3개 독립 엔진이나 실물 기기가 아닙니다. 18건 통과는 기존 실제 실행 JSON/첨부의 독립 확인이지 이번 세션 재실행이 아닙니다. 전체 QA·실기기·실청취·전체 회귀·게시판 완료·PM 최종 통합 승인은 판정하지 않았습니다. 재위임·네트워크·설치·빌드·브라우저·서버 실행·프로세스 종료·Git·소스변경은 하지 않았습니다. 원본 FAIL은 보존했으며 쓰기는 docs/G017_CODE_REVIEW_V2.json 및 artifacts/g017-recheck/evidence.json 두 파일뿐입니다.",
+  "files_sha256": {
+    "AGENTS.md": "38b42575e37dd91563afbaa9ec9c85472b604a230a40d0d3caf74b717f1c019d",
+    ".game-team/TEAM.md": "0a3c4739364fc3de89b69f3c7875d237fdcd10711e59e9a1fa229bc64cc42af5",
+    "README.md": "93799739be13182e63492a2bb255ec406bc8fba1f0efcfa5db683305cad2170c",
+    "start-game.cmd": "552f75f3719fcf74f89cf6ce4576c8c778ee0b83423bcc96ceebaaefe025db02",
+    "scripts/serve_local.mjs": "de5c523115b7abbec4b63bd55115c386a700ece512340318c6718d1259478f20",
+    "tests/e2e/live-server.spec.ts": "249b272578d45f2b0ca3bf40fd8fb73442aeff95c18dc0d521815381227ba45f",
+    "docs/G017_CODE_REVIEW.json": "5db98a7131c7ed5c9cad9449d2e7adef7ef8bc3bf310494c61c8b7fc3f1710d8",
+    "artifacts/g017-qa-verified/playwright-results.json": "283f12b7007ebc765ade907c9e7393aac57feb20c050944d9d05e39ff4ce6a59",
+    "artifacts/g017-live3116-verified/playwright-results.json": "598ab1bff595e0e4f8b6e32798467d9495989df9aae338a21d52b2b08c168cdf",
+    "artifacts/g017-qa-verified/playwright.config.ts": "e38df09cf3399402b1a245474c6d3495da739d42f8580ef92d7c73103e4e4af5",
+    "artifacts/g017-live3116-verified/playwright.config.ts": "c239d0e2003e5ad1dc776580ac8b304004e725e266c98985e3f9b4c7606ced7d",
+    "package-lock.json": "20b47cd647dabf189913efa4a40a0a6fdcee6f0ad15f135794f4c3fdbdf6743f"
+  },
+  "runtime_stats": {
+    "verification_method": "기존 Playwright JSON 및 base64 첨부를 독립 파싱했습니다. 브라우저/서버/테스트를 재실행하지 않았습니다.",
+    "browser_projects": [
+      "desktop-chromium",
+      "mobile-chromium",
+      "mobile-webkit"
+    ],
+    "browser_engine_limit": "3개 브라우저 프로젝트이며 엔진은 Chromium/WebKit 2종입니다. 모바일은 에뮬레이션입니다.",
+    "origins": {
+      "http://127.0.0.1:3102": {
+        "stats": {
+          "startTime": "2026-10-25T11:13:40.387Z",
+          "duration": 26954.228000000003,
+          "expected": 9,
+          "skipped": 0,
+          "unexpected": 0,
+          "flaky": 0
+        },
+        "cases": 9,
+        "passed": 9,
+        "retries": 0,
+        "scenario_project_matrix": {
+          "desktop-chromium": [
+            "G017-LIVE01",
+            "G017-LIVE02",
+            "G017-LIVE03"
+          ],
+          "mobile-chromium": [
+            "G017-LIVE01",
+            "G017-LIVE02",
+            "G017-LIVE03"
+          ],
+          "mobile-webkit": [
+            "G017-LIVE01",
+            "G017-LIVE02",
+            "G017-LIVE03"
+          ]
+        },
+        "audit_counts": {
+          "requests": 137,
+          "responses": 137,
+          "external": 0,
+          "console": 0,
+          "pageErrors": 0,
+          "csp": 0,
+          "failedResponses": 0,
+          "failedRequests": 0,
+          "console_errors_warnings": 0
+        },
+        "api_status_counts": {
+          "200": 162,
+          "404": 18
+        }
+      },
+      "http://192.168.0.195:3116": {
+        "stats": {
+          "startTime": "2026-10-25T11:14:08.205Z",
+          "duration": 26584.177,
+          "expected": 9,
+          "skipped": 0,
+          "unexpected": 0,
+          "flaky": 0
+        },
+        "cases": 9,
+        "passed": 9,
+        "retries": 0,
+        "scenario_project_matrix": {
+          "desktop-chromium": [
+            "G017-LIVE01",
+            "G017-LIVE02",
+            "G017-LIVE03"
+          ],
+          "mobile-chromium": [
+            "G017-LIVE01",
+            "G017-LIVE02",
+            "G017-LIVE03"
+          ],
+          "mobile-webkit": [
+            "G017-LIVE01",
+            "G017-LIVE02",
+            "G017-LIVE03"
+          ]
+        },
+        "audit_counts": {
+          "requests": 136,
+          "responses": 136,
+          "external": 0,
+          "console": 0,
+          "pageErrors": 0,
+          "csp": 0,
+          "failedResponses": 0,
+          "failedRequests": 0,
+          "console_errors_warnings": 0
+        },
+        "api_status_counts": {
+          "200": 162,
+          "404": 18
+        }
+      }
+    },
+    "aggregate": {
+      "cases": 18,
+      "passed": 18,
+      "skipped": 0,
+      "unexpected": 0,
+      "flaky": 0,
+      "audit_attachments": 18,
+      "browser_requests": 273,
+      "browser_responses": 273,
+      "api_200": 324,
+      "api_expected_404": 36
+    },
+    "observed_audit_failures": {
+      "external": 0,
+      "console_errors_warnings": 0,
+      "pageErrors": 0,
+      "csp": 0,
+      "failedResponses": 0,
+      "failedRequests": 0
+    },
+    "locked_playwright_version": "1.64.1"
+  },
+  "original_fail_preserved": true,
+  "resolved_findings": {
+    "G017-REVIEW-001": "README 주소/역할 구분 정정 확인",
+    "G017-REVIEW-S02_cd_guard": "start-game.cmd cd 실패 immediate exit /b 1 정적 확인; 실제 Windows 실패 실행은 미실시"
+  }
+}
