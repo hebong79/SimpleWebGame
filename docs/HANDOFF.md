@@ -1,5 +1,13 @@
 # 숫자 정원 · 2048 — 최종 인수인계
 
+## G-021 최신 — main 병합 확인 및 GitHub origin/main push
+
+- 사용자추가지시“머지푸시”에따라기존feature/g019-six-game-release(a991954)가main에이미병합된것을ancestor검사와Already up to date응답으로확인했습니다. 불필요한중복merge를만들지않았습니다.
+- 최초원격main6576fb3를fetch확인후, 로컬main의게임/배포/원인분석규칙4커밋을정상push해cf0316a로반영했습니다. git ls-remote와다시fetch한origin/main이로컬HEAD와정확히일치했습니다. 강제push/reset/stash/무관한untracked추가없음.
+- 현재기록문서도후속docs커밋으로같은main에동기화하고최종로컬/원격SHA일치는 artifacts/g021-git-push/final-verification.json으로재검증합니다. 게임소스/실행빌드/PM2는이번요청에서재변경하지않았고기존검증시험도재실행하지않았습니다.
+- 작업일지 `docs\worklogs\20261027-000045_아름.md`, Git증거 artifacts/g021-git-push/push-verification.json. 보드 `mvpdw3vk-43-dtnc` / `http://192.168.0.195:18787/api/posts/mvpdw3vk-43-dtnc.md` done·전체본문/실제첨부2개다운로드SHA256확인. 이전G019/G020의“원격push미수행”은당시상태이며본추가지시로변경됐습니다.
+
+
 ## G-020 최신 — 4게임 표시 원인 분석·운영 완료 기준 재발 방지 반영
 
 - 작성 2026-10-26T23:54:28+09:00. 직접원인은05/06소스가공통홈에미등록이고3116이구g016빌드를제공한것입니다. PM2 restart의옛script잔존은후속전환함정, CSP/Enterrepeat/RAF문구교체에따른클릭누락은별도QA/지연원인으로구분했습니다. 캐시/사용자잘못아님. 구현자소유권제한은유지하고PM후속인수→운영까지의완료기준연결누락을근본업무원인으로기록했습니다.

@@ -64,3 +64,9 @@
 - 예방:AGENTS와G020_RELEASE_COMPLETION_CHECKLIST 및game-dev-team에PM후속의존일감·조기HTTP/실제입력·운영URL최종실행게이트반영. 운영변경승인/기존서비스·기록보존은유지.
 - 실제현재읽기검증:PID30928/g019온라인·신규2페이지및library.js200. 이번운영코드/프로세스변경·상주자동배포설치없음.
 - 게시:mvpdm93p-42-jpvf,전체본문·체크리스트전문·첨부4개다운로드SHA256검증. 원인분석G020_ROOT_CAUSE_AND_PREVENTION.md,증거artifacts/g020-release-rca/evidence.json.
+
+## G-021 — main 머지 확인 및 원격 push
+
+- 상태:DONE(사용자추가승인). feature a991954의main병합기존완료확인·중복merge없음. origin/main6576fb3→cf0316a정상push후ls-remote/fetch로로컬과동일성검증.
+- 후속기록문서도같은main으로동기화하며최종증거는artifacts/g021-git-push/final-verification.json. 강제push/타변경추가/운영재기동없음.
+- 보드:mvpdw3vk-43-dtnc,전체본문·실제첨부2개해시검증.
