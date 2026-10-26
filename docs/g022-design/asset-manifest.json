@@ -1,0 +1,53 @@
+{
+  "author": "PM 대현자",
+  "provenance": "Original geometric SVG authored for this project; no third-party art/fonts/network.",
+  "license": "Project-owned original art",
+  "feet_anchor": [
+    48,
+    84
+  ],
+  "viewBox": [
+    0,
+    0,
+    96,
+    96
+  ],
+  "recommended_scale": 0.8,
+  "layer_order": [
+    "bag",
+    "base",
+    "body",
+    "hat/ears"
+  ],
+  "poses": {
+    "07": [
+      "run0",
+      "run1",
+      "run2",
+      "run3",
+      "jump",
+      "duck0",
+      "duck1",
+      "hit"
+    ],
+    "08": [
+      "idle",
+      "rise",
+      "fall",
+      "land",
+      "hit"
+    ]
+  },
+  "assets": {
+    "07-kit.svg": {
+      "sha256": "5ee9c18a0fdda88c67cc288ccf36e2cbde2b4882f05afcd6617c39b21cded4ac",
+      "symbols": 82,
+      "bytes": 23650
+    },
+    "08-kit.svg": {
+      "sha256": "a42be682300bdc085c1caa11a100f46657dff9e5814f4ee8377539bc0a3199cb",
+      "symbols": 53,
+      "bytes": 15661
+    }
+  }
+}
