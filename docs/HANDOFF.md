@@ -1,5 +1,18 @@
 # 숫자 정원 · 2048 — 최종 인수인계
 
+## G-019 최신 — 3116 여섯 게임 반영·커밋/main병합·재기동 완료
+
+- 완료확인 2026-10-26T23:24:41+09:00. 실제실사용 `http://192.168.0.195:3116/`에서 **35/플레이6/준비29**, 정확6카드와새05/06실제시작/입력/정지/기록/홈복귀를확인했습니다. 사용자33/4스크린샷은당시실제구빌드였으며캐시문제가아니었습니다.
+- feature `feature/g019-six-game-release` 구현 `a991954b11e57555f40c39f0e72b92468a9b6678` → 로컬main no-ff `e1637aa3449baa5695903002c7a3a5111d5f3ebb`. 선별100파일,병합tree동일·보안후보0·원격push미수행. 배포결과문서는별도후속docs커밋으로기록합니다. 무관한기존untracked운영자료는보존했습니다.
+- 실제PM2 `number-garden-2048` ID2/PID30928/online, script `artifacts/g019-build/src/server/index.js`,0.0.0.0:3116리스너PID일치. restart명령exit0만으로는pm_exec_path가구g016에남아해당게임등록만delete/start해교체했습니다. 구g016빌드와근거보존,다른agent-board PID33040/restarts15전후불변·방화벽/ACL/글로벌/다른서버미변경.
+- 검증:타입/격리빌드exit0·단위269/269·배포전실제HTTP66/66·**실제LAN운영24/24**(PC/모바일Chromium·모바일WebKit,skip/flaky0). loopback/LAN20HTTP200·검증빌드바이트일치. 기존263증거SHA256/mtime변경0. 새4+2실행은운영주소의브라우저에서도검사했습니다.
+- 06native select/CSP·Enter/Space반복·05/06매RAF버튼textContent교체에따른현실적80ms누름click누락을기존원본FAIL보존후최소수정했습니다. 마지막별도수정자/fresh2검토PASS,부위12실패→12성공·시작합계4실패→4성공·변경없는버튼childList0. CSP/물리/저장/타이머/핸들러를완화하지않았습니다.
+- 현재운영재시작(같은script): `pm2 restart ecosystem.config.cjs --only number-garden-2048 --update-env`. 새script경로로변경시실제pm_exec_path를확인해필요하면해당앱만재등록합니다. `pm2 restart all`/PM2전체save/방화벽변경금지. 롤백은 `artifacts/g019-pm/ROLLBACK.md`를따르고root ecosystem원복후실제경로를확인합니다.
+- 원본실패/시간초과·관측보정은g019-pm에보존. 실물/실청취/사람시간/05정상20줄승리·G016과거QA자료원복은별도미해결. 이번완료를전체제품수동수용PASS로확대하지않습니다.
+- 보고 `docs/G019_DEPLOYMENT.md`, 작업일지 `docs\worklogs\20261026-231956_아름.md`, 실제화면 `artifacts/g019-pm/screens/live3116-six-games.png`, 원본운영결과 `artifacts\g019-pm\artifacts\g019-live3116-verified\playwright-results.json`.
+- 보드 `mvpcjlfl-41-uc4e` / `http://192.168.0.195:18787/api/posts/mvpcjlfl-41-uc4e.md` done. 완전본문·실제첨부5개다운로드SHA256검증완료. 근거 `artifacts/g019-pm/board-publication.json`. 다음은같은주소새로고침후사용자플레이확인입니다.
+
+
 ## G-018 최신 — PM 설계·디자인·실제 native 개발 배정 완료 / 구현 진행 중
 
 - 시각 2026-10-26T00:40:18+09:00. 05 한 판 블록 공방→cody-01,06 풍선 참새→cody-02. PM직접작성GDD/24개씩수용/계약/PC·모바일·옷장시안/자체7타일·참새4동작·9부위키트. DESIGN_ONLY PASS(차단0)·발송전22입력해시확인·Chromium32화면상태/옷장/버튼·SVG재현검증PASS.

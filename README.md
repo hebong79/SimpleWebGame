@@ -15,7 +15,15 @@ node scripts/build.mjs --out-dir artifacts/g019-build
 pm2 restart ecosystem.config.cjs --only number-garden-2048 --update-env
 ```
 
-새 릴리스는 사용 중인 빌드에 덮어쓰지 말고 별도 디렉터리에 빌드·검증한 뒤 `ecosystem.config.cjs`의 script 경로를 바꿔 재기동하세요. PM2의 실제 script/PID와 3116의 홈·게임 응답을 확인해야 반영 완료입니다. `pm2 restart all`은 사용하지 않습니다. 직전 `artifacts/g016-build`는 롤백용으로 보존합니다.
+새 릴리스는 사용 중인 빌드에 덮어쓰지 말고 별도 디렉터리에 빌드·검증한 뒤 `ecosystem.config.cjs`의 script 경로를 바꾸세요. **PM2 restart는 변경된 script 경로를 적용하지 않고 옛 실행 경로를 유지할 수 있습니다.** G019에서도 실제로 재현되어, 같은 게임 등록만 아래처럼 교체한 뒤 새 경로·PID·3116 응답을 확인했습니다.
+
+```sh
+# 운영 반영이 승인된 경우, 해당 게임만 재등록합니다. 짧은 중단이 있습니다.
+pm2 delete number-garden-2048
+pm2 start ecosystem.config.cjs --only number-garden-2048
+```
+
+이 delete는 PM2 프로세스 등록만 제거하며 게임파일/저장기록을 삭제하지 않습니다. 현재처럼 script 경로가 같은 재시작에는 위 restart 명령을 사용할 수 있습니다. 다른 앱은 건드리지 않으며 `pm2 restart all`은 사용하지 않습니다. 직전 `artifacts/g016-build`는 롤백용으로 보존합니다. 실제 완료 근거는 `docs/G019_DEPLOYMENT.md`입니다.
 
 ### 별도 로컬 개발 서버 — 3102
 
