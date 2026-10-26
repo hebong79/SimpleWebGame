@@ -5,7 +5,7 @@
   "engine": "Node.js 24.16.0 + TypeScript, HTML DOM/CSS",
   "engine_version": "Node 24.16.0 / TypeScript 7.0.2",
   "platform": "PC browser + mobile touch browser",
-  "status": "playable_verified_with_manual_limits",
+  "status": "six_games_verified_deployment_ready",
   "created_at": "2026-10-22T00:17:53.121532+09:00",
   "team_id": "game-dev-team",
   "team_version": "1.0.0",
@@ -19,14 +19,60 @@
   ],
   "mode": "on-demand-delegate-task",
   "runtime_or_engine_installed": true,
-  "last_verified_at": "2026-10-24T13:51:37.488Z",
-  "unit_tests_passed": 112,
-  "browser_tests_passed": 93,
+  "last_verified_at": "2026-10-26T22:45:07.087213+09:00",
+  "unit_tests_passed": 269,
+  "browser_tests_passed": 66,
   "manual_acceptance_pending": true,
   "playable_games": [
     "number-garden",
     "little-dragon",
-    "neon-rally"
+    "neon-rally",
+    "cosmic-cleanup",
+    "block-workshop",
+    "balloon-sparrow"
   ],
-  "catalog_total": 32
+  "catalog_total": 35,
+  "connection_verification": {
+    "task": "G017",
+    "primary_url": "http://192.168.0.195:3116/",
+    "development_url": "http://127.0.0.1:3102/",
+    "launcher_unit_passed": 29,
+    "browser_cases_passed": 18,
+    "browser_cases_failed": 0,
+    "independent_recheck_passed": true,
+    "report": "docs/G017_CONNECTION_FIX.md",
+    "overall_G016_acceptance_unchanged": true
+  },
+  "development_tasks": [
+    {
+      "task_id": "G018-05-CODY",
+      "game_id": "block-workshop",
+      "worker": "cody-01",
+      "thread_id": "01a16eb2-eae8-78d2-b41a-380d98e6673d",
+      "turn_id": "01a173b0-378c-7a90-bbf4-e610186ae11d",
+      "status": "implementation_verified",
+      "contract_ack_verified": true,
+      "current_playable_catalog_unchanged": false
+    },
+    {
+      "task_id": "G018-06-CODY",
+      "game_id": "balloon-sparrow",
+      "worker": "cody-02",
+      "thread_id": "01a17391-f01f-7ce0-821c-79e3fc3cde2f",
+      "turn_id": "01a173b0-3acd-73b0-a18c-df5cf5938787",
+      "status": "implementation_verified",
+      "contract_ack_verified": true,
+      "current_playable_catalog_unchanged": false
+    }
+  ],
+  "browser_tests_scope": "G019 selected real HTTP integration regression,3 browser projects",
+  "deployment": {
+    "task": "G019",
+    "primary_url": "http://192.168.0.195:3116/",
+    "build": "artifacts/g019-build",
+    "pm2_app": "number-garden-2048",
+    "status": "ready_pending_restart",
+    "old_build_preserved": "artifacts/g016-build",
+    "remote_push_requested": false
+  }
 }

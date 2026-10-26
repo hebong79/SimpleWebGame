@@ -1,5 +1,128 @@
 # 숫자 정원 · 2048 — 최종 인수인계
 
+## G-018 최신 — PM 설계·디자인·실제 native 개발 배정 완료 / 구현 진행 중
+
+- 시각 2026-10-26T00:40:18+09:00. 05 한 판 블록 공방→cody-01,06 풍선 참새→cody-02. PM직접작성GDD/24개씩수용/계약/PC·모바일·옷장시안/자체7타일·참새4동작·9부위키트. DESIGN_ONLY PASS(차단0)·발송전22입력해시확인·Chromium32화면상태/옷장/버튼·SVG재현검증PASS.
+- 정확native UUID/현재turn: cody-01 `01a16eb2-eae8-78d2-b41a-380d98e6673d` / `01a173b0-378c-7a90-bbf4-e610186ae11d`; cody-02 `01a17391-f01f-7ce0-821c-79e3fc3cde2f` / `01a173b0-3acd-73b0-a18c-df5cf5938787`. **기존exec02와교체하지않음**. 실제ACK2개/입력SHA256/파일읽기exit0·새turn_context auto_review/workspace-write/network=false 확인. 모델/provider동일gpt-6.1-sol/openai,전역/ACL/서버변경없음.
+- 초기Windows sandbox기술실패와정상중단은보존. G018_RUNTIME_CLARIFICATION.md로공식위험검토재실행만명확히허용해재개했으며다른약한도구/강제승인우회없음. 검토거부·사람승인필요·같은검토후명령실패2회면중단. 현재지시수신완료이지게임최종수용아님.
+- 소유권:각자public/games/05-falling-blocks 또는06-flappy,tests/games/자기단위,docs/G018_05/06_IMPLEMENTATION.md,artifacts/g018-05/06-builder만쓰기. 홈/공통문서/메타/빌드·운영은PM. 기존844파일해시/mtime변동0, 실사용3116홈·4게임HTTP200. 현재33/4/29유지·새2개운영미배포.
+- 인수보고 docs/G018_DESIGN_HANDOFF.md, 시안 docs/g018-design/index.html, ZIP artifacts/g018-delivery/G018_Game05_Game06_PM_Design_and_Contracts.zip(설계25파일+manifest/설명,게임실행본아님), 실제배정증거 artifacts/g018-pm/dispatch-verification.json/actual-turn-contexts.json. 작업일지 docs\worklogs\20261026-003636_아름.md.
+- 보드 `mvnzszk7-40-5gno` / `http://192.168.0.195:18787/api/posts/mvnzszk7-40-5gno.md`: doing(게임구현진행중),완전본문·실제첨부6개SHA256재검증. 설계/배정요청은완료. 다음각native정확turn의완료응답·인수문서/자기시험을읽고독립QA→PM신규빌드/기존4게임회귀/홈35·6·29를순차검증합니다. 실물/실청취/인간시간·G016기존보류는미해결입니다. 상주감시/자동재시작/무한재시도서비스없음.
+
+
+## G-018 — PM 설계·디자인 작성 / native 05·06 개발 배정 준비
+
+- 작성시각2026-10-26 KST. PM직접설계두종/GDD·수용각24·개발계약·자체벡터키트·PC/모바일상태시안작성. `docs/g018-design/index.html`에서두시안열기. 실제물리/저장구현이아닌디자인샘플입니다.
+- 검증: Chromium32뷰포트×상태조합/테마·옷장잠금·부위장착·취소체크PASS,SVG XML/내부참조·결정적생성검사PASS. 자세한증거 artifacts/g018-pm/design-verification.json.
+- 정확native cody-01:01a16eb2-eae8-78d2-b41a-380d98e6673d → 05-falling-blocks. cody-02:01a17391-f01f-7ce0-821c-79e3fc3cde2f → 06-flappy. 과거exec02의01a1696e-467a-72f1-8bd1-2f8643d2e92c로대체하지않습니다.
+- 상태: native공유제어연결읽기확인과독립설계검토결과대기. 개발지시수신/착수는아직주장하지않습니다. 입력은G018_COMMON_CONTRACT/05·06_GDD/수용/계약과각시안입니다. 홈/공유문서/서버쓰기분리,실사용3116은건드리지않습니다.
+- 다음: 독립설계차단사항반영→정확UUID의새턴에기존모델·workspace-write·공식auto_review로계약전달→같은세션ACK/실제파일도구로수신확인. 이후각구현결과를독립QA/PM통합하며게임6개완료로확대하지않습니다.
+
+
+## G-017 — 네 게임 연결 수정 완료 / 실사용3116 유지
+
+- 실사용은 `http://192.168.0.195:3116/`(이PC127.0.0.1:3116), 기존PM2/LAN을그대로유지합니다. 이번작업은ecosystem/PM2/방화벽을변경하지않았습니다. **3102는별도개발용**이며실사용주소를대체하지않습니다.
+- 원인:3102가docs/prototype의30카드·체험시안1개를제공해세게임경로404. 실제src/public4게임링크는정상이었습니다. 옛시안PID4080만확인후교체하고npm start/preview/dev·Windows두런처·VSCode를현재소스개발용실행기로통일했습니다.
+- 검증:실행기29/29·실사용3116과개발용3102각9/9(PC/모바일Chromium·WebKit,총18)·시작/입력/정지/홈복귀·즐겨찾기·320/375배치·GET/HEAD/CSP/MIME통과. 무필터console오류/경고·외부/CSP·자산실패0,타입/diff0,보호981파일변경0.
+- 독립재검토G017_CODE_REVIEW_V2.json PASS(보안0/논리0),입력12SHA256일치PM확인. 원래README주소혼선FAIL과테스트관측첫실패는보존했습니다. 최종리뷰는실제결과18건의독립파싱이지다시브라우저실행한것이아닙니다.
+- 산출물:docs/G017_CONNECTION_FIX.md, docs/worklogs/20261025-201630_아름.md, artifacts/g017-pm/verification.json, artifacts/g017-delivery/G017_ConnectionFix_and_Verification.zip(수정파일17+manifest/설명,전체독립실행본아님).
+- 보드: `mvnqmygm-39-li7k` / `http://192.168.0.195:18787/api/posts/mvnqmygm-39-li7k.md`, done. 완전본문·첨부4개재다운로드SHA256검증완료.
+- 개발용재실행: `npm start` 또는start-local.bat/start-game.cmd,기본127.0.0.1:3102;매번artifacts/local-server-build빌드. 옛시안명시실행은 `npm run preview:design -- --port 3112`.
+- 제한:이연결수정은완료. 실물기기/실음향·Windows물리종료·재부팅자동실행·G016의전체수용보류/과거QA자료원복은별도이며해소로확대하지않습니다. 고정출력의삭제/이름변경잔존검증·테스트내부PNG디코더버전결합은비차단후속제안입니다.
+
+
+## 최신 실행 — 20261025-195654 PM2 LAN 접속
+
+- 사용자 요청으로 ecosystem.config.cjs 호스트를 0.0.0.0으로 변경하고 해당 게임만 재시작. 같은 네트워크 접속 http://192.168.0.195:3116/ , 이 PC http://127.0.0.1:3116/ . 기존 loopback 전용 설정을 대체합니다.
+- 실제 검증: PM2 online/PID 31880, 0.0.0.0:3116 LISTEN/PID 일치, loopback·내부IP 홈/4게임 총10HTTP200·빌드 바이트 일치. 근거 artifacts/pm2-lan/20261025-195654/verification.json.
+- 확인한 재적용: pm2 restart ecosystem.config.cjs --only number-garden-2048 --update-env . 최초 실행 pm2 start ecosystem.config.cjs --only number-garden-2048 . 중지 pm2 stop number-garden-2048.
+- 다른 물리기기 접속·수동 플레이·새 빌드·전체 회귀 미검증. 방화벽·라우터·재부팅 자동시작 미변경, G-016 전체수용 보류 유지. 서버 실행 차단 없음. 다음: 같은 네트워크 기기에서 위 주소 확인, 필요시 방화벽 허용 여부 확인.
+- 작업 기록 docs/worklogs/20261025-195654_아름.md. 완료 게시 mvnpql8y-38-z3g2 / http://localhost:18787/api/posts/mvnpql8y-38-z3g2.md — done·전체 본문·Markdown readback 확인. 근거 artifacts/pm2-lan/20261025-195654/publication.json.
+
+
+## 최신 실행 — 20261025-195534 PM2 4게임 서버
+
+- 사용자 요청으로 최신 artifacts/g016-build를 PM2 number-garden-2048로 시작. http://127.0.0.1:3116/ . Node v24.16.0, PID 25980, online, 재시작 0회. loopback 리슨 PID 일치.
+- 실제 검증: 홈·4게임·JS·CSS 8경로 HTTP 200/빌드 원본 바이트 일치. 근거 artifacts/pm2-start/20261025-195534/verification.json. 이번 빌드·전체 회귀·시각검사·수동 플레이는 미실행, G-016 전체수용 보류 유지.
+- 확인한 실행 명령: pm2 start ecosystem.config.cjs --only number-garden-2048 . 재시작 pm2 restart number-garden-2048, 중지 pm2 stop number-garden-2048. 설정 파일은 검증한 기존 빌드/3116을 지정합니다. 소스 변경 시 별도 빌드 필요.
+- claude-board PID 19628/재시작 0회 유지. 재부팅 자동 시작·PM2 전체 목록 저장·LAN 공개·방화벽·공개 배포는 설정하지 않았습니다. 직접 CLI 첫 시도의 --host 해석 오류는 설정 파일 방식으로 해결. 차단 사항 없음.
+- 다음: 브라우저 플레이 확인. PC 재시작 후 위 명령으로 실행. 작업 기록 docs/worklogs/20261025-195534_아름.md.
+- 완료 게시 mvnpovka-37-w092 / http://localhost:18787/api/posts/mvnpovka-37-w092.md — done 상태·전체 본문·Markdown 재조회 검증. 근거 artifacts/pm2-start/20261025-195534/publication.json.
+
+
+## G-016 — 개발용 실행본 검증·전달 / 전체수용 보류
+
+- 확인: 2026-10-25T15:03:37+09:00. PM 대현자·동일 native cody-01 구현. 세션auto_review/실제파일도구 검증은 유지하고 전역보안/ACL/모델은 바꾸지 않았습니다.
+- 프로젝트4게임·카탈로그33/플레이4/준비29. `docs/G016_COMPLETION.md`, 수용28개 판정 `docs/G016_VERIFICATION.json`(25자동범위PASS·3PARTIAL, 전체수용false)을 우선합니다.
+- 단위174/174. 전체HTTP브라우저150중147통과/실패0/기존플랫폼제외3/flaky0. 새게임51사례수집오류0, 기존WebKit캡처도구CSP11은 별도보존. 첫45/3/3실패보고서는 유지했습니다.
+- PM 정상DOM입력+가상시계3단계승리:96벽돌1410점/3목숨/저장1회. 가상331.12초로 사람1~4분목표는 입증하지못했습니다. WebAudio는API관측이며 실청취아닙니다.
+- 중요사고: 독립QA의출력env누락으로 g013-qa96파일생성/덮어쓰기. 과거바이트원복미확인. 현재자료ZIP보존했고 PM출력경로명시전체재시험에서 보호폴더127파일추가변경0을 확인했습니다. 기존G013자료로 재인용하지마세요.
+- 남음: B13/14/15의네이티브WebKit지속드래그/다중터치·실제OS숨김,WebKitPNG/실물기기/물리노치/음향·인간시간목표·과거QA보존사고의사용자처리확인. 임의복원/공개배포/방화벽변경하지않았습니다.
+- 현재HTTP: `http://127.0.0.1:3116/`, 게임 `/games/04-breakout/index.html`.
+- 재실행: `node artifacts/g016-build/src/server/index.js --host 127.0.0.1 --port 3116`.
+- ZIP: `artifacts/g016-delivery/SimpleGames_4Games_Runtime.zip`,52항목CRC/manifest/Node24분리실행11HTTP확인. 검토묶음 `G016_Review_and_Evidence.zip`.
+- 보드: `mvnf9des-35-3i6i` / `http://192.168.0.195:18787/api/posts/mvnf9des-35-3i6i.md`,status blocked(전체수용보류). 완전본문·첨부6개·재다운로드SHA256 검증. 이전설계글은done으로만마감하고본문보존.
+- QA전체재현시 자식프로세스시작전에환경지정: `GAME_TEST_ARTIFACT_DIR=artifacts/<새경로>/legacy-artifacts GAME_TEST_BUILD_DIR=artifacts/g016-build node node_modules/@playwright/test/cli.js test --config artifacts/g016-final-verification/playwright.config.ts`. 기존증거를덮지않게별도config/출력경로도함께복제하세요.
+
+
+## G-016 브라우저 도구 결함 분리·3스테이지 승리 확인
+
+- 첫 신규게임 독립HTTP QA51개:45통과/3실패/3플랫폼제외. 실패3은 WebKit 테스트용 스크린샷 직후 CSP style-src 위반이며 보고서 REPORT.json/trace/원본결과를 보존했습니다. 설치Playwright syncAnimations가 body{} inline style을 삽입하는 경로를 소스에서 확인했습니다. caret initial/animations allow로도 남아있어 단순재시도하지 않습니다. 게임CSP·소스·콘솔오류검출은 그대로 유지하고 제3자 QA deleg_8ee334da에 WebKit의 부가 캡처만 DOM기하정보로 대체·전체회귀를 배정했습니다. WebKit PNG 시각수용은 미검증으로 남깁니다.
+- PM이 실제 Desktop Chromium/HTTP/변경없는 RAF와 엔진을 정상 DOM pointermove·발사버튼 클릭+가상시계로 완주했습니다: stage1→2→3,96벽돌,3목숨,1410점,승리/plays1/wins1,추가시간 no-op·재도전 기록보존·홈복귀 확인. 브라우저 완료 가상시간331.12초(5분31.12초)로1~4분 목표를 입증하지 못했습니다. 사람의 실제 플레이시간이나 WebKit/실기기 승리 완주 결과로 과장하지 않습니다.
+- 승리 상태320/375/667×375 가로넘침 없음·보이는 버튼/링크44px 이상·재도전/목록접근을 확인했습니다. PC 승리 이미지는 실제1410·96벽돌·1회/3단계 기록과 함께 대현자가 시각 검토했습니다.
+- Chromium 실제 WebAudio oscillator 호출620/340/140Hz(파괴/패들/실점)·start/stop·mute 후 신규명령0을 관찰했고, AudioContext 생성실패 주입에서도 플레이/종료1회/ready복귀가 유지됐습니다. 이는 API 관측·주입장애 시험이며 실음향 청취가 아닙니다.
+- 추가 증거 artifacts/g016-pm/{browser-win-verification.json,browser-win.json,won-layouts.json,audio-verification.json,browser-failure-evidence-manifest.json,screens/}. 최종회귀·최종수용표·보드/납품은 새 독립 QA 결과가 와야 마감합니다.
+
+## 이전 통합 코드 독립 검토 통과 — 신규 게임 브라우저 QA 대기
+
+- `docs/G016_INTEGRATION_REVIEW.json`: INTEGRATION_DIFF_REVIEW_ONLY, passed=true, 보안/논리결함0. PM이 검토32파일의 현재 SHA256을 재검증하여 전부 일치했습니다. 원본 보고서를 보존하며 향후 HANDOFF/상태문서 수정은 별도 진행 이력으로 구분합니다.
+- 비차단 제안은 HTTP 모듈 본문/전체CSP·Storage 읽기 관측 강화입니다. 런타임 ZIP 분리시험에서는 HTTP10경로의 원본바이트 일치를 이미 확인했으나 이 보완을 기존 E2E가 수행했다고 소급하지 않습니다.
+- 실행본 `artifacts/g016-delivery/SimpleGames_4Games_Runtime.zip`:52항목, CRC/manifest51파일 검증, 소스·tests·node_modules 없는 별도 scratch에서 Node만으로 HTTP10경로200·원본바이트/SHA256·nosniff·CSP 주요항목 일치. 임시3118 smoke서버만 종료하고 주실행3116은 유지했습니다. 명령 `node src/server/index.js --host 127.0.0.1 --port 3118`. Windows launcher는 포함했으며 이 smoke는 Node 명령 직접 실행 시험입니다. 최종게임수용 대기로 ZIP을 아직 최종납품 완료로 선언하지 않습니다.
+- 남은 의존성 `deleg_c7fb53ed` 신규 게임 실제 브라우저 QA; 최종 수용표·실제 음향/실물기기 한계·작업일지·보드 게시 및 첨부 readback은 이후 마감합니다.
+
+## 이전 PM 통합 중간 검증
+
+- 소스·단위 독립 QA62개 PASS 및 소스/기존테스트6개 SHA256 일치를 PM 재검증했습니다. 별도 artifacts/g016-build typecheck/통합빌드 성공. PM 전체 단위174/174, 실제HTTP 회귀99/99(PC Chromium·모바일 Chromium·모바일 WebKit 각33), 실패/skip/flaky0. 독립62는 전체174의 부분집합입니다.
+- 홈33/실플레이4/준비중29·기존ID32 보존·신규cosmic-cleanup만 추가·확인종료 저장1회·게임키/즐겨찾기 분리를 실제 검증했습니다.
+- 별도 loopback http://127.0.0.1:3116/ 및 /games/04-breakout/index.html. 재실행: node artifacts/g016-build/src/server/index.js --host 127.0.0.1 --port 3116. 기존 dist/PM2/다른 서버/원안/전역설정은 보존했습니다.
+- 실제HTTP headless Playwright 화면7개(PC ready/playing/paused,375,320,667×375,홈)의 캡처·레이아웃·44px 검사 성공, 콘솔/외부요청/HTTP실패/CSP위반0. PC ready와375 모바일 ready 이미지는 대현자가 직접 시각 검토해 잘림·겹침 없는 코트/기록/장비/가이드를 확인했습니다. 실물기기·실청취·인간1~4분 플레이목표는 미검증입니다.
+- 진행 중 의존성: deleg_c7fb53ed 신규 게임 실제HTTP 브라우저 QA, deleg_56051571 PM 통합 독립 리뷰. 최종28수용·런타임ZIP·작업일지·납품 보드 갱신은 아직 미완료이며 전체게임완료를 선언하지 않습니다.
+- 증거 docs/G016_PM_CHECKPOINT.json, artifacts/g016-pm/{unit-results.json,unit-and-catalog-summary.json,regression-summary.json,inspection.json,inspection-summary.json,screens/}, artifacts/g016-regression/playwright-results.json. 초기 CLI 옵션 오류·browser_exec 캡처 시간초과·PM 집계 KeyError는 checkpoint에 기록하고 대체 검증과 구별했습니다.
+
+## 최신 권한 — 2026-10-25T13:55:20+09:00 cody-01 자동 진행 실검증 완료
+
+- 자동 진행 설정 완료 게시 `mvncw6sy-33-j85u` · http://192.168.0.195:18787/api/posts/mvncw6sy-33-j85u.md (본문/Markdown/실제 보고서 첨부 다운로드 검증). 기존 게임 제작 게시 `mvmpmwzo-32-kt67`는 doing으로 갱신·재조회했습니다.
+
+- 마스터의 "Worker가 승인요청없이 자동으로 진행" 지시에 따라 **기존 같은 native cody-01만** 공식 Approve for me/auto_review로 전환했습니다. `approvalPolicy:on-request`, `approvalsReviewer:auto_review`, `workspace-write`, 기본 `networkAccess:false`, 모델gpt-6.1-sol/provider/openai·UUID·프로젝트를 유지합니다.
+- `thread/resume` override는 이미 로드된 대화에 적용되지 않았고, 진행 중 `turn/start`로 세션 기본값을 바꿔도 기존 턴의 reviewer는 user로 남았습니다. 실제 turn_context로 확인하여, PM이 배정한 이전 대기 턴만 interrupt하고 파일을 보존한 채 같은 UUID에 새 턴 `01a17165-455f-7271-acc8-2e2c02784adf`을 시작했습니다. 새 turn_context와 재접속 조회 모두 auto_review임을 검증했습니다.
+- 새 턴이 설계 문서를 실제 읽고, 전용 검증 JSON을 실제 기록하고, Node assert를 실행하여 `AUTO_REVIEW_NEW_TURN_OK nonce=b70092b076879d24`/종료0을 냈습니다. 관찰 중 사람 대상 승인 요청0이며 공식 자동 검토의 low-risk 승인 메시지도 확인했습니다. 아래 과거의 '승인 대기·구현 파일0개'는 당시 상태이며 현재에는 적용되지 않습니다.
+- 기존 Windows `helper_sandbox_lock_failed`/SetNamedSecurityInfoW 오류 자체를 ACL 수정으로 고친 것은 아닙니다. 기본 실행 실패 뒤 적격 재실행을 공식 자동 위험 검토가 처리합니다. 무조건 전체 권한 허용이 아니며 위험 동작은 거부될 수 있습니다. 글로벌 Codex config SHA256 불변, Hermes 승인 설정·ACL·관리자 권한·인증/모델/provider·기존 서버/프로세스는 변경하지 않았습니다.
+- 근거: `.game-team/verification/cody-01-auto-review-20261025-134158/VERIFIED.json`, 같은 폴더 before/after/new-turn/guardian 증거 및 `artifacts/g016-worker-autonomy-smoke/`의 검증 파일입니다. 코디는 기존 게임 파일을 보존하여 구현·실제 단위/UI/터치 검증을 계속 진행했습니다. 게임 전체 수용·홈 통합·독립 QA는 별도이며 완료 선언하지 않습니다.
+- 자동 모드는 현재 공유 세션/후속 턴에서 확인했습니다. 데몬/PC 재시작 후 영구 적용은 시험하지 않았고 무인 상주 감시·반복 재시도 서비스를 설치하지 않았습니다.
+
+## 이전 작업 — G-016 대현자 설계·디자인 v1.1 전달 / 구현 승인 대기
+
+- 설계/디자인 인수 기록 게시 검증 완료: `mvmpmwzo-32-kt67` · http://192.168.0.195:18787/api/posts/mvmpmwzo-32-kt67.md. 설계 원문 본문/blocked 상태/Markdown을 재조회했고 실제 ZIP·PC/모바일 첨부3개를 재다운로드하여 SHA256 일치를 확인했습니다. ZIP은 `artifacts/g016-design-delivery/G016_Breakout_Design_v1.1.zip`이며 설계 자료17항목/CRC·manifest 검증 완료입니다. blocked는 게임 구현 승인 대기를 뜻하며 설계 게이트는 PASS입니다.
+
+
+- 확인 시각: 2026-10-25T02:59:49+09:00. 요청 원안은 `D:/Work/Game/Game-001/simple-games-20/games/04_breakout.md`, 대상 프로젝트는 이 저장소입니다. 대현자가 설계서·PC/모바일 HTML 시안·자체 벡터 키트·28개 수용 기준·구현 계약을 직접 작성했습니다.
+- 설계: `docs/G016_GAME_DESIGN.md` v1.1, `docs/G016_ACCEPTANCE.md`, `docs/G016_IMPLEMENTATION_CONTRACT.md`, `docs/G016_DESIGN_ADDENDUM.md`. 시안: `docs/g016-breakout-design/index.html`, `desktop-v11.png`, `mobile-v11.png`, `README.md`. 시안은 실제 게임이 아니며 샘플 기록/상태 툴바는 출하하지 않습니다.
+- 독립 초기 설계 검토 `docs/G016_DESIGN_REVIEW.json`은 FAIL로 보존했습니다. 누락 G016-DQ-01을 v1.1에서 plays/도달단계/전체벽돌/중도종료 저장순서와8개 독립 사례로 보완했고, 별도 `docs/G016_DESIGN_REVIEW_V11.json`이 **PASSED_DESIGN_ONLY**이며 차단 결함0, 독립 사례8개 일치, PM이 입력13개 SHA256 재검증했습니다. 이는 설계 통과이며 실제 게임/수용기준28개 전체 통과가 아닙니다. 비차단 제안2개(엔진 상세 경계/API 문서·기존 누적값/상한/저장 실패 시험)는 구현 후 QA에 넘깁니다.
+- 실제 native cody-01 UUID `01a16eb2-eae8-78d2-b41a-380d98e6673d`에 최초 계약이 전달되어 구현 턴이 시작됐고, v1.1 보완도 같은 UUID의 전송 큐에 등록했습니다. 증거 `artifacts/g016-pm/cody-dispatch.json`, `cody-dispatch-v11.json`. **큐 접수와 읽기/완료 응답은 다르며 v1.1 읽기 확인은 아직 없습니다.**
+- 차단: 코디의 Windows 샌드박스 `helper_sandbox_lock_failed` / `SetNamedSecurityInfoW(.sandbox-bin): Access denied (5)` 후 문서 읽기 명령이 추가 승인 대기입니다. 사용자 확인에 응답이 없어 개별/영구 승인을 하지 않았고 보안·ACL·전역설정·모델·provider를 바꾸지 않았습니다. 실제 `public/games/04-breakout/` 구현 파일은 아직0개입니다.
+- 확인: 시안 JS 구문 검사 성공, 수용 ID28개 중복 없음, PC1366×1050/모바일375×812/320×667에서 가로 overflow 없음, 실제 주요 게임 버튼 높이44px, PC/모바일 캡처를 직접 확인했습니다. 새 게임 단위/플레이/E2E/실음향/실기기 검증은 미실행입니다. 초기 기존 baseline typecheck/build 성공, 기존 단위112/112이며 이를 새 게임 최종 결과로 쓰지 않습니다.
+- 다음: 사용자께서 Codex 창의 명시적 프로젝트 읽기 요청을 승인하거나 권한 복구 범위를 승인해야 코디가 구현을 재개합니다. PM은 보완 설계 독립 재검토 결과를 반영하고, 구현 후 별도 QA·회귀·실행본·최종 보드 기록을 완료합니다. 기존 서버/3게임/선행 변경을 보존하고 Git 커밋하지 않았습니다.
+
+## 최신 연결 — 2026-10-25 cody-01 실제 응답·같은 세션 문맥 검증 완료
+
+- 저장된 정확한 이름 `cody-01`, UUID `01a16eb2-eae8-78d2-b41a-380d98e6673d`, 프로젝트 일치, 검증 모델 `gpt-6.1-sol`입니다. 과거 `코디 (Worker)`나 cody-02의 UUID와 다르므로 혼동하지 않습니다.
+- 사용량 한도 오류의 안내 시각 01:50 KST가 지난 뒤 기존 인증·모델·공유 데몬을 유지하여 재검증했습니다. 01:55 첫 challenge 응답, 01:55:59 후속 요청에서 직전 challenge 기억을 실제 assistant 최종 메시지와 완료 이벤트로 확인했습니다. 완료된 turn 2개, 오류/도구 호출 0건, 검사 시작 시 다시 캡처한 코드·자산 등 99개 파일 해시 변경 0개입니다.
+- 전송 경로는 Codex 0.164.0의 기존 공유 app-server `unix://`입니다. 실제 시험에 사용한 형식: `codex.cmd queue --remote unix:// --thread "01a16eb2-eae8-78d2-b41a-380d98e6673d" --message "<명시적인 작업 계약>" --model gpt-6.1-sol`. 후속 작업 전 정확한 이름·UUID·현재 모델·데몬 가용성을 다시 확인하고 현재 모델 선택을 존중합니다. `--last` 또는 cody-02의 headless 실행기로 보내지 않습니다.
+- 연결 매니페스트 `.game-team/worker-connections/cody-01.json`, 증거 `.game-team/verification/cody-01-connected-20261025_015939.json`, 작업 요약 `docs/worklogs/20261025-015939_아름.md`, 일반 문서 사본 `E:/Work3/Hermes/Dev/Doc/cody_01_connection_recovered_20261025_015939.md`입니다.
+- 실제 개발 업무·파일 수정·게임 빌드/전체 회귀는 이번에 실행하지 않았습니다. 두 시험의 실제 sandbox는 기존 `workspace-write`이며 읽기 전용 OS 격리 검증이 아닙니다. GUI 렌더링을 직접 본 것이 아니라 정확한 대상 대화의 요청·응답 저장을 확인했습니다. 전역 설정/인증 변경, 추가 결제, 새 모델/서버 전환, 기존 프로세스 강제 종료는 없었습니다.
+- 완료 게시 `mvmn9a80-30-tui3`: 본문 전체·done 상태·Markdown 재조회 확인. 부모 `mvmm432a-29-h27t`의 앞선 사용량 차단 기록은 보존하고 상태만 done으로 갱신·재조회했습니다. 게시 증거 `.game-team/verification/cody-01-connected-20261025_015939-publication.json`입니다.
+- 다음 작업은 마스터의 구체적 요청을 받아 허용 수정 경로와 수용 기준을 지정해 같은 UUID에 배정하는 것입니다. 연결 정보 저장은 상주 Bot/자동 반복 요청 설치가 아닙니다. 추후 사용량 소진이나 데몬 종료 시 재검증하며, 과거 cody-02의 미연결·실행 경로 문제까지 해결된 것으로 확대하지 않습니다.
+
 ## 최신 작업 — G-015 커밋·main 머지 및 보드 갱신
 
 - 구현 3f2af29 → main 머지 163dce3. 통합 전 기준 da9d7ec는 보관 원본으로 만든 최초 커밋입니다. 원격 저장소 미등록, 로컬 머지 완료입니다.

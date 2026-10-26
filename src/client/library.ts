@@ -25,6 +25,9 @@ const GAME_CATALOG: CatalogGame[] = [
   { id: 'number-garden', title: '숫자 정원', genre: '숫자', description: '같은 숫자를 합치며 키우는 작은 정원', tags: ['2048', '합치기', '정원'], minutes: 3, maxMinutes: 10, status: 'available', href: '/game.html' },
   { id: 'little-dragon', title: '꼬마 용 간식 여행', genre: '순발력', description: '간식을 모으며 자라는 용과 나만의 코스튬', tags: ['스네이크', 'snake', '용', '간식', '코스튬'], minutes: 1, maxMinutes: 3, status: 'available', href: '/games/02-snake/index.html' },
   { id: 'neon-rally', title: '네온 랠리', genre: '순발력', description: '키보드와 터치로 받아치는 7점 선취 퐁', tags: ['퐁', 'pong', '패들', '랠리', 'AI'], minutes: 1, maxMinutes: 3, status: 'available', href: '/games/03-pong/index.html' },
+  { id: 'cosmic-cleanup', title: '우주 청소부', genre: '순발력', description: '공을 튕겨 세 구역의 우주 잔해를 말끔하게', tags: ['벽돌깨기', 'breakout', '우주', '패들', '3스테이지'], minutes: 1, maxMinutes: 4, status: 'available', href: '/games/04-breakout/index.html' },
+  { id: 'block-workshop', title: '한 판 블록 공방', genre: '퍼즐', description: '일곱 모양을 쌓고 스무 줄을 완성하는 공방', tags: ['낙하블록', '블록', '공방', '20줄', '회전'], minutes: 2, maxMinutes: 5, status: 'available', href: '/games/05-falling-blocks/index.html' },
+  { id: 'balloon-sparrow', title: '풍선 참새', genre: '순발력', description: '가볍게 날갯짓하며 정원 아치 사이로', tags: ['참새', 'flappy', '날갯짓', '풍선', '코스튬'], minutes: 1, maxMinutes: 2, status: 'available', href: '/games/06-flappy/index.html' },
   { id: 'memory-pieces', title: '기억의 조각', genre: '기억', description: '뒤집고 기억하며 찾아내는 한 쌍', tags: ['카드', '맞추기'], minutes: 2, maxMinutes: 5, status: 'upcoming' },
   { id: 'leisure-line', title: '한 줄의 여유', genre: '퍼즐', description: '빈칸을 채우고 한 줄을 비우는 시간', tags: ['블록', '채우기'], minutes: 3, maxMinutes: 8, status: 'upcoming' },
   { id: 'color-walk', title: '색의 산책', genre: '퍼즐', description: '같은 색을 이어 완성하는 작은 풍경', tags: ['색깔', '연결'], minutes: 2, maxMinutes: 5, status: 'upcoming' },
@@ -130,6 +133,25 @@ function artwork(game: CatalogGame, index: number): HTMLDivElement {
     const mini = create('div', 'mini-court');
     for (let i = 0; i < 3; i++) mini.append(create('i', ''));
     art.append(mini);
+  } else if (game.id === 'cosmic-cleanup') {
+    art.classList.add('art-breakout');
+    const mini = create('div', 'mini-breakout');
+    for (let i = 0; i < 32; i++) mini.append(create('i', ''));
+    mini.append(create('span', 'mini-breakout-paddle'), create('span', 'mini-breakout-ball'));
+    art.append(mini);
+  } else if (game.id === 'block-workshop') {
+    art.classList.add('art-falling');
+    const mini = create('div', 'mini-falling');
+    for (const value of ['','','T','','','T','T','T','','','','','L','J','','','L','L','J','J']) mini.append(create('i', value ? 'filled' : '', value));
+    art.append(mini);
+  } else if (game.id === 'balloon-sparrow') {
+    art.classList.add('art-sparrow');
+    const svg = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
+    svg.setAttribute('viewBox', '0 0 96 96');
+    svg.classList.add('mini-sparrow');
+    const bird = document.createElementNS('http://www.w3.org/2000/svg', 'use');
+    bird.setAttribute('href', '/games/06-flappy/assets/kit.svg#sparrow-fly0');
+    svg.append(bird); art.append(svg);
   } else if (game.id === 'number-garden') {
     art.classList.add('art-garden');
     const mini = create('div', 'mini-numbers');

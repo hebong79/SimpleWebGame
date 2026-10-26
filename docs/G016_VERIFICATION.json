@@ -1,0 +1,330 @@
+{
+  "task_id": "G016-PM-DELIVERY",
+  "verified_at": "2026-10-25T14:56:50+09:00",
+  "status": "PLAYABLE_DEVELOPMENT_BUILD_WITH_ACCEPTANCE_HOLDS",
+  "overall_acceptance_passed": false,
+  "execution_gate_passed": true,
+  "write_scope_compliance_passed": false,
+  "unit": {
+    "total": 174,
+    "passed": 174,
+    "failed": 0,
+    "independent62_is_subset": true
+  },
+  "browser": {
+    "scope": "PM_FULL_HTTP_SUITE_WITH_EXPLICIT_CHILD_OUTPUT_ENV",
+    "stats": {
+      "startTime": "2026-10-25T05:45:41.912Z",
+      "duration": 212878.099,
+      "expected": 147,
+      "skipped": 3,
+      "unexpected": 0,
+      "flaky": 0
+    },
+    "enumerated": 150,
+    "by_project": {
+      "desktop-chromium": {
+        "expected": 48,
+        "skipped": 2
+      },
+      "mobile-chromium": {
+        "expected": 50
+      },
+      "mobile-webkit": {
+        "expected": 49,
+        "skipped": 1
+      }
+    },
+    "breakout_unfiltered_runtime_cases": 51,
+    "breakout_errors": 0,
+    "breakout_external": 0,
+    "breakout_http_asset_errors": 0,
+    "legacy_protected_files": 127,
+    "legacy_changed_during_pm_rerun": [],
+    "prior_scope_breach_reversed": false,
+    "typecheck_passed": true,
+    "manual_and_image_acceptance": false,
+    "legacy_screenshot_tool_errors": 11,
+    "legacy_application_errors": 0
+  },
+  "post_format_same_six_case_retest": {
+    "startTime": "2026-10-25T05:53:06.894Z",
+    "duration": 6456.022999999999,
+    "expected": 6,
+    "skipped": 0,
+    "unexpected": 0,
+    "flaky": 0
+  },
+  "runtime": {
+    "zip": "E:\\Work2\\Project\\SimpleGames\\01-2048\\artifacts\\g016-delivery\\SimpleGames_4Games_Runtime.zip",
+    "sha256": "82b0ad77cc17aad60aca086d6318272e65df6f91b3c56b7d26730a89582e06a4",
+    "archive_entries": 52,
+    "crc_pass": true,
+    "manifest_files": 51,
+    "isolated_extraction": "C:\\Users\\hebon\\AppData\\Local\\hermes\\cache\\scratch\\g016-runtime-final-9d9dca556861\\SimpleGames",
+    "npm_installed": false,
+    "source_tests_node_modules_absent": true,
+    "standalone_http": [
+      {
+        "path": "/",
+        "status": 200,
+        "sha256": "ef3578b022fa8bfad7b666235d905d6d858296e1b37a4062f3c3dc75e109d2c7"
+      },
+      {
+        "path": "/home.css",
+        "status": 200,
+        "sha256": "a5da3c8da0a3db1344e0e116890acc9264d4dfb98bb397c9b8928df29c5bc46e"
+      },
+      {
+        "path": "/game.html",
+        "status": 200,
+        "sha256": "4df7eb032bc71ea3e5eaa4783188f7f6a17c03374f82551210ba94db0066defe"
+      },
+      {
+        "path": "/games/02-snake/index.html",
+        "status": 200,
+        "sha256": "0441872b984e8818c41cf9369e39795a0646481ff02c39ded5a7a8c3617e48c5"
+      },
+      {
+        "path": "/games/03-pong/index.html",
+        "status": 200,
+        "sha256": "8fe818416694ba305d72ff14575073ad7aed750bc6df329598e6ab8591e8fc46"
+      },
+      {
+        "path": "/games/04-breakout/index.html",
+        "status": 200,
+        "sha256": "d89f7dc2cbb217bd326cb92742bb895e12b62a508ed3cee70051bab90d613c9c"
+      },
+      {
+        "path": "/games/04-breakout/engine.mjs",
+        "status": 200,
+        "sha256": "ece64fca5586d42cf278e877abe34135998aca7b8b4212171d11f6fa3075e9a2"
+      },
+      {
+        "path": "/games/04-breakout/save.mjs",
+        "status": 200,
+        "sha256": "add5965c29c45dc69129893660ee5bcf43e8971acf1d21d227151e63e702331c"
+      },
+      {
+        "path": "/games/04-breakout/main.mjs",
+        "status": 200,
+        "sha256": "ee1fa24a4f320ec69d26b5a6f8feba1d47e4e5bdd63db465cfedc716be10c7b8"
+      },
+      {
+        "path": "/games/04-breakout/styles.css",
+        "status": 200,
+        "sha256": "c7164559af8f19a1b01c3a32c104f7e8b9f364f4a489ac0ac6de4625d86be512"
+      },
+      {
+        "path": "/scripts/library.js",
+        "status": 200,
+        "sha256": "87c45565becd79a83301eed33fc03217ef529a48af7a0a74db00722993397904"
+      }
+    ],
+    "own_smoke_server_stopped": true,
+    "post_format_six_e2e_passed": true,
+    "format_change_proof": "artifacts/g016-pm/post-review-format-only.json",
+    "full_human_acceptance": false
+  },
+  "criteria": [
+    {
+      "id": "B01",
+      "status": "PASS",
+      "finding": "원안·공통사양 해시가 최초 설계 검토와 현재 일치",
+      "evidence": "artifacts/g016-pm/original-source-verified.json"
+    },
+    {
+      "id": "B02",
+      "status": "PASS",
+      "finding": "720×960/패들120/공r9/목숨3",
+      "evidence": "docs/G016_QA_REVIEW.json"
+    },
+    {
+      "id": "B03",
+      "status": "PASS",
+      "finding": "3단계 각32개·3배치·내구도1",
+      "evidence": "docs/G016_QA_REVIEW.json"
+    },
+    {
+      "id": "B04",
+      "status": "PASS",
+      "finding": "300/350/400속도·크기보존",
+      "evidence": "docs/G016_QA_REVIEW.json"
+    },
+    {
+      "id": "B05",
+      "status": "PASS",
+      "finding": "벽돌10점·중복제거/득점방지",
+      "evidence": "docs/G016_QA_REVIEW.json"
+    },
+    {
+      "id": "B06",
+      "status": "PASS",
+      "finding": "남은목숨×50 1회·목숨이월",
+      "evidence": "docs/G016_QA_REVIEW.json"
+    },
+    {
+      "id": "B07",
+      "status": "PASS",
+      "finding": "고속/긴프레임/모서리 연속충돌 경계 단위시험",
+      "evidence": "artifacts/g016-qa/final-unit-results.json"
+    },
+    {
+      "id": "B08",
+      "status": "PASS",
+      "finding": "마지막벽돌과바닥 동시 시 통과우선",
+      "evidence": "artifacts/g016-qa/independent-boundaries.test.mjs"
+    },
+    {
+      "id": "B09",
+      "status": "PASS",
+      "finding": "한번1목숨·수동재발사·0목숨불가, 실제 브라우저3목숨 소진",
+      "evidence": "artifacts/g016-final-verification/results.json"
+    },
+    {
+      "id": "B10",
+      "status": "PASS",
+      "finding": "엔진 승패한번확정, Desktop Chromium 정상DOM입력3단계승리",
+      "evidence": "artifacts/g016-pm/browser-win-verification.json"
+    },
+    {
+      "id": "B11",
+      "status": "PASS",
+      "finding": "ready/paused/finished no-op·시작/발사분리",
+      "evidence": "artifacts/g016-final-verification/results.json"
+    },
+    {
+      "id": "B12",
+      "status": "PASS",
+      "finding": "PC마우스·클릭/Space·방향키/A D·초점/modifier",
+      "evidence": "artifacts/g016-final-verification/results.json"
+    },
+    {
+      "id": "B13",
+      "status": "PARTIAL",
+      "finding": "Chromium 실제CDP드래그·좌표환산·탭과WebKit실제탭 확인. WebKit네이티브지속드래그 미검증",
+      "evidence": "artifacts/g016-browser-final/REPORT.json"
+    },
+    {
+      "id": "B14",
+      "status": "PARTIAL",
+      "finding": "Chromium 실제터치cancel/코트밖추가손가락·DOM lostcapture 확인. WebKit네이티브복합터치 미검증",
+      "evidence": "artifacts/g016-browser-final/REPORT.json"
+    },
+    {
+      "id": "B15",
+      "status": "PARTIAL",
+      "finding": "blur/pagehide DOM보호정지·명시재개·stale입력확인. 실제OS포커스·탭숨김 미검증",
+      "evidence": "artifacts/g016-browser-final/REPORT.json"
+    },
+    {
+      "id": "B16",
+      "status": "PASS",
+      "finding": "재시작/홈 확인취소·paused보존·배경격리·Tabtrap·초점복귀",
+      "evidence": "artifacts/g016-final-verification/results.json"
+    },
+    {
+      "id": "B17",
+      "status": "PASS",
+      "finding": "실제승리1410/패배40·이유/최고기록·재도전/목록·finished고정",
+      "evidence": "artifacts/g016-pm/browser-win-verification.json"
+    },
+    {
+      "id": "B18",
+      "status": "PASS",
+      "finding": "설계8사례 단위·quit저장1회·재진입/타게임키분리",
+      "evidence": "docs/G016_QA_REVIEW.json"
+    },
+    {
+      "id": "B19",
+      "status": "PASS",
+      "finding": "손상/구버전/getter/get/set 실패 주입과 메모리/지속경고",
+      "evidence": "artifacts/g016-final-verification/results.json"
+    },
+    {
+      "id": "B20",
+      "status": "PASS",
+      "finding": "3스킨 색외문양·선택·물리불변·설정지속",
+      "evidence": "docs/G016_QA_REVIEW.json"
+    },
+    {
+      "id": "B21",
+      "status": "PASS",
+      "finding": "자체벡터·실제WebAudio3종 명령·mute·생성실패주입. 실청취는별도미검증",
+      "evidence": "artifacts/g016-pm/audio-verification.json"
+    },
+    {
+      "id": "B22",
+      "status": "PASS",
+      "finding": "320/375/667가로배치·44px·모달접근·키보드/저감모션·safe-area CSS. 물리노치/회전별도",
+      "evidence": "artifacts/g016-pm/won-layouts.json"
+    },
+    {
+      "id": "B23",
+      "status": "PASS",
+      "finding": "PM시안코트/우주배경/기록/장비/가이드·실제0/1410데이터, Chromium PC/모바일 시각검토. WebKit이미지별도",
+      "evidence": "artifacts/g016-pm/screens/desktop-won.png"
+    },
+    {
+      "id": "B24",
+      "status": "PASS",
+      "finding": "카탈로그33/플레이4/준비29·기존32레코드보존·고유실행링크",
+      "evidence": "docs/G016_INTEGRATION_REVIEW.json"
+    },
+    {
+      "id": "B25",
+      "status": "PASS",
+      "finding": "기존3게임·홈필터/검색/즐겨찾기/정렬/더보기 실제전체회귀",
+      "evidence": "artifacts/g016-final-verification/summary.json"
+    },
+    {
+      "id": "B26",
+      "status": "PASS",
+      "finding": "외부요청0·런타임의존추가0·전체CSP/모듈본문일치. 기존캡처도구CSP11은별도",
+      "evidence": "artifacts/g016-browser-final/independent-http-readonly.json"
+    },
+    {
+      "id": "B27",
+      "status": "PASS",
+      "finding": "빌드/loopback/ZIP52/npm없는분리HTTP11·작업일지·보드완전본문/첨부6개재다운로드SHA256 검증",
+      "evidence": "artifacts/g016-delivery/runtime-verification-final.json",
+      "publication_evidence": "artifacts/g016-delivery/board-publication.json"
+    },
+    {
+      "id": "B28",
+      "status": "PASS",
+      "finding": "실물/실청취/WebKit이미지/1~4분목표·scope사고와미복구를별도로명시",
+      "evidence": "docs/G016_COMPLETION.md"
+    }
+  ],
+  "criteria_counts": {
+    "PASS": 25,
+    "PARTIAL": 3
+  },
+  "scope_incident": {
+    "affected_generated_or_overwritten_files": 96,
+    "directory": "artifacts/g013-qa",
+    "preservation_zip": "artifacts/g016-incident-preservation/legacy-g013-current-outputs.zip",
+    "old_bytes_restored": false,
+    "pm_rerun_protected_file_count": 127,
+    "pm_rerun_additional_changes": 0,
+    "tested_recurrence_prevention": "Explicit GAME_TEST_ARTIFACT_DIR in child environment before startup",
+    "unresolved": "과거96개 파일의 이전바이트 원복 확인 불가. 기존G013 결과로 현재파일을 재사용하지 마세요."
+  },
+  "manual_limits": [
+    "WebKit네이티브지속드래그/다중터치·명시PNG시각수용",
+    "실물Android/iPhone·실손가락·실제OS포커스/탭숨김·물리safe-area/회전",
+    "실음향청취",
+    "인간1~4분목표: 자동DOM입력+가상시계331.12초로목표달성을입증하지못함",
+    "공개배포/방화벽/LAN접속·상주서비스 미구성"
+  ],
+  "board_publication": {
+    "status": "VERIFIED",
+    "post_id": "mvnf9des-35-3i6i",
+    "url": "http://192.168.0.195:18787/api/posts/mvnf9des-35-3i6i.md",
+    "attachment_count": 6,
+    "exact_body_verified": true,
+    "downloaded_bytes_and_sha256_verified": true,
+    "evidence": "artifacts/g016-delivery/board-publication.json"
+  }
+}

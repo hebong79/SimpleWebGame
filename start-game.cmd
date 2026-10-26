@@ -1,17 +1,20 @@
 @echo off
 setlocal
 cd /d "%~dp0"
+if errorlevel 1 (
+  echo Cannot open the SimpleGames project directory.
+  exit /b 1
+)
 where node >nul 2>nul
 if errorlevel 1 (
-  echo Node.js 24 or newer is required.
+  echo Node.js 24 or newer is required. No installation was attempted.
   pause
   exit /b 1
 )
-if not exist "dist\src\server\index.js" (
-  echo Build files not found. Run npm ci and npm run build first.
+node "scripts/serve_local.mjs" %*
+set "serverExitCode=%ERRORLEVEL%"
+if not "%serverExitCode%"=="0" (
+  echo SimpleGames could not start. Read the error above.
   pause
-  exit /b 1
 )
-echo Open http://127.0.0.1:3101 in your browser.
-node "dist\src\server\index.js" %*
-if errorlevel 1 pause
+exit /b %serverExitCode%

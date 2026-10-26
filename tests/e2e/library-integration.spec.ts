@@ -25,12 +25,12 @@ test.afterEach(async ({ page }, info) => {
   expect(evidence.external, 'external requests').toEqual([]);
 });
 
-test('18 library 32 entries pagination search genre state sorting and zero reset', async ({ page }) => {
+test('18 library 35 entries pagination search genre state sorting and zero reset', async ({ page }) => {
   await page.goto('/'); await expect(page.locator('.game-card')).toHaveCount(12);
-  await expect(page.locator('#result-count')).toHaveText('32개');
+  await expect(page.locator('#result-count')).toHaveText('35개');
   await page.locator('#load-more').click(); await expect(page.locator('.game-card')).toHaveCount(24);
-  await page.locator('#load-more').click(); await expect(page.locator('.game-card')).toHaveCount(32);
-  const all = await ids(page); expect(new Set(all).size).toBe(32);
+  await page.locator('#load-more').click(); await expect(page.locator('.game-card')).toHaveCount(35);
+  const all = await ids(page); expect(new Set(all).size).toBe(35);
   const byDuration = await page.locator('.game-card').evaluateAll(cards => cards.map(card => ({ id: (card as HTMLElement).dataset.id, minutes: Number(card.querySelector('.duration')!.textContent!.match(/\d+/)![0]) })).sort((a, b) => a.minutes - b.minutes).map(card => card.id));
   await expect(page.locator('a.card-action[href="/game.html"],a.card-action[href="game.html"]')).toHaveCount(1);
   await expect(page.locator('button.card-action:disabled')).toHaveCount(29); await expect(page.locator('#load-more')).toBeHidden();

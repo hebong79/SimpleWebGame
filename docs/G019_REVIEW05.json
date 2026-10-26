@@ -1,0 +1,111 @@
+{
+  "passed": true,
+  "security_concerns": [],
+  "logic_errors": [],
+  "suggestions": [
+    "비차단: 실제 통합 HTTP/CSP/MIME·홈 연결·기존 게임 회귀는 PM 범위에서 별도 확인해 주세요. 이번 Chromium DOM 검사는 모든 요청을 로컬 실제 파일로 충족한 오프라인 소스 검사이며 운영 3116 검증은 아닙니다.",
+    "비차단: 실물 터치·WebKit·실제 OS 숨김/긴 프레임·정상 입력 20줄 완주·실음향 청취는 이번 독립 검토에서 실행하지 않았습니다. 구현자 자체 증거를 독립 검증으로 전용하지 않았습니다."
+  ],
+  "tests": {
+    "scope": "G019-REVIEW05 독립 소스·단위·오프라인 Chromium DOM 검토",
+    "unit": {
+      "command": "node --test tests/games/05-falling-blocks.test.mjs",
+      "exit_code": 0,
+      "tests": 42,
+      "pass": 42,
+      "fail": 0,
+      "cancelled": 0,
+      "skipped": 0,
+      "evidence": "artifacts/g019-review05/unit.log"
+    },
+    "independent": {
+      "command": "node artifacts/g019-review05/independent.mjs",
+      "exit_code": 0,
+      "total": 9,
+      "passed": 9,
+      "failed": 0,
+      "checks": [
+        {
+          "name": "independent clear then win without spawn or RNG",
+          "passed": true
+        },
+        {
+          "name": "independent all-or-nothing score cap and duplicate attempt",
+          "passed": true
+        },
+        {
+          "name": "DOM ready and explicit start, single Space lock",
+          "passed": true
+        },
+        {
+          "name": "DOM focus isolation and keyboard hold reset",
+          "passed": true
+        },
+        {
+          "name": "DOM modal traps focus, Escape closes without resume or settlement",
+          "passed": true
+        },
+        {
+          "name": "DOM restart cancel preserves then confirm settles exactly once",
+          "passed": true
+        },
+        {
+          "name": "DOM blur interrupts, no auto resume and no stale holds",
+          "passed": true
+        },
+        {
+          "name": "DOM reload retains completed records but not unfinished game",
+          "passed": true
+        },
+        {
+          "name": "DOM 320px help modal accessible and no horizontal overflow",
+          "passed": true
+        }
+      ],
+      "console_errors": [],
+      "page_errors": [],
+      "unexpected_requests": [],
+      "evidence": "artifacts/g019-review05/independent-results.json",
+      "log": "artifacts/g019-review05/independent.log",
+      "method": "Chromium의 모든 요청을 전용 가상 origin의 실제 로컬 게임 소스로 fulfill하였으며 HTTP 서버·외부망·게임 상태 setter를 사용하지 않았습니다. 엔진 경계 2건은 독립 메모리 객체를 구성한 단위 검사입니다."
+    },
+    "static": {
+      "files": "public/games/05-falling-blocks/** 및 tests/games/05-falling-blocks.test.mjs 전부 검토했습니다.",
+      "evidence": "artifacts/g019-review05/static-scan.json",
+      "findings": "동적 실행·HTML 삽입 sink·외부 요청 코드·SVG 활성 콘텐츠·타 저장키 삭제를 발견하지 못했습니다. URL 검색의 2건은 SVG namespace이며 네트워크 호출이 아닙니다. clear 검색은 Map/Set 초기화이고 HTML script 검색은 로컬 main.mjs의 정상 module 로드입니다."
+    },
+    "targeted": {
+      "safe_integer_cap": "기존 단위 및 독립 추가 경계에서 통계 전체 보존·설정 유지·초과 결과 재시도 0을 확인했습니다. 종료횟수 합은 BigInt 비교입니다.",
+      "duplicate_settlement": "기존 단위의 WeakSet 정산, 독립 DOM의 취소 보존·확인 quit 1회·도움말 재개방 추가 0·reload 1회 유지를 확인했습니다.",
+      "modal_focus_interrupt": "독립 DOM에서 메뉴 정지·Tab/Shift+Tab 순환·Escape 닫기·원초점 복귀·자동 재개 0·창 blur 정지·눌림 초기화·정지시간 불변을 확인했습니다. blur는 합성 이벤트 검사이며 실제 OS 이탈 검사는 아닙니다.",
+      "seven_bag": "실제 실행한 기존 단위에서 21개 3bag 각각 7종·RNG 주입·회전실패와 noop 난수 비소비를 확인했습니다.",
+      "lock_300ms": "실제 실행한 기존 단위에서 최초 접촉 299+1ms·이동/회전 예산 보존·공중 소진/재접촉·정지 5000ms 불변을 확인했습니다.",
+      "clear_win_spawn": "기존 단위와 독립 추가 단위에서 19+4=23줄·800점·clear 후 finish(won)·spawn/RNG 추가 0을 확인했습니다. 18+1 후 다음 스폰 충돌 lost도 기존 단위에서 통과했습니다."
+    },
+    "reviewed_source_unchanged_after_execution": true,
+    "unverified": [
+      "운영 HTTP/홈 통합/배포",
+      "실물 모바일/네이티브 WebKit",
+      "실제 OS 숨김 및 긴 프레임 자동화",
+      "브라우저 저장 차단 주입(순수 저장 단위의 getter/get/set throw는 통과)",
+      "정상 DOM 입력으로 20줄 승리 완주",
+      "실음향 청취/사람 플레이시간"
+    ]
+  },
+  "inputs_sha256": {
+    "public/games/05-falling-blocks/assets/kit.svg": "81f1c6cb1b5f26cad7e1be99a57a83db4898ff5503b36bb86f5430d1a574f841",
+    "public/games/05-falling-blocks/controls.mjs": "68caa158d535a2d4d9b3d18967c1cf39f54af5ca844d33234b5f533f49b622aa",
+    "public/games/05-falling-blocks/engine.mjs": "65fe79193ef80b6adc6cdb0decd36f89646103d76d3f33283c30344b764a89f3",
+    "public/games/05-falling-blocks/index.html": "b6144122e857edf894430ca8a3b141c4438c7293396e8ff314dd8ea54a928efd",
+    "public/games/05-falling-blocks/main.mjs": "4db48a96235e6655c3782d080e57b80e00c0aa7bf35a75fca6a2d99116d978da",
+    "public/games/05-falling-blocks/save.mjs": "c053043129b901d78d07cdb0f4bb7c6f466f0d4e80b8b9061c0d088ddc2fcf8d",
+    "public/games/05-falling-blocks/styles.css": "539fd59307caf0300183f6a8229150061004a026893ce06da6180d10e0b44ecd",
+    "tests/games/05-falling-blocks.test.mjs": "d169ee604a70d6c5b98d5b811089d9537308ffc77b76362c46872da3ed02f568",
+    "AGENTS.md": "38b42575e37dd91563afbaa9ec9c85472b604a230a40d0d3caf74b717f1c019d",
+    ".game-team/TEAM.md": "0a3c4739364fc3de89b69f3c7875d237fdcd10711e59e9a1fa229bc64cc42af5",
+    "docs/G018_05_ACCEPTANCE.md": "93858c35b708d596f4b890e9de90dbcddfb790d41f7768a7aca7e625f5437a9a",
+    "docs/G018_05_IMPLEMENTATION.md": "ed3a4d30845fc18ce2767dd4cb15588c7025b58389c1ef089883a61482afd5c9",
+    "docs/G018_IMPLEMENTATION_NOTES.md": "c83c4baddba31a225a7d2efcec354bb5abae9b05f22c179d7da21369170b30b1"
+  },
+  "summary": "독립 검토 PASS입니다. 보안·논리 차단 결함을 발견하지 못했으며 실제 단위 42/42 및 독립 엔진/Chromium DOM 9/9를 통과했습니다. 소스·기존 시험·설정·Git·서버·PM2·타 artifacts를 수정하지 않았습니다. 운영 배포와 전체 실물 수용을 뜻하지 않습니다."
+}

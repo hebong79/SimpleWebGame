@@ -120,6 +120,13 @@ h1 { font-size: clamp(27px,3vw,35px); font-weight: 650; letter-spacing: -1.5px; 
 .art-board .art-shapes i:first-child { left: 19px; top: 22px; }
 .art-board .art-shapes i:nth-child(2) { left: 64px; top: 43px; background: #f8f6e9; border: 1px solid #dddec9; }
 .art-board .art-shapes i:last-child { left: 42px; top: 0; background: #8da376; }
+.art-falling { background: #e9e1d2; }
+.mini-falling { position: absolute; left: calc(50% - 63px); top: calc(50% - 51px); padding: 4px; display: grid; grid-template-columns: repeat(5, 22px); gap: 2px; background: #193c34; border: 3px solid #b4a07d; border-radius: 5px; }
+.mini-falling i { width: 22px; height: 22px; border: 1px solid #294b40; color: transparent; font: 12px/20px Georgia,serif; text-align: center; }
+.mini-falling i.filled { color: #fffdf5; background: #9a714e; border-color: #e8c69b; }
+.mini-falling i.filled:nth-child(3n) { background: #6d8d79; }
+.art-sparrow { background: #dcebdc; }
+.mini-sparrow { position: absolute; width: 120px; height: 120px; left: calc(50% - 60px); top: calc(50% - 60px); }
 .card-content { padding: 15px 16px 16px; }
 .card-meta { display: flex; align-items: center; justify-content: space-between; gap: 10px; margin-bottom: 9px; font-size: 12px; }
 .status-pill { color: #9b9f8d; }
@@ -240,3 +247,13 @@ h1 { font-size: clamp(27px,3vw,35px); font-weight: 650; letter-spacing: -1.5px; 
 .sort-options { position: absolute; top: calc(100% + 6px); right: 0; z-index: 30; width: 176px; padding: 6px; border: 1px solid #d7ddc9; border-radius: 9px; background: #fffef9; box-shadow: 0 7px 20px #284d3b18; }
 .sort-options button { display: block; width: 100%; min-height: 44px; padding: 10px 12px; border: 0; border-radius: 5px; background: #fffef9; text-align: left; font-size: 12px; }
 .sort-options button:hover, .sort-options button[aria-pressed="true"] { background: #e7eddc; }
+
+/* G-016 original miniature: the fourth playable game, Cosmic Cleanup. */
+.art-breakout { background: #101b2d; }
+.mini-breakout { position: absolute; left: calc(50% - 88px); top: calc(50% - 38px); width: 176px; height: 76px; padding: 7px 9px; border: 1px solid #506279; border-radius: 4px; display: grid; grid-template-columns: repeat(8, minmax(0, 1fr)); gap: 4px; align-content: start; }
+.mini-breakout i { height: 7px; border-radius: 2px; background: #f38b77; }
+.mini-breakout i:nth-child(n+9) { background: #f6d786; }
+.mini-breakout i:nth-child(n+17) { background: #a7dbcd; }
+.mini-breakout i:nth-child(n+25) { background: #b6b7e7; }
+.mini-breakout-paddle { position: absolute; left: 69px; bottom: 7px; width: 35px; height: 4px; border-radius: 3px; background: #a7dbcd; }
+.mini-breakout-ball { position: absolute; left: 112px; bottom: 19px; width: 5px; height: 5px; border-radius: 50%; background: #fff3c6; box-shadow: -4px 5px 0 -1px #fff3c644; }
