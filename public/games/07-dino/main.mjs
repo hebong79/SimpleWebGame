@@ -133,5 +133,6 @@ document.addEventListener('visibilitychange',()=>{if(document.hidden){protect('h
 window.addEventListener('pagehide',()=>{protect('pagehide');pointers.clear();multi=false;});
 // Read-only inspection; no state setter, auto-player or outcome injection.
 export function getSnapshot(){return structuredClone({engine:engine.snapshot(),storage:records.snapshot(),ui:{activeDialog,previewPose,draft:wardrobe.snapshot(),multi,held:[...held]}});}
-function frame(now){pump(now);render();requestAnimationFrame(frame);}
+// A queued RAF timestamp can predate a blocked UI thread; use the same arrival clock as input pumps.
+function frame(){pump();render();requestAnimationFrame(frame);}
 render();requestAnimationFrame(frame);
