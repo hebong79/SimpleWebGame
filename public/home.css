@@ -127,6 +127,15 @@ h1 { font-size: clamp(27px,3vw,35px); font-weight: 650; letter-spacing: -1.5px; 
 .mini-falling i.filled:nth-child(3n) { background: #6d8d79; }
 .art-sparrow { background: #dcebdc; }
 .mini-sparrow { position: absolute; width: 120px; height: 120px; left: calc(50% - 60px); top: calc(50% - 60px); }
+.art-desert { background: #eee2c8; }
+.art-desert::before { content: ''; position: absolute; top: 92px; width: 100%; border-top: 2px solid #b49670; }
+.mini-g022 { position: absolute; width: 110px; height: 110px; left: calc(50% - 55px); top: -4px; }
+.art-cloud-bunny { background: #e6f0ef; }
+.art-cloud-bunny .mini-g022 { top: -15px; }
+.mini-cloud-step { position: absolute; width: 56px; height: 7px; border-radius: 6px; background: #719f8b; }
+.cloud-step-0 { left: calc(50% - 28px); top: 80px; }
+.cloud-step-1 { left: calc(50% + 45px); top: 44px; }
+.cloud-step-2 { left: calc(50% - 95px); top: 18px; }
 .card-content { padding: 15px 16px 16px; }
 .card-meta { display: flex; align-items: center; justify-content: space-between; gap: 10px; margin-bottom: 9px; font-size: 12px; }
 .status-pill { color: #9b9f8d; }

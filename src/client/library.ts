@@ -28,6 +28,8 @@ const GAME_CATALOG: CatalogGame[] = [
   { id: 'cosmic-cleanup', title: '우주 청소부', genre: '순발력', description: '공을 튕겨 세 구역의 우주 잔해를 말끔하게', tags: ['벽돌깨기', 'breakout', '우주', '패들', '3스테이지'], minutes: 1, maxMinutes: 4, status: 'available', href: '/games/04-breakout/index.html' },
   { id: 'block-workshop', title: '한 판 블록 공방', genre: '퍼즐', description: '일곱 모양을 쌓고 스무 줄을 완성하는 공방', tags: ['낙하블록', '블록', '공방', '20줄', '회전'], minutes: 2, maxMinutes: 5, status: 'available', href: '/games/05-falling-blocks/index.html' },
   { id: 'balloon-sparrow', title: '풍선 참새', genre: '순발력', description: '가볍게 날갯짓하며 정원 아치 사이로', tags: ['참새', 'flappy', '날갯짓', '풍선', '코스튬'], minutes: 1, maxMinutes: 2, status: 'available', href: '/games/06-flappy/index.html' },
+  { id: 'desert-post', title: '사막 우체부', genre: '순발력', description: '소포를 안고 선인장을 넘는 도마뱀 우체부', tags: ['공룡', 'dino', '러너', '도마뱀', '코스튬'], minutes: 1, maxMinutes: 2, status: 'available', href: '/games/07-dino/index.html' },
+  { id: 'cloud-bunny', title: '구름 토끼', genre: '순발력', description: '다음 구름에 발을 맞춰 조금 더 높이', tags: ['점프', 'doodle', '토끼', '발판', '코스튬'], minutes: 1, maxMinutes: 3, status: 'available', href: '/games/08-doodle/index.html' },
   { id: 'memory-pieces', title: '기억의 조각', genre: '기억', description: '뒤집고 기억하며 찾아내는 한 쌍', tags: ['카드', '맞추기'], minutes: 2, maxMinutes: 5, status: 'upcoming' },
   { id: 'leisure-line', title: '한 줄의 여유', genre: '퍼즐', description: '빈칸을 채우고 한 줄을 비우는 시간', tags: ['블록', '채우기'], minutes: 3, maxMinutes: 8, status: 'upcoming' },
   { id: 'color-walk', title: '색의 산책', genre: '퍼즐', description: '같은 색을 이어 완성하는 작은 풍경', tags: ['색깔', '연결'], minutes: 2, maxMinutes: 5, status: 'upcoming' },
@@ -152,6 +154,22 @@ function artwork(game: CatalogGame, index: number): HTMLDivElement {
     const bird = document.createElementNS('http://www.w3.org/2000/svg', 'use');
     bird.setAttribute('href', '/games/06-flappy/assets/kit.svg#sparrow-fly0');
     svg.append(bird); art.append(svg);
+  } else if (game.id === 'desert-post' || game.id === 'cloud-bunny') {
+    const desert = game.id === 'desert-post';
+    art.classList.add(desert ? 'art-desert' : 'art-cloud-bunny');
+    const svg = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
+    svg.setAttribute('viewBox', '0 0 96 96');
+    svg.classList.add('mini-g022');
+    const directory = desert ? '07-dino' : '08-doodle';
+    const pose = desert ? 'run0' : 'idle';
+    const layers = desert ? ['postal-bag-run0', `base-${pose}`, 'postal-body-run0', 'postal-hat-run0'] : [`base-${pose}`];
+    for (const layer of layers) {
+      const use = document.createElementNS('http://www.w3.org/2000/svg', 'use');
+      use.setAttribute('href', `/games/${directory}/assets/kit.svg#${layer}`);
+      svg.append(use);
+    }
+    art.append(svg);
+    if (!desert) for (let step = 0; step < 3; step++) art.append(create('i', `mini-cloud-step cloud-step-${step}`));
   } else if (game.id === 'number-garden') {
     art.classList.add('art-garden');
     const mini = create('div', 'mini-numbers');

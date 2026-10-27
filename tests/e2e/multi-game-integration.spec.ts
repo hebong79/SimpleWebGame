@@ -64,7 +64,7 @@ test.beforeEach(async ({ page, baseURL }) => {
     Math.random = () => 0;
     (window as Window & { __integrationCsp?: unknown[] }).__integrationCsp = [];
     document.addEventListener('securitypolicyviolation', event => {
-      (window as Window & { __integrationCsp: unknown[] }).__integrationCsp.push({ directive: event.violatedDirective, blocked: event.blockedURI });
+      (window as unknown as { __integrationCsp: unknown[] }).__integrationCsp.push({ directive: event.violatedDirective, blocked: event.blockedURI });
     });
   });
   // CSP errors are also captured in console before a document is navigated away from.
@@ -81,10 +81,10 @@ test.afterEach(async ({ page }, info) => {
 
 test('G014-01 three available cards launch their own game and return to the shared home', async ({ page }) => {
   await page.goto('/');
-  await expect(page.locator('#catalog-total')).toHaveText('35');
-  await expect(page.locator('#intro-preview')).toHaveText('플레이 가능 6 · 준비 중 29');
+  await expect(page.locator('#catalog-total')).toHaveText('37');
+  await expect(page.locator('#intro-preview')).toHaveText('플레이 가능 8 · 준비 중 29');
   await page.locator('#include-upcoming').uncheck();
-  expect(await cardIds(page)).toEqual(['number-garden', 'little-dragon', 'neon-rally', 'cosmic-cleanup', 'block-workshop', 'balloon-sparrow']);
+  expect(await cardIds(page)).toEqual(['number-garden', 'little-dragon', 'neon-rally', 'cosmic-cleanup', 'block-workshop', 'balloon-sparrow', 'desert-post', 'cloud-bunny']);
   const games = [
     { id: 'number-garden', href: paths.garden, ready: '#board' },
     { id: 'little-dragon', href: paths.snake, ready: '#primary' },
