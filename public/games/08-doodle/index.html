@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#f6f3e9">
+  <title>구름 토끼 · 작은쉼표</title>
+  <link rel="stylesheet" href="./styles.css">
+  <script type="module" src="./main.mjs"></script>
+</head>
+<body>
+<div class="shell">
+  <nav aria-label="페이지 이동"><a id="home" href="/">← 작은쉼표</a><button id="mute" type="button" aria-pressed="true">소리 꺼짐</button></nav>
+  <header><p class="eyebrow">08 / 자동 반동 점프</p><h1>구름 토끼</h1><p>다음 구름에 발을 맞춰, 조금 더 높이.</p></header>
+  <main class="layout">
+    <section class="play-column" aria-label="구름 토끼 게임">
+      <div class="hud"><span>높이 점수 <strong id="score">0</strong></span><span>최고 <strong id="best-score">0</strong></span><span id="state-label">준비</span></div>
+      <div id="game-area" class="arena" tabindex="0" role="group" aria-label="구름 토끼 경기장. 좌우 방향키 또는 A D로 이동, Space 시작, P 정지. 화면의 왼쪽 또는 오른쪽을 누르는 동안 이동합니다." aria-describedby="controls-note">
+        <svg id="scene" viewBox="0 0 360 640" role="img" aria-label="토끼와 하늘 발판">
+          <use href="./assets/kit.svg#cloud" x="26" y="58" width="80" height="80" opacity=".6"/>
+          <use href="./assets/kit.svg#cloud" x="250" y="275" width="75" height="75" opacity=".5"/>
+          <g id="platforms"></g>
+          <svg id="bunny" x="141.6" y="492.8" width="76.8" height="76.8" viewBox="0 0 96 96" aria-label="구름 토끼">
+            <use id="bunny-bag"/><use id="bunny-base"/><use id="bunny-body"/><use id="bunny-ears"/>
+          </svg>
+        </svg>
+        <div id="overlay" class="overlay"><div class="overlay-card"><h2 id="overlay-title">다음 구름을 향해.</h2><p id="overlay-copy">좌우만 고르세요. 점프는 자동이에요.</p><button id="primary" class="primary" type="button">첫 도약 시작 ↑</button><div id="result-actions" hidden><p id="result-unlocks"></p><button id="result-wardrobe" type="button">옷장 보기</button><a id="result-home" href="/">홈으로</a></div></div></div>
+      </div>
+      <div class="directions"><button id="left" type="button" aria-label="누르는 동안 왼쪽 이동">← 왼쪽</button><button id="right" type="button" aria-label="누르는 동안 오른쪽 이동">오른쪽 →</button></div>
+      <p id="controls-note" class="note">경기장에 초점 · ← → / A D 이동 · P 정지 · Space 시작<br>화면 좌우 절반이나 방향 버튼을 누르는 동안 움직여요.</p>
+      <div class="actions"><button id="pause" type="button" disabled>Ⅱ 잠깐 쉬기</button><button id="restart" type="button">다시 준비</button><button id="menu-open" type="button">메뉴</button></div>
+      <p id="announcement" class="note" aria-live="polite">진행 중인 판은 복원되지 않으며 완료 기록과 차림만 저장합니다.</p>
+      <p id="storage-notice" class="warning" role="status"></p>
+    </section>
+    <aside aria-label="기록과 차림">
+      <section class="panel"><h2>쌓아 온 높이</h2><dl><div><dt>완료 누적 점수</dt><dd id="total-score">0</dd></div><div><dt>최고 상승 높이</dt><dd><span id="best-metric">0</span> px</dd></div><div><dt>누적 상승 높이</dt><dd><span id="total-metric">0</span> px</dd></div><div><dt>완료한 판</dt><dd id="plays">0</dd></div></dl><p id="ending-counts" class="note">낙하 0회 · 중도 종료 0회</p></section>
+      <section class="panel"><h2>오늘의 차림</h2><svg id="outfit" class="outfit" viewBox="0 0 96 96" aria-label="현재 차림"><use id="outfit-bag"/><use id="outfit-base"/><use id="outfit-body"/><use id="outfit-ears"/></svg><p id="equipped-label" class="note"></p><button id="wardrobe-open" type="button">옷장 열기</button><p class="note">차림은 모습만 바꿉니다.<br>잠긴 세트도 미리 볼 수 있어요.</p></section>
+      <button id="help" type="button">도움말</button>
+    </aside>
+  </main>
+  <footer>최고로 올라간 높이 10px마다 1점 · 진행 중인 해금은 판이 끝난 뒤 확정됩니다.</footer>
+</div>
+<dialog id="menu" aria-labelledby="menu-title"><h2 id="menu-title">잠시 쉬어가기</h2><p>창을 닫아도 자동으로 움직이지 않습니다.</p><div class="dialog-actions"><button id="menu-resume" class="primary" type="button">게임 재개</button><button id="menu-restart" type="button">다시 준비</button><button id="menu-wardrobe" type="button">옷장</button><button id="menu-help" type="button">도움말</button><a id="menu-home" href="/">홈으로</a><button id="menu-close" type="button">닫기</button></div></dialog>
+<dialog id="help-dialog" aria-labelledby="help-title"><h2 id="help-title">구름 사이, 작은 도약</h2><p>토끼는 구름 발판에 내려앉을 때마다 자동으로 뜁니다. 상승할 때는 발판을 통과하고, 내려올 때 발이 겹쳐야 다시 뛸 수 있어요.</p><ul><li>경기장을 누르거나 Tab으로 초점을 둔 뒤 ← → 또는 A D를 누르세요. 반대 방향을 함께 누르면 마지막으로 누른 쪽이 우선합니다.</li><li>화면 좌우 절반 또는 방향 버튼을 누르는 동안 이동합니다. 놓거나 취소하면 멈춥니다. 두 손가락을 대면 안전하게 정지합니다.</li><li>Space: 명시 시작/재개 · P 또는 Esc: 정지. 화면을 떠나거나 지연이 길면 보호 정지하며 직접 재개해야 합니다.</li><li>최고 상승 높이 10px당 1점. 한 판 500점 뒤 생성되는 일부 발판은 천천히 좌우로 움직입니다.</li><li>완료 최고 100점: 별빛 / 500점: 당근 / 완료 누적 2000점: 탐험가. 잠긴 옷은 미리보기만 가능합니다.</li><li>재시작과 홈 이동은 진행 판을 중도 종료로 한 번 정산합니다. 취소하면 정지 상태를 유지합니다. 새로고침 시 진행 판은 복원하지 않습니다.</li></ul><button id="close-help" class="primary" type="button">닫기</button></dialog>
+<dialog id="wardrobe" aria-labelledby="wardrobe-title"><h2 id="wardrobe-title">토끼의 옷장</h2><div class="preview-row"><svg id="preview" class="outfit" viewBox="0 0 96 96" aria-label="선택한 차림 동작 미리보기"><use id="preview-bag"/><use id="preview-base"/><use id="preview-body"/><use id="preview-ears"/></svg><div><p id="preview-label">기본 자세</p><div id="pose-options" class="choices" role="group" aria-label="동작 미리보기"><button type="button" data-pose="idle">기본</button><button type="button" data-pose="rise">상승</button><button type="button" data-pose="fall">하강</button><button type="button" data-pose="land">착지</button><button type="button" data-pose="hit">실패</button></div></div></div><h3>전체 세트</h3><div class="set-options" role="group" aria-label="전체 세트"><button type="button" data-set="basic">기본 토끼<small id="progress-basic"></small></button><button type="button" data-set="star">별빛<small id="progress-star"></small></button><button type="button" data-set="explorer">탐험가<small id="progress-explorer"></small></button><button type="button" data-set="carrot">당근<small id="progress-carrot"></small></button></div><h3>귀 장식</h3><div id="part-ears" class="choices" role="group" aria-label="귀 장식"></div><h3>몸</h3><div id="part-body" class="choices" role="group" aria-label="몸 차림"></div><h3>가방</h3><div id="part-bag" class="choices" role="group" aria-label="가방"></div><p id="wardrobe-notice" class="note"></p><div class="dialog-actions"><button id="wardrobe-apply" class="primary" type="button">선택 적용</button><button id="wardrobe-cancel" type="button">취소</button></div></dialog>
+<dialog id="confirm" aria-labelledby="confirm-title"><h2 id="confirm-title">이번 도약을 마칠까요?</h2><p id="confirm-copy"></p><div class="dialog-actions"><button id="confirm-cancel" class="primary" type="button" autofocus>계속 쉬기</button><button id="confirm-ok" type="button">판 종료 확인</button></div></dialog>
+</body>
+</html>
