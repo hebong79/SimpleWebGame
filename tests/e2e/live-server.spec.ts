@@ -22,6 +22,11 @@ const GAMES = [
   { id: 'block-workshop', href: '/games/05-falling-blocks/index.html' },
   { id: 'balloon-sparrow', href: '/games/06-flappy/index.html' },
 ] as const;
+const ALL_GAMES = [
+  ...GAMES,
+  { id: 'desert-post', href: '/games/07-dino/index.html' },
+  { id: 'cloud-bunny', href: '/games/08-doodle/index.html' },
+] as const;
 const STRICT_CSP = "default-src 'none'; script-src 'self'; style-src 'self'; img-src 'self'; font-src 'self'; connect-src 'none'; media-src 'none'; object-src 'none'; base-uri 'none'; form-action 'none'; frame-ancestors 'none'";
 interface Audit {
   requests: unknown[];
@@ -102,23 +107,23 @@ const test = base.extend<{ audit: Audit }>({
 });
 async function home(page: Page, origin: string) {
   await expect(page).toHaveURL(`${origin}/`);
-  await expect(page.locator('#catalog-total')).toHaveText('35');
-  await expect(page.locator('#intro-preview')).toHaveText('플레이 가능 6 · 준비 중 29');
+  await expect(page.locator('#catalog-total')).toHaveText('37');
+  await expect(page.locator('#intro-preview')).toHaveText('플레이 가능 8 · 준비 중 29');
   await expect(page.getByText('시안 보기', { exact: false })).toHaveCount(0);
   await expect(page.locator('a[href*="prototype"]')).toHaveCount(0);
 }
 async function available(page: Page) {
   await page.locator('#include-upcoming').uncheck();
-  await expect(page.locator('.game-card')).toHaveCount(6);
-  await expect(page.locator('#result-count')).toHaveText('6개');
-  expect(await page.locator('.game-card').evaluateAll(nodes => nodes.map(node => (node as HTMLElement).dataset.id))).toEqual(GAMES.map(game => game.id));
+  await expect(page.locator('.game-card')).toHaveCount(8);
+  await expect(page.locator('#result-count')).toHaveText('8개');
+  expect(await page.locator('.game-card').evaluateAll(nodes => nodes.map(node => (node as HTMLElement).dataset.id))).toEqual(ALL_GAMES.map(game => game.id));
   const hrefs: string[] = [];
-  for (const game of GAMES) {
+  for (const game of ALL_GAMES) {
     const link = page.locator(`.game-card[data-id="${game.id}"] a.card-action`);
     await expect(link).toHaveAttribute('href', game.href);
     hrefs.push((await link.getAttribute('href'))!);
   }
-  expect(new Set(hrefs).size, '여섯 게임의 주소는 모두 달라야 합니다.').toBe(6);
+  expect(new Set(hrefs).size, '여덟 게임의 주소는 모두 달라야 합니다.').toBe(8);
 }
 async function freeze(page: Page) {
   const time = new Date('2026-10-25T12:00:00Z');
@@ -153,16 +158,19 @@ async function paddle(page: Page, kind: 'pong' | 'breakout') {
   return positions.reduce((sum, value) => sum + value, 0) / positions.length;
 }
 
-test('G019-LIVE01 홈 35/6/29, 시안 제거, 정확한 여섯 링크와 375/320 레이아웃을 확인합니다.', async ({ page, baseURL }, info) => {
+test('G022-LIVE01 홈 37/8/29, 시안 제거, 정확한 여덟 링크와 375/320 레이아웃을 확인합니다.', async ({ page, baseURL }, info) => {
   const origin = new URL(baseURL!).origin;
   await page.goto('/');
   await home(page, origin);
-  await expect(page.locator('#result-count')).toHaveText('35개');
+  await expect(page.locator('#result-count')).toHaveText('37개');
+  await expect(page.locator('.game-card')).toHaveCount(12);
   await page.locator('#load-more').click();
   await expect(page.locator('.game-card')).toHaveCount(24);
   await page.locator('#load-more').click();
-  await expect(page.locator('.game-card')).toHaveCount(35);
-  await expect(page.locator('.game-card.available')).toHaveCount(6);
+  await expect(page.locator('.game-card')).toHaveCount(36);
+  await page.locator('#load-more').click();
+  await expect(page.locator('.game-card')).toHaveCount(37);
+  await expect(page.locator('.game-card.available')).toHaveCount(8);
   await expect(page.locator('.game-card.upcoming')).toHaveCount(29);
   await expect(page.locator('.game-card.upcoming a')).toHaveCount(0);
   expect(await page.locator('.game-card.upcoming .card-action').evaluateAll(nodes => nodes.every(node => (node as HTMLButtonElement).disabled))).toBe(true);
@@ -362,16 +370,19 @@ test('G019-LIVE02 여섯 게임을 카드로 시작·정상 입력·정지·게�
   await attachDOM(page, info, 'four-games-returned-favorite-preserved');
 });
 
-test('G019-LIVE03 실제 홈·6게임·모듈 GET/HEAD MIME/nosniff/엄격 CSP와 비공개 경로 404를 확인합니다.', async ({ request }, info) => {
+test('G022-LIVE03 실제 홈·8게임·모듈 GET/HEAD MIME/nosniff/엄격 CSP와 비공개 경로 404를 확인합니다.', async ({ request }, info) => {
   const targets: { path: string; mime: string }[] = [
-    ...['/', '/index.html', ...GAMES.map(game => game.href)].map(path => ({ path, mime: 'text/html' })),
+    ...['/', '/index.html', ...ALL_GAMES.map(game => game.href)].map(path => ({ path, mime: 'text/html' })),
     ...['library', 'main', 'engine', 'audio', 'input', 'state', 'storage'].map(name => ({ path: `/scripts/${name}.js`, mime: 'text/javascript' })),
     ...['/home.css', '/style.css'].map(path => ({ path, mime: 'text/css' })),
     { path: '/assets/favicon.svg', mime: 'image/svg+xml' },
   ];
-  for (const directory of ['02-snake', '03-pong', '04-breakout', '05-falling-blocks', '06-flappy']) {
+  for (const directory of ['02-snake', '03-pong', '04-breakout', '05-falling-blocks', '06-flappy', '07-dino', '08-doodle']) {
     for (const file of ['main.mjs', 'engine.mjs', ...(directory === '02-snake' ? [] : ['save.mjs']), 'styles.css']) {
       targets.push({ path: `/games/${directory}/${file}`, mime: file.endsWith('.mjs') ? 'text/javascript' : 'text/css' });
+    }
+    if (directory === '07-dino' || directory === '08-doodle') {
+      targets.push({ path: `/games/${directory}/assets/kit.svg`, mime: 'image/svg+xml' });
     }
   }
   const observations: unknown[] = [];

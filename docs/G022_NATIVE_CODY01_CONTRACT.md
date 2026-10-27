@@ -1,0 +1,26 @@
+# G022-NATIVE-INTEGRATION — cody-01 후속 통합수용시험
+정확대상 cody-01 / 01a16eb2-eae8-78d2-b41a-380d98e6673d. ACK:G022-NATIVE-INTEGRATION.
+## 목표/소유권
+07의실제DOM/API를반영해 tests/e2e/runner-jumper.spec.ts에실제07수용을추가하고정상후보에서초기smoke→전체선정회귀를실행하세요. 기존08논리26사례/기능단언을보존하고상단provenance주석을08수용18afb75/07후보56ad2e6기준으로정리하세요. 현재다른native cody-02는불변07제품소스만독립QA중이며이spec을수정/평가하지않습니다.
+쓰기허용: tests/e2e/runner-jumper.spec.ts 한파일, docs/G022_NATIVE_INTEGRATION_IMPLEMENTATION.md, 새 artifacts/g022-native-integration/**, 원본launcher가생성하는새 artifacts/g022-integration/runs/<새고유ID>/candidate/** 만. runtime07/08/public/src/기타시험/설정/원본integration아티팩트는읽기전용입니다. 제품결함/다른공통수정필요시위치·재현·원시FAIL을보고하고직접고치지마세요. PM이QA동결을해제해좁은fix를재배정합니다.
+## 필수 입력/현재근거
+간단히 docs/G022_COMMON_CONTRACT.md,G022_07_DESIGN.md,G022_07_IMPLEMENTATION.md 및실제 public/games/07-dino/**/tests/games/07-dino.test.mjs를읽으세요. docs/G022_08_FIX_CONTRACT.md의저장·모달교훈을따르세요. 기존공통13파일사전정적PASS는artifacts/g022-integration-review/review.json,PM인수는artifacts/g022-pm/common-review-intake-c0e17c5f/receipt.json이며13파일/22동결/77기존소스/132증거일치·브라우저0이었습니다. 기존source/type/config보존근거를재사용하고역사전체를반복검토하지마세요.
+## 07 필수수용
+- @smoke: 비동결실제HTTP/실제80ms 시작·점프/숙임·정지/재개·음소거·옷장버튼. MutationObserver로동일문구버튼childList변경0,무필터console warning/error/pageerror/CSP/실패asset/외부요청0.
+- 공개snapshot+정상trusted 키/포인터만으로정상선인장회피·득점후자연충돌,정지동안진행없음,quit/restart/홈확인취소와확정,경기당정산1회·실제완료기록reload/게임별키분리. 홈은실제컴파일된37/8/29와카드·페이지12→24→36→37이며원본public정적홈404를대체하지마세요.
+- 점프반복/hold 자동재점프방지,숙임up·blur·pointercancel/보드밖추가터치·긴프레임보호·다중입력과모달복귀(native close 즉시/RAF/250ms,중첩menu)·320px결과44px와overflow.
+- 옷장3부위혼합/8동작·해금경계는실제07의순수settleRecord/validateRecord로만든실현가능한fixture만최초격리방문에seed;settings/취소는중간판집계없음. Storage getter/get/set/손상/상한을분리하고불가능집계수용회귀를포함하세요. 실가상화나마진확대로제품단언을약화하지마세요.
+- 실제3프로젝트desktop-chromium/mobile-chromium/mobile-webkit에서smoke/full을실행. 선정된기존6게임회귀와08동작은원본config에포함돼있으며전체카탈로그단언을유지하세요. 속도/새생성30초등순수경계는기존31단위와cody-02검토로재사용할수있고물리조작수용과구분하세요.
+## 정확 실행
+C:/Program Files/nodejs/node.exe artifacts/g022-integration/run-playwright.mjs --mode=candidate --phase=smoke
+C:/Program Files/nodejs/node.exe artifacts/g022-integration/run-playwright.mjs --mode=candidate --phase=full
+--list는수집만이며실행/PASS가아닙니다. 원본launcher가부모환경부터새UUID출력·후보build를설정합니다. GAME_LIVE_ORIGIN을상속하지마세요. 전체출력경로부모변수를재설정없이우회하지마세요. 원본README의07승인대기는과거snapshot이며현재사용자재개/구현/후보준비가우선입니다. 필수전제를제거/skip하지마세요.
+엄격TS검사·sourcehash·기존08논리26보존과신규07실제논리/프로젝트실행수를JSON으로재집계하세요. 현코드는본인수정이므로본인시험을독립QA라고하지마세요. PM이cody-02에별도delta검토할예정입니다.
+
+# 공통 실행 경계
+PM은대현자,사용자는마스터입니다. 한국어존댓말로작업/보고하세요. 사용자요청은07/08별도브랜치구현→main정상병합/3116재기동/실제운영시험이며,이번native배정은아래한정후속만입니다. 현재임시builder/리뷰어계약은마감됐고사용자가후속nativeCody사용을선택했습니다. 연결/모델실행문제시PM은임시워커로전환할수있지만,본인은새worker를만들거나위임하지마세요.
+Root: E:/Work2/Project/SimpleGames/01-2048. Branch feature/g022-eight-game-release, HEAD e0f37454220560b3bf8340e53a9b3c177adb1d14. 07 source56ad2e6fb12f7be4c7182a470658726ffd9c30b7,08 accepted18afb7533ca515224056774523b126834114bda7가후보에병합됐습니다. main563f2ac와운영3116의g019는그대로입니다.
+Node는반드시 C:/Program Files/nodejs/node.exe(v24.16.0)를명시하세요. 별도HermesPython PATH의node는26일수있어사용하지않습니다. TS7.0.2/Playwright1.64.1은기존설치만사용. PM이정식build --out-dir artifacts/g022-build를생성했고 127.0.0.1:3130에서직접실행중입니다. root/scripts/library.js와07/08페이지·main6HTTP200/정확바이트/CSP/nosniff확인. 이서버수명과build는PM소유이며바꾸지마세요.
+필수규칙AGENTS.md/.game-team/TEAM.md와이계약을우선읽고자기실제branch/HEAD/모델·파일도구읽기성공을확인하세요. 현재선택model/provider를유지하며대체/전역설정/인증/설치/프로세스강제종료없음. 비밀/auth/env/패스워드/다른대화/SQLite/다른프로젝트읽기·출력금지. PM2/main/push/Git stage/commit/브랜치변경·서비스/LAN3116·방화벽·ACL조작금지. 기존증거/원본FAIL/타워커파일덮지마세요. 게임상태setter/Math.random교체/가짜route/저장키삭제/skip/오류필터/CSP완화금지.
+기존 on-request/auto_review/workspace-write/network=false 유지. Windows 기본runner기술초기화문제에는해당한정명령의공식on-request자동위험검토경로만허용합니다. 이미공식검토로성공한명령을실패로반복하지말고원본실패를남기세요. 자동거절/인간승인/auth콜백/검토재실패/ownership충돌시즉시blocked보고하고우회/ACL/보안약화금지. 동일실패2회또는20분을넘기면현재자료/정확차단을남기고보고하세요.
+증거작성전출력경로와TMP/TEMP를자기새artifact폴더로명시하고최초짧은파일읽기/한정검증파일쓰기/명령실행이성공했는지증명하세요. 권한제한은역할계약이지새OS readonly샌드박스라고주장하지않습니다. 처음 ACK:G022-자기TASK 를남긴후실제작업하세요. 끝에작은handoff.json:task_id,status,source_sha256,changed_files,tests(명령/exit/수집vs실행),evidence_paths,blockers,limitations를자기폴더에작성하세요. 사용자실물기기/음향실청취/사람완주와자동브라우저를혼동하지마세요. WebKit은screenshot없이DOM/layout JSON을쓰되기능·무필터console/CSP단언을유지하세요.

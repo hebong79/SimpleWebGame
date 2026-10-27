@@ -2,7 +2,7 @@
   "version": "2.0.0",
   "tasks": [
     {
-      "label": "SimpleGames: 6개 게임 서버 시작 (3102)",
+      "label": "SimpleGames: 8개 게임 서버 시작 (3102)",
       "type": "process",
       "command": "node",
       "args": [
