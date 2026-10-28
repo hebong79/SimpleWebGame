@@ -1,0 +1,233 @@
+{
+  "cases": 3,
+  "passed": 3,
+  "failed": 0,
+  "skipped": 0,
+  "results": [
+    {
+      "project": "chromium-desktop",
+      "status": "passed",
+      "checks": 14,
+      "clock": "nonfrozen",
+      "pressMs": 80,
+      "trustedClicks": 11,
+      "diagnostics": [],
+      "external": [],
+      "layout": {
+        "overflow": false,
+        "buttons": [
+          {
+            "id": "home",
+            "width": 101.625,
+            "height": 44
+          },
+          {
+            "id": "levels",
+            "width": 149.828125,
+            "height": 44
+          },
+          {
+            "id": "wardrobe",
+            "width": 64,
+            "height": 44
+          },
+          {
+            "id": "help",
+            "width": 80,
+            "height": 44
+          },
+          {
+            "id": "mute",
+            "width": 101.625,
+            "height": 44
+          },
+          {
+            "id": "primary",
+            "width": 206,
+            "height": 44
+          },
+          {
+            "id": "undo",
+            "width": 206,
+            "height": 44
+          },
+          {
+            "id": "restart",
+            "width": 206,
+            "height": 44
+          },
+          {
+            "id": "",
+            "width": 52,
+            "height": 48
+          },
+          {
+            "id": "",
+            "width": 52,
+            "height": 48
+          },
+          {
+            "id": "",
+            "width": 52,
+            "height": 48
+          },
+          {
+            "id": "",
+            "width": 52,
+            "height": 48
+          }
+        ]
+      }
+    },
+    {
+      "project": "chromium-320",
+      "status": "passed",
+      "checks": 14,
+      "clock": "nonfrozen",
+      "pressMs": 80,
+      "trustedClicks": 11,
+      "diagnostics": [],
+      "external": [],
+      "layout": {
+        "overflow": false,
+        "buttons": [
+          {
+            "id": "home",
+            "width": 74.21875,
+            "height": 44
+          },
+          {
+            "id": "levels",
+            "width": 100.546875,
+            "height": 44
+          },
+          {
+            "id": "wardrobe",
+            "width": 44,
+            "height": 44
+          },
+          {
+            "id": "help",
+            "width": 49,
+            "height": 44
+          },
+          {
+            "id": "mute",
+            "width": 63.875,
+            "height": 44
+          },
+          {
+            "id": "primary",
+            "width": 88,
+            "height": 44
+          },
+          {
+            "id": "undo",
+            "width": 88,
+            "height": 44
+          },
+          {
+            "id": "restart",
+            "width": 88,
+            "height": 44
+          },
+          {
+            "id": "",
+            "width": 60,
+            "height": 48
+          },
+          {
+            "id": "",
+            "width": 60,
+            "height": 48
+          },
+          {
+            "id": "",
+            "width": 60,
+            "height": 48
+          },
+          {
+            "id": "",
+            "width": 60,
+            "height": 48
+          }
+        ]
+      }
+    },
+    {
+      "project": "webkit-mobile",
+      "status": "passed",
+      "checks": 14,
+      "clock": "nonfrozen",
+      "pressMs": 80,
+      "trustedClicks": 11,
+      "diagnostics": [],
+      "external": [],
+      "layout": {
+        "overflow": false,
+        "buttons": [
+          {
+            "id": "home",
+            "width": 74.21875,
+            "height": 44
+          },
+          {
+            "id": "levels",
+            "width": 111.25,
+            "height": 44
+          },
+          {
+            "id": "wardrobe",
+            "width": 46,
+            "height": 44
+          },
+          {
+            "id": "help",
+            "width": 58,
+            "height": 44
+          },
+          {
+            "id": "mute",
+            "width": 74.21875,
+            "height": 44
+          },
+          {
+            "id": "primary",
+            "width": 97.671875,
+            "height": 44
+          },
+          {
+            "id": "undo",
+            "width": 97.671875,
+            "height": 44
+          },
+          {
+            "id": "restart",
+            "width": 97.671875,
+            "height": 44
+          },
+          {
+            "id": "",
+            "width": 60,
+            "height": 48
+          },
+          {
+            "id": "",
+            "width": 60,
+            "height": 48
+          },
+          {
+            "id": "",
+            "width": 60,
+            "height": 48
+          },
+          {
+            "id": "",
+            "width": 60,
+            "height": 48
+          }
+        ]
+      }
+    }
+  ]
+}

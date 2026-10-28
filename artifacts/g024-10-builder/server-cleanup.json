@@ -1,0 +1,12 @@
+{
+  "task_id": "G024-10",
+  "owned_process": "proc_ae064d63479b",
+  "bind": "127.0.0.1:3142",
+  "termination": "process_manage kill returned killed",
+  "readback_command": "C:/Program Files/nodejs/node.exe -e [net.connect 127.0.0.1:3142; require ECONNREFUSED]",
+  "readback_stdout": "owned 3142 cleanup: ECONNREFUSED",
+  "readback_exit": 0,
+  "other_services_changed": false,
+  "pm2_commands_executed": false,
+  "port_3116_changed": false
+}

@@ -1,0 +1,100 @@
+PASS chromium-desktop: ready, CSP assets, private snapshot clone, no source setter
+PASS chromium-desktop: accessible sequential level selection and focus trap
+PASS chromium-desktop: fresh input only, modifier/repeat/no-op, exact undo and restart cancel
+PASS chromium-desktop: help, protective blur branch, explicit resume, home cancel
+PASS chromium-desktop: primary pointer threshold, cancellation, outside second finger and trusted buttons
+PASS chromium-desktop: free full outfit, mixed parts, cancel, locked apply and 8 poses
+PASS chromium-desktop: first clear synchronous one-shot, result keys/undo do not unearn, nested focus
+PASS chromium-desktop: public-key solution level 1
+PASS chromium-desktop: public-key solution level 2
+PASS chromium-desktop: public-key solution level 3
+PASS chromium-desktop: public-key solution level 4
+PASS chromium-desktop: public-key solution level 5
+PASS chromium-desktop: public-key solution level 6
+PASS chromium-desktop: public-key solution level 7
+PASS chromium-desktop: public-key solution level 8
+PASS chromium-desktop: public-key solution level 9
+PASS chromium-desktop: public-key solution level 10
+PASS chromium-desktop: public-key solution level 11
+PASS chromium-desktop: public-key solution level 12
+PASS chromium-desktop: public-key solution level 13
+PASS chromium-desktop: public-key solution level 14
+PASS chromium-desktop: public-key solution level 15
+PASS chromium-desktop: public-key solution level 16
+PASS chromium-desktop: public-key solution level 17
+PASS chromium-desktop: public-key solution level 18
+PASS chromium-desktop: public-key solution level 19
+PASS chromium-desktop: public-key solution level 20
+PASS chromium-desktop: reload retains all bests/outfit, starts fresh ready, completed stages replayable
+PASS chromium-desktop: natural corner advisory and undo, confirmed restart only resets current board
+PASS chromium-desktop: 320 and landscape modal geometry, 44px targets, stable nodes
+PASS chromium-desktop: HTTP CSP/console/external request gate
+PASS chromium-320: ready, CSP assets, private snapshot clone, no source setter
+PASS chromium-320: accessible sequential level selection and focus trap
+PASS chromium-320: fresh input only, modifier/repeat/no-op, exact undo and restart cancel
+PASS chromium-320: help, protective blur branch, explicit resume, home cancel
+PASS chromium-320: primary pointer threshold, cancellation, outside second finger and trusted buttons
+PASS chromium-320: free full outfit, mixed parts, cancel, locked apply and 8 poses
+PASS chromium-320: first clear synchronous one-shot, result keys/undo do not unearn, nested focus
+PASS chromium-320: public-key solution level 1
+PASS chromium-320: public-key solution level 2
+PASS chromium-320: public-key solution level 3
+PASS chromium-320: public-key solution level 4
+PASS chromium-320: public-key solution level 5
+PASS chromium-320: public-key solution level 6
+PASS chromium-320: public-key solution level 7
+PASS chromium-320: public-key solution level 8
+PASS chromium-320: public-key solution level 9
+PASS chromium-320: public-key solution level 10
+PASS chromium-320: public-key solution level 11
+PASS chromium-320: public-key solution level 12
+PASS chromium-320: public-key solution level 13
+PASS chromium-320: public-key solution level 14
+PASS chromium-320: public-key solution level 15
+PASS chromium-320: public-key solution level 16
+PASS chromium-320: public-key solution level 17
+PASS chromium-320: public-key solution level 18
+PASS chromium-320: public-key solution level 19
+PASS chromium-320: public-key solution level 20
+PASS chromium-320: reload retains all bests/outfit, starts fresh ready, completed stages replayable
+PASS chromium-320: natural corner advisory and undo, confirmed restart only resets current board
+PASS chromium-320: 320 and landscape modal geometry, 44px targets, stable nodes
+PASS chromium-320: HTTP CSP/console/external request gate
+PASS webkit-mobile: ready, CSP assets, private snapshot clone, no source setter
+PASS webkit-mobile: accessible sequential level selection and focus trap
+PASS webkit-mobile: fresh input only, modifier/repeat/no-op, exact undo and restart cancel
+PASS webkit-mobile: help, protective blur branch, explicit resume, home cancel
+PASS webkit-mobile: primary pointer threshold, cancellation, outside second finger and trusted buttons
+PASS webkit-mobile: free full outfit, mixed parts, cancel, locked apply and 8 poses
+PASS webkit-mobile: first clear synchronous one-shot, result keys/undo do not unearn, nested focus
+PASS webkit-mobile: public-key solution level 1
+PASS webkit-mobile: public-key solution level 2
+PASS webkit-mobile: public-key solution level 3
+PASS webkit-mobile: public-key solution level 4
+PASS webkit-mobile: public-key solution level 5
+PASS webkit-mobile: public-key solution level 6
+PASS webkit-mobile: public-key solution level 7
+PASS webkit-mobile: public-key solution level 8
+PASS webkit-mobile: public-key solution level 9
+PASS webkit-mobile: public-key solution level 10
+PASS webkit-mobile: public-key solution level 11
+PASS webkit-mobile: public-key solution level 12
+PASS webkit-mobile: public-key solution level 13
+PASS webkit-mobile: public-key solution level 14
+PASS webkit-mobile: public-key solution level 15
+PASS webkit-mobile: public-key solution level 16
+PASS webkit-mobile: public-key solution level 17
+PASS webkit-mobile: public-key solution level 18
+PASS webkit-mobile: public-key solution level 19
+PASS webkit-mobile: public-key solution level 20
+PASS webkit-mobile: reload retains all bests/outfit, starts fresh ready, completed stages replayable
+PASS webkit-mobile: natural corner advisory and undo, confirmed restart only resets current board
+PASS webkit-mobile: 320 and landscape modal geometry, 44px targets, stable nodes
+PASS webkit-mobile: HTTP CSP/console/external request gate
+PASS fault-getter: storage resilience/no recovery write or audio degradation
+PASS fault-getItem: storage resilience/no recovery write or audio degradation
+PASS fault-setItem: storage resilience/no recovery write or audio degradation
+PASS fault-corrupt: storage resilience/no recovery write or audio degradation
+PASS fault-audio: storage resilience/no recovery write or audio degradation
+PASS http: exact asset bytes and strict CSP
+{"executed":99,"passed":99,"failed":0,"skipped":0,"diagnostics":0,"external":0}

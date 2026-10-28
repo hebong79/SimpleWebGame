@@ -1,0 +1,2810 @@
+{
+  "executed": 99,
+  "passed": 99,
+  "failed": 0,
+  "skipped": 0,
+  "clock": "real/nonfrozen",
+  "results": [
+    {
+      "project": "chromium-desktop",
+      "name": "ready, CSP assets, private snapshot clone, no source setter",
+      "status": "passed",
+      "evidence": {
+        "overflow": false,
+        "modal": null,
+        "buttons": [
+          {
+            "id": "home",
+            "width": 101.625,
+            "height": 44
+          },
+          {
+            "id": "levels",
+            "width": 149.828125,
+            "height": 44
+          },
+          {
+            "id": "wardrobe",
+            "width": 64,
+            "height": 44
+          },
+          {
+            "id": "help",
+            "width": 80,
+            "height": 44
+          },
+          {
+            "id": "mute",
+            "width": 101.625,
+            "height": 44
+          },
+          {
+            "id": "primary",
+            "width": 206,
+            "height": 44
+          },
+          {
+            "id": "undo",
+            "width": 206,
+            "height": 44
+          },
+          {
+            "id": "restart",
+            "width": 206,
+            "height": 44
+          },
+          {
+            "id": "",
+            "width": 52,
+            "height": 48
+          },
+          {
+            "id": "",
+            "width": 52,
+            "height": 48
+          },
+          {
+            "id": "",
+            "width": 52,
+            "height": 48
+          },
+          {
+            "id": "",
+            "width": 52,
+            "height": 48
+          }
+        ]
+      }
+    },
+    {
+      "project": "chromium-desktop",
+      "name": "accessible sequential level selection and focus trap",
+      "status": "passed"
+    },
+    {
+      "project": "chromium-desktop",
+      "name": "fresh input only, modifier/repeat/no-op, exact undo and restart cancel",
+      "status": "passed"
+    },
+    {
+      "project": "chromium-desktop",
+      "name": "help, protective blur branch, explicit resume, home cancel",
+      "status": "passed",
+      "evidence": {
+        "blur": "synthetic window event on real HTTP; not OS focus automation"
+      }
+    },
+    {
+      "project": "chromium-desktop",
+      "name": "primary pointer threshold, cancellation, outside second finger and trusted buttons",
+      "status": "passed",
+      "evidence": {
+        "pointer": "synthetic PointerEvent diagnostics; direction and undo clicks trusted 80ms"
+      }
+    },
+    {
+      "project": "chromium-desktop",
+      "name": "free full outfit, mixed parts, cancel, locked apply and 8 poses",
+      "status": "passed",
+      "evidence": {
+        "poses": [
+          {
+            "equipped": {
+              "hat": "chef",
+              "workwear": "chef",
+              "bag": "chef"
+            },
+            "direction": "D",
+            "pose": "walk"
+          },
+          {
+            "equipped": {
+              "hat": "chef",
+              "workwear": "chef",
+              "bag": "chef"
+            },
+            "direction": "L",
+            "pose": "walk"
+          },
+          {
+            "equipped": {
+              "hat": "chef",
+              "workwear": "chef",
+              "bag": "chef"
+            },
+            "direction": "U",
+            "pose": "walk"
+          },
+          {
+            "equipped": {
+              "hat": "chef",
+              "workwear": "chef",
+              "bag": "chef"
+            },
+            "direction": "R",
+            "pose": "walk"
+          },
+          {
+            "equipped": {
+              "hat": "chef",
+              "workwear": "chef",
+              "bag": "chef"
+            },
+            "direction": "D",
+            "pose": "push"
+          },
+          {
+            "equipped": {
+              "hat": "chef",
+              "workwear": "chef",
+              "bag": "chef"
+            },
+            "direction": "L",
+            "pose": "push"
+          },
+          {
+            "equipped": {
+              "hat": "chef",
+              "workwear": "chef",
+              "bag": "chef"
+            },
+            "direction": "U",
+            "pose": "push"
+          },
+          {
+            "equipped": {
+              "hat": "chef",
+              "workwear": "chef",
+              "bag": "chef"
+            },
+            "direction": "R",
+            "pose": "push"
+          }
+        ]
+      }
+    },
+    {
+      "project": "chromium-desktop",
+      "name": "first clear synchronous one-shot, result keys/undo do not unearn, nested focus",
+      "status": "passed"
+    },
+    {
+      "project": "chromium-desktop",
+      "name": "public-key solution level 1",
+      "status": "passed",
+      "evidence": {
+        "moves": 2,
+        "pushes": 2,
+        "input": "public trusted keyboard; no live state writes"
+      }
+    },
+    {
+      "project": "chromium-desktop",
+      "name": "public-key solution level 2",
+      "status": "passed",
+      "evidence": {
+        "moves": 5,
+        "pushes": 3,
+        "input": "public trusted keyboard; no live state writes"
+      }
+    },
+    {
+      "project": "chromium-desktop",
+      "name": "public-key solution level 3",
+      "status": "passed",
+      "evidence": {
+        "moves": 6,
+        "pushes": 3,
+        "input": "public trusted keyboard; no live state writes"
+      }
+    },
+    {
+      "project": "chromium-desktop",
+      "name": "public-key solution level 4",
+      "status": "passed",
+      "evidence": {
+        "moves": 11,
+        "pushes": 3,
+        "input": "public trusted keyboard; no live state writes"
+      }
+    },
+    {
+      "project": "chromium-desktop",
+      "name": "public-key solution level 5",
+      "status": "passed",
+      "evidence": {
+        "moves": 18,
+        "pushes": 5,
+        "input": "public trusted keyboard; no live state writes"
+      }
+    },
+    {
+      "project": "chromium-desktop",
+      "name": "public-key solution level 6",
+      "status": "passed",
+      "evidence": {
+        "moves": 9,
+        "pushes": 4,
+        "input": "public trusted keyboard; no live state writes"
+      }
+    },
+    {
+      "project": "chromium-desktop",
+      "name": "public-key solution level 7",
+      "status": "passed",
+      "evidence": {
+        "moves": 9,
+        "pushes": 4,
+        "input": "public trusted keyboard; no live state writes"
+      }
+    },
+    {
+      "project": "chromium-desktop",
+      "name": "public-key solution level 8",
+      "status": "passed",
+      "evidence": {
+        "moves": 10,
+        "pushes": 4,
+        "input": "public trusted keyboard; no live state writes"
+      }
+    },
+    {
+      "project": "chromium-desktop",
+      "name": "public-key solution level 9",
+      "status": "passed",
+      "evidence": {
+        "moves": 13,
+        "pushes": 5,
+        "input": "public trusted keyboard; no live state writes"
+      }
+    },
+    {
+      "project": "chromium-desktop",
+      "name": "public-key solution level 10",
+      "status": "passed",
+      "evidence": {
+        "moves": 15,
+        "pushes": 4,
+        "input": "public trusted keyboard; no live state writes"
+      }
+    },
+    {
+      "project": "chromium-desktop",
+      "name": "public-key solution level 11",
+      "status": "passed",
+      "evidence": {
+        "moves": 35,
+        "pushes": 8,
+        "input": "public trusted keyboard; no live state writes"
+      }
+    },
+    {
+      "project": "chromium-desktop",
+      "name": "public-key solution level 12",
+      "status": "passed",
+      "evidence": {
+        "moves": 14,
+        "pushes": 5,
+        "input": "public trusted keyboard; no live state writes"
+      }
+    },
+    {
+      "project": "chromium-desktop",
+      "name": "public-key solution level 13",
+      "status": "passed",
+      "evidence": {
+        "moves": 16,
+        "pushes": 6,
+        "input": "public trusted keyboard; no live state writes"
+      }
+    },
+    {
+      "project": "chromium-desktop",
+      "name": "public-key solution level 14",
+      "status": "passed",
+      "evidence": {
+        "moves": 11,
+        "pushes": 7,
+        "input": "public trusted keyboard; no live state writes"
+      }
+    },
+    {
+      "project": "chromium-desktop",
+      "name": "public-key solution level 15",
+      "status": "passed",
+      "evidence": {
+        "moves": 20,
+        "pushes": 9,
+        "input": "public trusted keyboard; no live state writes"
+      }
+    },
+    {
+      "project": "chromium-desktop",
+      "name": "public-key solution level 16",
+      "status": "passed",
+      "evidence": {
+        "moves": 18,
+        "pushes": 8,
+        "input": "public trusted keyboard; no live state writes"
+      }
+    },
+    {
+      "project": "chromium-desktop",
+      "name": "public-key solution level 17",
+      "status": "passed",
+      "evidence": {
+        "moves": 29,
+        "pushes": 9,
+        "input": "public trusted keyboard; no live state writes"
+      }
+    },
+    {
+      "project": "chromium-desktop",
+      "name": "public-key solution level 18",
+      "status": "passed",
+      "evidence": {
+        "moves": 34,
+        "pushes": 9,
+        "input": "public trusted keyboard; no live state writes"
+      }
+    },
+    {
+      "project": "chromium-desktop",
+      "name": "public-key solution level 19",
+      "status": "passed",
+      "evidence": {
+        "moves": 18,
+        "pushes": 7,
+        "input": "public trusted keyboard; no live state writes"
+      }
+    },
+    {
+      "project": "chromium-desktop",
+      "name": "public-key solution level 20",
+      "status": "passed",
+      "evidence": {
+        "moves": 26,
+        "pushes": 9,
+        "input": "public trusted keyboard; no live state writes"
+      }
+    },
+    {
+      "project": "chromium-desktop",
+      "name": "reload retains all bests/outfit, starts fresh ready, completed stages replayable",
+      "status": "passed"
+    },
+    {
+      "project": "chromium-desktop",
+      "name": "natural corner advisory and undo, confirmed restart only resets current board",
+      "status": "passed"
+    },
+    {
+      "project": "chromium-desktop",
+      "name": "320 and landscape modal geometry, 44px targets, stable nodes",
+      "status": "passed",
+      "evidence": [
+        {
+          "overflow": false,
+          "modal": {
+            "width": 280,
+            "scrollWidth": 280,
+            "height": 716,
+            "viewportHeight": 740
+          },
+          "buttons": [
+            {
+              "id": "modal-close",
+              "width": 44,
+              "height": 44
+            },
+            {
+              "id": "preview-turn",
+              "width": 74.875,
+              "height": 44
+            },
+            {
+              "id": "preview-action",
+              "width": 63.875,
+              "height": 44
+            },
+            {
+              "id": "",
+              "width": 121,
+              "height": 54.390625
+            },
+            {
+              "id": "",
+              "width": 121,
+              "height": 54.390625
+            },
+            {
+              "id": "",
+              "width": 121,
+              "height": 54.390625
+            },
+            {
+              "id": "",
+              "width": 121,
+              "height": 54.390625
+            },
+            {
+              "id": "",
+              "width": 48.5,
+              "height": 44
+            },
+            {
+              "id": "",
+              "width": 48.5,
+              "height": 44
+            },
+            {
+              "id": "",
+              "width": 48.5,
+              "height": 44
+            },
+            {
+              "id": "",
+              "width": 48.5,
+              "height": 44
+            },
+            {
+              "id": "",
+              "width": 48.5,
+              "height": 44
+            },
+            {
+              "id": "",
+              "width": 48.5,
+              "height": 44
+            },
+            {
+              "id": "",
+              "width": 48.5,
+              "height": 44
+            },
+            {
+              "id": "",
+              "width": 48.5,
+              "height": 44
+            },
+            {
+              "id": "",
+              "width": 48.5,
+              "height": 44
+            },
+            {
+              "id": "",
+              "width": 48.5,
+              "height": 44
+            },
+            {
+              "id": "",
+              "width": 48.5,
+              "height": 44
+            },
+            {
+              "id": "",
+              "width": 48.5,
+              "height": 44
+            },
+            {
+              "id": "wardrobe-cancel",
+              "width": 100,
+              "height": 44
+            },
+            {
+              "id": "wardrobe-apply",
+              "width": 123.25,
+              "height": 44
+            }
+          ]
+        },
+        {
+          "overflow": false,
+          "modal": {
+            "width": 280,
+            "scrollWidth": 280,
+            "height": 613.375,
+            "viewportHeight": 740
+          },
+          "buttons": [
+            {
+              "id": "modal-close",
+              "width": 44,
+              "height": 44
+            },
+            {
+              "id": "",
+              "width": 57.5,
+              "height": 81
+            },
+            {
+              "id": "",
+              "width": 57.5,
+              "height": 81
+            },
+            {
+              "id": "",
+              "width": 57.5,
+              "height": 81
+            },
+            {
+              "id": "",
+              "width": 57.5,
+              "height": 81
+            },
+            {
+              "id": "",
+              "width": 57.5,
+              "height": 79
+            },
+            {
+              "id": "",
+              "width": 57.5,
+              "height": 79
+            },
+            {
+              "id": "",
+              "width": 57.5,
+              "height": 79
+            },
+            {
+              "id": "",
+              "width": 57.5,
+              "height": 79
+            },
+            {
+              "id": "",
+              "width": 57.5,
+              "height": 79
+            },
+            {
+              "id": "",
+              "width": 57.5,
+              "height": 79
+            },
+            {
+              "id": "",
+              "width": 57.5,
+              "height": 79
+            },
+            {
+              "id": "",
+              "width": 57.5,
+              "height": 79
+            },
+            {
+              "id": "",
+              "width": 57.5,
+              "height": 79
+            },
+            {
+              "id": "",
+              "width": 57.5,
+              "height": 79
+            },
+            {
+              "id": "",
+              "width": 57.5,
+              "height": 79
+            },
+            {
+              "id": "",
+              "width": 57.5,
+              "height": 79
+            },
+            {
+              "id": "",
+              "width": 57.5,
+              "height": 79
+            },
+            {
+              "id": "",
+              "width": 57.5,
+              "height": 79
+            },
+            {
+              "id": "",
+              "width": 57.5,
+              "height": 79
+            },
+            {
+              "id": "",
+              "width": 57.5,
+              "height": 79
+            }
+          ]
+        },
+        {
+          "overflow": false,
+          "modal": {
+            "width": 280,
+            "scrollWidth": 280,
+            "height": 716,
+            "viewportHeight": 740
+          },
+          "buttons": [
+            {
+              "id": "modal-close",
+              "width": 44,
+              "height": 44
+            },
+            {
+              "id": "",
+              "width": 248,
+              "height": 44
+            }
+          ]
+        },
+        {
+          "overflow": false,
+          "modal": {
+            "width": 598,
+            "scrollWidth": 598,
+            "height": 351,
+            "viewportHeight": 375
+          },
+          "buttons": [
+            {
+              "id": "modal-close",
+              "width": 44,
+              "height": 44
+            },
+            {
+              "id": "preview-turn",
+              "width": 74.875,
+              "height": 44
+            },
+            {
+              "id": "preview-action",
+              "width": 63.875,
+              "height": 44
+            },
+            {
+              "id": "",
+              "width": 133,
+              "height": 54.390625
+            },
+            {
+              "id": "",
+              "width": 133,
+              "height": 54.390625
+            },
+            {
+              "id": "",
+              "width": 133,
+              "height": 54.390625
+            },
+            {
+              "id": "",
+              "width": 133,
+              "height": 54.390625
+            },
+            {
+              "id": "",
+              "width": 120.5,
+              "height": 44
+            },
+            {
+              "id": "",
+              "width": 120.5,
+              "height": 44
+            },
+            {
+              "id": "",
+              "width": 120.5,
+              "height": 44
+            },
+            {
+              "id": "",
+              "width": 120.5,
+              "height": 44
+            },
+            {
+              "id": "",
+              "width": 120.5,
+              "height": 44
+            },
+            {
+              "id": "",
+              "width": 120.5,
+              "height": 44
+            },
+            {
+              "id": "",
+              "width": 120.5,
+              "height": 44
+            },
+            {
+              "id": "",
+              "width": 120.5,
+              "height": 44
+            },
+            {
+              "id": "",
+              "width": 120.5,
+              "height": 44
+            },
+            {
+              "id": "",
+              "width": 120.5,
+              "height": 44
+            },
+            {
+              "id": "",
+              "width": 120.5,
+              "height": 44
+            },
+            {
+              "id": "",
+              "width": 120.5,
+              "height": 44
+            },
+            {
+              "id": "wardrobe-cancel",
+              "width": 100,
+              "height": 44
+            },
+            {
+              "id": "wardrobe-apply",
+              "width": 123.25,
+              "height": 44
+            }
+          ]
+        },
+        {
+          "overflow": false,
+          "modal": {
+            "width": 598,
+            "scrollWidth": 598,
+            "height": 351,
+            "viewportHeight": 375
+          },
+          "buttons": [
+            {
+              "id": "modal-close",
+              "width": 44,
+              "height": 44
+            },
+            {
+              "id": "",
+              "width": 131.5,
+              "height": 76
+            },
+            {
+              "id": "",
+              "width": 131.5,
+              "height": 76
+            },
+            {
+              "id": "",
+              "width": 131.5,
+              "height": 76
+            },
+            {
+              "id": "",
+              "width": 131.5,
+              "height": 76
+            },
+            {
+              "id": "",
+              "width": 131.5,
+              "height": 76
+            },
+            {
+              "id": "",
+              "width": 131.5,
+              "height": 76
+            },
+            {
+              "id": "",
+              "width": 131.5,
+              "height": 76
+            },
+            {
+              "id": "",
+              "width": 131.5,
+              "height": 76
+            },
+            {
+              "id": "",
+              "width": 131.5,
+              "height": 76
+            },
+            {
+              "id": "",
+              "width": 131.5,
+              "height": 76
+            },
+            {
+              "id": "",
+              "width": 131.5,
+              "height": 76
+            },
+            {
+              "id": "",
+              "width": 131.5,
+              "height": 76
+            },
+            {
+              "id": "",
+              "width": 131.5,
+              "height": 76
+            },
+            {
+              "id": "",
+              "width": 131.5,
+              "height": 76
+            },
+            {
+              "id": "",
+              "width": 131.5,
+              "height": 76
+            },
+            {
+              "id": "",
+              "width": 131.5,
+              "height": 76
+            },
+            {
+              "id": "",
+              "width": 131.5,
+              "height": 76
+            },
+            {
+              "id": "",
+              "width": 131.5,
+              "height": 76
+            },
+            {
+              "id": "",
+              "width": 131.5,
+              "height": 76
+            },
+            {
+              "id": "",
+              "width": 131.5,
+              "height": 76
+            }
+          ]
+        },
+        {
+          "overflow": false,
+          "modal": {
+            "width": 598,
+            "scrollWidth": 598,
+            "height": 351,
+            "viewportHeight": 375
+          },
+          "buttons": [
+            {
+              "id": "modal-close",
+              "width": 44,
+              "height": 44
+            },
+            {
+              "id": "",
+              "width": 550,
+              "height": 44
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "project": "chromium-desktop",
+      "name": "HTTP CSP/console/external request gate",
+      "status": "passed"
+    },
+    {
+      "project": "chromium-320",
+      "name": "ready, CSP assets, private snapshot clone, no source setter",
+      "status": "passed",
+      "evidence": {
+        "overflow": false,
+        "modal": null,
+        "buttons": [
+          {
+            "id": "home",
+            "width": 74.21875,
+            "height": 44
+          },
+          {
+            "id": "levels",
+            "width": 100.546875,
+            "height": 44
+          },
+          {
+            "id": "wardrobe",
+            "width": 44,
+            "height": 44
+          },
+          {
+            "id": "help",
+            "width": 49,
+            "height": 44
+          },
+          {
+            "id": "mute",
+            "width": 63.875,
+            "height": 44
+          },
+          {
+            "id": "primary",
+            "width": 88,
+            "height": 44
+          },
+          {
+            "id": "undo",
+            "width": 88,
+            "height": 44
+          },
+          {
+            "id": "restart",
+            "width": 88,
+            "height": 44
+          },
+          {
+            "id": "",
+            "width": 60,
+            "height": 48
+          },
+          {
+            "id": "",
+            "width": 60,
+            "height": 48
+          },
+          {
+            "id": "",
+            "width": 60,
+            "height": 48
+          },
+          {
+            "id": "",
+            "width": 60,
+            "height": 48
+          }
+        ]
+      }
+    },
+    {
+      "project": "chromium-320",
+      "name": "accessible sequential level selection and focus trap",
+      "status": "passed"
+    },
+    {
+      "project": "chromium-320",
+      "name": "fresh input only, modifier/repeat/no-op, exact undo and restart cancel",
+      "status": "passed"
+    },
+    {
+      "project": "chromium-320",
+      "name": "help, protective blur branch, explicit resume, home cancel",
+      "status": "passed",
+      "evidence": {
+        "blur": "synthetic window event on real HTTP; not OS focus automation"
+      }
+    },
+    {
+      "project": "chromium-320",
+      "name": "primary pointer threshold, cancellation, outside second finger and trusted buttons",
+      "status": "passed",
+      "evidence": {
+        "pointer": "synthetic PointerEvent diagnostics; direction and undo clicks trusted 80ms"
+      }
+    },
+    {
+      "project": "chromium-320",
+      "name": "free full outfit, mixed parts, cancel, locked apply and 8 poses",
+      "status": "passed",
+      "evidence": {
+        "poses": [
+          {
+            "equipped": {
+              "hat": "chef",
+              "workwear": "chef",
+              "bag": "chef"
+            },
+            "direction": "D",
+            "pose": "walk"
+          },
+          {
+            "equipped": {
+              "hat": "chef",
+              "workwear": "chef",
+              "bag": "chef"
+            },
+            "direction": "L",
+            "pose": "walk"
+          },
+          {
+            "equipped": {
+              "hat": "chef",
+              "workwear": "chef",
+              "bag": "chef"
+            },
+            "direction": "U",
+            "pose": "walk"
+          },
+          {
+            "equipped": {
+              "hat": "chef",
+              "workwear": "chef",
+              "bag": "chef"
+            },
+            "direction": "R",
+            "pose": "walk"
+          },
+          {
+            "equipped": {
+              "hat": "chef",
+              "workwear": "chef",
+              "bag": "chef"
+            },
+            "direction": "D",
+            "pose": "push"
+          },
+          {
+            "equipped": {
+              "hat": "chef",
+              "workwear": "chef",
+              "bag": "chef"
+            },
+            "direction": "L",
+            "pose": "push"
+          },
+          {
+            "equipped": {
+              "hat": "chef",
+              "workwear": "chef",
+              "bag": "chef"
+            },
+            "direction": "U",
+            "pose": "push"
+          },
+          {
+            "equipped": {
+              "hat": "chef",
+              "workwear": "chef",
+              "bag": "chef"
+            },
+            "direction": "R",
+            "pose": "push"
+          }
+        ]
+      }
+    },
+    {
+      "project": "chromium-320",
+      "name": "first clear synchronous one-shot, result keys/undo do not unearn, nested focus",
+      "status": "passed"
+    },
+    {
+      "project": "chromium-320",
+      "name": "public-key solution level 1",
+      "status": "passed",
+      "evidence": {
+        "moves": 2,
+        "pushes": 2,
+        "input": "public trusted keyboard; no live state writes"
+      }
+    },
+    {
+      "project": "chromium-320",
+      "name": "public-key solution level 2",
+      "status": "passed",
+      "evidence": {
+        "moves": 5,
+        "pushes": 3,
+        "input": "public trusted keyboard; no live state writes"
+      }
+    },
+    {
+      "project": "chromium-320",
+      "name": "public-key solution level 3",
+      "status": "passed",
+      "evidence": {
+        "moves": 6,
+        "pushes": 3,
+        "input": "public trusted keyboard; no live state writes"
+      }
+    },
+    {
+      "project": "chromium-320",
+      "name": "public-key solution level 4",
+      "status": "passed",
+      "evidence": {
+        "moves": 11,
+        "pushes": 3,
+        "input": "public trusted keyboard; no live state writes"
+      }
+    },
+    {
+      "project": "chromium-320",
+      "name": "public-key solution level 5",
+      "status": "passed",
+      "evidence": {
+        "moves": 18,
+        "pushes": 5,
+        "input": "public trusted keyboard; no live state writes"
+      }
+    },
+    {
+      "project": "chromium-320",
+      "name": "public-key solution level 6",
+      "status": "passed",
+      "evidence": {
+        "moves": 9,
+        "pushes": 4,
+        "input": "public trusted keyboard; no live state writes"
+      }
+    },
+    {
+      "project": "chromium-320",
+      "name": "public-key solution level 7",
+      "status": "passed",
+      "evidence": {
+        "moves": 9,
+        "pushes": 4,
+        "input": "public trusted keyboard; no live state writes"
+      }
+    },
+    {
+      "project": "chromium-320",
+      "name": "public-key solution level 8",
+      "status": "passed",
+      "evidence": {
+        "moves": 10,
+        "pushes": 4,
+        "input": "public trusted keyboard; no live state writes"
+      }
+    },
+    {
+      "project": "chromium-320",
+      "name": "public-key solution level 9",
+      "status": "passed",
+      "evidence": {
+        "moves": 13,
+        "pushes": 5,
+        "input": "public trusted keyboard; no live state writes"
+      }
+    },
+    {
+      "project": "chromium-320",
+      "name": "public-key solution level 10",
+      "status": "passed",
+      "evidence": {
+        "moves": 15,
+        "pushes": 4,
+        "input": "public trusted keyboard; no live state writes"
+      }
+    },
+    {
+      "project": "chromium-320",
+      "name": "public-key solution level 11",
+      "status": "passed",
+      "evidence": {
+        "moves": 35,
+        "pushes": 8,
+        "input": "public trusted keyboard; no live state writes"
+      }
+    },
+    {
+      "project": "chromium-320",
+      "name": "public-key solution level 12",
+      "status": "passed",
+      "evidence": {
+        "moves": 14,
+        "pushes": 5,
+        "input": "public trusted keyboard; no live state writes"
+      }
+    },
+    {
+      "project": "chromium-320",
+      "name": "public-key solution level 13",
+      "status": "passed",
+      "evidence": {
+        "moves": 16,
+        "pushes": 6,
+        "input": "public trusted keyboard; no live state writes"
+      }
+    },
+    {
+      "project": "chromium-320",
+      "name": "public-key solution level 14",
+      "status": "passed",
+      "evidence": {
+        "moves": 11,
+        "pushes": 7,
+        "input": "public trusted keyboard; no live state writes"
+      }
+    },
+    {
+      "project": "chromium-320",
+      "name": "public-key solution level 15",
+      "status": "passed",
+      "evidence": {
+        "moves": 20,
+        "pushes": 9,
+        "input": "public trusted keyboard; no live state writes"
+      }
+    },
+    {
+      "project": "chromium-320",
+      "name": "public-key solution level 16",
+      "status": "passed",
+      "evidence": {
+        "moves": 18,
+        "pushes": 8,
+        "input": "public trusted keyboard; no live state writes"
+      }
+    },
+    {
+      "project": "chromium-320",
+      "name": "public-key solution level 17",
+      "status": "passed",
+      "evidence": {
+        "moves": 29,
+        "pushes": 9,
+        "input": "public trusted keyboard; no live state writes"
+      }
+    },
+    {
+      "project": "chromium-320",
+      "name": "public-key solution level 18",
+      "status": "passed",
+      "evidence": {
+        "moves": 34,
+        "pushes": 9,
+        "input": "public trusted keyboard; no live state writes"
+      }
+    },
+    {
+      "project": "chromium-320",
+      "name": "public-key solution level 19",
+      "status": "passed",
+      "evidence": {
+        "moves": 18,
+        "pushes": 7,
+        "input": "public trusted keyboard; no live state writes"
+      }
+    },
+    {
+      "project": "chromium-320",
+      "name": "public-key solution level 20",
+      "status": "passed",
+      "evidence": {
+        "moves": 26,
+        "pushes": 9,
+        "input": "public trusted keyboard; no live state writes"
+      }
+    },
+    {
+      "project": "chromium-320",
+      "name": "reload retains all bests/outfit, starts fresh ready, completed stages replayable",
+      "status": "passed"
+    },
+    {
+      "project": "chromium-320",
+      "name": "natural corner advisory and undo, confirmed restart only resets current board",
+      "status": "passed"
+    },
+    {
+      "project": "chromium-320",
+      "name": "320 and landscape modal geometry, 44px targets, stable nodes",
+      "status": "passed",
+      "evidence": [
+        {
+          "overflow": false,
+          "modal": {
+            "width": 280,
+            "scrollWidth": 280,
+            "height": 716,
+            "viewportHeight": 740
+          },
+          "buttons": [
+            {
+              "id": "modal-close",
+              "width": 44,
+              "height": 44
+            },
+            {
+              "id": "preview-turn",
+              "width": 74.875,
+              "height": 44
+            },
+            {
+              "id": "preview-action",
+              "width": 63.875,
+              "height": 44
+            },
+            {
+              "id": "",
+              "width": 121,
+              "height": 54.390625
+            },
+            {
+              "id": "",
+              "width": 121,
+              "height": 54.390625
+            },
+            {
+              "id": "",
+              "width": 121,
+              "height": 54.390625
+            },
+            {
+              "id": "",
+              "width": 121,
+              "height": 54.390625
+            },
+            {
+              "id": "",
+              "width": 48.5,
+              "height": 44
+            },
+            {
+              "id": "",
+              "width": 48.5,
+              "height": 44
+            },
+            {
+              "id": "",
+              "width": 48.5,
+              "height": 44
+            },
+            {
+              "id": "",
+              "width": 48.5,
+              "height": 44
+            },
+            {
+              "id": "",
+              "width": 48.5,
+              "height": 44
+            },
+            {
+              "id": "",
+              "width": 48.5,
+              "height": 44
+            },
+            {
+              "id": "",
+              "width": 48.5,
+              "height": 44
+            },
+            {
+              "id": "",
+              "width": 48.5,
+              "height": 44
+            },
+            {
+              "id": "",
+              "width": 48.5,
+              "height": 44
+            },
+            {
+              "id": "",
+              "width": 48.5,
+              "height": 44
+            },
+            {
+              "id": "",
+              "width": 48.5,
+              "height": 44
+            },
+            {
+              "id": "",
+              "width": 48.5,
+              "height": 44
+            },
+            {
+              "id": "wardrobe-cancel",
+              "width": 100,
+              "height": 44
+            },
+            {
+              "id": "wardrobe-apply",
+              "width": 123.25,
+              "height": 44
+            }
+          ]
+        },
+        {
+          "overflow": false,
+          "modal": {
+            "width": 280,
+            "scrollWidth": 280,
+            "height": 613.375,
+            "viewportHeight": 740
+          },
+          "buttons": [
+            {
+              "id": "modal-close",
+              "width": 44,
+              "height": 44
+            },
+            {
+              "id": "",
+              "width": 57.5,
+              "height": 81
+            },
+            {
+              "id": "",
+              "width": 57.5,
+              "height": 81
+            },
+            {
+              "id": "",
+              "width": 57.5,
+              "height": 81
+            },
+            {
+              "id": "",
+              "width": 57.5,
+              "height": 81
+            },
+            {
+              "id": "",
+              "width": 57.5,
+              "height": 79
+            },
+            {
+              "id": "",
+              "width": 57.5,
+              "height": 79
+            },
+            {
+              "id": "",
+              "width": 57.5,
+              "height": 79
+            },
+            {
+              "id": "",
+              "width": 57.5,
+              "height": 79
+            },
+            {
+              "id": "",
+              "width": 57.5,
+              "height": 79
+            },
+            {
+              "id": "",
+              "width": 57.5,
+              "height": 79
+            },
+            {
+              "id": "",
+              "width": 57.5,
+              "height": 79
+            },
+            {
+              "id": "",
+              "width": 57.5,
+              "height": 79
+            },
+            {
+              "id": "",
+              "width": 57.5,
+              "height": 79
+            },
+            {
+              "id": "",
+              "width": 57.5,
+              "height": 79
+            },
+            {
+              "id": "",
+              "width": 57.5,
+              "height": 79
+            },
+            {
+              "id": "",
+              "width": 57.5,
+              "height": 79
+            },
+            {
+              "id": "",
+              "width": 57.5,
+              "height": 79
+            },
+            {
+              "id": "",
+              "width": 57.5,
+              "height": 79
+            },
+            {
+              "id": "",
+              "width": 57.5,
+              "height": 79
+            },
+            {
+              "id": "",
+              "width": 57.5,
+              "height": 79
+            }
+          ]
+        },
+        {
+          "overflow": false,
+          "modal": {
+            "width": 280,
+            "scrollWidth": 280,
+            "height": 716,
+            "viewportHeight": 740
+          },
+          "buttons": [
+            {
+              "id": "modal-close",
+              "width": 44,
+              "height": 44
+            },
+            {
+              "id": "",
+              "width": 248,
+              "height": 44
+            }
+          ]
+        },
+        {
+          "overflow": false,
+          "modal": {
+            "width": 598,
+            "scrollWidth": 598,
+            "height": 351,
+            "viewportHeight": 375
+          },
+          "buttons": [
+            {
+              "id": "modal-close",
+              "width": 44,
+              "height": 44
+            },
+            {
+              "id": "preview-turn",
+              "width": 74.875,
+              "height": 44
+            },
+            {
+              "id": "preview-action",
+              "width": 63.875,
+              "height": 44
+            },
+            {
+              "id": "",
+              "width": 133,
+              "height": 54.390625
+            },
+            {
+              "id": "",
+              "width": 133,
+              "height": 54.390625
+            },
+            {
+              "id": "",
+              "width": 133,
+              "height": 54.390625
+            },
+            {
+              "id": "",
+              "width": 133,
+              "height": 54.390625
+            },
+            {
+              "id": "",
+              "width": 120.5,
+              "height": 44
+            },
+            {
+              "id": "",
+              "width": 120.5,
+              "height": 44
+            },
+            {
+              "id": "",
+              "width": 120.5,
+              "height": 44
+            },
+            {
+              "id": "",
+              "width": 120.5,
+              "height": 44
+            },
+            {
+              "id": "",
+              "width": 120.5,
+              "height": 44
+            },
+            {
+              "id": "",
+              "width": 120.5,
+              "height": 44
+            },
+            {
+              "id": "",
+              "width": 120.5,
+              "height": 44
+            },
+            {
+              "id": "",
+              "width": 120.5,
+              "height": 44
+            },
+            {
+              "id": "",
+              "width": 120.5,
+              "height": 44
+            },
+            {
+              "id": "",
+              "width": 120.5,
+              "height": 44
+            },
+            {
+              "id": "",
+              "width": 120.5,
+              "height": 44
+            },
+            {
+              "id": "",
+              "width": 120.5,
+              "height": 44
+            },
+            {
+              "id": "wardrobe-cancel",
+              "width": 100,
+              "height": 44
+            },
+            {
+              "id": "wardrobe-apply",
+              "width": 123.25,
+              "height": 44
+            }
+          ]
+        },
+        {
+          "overflow": false,
+          "modal": {
+            "width": 598,
+            "scrollWidth": 598,
+            "height": 351,
+            "viewportHeight": 375
+          },
+          "buttons": [
+            {
+              "id": "modal-close",
+              "width": 44,
+              "height": 44
+            },
+            {
+              "id": "",
+              "width": 131.5,
+              "height": 76
+            },
+            {
+              "id": "",
+              "width": 131.5,
+              "height": 76
+            },
+            {
+              "id": "",
+              "width": 131.5,
+              "height": 76
+            },
+            {
+              "id": "",
+              "width": 131.5,
+              "height": 76
+            },
+            {
+              "id": "",
+              "width": 131.5,
+              "height": 76
+            },
+            {
+              "id": "",
+              "width": 131.5,
+              "height": 76
+            },
+            {
+              "id": "",
+              "width": 131.5,
+              "height": 76
+            },
+            {
+              "id": "",
+              "width": 131.5,
+              "height": 76
+            },
+            {
+              "id": "",
+              "width": 131.5,
+              "height": 76
+            },
+            {
+              "id": "",
+              "width": 131.5,
+              "height": 76
+            },
+            {
+              "id": "",
+              "width": 131.5,
+              "height": 76
+            },
+            {
+              "id": "",
+              "width": 131.5,
+              "height": 76
+            },
+            {
+              "id": "",
+              "width": 131.5,
+              "height": 76
+            },
+            {
+              "id": "",
+              "width": 131.5,
+              "height": 76
+            },
+            {
+              "id": "",
+              "width": 131.5,
+              "height": 76
+            },
+            {
+              "id": "",
+              "width": 131.5,
+              "height": 76
+            },
+            {
+              "id": "",
+              "width": 131.5,
+              "height": 76
+            },
+            {
+              "id": "",
+              "width": 131.5,
+              "height": 76
+            },
+            {
+              "id": "",
+              "width": 131.5,
+              "height": 76
+            },
+            {
+              "id": "",
+              "width": 131.5,
+              "height": 76
+            }
+          ]
+        },
+        {
+          "overflow": false,
+          "modal": {
+            "width": 598,
+            "scrollWidth": 598,
+            "height": 351,
+            "viewportHeight": 375
+          },
+          "buttons": [
+            {
+              "id": "modal-close",
+              "width": 44,
+              "height": 44
+            },
+            {
+              "id": "",
+              "width": 550,
+              "height": 44
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "project": "chromium-320",
+      "name": "HTTP CSP/console/external request gate",
+      "status": "passed"
+    },
+    {
+      "project": "webkit-mobile",
+      "name": "ready, CSP assets, private snapshot clone, no source setter",
+      "status": "passed",
+      "evidence": {
+        "overflow": false,
+        "modal": null,
+        "buttons": [
+          {
+            "id": "home",
+            "width": 74.21875,
+            "height": 44
+          },
+          {
+            "id": "levels",
+            "width": 111.25,
+            "height": 44
+          },
+          {
+            "id": "wardrobe",
+            "width": 46,
+            "height": 44
+          },
+          {
+            "id": "help",
+            "width": 58,
+            "height": 44
+          },
+          {
+            "id": "mute",
+            "width": 74.21875,
+            "height": 44
+          },
+          {
+            "id": "primary",
+            "width": 97.671875,
+            "height": 44
+          },
+          {
+            "id": "undo",
+            "width": 97.671875,
+            "height": 44
+          },
+          {
+            "id": "restart",
+            "width": 97.671875,
+            "height": 44
+          },
+          {
+            "id": "",
+            "width": 60,
+            "height": 48
+          },
+          {
+            "id": "",
+            "width": 60,
+            "height": 48
+          },
+          {
+            "id": "",
+            "width": 60,
+            "height": 48
+          },
+          {
+            "id": "",
+            "width": 60,
+            "height": 48
+          }
+        ]
+      }
+    },
+    {
+      "project": "webkit-mobile",
+      "name": "accessible sequential level selection and focus trap",
+      "status": "passed"
+    },
+    {
+      "project": "webkit-mobile",
+      "name": "fresh input only, modifier/repeat/no-op, exact undo and restart cancel",
+      "status": "passed"
+    },
+    {
+      "project": "webkit-mobile",
+      "name": "help, protective blur branch, explicit resume, home cancel",
+      "status": "passed",
+      "evidence": {
+        "blur": "synthetic window event on real HTTP; not OS focus automation"
+      }
+    },
+    {
+      "project": "webkit-mobile",
+      "name": "primary pointer threshold, cancellation, outside second finger and trusted buttons",
+      "status": "passed",
+      "evidence": {
+        "pointer": "synthetic PointerEvent diagnostics; direction and undo clicks trusted 80ms"
+      }
+    },
+    {
+      "project": "webkit-mobile",
+      "name": "free full outfit, mixed parts, cancel, locked apply and 8 poses",
+      "status": "passed",
+      "evidence": {
+        "poses": [
+          {
+            "equipped": {
+              "hat": "chef",
+              "workwear": "chef",
+              "bag": "chef"
+            },
+            "direction": "D",
+            "pose": "walk"
+          },
+          {
+            "equipped": {
+              "hat": "chef",
+              "workwear": "chef",
+              "bag": "chef"
+            },
+            "direction": "L",
+            "pose": "walk"
+          },
+          {
+            "equipped": {
+              "hat": "chef",
+              "workwear": "chef",
+              "bag": "chef"
+            },
+            "direction": "U",
+            "pose": "walk"
+          },
+          {
+            "equipped": {
+              "hat": "chef",
+              "workwear": "chef",
+              "bag": "chef"
+            },
+            "direction": "R",
+            "pose": "walk"
+          },
+          {
+            "equipped": {
+              "hat": "chef",
+              "workwear": "chef",
+              "bag": "chef"
+            },
+            "direction": "D",
+            "pose": "push"
+          },
+          {
+            "equipped": {
+              "hat": "chef",
+              "workwear": "chef",
+              "bag": "chef"
+            },
+            "direction": "L",
+            "pose": "push"
+          },
+          {
+            "equipped": {
+              "hat": "chef",
+              "workwear": "chef",
+              "bag": "chef"
+            },
+            "direction": "U",
+            "pose": "push"
+          },
+          {
+            "equipped": {
+              "hat": "chef",
+              "workwear": "chef",
+              "bag": "chef"
+            },
+            "direction": "R",
+            "pose": "push"
+          }
+        ]
+      }
+    },
+    {
+      "project": "webkit-mobile",
+      "name": "first clear synchronous one-shot, result keys/undo do not unearn, nested focus",
+      "status": "passed"
+    },
+    {
+      "project": "webkit-mobile",
+      "name": "public-key solution level 1",
+      "status": "passed",
+      "evidence": {
+        "moves": 2,
+        "pushes": 2,
+        "input": "public trusted keyboard; no live state writes"
+      }
+    },
+    {
+      "project": "webkit-mobile",
+      "name": "public-key solution level 2",
+      "status": "passed",
+      "evidence": {
+        "moves": 5,
+        "pushes": 3,
+        "input": "public trusted keyboard; no live state writes"
+      }
+    },
+    {
+      "project": "webkit-mobile",
+      "name": "public-key solution level 3",
+      "status": "passed",
+      "evidence": {
+        "moves": 6,
+        "pushes": 3,
+        "input": "public trusted keyboard; no live state writes"
+      }
+    },
+    {
+      "project": "webkit-mobile",
+      "name": "public-key solution level 4",
+      "status": "passed",
+      "evidence": {
+        "moves": 11,
+        "pushes": 3,
+        "input": "public trusted keyboard; no live state writes"
+      }
+    },
+    {
+      "project": "webkit-mobile",
+      "name": "public-key solution level 5",
+      "status": "passed",
+      "evidence": {
+        "moves": 18,
+        "pushes": 5,
+        "input": "public trusted keyboard; no live state writes"
+      }
+    },
+    {
+      "project": "webkit-mobile",
+      "name": "public-key solution level 6",
+      "status": "passed",
+      "evidence": {
+        "moves": 9,
+        "pushes": 4,
+        "input": "public trusted keyboard; no live state writes"
+      }
+    },
+    {
+      "project": "webkit-mobile",
+      "name": "public-key solution level 7",
+      "status": "passed",
+      "evidence": {
+        "moves": 9,
+        "pushes": 4,
+        "input": "public trusted keyboard; no live state writes"
+      }
+    },
+    {
+      "project": "webkit-mobile",
+      "name": "public-key solution level 8",
+      "status": "passed",
+      "evidence": {
+        "moves": 10,
+        "pushes": 4,
+        "input": "public trusted keyboard; no live state writes"
+      }
+    },
+    {
+      "project": "webkit-mobile",
+      "name": "public-key solution level 9",
+      "status": "passed",
+      "evidence": {
+        "moves": 13,
+        "pushes": 5,
+        "input": "public trusted keyboard; no live state writes"
+      }
+    },
+    {
+      "project": "webkit-mobile",
+      "name": "public-key solution level 10",
+      "status": "passed",
+      "evidence": {
+        "moves": 15,
+        "pushes": 4,
+        "input": "public trusted keyboard; no live state writes"
+      }
+    },
+    {
+      "project": "webkit-mobile",
+      "name": "public-key solution level 11",
+      "status": "passed",
+      "evidence": {
+        "moves": 35,
+        "pushes": 8,
+        "input": "public trusted keyboard; no live state writes"
+      }
+    },
+    {
+      "project": "webkit-mobile",
+      "name": "public-key solution level 12",
+      "status": "passed",
+      "evidence": {
+        "moves": 14,
+        "pushes": 5,
+        "input": "public trusted keyboard; no live state writes"
+      }
+    },
+    {
+      "project": "webkit-mobile",
+      "name": "public-key solution level 13",
+      "status": "passed",
+      "evidence": {
+        "moves": 16,
+        "pushes": 6,
+        "input": "public trusted keyboard; no live state writes"
+      }
+    },
+    {
+      "project": "webkit-mobile",
+      "name": "public-key solution level 14",
+      "status": "passed",
+      "evidence": {
+        "moves": 11,
+        "pushes": 7,
+        "input": "public trusted keyboard; no live state writes"
+      }
+    },
+    {
+      "project": "webkit-mobile",
+      "name": "public-key solution level 15",
+      "status": "passed",
+      "evidence": {
+        "moves": 20,
+        "pushes": 9,
+        "input": "public trusted keyboard; no live state writes"
+      }
+    },
+    {
+      "project": "webkit-mobile",
+      "name": "public-key solution level 16",
+      "status": "passed",
+      "evidence": {
+        "moves": 18,
+        "pushes": 8,
+        "input": "public trusted keyboard; no live state writes"
+      }
+    },
+    {
+      "project": "webkit-mobile",
+      "name": "public-key solution level 17",
+      "status": "passed",
+      "evidence": {
+        "moves": 29,
+        "pushes": 9,
+        "input": "public trusted keyboard; no live state writes"
+      }
+    },
+    {
+      "project": "webkit-mobile",
+      "name": "public-key solution level 18",
+      "status": "passed",
+      "evidence": {
+        "moves": 34,
+        "pushes": 9,
+        "input": "public trusted keyboard; no live state writes"
+      }
+    },
+    {
+      "project": "webkit-mobile",
+      "name": "public-key solution level 19",
+      "status": "passed",
+      "evidence": {
+        "moves": 18,
+        "pushes": 7,
+        "input": "public trusted keyboard; no live state writes"
+      }
+    },
+    {
+      "project": "webkit-mobile",
+      "name": "public-key solution level 20",
+      "status": "passed",
+      "evidence": {
+        "moves": 26,
+        "pushes": 9,
+        "input": "public trusted keyboard; no live state writes"
+      }
+    },
+    {
+      "project": "webkit-mobile",
+      "name": "reload retains all bests/outfit, starts fresh ready, completed stages replayable",
+      "status": "passed"
+    },
+    {
+      "project": "webkit-mobile",
+      "name": "natural corner advisory and undo, confirmed restart only resets current board",
+      "status": "passed"
+    },
+    {
+      "project": "webkit-mobile",
+      "name": "320 and landscape modal geometry, 44px targets, stable nodes",
+      "status": "passed",
+      "evidence": [
+        {
+          "overflow": false,
+          "modal": {
+            "width": 280,
+            "scrollWidth": 280,
+            "height": 716,
+            "viewportHeight": 740
+          },
+          "buttons": [
+            {
+              "id": "modal-close",
+              "width": 44,
+              "height": 44
+            },
+            {
+              "id": "preview-turn",
+              "width": 74.875,
+              "height": 44
+            },
+            {
+              "id": "preview-action",
+              "width": 63.875,
+              "height": 44
+            },
+            {
+              "id": "",
+              "width": 121,
+              "height": 54.390625
+            },
+            {
+              "id": "",
+              "width": 121,
+              "height": 54.390625
+            },
+            {
+              "id": "",
+              "width": 121,
+              "height": 54.390625
+            },
+            {
+              "id": "",
+              "width": 121,
+              "height": 54.390625
+            },
+            {
+              "id": "",
+              "width": 48.5,
+              "height": 44
+            },
+            {
+              "id": "",
+              "width": 48.5,
+              "height": 44
+            },
+            {
+              "id": "",
+              "width": 48.5,
+              "height": 44
+            },
+            {
+              "id": "",
+              "width": 48.5,
+              "height": 44
+            },
+            {
+              "id": "",
+              "width": 48.5,
+              "height": 44
+            },
+            {
+              "id": "",
+              "width": 48.5,
+              "height": 44
+            },
+            {
+              "id": "",
+              "width": 48.5,
+              "height": 44
+            },
+            {
+              "id": "",
+              "width": 48.5,
+              "height": 44
+            },
+            {
+              "id": "",
+              "width": 48.5,
+              "height": 44
+            },
+            {
+              "id": "",
+              "width": 48.5,
+              "height": 44
+            },
+            {
+              "id": "",
+              "width": 48.5,
+              "height": 44
+            },
+            {
+              "id": "",
+              "width": 48.5,
+              "height": 44
+            },
+            {
+              "id": "wardrobe-cancel",
+              "width": 100,
+              "height": 44
+            },
+            {
+              "id": "wardrobe-apply",
+              "width": 123.25,
+              "height": 44
+            }
+          ]
+        },
+        {
+          "overflow": false,
+          "modal": {
+            "width": 280,
+            "scrollWidth": 280,
+            "height": 613.375,
+            "viewportHeight": 740
+          },
+          "buttons": [
+            {
+              "id": "modal-close",
+              "width": 44,
+              "height": 44
+            },
+            {
+              "id": "",
+              "width": 57.5,
+              "height": 81
+            },
+            {
+              "id": "",
+              "width": 57.5,
+              "height": 81
+            },
+            {
+              "id": "",
+              "width": 57.5,
+              "height": 81
+            },
+            {
+              "id": "",
+              "width": 57.5,
+              "height": 81
+            },
+            {
+              "id": "",
+              "width": 57.5,
+              "height": 79
+            },
+            {
+              "id": "",
+              "width": 57.5,
+              "height": 79
+            },
+            {
+              "id": "",
+              "width": 57.5,
+              "height": 79
+            },
+            {
+              "id": "",
+              "width": 57.5,
+              "height": 79
+            },
+            {
+              "id": "",
+              "width": 57.5,
+              "height": 79
+            },
+            {
+              "id": "",
+              "width": 57.5,
+              "height": 79
+            },
+            {
+              "id": "",
+              "width": 57.5,
+              "height": 79
+            },
+            {
+              "id": "",
+              "width": 57.5,
+              "height": 79
+            },
+            {
+              "id": "",
+              "width": 57.5,
+              "height": 79
+            },
+            {
+              "id": "",
+              "width": 57.5,
+              "height": 79
+            },
+            {
+              "id": "",
+              "width": 57.5,
+              "height": 79
+            },
+            {
+              "id": "",
+              "width": 57.5,
+              "height": 79
+            },
+            {
+              "id": "",
+              "width": 57.5,
+              "height": 79
+            },
+            {
+              "id": "",
+              "width": 57.5,
+              "height": 79
+            },
+            {
+              "id": "",
+              "width": 57.5,
+              "height": 79
+            },
+            {
+              "id": "",
+              "width": 57.5,
+              "height": 79
+            }
+          ]
+        },
+        {
+          "overflow": false,
+          "modal": {
+            "width": 280,
+            "scrollWidth": 280,
+            "height": 716,
+            "viewportHeight": 740
+          },
+          "buttons": [
+            {
+              "id": "modal-close",
+              "width": 44,
+              "height": 44
+            },
+            {
+              "id": "",
+              "width": 248,
+              "height": 44
+            }
+          ]
+        },
+        {
+          "overflow": false,
+          "modal": {
+            "width": 598,
+            "scrollWidth": 598,
+            "height": 351,
+            "viewportHeight": 375
+          },
+          "buttons": [
+            {
+              "id": "modal-close",
+              "width": 44,
+              "height": 44
+            },
+            {
+              "id": "preview-turn",
+              "width": 74.875,
+              "height": 44
+            },
+            {
+              "id": "preview-action",
+              "width": 63.875,
+              "height": 44
+            },
+            {
+              "id": "",
+              "width": 133,
+              "height": 54.390625
+            },
+            {
+              "id": "",
+              "width": 133,
+              "height": 54.390625
+            },
+            {
+              "id": "",
+              "width": 133,
+              "height": 54.390625
+            },
+            {
+              "id": "",
+              "width": 133,
+              "height": 54.390625
+            },
+            {
+              "id": "",
+              "width": 120.5,
+              "height": 44
+            },
+            {
+              "id": "",
+              "width": 120.5,
+              "height": 44
+            },
+            {
+              "id": "",
+              "width": 120.5,
+              "height": 44
+            },
+            {
+              "id": "",
+              "width": 120.5,
+              "height": 44
+            },
+            {
+              "id": "",
+              "width": 120.5,
+              "height": 44
+            },
+            {
+              "id": "",
+              "width": 120.5,
+              "height": 44
+            },
+            {
+              "id": "",
+              "width": 120.5,
+              "height": 44
+            },
+            {
+              "id": "",
+              "width": 120.5,
+              "height": 44
+            },
+            {
+              "id": "",
+              "width": 120.5,
+              "height": 44
+            },
+            {
+              "id": "",
+              "width": 120.5,
+              "height": 44
+            },
+            {
+              "id": "",
+              "width": 120.5,
+              "height": 44
+            },
+            {
+              "id": "",
+              "width": 120.5,
+              "height": 44
+            },
+            {
+              "id": "wardrobe-cancel",
+              "width": 100,
+              "height": 44
+            },
+            {
+              "id": "wardrobe-apply",
+              "width": 123.25,
+              "height": 44
+            }
+          ]
+        },
+        {
+          "overflow": false,
+          "modal": {
+            "width": 598,
+            "scrollWidth": 598,
+            "height": 351,
+            "viewportHeight": 375
+          },
+          "buttons": [
+            {
+              "id": "modal-close",
+              "width": 44,
+              "height": 44
+            },
+            {
+              "id": "",
+              "width": 131.5,
+              "height": 76
+            },
+            {
+              "id": "",
+              "width": 131.5,
+              "height": 76
+            },
+            {
+              "id": "",
+              "width": 131.5,
+              "height": 76
+            },
+            {
+              "id": "",
+              "width": 131.5,
+              "height": 76
+            },
+            {
+              "id": "",
+              "width": 131.5,
+              "height": 76
+            },
+            {
+              "id": "",
+              "width": 131.5,
+              "height": 76
+            },
+            {
+              "id": "",
+              "width": 131.5,
+              "height": 76
+            },
+            {
+              "id": "",
+              "width": 131.5,
+              "height": 76
+            },
+            {
+              "id": "",
+              "width": 131.5,
+              "height": 76
+            },
+            {
+              "id": "",
+              "width": 131.5,
+              "height": 76
+            },
+            {
+              "id": "",
+              "width": 131.5,
+              "height": 76
+            },
+            {
+              "id": "",
+              "width": 131.5,
+              "height": 76
+            },
+            {
+              "id": "",
+              "width": 131.5,
+              "height": 76
+            },
+            {
+              "id": "",
+              "width": 131.5,
+              "height": 76
+            },
+            {
+              "id": "",
+              "width": 131.5,
+              "height": 76
+            },
+            {
+              "id": "",
+              "width": 131.5,
+              "height": 76
+            },
+            {
+              "id": "",
+              "width": 131.5,
+              "height": 76
+            },
+            {
+              "id": "",
+              "width": 131.5,
+              "height": 76
+            },
+            {
+              "id": "",
+              "width": 131.5,
+              "height": 76
+            },
+            {
+              "id": "",
+              "width": 131.5,
+              "height": 76
+            }
+          ]
+        },
+        {
+          "overflow": false,
+          "modal": {
+            "width": 598,
+            "scrollWidth": 598,
+            "height": 351,
+            "viewportHeight": 375
+          },
+          "buttons": [
+            {
+              "id": "modal-close",
+              "width": 44,
+              "height": 44
+            },
+            {
+              "id": "",
+              "width": 550,
+              "height": 44
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "project": "webkit-mobile",
+      "name": "HTTP CSP/console/external request gate",
+      "status": "passed"
+    },
+    {
+      "project": "fault-getter",
+      "name": "storage resilience/no recovery write or audio degradation",
+      "status": "passed"
+    },
+    {
+      "project": "fault-getItem",
+      "name": "storage resilience/no recovery write or audio degradation",
+      "status": "passed"
+    },
+    {
+      "project": "fault-setItem",
+      "name": "storage resilience/no recovery write or audio degradation",
+      "status": "passed"
+    },
+    {
+      "project": "fault-corrupt",
+      "name": "storage resilience/no recovery write or audio degradation",
+      "status": "passed"
+    },
+    {
+      "project": "fault-audio",
+      "name": "storage resilience/no recovery write or audio degradation",
+      "status": "passed"
+    },
+    {
+      "project": "http",
+      "name": "exact asset bytes and strict CSP",
+      "status": "passed",
+      "evidence": [
+        {
+          "file": "index.html",
+          "sha256": "5803334161e146cc3b67c4a859c7a9d8d13657a0158c18a8924c648613cd6f3c"
+        },
+        {
+          "file": "styles.css",
+          "sha256": "cc7c316e652fb4fad9f6d1b130fdc6cd9713b486181d198455481eee7bc6bb5d"
+        },
+        {
+          "file": "main.mjs",
+          "sha256": "65b6182a98ed34dfc8222271d164235128c517677818f7efd7830825e29d7a0f"
+        },
+        {
+          "file": "engine.mjs",
+          "sha256": "5f7573a67f89055e400638f87e03188e9e6dc6b54cd0d2678966c37880fc2ecf"
+        },
+        {
+          "file": "save.mjs",
+          "sha256": "fdfc7f3a1a8f8d0a045bb8eca5e47d21e84c15761cdd0f643c8a7557e25066f7"
+        },
+        {
+          "file": "art.mjs",
+          "sha256": "66944b5b4690f85fc86e61cf36971e2489f222800ba0a04235c264ad1442101f"
+        },
+        {
+          "file": "levels.mjs",
+          "sha256": "dd8a782d63047aefaea40d767ac8305cb59c8dba92bbf0711224f9855f24f8d1"
+        }
+      ]
+    }
+  ],
+  "diagnostics": [],
+  "external": [],
+  "limits": [
+    "No physical device",
+    "No actual audio listening",
+    "No human-duration acceptance",
+    "blur and multi-pointer branches use explicitly synthetic events"
+  ]
+}

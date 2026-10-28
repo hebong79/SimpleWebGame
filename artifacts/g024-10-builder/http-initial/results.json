@@ -1,0 +1,29 @@
+{
+  "cases": 3,
+  "passed": 0,
+  "failed": 3,
+  "skipped": 0,
+  "results": [
+    {
+      "project": "chromium-desktop",
+      "status": "failed",
+      "error": "AssertionError [ERR_ASSERTION]: The expression evaluated to a falsy value:\n\n  assert.ok(trusted.length>=13&&trusted.every(c=>c.trusted))\n\n    at file:///E:/Work2/Project/SimpleGames/worktrees/g024-10-sokoban/artifacts/g024-10-builder/http-initial.mjs:27:135",
+      "diagnostics": [],
+      "external": []
+    },
+    {
+      "project": "chromium-320",
+      "status": "failed",
+      "error": "AssertionError [ERR_ASSERTION]: The expression evaluated to a falsy value:\n\n  assert.ok(trusted.length>=13&&trusted.every(c=>c.trusted))\n\n    at file:///E:/Work2/Project/SimpleGames/worktrees/g024-10-sokoban/artifacts/g024-10-builder/http-initial.mjs:27:135",
+      "diagnostics": [],
+      "external": []
+    },
+    {
+      "project": "webkit-mobile",
+      "status": "failed",
+      "error": "AssertionError [ERR_ASSERTION]: The expression evaluated to a falsy value:\n\n  assert.ok(trusted.length>=13&&trusted.every(c=>c.trusted))\n\n    at file:///E:/Work2/Project/SimpleGames/worktrees/g024-10-sokoban/artifacts/g024-10-builder/http-initial.mjs:27:135",
+      "diagnostics": [],
+      "external": []
+    }
+  ]
+}

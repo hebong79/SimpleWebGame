@@ -1,0 +1,111 @@
+# G024-10 구현 인수 문서 — 햄스터 택배 창고
+
+- 작업: `G024-10` / Builder10 (임시 구현 워커, native Cody 아님)
+- 루트: `E:/Work2/Project/SimpleGames/worktrees/g024-10-sokoban`
+- 브랜치: `feature/g024-10-sokoban` / 기준 `1e40850c41b46bd6190f10d1407d731fac4ddbf4`
+- 최우선 계약: 통합 worktree의 `docs/G024_PM_CONTRACT.md`.
+- 상태: 구현 및 **구현자 자체 검증 완료**. 별도 독립 QA/PM 통합·홈 등록·운영 3116 수용은 이 문서의 PASS 범위가 아닙니다.
+- 게임 ID/주소: `hamster-depot` / `/games/10-sokoban/index.html`.
+
+## 구현 범위
+
+- 외부 런타임 의존성 없이 기존 Node 빌드가 그대로 복사하는 독립 ES 모듈/HTML/CSS입니다. 공용 카탈로그·서버·패키지·잠금 파일·다른 게임·PM2는 수정하지 않았습니다.
+- `levels.mjs`: 직접 설계한 서로 다른 20개 맵, 이름·설계 힌트·리터럴 해법과 검증한 최소 밀기/동률 최소 이동 수. 전부 8×8 이하이며 1–5단계 1상자, 6–12단계 2상자, 13–20단계 3상자입니다. 전치/회전/반사 8가지 정규화 후에도 20종이 다릅니다.
+- `engine.mjs`: 순수 불변 보드·이동·밀기·되돌리기·구석 경고. 정적 목표와 움직이는 물체를 분리했습니다. 벽/이중 상자/잘못된 방향은 동일 상태 객체를 반환하며 이력과 카운터를 변경하지 않습니다. 성공 이동의 전체 이력을 유지하여 횟수 제한 없이 되돌립니다. 완료 판정은 마지막 이동에 동기 확정되며 완료 후 이동/되돌리기는 no-op입니다.
+- `save.mjs`: 버전·단계 순서·최고 기록·소유 의상·교차 필드를 검증합니다. 기록은 밀기 우선, 동률 이동 우선으로 갱신합니다. 로드/복구는 쓰지 않으며, 결과·음소거 변경·의상 적용만 자신의 키에 저장합니다. 삭제 API를 사용하지 않습니다. 실패 시 현재 메모리 플레이와 지속 경고를 제공합니다.
+- `main.mjs`: 준비/시작/수동 정지/명시 재개/보호 정지, 확인 취소 시 보드·카운터·이력·이전 정지 원인 복원, 도움말, 완료/다음, 순차 해금 선택, 홈 확인, 키보드 및 터치 버튼, 추가 스와이프를 구현했습니다. 메뉴 중 게임 입력은 차단합니다.
+- 옷장: 기본 몸체와 기본 지급 택배복, 5단계 완료 정비사, 15단계 완료 요리사. 모자/작업복/가방 각각 또는 전체 세트를 미리 보고 1회 적용하며 취소는 변경하지 않습니다. 잠김 미리보기는 가능하고 적용은 불가능합니다. 4방향 × 걷기/밀기 8자세 미리보기를 제공합니다.
+- UI: 따뜻한 크림 창고, 송장 H 상자, 목표 점선과 완료 체크, 직접 그린 햄스터·부위 의상. 320px/667×375/1366px 검증. 보이는 동작 버튼 최소 44px. 짧은 화면의 모달은 내부 스크롤합니다. 실제 트리거 초점 복귀 및 Tab/Shift+Tab 순환을 구현했습니다. 감소된 동작 환경을 지원하고 매 RAF에 같은 버튼 텍스트를 대입하지 않습니다.
+- 소리: 기본 음소거, WebAudio 이동·밀기·완료 합성. 정지/메뉴/보호 이탈/음소거에서 진행 중 음성을 중지합니다. 생성/재개 실패는 게임을 중단하지 않습니다.
+
+## 저장 형식과 검증 한계
+
+전용 키는 **`simplegames.hamster-depot.v1`** 입니다.
+
+```json
+{"version":1,"cleared":[],"unlocked":1,"bests":{},"muted":true,"equipped":{"hat":"basic","workwear":"basic","bag":"basic"}}
+```
+
+- `cleared`는 `[1,2,...,N]` 접두 수열이며 `unlocked=min(20,N+1)`입니다. 최고 기록 키는 완료 단계와 정확히 일치합니다. 잘못된 ID, 누락/추가 필드, 누락/추가 기록, 비정상 진행, 잠긴 의상은 거부합니다.
+- `{pushes,moves}`는 비음수 안전 정수이며 `moves>=pushes`이고 해당 맵의 검증된 최소 밀기 이상입니다. 최소 밀기와 같은 기록은 그 밀기에서의 검증된 최소 이동 이상이어야 합니다. 최소값은 전용 오프라인 Dijkstra(밀기, 이동 순)로 검증했습니다.
+- 임의의 더 긴 점수 쌍이 실제 특정 경로에서 달성 가능한지는 저장된 수치만으로 재구성하지 않습니다. 기록의 전체 해법 이력을 저장하지 않으므로 경로 진위/외부 localStorage 편집 방지까지 보장하지 않습니다. 안전 정수 범위를 쓰며 인위적인 100만 회 상한으로 정상 기록을 잘라내지 않습니다.
+- 현재 진행 중인 보드/이력은 저장하지 않으며 새로고침은 1단계 준비 상태를 새로 만듭니다. 완료 기록·해금·음소거·의상은 유지됩니다.
+
+## 읽기 전용 QA API
+
+```js
+window.__simpleGames10Snapshot()
+// structuredClone({phase,pauseReason,activePanel,game,record,preview,settlements,storageWarning})
+```
+
+`game`에는 정적 보드와 전체 undo 이력이 들어갑니다. 매 호출 독립 복제본이며 반환값 변경은 실제 상태에 영향이 없습니다. 전역 함수 프로퍼티는 writable/configurable이 false이고 setter/라이브 상태 참조/디버그 조작기는 노출하지 않았습니다. 브라우저 20단계 완주는 공개 키 입력만 사용했습니다.
+
+## 원본 레벨과 해법
+
+맵 문자는 `#` 벽, 공백 바닥, `.` 목표, `$` 상자, `@` 햄스터입니다. 해법 문자는 U/R/D/L이며 소스에 모든 원본 맵과 문자열을 함께 보관합니다. 난이도는 상자 수·회전·우회·다중 목표 접근을 늘리는 교육형 구성이며, 단계마다 수치가 엄격하게 증가한다는 뜻은 아닙니다. 짧은 입문 창고도 포함합니다.
+
+|단계|이름|밀기|이동|검증 해법|
+|---:|---|---:|---:|---|
+|1|첫 출근|2|2|`RR`|
+|2|모퉁이 배송|3|5|`ULURR`|
+|3|선반 돌아가기|3|6|`URRDRU`|
+|4|첫 야간 근무|3|11|`ULLRDDLLUUU`|
+|5|긴 배송 동선|5|18|`DLLUURURRDDLUURULL`|
+|6|두 개의 송장|4|9|`LUURDDRUU`|
+|7|가운데 기둥|4|9|`LUUDRRDRU`|
+|8|선반 사이|4|10|`LUUDRRDRUU`|
+|9|택배 회전대|5|13|`ULURDRURLURRD`|
+|10|엇갈린 배송|4|15|`URUURDRDRRUULDD`|
+|11|좁은 입구|8|35|`DLLULLURDRURLUDDDRRUURUULLLDDRRURUL`|
+|12|주말 물류|5|14|`ULUURULRDDRURD`|
+|13|세 상자 출발|6|16|`UUDDLLUURRRDDRUU`|
+|14|두 갈래 선반|7|11|`UUUDRRRDRUU`|
+|15|주방 개점|9|20|`LULUUDDLDRRRRDRULUUU`|
+|16|구불구불 출고|8|18|`LURRRLLUUUDRRRDRUU`|
+|17|중앙 허브|9|29|`UULLURDLDRRRLUUUDRUULRDRRDDLU`|
+|18|분류실 교차로|9|34|`RRULRDRRUULUURULLDDLDLLURRRURRDDLU`|
+|19|마지막 집하|7|18|`URLUUURDRRDLDURRUU`|
+|20|창고의 달인|9|26|`LUULURDRUURULDDDRDLRRUURUL`|
+
+해법 입력 합계는 319회입니다. `artifacts/g024-10-builder/design-levels.mjs`에 최초 수작업 초안, `finalize-levels.mjs`에 12/20 통로 수정과 교육 순서 조정, `solve-levels.mjs`에 검증기를 보존했습니다. 최초 두 초안의 풀 수 없음은 `level-verification-initial.json`에 그대로 남겼습니다. 제품 시험에서 실패를 숨기거나 이미 배포된 맵을 갈아 끼운 것은 아닙니다.
+
+## 실제 실행 결과
+
+실행기는 모든 명령에서 `C:/Program Files/nodejs/node.exe` v24.16.0을 사용했습니다. TypeScript 7.0.2, Playwright 1.64.1은 기존 junction 설치를 재사용했습니다. 설치/의존성 쓰기는 없었습니다.
+
+|검증|실행 결과|증거|
+|---|---|---|
+|5개 런타임 MJS `node --check`|exit 0|초기 빌드 명령과 최종 `verification.json`|
+|`node scripts/build.mjs --out-dir artifacts/g024-10-builder/build`|exit 0|`build-initial.log`|
+|`node --test --test-reporter=tap tests/games/10-sokoban.test.mjs`|64 실행 / 64 통과 / 실패·skip 0|`unit-initial.tap`|
+|초기 실제 HTTP 비동결 80ms smoke|3 프로젝트 / 3 통과|`http-initial-observer-corrected/results.json`|
+|실제 HTTP 심층 smoke|99 실행 / 99 통과 / 실패·skip 0|`http-full/results.json`, `http-full-initial.log`|
+|소스와 실제 HTTP 응답 7자산 바이트·SHA/CSP|7/7 일치|심층 결과 마지막 `http` 케이스|
+
+전체 명령의 `node`는 위 절대 실행기 경로의 약기입니다. 브라우저 실행은 아래처럼 자식 프로세스 시작 전 출력 경로를 명시했습니다.
+
+```sh
+GAME_TEST_ARTIFACT_DIR=artifacts/g024-10-builder GAME_TEST_BUILD_DIR=artifacts/g024-10-builder/build 'C:/Program Files/nodejs/node.exe' artifacts/g024-10-builder/http-initial.mjs
+GAME_TEST_ARTIFACT_DIR=artifacts/g024-10-builder GAME_TEST_BUILD_DIR=artifacts/g024-10-builder/build 'C:/Program Files/nodejs/node.exe' artifacts/g024-10-builder/http-full.mjs
+```
+
+- 자체 loopback **3142**가 비어 있음을 확인한 후 새 빌드 서버만 실행했습니다. LAN3116/PM2/타 서비스는 건드리지 않았습니다. 인수 시 자신의 3142 서버는 정리합니다.
+- Chromium 데스크톱, Chromium 320px 모바일 에뮬레이션, WebKit 모바일 에뮬레이션 3종에서 **20단계 전부 공개 해법 키 입력으로 완료**했습니다. 라이브 상태 주입은 없었습니다. 각 프로젝트는 추가로 1단계 우회 기록 → 최적 기록 갱신, 완료 정산 1회, 결과 후 undo 차단, 완료 뒤 nested 옷장 초점 복귀, 5/15 자연 의상 해금, reload 유지, 구석 막힘 자연 입력, 재시작 취소·확인 등을 검증했습니다.
+- 최초 소형 smoke는 작성자가 입력한 클릭이 11개인데 관측 코드에 `>=13`이라고 적어 3프로젝트 집계에서만 실패했습니다. 게임 동작/CSP는 모두 통과한 뒤의 관측 단언 실패입니다. `http-initial/results.json`과 `http-initial.log`를 덮지 않고, 정확한 11개 실제 버튼 ID 순서와 isTrusted=true를 단언한 수정 관측으로 3/3 통과했습니다. 제품 코드는 이 때문에 변경하지 않았습니다.
+- 심층 99케이스는 최초 실행 모두 통과했습니다. 원시 console error/warning·pageerror·외부 요청 모두 0입니다. WebKit은 알려진 캡처 도구의 엄격 CSP 간섭을 피하기 위해 캡처 없이 기능/레이아웃/콘솔/CSP를 검증했습니다. Chromium PC/320 실제 캡처를 별도로 시각 확인했습니다.
+- 터치 방향/undo/메뉴 버튼은 trusted 80ms 클릭입니다. 다중 포인터/취소/임계값·보호 blur 분기는 명시적인 합성 이벤트 진단입니다. 물리 터치나 OS 창 전환과 혼동하지 않습니다.
+- localStorage getter/getItem/setItem 예외, 손상 데이터의 로드 무쓰기·외부 키 보존·결과 자기 키 1회 쓰기, AudioContext 생성 실패를 독립 브라우저 context에서 검증했습니다.
+
+## 자산 출처와 보안
+
+- 맵/이름/힌트/HTML/CSS 및 `art.mjs` 벡터 코드는 이 작업에서 직접 작성한 원본입니다. 저작권 있는 Sokoban 레벨 팩·참고 이미지·외부 폰트/이미지/오디오/게임 코드는 가져오지 않았습니다. 공통 UI 색조만 기존 프로젝트의 따뜻한 정원 계열과 조화시켰습니다. 출하 소스의 이용 범위는 이 프로젝트입니다.
+- 햄스터·의상·상자·목표·벽은 Canvas 기본 도형/텍스트이며 합성음은 WebAudio입니다. 아트 빌드/다운로드/라이선스 의존성이 없습니다.
+- 기존 서버 CSP를 그대로 사용합니다. 인라인 script/style, eval, 원격 요청, 분석·로그인·개인정보·shell 호출이 출하 게임에 없습니다. 문자열 UI는 textContent만 사용하며 사용자 HTML을 주입하지 않습니다.
+
+## 인수 제한 및 남은 일
+
+- 구현자 자체 검증이지 독립 수용이 아닙니다. PM이 별도 QA10에게 고정 SHA/커밋을 전달하여 독립 판정해야 합니다. 재위임하지 않았습니다.
+- 물리 Android/iPhone 터치, 실제 음향 청취, 사람의 퍼즐 난이도/1–5분 체감 시간은 미검증입니다. WebKit 자동 에뮬레이션을 실제 iPhone으로 주장하지 않습니다.
+- 스크린리더는 조작 버튼·현재 수치·상태를 읽을 수 있으나 Canvas의 공간 퍼즐을 비시각적 경로로 완전히 풀 수 있게 만드는 대체 공간 UI는 이번 범위가 아닙니다.
+- 공용 카탈로그 카드, 최종 main 통합, 운영3116 전환/실주소 수용, 보드 게시와 공용 HANDOFF 갱신은 PM/공유 소유자 후속 작업입니다. 워커는 허용 밖 문서/운영/보드를 수정하지 않습니다.
+- 불변 해시: `artifacts/g024-10-builder/source-manifest.json`. 최종 검증 집계: `verification.json`. 자체 정적 검토: `self-review.json`.

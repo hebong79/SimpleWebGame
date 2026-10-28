@@ -1,0 +1,15 @@
+{
+  "source_sha256": "8566e1af3c01c21a297081fbccfd6e5ba52ddfc46711891395cb1eef681d64d0",
+  "runtime_sha256": "8eeed05b31fcbd12c445976d55ab44f99ee84d6f37527f616382c2c266f67ff4",
+  "syntax": 11,
+  "syntax_failed": 0,
+  "unit": {
+    "executed": 64,
+    "passed": 64,
+    "failed": 0,
+    "skipped": 0
+  },
+  "http_initial": 3,
+  "http_full": 99,
+  "security_candidates": 0
+}

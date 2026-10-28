@@ -1,0 +1,58 @@
+{
+  "kind": "implementer self-review, NOT independent acceptance",
+  "passed": true,
+  "security_concerns": [],
+  "logic_errors": [],
+  "suggestions": [
+    "Independent QA10 should separately validate all 20 levels and storage/UI boundaries.",
+    "Physical touch, listening and human duration remain outside automatic acceptance."
+  ],
+  "inputs_sha256": {
+    "docs/G024_10_IMPLEMENTATION.md": {
+      "sha256": "80fa3ea86539d31bac0a34956fc7e2f00d9d6dea5bf69fec034f57b5d0b84e06",
+      "bytes": 12551
+    },
+    "public/games/10-sokoban/art.mjs": {
+      "sha256": "66944b5b4690f85fc86e61cf36971e2489f222800ba0a04235c264ad1442101f",
+      "bytes": 5839
+    },
+    "public/games/10-sokoban/engine.mjs": {
+      "sha256": "5f7573a67f89055e400638f87e03188e9e6dc6b54cd0d2678966c37880fc2ecf",
+      "bytes": 4031
+    },
+    "public/games/10-sokoban/index.html": {
+      "sha256": "5803334161e146cc3b67c4a859c7a9d8d13657a0158c18a8924c648613cd6f3c",
+      "bytes": 7907
+    },
+    "public/games/10-sokoban/levels.mjs": {
+      "sha256": "dd8a782d63047aefaea40d767ac8305cb59c8dba92bbf0711224f9855f24f8d1",
+      "bytes": 7088
+    },
+    "public/games/10-sokoban/main.mjs": {
+      "sha256": "65b6182a98ed34dfc8222271d164235128c517677818f7efd7830825e29d7a0f",
+      "bytes": 20037
+    },
+    "public/games/10-sokoban/save.mjs": {
+      "sha256": "fdfc7f3a1a8f8d0a045bb8eca5e47d21e84c15761cdd0f643c8a7557e25066f7",
+      "bytes": 4171
+    },
+    "public/games/10-sokoban/styles.css": {
+      "sha256": "cc7c316e652fb4fad9f6d1b130fdc6cd9713b486181d198455481eee7bc6bb5d",
+      "bytes": 10554
+    },
+    "tests/games/10-sokoban.test.mjs": {
+      "sha256": "432cc87a401fa61394d89f4d34de2a54319ecad107dec4e5b11832cd99f64c4b",
+      "bytes": 10076
+    }
+  },
+  "scope": "7 shipping files, pure-engine/save tests, implementation document; no shared writes",
+  "checks": [
+    "Synchronous win transition is only settlement caller",
+    "Invalid moves return original state, immutable terrain/history",
+    "Result does not permit undo and reload creates ready state",
+    "Dialogs preserve return phase/reason, trap Tab and restore actual trigger",
+    "Cosmetics are absent from pure engine and cannot alter movement",
+    "Strict existing CSP and source setter absence verified over actual HTTP"
+  ],
+  "scan": []
+}
