@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#f7eedc">
+  <meta name="description" content="햄스터 직원과 함께 택배를 정리하는 20단계 오리지널 상자 밀기 퍼즐입니다.">
+  <title>햄스터 택배 창고 · 작은 쉼표</title>
+  <link rel="stylesheet" href="./styles.css">
+  <script type="module" src="./main.mjs"></script>
+</head>
+<body>
+<main class="depot">
+  <header class="masthead">
+    <div class="brand"><span class="brand-mark" aria-hidden="true">H</span><div><p class="eyebrow">작은 쉼표 · HAMSTER DEPOT</p><h1>햄스터 택배 창고</h1></div></div>
+    <button id="home" class="quiet" type="button">게임 목록</button>
+  </header>
+  <div class="toolbar" aria-label="게임 메뉴">
+    <button id="levels" type="button">단계 선택 <span id="progress">0 / 20</span></button>
+    <button id="wardrobe" type="button">옷장</button>
+    <button id="help" class="quiet" type="button">도움말</button>
+    <button id="mute" class="quiet" type="button" aria-pressed="true">소리 꺼짐</button>
+  </div>
+  <p id="storage-warning" class="warning" role="status" hidden></p>
+  <div class="workspace">
+    <section class="warehouse" aria-label="창고 게임">
+      <div class="stage-header"><div><p class="eyebrow" id="stage-number">배송 01 / 20</p><h2 id="stage-name">첫 출근</h2></div><span id="stage-stamp" class="stamp">신입 배송원</span></div>
+      <div class="stats" aria-label="현재 기록"><p>이동 <strong id="moves">0</strong></p><p>밀기 <strong id="pushes">0</strong></p><p>도착 <strong id="goals">0 / 1</strong></p></div>
+      <div id="arena" class="arena" tabindex="0" role="group" aria-label="택배 창고. 방향키 또는 WASD 이동, Z 되돌리기, R 재시작. 시작 후 조작하세요." aria-describedby="game-status">
+        <canvas id="board" width="560" height="560" role="img" aria-label="창고 보드"></canvas>
+        <div id="board-curtain" class="curtain"><span class="mini-parcel" aria-hidden="true">H</span><strong id="curtain-title">오늘의 배송을 시작할까요?</strong><p id="curtain-description">상자를 점선 목표 위에 모두 올려 주세요.</p></div>
+      </div>
+      <div class="playbar"><button id="primary" class="primary" type="button">배송 시작</button><button id="undo" type="button" disabled>되돌리기 <kbd>Z</kbd></button><button id="restart" class="quiet" type="button">재시작 <kbd>R</kbd></button></div>
+      <p id="game-status" class="game-status" role="status" aria-live="polite">시간제한은 없어요. 천천히 길을 찾아보세요.</p>
+    </section>
+    <aside class="dispatch">
+      <div class="note"><p class="eyebrow">TODAY'S ROUTE</p><h2>작은 발걸음,<br>정확한 배송.</h2><p id="level-hint">상자 뒤에서 한 칸씩 밀어 보세요.</p><div class="legend"><span><i class="goal-icon"></i>배송 목표</span><span><i class="box-icon"></i>택배 상자</span></div><p class="best-label">이 단계의 개인 기록</p><strong id="best">아직 배송 전</strong><p class="fine">밀기가 적을수록 좋은 기록!<br>밀기가 같으면 이동 수로 비교해요.</p></div>
+      <div class="controls" aria-label="터치 방향 조작"><button data-direction="U" class="up" type="button" aria-label="위로 이동">↑</button><button data-direction="L" class="left" type="button" aria-label="왼쪽으로 이동">←</button><button data-direction="D" class="down" type="button" aria-label="아래로 이동">↓</button><button data-direction="R" class="right" type="button" aria-label="오른쪽으로 이동">→</button></div>
+      <p class="control-note">방향키 / WASD · Z 되돌리기<br>보드를 누르면 키보드 조작이 연결돼요.</p>
+    </aside>
+  </div>
+  <footer>20개의 작은 창고 · 무제한 되돌리기 · 의상은 외형만 바뀝니다.<br>새로고침하면 현재 판은 초기화되고, 완료 기록과 의상은 유지됩니다.</footer>
+</main>
+<dialog id="modal" aria-labelledby="modal-title">
+  <div class="dialog-heading"><p class="eyebrow">HAMSTER DEPOT</p><button id="modal-close" class="icon-button" type="button" aria-label="창 닫기">×</button></div>
+  <h2 id="modal-title">도움말</h2>
+  <section data-panel="help" hidden>
+    <p>햄스터를 움직여 <strong>모든 택배를 점선 목표</strong> 위에 올리면 배송 완료입니다.</p>
+    <ol class="help-list"><li>상자 뒤에서 한 칸씩 밀 수 있어요. 당기거나 두 상자를 함께 밀 수는 없어요.</li><li>목표가 아닌 구석에 밀면 막힐 수 있어요. 경고가 떠도 자동 실패는 아닙니다.</li><li><strong>Z / 되돌리기</strong>는 횟수 제한이 없어요. 이동과 밀기 수까지 원래대로 돌아갑니다.</li><li>방향키 또는 WASD, 터치 방향 버튼으로 조작하세요. 키를 길게 눌러도 한 번만 움직여요.</li><li>완료 기록은 밀기 수가 적은 것을 우선합니다. 단계를 순서대로 완료하면 다음 창고가 열려요.</li><li>5단계에 정비사, 15단계에 요리사 의상을 받아요. 옷장은 미리보기 후 적용할 때만 저장해요.</li></ol>
+    <p class="fine">창 이탈 시 보호 정지합니다. 돌아와서 ‘배송 재개’를 눌러 주세요. 소리는 처음에 꺼져 있습니다.</p><button data-close class="primary wide" type="button">알겠어요</button>
+  </section>
+  <section data-panel="levels" hidden><p class="dialog-copy">완료한 창고는 다시 도전할 수 있어요. 다음 한 단계씩 열립니다.</p><div id="level-grid" class="level-grid" aria-label="20단계 목록"></div></section>
+  <section data-panel="wardrobe" hidden>
+    <p class="dialog-copy">모자 · 작업복 · 가방을 자유롭게 조합하세요. 잠긴 의상도 미리 볼 수 있어요.</p>
+    <div class="wardrobe-preview"><canvas id="preview" width="240" height="180" role="img" aria-label="햄스터 의상 미리보기"></canvas><div><strong id="preview-description">기본 햄스터</strong><p id="preview-pose">아래 · 걷기</p><button id="preview-turn" type="button">방향 바꾸기</button><button id="preview-action" type="button">밀기 자세</button></div></div>
+    <fieldset><legend>세트 전체 미리보기</legend><div id="set-options" class="set-options"></div></fieldset>
+    <fieldset><legend>부위별 미리보기</legend><div id="part-options" class="part-options"></div></fieldset>
+    <p id="wardrobe-lock" class="wardrobe-lock" role="status"></p>
+    <div class="dialog-actions"><button id="wardrobe-cancel" type="button">취소</button><button id="wardrobe-apply" class="primary" type="button">이 조합 적용</button></div>
+  </section>
+  <section data-panel="confirm" hidden><p id="confirm-copy"></p><p class="fine">완료 기록과 해금한 의상은 그대로 유지됩니다.</p><div class="dialog-actions"><button id="confirm-cancel" type="button">취소</button><button id="confirm-yes" class="primary" type="button">확인</button></div></section>
+  <section data-panel="result" hidden><div class="result-badge" aria-hidden="true">✓</div><p id="result-message" class="result-message">배송 완료!</p><div class="result-stats"><p>밀기 <strong id="result-pushes">0</strong></p><p>이동 <strong id="result-moves">0</strong></p></div><p id="result-best"></p><p id="result-unlock"></p><div class="result-buttons"><button id="next" class="primary" type="button">다음 창고</button><button id="result-retry" type="button">한 번 더 도전</button><button id="result-wardrobe" type="button">옷장</button><button id="result-levels" type="button">단계 선택</button><button id="result-home" class="quiet" type="button">게임 목록</button></div></section>
+</dialog>
+</body>
+</html>

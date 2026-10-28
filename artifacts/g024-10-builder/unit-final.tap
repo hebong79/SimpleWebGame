@@ -1,0 +1,394 @@
+TAP version 13
+# Subtest: exactly 20 original rectangular levels, box curriculum, no mirrored/transposed copies
+ok 1 - exactly 20 original rectangular levels, box curriculum, no mirrored/transposed copies
+  ---
+  duration_ms: 1.9316
+  type: 'test'
+  ...
+# Subtest: all-level replay 1: 첫 출근
+ok 2 - all-level replay 1: 첫 출근
+  ---
+  duration_ms: 0.2964
+  type: 'test'
+  ...
+# Subtest: all-level replay 2: 모퉁이 배송
+ok 3 - all-level replay 2: 모퉁이 배송
+  ---
+  duration_ms: 0.1028
+  type: 'test'
+  ...
+# Subtest: all-level replay 3: 선반 돌아가기
+ok 4 - all-level replay 3: 선반 돌아가기
+  ---
+  duration_ms: 0.1177
+  type: 'test'
+  ...
+# Subtest: all-level replay 4: 첫 야간 근무
+ok 5 - all-level replay 4: 첫 야간 근무
+  ---
+  duration_ms: 0.1213
+  type: 'test'
+  ...
+# Subtest: all-level replay 5: 긴 배송 동선
+ok 6 - all-level replay 5: 긴 배송 동선
+  ---
+  duration_ms: 0.1332
+  type: 'test'
+  ...
+# Subtest: all-level replay 6: 두 개의 송장
+ok 7 - all-level replay 6: 두 개의 송장
+  ---
+  duration_ms: 0.0729
+  type: 'test'
+  ...
+# Subtest: all-level replay 7: 가운데 기둥
+ok 8 - all-level replay 7: 가운데 기둥
+  ---
+  duration_ms: 0.0661
+  type: 'test'
+  ...
+# Subtest: all-level replay 8: 선반 사이
+ok 9 - all-level replay 8: 선반 사이
+  ---
+  duration_ms: 0.0811
+  type: 'test'
+  ...
+# Subtest: all-level replay 9: 택배 회전대
+ok 10 - all-level replay 9: 택배 회전대
+  ---
+  duration_ms: 0.125
+  type: 'test'
+  ...
+# Subtest: all-level replay 10: 엇갈린 배송
+ok 11 - all-level replay 10: 엇갈린 배송
+  ---
+  duration_ms: 0.1393
+  type: 'test'
+  ...
+# Subtest: all-level replay 11: 좁은 입구
+ok 12 - all-level replay 11: 좁은 입구
+  ---
+  duration_ms: 0.2027
+  type: 'test'
+  ...
+# Subtest: all-level replay 12: 주말 물류
+ok 13 - all-level replay 12: 주말 물류
+  ---
+  duration_ms: 0.0641
+  type: 'test'
+  ...
+# Subtest: all-level replay 13: 세 상자 출발
+ok 14 - all-level replay 13: 세 상자 출발
+  ---
+  duration_ms: 0.0543
+  type: 'test'
+  ...
+# Subtest: all-level replay 14: 두 갈래 선반
+ok 15 - all-level replay 14: 두 갈래 선반
+  ---
+  duration_ms: 0.0521
+  type: 'test'
+  ...
+# Subtest: all-level replay 15: 주방 개점
+ok 16 - all-level replay 15: 주방 개점
+  ---
+  duration_ms: 0.0657
+  type: 'test'
+  ...
+# Subtest: all-level replay 16: 구불구불 출고
+ok 17 - all-level replay 16: 구불구불 출고
+  ---
+  duration_ms: 0.066
+  type: 'test'
+  ...
+# Subtest: all-level replay 17: 중앙 허브
+ok 18 - all-level replay 17: 중앙 허브
+  ---
+  duration_ms: 0.0598
+  type: 'test'
+  ...
+# Subtest: all-level replay 18: 분류실 교차로
+ok 19 - all-level replay 18: 분류실 교차로
+  ---
+  duration_ms: 0.0891
+  type: 'test'
+  ...
+# Subtest: all-level replay 19: 마지막 집하
+ok 20 - all-level replay 19: 마지막 집하
+  ---
+  duration_ms: 0.0653
+  type: 'test'
+  ...
+# Subtest: all-level replay 20: 창고의 달인
+ok 21 - all-level replay 20: 창고의 달인
+  ---
+  duration_ms: 0.0836
+  type: 'test'
+  ...
+# Subtest: invalid walls and directions are exact no-ops, including history
+ok 22 - invalid walls and directions are exact no-ops, including history
+  ---
+  duration_ms: 0.1002
+  type: 'test'
+  ...
+# Subtest: cannot push two adjacent boxes or pull a box
+ok 23 - cannot push two adjacent boxes or pull a box
+  ---
+  duration_ms: 0.6072
+  type: 'test'
+  ...
+# Subtest: cannot push box through wall
+ok 24 - cannot push box through wall
+  ---
+  duration_ms: 0.0892
+  type: 'test'
+  ...
+# Subtest: goals remain static beneath moving boxes and player
+ok 25 - goals remain static beneath moving boxes and player
+  ---
+  duration_ms: 0.1321
+  type: 'test'
+  ...
+# Subtest: unlimited undo restores exact player boxes counters and every prior history
+ok 26 - unlimited undo restores exact player boxes counters and every prior history
+  ---
+  duration_ms: 15.6413
+  type: 'test'
+  ...
+# Subtest: push undo restores counters and does not mutate old state
+ok 27 - push undo restores counters and does not mutate old state
+  ---
+  duration_ms: 0.2899
+  type: 'test'
+  ...
+# Subtest: corner deadlocks are advisory, goals are exempt, undo still works
+ok 28 - corner deadlocks are advisory, goals are exempt, undo still works
+  ---
+  duration_ms: 0.1998
+  type: 'test'
+  ...
+# Subtest: snapshot is independently mutable without touching engine
+ok 29 - snapshot is independently mutable without touching engine
+  ---
+  duration_ms: 0.0935
+  type: 'test'
+  ...
+# Subtest: invalid map rejects open border
+ok 30 - invalid map rejects open border
+  ---
+  duration_ms: 0.1842
+  type: 'test'
+  ...
+# Subtest: invalid map rejects unequal width
+ok 31 - invalid map rejects unequal width
+  ---
+  duration_ms: 0.0698
+  type: 'test'
+  ...
+# Subtest: invalid map rejects no player
+ok 32 - invalid map rejects no player
+  ---
+  duration_ms: 0.0667
+  type: 'test'
+  ...
+# Subtest: invalid map rejects multiple players
+ok 33 - invalid map rejects multiple players
+  ---
+  duration_ms: 0.0553
+  type: 'test'
+  ...
+# Subtest: invalid map rejects no goals
+ok 34 - invalid map rejects no goals
+  ---
+  duration_ms: 0.0545
+  type: 'test'
+  ...
+# Subtest: invalid map rejects initially solved
+ok 35 - invalid map rejects initially solved
+  ---
+  duration_ms: 0.0544
+  type: 'test'
+  ...
+# Subtest: invalid map rejects unknown tile
+ok 36 - invalid map rejects unknown tile
+  ---
+  duration_ms: 0.0544
+  type: 'test'
+  ...
+# Subtest: invalid map rejects disconnected
+ok 37 - invalid map rejects disconnected
+  ---
+  duration_ms: 0.074
+  type: 'test'
+  ...
+# Subtest: default record valid and load/recovery never writes or removes any key
+ok 38 - default record valid and load/recovery never writes or removes any key
+  ---
+  duration_ms: 0.3148
+  type: 'test'
+  ...
+# Subtest: sequential clears unlock exactly one stage and cap at 20
+ok 39 - sequential clears unlock exactly one stage and cap at 20
+  ---
+  duration_ms: 5.5501
+  type: 'test'
+  ...
+# Subtest: per-level best lexicographic pushes before moves, tie then moves
+ok 40 - per-level best lexicographic pushes before moves, tie then moves
+  ---
+  duration_ms: 0.2169
+  type: 'test'
+  ...
+# Subtest: cosmetics unlock truth table exactly at stages 5 and 15
+ok 41 - cosmetics unlock truth table exactly at stages 5 and 15
+  ---
+  duration_ms: 0.7193
+  type: 'test'
+  ...
+# Subtest: mixed part equipment validates ownership and cannot bypass locked sets
+ok 42 - mixed part equipment validates ownership and cannot bypass locked sets
+  ---
+  duration_ms: 0.329
+  type: 'test'
+  ...
+# Subtest: record rejects old version
+ok 43 - record rejects old version
+  ---
+  duration_ms: 0.1119
+  type: 'test'
+  ...
+# Subtest: record rejects extra fields
+ok 44 - record rejects extra fields
+  ---
+  duration_ms: 0.0955
+  type: 'test'
+  ...
+# Subtest: record rejects nonboolean mute
+ok 45 - record rejects nonboolean mute
+  ---
+  duration_ms: 0.1037
+  type: 'test'
+  ...
+# Subtest: record rejects unsafe moves
+ok 46 - record rejects unsafe moves
+  ---
+  duration_ms: 0.1043
+  type: 'test'
+  ...
+# Subtest: record rejects NaN pushes
+ok 47 - record rejects NaN pushes
+  ---
+  duration_ms: 0.115
+  type: 'test'
+  ...
+# Subtest: record rejects negative pushes
+ok 48 - record rejects negative pushes
+  ---
+  duration_ms: 0.0808
+  type: 'test'
+  ...
+# Subtest: record rejects moves below pushes
+ok 49 - record rejects moves below pushes
+  ---
+  duration_ms: 0.0767
+  type: 'test'
+  ...
+# Subtest: record rejects below certified minimum pushes
+ok 50 - record rejects below certified minimum pushes
+  ---
+  duration_ms: 0.1045
+  type: 'test'
+  ...
+# Subtest: record rejects below certified optimal moves
+ok 51 - record rejects below certified optimal moves
+  ---
+  duration_ms: 0.0834
+  type: 'test'
+  ...
+# Subtest: record rejects nonsequential clears
+ok 52 - record rejects nonsequential clears
+  ---
+  duration_ms: 0.0879
+  type: 'test'
+  ...
+# Subtest: record rejects duplicate clears
+ok 53 - record rejects duplicate clears
+  ---
+  duration_ms: 0.0976
+  type: 'test'
+  ...
+# Subtest: record rejects unlock skip
+ok 54 - record rejects unlock skip
+  ---
+  duration_ms: 0.0865
+  type: 'test'
+  ...
+# Subtest: record rejects invalid stage id
+ok 55 - record rejects invalid stage id
+  ---
+  duration_ms: 0.0844
+  type: 'test'
+  ...
+# Subtest: record rejects best for uncleared
+ok 56 - record rejects best for uncleared
+  ---
+  duration_ms: 0.0835
+  type: 'test'
+  ...
+# Subtest: record rejects missing best
+ok 57 - record rejects missing best
+  ---
+  duration_ms: 0.075
+  type: 'test'
+  ...
+# Subtest: record rejects locked outfit
+ok 58 - record rejects locked outfit
+  ---
+  duration_ms: 0.0784
+  type: 'test'
+  ...
+# Subtest: record rejects wrong part
+ok 59 - record rejects wrong part
+  ---
+  duration_ms: 0.0859
+  type: 'test'
+  ...
+# Subtest: safe-integer high records remain accepted and validation does not multiply unsafe totals
+ok 60 - safe-integer high records remain accepted and validation does not multiply unsafe totals
+  ---
+  duration_ms: 0.0999
+  type: 'test'
+  ...
+# Subtest: storage getter/read/parse errors recover without writes
+ok 61 - storage getter/read/parse errors recover without writes
+  ---
+  duration_ms: 0.2618
+  type: 'test'
+  ...
+# Subtest: setItem failure leaves caller memory usable, warning stays visible
+ok 62 - setItem failure leaves caller memory usable, warning stays visible
+  ---
+  duration_ms: 0.2354
+  type: 'test'
+  ...
+# Subtest: roundtrip persists own key only and cloned validation protects caller
+ok 63 - roundtrip persists own key only and cloned validation protects caller
+  ---
+  duration_ms: 0.5523
+  type: 'test'
+  ...
+# Subtest: cosmetic choices never enter engine or alter rule outcomes
+ok 64 - cosmetic choices never enter engine or alter rule outcomes
+  ---
+  duration_ms: 1.7568
+  type: 'test'
+  ...
+1..64
+# tests 64
+# suites 0
+# pass 64
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 123.7751
