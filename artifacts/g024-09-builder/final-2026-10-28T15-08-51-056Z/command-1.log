@@ -1,0 +1,3 @@
+C:/Program Files/nodejs/node.exe scripts/build.mjs --out-dir artifacts/g024-09-builder/build
+exit=0
+Build complete: artifacts\g024-09-builder\build/public + artifacts\g024-09-builder\build/src/server/index.js

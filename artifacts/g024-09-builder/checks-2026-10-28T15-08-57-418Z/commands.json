@@ -1,0 +1,57 @@
+[
+  {
+    "command": [
+      "C:/Program Files/nodejs/node.exe",
+      "--check",
+      "public/games/09-crossy/art.js"
+    ],
+    "exit": 0,
+    "log": "E:\\Work2\\Project\\SimpleGames\\worktrees\\g024-09-crossy\\artifacts\\g024-09-builder\\checks-2026-10-28T15-08-57-418Z\\command-1.log"
+  },
+  {
+    "command": [
+      "C:/Program Files/nodejs/node.exe",
+      "--check",
+      "public/games/09-crossy/engine.js"
+    ],
+    "exit": 0,
+    "log": "E:\\Work2\\Project\\SimpleGames\\worktrees\\g024-09-crossy\\artifacts\\g024-09-builder\\checks-2026-10-28T15-08-57-418Z\\command-2.log"
+  },
+  {
+    "command": [
+      "C:/Program Files/nodejs/node.exe",
+      "--check",
+      "public/games/09-crossy/main.js"
+    ],
+    "exit": 0,
+    "log": "E:\\Work2\\Project\\SimpleGames\\worktrees\\g024-09-crossy\\artifacts\\g024-09-builder\\checks-2026-10-28T15-08-57-418Z\\command-3.log"
+  },
+  {
+    "command": [
+      "C:/Program Files/nodejs/node.exe",
+      "--check",
+      "public/games/09-crossy/save.js"
+    ],
+    "exit": 0,
+    "log": "E:\\Work2\\Project\\SimpleGames\\worktrees\\g024-09-crossy\\artifacts\\g024-09-builder\\checks-2026-10-28T15-08-57-418Z\\command-4.log"
+  },
+  {
+    "command": [
+      "C:/Program Files/nodejs/node.exe",
+      "--check",
+      "tests/games/09-crossy.test.mjs"
+    ],
+    "exit": 0,
+    "log": "E:\\Work2\\Project\\SimpleGames\\worktrees\\g024-09-crossy\\artifacts\\g024-09-builder\\checks-2026-10-28T15-08-57-418Z\\command-5.log"
+  },
+  {
+    "command": [
+      "C:/Program Files/nodejs/node.exe",
+      "--test",
+      "--test-reporter=tap",
+      "tests/games/09-crossy.test.mjs"
+    ],
+    "exit": 0,
+    "log": "E:\\Work2\\Project\\SimpleGames\\worktrees\\g024-09-crossy\\artifacts\\g024-09-builder\\checks-2026-10-28T15-08-57-418Z\\command-6.log"
+  }
+]

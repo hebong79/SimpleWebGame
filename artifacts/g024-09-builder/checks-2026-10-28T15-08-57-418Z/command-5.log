@@ -1,0 +1,2 @@
+C:/Program Files/nodejs/node.exe --check tests/games/09-crossy.test.mjs
+exit=0

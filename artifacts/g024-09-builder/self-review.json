@@ -1,0 +1,80 @@
+{
+  "kind": "builder-self-review",
+  "independent": false,
+  "task_id": "G024-09",
+  "passed": true,
+  "branch": "feature/g024-09-crossy",
+  "physical_root": "E:\\Work2\\Project\\SimpleGames\\worktrees\\g024-09-crossy",
+  "inputs_sha256": {
+    "public/games/09-crossy/art.js": "d458e5b46914894eb9312c17755d55c1ab64fb3128e495f0a908a6286a586b8b",
+    "public/games/09-crossy/engine.js": "9e0ad9873fd6f10b80b5b60e6e5f4fac4c58e35ae8f01db7b8cd8ebf06ec2577",
+    "public/games/09-crossy/icon.svg": "c5ee6cd60fb00e4d1f946308d30c5a081e325ac3ce690d58ad66083df3d02823",
+    "public/games/09-crossy/index.html": "9de43791c4b65551a204b718c091f962a1c018d2b57e3395b4cda6f11e32c0d7",
+    "public/games/09-crossy/main.js": "6eceb9b54a4499568b20991ba6ecc8368659930c6f5825579bec29afcfd6b159",
+    "public/games/09-crossy/save.js": "fe10d257f28b1aa18f2d1277f429ad37d02a763524025bb563b2bd87677a4e89",
+    "public/games/09-crossy/style.css": "f88d46326326db80489aaa52cfeb357363fc8c407c2814cb29c14a6ca18632d5",
+    "tests/games/09-crossy.test.mjs": "81cec6b9aa8183520658ad384932911333a1c6c148380195208869c1ea0e9966"
+  },
+  "security_concerns": [],
+  "logic_errors": [],
+  "checked": [
+    "Exact frozen hashes equal working bytes and built public bytes",
+    "Staged ownership allowlist and whitespace check",
+    "Source reviewed: closed swept slabs, seam images, score-loss priority, no-op RNG, one reserved input",
+    "Source reviewed: BigInt realizable aggregates, private-key-only writes, no recovery writes/deletes",
+    "Source reviewed: no eval, injected inline styles/scripts, remote requests, shell execution or secrets",
+    "SVG namespace is not an external asset reference",
+    "Actual HTTP strict CSP and trusted nonfrozen 80ms controls",
+    "Actual monotonic 300ms stall zero ticks in three browser profiles",
+    "Port 3141 free after own servers closed"
+  ],
+  "tests": {
+    "unit": {
+      "executed": 32,
+      "passed": 32,
+      "failed": 0,
+      "skipped": 0
+    },
+    "early_http": {
+      "executed": 7,
+      "passed": 7,
+      "failed": 0,
+      "skipped": 0
+    },
+    "extended_http": {
+      "executed": 33,
+      "passed": 33,
+      "failed": 0,
+      "skipped": 0
+    },
+    "syntax": {
+      "executed": 5,
+      "passed": 5,
+      "failed": 0,
+      "skipped": 0
+    },
+    "build": {
+      "executed": 1,
+      "passed": 1,
+      "failed": 0,
+      "skipped": 0
+    }
+  },
+  "evidence_paths": [
+    "artifacts/g024-09-builder/early-2026-10-28T15-08-51-767Z/report.json",
+    "artifacts/g024-09-builder/browser-2026-10-28T15-08-58-186Z/report.json",
+    "artifacts/g024-09-builder/checks-2026-10-28T15-08-57-418Z",
+    "artifacts/g024-09-builder/final-2026-10-28T15-08-51-056Z/commands.json"
+  ],
+  "suggestions": [
+    "PM must assign independent QA09 after source freeze; builder self-tests are not acceptance",
+    "Shared integration, main merge, production3116 verification are separate later tasks"
+  ],
+  "limitations": [
+    "No physical mobile device",
+    "No human audio listening",
+    "No validated human 20s-to-2min play duration",
+    "No independent review or production deployment",
+    "WebKit snapshots/layout evidence, no WebKit screenshot due strict-CSP tooling concern"
+  ]
+}

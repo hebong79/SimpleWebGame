@@ -1,0 +1,2468 @@
+{
+  "root": "E:\\Work2\\Project\\SimpleGames\\worktrees\\g024-09-crossy",
+  "build": "E:\\Work2\\Project\\SimpleGames\\worktrees\\g024-09-crossy\\artifacts\\g024-09-builder\\build",
+  "out": "E:\\Work2\\Project\\SimpleGames\\worktrees\\g024-09-crossy\\artifacts\\g024-09-builder\\browser-2026-10-28T15-08-58-186Z",
+  "results": [
+    {
+      "name": "chromium-desktop: visible target sizes, 320/desktop, landscape, scrollable dialogs",
+      "passed": true
+    },
+    {
+      "name": "chromium-desktop: natural valid score, backtracking, repeat/modifier protection",
+      "passed": true
+    },
+    {
+      "name": "chromium-desktop: help Tab trap, Escape return, paused physics unchanged",
+      "passed": true
+    },
+    {
+      "name": "chromium-desktop: all preview poses/directions, locked apply, mixed parts, cancel",
+      "passed": true
+    },
+    {
+      "name": "chromium-desktop: restart cancellation preserves physics/reason, confirmed quit settles once",
+      "passed": true
+    },
+    {
+      "name": "chromium-desktop: monotonic arrival 300ms stall advances zero ticks",
+      "passed": true
+    },
+    {
+      "name": "chromium-desktop: natural moving collision + completed save, no live state injection",
+      "passed": true
+    },
+    {
+      "name": "chromium-desktop: actual-clock 8s idle warning then 10s loss exactly once",
+      "passed": true
+    },
+    {
+      "name": "chromium-desktop: clean CSP/console/network diagnostics",
+      "passed": true
+    },
+    {
+      "name": "chromium-320-touch: visible target sizes, 320/desktop, landscape, scrollable dialogs",
+      "passed": true
+    },
+    {
+      "name": "chromium-320-touch: natural valid score, backtracking, repeat/modifier protection",
+      "passed": true
+    },
+    {
+      "name": "chromium-320-touch: help Tab trap, Escape return, paused physics unchanged",
+      "passed": true
+    },
+    {
+      "name": "chromium-320-touch: all preview poses/directions, locked apply, mixed parts, cancel",
+      "passed": true
+    },
+    {
+      "name": "chromium-320-touch: restart cancellation preserves physics/reason, confirmed quit settles once",
+      "passed": true
+    },
+    {
+      "name": "chromium-320-touch: monotonic arrival 300ms stall advances zero ticks",
+      "passed": true
+    },
+    {
+      "name": "chromium-320-touch: natural moving collision + completed save, no live state injection",
+      "passed": true
+    },
+    {
+      "name": "chromium-320-touch: actual-clock 8s idle warning then 10s loss exactly once",
+      "passed": true
+    },
+    {
+      "name": "chromium-320-touch: clean CSP/console/network diagnostics",
+      "passed": true
+    },
+    {
+      "name": "webkit-mobile: visible target sizes, 320/desktop, landscape, scrollable dialogs",
+      "passed": true
+    },
+    {
+      "name": "webkit-mobile: natural valid score, backtracking, repeat/modifier protection",
+      "passed": true
+    },
+    {
+      "name": "webkit-mobile: help Tab trap, Escape return, paused physics unchanged",
+      "passed": true
+    },
+    {
+      "name": "webkit-mobile: all preview poses/directions, locked apply, mixed parts, cancel",
+      "passed": true
+    },
+    {
+      "name": "webkit-mobile: restart cancellation preserves physics/reason, confirmed quit settles once",
+      "passed": true
+    },
+    {
+      "name": "webkit-mobile: monotonic arrival 300ms stall advances zero ticks",
+      "passed": true
+    },
+    {
+      "name": "webkit-mobile: natural moving collision + completed save, no live state injection",
+      "passed": true
+    },
+    {
+      "name": "webkit-mobile: actual-clock 8s idle warning then 10s loss exactly once",
+      "passed": true
+    },
+    {
+      "name": "webkit-mobile: clean CSP/console/network diagnostics",
+      "passed": true
+    },
+    {
+      "name": "initial valid fixture: independent unlock truth table and mixed unlocked apply",
+      "passed": true
+    },
+    {
+      "name": "storage getter failure: visible persistent warning, memory play still works",
+      "passed": true
+    },
+    {
+      "name": "Chromium CDP trusted touch: tap, cancel, outside second finger cancellation",
+      "passed": true
+    },
+    {
+      "name": "Chromium CDP trusted swipe: CSS threshold, dominance, down, upward/tie no-op",
+      "passed": true
+    },
+    {
+      "name": "Chromium outside arena retains ordinary page scrolling",
+      "passed": true
+    },
+    {
+      "name": "AudioContext construction failure degrades visibly without blocking gameplay",
+      "passed": true
+    }
+  ],
+  "executed": 33,
+  "passed": 33,
+  "failed": 0,
+  "skipped": 0,
+  "diagnostics": [
+    {
+      "browser": "chromium-desktop",
+      "errors": [],
+      "requests": [
+        "http://127.0.0.1:3141/games/09-crossy/index.html",
+        "http://127.0.0.1:3141/games/09-crossy/style.css",
+        "http://127.0.0.1:3141/games/09-crossy/main.js",
+        "http://127.0.0.1:3141/games/09-crossy/engine.js",
+        "http://127.0.0.1:3141/games/09-crossy/save.js",
+        "http://127.0.0.1:3141/games/09-crossy/art.js",
+        "http://127.0.0.1:3141/games/09-crossy/index.html",
+        "http://127.0.0.1:3141/games/09-crossy/style.css",
+        "http://127.0.0.1:3141/games/09-crossy/main.js",
+        "http://127.0.0.1:3141/games/09-crossy/engine.js",
+        "http://127.0.0.1:3141/games/09-crossy/save.js",
+        "http://127.0.0.1:3141/games/09-crossy/art.js",
+        "http://127.0.0.1:3141/games/09-crossy/index.html",
+        "http://127.0.0.1:3141/games/09-crossy/style.css",
+        "http://127.0.0.1:3141/games/09-crossy/main.js",
+        "http://127.0.0.1:3141/games/09-crossy/engine.js",
+        "http://127.0.0.1:3141/games/09-crossy/save.js",
+        "http://127.0.0.1:3141/games/09-crossy/art.js"
+      ]
+    },
+    {
+      "browser": "chromium-320-touch",
+      "errors": [],
+      "requests": [
+        "http://127.0.0.1:3141/games/09-crossy/index.html",
+        "http://127.0.0.1:3141/games/09-crossy/style.css",
+        "http://127.0.0.1:3141/games/09-crossy/main.js",
+        "http://127.0.0.1:3141/games/09-crossy/engine.js",
+        "http://127.0.0.1:3141/games/09-crossy/save.js",
+        "http://127.0.0.1:3141/games/09-crossy/art.js",
+        "http://127.0.0.1:3141/games/09-crossy/index.html",
+        "http://127.0.0.1:3141/games/09-crossy/style.css",
+        "http://127.0.0.1:3141/games/09-crossy/main.js",
+        "http://127.0.0.1:3141/games/09-crossy/engine.js",
+        "http://127.0.0.1:3141/games/09-crossy/save.js",
+        "http://127.0.0.1:3141/games/09-crossy/art.js",
+        "http://127.0.0.1:3141/games/09-crossy/index.html",
+        "http://127.0.0.1:3141/games/09-crossy/style.css",
+        "http://127.0.0.1:3141/games/09-crossy/main.js",
+        "http://127.0.0.1:3141/games/09-crossy/engine.js",
+        "http://127.0.0.1:3141/games/09-crossy/save.js",
+        "http://127.0.0.1:3141/games/09-crossy/art.js"
+      ]
+    },
+    {
+      "browser": "webkit-mobile",
+      "errors": [],
+      "requests": [
+        "http://127.0.0.1:3141/games/09-crossy/index.html",
+        "http://127.0.0.1:3141/games/09-crossy/style.css",
+        "http://127.0.0.1:3141/games/09-crossy/main.js",
+        "http://127.0.0.1:3141/games/09-crossy/engine.js",
+        "http://127.0.0.1:3141/games/09-crossy/save.js",
+        "http://127.0.0.1:3141/games/09-crossy/art.js",
+        "http://127.0.0.1:3141/games/09-crossy/index.html",
+        "http://127.0.0.1:3141/games/09-crossy/style.css",
+        "http://127.0.0.1:3141/games/09-crossy/main.js",
+        "http://127.0.0.1:3141/games/09-crossy/engine.js",
+        "http://127.0.0.1:3141/games/09-crossy/save.js",
+        "http://127.0.0.1:3141/games/09-crossy/art.js",
+        "http://127.0.0.1:3141/games/09-crossy/index.html",
+        "http://127.0.0.1:3141/games/09-crossy/style.css",
+        "http://127.0.0.1:3141/games/09-crossy/main.js",
+        "http://127.0.0.1:3141/games/09-crossy/engine.js",
+        "http://127.0.0.1:3141/games/09-crossy/save.js",
+        "http://127.0.0.1:3141/games/09-crossy/art.js"
+      ]
+    }
+  ],
+  "snapshots": [
+    {
+      "browser": "chromium-desktop",
+      "stall": {
+        "before": {
+          "mode": "playing",
+          "pauseReason": "",
+          "col": 4,
+          "row": 0,
+          "x": 180,
+          "y": 20,
+          "facing": "up",
+          "hop": null,
+          "queued": null,
+          "highest": 0,
+          "idleAge": 0,
+          "elapsed": 0,
+          "accumulator": 0,
+          "lanes": [
+            {
+              "row": 0,
+              "type": "grass"
+            },
+            {
+              "row": 1,
+              "type": "grass"
+            },
+            {
+              "row": 2,
+              "type": "grass"
+            },
+            {
+              "row": 3,
+              "type": "road",
+              "width": 68,
+              "gap": 150,
+              "period": 218,
+              "height": 26,
+              "direction": -1,
+              "baseSpeed": 82,
+              "phase": 84.47628606768434
+            },
+            {
+              "row": 4,
+              "type": "road",
+              "width": 56,
+              "gap": 195,
+              "period": 251,
+              "height": 26,
+              "direction": -1,
+              "baseSpeed": 117,
+              "phase": 10.154635231596991
+            },
+            {
+              "row": 5,
+              "type": "grass"
+            },
+            {
+              "row": 6,
+              "type": "road",
+              "width": 56,
+              "gap": 155,
+              "period": 211,
+              "height": 26,
+              "direction": -1,
+              "baseSpeed": 124,
+              "phase": 210.28338449036946
+            },
+            {
+              "row": 7,
+              "type": "road",
+              "width": 68,
+              "gap": 184,
+              "period": 252,
+              "height": 26,
+              "direction": -1,
+              "baseSpeed": 132,
+              "phase": 138.22222825777467
+            },
+            {
+              "row": 8,
+              "type": "road",
+              "width": 56,
+              "gap": 206,
+              "period": 262,
+              "height": 26,
+              "direction": 1,
+              "baseSpeed": 106,
+              "phase": 48.7885334352571
+            },
+            {
+              "row": 9,
+              "type": "grass"
+            },
+            {
+              "row": 10,
+              "type": "road",
+              "width": 56,
+              "gap": 186,
+              "period": 242,
+              "height": 26,
+              "direction": -1,
+              "baseSpeed": 96,
+              "phase": 28.28138829814381
+            },
+            {
+              "row": 11,
+              "type": "road",
+              "width": 68,
+              "gap": 190,
+              "period": 258,
+              "height": 26,
+              "direction": -1,
+              "baseSpeed": 98,
+              "phase": 115.06548809455654
+            },
+            {
+              "row": 12,
+              "type": "road",
+              "width": 68,
+              "gap": 171,
+              "period": 239,
+              "height": 26,
+              "direction": -1,
+              "baseSpeed": 101,
+              "phase": 155.64497489118457
+            },
+            {
+              "row": 13,
+              "type": "grass"
+            }
+          ],
+          "nextLane": 14,
+          "reason": null,
+          "hops": 0,
+          "record": {
+            "version": 1,
+            "plays": 1,
+            "bestRows": 1,
+            "totalRows": 1,
+            "muted": true,
+            "equipped": {
+              "hat": "straw",
+              "top": "basic",
+              "backpack": "basic"
+            }
+          },
+          "storageWarning": "",
+          "dialog": null,
+          "preview": null,
+          "input": {
+            "gesture": false,
+            "pointerCount": 0
+          }
+        },
+        "immediate": {
+          "mode": "playing",
+          "pauseReason": "",
+          "col": 4,
+          "row": 0,
+          "x": 180,
+          "y": 20,
+          "facing": "up",
+          "hop": null,
+          "queued": null,
+          "highest": 0,
+          "idleAge": 0,
+          "elapsed": 0,
+          "accumulator": 0,
+          "lanes": [
+            {
+              "row": 0,
+              "type": "grass"
+            },
+            {
+              "row": 1,
+              "type": "grass"
+            },
+            {
+              "row": 2,
+              "type": "grass"
+            },
+            {
+              "row": 3,
+              "type": "road",
+              "width": 68,
+              "gap": 150,
+              "period": 218,
+              "height": 26,
+              "direction": -1,
+              "baseSpeed": 82,
+              "phase": 84.47628606768434
+            },
+            {
+              "row": 4,
+              "type": "road",
+              "width": 56,
+              "gap": 195,
+              "period": 251,
+              "height": 26,
+              "direction": -1,
+              "baseSpeed": 117,
+              "phase": 10.154635231596991
+            },
+            {
+              "row": 5,
+              "type": "grass"
+            },
+            {
+              "row": 6,
+              "type": "road",
+              "width": 56,
+              "gap": 155,
+              "period": 211,
+              "height": 26,
+              "direction": -1,
+              "baseSpeed": 124,
+              "phase": 210.28338449036946
+            },
+            {
+              "row": 7,
+              "type": "road",
+              "width": 68,
+              "gap": 184,
+              "period": 252,
+              "height": 26,
+              "direction": -1,
+              "baseSpeed": 132,
+              "phase": 138.22222825777467
+            },
+            {
+              "row": 8,
+              "type": "road",
+              "width": 56,
+              "gap": 206,
+              "period": 262,
+              "height": 26,
+              "direction": 1,
+              "baseSpeed": 106,
+              "phase": 48.7885334352571
+            },
+            {
+              "row": 9,
+              "type": "grass"
+            },
+            {
+              "row": 10,
+              "type": "road",
+              "width": 56,
+              "gap": 186,
+              "period": 242,
+              "height": 26,
+              "direction": -1,
+              "baseSpeed": 96,
+              "phase": 28.28138829814381
+            },
+            {
+              "row": 11,
+              "type": "road",
+              "width": 68,
+              "gap": 190,
+              "period": 258,
+              "height": 26,
+              "direction": -1,
+              "baseSpeed": 98,
+              "phase": 115.06548809455654
+            },
+            {
+              "row": 12,
+              "type": "road",
+              "width": 68,
+              "gap": 171,
+              "period": 239,
+              "height": 26,
+              "direction": -1,
+              "baseSpeed": 101,
+              "phase": 155.64497489118457
+            },
+            {
+              "row": 13,
+              "type": "grass"
+            }
+          ],
+          "nextLane": 14,
+          "reason": null,
+          "hops": 0,
+          "record": {
+            "version": 1,
+            "plays": 1,
+            "bestRows": 1,
+            "totalRows": 1,
+            "muted": true,
+            "equipped": {
+              "hat": "straw",
+              "top": "basic",
+              "backpack": "basic"
+            }
+          },
+          "storageWarning": "",
+          "dialog": null,
+          "preview": null,
+          "input": {
+            "gesture": false,
+            "pointerCount": 0
+          }
+        },
+        "after": {
+          "mode": "paused",
+          "pauseReason": "long-frame",
+          "col": 4,
+          "row": 0,
+          "x": 180,
+          "y": 20,
+          "facing": "up",
+          "hop": null,
+          "queued": null,
+          "highest": 0,
+          "idleAge": 0,
+          "elapsed": 0,
+          "accumulator": 0,
+          "lanes": [
+            {
+              "row": 0,
+              "type": "grass"
+            },
+            {
+              "row": 1,
+              "type": "grass"
+            },
+            {
+              "row": 2,
+              "type": "grass"
+            },
+            {
+              "row": 3,
+              "type": "road",
+              "width": 68,
+              "gap": 150,
+              "period": 218,
+              "height": 26,
+              "direction": -1,
+              "baseSpeed": 82,
+              "phase": 84.47628606768434
+            },
+            {
+              "row": 4,
+              "type": "road",
+              "width": 56,
+              "gap": 195,
+              "period": 251,
+              "height": 26,
+              "direction": -1,
+              "baseSpeed": 117,
+              "phase": 10.154635231596991
+            },
+            {
+              "row": 5,
+              "type": "grass"
+            },
+            {
+              "row": 6,
+              "type": "road",
+              "width": 56,
+              "gap": 155,
+              "period": 211,
+              "height": 26,
+              "direction": -1,
+              "baseSpeed": 124,
+              "phase": 210.28338449036946
+            },
+            {
+              "row": 7,
+              "type": "road",
+              "width": 68,
+              "gap": 184,
+              "period": 252,
+              "height": 26,
+              "direction": -1,
+              "baseSpeed": 132,
+              "phase": 138.22222825777467
+            },
+            {
+              "row": 8,
+              "type": "road",
+              "width": 56,
+              "gap": 206,
+              "period": 262,
+              "height": 26,
+              "direction": 1,
+              "baseSpeed": 106,
+              "phase": 48.7885334352571
+            },
+            {
+              "row": 9,
+              "type": "grass"
+            },
+            {
+              "row": 10,
+              "type": "road",
+              "width": 56,
+              "gap": 186,
+              "period": 242,
+              "height": 26,
+              "direction": -1,
+              "baseSpeed": 96,
+              "phase": 28.28138829814381
+            },
+            {
+              "row": 11,
+              "type": "road",
+              "width": 68,
+              "gap": 190,
+              "period": 258,
+              "height": 26,
+              "direction": -1,
+              "baseSpeed": 98,
+              "phase": 115.06548809455654
+            },
+            {
+              "row": 12,
+              "type": "road",
+              "width": 68,
+              "gap": 171,
+              "period": 239,
+              "height": 26,
+              "direction": -1,
+              "baseSpeed": 101,
+              "phase": 155.64497489118457
+            },
+            {
+              "row": 13,
+              "type": "grass"
+            }
+          ],
+          "nextLane": 14,
+          "reason": null,
+          "hops": 0,
+          "record": {
+            "version": 1,
+            "plays": 1,
+            "bestRows": 1,
+            "totalRows": 1,
+            "muted": true,
+            "equipped": {
+              "hat": "straw",
+              "top": "basic",
+              "backpack": "basic"
+            }
+          },
+          "storageWarning": "",
+          "dialog": null,
+          "preview": null,
+          "input": {
+            "gesture": false,
+            "pointerCount": 0
+          }
+        }
+      }
+    },
+    {
+      "browser": "chromium-desktop",
+      "naturalCollision": {
+        "mode": "result",
+        "pauseReason": "",
+        "col": 4,
+        "row": 3,
+        "x": 180,
+        "y": 153.88888888888889,
+        "facing": "up",
+        "hop": {
+          "fromX": 180,
+          "fromY": 140,
+          "toX": 180,
+          "toY": 180,
+          "col": 4,
+          "row": 4,
+          "age": 0.041666666666666664
+        },
+        "queued": null,
+        "highest": 3,
+        "idleAge": 0.054999999999999986,
+        "elapsed": 0.49166666666666736,
+        "accumulator": 0,
+        "lanes": [
+          {
+            "row": 0,
+            "type": "grass"
+          },
+          {
+            "row": 1,
+            "type": "grass"
+          },
+          {
+            "row": 2,
+            "type": "road",
+            "width": 68,
+            "gap": 215,
+            "period": 283,
+            "height": 26,
+            "direction": -1,
+            "baseSpeed": 102,
+            "phase": 8.244553518224848
+          },
+          {
+            "row": 3,
+            "type": "road",
+            "width": 68,
+            "gap": 145,
+            "period": 213,
+            "height": 26,
+            "direction": -1,
+            "baseSpeed": 126,
+            "phase": 105.28057258563183
+          },
+          {
+            "row": 4,
+            "type": "road",
+            "width": 56,
+            "gap": 191,
+            "period": 247,
+            "height": 26,
+            "direction": 1,
+            "baseSpeed": 87,
+            "phase": 218.93679073469013
+          },
+          {
+            "row": 5,
+            "type": "grass"
+          },
+          {
+            "row": 6,
+            "type": "road",
+            "width": 56,
+            "gap": 160,
+            "period": 216,
+            "height": 26,
+            "direction": -1,
+            "baseSpeed": 110,
+            "phase": 173.4788362776677
+          },
+          {
+            "row": 7,
+            "type": "grass"
+          },
+          {
+            "row": 8,
+            "type": "grass"
+          },
+          {
+            "row": 9,
+            "type": "road",
+            "width": 56,
+            "gap": 162,
+            "period": 218,
+            "height": 26,
+            "direction": -1,
+            "baseSpeed": 132,
+            "phase": 79.00551676737825
+          },
+          {
+            "row": 10,
+            "type": "grass"
+          },
+          {
+            "row": 11,
+            "type": "road",
+            "width": 56,
+            "gap": 173,
+            "period": 229,
+            "height": 26,
+            "direction": -1,
+            "baseSpeed": 98,
+            "phase": 147.5439555813486
+          },
+          {
+            "row": 12,
+            "type": "grass"
+          },
+          {
+            "row": 13,
+            "type": "road",
+            "width": 56,
+            "gap": 188,
+            "period": 244,
+            "height": 26,
+            "direction": -1,
+            "baseSpeed": 94,
+            "phase": 204.0407103694539
+          },
+          {
+            "row": 14,
+            "type": "road",
+            "width": 68,
+            "gap": 191,
+            "period": 259,
+            "height": 26,
+            "direction": -1,
+            "baseSpeed": 95,
+            "phase": 35.553653053492496
+          },
+          {
+            "row": 15,
+            "type": "road",
+            "width": 68,
+            "gap": 159,
+            "period": 227,
+            "height": 26,
+            "direction": 1,
+            "baseSpeed": 115,
+            "phase": 25.450652462770535
+          },
+          {
+            "row": 16,
+            "type": "grass"
+          }
+        ],
+        "nextLane": 17,
+        "reason": "collision",
+        "hops": 4,
+        "record": {
+          "version": 1,
+          "plays": 2,
+          "bestRows": 3,
+          "totalRows": 4,
+          "muted": true,
+          "equipped": {
+            "hat": "straw",
+            "top": "basic",
+            "backpack": "basic"
+          }
+        },
+        "storageWarning": "",
+        "dialog": "result-dialog",
+        "preview": null,
+        "input": {
+          "gesture": false,
+          "pointerCount": 0
+        }
+      }
+    },
+    {
+      "browser": "chromium-desktop",
+      "idle": {
+        "mode": "result",
+        "pauseReason": "",
+        "col": 4,
+        "row": 0,
+        "x": 180,
+        "y": 20,
+        "facing": "up",
+        "hop": null,
+        "queued": null,
+        "highest": 0,
+        "idleAge": 10.000000000000073,
+        "elapsed": 10.000000000000073,
+        "accumulator": 0,
+        "lanes": [
+          {
+            "row": 0,
+            "type": "grass"
+          },
+          {
+            "row": 1,
+            "type": "grass"
+          },
+          {
+            "row": 2,
+            "type": "road",
+            "width": 68,
+            "gap": 191,
+            "period": 259,
+            "height": 26,
+            "direction": 1,
+            "baseSpeed": 86,
+            "phase": 202.04337377683373
+          },
+          {
+            "row": 3,
+            "type": "grass"
+          },
+          {
+            "row": 4,
+            "type": "road",
+            "width": 56,
+            "gap": 196,
+            "period": 252,
+            "height": 26,
+            "direction": 1,
+            "baseSpeed": 98,
+            "phase": 221.30636857948582
+          },
+          {
+            "row": 5,
+            "type": "road",
+            "width": 56,
+            "gap": 199,
+            "period": 255,
+            "height": 26,
+            "direction": -1,
+            "baseSpeed": 92,
+            "phase": 199.9180489563164
+          },
+          {
+            "row": 6,
+            "type": "grass"
+          },
+          {
+            "row": 7,
+            "type": "grass"
+          },
+          {
+            "row": 8,
+            "type": "road",
+            "width": 68,
+            "gap": 205,
+            "period": 273,
+            "height": 26,
+            "direction": -1,
+            "baseSpeed": 90,
+            "phase": 175.07232651749337
+          },
+          {
+            "row": 9,
+            "type": "grass"
+          },
+          {
+            "row": 10,
+            "type": "grass"
+          },
+          {
+            "row": 11,
+            "type": "road",
+            "width": 56,
+            "gap": 184,
+            "period": 240,
+            "height": 26,
+            "direction": -1,
+            "baseSpeed": 86,
+            "phase": 207.76658704986824
+          },
+          {
+            "row": 12,
+            "type": "road",
+            "width": 56,
+            "gap": 156,
+            "period": 212,
+            "height": 26,
+            "direction": 1,
+            "baseSpeed": 97,
+            "phase": 158.1699924433646
+          },
+          {
+            "row": 13,
+            "type": "road",
+            "width": 56,
+            "gap": 194,
+            "period": 250,
+            "height": 26,
+            "direction": 1,
+            "baseSpeed": 115,
+            "phase": 80.01160671328734
+          }
+        ],
+        "nextLane": 14,
+        "reason": "idle",
+        "hops": 0,
+        "record": {
+          "version": 1,
+          "plays": 3,
+          "bestRows": 3,
+          "totalRows": 4,
+          "muted": true,
+          "equipped": {
+            "hat": "straw",
+            "top": "basic",
+            "backpack": "basic"
+          }
+        },
+        "storageWarning": "",
+        "dialog": "result-dialog",
+        "preview": null,
+        "input": {
+          "gesture": false,
+          "pointerCount": 0
+        }
+      }
+    },
+    {
+      "browser": "chromium-320-touch",
+      "stall": {
+        "before": {
+          "mode": "playing",
+          "pauseReason": "",
+          "col": 4,
+          "row": 0,
+          "x": 180,
+          "y": 20,
+          "facing": "up",
+          "hop": null,
+          "queued": null,
+          "highest": 0,
+          "idleAge": 0,
+          "elapsed": 0,
+          "accumulator": 0,
+          "lanes": [
+            {
+              "row": 0,
+              "type": "grass"
+            },
+            {
+              "row": 1,
+              "type": "grass"
+            },
+            {
+              "row": 2,
+              "type": "grass"
+            },
+            {
+              "row": 3,
+              "type": "grass"
+            },
+            {
+              "row": 4,
+              "type": "grass"
+            },
+            {
+              "row": 5,
+              "type": "grass"
+            },
+            {
+              "row": 6,
+              "type": "road",
+              "width": 56,
+              "gap": 141,
+              "period": 197,
+              "height": 26,
+              "direction": -1,
+              "baseSpeed": 135,
+              "phase": 54.628942015132274
+            },
+            {
+              "row": 7,
+              "type": "grass"
+            },
+            {
+              "row": 8,
+              "type": "road",
+              "width": 56,
+              "gap": 171,
+              "period": 227,
+              "height": 26,
+              "direction": -1,
+              "baseSpeed": 130,
+              "phase": 78.9156288885843
+            },
+            {
+              "row": 9,
+              "type": "road",
+              "width": 68,
+              "gap": 148,
+              "period": 216,
+              "height": 26,
+              "direction": -1,
+              "baseSpeed": 115,
+              "phase": 80.23284850643246
+            },
+            {
+              "row": 10,
+              "type": "road",
+              "width": 56,
+              "gap": 202,
+              "period": 258,
+              "height": 26,
+              "direction": 1,
+              "baseSpeed": 136,
+              "phase": 213.59257517216668
+            },
+            {
+              "row": 11,
+              "type": "grass"
+            },
+            {
+              "row": 12,
+              "type": "grass"
+            },
+            {
+              "row": 13,
+              "type": "grass"
+            }
+          ],
+          "nextLane": 14,
+          "reason": null,
+          "hops": 0,
+          "record": {
+            "version": 1,
+            "plays": 1,
+            "bestRows": 1,
+            "totalRows": 1,
+            "muted": true,
+            "equipped": {
+              "hat": "straw",
+              "top": "basic",
+              "backpack": "basic"
+            }
+          },
+          "storageWarning": "",
+          "dialog": null,
+          "preview": null,
+          "input": {
+            "gesture": false,
+            "pointerCount": 0
+          }
+        },
+        "immediate": {
+          "mode": "playing",
+          "pauseReason": "",
+          "col": 4,
+          "row": 0,
+          "x": 180,
+          "y": 20,
+          "facing": "up",
+          "hop": null,
+          "queued": null,
+          "highest": 0,
+          "idleAge": 0,
+          "elapsed": 0,
+          "accumulator": 0,
+          "lanes": [
+            {
+              "row": 0,
+              "type": "grass"
+            },
+            {
+              "row": 1,
+              "type": "grass"
+            },
+            {
+              "row": 2,
+              "type": "grass"
+            },
+            {
+              "row": 3,
+              "type": "grass"
+            },
+            {
+              "row": 4,
+              "type": "grass"
+            },
+            {
+              "row": 5,
+              "type": "grass"
+            },
+            {
+              "row": 6,
+              "type": "road",
+              "width": 56,
+              "gap": 141,
+              "period": 197,
+              "height": 26,
+              "direction": -1,
+              "baseSpeed": 135,
+              "phase": 54.628942015132274
+            },
+            {
+              "row": 7,
+              "type": "grass"
+            },
+            {
+              "row": 8,
+              "type": "road",
+              "width": 56,
+              "gap": 171,
+              "period": 227,
+              "height": 26,
+              "direction": -1,
+              "baseSpeed": 130,
+              "phase": 78.9156288885843
+            },
+            {
+              "row": 9,
+              "type": "road",
+              "width": 68,
+              "gap": 148,
+              "period": 216,
+              "height": 26,
+              "direction": -1,
+              "baseSpeed": 115,
+              "phase": 80.23284850643246
+            },
+            {
+              "row": 10,
+              "type": "road",
+              "width": 56,
+              "gap": 202,
+              "period": 258,
+              "height": 26,
+              "direction": 1,
+              "baseSpeed": 136,
+              "phase": 213.59257517216668
+            },
+            {
+              "row": 11,
+              "type": "grass"
+            },
+            {
+              "row": 12,
+              "type": "grass"
+            },
+            {
+              "row": 13,
+              "type": "grass"
+            }
+          ],
+          "nextLane": 14,
+          "reason": null,
+          "hops": 0,
+          "record": {
+            "version": 1,
+            "plays": 1,
+            "bestRows": 1,
+            "totalRows": 1,
+            "muted": true,
+            "equipped": {
+              "hat": "straw",
+              "top": "basic",
+              "backpack": "basic"
+            }
+          },
+          "storageWarning": "",
+          "dialog": null,
+          "preview": null,
+          "input": {
+            "gesture": false,
+            "pointerCount": 0
+          }
+        },
+        "after": {
+          "mode": "paused",
+          "pauseReason": "long-frame",
+          "col": 4,
+          "row": 0,
+          "x": 180,
+          "y": 20,
+          "facing": "up",
+          "hop": null,
+          "queued": null,
+          "highest": 0,
+          "idleAge": 0,
+          "elapsed": 0,
+          "accumulator": 0,
+          "lanes": [
+            {
+              "row": 0,
+              "type": "grass"
+            },
+            {
+              "row": 1,
+              "type": "grass"
+            },
+            {
+              "row": 2,
+              "type": "grass"
+            },
+            {
+              "row": 3,
+              "type": "grass"
+            },
+            {
+              "row": 4,
+              "type": "grass"
+            },
+            {
+              "row": 5,
+              "type": "grass"
+            },
+            {
+              "row": 6,
+              "type": "road",
+              "width": 56,
+              "gap": 141,
+              "period": 197,
+              "height": 26,
+              "direction": -1,
+              "baseSpeed": 135,
+              "phase": 54.628942015132274
+            },
+            {
+              "row": 7,
+              "type": "grass"
+            },
+            {
+              "row": 8,
+              "type": "road",
+              "width": 56,
+              "gap": 171,
+              "period": 227,
+              "height": 26,
+              "direction": -1,
+              "baseSpeed": 130,
+              "phase": 78.9156288885843
+            },
+            {
+              "row": 9,
+              "type": "road",
+              "width": 68,
+              "gap": 148,
+              "period": 216,
+              "height": 26,
+              "direction": -1,
+              "baseSpeed": 115,
+              "phase": 80.23284850643246
+            },
+            {
+              "row": 10,
+              "type": "road",
+              "width": 56,
+              "gap": 202,
+              "period": 258,
+              "height": 26,
+              "direction": 1,
+              "baseSpeed": 136,
+              "phase": 213.59257517216668
+            },
+            {
+              "row": 11,
+              "type": "grass"
+            },
+            {
+              "row": 12,
+              "type": "grass"
+            },
+            {
+              "row": 13,
+              "type": "grass"
+            }
+          ],
+          "nextLane": 14,
+          "reason": null,
+          "hops": 0,
+          "record": {
+            "version": 1,
+            "plays": 1,
+            "bestRows": 1,
+            "totalRows": 1,
+            "muted": true,
+            "equipped": {
+              "hat": "straw",
+              "top": "basic",
+              "backpack": "basic"
+            }
+          },
+          "storageWarning": "",
+          "dialog": null,
+          "preview": null,
+          "input": {
+            "gesture": false,
+            "pointerCount": 0
+          }
+        }
+      }
+    },
+    {
+      "browser": "chromium-320-touch",
+      "naturalCollision": {
+        "mode": "result",
+        "pauseReason": "",
+        "col": 4,
+        "row": 1,
+        "x": 180,
+        "y": 90.55555555555556,
+        "facing": "up",
+        "hop": {
+          "fromX": 180,
+          "fromY": 60,
+          "toX": 180,
+          "toY": 100,
+          "col": 4,
+          "row": 2,
+          "age": 0.09166666666666666
+        },
+        "queued": null,
+        "highest": 1,
+        "idleAge": 0.12999999999999998,
+        "elapsed": 0.24999999999999997,
+        "accumulator": 0,
+        "lanes": [
+          {
+            "row": 0,
+            "type": "grass"
+          },
+          {
+            "row": 1,
+            "type": "grass"
+          },
+          {
+            "row": 2,
+            "type": "road",
+            "width": 56,
+            "gap": 158,
+            "period": 214,
+            "height": 26,
+            "direction": 1,
+            "baseSpeed": 107,
+            "phase": 138.81623893639744
+          },
+          {
+            "row": 3,
+            "type": "road",
+            "width": 56,
+            "gap": 163,
+            "period": 219,
+            "height": 26,
+            "direction": -1,
+            "baseSpeed": 132,
+            "phase": 128.48582541560836
+          },
+          {
+            "row": 4,
+            "type": "grass"
+          },
+          {
+            "row": 5,
+            "type": "road",
+            "width": 68,
+            "gap": 211,
+            "period": 279,
+            "height": 26,
+            "direction": 1,
+            "baseSpeed": 139,
+            "phase": 100.12521198277796
+          },
+          {
+            "row": 6,
+            "type": "road",
+            "width": 56,
+            "gap": 199,
+            "period": 255,
+            "height": 26,
+            "direction": -1,
+            "baseSpeed": 93,
+            "phase": 46.783833553937825
+          },
+          {
+            "row": 7,
+            "type": "road",
+            "width": 68,
+            "gap": 202,
+            "period": 270,
+            "height": 26,
+            "direction": 1,
+            "baseSpeed": 99,
+            "phase": 88.29849358598
+          },
+          {
+            "row": 8,
+            "type": "grass"
+          },
+          {
+            "row": 9,
+            "type": "road",
+            "width": 56,
+            "gap": 208,
+            "period": 264,
+            "height": 26,
+            "direction": 1,
+            "baseSpeed": 99,
+            "phase": 30.582217351705935
+          },
+          {
+            "row": 10,
+            "type": "grass"
+          },
+          {
+            "row": 11,
+            "type": "road",
+            "width": 68,
+            "gap": 176,
+            "period": 244,
+            "height": 26,
+            "direction": -1,
+            "baseSpeed": 132,
+            "phase": 74.0988698888533
+          },
+          {
+            "row": 12,
+            "type": "road",
+            "width": 56,
+            "gap": 150,
+            "period": 206,
+            "height": 26,
+            "direction": 1,
+            "baseSpeed": 128,
+            "phase": 112.04398528126109
+          },
+          {
+            "row": 13,
+            "type": "road",
+            "width": 56,
+            "gap": 205,
+            "period": 261,
+            "height": 26,
+            "direction": -1,
+            "baseSpeed": 98,
+            "phase": 49.07464446095344
+          },
+          {
+            "row": 14,
+            "type": "grass"
+          }
+        ],
+        "nextLane": 15,
+        "reason": "collision",
+        "hops": 2,
+        "record": {
+          "version": 1,
+          "plays": 2,
+          "bestRows": 1,
+          "totalRows": 2,
+          "muted": true,
+          "equipped": {
+            "hat": "straw",
+            "top": "basic",
+            "backpack": "basic"
+          }
+        },
+        "storageWarning": "",
+        "dialog": "result-dialog",
+        "preview": null,
+        "input": {
+          "gesture": false,
+          "pointerCount": 0
+        }
+      }
+    },
+    {
+      "browser": "chromium-320-touch",
+      "idle": {
+        "mode": "result",
+        "pauseReason": "",
+        "col": 4,
+        "row": 0,
+        "x": 180,
+        "y": 20,
+        "facing": "up",
+        "hop": null,
+        "queued": null,
+        "highest": 0,
+        "idleAge": 10.000000000000073,
+        "elapsed": 10.000000000000073,
+        "accumulator": 0,
+        "lanes": [
+          {
+            "row": 0,
+            "type": "grass"
+          },
+          {
+            "row": 1,
+            "type": "grass"
+          },
+          {
+            "row": 2,
+            "type": "road",
+            "width": 56,
+            "gap": 183,
+            "period": 239,
+            "height": 26,
+            "direction": -1,
+            "baseSpeed": 136,
+            "phase": 208.98575921325113
+          },
+          {
+            "row": 3,
+            "type": "grass"
+          },
+          {
+            "row": 4,
+            "type": "road",
+            "width": 68,
+            "gap": 146,
+            "period": 214,
+            "height": 26,
+            "direction": 1,
+            "baseSpeed": 102,
+            "phase": 109.38318611143302
+          },
+          {
+            "row": 5,
+            "type": "grass"
+          },
+          {
+            "row": 6,
+            "type": "grass"
+          },
+          {
+            "row": 7,
+            "type": "road",
+            "width": 56,
+            "gap": 146,
+            "period": 202,
+            "height": 26,
+            "direction": 1,
+            "baseSpeed": 106,
+            "phase": 83.95116891701349
+          },
+          {
+            "row": 8,
+            "type": "road",
+            "width": 56,
+            "gap": 159,
+            "period": 215,
+            "height": 26,
+            "direction": -1,
+            "baseSpeed": 107,
+            "phase": 54.40626467289451
+          },
+          {
+            "row": 9,
+            "type": "road",
+            "width": 68,
+            "gap": 192,
+            "period": 260,
+            "height": 26,
+            "direction": -1,
+            "baseSpeed": 93,
+            "phase": 180.93357870136674
+          },
+          {
+            "row": 10,
+            "type": "grass"
+          },
+          {
+            "row": 11,
+            "type": "grass"
+          },
+          {
+            "row": 12,
+            "type": "grass"
+          },
+          {
+            "row": 13,
+            "type": "road",
+            "width": 56,
+            "gap": 184,
+            "period": 240,
+            "height": 26,
+            "direction": -1,
+            "baseSpeed": 81,
+            "phase": 122.30634703010315
+          }
+        ],
+        "nextLane": 14,
+        "reason": "idle",
+        "hops": 0,
+        "record": {
+          "version": 1,
+          "plays": 3,
+          "bestRows": 1,
+          "totalRows": 2,
+          "muted": true,
+          "equipped": {
+            "hat": "straw",
+            "top": "basic",
+            "backpack": "basic"
+          }
+        },
+        "storageWarning": "",
+        "dialog": "result-dialog",
+        "preview": null,
+        "input": {
+          "gesture": false,
+          "pointerCount": 0
+        }
+      }
+    },
+    {
+      "browser": "webkit-mobile",
+      "stall": {
+        "before": {
+          "mode": "playing",
+          "pauseReason": "",
+          "col": 4,
+          "row": 0,
+          "x": 180,
+          "y": 20,
+          "facing": "up",
+          "hop": null,
+          "queued": null,
+          "highest": 0,
+          "idleAge": 0,
+          "elapsed": 0,
+          "accumulator": 0,
+          "lanes": [
+            {
+              "row": 0,
+              "type": "grass"
+            },
+            {
+              "row": 1,
+              "type": "grass"
+            },
+            {
+              "row": 2,
+              "type": "road",
+              "width": 68,
+              "gap": 213,
+              "period": 281,
+              "height": 26,
+              "direction": -1,
+              "baseSpeed": 109,
+              "phase": 217.6051102058549
+            },
+            {
+              "row": 3,
+              "type": "grass"
+            },
+            {
+              "row": 4,
+              "type": "road",
+              "width": 68,
+              "gap": 152,
+              "period": 220,
+              "height": 26,
+              "direction": 1,
+              "baseSpeed": 100,
+              "phase": 42.10042614902378
+            },
+            {
+              "row": 5,
+              "type": "grass"
+            },
+            {
+              "row": 6,
+              "type": "road",
+              "width": 68,
+              "gap": 216,
+              "period": 284,
+              "height": 26,
+              "direction": 1,
+              "baseSpeed": 120,
+              "phase": 4.961959639023261
+            },
+            {
+              "row": 7,
+              "type": "grass"
+            },
+            {
+              "row": 8,
+              "type": "road",
+              "width": 68,
+              "gap": 155,
+              "period": 223,
+              "height": 26,
+              "direction": -1,
+              "baseSpeed": 134,
+              "phase": 222.24393435595024
+            },
+            {
+              "row": 9,
+              "type": "grass"
+            },
+            {
+              "row": 10,
+              "type": "grass"
+            },
+            {
+              "row": 11,
+              "type": "road",
+              "width": 56,
+              "gap": 184,
+              "period": 240,
+              "height": 26,
+              "direction": 1,
+              "baseSpeed": 98,
+              "phase": 180.98186275857324
+            },
+            {
+              "row": 12,
+              "type": "road",
+              "width": 56,
+              "gap": 185,
+              "period": 241,
+              "height": 26,
+              "direction": 1,
+              "baseSpeed": 84,
+              "phase": 151.25523881409737
+            },
+            {
+              "row": 13,
+              "type": "road",
+              "width": 56,
+              "gap": 200,
+              "period": 256,
+              "height": 26,
+              "direction": -1,
+              "baseSpeed": 85,
+              "phase": 65.31577894379973
+            }
+          ],
+          "nextLane": 14,
+          "reason": null,
+          "hops": 0,
+          "record": {
+            "version": 1,
+            "plays": 1,
+            "bestRows": 1,
+            "totalRows": 1,
+            "muted": true,
+            "equipped": {
+              "hat": "straw",
+              "top": "basic",
+              "backpack": "basic"
+            }
+          },
+          "storageWarning": "",
+          "dialog": null,
+          "preview": null,
+          "input": {
+            "gesture": false,
+            "pointerCount": 0
+          }
+        },
+        "immediate": {
+          "mode": "playing",
+          "pauseReason": "",
+          "col": 4,
+          "row": 0,
+          "x": 180,
+          "y": 20,
+          "facing": "up",
+          "hop": null,
+          "queued": null,
+          "highest": 0,
+          "idleAge": 0,
+          "elapsed": 0,
+          "accumulator": 0,
+          "lanes": [
+            {
+              "row": 0,
+              "type": "grass"
+            },
+            {
+              "row": 1,
+              "type": "grass"
+            },
+            {
+              "row": 2,
+              "type": "road",
+              "width": 68,
+              "gap": 213,
+              "period": 281,
+              "height": 26,
+              "direction": -1,
+              "baseSpeed": 109,
+              "phase": 217.6051102058549
+            },
+            {
+              "row": 3,
+              "type": "grass"
+            },
+            {
+              "row": 4,
+              "type": "road",
+              "width": 68,
+              "gap": 152,
+              "period": 220,
+              "height": 26,
+              "direction": 1,
+              "baseSpeed": 100,
+              "phase": 42.10042614902378
+            },
+            {
+              "row": 5,
+              "type": "grass"
+            },
+            {
+              "row": 6,
+              "type": "road",
+              "width": 68,
+              "gap": 216,
+              "period": 284,
+              "height": 26,
+              "direction": 1,
+              "baseSpeed": 120,
+              "phase": 4.961959639023261
+            },
+            {
+              "row": 7,
+              "type": "grass"
+            },
+            {
+              "row": 8,
+              "type": "road",
+              "width": 68,
+              "gap": 155,
+              "period": 223,
+              "height": 26,
+              "direction": -1,
+              "baseSpeed": 134,
+              "phase": 222.24393435595024
+            },
+            {
+              "row": 9,
+              "type": "grass"
+            },
+            {
+              "row": 10,
+              "type": "grass"
+            },
+            {
+              "row": 11,
+              "type": "road",
+              "width": 56,
+              "gap": 184,
+              "period": 240,
+              "height": 26,
+              "direction": 1,
+              "baseSpeed": 98,
+              "phase": 180.98186275857324
+            },
+            {
+              "row": 12,
+              "type": "road",
+              "width": 56,
+              "gap": 185,
+              "period": 241,
+              "height": 26,
+              "direction": 1,
+              "baseSpeed": 84,
+              "phase": 151.25523881409737
+            },
+            {
+              "row": 13,
+              "type": "road",
+              "width": 56,
+              "gap": 200,
+              "period": 256,
+              "height": 26,
+              "direction": -1,
+              "baseSpeed": 85,
+              "phase": 65.31577894379973
+            }
+          ],
+          "nextLane": 14,
+          "reason": null,
+          "hops": 0,
+          "record": {
+            "version": 1,
+            "plays": 1,
+            "bestRows": 1,
+            "totalRows": 1,
+            "muted": true,
+            "equipped": {
+              "hat": "straw",
+              "top": "basic",
+              "backpack": "basic"
+            }
+          },
+          "storageWarning": "",
+          "dialog": null,
+          "preview": null,
+          "input": {
+            "gesture": false,
+            "pointerCount": 0
+          }
+        },
+        "after": {
+          "mode": "paused",
+          "pauseReason": "long-frame",
+          "col": 4,
+          "row": 0,
+          "x": 180,
+          "y": 20,
+          "facing": "up",
+          "hop": null,
+          "queued": null,
+          "highest": 0,
+          "idleAge": 0,
+          "elapsed": 0,
+          "accumulator": 0,
+          "lanes": [
+            {
+              "row": 0,
+              "type": "grass"
+            },
+            {
+              "row": 1,
+              "type": "grass"
+            },
+            {
+              "row": 2,
+              "type": "road",
+              "width": 68,
+              "gap": 213,
+              "period": 281,
+              "height": 26,
+              "direction": -1,
+              "baseSpeed": 109,
+              "phase": 217.6051102058549
+            },
+            {
+              "row": 3,
+              "type": "grass"
+            },
+            {
+              "row": 4,
+              "type": "road",
+              "width": 68,
+              "gap": 152,
+              "period": 220,
+              "height": 26,
+              "direction": 1,
+              "baseSpeed": 100,
+              "phase": 42.10042614902378
+            },
+            {
+              "row": 5,
+              "type": "grass"
+            },
+            {
+              "row": 6,
+              "type": "road",
+              "width": 68,
+              "gap": 216,
+              "period": 284,
+              "height": 26,
+              "direction": 1,
+              "baseSpeed": 120,
+              "phase": 4.961959639023261
+            },
+            {
+              "row": 7,
+              "type": "grass"
+            },
+            {
+              "row": 8,
+              "type": "road",
+              "width": 68,
+              "gap": 155,
+              "period": 223,
+              "height": 26,
+              "direction": -1,
+              "baseSpeed": 134,
+              "phase": 222.24393435595024
+            },
+            {
+              "row": 9,
+              "type": "grass"
+            },
+            {
+              "row": 10,
+              "type": "grass"
+            },
+            {
+              "row": 11,
+              "type": "road",
+              "width": 56,
+              "gap": 184,
+              "period": 240,
+              "height": 26,
+              "direction": 1,
+              "baseSpeed": 98,
+              "phase": 180.98186275857324
+            },
+            {
+              "row": 12,
+              "type": "road",
+              "width": 56,
+              "gap": 185,
+              "period": 241,
+              "height": 26,
+              "direction": 1,
+              "baseSpeed": 84,
+              "phase": 151.25523881409737
+            },
+            {
+              "row": 13,
+              "type": "road",
+              "width": 56,
+              "gap": 200,
+              "period": 256,
+              "height": 26,
+              "direction": -1,
+              "baseSpeed": 85,
+              "phase": 65.31577894379973
+            }
+          ],
+          "nextLane": 14,
+          "reason": null,
+          "hops": 0,
+          "record": {
+            "version": 1,
+            "plays": 1,
+            "bestRows": 1,
+            "totalRows": 1,
+            "muted": true,
+            "equipped": {
+              "hat": "straw",
+              "top": "basic",
+              "backpack": "basic"
+            }
+          },
+          "storageWarning": "",
+          "dialog": null,
+          "preview": null,
+          "input": {
+            "gesture": false,
+            "pointerCount": 0
+          }
+        }
+      }
+    },
+    {
+      "browser": "webkit-mobile",
+      "naturalCollision": {
+        "mode": "result",
+        "pauseReason": "",
+        "col": 4,
+        "row": 6,
+        "x": 180,
+        "y": 273.8888888888889,
+        "facing": "up",
+        "hop": {
+          "fromX": 180,
+          "fromY": 260,
+          "toX": 180,
+          "toY": 300,
+          "col": 4,
+          "row": 7,
+          "age": 0.041666666666666664
+        },
+        "queued": null,
+        "highest": 6,
+        "idleAge": 0.07166666666666666,
+        "elapsed": 0.9416666666666658,
+        "accumulator": 0,
+        "lanes": [
+          {
+            "row": 2,
+            "type": "road",
+            "width": 68,
+            "gap": 152,
+            "period": 220,
+            "height": 26,
+            "direction": 1,
+            "baseSpeed": 85,
+            "phase": 158.18658526256502
+          },
+          {
+            "row": 3,
+            "type": "road",
+            "width": 56,
+            "gap": 203,
+            "period": 259,
+            "height": 26,
+            "direction": -1,
+            "baseSpeed": 87,
+            "phase": 232.92189795668696
+          },
+          {
+            "row": 4,
+            "type": "road",
+            "width": 56,
+            "gap": 175,
+            "period": 231,
+            "height": 26,
+            "direction": 1,
+            "baseSpeed": 113,
+            "phase": 76.86646279717007
+          },
+          {
+            "row": 5,
+            "type": "grass"
+          },
+          {
+            "row": 6,
+            "type": "road",
+            "width": 68,
+            "gap": 215,
+            "period": 283,
+            "height": 26,
+            "direction": -1,
+            "baseSpeed": 109,
+            "phase": 109.24328274905463
+          },
+          {
+            "row": 7,
+            "type": "road",
+            "width": 56,
+            "gap": 181,
+            "period": 237,
+            "height": 26,
+            "direction": -1,
+            "baseSpeed": 134,
+            "phase": 189.68047751034078
+          },
+          {
+            "row": 8,
+            "type": "grass"
+          },
+          {
+            "row": 9,
+            "type": "grass"
+          },
+          {
+            "row": 10,
+            "type": "grass"
+          },
+          {
+            "row": 11,
+            "type": "road",
+            "width": 56,
+            "gap": 160,
+            "period": 216,
+            "height": 26,
+            "direction": -1,
+            "baseSpeed": 140,
+            "phase": 140.25391064073654
+          },
+          {
+            "row": 12,
+            "type": "road",
+            "width": 68,
+            "gap": 140,
+            "period": 208,
+            "height": 26,
+            "direction": 1,
+            "baseSpeed": 114,
+            "phase": 82.31199709593193
+          },
+          {
+            "row": 13,
+            "type": "grass"
+          },
+          {
+            "row": 14,
+            "type": "road",
+            "width": 68,
+            "gap": 157,
+            "period": 225,
+            "height": 26,
+            "direction": -1,
+            "baseSpeed": 105,
+            "phase": 23.668590395059
+          },
+          {
+            "row": 15,
+            "type": "grass"
+          },
+          {
+            "row": 16,
+            "type": "grass"
+          },
+          {
+            "row": 17,
+            "type": "road",
+            "width": 56,
+            "gap": 168,
+            "period": 224,
+            "height": 26,
+            "direction": -1,
+            "baseSpeed": 129,
+            "phase": 96.73092773028657
+          },
+          {
+            "row": 18,
+            "type": "grass"
+          },
+          {
+            "row": 19,
+            "type": "grass"
+          }
+        ],
+        "nextLane": 20,
+        "reason": "collision",
+        "hops": 7,
+        "record": {
+          "version": 1,
+          "plays": 2,
+          "bestRows": 6,
+          "totalRows": 7,
+          "muted": true,
+          "equipped": {
+            "hat": "straw",
+            "top": "basic",
+            "backpack": "basic"
+          }
+        },
+        "storageWarning": "",
+        "dialog": "result-dialog",
+        "preview": null,
+        "input": {
+          "gesture": false,
+          "pointerCount": 0
+        }
+      }
+    },
+    {
+      "browser": "webkit-mobile",
+      "idle": {
+        "mode": "result",
+        "pauseReason": "",
+        "col": 4,
+        "row": 0,
+        "x": 180,
+        "y": 20,
+        "facing": "up",
+        "hop": null,
+        "queued": null,
+        "highest": 0,
+        "idleAge": 10.000000000000073,
+        "elapsed": 10.000000000000073,
+        "accumulator": 0,
+        "lanes": [
+          {
+            "row": 0,
+            "type": "grass"
+          },
+          {
+            "row": 1,
+            "type": "grass"
+          },
+          {
+            "row": 2,
+            "type": "road",
+            "width": 68,
+            "gap": 179,
+            "period": 247,
+            "height": 26,
+            "direction": 1,
+            "baseSpeed": 138,
+            "phase": 144.6230771499861
+          },
+          {
+            "row": 3,
+            "type": "road",
+            "width": 68,
+            "gap": 162,
+            "period": 230,
+            "height": 26,
+            "direction": -1,
+            "baseSpeed": 85,
+            "phase": 166.64964338379752
+          },
+          {
+            "row": 4,
+            "type": "grass"
+          },
+          {
+            "row": 5,
+            "type": "road",
+            "width": 68,
+            "gap": 215,
+            "period": 283,
+            "height": 26,
+            "direction": -1,
+            "baseSpeed": 101,
+            "phase": 27.99669463095853
+          },
+          {
+            "row": 6,
+            "type": "road",
+            "width": 56,
+            "gap": 210,
+            "period": 266,
+            "height": 26,
+            "direction": -1,
+            "baseSpeed": 93,
+            "phase": 230.1950174485048
+          },
+          {
+            "row": 7,
+            "type": "grass"
+          },
+          {
+            "row": 8,
+            "type": "road",
+            "width": 68,
+            "gap": 151,
+            "period": 219,
+            "height": 26,
+            "direction": 1,
+            "baseSpeed": 85,
+            "phase": 190.57286831438284
+          },
+          {
+            "row": 9,
+            "type": "road",
+            "width": 56,
+            "gap": 153,
+            "period": 209,
+            "height": 26,
+            "direction": -1,
+            "baseSpeed": 91,
+            "phase": 55.80746641001383
+          },
+          {
+            "row": 10,
+            "type": "road",
+            "width": 68,
+            "gap": 209,
+            "period": 277,
+            "height": 26,
+            "direction": -1,
+            "baseSpeed": 135,
+            "phase": 111.44748021088355
+          },
+          {
+            "row": 11,
+            "type": "grass"
+          },
+          {
+            "row": 12,
+            "type": "grass"
+          },
+          {
+            "row": 13,
+            "type": "road",
+            "width": 68,
+            "gap": 214,
+            "period": 282,
+            "height": 26,
+            "direction": -1,
+            "baseSpeed": 116,
+            "phase": 108.83823994484328
+          }
+        ],
+        "nextLane": 14,
+        "reason": "idle",
+        "hops": 0,
+        "record": {
+          "version": 1,
+          "plays": 3,
+          "bestRows": 6,
+          "totalRows": 7,
+          "muted": true,
+          "equipped": {
+            "hat": "straw",
+            "top": "basic",
+            "backpack": "basic"
+          }
+        },
+        "storageWarning": "",
+        "dialog": "result-dialog",
+        "preview": null,
+        "input": {
+          "gesture": false,
+          "pointerCount": 0
+        }
+      }
+    }
+  ]
+}
