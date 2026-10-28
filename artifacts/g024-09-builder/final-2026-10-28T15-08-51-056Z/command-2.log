@@ -1,0 +1,344 @@
+C:/Program Files/nodejs/node.exe artifacts/g024-09-builder/early-smoke.mjs
+exit=0
+{
+  "out": "E:\\Work2\\Project\\SimpleGames\\worktrees\\g024-09-crossy\\artifacts\\g024-09-builder\\early-2026-10-28T15-08-51-767Z",
+  "results": [
+    {
+      "name": "actual HTTP strict CSP + all seven identical assets",
+      "passed": true
+    },
+    {
+      "name": "chromium-desktop: nonfrozen trusted 80ms start/pause/resume",
+      "passed": true
+    },
+    {
+      "name": "chromium-desktop: trusted mute + wardrobe part/cancel/set/apply",
+      "passed": true
+    },
+    {
+      "name": "chromium-desktop: layout + clone-only snapshot + clean diagnostics",
+      "passed": true
+    },
+    {
+      "name": "webkit-mobile: nonfrozen trusted 80ms start/pause/resume",
+      "passed": true
+    },
+    {
+      "name": "webkit-mobile: trusted mute + wardrobe part/cancel/set/apply",
+      "passed": true
+    },
+    {
+      "name": "webkit-mobile: layout + clone-only snapshot + clean diagnostics",
+      "passed": true
+    }
+  ],
+  "executed": 7,
+  "passed": 7,
+  "failed": 0,
+  "skipped": 0,
+  "diagnostics": [
+    {
+      "browser": "chromium-desktop",
+      "errors": [],
+      "snapshot": {
+        "mode": "paused",
+        "pauseReason": "dialog",
+        "col": 4,
+        "row": 0,
+        "x": 180,
+        "y": 20,
+        "facing": "up",
+        "hop": null,
+        "queued": null,
+        "highest": 0,
+        "idleAge": 0.6166666666666669,
+        "elapsed": 0.6166666666666669,
+        "accumulator": 0,
+        "lanes": [
+          {
+            "row": 0,
+            "type": "grass"
+          },
+          {
+            "row": 1,
+            "type": "grass"
+          },
+          {
+            "row": 2,
+            "type": "grass"
+          },
+          {
+            "row": 3,
+            "type": "grass"
+          },
+          {
+            "row": 4,
+            "type": "road",
+            "width": 56,
+            "gap": 212,
+            "period": 268,
+            "height": 26,
+            "direction": -1,
+            "baseSpeed": 111,
+            "phase": 46.688482422137724
+          },
+          {
+            "row": 5,
+            "type": "road",
+            "width": 56,
+            "gap": 168,
+            "period": 224,
+            "height": 26,
+            "direction": -1,
+            "baseSpeed": 124,
+            "phase": 51.21032832790206
+          },
+          {
+            "row": 6,
+            "type": "grass"
+          },
+          {
+            "row": 7,
+            "type": "road",
+            "width": 68,
+            "gap": 161,
+            "period": 229,
+            "height": 26,
+            "direction": 1,
+            "baseSpeed": 93,
+            "phase": 103.32350654525396
+          },
+          {
+            "row": 8,
+            "type": "road",
+            "width": 56,
+            "gap": 194,
+            "period": 250,
+            "height": 26,
+            "direction": -1,
+            "baseSpeed": 81,
+            "phase": 143.96290213689298
+          },
+          {
+            "row": 9,
+            "type": "road",
+            "width": 68,
+            "gap": 215,
+            "period": 283,
+            "height": 26,
+            "direction": -1,
+            "baseSpeed": 122,
+            "phase": 57.42993812971906
+          },
+          {
+            "row": 10,
+            "type": "grass"
+          },
+          {
+            "row": 11,
+            "type": "grass"
+          },
+          {
+            "row": 12,
+            "type": "road",
+            "width": 56,
+            "gap": 203,
+            "period": 259,
+            "height": 26,
+            "direction": 1,
+            "baseSpeed": 112,
+            "phase": 131.7575680826344
+          },
+          {
+            "row": 13,
+            "type": "road",
+            "width": 56,
+            "gap": 196,
+            "period": 252,
+            "height": 26,
+            "direction": -1,
+            "baseSpeed": 117,
+            "phase": 8.213694615459872
+          }
+        ],
+        "nextLane": 14,
+        "reason": null,
+        "hops": 0,
+        "record": {
+          "version": 1,
+          "plays": 0,
+          "bestRows": 0,
+          "totalRows": 0,
+          "muted": true,
+          "equipped": {
+            "hat": "straw",
+            "top": "straw",
+            "backpack": "straw"
+          }
+        },
+        "storageWarning": "",
+        "dialog": null,
+        "preview": null,
+        "input": {
+          "gesture": false,
+          "pointerCount": 0
+        }
+      }
+    },
+    {
+      "browser": "webkit-mobile",
+      "errors": [],
+      "snapshot": {
+        "mode": "paused",
+        "pauseReason": "dialog",
+        "col": 4,
+        "row": 0,
+        "x": 180,
+        "y": 20,
+        "facing": "up",
+        "hop": null,
+        "queued": null,
+        "highest": 0,
+        "idleAge": 0.7999999999999996,
+        "elapsed": 0.7999999999999996,
+        "accumulator": 0,
+        "lanes": [
+          {
+            "row": 0,
+            "type": "grass"
+          },
+          {
+            "row": 1,
+            "type": "grass"
+          },
+          {
+            "row": 2,
+            "type": "road",
+            "width": 56,
+            "gap": 210,
+            "period": 266,
+            "height": 26,
+            "direction": -1,
+            "baseSpeed": 126,
+            "phase": 182.61569944674983
+          },
+          {
+            "row": 3,
+            "type": "grass"
+          },
+          {
+            "row": 4,
+            "type": "road",
+            "width": 68,
+            "gap": 150,
+            "period": 218,
+            "height": 26,
+            "direction": 1,
+            "baseSpeed": 140,
+            "phase": 114.03148842081191
+          },
+          {
+            "row": 5,
+            "type": "road",
+            "width": 68,
+            "gap": 146,
+            "period": 214,
+            "height": 26,
+            "direction": 1,
+            "baseSpeed": 138,
+            "phase": 171.27234399913152
+          },
+          {
+            "row": 6,
+            "type": "grass"
+          },
+          {
+            "row": 7,
+            "type": "road",
+            "width": 56,
+            "gap": 207,
+            "period": 263,
+            "height": 26,
+            "direction": -1,
+            "baseSpeed": 96,
+            "phase": 135.58932056891814
+          },
+          {
+            "row": 8,
+            "type": "road",
+            "width": 56,
+            "gap": 201,
+            "period": 257,
+            "height": 26,
+            "direction": 1,
+            "baseSpeed": 113,
+            "phase": 208.9091971994264
+          },
+          {
+            "row": 9,
+            "type": "road",
+            "width": 56,
+            "gap": 172,
+            "period": 228,
+            "height": 26,
+            "direction": 1,
+            "baseSpeed": 126,
+            "phase": 183.07599933940816
+          },
+          {
+            "row": 10,
+            "type": "grass"
+          },
+          {
+            "row": 11,
+            "type": "grass"
+          },
+          {
+            "row": 12,
+            "type": "road",
+            "width": 68,
+            "gap": 165,
+            "period": 233,
+            "height": 26,
+            "direction": 1,
+            "baseSpeed": 124,
+            "phase": 103.1002071461221
+          },
+          {
+            "row": 13,
+            "type": "road",
+            "width": 56,
+            "gap": 171,
+            "period": 227,
+            "height": 26,
+            "direction": -1,
+            "baseSpeed": 94,
+            "phase": 6.128770169494885
+          }
+        ],
+        "nextLane": 14,
+        "reason": null,
+        "hops": 0,
+        "record": {
+          "version": 1,
+          "plays": 0,
+          "bestRows": 0,
+          "totalRows": 0,
+          "muted": true,
+          "equipped": {
+            "hat": "straw",
+            "top": "straw",
+            "backpack": "straw"
+          }
+        },
+        "storageWarning": "",
+        "dialog": null,
+        "preview": null,
+        "input": {
+          "gesture": false,
+          "pointerCount": 0
+        }
+      }
+    }
+  ]
+}
