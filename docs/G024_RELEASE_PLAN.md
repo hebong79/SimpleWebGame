@@ -1,0 +1,30 @@
+# G024 release plan / PM tracking
+
+## Scope and authorization
+- Source base: 1e40850c41b46bd6190f10d1407d731fac4ddbf4; original main has pre-existing dirty documents, preserved in root artifacts/g024-pm/baseline.json.
+- Implement original09 병아리의 소풍 and original10 햄스터 택배 창고 with two new temporary builders. Separate feature worktrees; one independent QA per game after freeze.
+- Explicit user choice: merge to local main and switch/restart existing game app at 192.168.0.195:3116. No push, PM2 global save/dump/startup edits, other apps, firewall, installs or payment.
+- Current corrected worklog naming uses KST yyyyMMdd-HHmmss_<actual-task-name>.md, not the obsolete literal 아름 rule in base documents.
+- New PM contract: docs/G024_PM_CONTRACT.md. Catalog expected 39 total / 10 playable / 29 upcoming, preserving existing37 records and memory-pieces/leisure-line upcoming statuses.
+
+## Tasks/dependencies
+| ID | Owner | Dependency | Initial state / gate |
+|---|---|---|---|
+| G024-09 | Builder09 / sa-0-1ad54ae8 | PM contract | dispatched feature/g024-09-crossy |
+| G024-10 | Builder10 / sa-1-d4265b77 | PM contract | dispatched feature/g024-10-sokoban |
+| G024-INTAKE | PM | each builder handoff | actual commit/files/hashes/self-tests; not independent acceptance |
+| G024-SHARED | Builder09 sequential follow-up | game09 handoff; both game merges for final build | sole shared implementation owner; later explicit assignment |
+| G024-SMOKE | integration owner + PM | fresh candidate build | actualHTTP/CSP/trusted80ms input before deep review |
+| G024-QA09 | independent tester09 | frozen game09 | pure rules/save + actual HTTP PC/mobile Chromium/WebKit |
+| G024-QA10 | independent tester10 | frozen game10 | all20 maps + rules/save + actual HTTP PC/mobile Chromium/WebKit |
+| G024-REGRESSION | integration owner-authored runner / independent readback by PM | shared freeze | current source unit + existing eight games/home/security; no old artifact overwrite |
+| G024-MERGE | PM | QA09/10 + shared/regression PASS | exact scoped commits; no-ff integration->main, tree/ancestry check |
+| G024-LIVE | PM | merge accepted; configuration by integration owner | build byte equality; only number-garden-2048 switch; actual script/PID/LISTEN + HTTP + LAN card/start/input/pause/resume/home |
+| G024-CLOSE | PM | actual live acceptance | HANDOFF/project status/worklog; English board body + real attachments/readback; no recursive doc commits |
+
+## Preservation and limits
+- Source original documents and existing game implementations remain untouched by builders.
+- PM never codes shipping runtime/tests/deployment configuration. Defects return to scoped writer, followed by fresh independent delta verdict.
+- Each worker owns a fresh artifact path and port; no overwriting historical evidence. At most two fix/reverify cycles; preserve original FAILs.
+- Physical devices, audible sound listening and human duration goals are not replaced by automated emulation, audio API traces or virtual time.
+- Existing g016 saved-PM2-dump restart risk is recorded history, not implicitly authorized for repair. This task does not call pm2 save or edit Windows startup.
