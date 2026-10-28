@@ -8,8 +8,8 @@ test('G016-INT01 home launch, favorites, confirmed quit and four storage keys st
   const errors: string[] = [];
   page.on('pageerror', error => errors.push(error.message));
   await page.goto('/');
-  await expect(page.locator('#catalog-total')).toHaveText('37');
-  await expect(page.locator('#intro-preview')).toHaveText('플레이 가능 8 · 준비 중 29');
+  await expect(page.locator('#catalog-total')).toHaveText('39');
+  await expect(page.locator('#intro-preview')).toHaveText('플레이 가능 10 · 준비 중 29');
   const others = ['number-garden:profile:v1', 'little-dragon.snake.v1', 'neon-rally.pong.v1'];
   // Foreign-game sentinel fixtures: Breakout must never read, migrate or overwrite them.
   await page.evaluate(keys => keys.forEach((item, i) => localStorage.setItem(item, `foreign-sentinel-${i}`)), others);

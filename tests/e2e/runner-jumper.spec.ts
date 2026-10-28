@@ -514,7 +514,7 @@ test('G022-08-QA002 @smoke trusted help trigger focus immediately and 250ms afte
 });
 
 test('G022-08-14 home card launch, new favorite and quit return persist without changing the existing favorites', async ({ page }) => {
-  await page.goto('/'); await expect(page.locator('#intro-preview')).toHaveText('플레이 가능 8 · 준비 중 29');
+  await page.goto('/'); await expect(page.locator('#intro-preview')).toHaveText('플레이 가능 10 · 준비 중 29');
   await press(page, '.favorite-button[data-id="number-garden"]');
   await press(page, '.favorite-button[data-id="cloud-bunny"]');
   await expect(page.locator('.game-card[data-id="cloud-bunny"] a.card-action')).toHaveAttribute('href', GAME);
@@ -695,7 +695,7 @@ test('G022-07-04 protection blur longframe pointercancel and explicit resume; re
   expect((await dinoRead(page)).storage.record).toMatchObject({ plays: 1, quits: 1, losses: 0 });
   await page.waitForTimeout(180); expect((await probe(page)).calls.filter(c => c.operation === 'setItem')).toHaveLength(1);
   await dinoStart(page); await dinoKeys(page); await press(page, '#home'); await press(page, '#confirm-ok');
-  await expect(page).toHaveURL(/\/$/); await expect(page.locator('#intro-preview')).toHaveText('플레이 가능 8 · 준비 중 29');
+  await expect(page).toHaveURL(/\/$/); await expect(page.locator('#intro-preview')).toHaveText('플레이 가능 10 · 준비 중 29');
   expect(JSON.parse((await probe(page)).raw!)).toMatchObject({ plays: 2, quits: 2 });
 });
 
@@ -817,10 +817,10 @@ test('G022-07-11 atomic cap preserves whole record repeated rounds zero aggregat
   for(let i=0;i<2;i++){await dinoStart(page);await press(page,'#restart');expect((await dinoRead(page)).engine.metric).toBeGreaterThan(0);await press(page,'#confirm-ok');expect((await dinoRead(page)).storage.record).toEqual(r);expect((await dinoRead(page)).storage.saturated).toBe(true);await expect(page.locator('#storage-notice')).toContainText('누적기록 상한');}
   expect((await probe(page)).calls.filter(c=>c.operation==='setItem')).toHaveLength(0);await press(page,'#mute');expect((await dinoRead(page)).storage.record).toEqual({...r,muted:false});expect((await dinoKeys(page)).calls.filter(c=>c.operation==='setItem')).toHaveLength(1);
 });
-test('G022-07-12 compiled real home 37 cards pagination 12 24 36 37 8 playable 29 pending and dino launch return',async({page})=>{
-  const r=await page.goto('/');expect(r?.status()).toBe(200);await expect(page.locator('#intro-preview')).toHaveText('플레이 가능 8 · 준비 중 29');
-  for(const count of [12,24,36,37]){if(count!==12)await press(page,'#load-more');await expect(page.locator('.game-card')).toHaveCount(count);}
-  await expect(page.locator('button.card-action:disabled')).toHaveCount(29);await expect(page.locator('a.card-action')).toHaveCount(8);
+test('G022-07-12 compiled real home 39 cards pagination 12 24 36 39 10 playable 29 pending and dino launch return',async({page})=>{
+  const r=await page.goto('/');expect(r?.status()).toBe(200);await expect(page.locator('#intro-preview')).toHaveText('플레이 가능 10 · 준비 중 29');
+  for(const count of [12,24,36,39]){if(count!==12)await press(page,'#load-more');await expect(page.locator('.game-card')).toHaveCount(count);}
+  await expect(page.locator('button.card-action:disabled')).toHaveCount(29);await expect(page.locator('a.card-action')).toHaveCount(10);
   await press(page,'.game-card[data-id="desert-post"] a.card-action');await expect(page).toHaveURL(new RegExp(`${DINO.replaceAll('.','\\.')}$`));
   await dinoStart(page);await press(page,'#home');await press(page,'#confirm-ok');await expect(page).toHaveURL(/\/$/);
   expect(await page.evaluate(()=>JSON.parse(localStorage.getItem('simplegames.dino.v1')!))).toMatchObject({plays:1,quits:1,losses:0});
