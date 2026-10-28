@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "private": true,
   "type": "module",
-  "description": "SimpleGames library with 2048, Snake, Pong, Breakout, Falling Blocks, Flappy, Dino and Doodle for PC and mobile",
+  "description": "SimpleGames library with 2048, Snake, Pong, Breakout, Falling Blocks, Flappy, Dino, Doodle, Crossy and Sokoban for PC and mobile",
   "engines": {
     "node": ">=24.0.0"
   },

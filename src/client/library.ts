@@ -30,6 +30,8 @@ const GAME_CATALOG: CatalogGame[] = [
   { id: 'balloon-sparrow', title: '풍선 참새', genre: '순발력', description: '가볍게 날갯짓하며 정원 아치 사이로', tags: ['참새', 'flappy', '날갯짓', '풍선', '코스튬'], minutes: 1, maxMinutes: 2, status: 'available', href: '/games/06-flappy/index.html' },
   { id: 'desert-post', title: '사막 우체부', genre: '순발력', description: '소포를 안고 선인장을 넘는 도마뱀 우체부', tags: ['공룡', 'dino', '러너', '도마뱀', '코스튬'], minutes: 1, maxMinutes: 2, status: 'available', href: '/games/07-dino/index.html' },
   { id: 'cloud-bunny', title: '구름 토끼', genre: '순발력', description: '다음 구름에 발을 맞춰 조금 더 높이', tags: ['점프', 'doodle', '토끼', '발판', '코스튬'], minutes: 1, maxMinutes: 3, status: 'available', href: '/games/08-doodle/index.html' },
+  { id: 'chick-picnic', title: '병아리의 소풍', genre: '순발력', description: '차량의 틈을 보고 한 칸씩 떠나는 소풍', tags: ['길건너기', 'crossy', '병아리', '소풍', '코스튬'], minutes: 1, maxMinutes: 2, status: 'available', href: '/games/09-crossy/index.html' },
+  { id: 'hamster-depot', title: '햄스터 택배 창고', genre: '퍼즐', description: '택배를 목표에 밀어 넣는 스무 개의 창고', tags: ['상자밀기', 'sokoban', '햄스터', '택배', '20단계', '코스튬'], minutes: 1, maxMinutes: 5, status: 'available', href: '/games/10-sokoban/index.html' },
   { id: 'memory-pieces', title: '기억의 조각', genre: '기억', description: '뒤집고 기억하며 찾아내는 한 쌍', tags: ['카드', '맞추기'], minutes: 2, maxMinutes: 5, status: 'upcoming' },
   { id: 'leisure-line', title: '한 줄의 여유', genre: '퍼즐', description: '빈칸을 채우고 한 줄을 비우는 시간', tags: ['블록', '채우기'], minutes: 3, maxMinutes: 8, status: 'upcoming' },
   { id: 'color-walk', title: '색의 산책', genre: '퍼즐', description: '같은 색을 이어 완성하는 작은 풍경', tags: ['색깔', '연결'], minutes: 2, maxMinutes: 5, status: 'upcoming' },
@@ -170,6 +172,43 @@ function artwork(game: CatalogGame, index: number): HTMLDivElement {
     }
     art.append(svg);
     if (!desert) for (let step = 0; step < 3; step++) art.append(create('i', `mini-cloud-step cloud-step-${step}`));
+  } else if (game.id === 'chick-picnic' || game.id === 'hamster-depot') {
+    // Original G024 vector miniatures, built from fixed SVG primitives only.
+    // Reuse the existing miniature geometry class; no inline styles/assets/fetches.
+    const chick = game.id === 'chick-picnic';
+    art.classList.add(chick ? 'art-cloud-bunny' : 'art-desert');
+    const svg = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
+    svg.setAttribute('viewBox', '0 0 96 96');
+    svg.classList.add('mini-g022');
+    const shape = (tag: 'rect' | 'ellipse' | 'circle' | 'path', attributes: Record<string, string>) => {
+      const node = document.createElementNS('http://www.w3.org/2000/svg', tag);
+      for (const [key, value] of Object.entries(attributes)) node.setAttribute(key, value);
+      svg.append(node);
+    };
+    if (chick) {
+      shape('rect', { x: '0', y: '67', width: '96', height: '25', rx: '8', fill: '#617371' });
+      shape('path', { d: 'M8 80h12m14 0h12m14 0h12m12 0h8', stroke: '#f6f0ce', 'stroke-width': '3' });
+      shape('ellipse', { cx: '48', cy: '61', rx: '27', ry: '5', fill: '#709a68' });
+      shape('ellipse', { cx: '47', cy: '41', rx: '23', ry: '24', fill: '#f6d361' });
+      shape('path', { d: 'M44 18q-6-12 4-10q7 2 4 11', fill: '#f6d361' });
+      shape('ellipse', { cx: '32', cy: '45', rx: '8', ry: '12', fill: '#e8b64c' });
+      shape('circle', { cx: '55', cy: '33', r: '3', fill: '#433e32' });
+      shape('path', { d: 'M65 37l13 5-13 5zM38 63v6m16-6v6', fill: '#e28b43', stroke: '#e28b43', 'stroke-width': '4', 'stroke-linecap': 'round' });
+      shape('path', { d: 'M23 26q24-17 48 0M29 20q18-20 35 0', fill: '#d7aa67', stroke: '#a68152', 'stroke-width': '2' });
+    } else {
+      shape('rect', { x: '4', y: '70', width: '88', height: '20', rx: '5', fill: '#d2b78c' });
+      shape('circle', { cx: '30', cy: '22', r: '12', fill: '#c6956c' });
+      shape('circle', { cx: '66', cy: '22', r: '12', fill: '#c6956c' });
+      shape('circle', { cx: '30', cy: '23', r: '6', fill: '#edc0a1' });
+      shape('circle', { cx: '66', cy: '23', r: '6', fill: '#edc0a1' });
+      shape('ellipse', { cx: '48', cy: '46', rx: '29', ry: '27', fill: '#cfa577' });
+      shape('ellipse', { cx: '48', cy: '54', rx: '21', ry: '17', fill: '#fff0d6' });
+      for (const cx of ['37', '59']) shape('circle', { cx, cy: '39', r: '3', fill: '#453b30' });
+      shape('path', { d: 'M45 48h6l-3 4z', fill: '#aa7367' });
+      shape('rect', { x: '31', y: '61', width: '34', height: '26', rx: '3', fill: '#b77c48', stroke: '#805a37', 'stroke-width': '2' });
+      shape('path', { d: 'M44 62v9h8v-9M43 77h10', fill: '#efdab3', stroke: '#efdab3', 'stroke-width': '3' });
+    }
+    art.append(svg);
   } else if (game.id === 'number-garden') {
     art.classList.add('art-garden');
     const mini = create('div', 'mini-numbers');

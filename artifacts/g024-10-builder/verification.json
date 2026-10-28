@@ -1,0 +1,183 @@
+{
+  "task_id": "G024-10",
+  "node": "C:\\Program Files\\nodejs\\node.exe",
+  "version": "v24.16.0",
+  "created_at": "2026-10-28T15:13:41.474Z",
+  "source_sha256": "8566e1af3c01c21a297081fbccfd6e5ba52ddfc46711891395cb1eef681d64d0",
+  "syntax": {
+    "executed": 11,
+    "passed": 11,
+    "failed": 0,
+    "checks": [
+      {
+        "command": [
+          "C:\\Program Files\\nodejs\\node.exe",
+          "--check",
+          "public/games/10-sokoban/art.mjs"
+        ],
+        "exit": 0,
+        "stdout": "",
+        "stderr": ""
+      },
+      {
+        "command": [
+          "C:\\Program Files\\nodejs\\node.exe",
+          "--check",
+          "public/games/10-sokoban/engine.mjs"
+        ],
+        "exit": 0,
+        "stdout": "",
+        "stderr": ""
+      },
+      {
+        "command": [
+          "C:\\Program Files\\nodejs\\node.exe",
+          "--check",
+          "public/games/10-sokoban/levels.mjs"
+        ],
+        "exit": 0,
+        "stdout": "",
+        "stderr": ""
+      },
+      {
+        "command": [
+          "C:\\Program Files\\nodejs\\node.exe",
+          "--check",
+          "public/games/10-sokoban/main.mjs"
+        ],
+        "exit": 0,
+        "stdout": "",
+        "stderr": ""
+      },
+      {
+        "command": [
+          "C:\\Program Files\\nodejs\\node.exe",
+          "--check",
+          "public/games/10-sokoban/save.mjs"
+        ],
+        "exit": 0,
+        "stdout": "",
+        "stderr": ""
+      },
+      {
+        "command": [
+          "C:\\Program Files\\nodejs\\node.exe",
+          "--check",
+          "tests/games/10-sokoban.test.mjs"
+        ],
+        "exit": 0,
+        "stdout": "",
+        "stderr": ""
+      },
+      {
+        "command": [
+          "C:\\Program Files\\nodejs\\node.exe",
+          "--check",
+          "artifacts/g024-10-builder/http-initial.mjs"
+        ],
+        "exit": 0,
+        "stdout": "",
+        "stderr": ""
+      },
+      {
+        "command": [
+          "C:\\Program Files\\nodejs\\node.exe",
+          "--check",
+          "artifacts/g024-10-builder/http-full.mjs"
+        ],
+        "exit": 0,
+        "stdout": "",
+        "stderr": ""
+      },
+      {
+        "command": [
+          "C:\\Program Files\\nodejs\\node.exe",
+          "--check",
+          "artifacts/g024-10-builder/solve-levels.mjs"
+        ],
+        "exit": 0,
+        "stdout": "",
+        "stderr": ""
+      },
+      {
+        "command": [
+          "C:\\Program Files\\nodejs\\node.exe",
+          "--check",
+          "artifacts/g024-10-builder/design-levels.mjs"
+        ],
+        "exit": 0,
+        "stdout": "",
+        "stderr": ""
+      },
+      {
+        "command": [
+          "C:\\Program Files\\nodejs\\node.exe",
+          "--check",
+          "artifacts/g024-10-builder/finalize-levels.mjs"
+        ],
+        "exit": 0,
+        "stdout": "",
+        "stderr": ""
+      }
+    ]
+  },
+  "unit": {
+    "command": [
+      "C:\\Program Files\\nodejs\\node.exe",
+      "--test",
+      "--test-reporter=tap",
+      "tests/games/10-sokoban.test.mjs"
+    ],
+    "exit": 0,
+    "executed": 64,
+    "passed": 64,
+    "failed": 0,
+    "skipped": 0,
+    "output": "artifacts/g024-10-builder/unit-final.tap"
+  },
+  "initial_http": {
+    "command": [
+      "C:\\Program Files\\nodejs\\node.exe",
+      "artifacts/g024-10-builder/http-initial.mjs"
+    ],
+    "executed": 3,
+    "passed": 3,
+    "failed": 0,
+    "skipped": 0,
+    "env": {
+      "GAME_TEST_ARTIFACT_DIR": "artifacts/g024-10-builder",
+      "GAME_TEST_BUILD_DIR": "artifacts/g024-10-builder/build"
+    },
+    "output": "artifacts/g024-10-builder/http-initial-observer-corrected/results.json"
+  },
+  "full_http": {
+    "command": [
+      "C:\\Program Files\\nodejs\\node.exe",
+      "artifacts/g024-10-builder/http-full.mjs"
+    ],
+    "executed": 99,
+    "passed": 99,
+    "failed": 0,
+    "skipped": 0,
+    "console_and_page_errors": 0,
+    "external_requests": 0,
+    "env": {
+      "GAME_TEST_ARTIFACT_DIR": "artifacts/g024-10-builder",
+      "GAME_TEST_BUILD_DIR": "artifacts/g024-10-builder/build"
+    },
+    "output": "artifacts/g024-10-builder/http-full/results.json"
+  },
+  "preserved_failures": [
+    "artifacts/g024-10-builder/http-initial/results.json",
+    "artifacts/g024-10-builder/http-initial.log"
+  ],
+  "implementation_fix_cycles": 0,
+  "observer_corrections": 1,
+  "independent_acceptance": false,
+  "limits": [
+    "No physical device",
+    "No actual audio listening",
+    "No human-duration acceptance",
+    "blur and multi-pointer branches use explicitly synthetic events"
+  ]
+}

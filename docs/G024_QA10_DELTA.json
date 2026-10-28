@@ -1,0 +1,318 @@
+{
+  "task_id": "G024-QA10-DELTA",
+  "taskid": "G024-QA10-DELTA",
+  "role": "fresh independent QA10 delta reviewer; not fixer; no redelegation",
+  "passed": true,
+  "status": "PASS",
+  "generated_at": "2026-10-29T01:12:09.415616+09:00",
+  "summary": "QA10-L01은 원본 repro 4/4 재실행으로 해소되었습니다. 엔진 가드 1행과 전용 회귀 42개만의 delta를 독립 검토했고 106/106 단위 및 자체 115/115 집중시험을 실제 통과했습니다. 원본 FAIL은 보존하며 해시 일치한 6개 런타임 소스와 기존 독립 20단계/60회 HTTP 증거를 제한적으로 재사용합니다.",
+  "physical_root": "E:\\Work2\\Project\\SimpleGames\\worktrees\\g024-10-sokoban",
+  "branch": "feature/g024-10-sokoban",
+  "sourcecommit": "73907bec09c6a25acecd31f8e959e5ceaf3db349",
+  "parentcommit": "0476a0032ad8cc51908829318bd9749549847c01",
+  "exactdiff_scope": [
+    "docs/G024_10_FIX1.md",
+    "public/games/10-sokoban/engine.mjs",
+    "tests/games/10-sokoban.test.mjs"
+  ],
+  "scope_diff_log": "artifacts/g024-qa10-delta/candidate.diff",
+  "production_delta": {
+    "file": "public/games/10-sokoban/engine.mjs",
+    "line": 45,
+    "added_lines": 1,
+    "removed_lines": 0,
+    "exact_guard": "if (typeof direction !== 'string' || !Object.hasOwn(DIRECTIONS, direction)) return state;",
+    "parent_byte_equality_after_guard_removal": true
+  },
+  "test_delta": {
+    "file": "tests/games/10-sokoban.test.mjs",
+    "added_lines": 20,
+    "added_generated_tests": 42,
+    "original_64_test_source_preserved_byte_for_byte": true
+  },
+  "inputs_sha256": {
+    "docs/G024_10_IMPLEMENTATION.md": "80fa3ea86539d31bac0a34956fc7e2f00d9d6dea5bf69fec034f57b5d0b84e06",
+    "public/games/10-sokoban/art.mjs": "66944b5b4690f85fc86e61cf36971e2489f222800ba0a04235c264ad1442101f",
+    "public/games/10-sokoban/engine.mjs": "932d5ff8f2bb314f4e697a22ed4aaaed2d4eab5c3c7c2cac8feb5ece4a536f3a",
+    "public/games/10-sokoban/index.html": "5803334161e146cc3b67c4a859c7a9d8d13657a0158c18a8924c648613cd6f3c",
+    "public/games/10-sokoban/levels.mjs": "dd8a782d63047aefaea40d767ac8305cb59c8dba92bbf0711224f9855f24f8d1",
+    "public/games/10-sokoban/main.mjs": "65b6182a98ed34dfc8222271d164235128c517677818f7efd7830825e29d7a0f",
+    "public/games/10-sokoban/save.mjs": "fdfc7f3a1a8f8d0a045bb8eca5e47d21e84c15761cdd0f643c8a7557e25066f7",
+    "public/games/10-sokoban/styles.css": "cc7c316e652fb4fad9f6d1b130fdc6cd9713b486181d198455481eee7bc6bb5d",
+    "tests/games/10-sokoban.test.mjs": "b636efe8991119ca1a238057dcfecd584c4cd58513ad408d822bd87e5653692e",
+    "docs/G024_10_FIX1.md": "e1267e52f19b1f08ac94de10ae46ab07c9578f054cf5cdb1fc1ddad59236edca"
+  },
+  "physical_input_mapping": {
+    "docs/G024_10_IMPLEMENTATION.md": "E:\\Work2\\Project\\SimpleGames\\worktrees\\g024-10-sokoban\\docs\\G024_10_IMPLEMENTATION.md",
+    "public/games/10-sokoban/art.mjs": "E:\\Work2\\Project\\SimpleGames\\worktrees\\g024-10-sokoban\\public\\games\\10-sokoban\\art.mjs",
+    "public/games/10-sokoban/engine.mjs": "E:\\Work2\\Project\\SimpleGames\\worktrees\\g024-10-sokoban\\public\\games\\10-sokoban\\engine.mjs",
+    "public/games/10-sokoban/index.html": "E:\\Work2\\Project\\SimpleGames\\worktrees\\g024-10-sokoban\\public\\games\\10-sokoban\\index.html",
+    "public/games/10-sokoban/levels.mjs": "E:\\Work2\\Project\\SimpleGames\\worktrees\\g024-10-sokoban\\public\\games\\10-sokoban\\levels.mjs",
+    "public/games/10-sokoban/main.mjs": "E:\\Work2\\Project\\SimpleGames\\worktrees\\g024-10-sokoban\\public\\games\\10-sokoban\\main.mjs",
+    "public/games/10-sokoban/save.mjs": "E:\\Work2\\Project\\SimpleGames\\worktrees\\g024-10-sokoban\\public\\games\\10-sokoban\\save.mjs",
+    "public/games/10-sokoban/styles.css": "E:\\Work2\\Project\\SimpleGames\\worktrees\\g024-10-sokoban\\public\\games\\10-sokoban\\styles.css",
+    "tests/games/10-sokoban.test.mjs": "E:\\Work2\\Project\\SimpleGames\\worktrees\\g024-10-sokoban\\tests\\games\\10-sokoban.test.mjs",
+    "docs/G024_10_FIX1.md": "E:\\Work2\\Project\\SimpleGames\\worktrees\\g024-10-sokoban\\docs\\G024_10_FIX1.md"
+  },
+  "security_concerns": [],
+  "logic_errors": [],
+  "suggestions": [],
+  "blockers": [],
+  "resolved_findings": [
+    {
+      "id": "QA10-L01",
+      "status": "RESOLVED",
+      "original_report": "docs/G024_QA10.json",
+      "original_report_sha256": "138e875b200964f0bf7d4fa480c76da8fee1fbaccf2305c0836beec53901b57f",
+      "original_report_remains_failed": true,
+      "original_repro_source": "artifacts/g024-qa10/invalid-direction-repro.mjs",
+      "original_repro_source_sha256": "a35f285791cd3ff52813e7f82e2ebdff186b7a40cd78fb9029d3e2048be76bd2",
+      "original_observation": {
+        "cwd": "E:\\Work2\\Project\\SimpleGames\\worktrees\\g024-10-sokoban",
+        "command": "\"C:/Program Files/nodejs/node.exe\" --test --test-reporter=tap artifacts/g024-qa10/invalid-direction-repro.mjs",
+        "observed_exit_code": 1,
+        "collected": 4,
+        "executed": 4,
+        "passed": 1,
+        "failed": 3,
+        "skipped": 0
+      },
+      "fresh_repro": {
+        "name": "original-repro",
+        "command": [
+          "C:/Program Files/nodejs/node.exe",
+          "--test",
+          "--test-reporter=tap",
+          "artifacts/g024-qa10/invalid-direction-repro.mjs"
+        ],
+        "cwd": "E:\\Work2\\Project\\SimpleGames\\worktrees\\g024-10-sokoban",
+        "node_version": "v24.16.0",
+        "exit_code": 0,
+        "counts": {
+          "tests": 4,
+          "suites": 0,
+          "pass": 4,
+          "fail": 0,
+          "cancelled": 0,
+          "skipped": 0,
+          "todo": 0
+        },
+        "passed": true,
+        "log": "artifacts/g024-qa10-delta/original-repro.tap",
+        "stderr": "artifacts/g024-qa10-delta/original-repro.stderr.log"
+      },
+      "independent_negative_controls": {
+        "original_inherited_names_still_throw_in_memory": 3,
+        "source_modified": false,
+        "candidate_same_identity_no_op": true
+      }
+    }
+  ],
+  "test_suites": [
+    {
+      "name": "original-repro",
+      "command": [
+        "C:/Program Files/nodejs/node.exe",
+        "--test",
+        "--test-reporter=tap",
+        "artifacts/g024-qa10/invalid-direction-repro.mjs"
+      ],
+      "cwd": "E:\\Work2\\Project\\SimpleGames\\worktrees\\g024-10-sokoban",
+      "node_version": "v24.16.0",
+      "exit_code": 0,
+      "counts": {
+        "tests": 4,
+        "suites": 0,
+        "pass": 4,
+        "fail": 0,
+        "cancelled": 0,
+        "skipped": 0,
+        "todo": 0
+      },
+      "passed": true,
+      "log": "artifacts/g024-qa10-delta/original-repro.tap",
+      "stderr": "artifacts/g024-qa10-delta/original-repro.stderr.log"
+    },
+    {
+      "name": "unit-106",
+      "command": [
+        "C:/Program Files/nodejs/node.exe",
+        "--test",
+        "--test-reporter=tap",
+        "tests/games/10-sokoban.test.mjs"
+      ],
+      "cwd": "E:\\Work2\\Project\\SimpleGames\\worktrees\\g024-10-sokoban",
+      "node_version": "v24.16.0",
+      "exit_code": 0,
+      "counts": {
+        "tests": 106,
+        "suites": 0,
+        "pass": 106,
+        "fail": 0,
+        "cancelled": 0,
+        "skipped": 0,
+        "todo": 0
+      },
+      "passed": true,
+      "log": "artifacts/g024-qa10-delta/unit-106.tap",
+      "stderr": "artifacts/g024-qa10-delta/unit-106.stderr.log"
+    },
+    {
+      "name": "independent-focused",
+      "command": [
+        "C:/Program Files/nodejs/node.exe",
+        "--test",
+        "--test-reporter=tap",
+        "artifacts/g024-qa10-delta/independent-focused.mjs"
+      ],
+      "cwd": "E:\\Work2\\Project\\SimpleGames\\worktrees\\g024-10-sokoban",
+      "node_version": "v24.16.0",
+      "exit_code": 0,
+      "counts": {
+        "tests": 115,
+        "suites": 0,
+        "pass": 115,
+        "fail": 0,
+        "cancelled": 0,
+        "skipped": 0,
+        "todo": 0
+      },
+      "passed": true,
+      "log": "artifacts/g024-qa10-delta/independent-focused.tap",
+      "stderr": "artifacts/g024-qa10-delta/independent-focused.stderr.log"
+    }
+  ],
+  "fresh_execution_totals": {
+    "tests": 225,
+    "pass": 225,
+    "fail": 0,
+    "cancelled": 0,
+    "skipped": 0,
+    "todo": 0
+  },
+  "fresh_independently_authored_tests_totals": {
+    "tests": 119,
+    "pass": 119,
+    "fail": 0,
+    "cancelled": 0,
+    "skipped": 0,
+    "todo": 0
+  },
+  "builder_authored_unit_rerun_not_independent_authorship": true,
+  "syntax_checks": [
+    {
+      "file": "public/games/10-sokoban/engine.mjs",
+      "command": [
+        "C:/Program Files/nodejs/node.exe",
+        "--check",
+        "public/games/10-sokoban/engine.mjs"
+      ],
+      "exit_code": 0,
+      "log": "artifacts/g024-qa10-delta/syntax-engine.log"
+    },
+    {
+      "file": "tests/games/10-sokoban.test.mjs",
+      "command": [
+        "C:/Program Files/nodejs/node.exe",
+        "--check",
+        "tests/games/10-sokoban.test.mjs"
+      ],
+      "exit_code": 0,
+      "log": "artifacts/g024-qa10-delta/syntax-unit.log"
+    },
+    {
+      "file": "artifacts/g024-qa10-delta/independent-focused.mjs",
+      "command": [
+        "C:/Program Files/nodejs/node.exe",
+        "--check",
+        "artifacts/g024-qa10-delta/independent-focused.mjs"
+      ],
+      "exit_code": 0,
+      "log": "artifacts/g024-qa10-delta/syntax-independent.log"
+    }
+  ],
+  "independent_focused_validation": {
+    "results": "artifacts/g024-qa10-delta/independent-detail.json",
+    "invalid_string_cases": 68,
+    "invalid_nonstring_cases": 24,
+    "invalid_state_checks": 368,
+    "valid_direction_checks": 3052,
+    "undo_checks": 3375,
+    "replayed_level_clears": 20,
+    "direction_side_effects": 0,
+    "negative_controls": 3
+  },
+  "static_review": "artifacts/g024-qa10-delta/static-review.json",
+  "evidence_reuse": {
+    "validation": "artifacts/g024-qa10-delta/reuse-validation.json",
+    "unchanged_runtime_file_count": 6,
+    "unchanged_runtime_sha256": {
+      "public/games/10-sokoban/art.mjs": "66944b5b4690f85fc86e61cf36971e2489f222800ba0a04235c264ad1442101f",
+      "public/games/10-sokoban/index.html": "5803334161e146cc3b67c4a859c7a9d8d13657a0158c18a8924c648613cd6f3c",
+      "public/games/10-sokoban/levels.mjs": "dd8a782d63047aefaea40d767ac8305cb59c8dba92bbf0711224f9855f24f8d1",
+      "public/games/10-sokoban/main.mjs": "65b6182a98ed34dfc8222271d164235128c517677818f7efd7830825e29d7a0f",
+      "public/games/10-sokoban/save.mjs": "fdfc7f3a1a8f8d0a045bb8eca5e47d21e84c15761cdd0f643c8a7557e25066f7",
+      "public/games/10-sokoban/styles.css": "cc7c316e652fb4fad9f6d1b130fdc6cd9713b486181d198455481eee7bc6bb5d"
+    },
+    "prior_manifest_entries_verified": 43,
+    "prior_solver_cases": 20,
+    "prior_http_stage_clears": 60,
+    "prior_http_per_project": {
+      "chromium-desktop": 20,
+      "chromium-mobile320": 20,
+      "webkit-mobile-landscape": 20
+    },
+    "prior_http_full_suite_counts": {
+      "collected": 139,
+      "executed": 139,
+      "passed": 139,
+      "failed": 0,
+      "skipped": 0
+    },
+    "fresh_browser_runs": 0,
+    "normal_valid_input_equivalence_independently_established": true,
+    "evidence_is_reused_not_rerun": true,
+    "fixer_selftests_used_as_independent_acceptance": false,
+    "original_independent_acceptance_totals_unchanged": {
+      "collected": 297,
+      "executed": 297,
+      "passed": 294,
+      "failed": 3,
+      "skipped": 0
+    }
+  },
+  "source_freeze": {
+    "all_protected_bytes_sizes_mtimes_unchanged": true,
+    "protected_files_count": 439,
+    "changed": [],
+    "sourcecommit": "73907bec09c6a25acecd31f8e959e5ceaf3db349",
+    "original_report_still_fail": true,
+    "candidate_sha256": {
+      "public/games/10-sokoban/engine.mjs": "932d5ff8f2bb314f4e697a22ed4aaaed2d4eab5c3c7c2cac8feb5ece4a536f3a",
+      "tests/games/10-sokoban.test.mjs": "b636efe8991119ca1a238057dcfecd584c4cd58513ad408d822bd87e5653692e",
+      "docs/G024_10_FIX1.md": "e1267e52f19b1f08ac94de10ae46ab07c9578f054cf5cdb1fc1ddad59236edca"
+    },
+    "inputs_before": "artifacts/g024-qa10-delta/inputs-before.json",
+    "inputs_after": "artifacts/g024-qa10-delta/inputs-after.json"
+  },
+  "limits": [
+    "이 PASS는 frozen sourcecommit의 QA10-L01 최소 변경분 독립 재수용이며 전체 출시·통합·배포 승인으로 확대하지 않습니다.",
+    "이번 변경분에서 새 실제 HTTP/브라우저 실행은 0회입니다. 기존 독립 20단계 × 3프로젝트 60회 완료와 139-case HTTP 결과는 원본 해시 검증 및 정상 U/R/D/L 입력 동치 증명으로만 재사용했습니다. 단위/차등 결과를 브라우저 재실행으로 집계하지 않습니다.",
+    "fixer의 실제 HTTP guard/정상 이동/undo/1단계 9/9는 구현자 자체 검증 기록일 뿐이며 이 독립 판정의 실행 수에 포함하지 않았습니다.",
+    "최종 통합 후보의 실제 HTTP/브라우저 회귀 및 배포 검증은 후속 PM 단계에 남습니다. 이번에는 새 build/전체 60회 캠페인을 재실행하지 않았습니다.",
+    "기존 보고서의 물리 기기·실제 음향 청취·Firefox·WebKit 캡처·사람의 난이도/재미/시간 미검증 한계는 그대로 유지됩니다."
+  ],
+  "issues_encountered": [],
+  "allowed_writes": [
+    "artifacts/g024-qa10-delta/**",
+    "docs/G024_QA10_DELTA.json"
+  ],
+  "production_or_test_source_changed_by_reviewer": false,
+  "old_reports_or_evidence_changed": false,
+  "git_state_written": false,
+  "runtime_pm2_3116_changed": false,
+  "final_integrated_candidate_actual_http_regression": "PENDING; intentionally outside focused delta reacceptance",
+  "report_path": "docs/G024_QA10_DELTA.json",
+  "evidence_root": "artifacts/g024-qa10-delta",
+  "evidence_manifest": "artifacts/g024-qa10-delta/evidence-manifest.json"
+}

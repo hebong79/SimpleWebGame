@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#f6f3e6">
+  <title>병아리의 소풍 · 작은 쉼표</title>
+  <link rel="icon" href="./icon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="./style.css">
+  <script type="module" src="./main.js"></script>
+</head>
+<body>
+  <div class="shell">
+    <header class="topbar">
+      <button id="home" class="quiet" aria-label="게임 목록으로">← 게임 목록</button>
+      <span class="library">작은 쉼표 <span aria-hidden="true">/</span> CHICK PICNIC</span>
+      <button id="mute" class="quiet" aria-pressed="true">소리 꺼짐</button>
+    </header>
+    <main>
+      <section class="intro" aria-labelledby="title">
+        <div><p class="eyebrow">한 칸씩, 가벼운 모험</p><h1 id="title">병아리의 소풍<span aria-hidden="true">.</span></h1></div>
+        <p class="tagline">서두르지 말고, 틈을 보고.<br>작은 발걸음이 새로운 길이 돼요.</p>
+      </section>
+      <div class="layout">
+        <section class="play-card" aria-label="길 건너기 게임">
+          <div class="scorebar"><div><span>이번 소풍</span><strong id="score">0</strong><small>줄</small></div><div class="best"><span>개인 최고</span><strong id="best">0</strong><small>줄</small></div></div>
+          <div id="arena" class="arena" tabindex="0" role="application" aria-label="병아리의 소풍. 방향키로 한 칸 이동. Escape로 정지." aria-describedby="controls-help">
+            <canvas id="world" width="720" height="880" aria-label="9칸의 풀밭과 도로, 차량과 병아리"></canvas>
+            <div id="veil" class="veil"><span class="postmark" aria-hidden="true">PICNIC<br>DAY</span><strong id="veil-title">오늘은 어디까지 갈까요?</strong><p id="veil-copy">시작을 누르고, 한 칸씩 앞으로!</p></div>
+            <p id="idle-warning" class="idle-warning" role="status" hidden>앞으로 한 걸음! 2초 뒤 소풍이 끝나요.</p>
+          </div>
+          <div class="idle-track" aria-hidden="true"><progress id="idle-meter" max="10" value="0"></progress></div>
+          <p id="game-status" class="status" role="status">준비됐어요. 시작 버튼을 눌러 주세요.</p>
+        </section>
+        <aside class="side">
+          <div class="actions"><button id="primary" class="primary">소풍 시작</button><button id="restart" class="secondary">새 소풍</button></div>
+          <div class="dpad" aria-label="방향 조작"><button data-direction="up" aria-label="앞으로 한 칸">↑</button><button data-direction="left" aria-label="왼쪽 한 칸">←</button><button data-direction="down" aria-label="뒤로 한 칸">↓</button><button data-direction="right" aria-label="오른쪽 한 칸">→</button></div>
+          <section class="note"><span class="note-number">01 / HOW TO PICNIC</span><h2>차가 지나가면, 폴짝!</h2><p id="controls-help">방향키 또는 화면 탭으로 앞으로.<br>좌·우·아래 스와이프로 방향 이동.</p><p>도로는 최대 3줄 연속이에요.<br>새로운 줄을 8초간 못 가면 경고,<br>10초가 되면 소풍이 끝나요.</p></section>
+          <div class="tools"><button id="wardrobe" class="secondary">옷장 열기</button><button id="help" class="secondary">도움말</button></div>
+          <section class="records" aria-label="완료한 소풍 기록"><div><strong id="plays">0</strong><span>완료한 소풍</span></div><div><strong id="total">0</strong><span>누적 줄</span></div></section>
+          <p id="storage-warning" class="warning" role="status" hidden></p>
+          <p id="audio-warning" class="warning" role="status" hidden></p>
+          <p class="footnote">모자보다 중요한 건, 안전한 한 걸음.<br>의상은 외형만 바뀌어요.</p>
+        </aside>
+      </div>
+    </main>
+    <footer>작은 쉼표 · 당신의 다음 한 걸음을 응원해요.</footer>
+  </div>
+  <dialog id="help-dialog" aria-labelledby="help-title">
+    <div class="dialog-inner"><p class="eyebrow">PICNIC GUIDE</p><h2 id="help-title">길을 건너는 작은 요령</h2>
+      <ul class="help-list"><li>방향키를 새로 누를 때마다 120ms 동안 한 칸 이동합니다. 길게 눌러도 반복하지 않아요.</li><li>이동 중에는 다음 한 걸음만 예약할 수 있습니다. 화면 탭은 앞으로, 24px 이상 좌·우·아래 스와이프는 해당 방향입니다.</li><li>차량은 움직이는 동안에도 충돌합니다. 모자와 가방은 충돌에 포함되지 않아요.</li><li>처음 가 본 가장 먼 줄만 점수가 됩니다. 뒤로 갔다 와도 다시 오르지 않아요.</li><li>20줄마다 차가 조금 빨라집니다. 8초간 새 줄을 못 가면 경고, 10초에 소풍 종료!</li><li>창을 벗어나거나 긴 화면 지연이 생기면 보호 정지됩니다. 재개 버튼을 직접 눌러 주세요.</li><li>기록은 소풍 종료 때만 정산합니다. 새로고침하면 준비 상태가 되며 진행 중인 판은 저장하지 않습니다.</li></ul>
+      <button id="help-close" class="primary">알겠어요</button>
+    </div>
+  </dialog>
+  <dialog id="wardrobe-dialog" aria-labelledby="wardrobe-title">
+    <div class="dialog-inner"><p class="eyebrow">LITTLE WARDROBE</p><h2 id="wardrobe-title">나만의 소풍 차림</h2><p class="dialog-sub">세트로 입거나, 모자·상의·배낭을 따로 골라 보세요.</p>
+      <canvas id="preview" width="480" height="260" aria-label="선택 의상 미리보기"></canvas>
+      <div class="preview-controls"><button id="preview-direction">방향: 앞</button><button id="preview-pose">동작: 서기</button></div>
+      <div id="set-list" class="set-list" aria-label="전체 세트 미리보기"></div>
+      <fieldset class="parts"><legend>부위별로 바꾸기</legend><button id="part-hat">모자: 기본 병아리</button><button id="part-top">상의: 기본 병아리</button><button id="part-backpack">배낭: 기본 병아리</button></fieldset>
+      <p id="wardrobe-info" class="wardrobe-info" role="status">외형만 바뀌며 게임 규칙은 같습니다.</p>
+      <div class="dialog-actions"><button id="wardrobe-cancel" class="secondary">취소</button><button id="wardrobe-apply" class="primary">이 차림 장착</button></div>
+    </div>
+  </dialog>
+  <dialog id="confirm-dialog" aria-labelledby="confirm-title"><div class="dialog-inner"><p class="eyebrow">잠깐만요</p><h2 id="confirm-title">지금 소풍을 마칠까요?</h2><p id="confirm-copy">현재 소풍의 기록을 정산합니다.</p><div class="dialog-actions"><button id="confirm-cancel" class="secondary">계속 두기</button><button id="confirm-yes" class="primary">마치기</button></div></div></dialog>
+  <dialog id="result-dialog" aria-labelledby="result-title"><div class="dialog-inner result-inner"><p class="eyebrow">A LITTLE JOURNEY</p><h2 id="result-title">오늘의 소풍 끝!</h2><p id="result-reason"></p><div class="result-score"><strong id="result-score">0</strong><span>새로운 줄을 만났어요</span></div><p id="result-record"></p><p id="result-unlock" class="wardrobe-info"></p><button id="retry" class="primary">다음 소풍 준비</button><div class="dialog-actions"><button id="result-wardrobe" class="secondary">옷장</button><button id="result-home" class="secondary">게임 목록</button></div></div></dialog>
+</body>
+</html>

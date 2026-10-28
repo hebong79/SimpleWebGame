@@ -1,0 +1,1017 @@
+{
+  "task_id": "G024-QA10",
+  "role": "independent tester10, distinct from builder10",
+  "passed": false,
+  "status": "FAIL",
+  "generated_at": "2026-10-29T00:45:17.245271+09:00",
+  "summary": "20개 맵의 대칭 중복 없음·독립 최적 해법·기록 하한·정확한 undo·기록·옷장·실제 HTTP 3프로젝트 전 단계는 통과했습니다. 순수 engine export의 상속 속성명 방향 입력 예외 1건(Low, 3개 재현)이 남아 엄격 계약에 따라 FAIL입니다. 생산 소스를 수정하지 않았습니다.",
+  "physical_root": "E:\\Work2\\Project\\SimpleGames\\worktrees\\g024-10-sokoban",
+  "branch": "feature/g024-10-sokoban",
+  "sourcecommit": "0476a0032ad8cc51908829318bd9749549847c01",
+  "source_sha256": "8566e1af3c01c21a297081fbccfd6e5ba52ddfc46711891395cb1eef681d64d0",
+  "runtime_sha256": "8eeed05b31fcbd12c445976d55ab44f99ee84d6f37527f616382c2c266f67ff4",
+  "source_hash_algorithm": "SHA-256; lexicographic relative paths, path UTF-8 + NUL + file bytes",
+  "inputs_sha256": {
+    "docs/G024_10_IMPLEMENTATION.md": "80fa3ea86539d31bac0a34956fc7e2f00d9d6dea5bf69fec034f57b5d0b84e06",
+    "public/games/10-sokoban/art.mjs": "66944b5b4690f85fc86e61cf36971e2489f222800ba0a04235c264ad1442101f",
+    "public/games/10-sokoban/engine.mjs": "5f7573a67f89055e400638f87e03188e9e6dc6b54cd0d2678966c37880fc2ecf",
+    "public/games/10-sokoban/index.html": "5803334161e146cc3b67c4a859c7a9d8d13657a0158c18a8924c648613cd6f3c",
+    "public/games/10-sokoban/levels.mjs": "dd8a782d63047aefaea40d767ac8305cb59c8dba92bbf0711224f9855f24f8d1",
+    "public/games/10-sokoban/main.mjs": "65b6182a98ed34dfc8222271d164235128c517677818f7efd7830825e29d7a0f",
+    "public/games/10-sokoban/save.mjs": "fdfc7f3a1a8f8d0a045bb8eca5e47d21e84c15761cdd0f643c8a7557e25066f7",
+    "public/games/10-sokoban/styles.css": "cc7c316e652fb4fad9f6d1b130fdc6cd9713b486181d198455481eee7bc6bb5d",
+    "tests/games/10-sokoban.test.mjs": "432cc87a401fa61394d89f4d34de2a54319ecad107dec4e5b11832cd99f64c4b"
+  },
+  "physical_input_mapping": {
+    "docs/G024_10_IMPLEMENTATION.md": "E:\\Work2\\Project\\SimpleGames\\worktrees\\g024-10-sokoban\\docs\\G024_10_IMPLEMENTATION.md",
+    "public/games/10-sokoban/art.mjs": "E:\\Work2\\Project\\SimpleGames\\worktrees\\g024-10-sokoban\\public\\games\\10-sokoban\\art.mjs",
+    "public/games/10-sokoban/engine.mjs": "E:\\Work2\\Project\\SimpleGames\\worktrees\\g024-10-sokoban\\public\\games\\10-sokoban\\engine.mjs",
+    "public/games/10-sokoban/index.html": "E:\\Work2\\Project\\SimpleGames\\worktrees\\g024-10-sokoban\\public\\games\\10-sokoban\\index.html",
+    "public/games/10-sokoban/levels.mjs": "E:\\Work2\\Project\\SimpleGames\\worktrees\\g024-10-sokoban\\public\\games\\10-sokoban\\levels.mjs",
+    "public/games/10-sokoban/main.mjs": "E:\\Work2\\Project\\SimpleGames\\worktrees\\g024-10-sokoban\\public\\games\\10-sokoban\\main.mjs",
+    "public/games/10-sokoban/save.mjs": "E:\\Work2\\Project\\SimpleGames\\worktrees\\g024-10-sokoban\\public\\games\\10-sokoban\\save.mjs",
+    "public/games/10-sokoban/styles.css": "E:\\Work2\\Project\\SimpleGames\\worktrees\\g024-10-sokoban\\public\\games\\10-sokoban\\styles.css",
+    "tests/games/10-sokoban.test.mjs": "E:\\Work2\\Project\\SimpleGames\\worktrees\\g024-10-sokoban\\tests\\games\\10-sokoban.test.mjs"
+  },
+  "supporting_inputs_sha256": {
+    "E:\\Work2\\Project\\SimpleGames\\worktrees\\g024-10-sokoban\\scripts\\build.mjs": "5a8f45a58183be08cdbab9e66458017ef59d097001290352e001173c33a8b3d3",
+    "E:\\Work2\\Project\\SimpleGames\\worktrees\\g024-10-sokoban\\src\\server\\index.ts": "07981d63620ea7cc3633766fc657996f47fa0e513506d31a8dc3f09bede5de4c",
+    "E:\\Work2\\Project\\SimpleGames\\worktrees\\g024-10-sokoban\\package.json": "0190c58edcfb077f455554c0e9f2bdf8741ce3a280e44b7254cdedbcf2d075ea",
+    "E:\\Work2\\Project\\SimpleGames\\worktrees\\g024-ten-game-release\\docs\\G024_PM_CONTRACT.md": "2b39ddf53b5689e97c92e313487b887af09603da447d514cc5776d585985454a",
+    "D:\\Work\\Game\\Game-001\\simple-games-20\\games\\10_sokoban.md": "aa4f1c07b8dd9a70cb6df4daeb690d9e9b381d724094f82e8bf389ec16011876",
+    "D:\\Work\\Game\\Game-001\\simple-games-20\\공통_제작사양과_코스튬.md": "2d38b6ff110ffcbc0a81c748e3c1fdf4f001ce0d558ca32144fb010607fc7965"
+  },
+  "source_freeze": {
+    "before": "artifacts/g024-qa10/inputs-before.json",
+    "after": "artifacts/g024-qa10/inputs-after.json",
+    "all_reviewed_bytes_unchanged": true,
+    "builder_source_manifest_hash_matched": true,
+    "builder_manifest": "artifacts/g024-10-builder/source-manifest.json",
+    "prior_builder_20level_99case_runs_used_as_acceptance": false
+  },
+  "security_concerns": [],
+  "logic_errors": [
+    {
+      "id": "QA10-L01",
+      "severity": "Low",
+      "category": "engine invalid-command robustness",
+      "file": "public/games/10-sokoban/engine.mjs",
+      "lines": [
+        44,
+        45,
+        46,
+        47
+      ],
+      "title": "알 수 없는 방향 문자열 중 Object.prototype 속성명이 no-op이 아니라 예외를 발생시킵니다.",
+      "expected": "U/R/D/L 이외 방향은 상태 객체·카운터·history를 그대로 반환해야 합니다. 구현 문서 14행의 잘못된 방향 no-op 주장과 일치해야 합니다.",
+      "actual": "move(createGame(1), 'toString' | 'constructor' | '__proto__')가 engine.mjs:47에서 TypeError: delta is not iterable을 발생시킵니다. 일반 'diagonal'은 정상 no-op입니다.",
+      "cause": "DIRECTIONS[direction]가 own-key 여부 없이 Object.prototype 상속 속성도 가져옵니다. truthy 검사 뒤 비배열 값을 구조 분해합니다.",
+      "reproduction": {
+        "cwd": "E:\\Work2\\Project\\SimpleGames\\worktrees\\g024-10-sokoban",
+        "command": "\"C:/Program Files/nodejs/node.exe\" --test --test-reporter=tap artifacts/g024-qa10/invalid-direction-repro.mjs",
+        "observed_exit_code": 1,
+        "collected": 4,
+        "executed": 4,
+        "passed": 1,
+        "failed": 3,
+        "skipped": 0
+      },
+      "evidence": [
+        "artifacts/g024-qa10/invalid-direction-adversarial.json",
+        "artifacts/g024-qa10/invalid-direction-repro.mjs",
+        "artifacts/g024-qa10/invalid-direction-repro.tap"
+      ],
+      "impact": "순수 exported engine API의 잘못된 문자열 입력에서만 재현했습니다. 출하 UI는 방향을 whitelist로 변환하므로 정상 키/터치에서 해당 문자열을 전달하는 경로는 확인하지 못했습니다. 3개 브라우저 프로젝트의 전체 게임 흐름은 통과했습니다.",
+      "production_fix_performed": false
+    }
+  ],
+  "suggestions": [
+    {
+      "file": "public/games/10-sokoban/engine.mjs",
+      "lines": [
+        45,
+        46,
+        47
+      ],
+      "text": "방향 lookup을 own-key 또는 명시적 U/R/D/L 집합으로 제한하고 상속 속성명 회귀를 포함해 주십시오. QA는 수정하지 않았습니다."
+    }
+  ],
+  "build": {
+    "command": "\"C:/Program Files/nodejs/node.exe\" scripts/build.mjs --out-dir artifacts/g024-qa10/build",
+    "exit_code": 0,
+    "fresh_output": "artifacts/g024-qa10/build",
+    "log": "artifacts/g024-qa10/build.log",
+    "syntax_checks": {
+      "counts": {
+        "collected": 5,
+        "executed": 5,
+        "passed": 5,
+        "failed": 0,
+        "skipped": 0
+      },
+      "results": "artifacts/g024-qa10/syntax-results.json"
+    }
+  },
+  "test_suites": [
+    {
+      "name": "independent level solver + literal oracle replay",
+      "counts": {
+        "collected": 20,
+        "executed": 20,
+        "passed": 20,
+        "failed": 0,
+        "skipped": 0
+      },
+      "command": "python artifacts/g024-qa10/independent_solver.py",
+      "exit_code": 0,
+      "log": "artifacts/g024-qa10/independent-solver.log",
+      "results": "artifacts/g024-qa10/independent-level-results.json",
+      "independent": true
+    },
+    {
+      "name": "independently authored offline differential/rules/save/cosmetics",
+      "counts": {
+        "collected": 115,
+        "executed": 115,
+        "passed": 115,
+        "failed": 0,
+        "skipped": 0
+      },
+      "command": "\"C:/Program Files/nodejs/node.exe\" artifacts/g024-qa10/independent-offline.mjs",
+      "exit_code": 0,
+      "log": "artifacts/g024-qa10/independent-offline.log",
+      "results": "artifacts/g024-qa10/independent-offline-results.json",
+      "independent": true
+    },
+    {
+      "name": "early actual HTTP supported three-project native smoke",
+      "counts": {
+        "collected": 3,
+        "executed": 3,
+        "passed": 3,
+        "failed": 0,
+        "skipped": 0
+      },
+      "command": "python artifacts/g024-qa10/browser_gate.py artifacts/g024-qa10/early-supported.mjs",
+      "exit_code": 0,
+      "log": "artifacts/g024-qa10/early-supported.log",
+      "results": "artifacts/g024-qa10/early-supported.json",
+      "independent": true
+    },
+    {
+      "name": "full actual HTTP independent input-only campaign/UI/storage",
+      "counts": {
+        "collected": 139,
+        "executed": 139,
+        "passed": 139,
+        "failed": 0,
+        "skipped": 0
+      },
+      "command": "python artifacts/g024-qa10/browser_gate.py artifacts/g024-qa10/browser-corrected.mjs",
+      "exit_code": 0,
+      "log": "artifacts/g024-qa10/browser-corrected.log",
+      "results": "artifacts/g024-qa10/browser-corrected-results.json",
+      "independent": true
+    },
+    {
+      "name": "native touch/deadlock/focus/reduced-motion/80ms duration supplement",
+      "counts": {
+        "collected": 16,
+        "executed": 16,
+        "passed": 16,
+        "failed": 0,
+        "skipped": 0
+      },
+      "command": "python artifacts/g024-qa10/browser_gate.py artifacts/g024-qa10/browser-supplement.mjs",
+      "exit_code": 0,
+      "log": "artifacts/g024-qa10/browser-supplement.log",
+      "results": "artifacts/g024-qa10/browser-supplement-results.json",
+      "independent": true
+    },
+    {
+      "name": "invalid inherited direction adversarial regression",
+      "counts": {
+        "collected": 4,
+        "executed": 4,
+        "passed": 1,
+        "failed": 3,
+        "skipped": 0
+      },
+      "command": "\"C:/Program Files/nodejs/node.exe\" --test --test-reporter=tap artifacts/g024-qa10/invalid-direction-repro.mjs",
+      "exit_code": 1,
+      "log": "artifacts/g024-qa10/invalid-direction-repro.tap",
+      "results": "artifacts/g024-qa10/invalid-direction-adversarial.json",
+      "independent": true
+    },
+    {
+      "name": "builder-authored unit suite rerun; not independent authorship",
+      "counts": {
+        "collected": 64,
+        "executed": 64,
+        "passed": 64,
+        "failed": 0,
+        "skipped": 0
+      },
+      "command": "\"C:/Program Files/nodejs/node.exe\" --test --test-reporter=tap tests/games/10-sokoban.test.mjs",
+      "exit_code": 0,
+      "log": "artifacts/g024-qa10/builder-unit-rerun.tap",
+      "independent": false
+    }
+  ],
+  "independent_acceptance_totals": {
+    "collected": 297,
+    "executed": 297,
+    "passed": 294,
+    "failed": 3,
+    "skipped": 0
+  },
+  "builder_unit_rerun_totals": {
+    "collected": 64,
+    "executed": 64,
+    "passed": 64,
+    "failed": 0,
+    "skipped": 0
+  },
+  "all20_independent_results": [
+    {
+      "id": 1,
+      "passed": true,
+      "dimensions": [
+        7,
+        5
+      ],
+      "boxes": 1,
+      "distinct_under_D4": true,
+      "literal_solution_independent_replay": true,
+      "claimed_minimum_matches_independent_optimum": true,
+      "minimum_pushes": 2,
+      "minimum_moves_at_minimum_pushes": 2,
+      "independent_solution": "RR",
+      "solver_states": 5,
+      "actual_http_campaigns": [
+        {
+          "project": "chromium-desktop",
+          "passed": true,
+          "route": "RR"
+        },
+        {
+          "project": "chromium-mobile320",
+          "passed": true,
+          "route": "RR"
+        },
+        {
+          "project": "webkit-mobile-landscape",
+          "passed": true,
+          "route": "RR"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "passed": true,
+      "dimensions": [
+        6,
+        6
+      ],
+      "boxes": 1,
+      "distinct_under_D4": true,
+      "literal_solution_independent_replay": true,
+      "claimed_minimum_matches_independent_optimum": true,
+      "minimum_pushes": 3,
+      "minimum_moves_at_minimum_pushes": 5,
+      "independent_solution": "ULURR",
+      "solver_states": 17,
+      "actual_http_campaigns": [
+        {
+          "project": "chromium-desktop",
+          "passed": true,
+          "route": "ULURR"
+        },
+        {
+          "project": "chromium-mobile320",
+          "passed": true,
+          "route": "ULURR"
+        },
+        {
+          "project": "webkit-mobile-landscape",
+          "passed": true,
+          "route": "ULURR"
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "passed": true,
+      "dimensions": [
+        7,
+        7
+      ],
+      "boxes": 1,
+      "distinct_under_D4": true,
+      "literal_solution_independent_replay": true,
+      "claimed_minimum_matches_independent_optimum": true,
+      "minimum_pushes": 3,
+      "minimum_moves_at_minimum_pushes": 6,
+      "independent_solution": "URRDRU",
+      "solver_states": 16,
+      "actual_http_campaigns": [
+        {
+          "project": "chromium-desktop",
+          "passed": true,
+          "route": "URRDRU"
+        },
+        {
+          "project": "chromium-mobile320",
+          "passed": true,
+          "route": "URRDRU"
+        },
+        {
+          "project": "webkit-mobile-landscape",
+          "passed": true,
+          "route": "URRDRU"
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "passed": true,
+      "dimensions": [
+        8,
+        8
+      ],
+      "boxes": 1,
+      "distinct_under_D4": true,
+      "literal_solution_independent_replay": true,
+      "claimed_minimum_matches_independent_optimum": true,
+      "minimum_pushes": 3,
+      "minimum_moves_at_minimum_pushes": 11,
+      "independent_solution": "ULLRDDLLUUU",
+      "solver_states": 14,
+      "actual_http_campaigns": [
+        {
+          "project": "chromium-desktop",
+          "passed": true,
+          "route": "ULLRDDLLUUU"
+        },
+        {
+          "project": "chromium-mobile320",
+          "passed": true,
+          "route": "ULLRDDLLUUU"
+        },
+        {
+          "project": "webkit-mobile-landscape",
+          "passed": true,
+          "route": "ULLRDDLLUUU"
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "passed": true,
+      "dimensions": [
+        7,
+        7
+      ],
+      "boxes": 1,
+      "distinct_under_D4": true,
+      "literal_solution_independent_replay": true,
+      "claimed_minimum_matches_independent_optimum": true,
+      "minimum_pushes": 5,
+      "minimum_moves_at_minimum_pushes": 18,
+      "independent_solution": "DLLUURURRDDLUURULL",
+      "solver_states": 16,
+      "actual_http_campaigns": [
+        {
+          "project": "chromium-desktop",
+          "passed": true,
+          "route": "DLLUURURRDDLUURULL"
+        },
+        {
+          "project": "chromium-mobile320",
+          "passed": true,
+          "route": "DLLUURURRDDLUURULL"
+        },
+        {
+          "project": "webkit-mobile-landscape",
+          "passed": true,
+          "route": "DLLUURURRDDLUURULL"
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "passed": true,
+      "dimensions": [
+        7,
+        6
+      ],
+      "boxes": 2,
+      "distinct_under_D4": true,
+      "literal_solution_independent_replay": true,
+      "claimed_minimum_matches_independent_optimum": true,
+      "minimum_pushes": 4,
+      "minimum_moves_at_minimum_pushes": 9,
+      "independent_solution": "RUULDDLUU",
+      "solver_states": 93,
+      "actual_http_campaigns": [
+        {
+          "project": "chromium-desktop",
+          "passed": true,
+          "route": "RUULDDLUU"
+        },
+        {
+          "project": "chromium-mobile320",
+          "passed": true,
+          "route": "RUULDDLUU"
+        },
+        {
+          "project": "webkit-mobile-landscape",
+          "passed": true,
+          "route": "RUULDDLUU"
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "passed": true,
+      "dimensions": [
+        7,
+        7
+      ],
+      "boxes": 2,
+      "distinct_under_D4": true,
+      "literal_solution_independent_replay": true,
+      "claimed_minimum_matches_independent_optimum": true,
+      "minimum_pushes": 4,
+      "minimum_moves_at_minimum_pushes": 9,
+      "independent_solution": "LUUDRRDRU",
+      "solver_states": 158,
+      "actual_http_campaigns": [
+        {
+          "project": "chromium-desktop",
+          "passed": true,
+          "route": "LUUDRRDRU"
+        },
+        {
+          "project": "chromium-mobile320",
+          "passed": true,
+          "route": "LUUDRRDRU"
+        },
+        {
+          "project": "webkit-mobile-landscape",
+          "passed": true,
+          "route": "LUUDRRDRU"
+        }
+      ]
+    },
+    {
+      "id": 8,
+      "passed": true,
+      "dimensions": [
+        8,
+        6
+      ],
+      "boxes": 2,
+      "distinct_under_D4": true,
+      "literal_solution_independent_replay": true,
+      "claimed_minimum_matches_independent_optimum": true,
+      "minimum_pushes": 4,
+      "minimum_moves_at_minimum_pushes": 10,
+      "independent_solution": "LUUDDRRRUU",
+      "solver_states": 77,
+      "actual_http_campaigns": [
+        {
+          "project": "chromium-desktop",
+          "passed": true,
+          "route": "LUUDDRRRUU"
+        },
+        {
+          "project": "chromium-mobile320",
+          "passed": true,
+          "route": "LUUDDRRRUU"
+        },
+        {
+          "project": "webkit-mobile-landscape",
+          "passed": true,
+          "route": "LUUDDRRRUU"
+        }
+      ]
+    },
+    {
+      "id": 9,
+      "passed": true,
+      "dimensions": [
+        7,
+        7
+      ],
+      "boxes": 2,
+      "distinct_under_D4": true,
+      "literal_solution_independent_replay": true,
+      "claimed_minimum_matches_independent_optimum": true,
+      "minimum_pushes": 5,
+      "minimum_moves_at_minimum_pushes": 13,
+      "independent_solution": "ULURDRURLURRD",
+      "solver_states": 98,
+      "actual_http_campaigns": [
+        {
+          "project": "chromium-desktop",
+          "passed": true,
+          "route": "ULURDRURLURRD"
+        },
+        {
+          "project": "chromium-mobile320",
+          "passed": true,
+          "route": "ULURDRURLURRD"
+        },
+        {
+          "project": "webkit-mobile-landscape",
+          "passed": true,
+          "route": "ULURDRURLURRD"
+        }
+      ]
+    },
+    {
+      "id": 10,
+      "passed": true,
+      "dimensions": [
+        8,
+        8
+      ],
+      "boxes": 2,
+      "distinct_under_D4": true,
+      "literal_solution_independent_replay": true,
+      "claimed_minimum_matches_independent_optimum": true,
+      "minimum_pushes": 4,
+      "minimum_moves_at_minimum_pushes": 15,
+      "independent_solution": "URUUDRRDRRUULDD",
+      "solver_states": 177,
+      "actual_http_campaigns": [
+        {
+          "project": "chromium-desktop",
+          "passed": true,
+          "route": "URUUDRRDRRUULDD"
+        },
+        {
+          "project": "chromium-mobile320",
+          "passed": true,
+          "route": "URUUDRRDRRUULDD"
+        },
+        {
+          "project": "webkit-mobile-landscape",
+          "passed": true,
+          "route": "URUUDRRDRRUULDD"
+        }
+      ]
+    },
+    {
+      "id": 11,
+      "passed": true,
+      "dimensions": [
+        8,
+        7
+      ],
+      "boxes": 2,
+      "distinct_under_D4": true,
+      "literal_solution_independent_replay": true,
+      "claimed_minimum_matches_independent_optimum": true,
+      "minimum_pushes": 8,
+      "minimum_moves_at_minimum_pushes": 35,
+      "independent_solution": "DLLULLURDRURLUDDDRRUURUULLLDDRRURUL",
+      "solver_states": 156,
+      "actual_http_campaigns": [
+        {
+          "project": "chromium-desktop",
+          "passed": true,
+          "route": "DLLULLURDRURLUDDDRRUURUULLLDDRRURUL"
+        },
+        {
+          "project": "chromium-mobile320",
+          "passed": true,
+          "route": "DLLULLURDRURLUDDDRRUURUULLLDDRRURUL"
+        },
+        {
+          "project": "webkit-mobile-landscape",
+          "passed": true,
+          "route": "DLLULLURDRURLUDDDRRUURUULLLDDRRURUL"
+        }
+      ]
+    },
+    {
+      "id": 12,
+      "passed": true,
+      "dimensions": [
+        8,
+        8
+      ],
+      "boxes": 2,
+      "distinct_under_D4": true,
+      "literal_solution_independent_replay": true,
+      "claimed_minimum_matches_independent_optimum": true,
+      "minimum_pushes": 5,
+      "minimum_moves_at_minimum_pushes": 14,
+      "independent_solution": "ULUURULDDRRURD",
+      "solver_states": 408,
+      "actual_http_campaigns": [
+        {
+          "project": "chromium-desktop",
+          "passed": true,
+          "route": "ULUURULDDRRURD"
+        },
+        {
+          "project": "chromium-mobile320",
+          "passed": true,
+          "route": "ULUURULDDRRURD"
+        },
+        {
+          "project": "webkit-mobile-landscape",
+          "passed": true,
+          "route": "ULUURULDDRRURD"
+        }
+      ]
+    },
+    {
+      "id": 13,
+      "passed": true,
+      "dimensions": [
+        8,
+        6
+      ],
+      "boxes": 3,
+      "distinct_under_D4": true,
+      "literal_solution_independent_replay": true,
+      "claimed_minimum_matches_independent_optimum": true,
+      "minimum_pushes": 6,
+      "minimum_moves_at_minimum_pushes": 16,
+      "independent_solution": "UUDDRRUULLLDDLUU",
+      "solver_states": 911,
+      "actual_http_campaigns": [
+        {
+          "project": "chromium-desktop",
+          "passed": true,
+          "route": "UUDDRRUULLLDDLUU"
+        },
+        {
+          "project": "chromium-mobile320",
+          "passed": true,
+          "route": "UUDDRRUULLLDDLUU"
+        },
+        {
+          "project": "webkit-mobile-landscape",
+          "passed": true,
+          "route": "UUDDRRUULLLDDLUU"
+        }
+      ]
+    },
+    {
+      "id": 14,
+      "passed": true,
+      "dimensions": [
+        8,
+        8
+      ],
+      "boxes": 3,
+      "distinct_under_D4": true,
+      "literal_solution_independent_replay": true,
+      "claimed_minimum_matches_independent_optimum": true,
+      "minimum_pushes": 7,
+      "minimum_moves_at_minimum_pushes": 11,
+      "independent_solution": "UUUDRRRDRUU",
+      "solver_states": 4938,
+      "actual_http_campaigns": [
+        {
+          "project": "chromium-desktop",
+          "passed": true,
+          "route": "UUUDRRRDRUU"
+        },
+        {
+          "project": "chromium-mobile320",
+          "passed": true,
+          "route": "UUUDRRRDRUU"
+        },
+        {
+          "project": "webkit-mobile-landscape",
+          "passed": true,
+          "route": "UUUDRRRDRUU"
+        }
+      ]
+    },
+    {
+      "id": 15,
+      "passed": true,
+      "dimensions": [
+        8,
+        8
+      ],
+      "boxes": 3,
+      "distinct_under_D4": true,
+      "literal_solution_independent_replay": true,
+      "claimed_minimum_matches_independent_optimum": true,
+      "minimum_pushes": 9,
+      "minimum_moves_at_minimum_pushes": 20,
+      "independent_solution": "LULUULDDDRRRRDRULUUU",
+      "solver_states": 5831,
+      "actual_http_campaigns": [
+        {
+          "project": "chromium-desktop",
+          "passed": true,
+          "route": "LULUULDDDRRRRDRULUUU"
+        },
+        {
+          "project": "chromium-mobile320",
+          "passed": true,
+          "route": "LULUULDDDRRRRDRULUUU"
+        },
+        {
+          "project": "webkit-mobile-landscape",
+          "passed": true,
+          "route": "LULUULDDDRRRRDRULUUU"
+        }
+      ]
+    },
+    {
+      "id": 16,
+      "passed": true,
+      "dimensions": [
+        8,
+        8
+      ],
+      "boxes": 3,
+      "distinct_under_D4": true,
+      "literal_solution_independent_replay": true,
+      "claimed_minimum_matches_independent_optimum": true,
+      "minimum_pushes": 8,
+      "minimum_moves_at_minimum_pushes": 18,
+      "independent_solution": "LURRRLLUUUDRRRDRUU",
+      "solver_states": 3654,
+      "actual_http_campaigns": [
+        {
+          "project": "chromium-desktop",
+          "passed": true,
+          "route": "LURRRLLUUUDRRRDRUU"
+        },
+        {
+          "project": "chromium-mobile320",
+          "passed": true,
+          "route": "LURRRLLUUUDRRRDRUU"
+        },
+        {
+          "project": "webkit-mobile-landscape",
+          "passed": true,
+          "route": "LURRRLLUUUDRRRDRUU"
+        }
+      ]
+    },
+    {
+      "id": 17,
+      "passed": true,
+      "dimensions": [
+        8,
+        8
+      ],
+      "boxes": 3,
+      "distinct_under_D4": true,
+      "literal_solution_independent_replay": true,
+      "claimed_minimum_matches_independent_optimum": true,
+      "minimum_pushes": 9,
+      "minimum_moves_at_minimum_pushes": 29,
+      "independent_solution": "LLURRRLULLURDRURLURRRDDLULUUL",
+      "solver_states": 2385,
+      "actual_http_campaigns": [
+        {
+          "project": "chromium-desktop",
+          "passed": true,
+          "route": "LLURRRLULLURDRURLURRRDDLULUUL"
+        },
+        {
+          "project": "chromium-mobile320",
+          "passed": true,
+          "route": "LLURRRLULLURDRURLURRRDDLULUUL"
+        },
+        {
+          "project": "webkit-mobile-landscape",
+          "passed": true,
+          "route": "LLURRRLULLURDRURLURRRDDLULUUL"
+        }
+      ]
+    },
+    {
+      "id": 18,
+      "passed": true,
+      "dimensions": [
+        8,
+        8
+      ],
+      "boxes": 3,
+      "distinct_under_D4": true,
+      "literal_solution_independent_replay": true,
+      "claimed_minimum_matches_independent_optimum": true,
+      "minimum_pushes": 9,
+      "minimum_moves_at_minimum_pushes": 34,
+      "independent_solution": "RRULDRRRUULUURULLDDLDLLURRRURRDDLU",
+      "solver_states": 809,
+      "actual_http_campaigns": [
+        {
+          "project": "chromium-desktop",
+          "passed": true,
+          "route": "RRULDRRRUULUURULLDDLDLLURRRURRDDLU"
+        },
+        {
+          "project": "chromium-mobile320",
+          "passed": true,
+          "route": "RRULDRRRUULUURULLDDLDLLURRRURRDDLU"
+        },
+        {
+          "project": "webkit-mobile-landscape",
+          "passed": true,
+          "route": "RRULDRRRUULUURULLDDLDLLURRRURRDDLU"
+        }
+      ]
+    },
+    {
+      "id": 19,
+      "passed": true,
+      "dimensions": [
+        8,
+        8
+      ],
+      "boxes": 3,
+      "distinct_under_D4": true,
+      "literal_solution_independent_replay": true,
+      "claimed_minimum_matches_independent_optimum": true,
+      "minimum_pushes": 7,
+      "minimum_moves_at_minimum_pushes": 18,
+      "independent_solution": "URLUUUDRRRLDDURRUU",
+      "solver_states": 6651,
+      "actual_http_campaigns": [
+        {
+          "project": "chromium-desktop",
+          "passed": true,
+          "route": "URLUUUDRRRLDDURRUU"
+        },
+        {
+          "project": "chromium-mobile320",
+          "passed": true,
+          "route": "URLUUUDRRRLDDURRUU"
+        },
+        {
+          "project": "webkit-mobile-landscape",
+          "passed": true,
+          "route": "URLUUUDRRRLDDURRUU"
+        }
+      ]
+    },
+    {
+      "id": 20,
+      "passed": true,
+      "dimensions": [
+        8,
+        8
+      ],
+      "boxes": 3,
+      "distinct_under_D4": true,
+      "literal_solution_independent_replay": true,
+      "claimed_minimum_matches_independent_optimum": true,
+      "minimum_pushes": 9,
+      "minimum_moves_at_minimum_pushes": 26,
+      "independent_solution": "LUULURDRUURULDDDRDLRRUURUL",
+      "solver_states": 2304,
+      "actual_http_campaigns": [
+        {
+          "project": "chromium-desktop",
+          "passed": true,
+          "route": "LUULURDRUURULDDDRDLRRUURUL"
+        },
+        {
+          "project": "chromium-mobile320",
+          "passed": true,
+          "route": "LUULURDRUURULDDDRDLRRUURUL"
+        },
+        {
+          "project": "webkit-mobile-landscape",
+          "passed": true,
+          "route": "LUULURDRUURULDDDRDLRRUURUL"
+        }
+      ]
+    }
+  ],
+  "solver_method": {
+    "implementation": "artifacts/g024-qa10/independent_solver.py",
+    "imports_shipping_engine_or_builder_solver": false,
+    "input_only": "level-input.json is a literal LEVELS data export; rules and solver authored independently",
+    "method": "좌표 기반 push-macro Dijkstra, 비용 (pushes,moves) 사전식 순서. 각 상자 배치+정확한 플레이어 위치별로 floor BFS 최단 보행 후 가능한 push를 모두 전개합니다. 목표에서 역방향 box reachability로 불가능한 정적 칸만 안전하게 제외합니다. 종료 상태는 boxes==goals입니다. 제공 리터럴 경로와 독립 발견 경로를 별도의 좌표 이동 oracle로 재생했습니다.",
+    "save_lowerbound_result": "20단계 모두 선언 최소 밀기 및 그 밀기에서의 최소 이동과 일치. 각 단계 하한보다 작은 점수는 거부, 하한 점수는 수용됨. 더 큰 임의 점수쌍의 특정 경로 도달 가능성은 저장 수치만으로 증명하지 않는다는 구현 문서 한계를 인정합니다."
+  },
+  "coverage": {
+    "offline": "20단계 × 1200 결정적 무작위 이동/undo를 별도 좌표 oracle와 대조. 전 단계 최적경로의 완료 직전 이력 전체 역순 복원. 별도 4096회 성공 이동·undo, 벽·두 상자·당김 금지·정적 목표·완료 후 no-op·구석 advisory·동기 완료 검증.",
+    "records": "0..20 prefix 진행/해금 상한, stage5/15 의상 truth table 및 각 시점 64종 혼합 소유권, 23종 잘못된 저장 구조, getter/getItem/setItem/parse 실패·로드 무쓰기·자기 키만 쓰기·외부키 보존·메모리 fallback, 실제 public path로 (4,12)→(2,14)→(2,2) lexicographic 기록 갱신.",
+    "cosmetics": "3프로젝트 모두 자연 진행 0/4/5/14/15/20 완료 시점의 4세트 및 hat/workwear/bag 각 부위 잠김·미리보기·취소·적용, 적용당 1회 쓰기, 4방향×walk/push, 모든 의상에서 공개 RR 경로 규칙 동일.",
+    "actual_http": {
+      "origin": "http://127.0.0.1:3144",
+      "fresh_build": true,
+      "strict_original_CSP_unchanged": true,
+      "all_seven_assets_bytes_sha_match": true,
+      "projects": [
+        "Chromium desktop 1366x900",
+        "Chromium mobile/touch emulation 320x740",
+        "WebKit mobile/touch emulation 667x375"
+      ],
+      "independent_all20_public_key_clears": 60,
+      "live_state_setters_used": false,
+      "snapshot_clone_mutation_test_only": true,
+      "raw_console_errors": 0,
+      "raw_console_warnings": 0,
+      "pageerrors": 0,
+      "external_requests": 0,
+      "console_filtering": false,
+      "security_weakening": false
+    },
+    "ui": "실제 비동결 시계와 trusted delay80 버튼 시작/정지/재개/음소거/옷장, 실제 pointerdown-up duration >=70ms(원시 측정 supplement 결과), 동일 버튼 및 자식 node 유지, focus-visible outline, Tab/Shift+Tab trap·WebKit nested 취소 실제 trigger 복귀, Escape 비누출, R 재시작 취소 counters/history/pause reason 보존, 순차 20 level/최종 cap/reload ready/quit 무정산.",
+    "responsive": "각 3프로젝트에서 320x740/667x375/1366x900으로 base·help·levels·wardrobe·restart 모달을 검사: 가로 overflow 없음, 모든 표시 버튼 >=44x44, 짧은 모달은 viewport 내 높이 및 내부 스크롤. 20개 결과 모달도 각 캠페인에서 검사.",
+    "input_and_audio": "modifier/repeat/비초점 입력 차단. native emulated trusted touch 방향/undo 확인. blur/visibility 및 pointercancel/2nd finger inside/outside/tie/threshold는 합성 이벤트 진단임을 구분. 실제 브라우저 AudioContext 생성 및 resume reject 실패를 강제로 주어도 clear/기록 유지. reduced-motion matchMedia 및 preview canvas 700ms 동일 픽셀 확인."
+  },
+  "static_review": {
+    "source_files_reviewed": 7,
+    "unit_source_reviewed": true,
+    "network_or_unsafe_execution_candidates": 0,
+    "known_storage_sites_all_private_key": true,
+    "no_delete_api": true,
+    "snapshot_api_readonly_clone": "main.mjs:239",
+    "scanner": "artifacts/g024-qa10/static-scan.json",
+    "copyright_provenance": "맵 및 Canvas 아트는 builder가 수작업 원본이라고 기록하며 외부 레벨 팩/이미지/폰트/오디오 import 또는 runtime fetch는 없습니다. 제3자 작품 전체와의 저작권 대조를 독립적으로 증명한 것은 아닙니다."
+  },
+  "preserved_first_failures": [
+    {
+      "artifact": "artifacts/g024-qa10/early-smoke.json",
+      "counts": {
+        "collected": 3,
+        "executed": 3,
+        "passed": 2,
+        "failed": 1,
+        "skipped": 0
+      },
+      "classification": "환경/선택적 Firefox 엔진 실행 파일 미설치. Chromium 및 WebKit 통과. 설치 금지 준수; 필요한 3프로젝트(Chromium desktop/mobile, WebKit mobile) 전략으로 신규 early-supported 증거 생성. 3개 엔진을 검증했다고 주장하지 않습니다."
+    },
+    {
+      "artifact": "artifacts/g024-qa10/browser-results.json",
+      "counts": {
+        "collected": 6,
+        "executed": 6,
+        "passed": 4,
+        "failed": 2,
+        "skipped": 0
+      },
+      "classification": "QA helper의 data-qa-tab 선택이 과거 hidden panel까지 매칭해 strict-mode 실패, 뒤의 열려 있는 confirm 모달로 1개 cascading timeout. 원본 보존 후 자신의 harness만 새 browser-corrected.mjs로 고쳐 139/139 재실행. 제품 수정 없음.",
+      "diagnosis": "artifacts/g024-qa10/harness-diagnosis.json"
+    },
+    {
+      "artifact": "artifacts/g024-qa10/invalid-direction-adversarial.json",
+      "classification": "실제 제품 engine invalid-direction 예외. 별도 4-case test 재현에서도 3 FAIL 유지. 수정하지 않음."
+    }
+  ],
+  "visual_inspection": {
+    "images": [
+      "artifacts/g024-qa10/early-supported-chromium.png",
+      "artifacts/g024-qa10/corrected-mobile320.png",
+      "artifacts/g024-qa10/corrected-mobile320-wardrobe.png",
+      "artifacts/g024-qa10/mobile320-playing.png"
+    ],
+    "observed": "따뜻한 크림 창고, HUD와 H 상자/점선 목표가 식별됩니다. 320px 택배 유니폼 플레이 캡처에서 옆 상자와 목표를 가리지 않았습니다. 320px 옷장 하단은 잘림 결함이 아니라 내부 스크롤 영역이며 실제 적용 버튼 조작도 통과했습니다.",
+    "webkit_screenshot": "알려진 Playwright 캡처의 strict-CSP 간섭 때문에 촬영하지 않았습니다. WebKit 실제 HTTP 기능·레이아웃·focus·console·CSP는 원시 오류를 필터링하거나 정책을 약화하지 않고 검사했습니다."
+  },
+  "browser_serialization": {
+    "wrapper": "artifacts/g024-qa10/browser_gate.py",
+    "mutex": "Local\\HermesG024BrowserGate",
+    "win32_handle_restypes_set": true,
+    "blocking_wait_before_browser_process": true,
+    "held_across_entire_browser_run": true,
+    "release_close_finally": true
+  },
+  "cleanup": {
+    "host": "127.0.0.1",
+    "port": 3144,
+    "connect_ex_after_stop": 10061,
+    "listening": false,
+    "stopped_only_own_tracked_server": "proc_584b122ca9e9",
+    "verified_at": "2026-10-29T00:41:49.309596+09:00"
+  },
+  "limits": [
+    "물리 Android/iPhone 및 물리 멀티터치 미검증; headless browser touch emulation과 합성 pointer 진단을 물리 장치로 주장하지 않습니다.",
+    "실제 스피커 청취·음질·기기별 오디오 지연 미검증; WebAudio 실패 안전성만 검사했습니다.",
+    "사람의 퍼즐 난이도/재미/목표 1~5분 체감 플레이 시간 미검증.",
+    "Firefox는 실행 파일 미설치로 검증하지 않았습니다. 이번 계약의 3프로젝트는 Chromium desktop/mobile와 WebKit mobile입니다.",
+    "WebKit 스크린샷 미수행. canvas 공간 퍼즐의 완전한 비시각적 접근성은 범위 밖입니다.",
+    "공용 카탈로그 통합·main merge·실사용 LAN3116/PM2·보드·배포는 이 QA 권한 밖이며 수정/실행하지 않았습니다."
+  ],
+  "allowed_writes": [
+    "artifacts/g024-qa10/**",
+    "docs/G024_QA10.json"
+  ],
+  "production_or_unit_source_changed": false,
+  "git_state_written": false,
+  "blockers": [
+    "QA10-L01: invalid inherited direction command throws instead of no-op; owner fix and hash-bound targeted reacceptance required."
+  ],
+  "report_path": "E:\\Work2\\Project\\SimpleGames\\worktrees\\g024-10-sokoban\\docs\\G024_QA10.json",
+  "evidence_root": "E:\\Work2\\Project\\SimpleGames\\worktrees\\g024-10-sokoban\\artifacts\\g024-qa10",
+  "evidence_manifest": "artifacts/g024-qa10/evidence-manifest.json"
+}

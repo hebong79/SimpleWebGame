@@ -1,0 +1,217 @@
+C:/Program Files/nodejs/node.exe artifacts/g024-09-builder/browser-smoke.mjs
+exit=0
+{
+  "out": "E:\\Work2\\Project\\SimpleGames\\worktrees\\g024-09-crossy\\artifacts\\g024-09-builder\\browser-2026-10-28T15-08-58-186Z",
+  "results": [
+    {
+      "name": "chromium-desktop: visible target sizes, 320/desktop, landscape, scrollable dialogs",
+      "passed": true
+    },
+    {
+      "name": "chromium-desktop: natural valid score, backtracking, repeat/modifier protection",
+      "passed": true
+    },
+    {
+      "name": "chromium-desktop: help Tab trap, Escape return, paused physics unchanged",
+      "passed": true
+    },
+    {
+      "name": "chromium-desktop: all preview poses/directions, locked apply, mixed parts, cancel",
+      "passed": true
+    },
+    {
+      "name": "chromium-desktop: restart cancellation preserves physics/reason, confirmed quit settles once",
+      "passed": true
+    },
+    {
+      "name": "chromium-desktop: monotonic arrival 300ms stall advances zero ticks",
+      "passed": true
+    },
+    {
+      "name": "chromium-desktop: natural moving collision + completed save, no live state injection",
+      "passed": true
+    },
+    {
+      "name": "chromium-desktop: actual-clock 8s idle warning then 10s loss exactly once",
+      "passed": true
+    },
+    {
+      "name": "chromium-desktop: clean CSP/console/network diagnostics",
+      "passed": true
+    },
+    {
+      "name": "chromium-320-touch: visible target sizes, 320/desktop, landscape, scrollable dialogs",
+      "passed": true
+    },
+    {
+      "name": "chromium-320-touch: natural valid score, backtracking, repeat/modifier protection",
+      "passed": true
+    },
+    {
+      "name": "chromium-320-touch: help Tab trap, Escape return, paused physics unchanged",
+      "passed": true
+    },
+    {
+      "name": "chromium-320-touch: all preview poses/directions, locked apply, mixed parts, cancel",
+      "passed": true
+    },
+    {
+      "name": "chromium-320-touch: restart cancellation preserves physics/reason, confirmed quit settles once",
+      "passed": true
+    },
+    {
+      "name": "chromium-320-touch: monotonic arrival 300ms stall advances zero ticks",
+      "passed": true
+    },
+    {
+      "name": "chromium-320-touch: natural moving collision + completed save, no live state injection",
+      "passed": true
+    },
+    {
+      "name": "chromium-320-touch: actual-clock 8s idle warning then 10s loss exactly once",
+      "passed": true
+    },
+    {
+      "name": "chromium-320-touch: clean CSP/console/network diagnostics",
+      "passed": true
+    },
+    {
+      "name": "webkit-mobile: visible target sizes, 320/desktop, landscape, scrollable dialogs",
+      "passed": true
+    },
+    {
+      "name": "webkit-mobile: natural valid score, backtracking, repeat/modifier protection",
+      "passed": true
+    },
+    {
+      "name": "webkit-mobile: help Tab trap, Escape return, paused physics unchanged",
+      "passed": true
+    },
+    {
+      "name": "webkit-mobile: all preview poses/directions, locked apply, mixed parts, cancel",
+      "passed": true
+    },
+    {
+      "name": "webkit-mobile: restart cancellation preserves physics/reason, confirmed quit settles once",
+      "passed": true
+    },
+    {
+      "name": "webkit-mobile: monotonic arrival 300ms stall advances zero ticks",
+      "passed": true
+    },
+    {
+      "name": "webkit-mobile: natural moving collision + completed save, no live state injection",
+      "passed": true
+    },
+    {
+      "name": "webkit-mobile: actual-clock 8s idle warning then 10s loss exactly once",
+      "passed": true
+    },
+    {
+      "name": "webkit-mobile: clean CSP/console/network diagnostics",
+      "passed": true
+    },
+    {
+      "name": "initial valid fixture: independent unlock truth table and mixed unlocked apply",
+      "passed": true
+    },
+    {
+      "name": "storage getter failure: visible persistent warning, memory play still works",
+      "passed": true
+    },
+    {
+      "name": "Chromium CDP trusted touch: tap, cancel, outside second finger cancellation",
+      "passed": true
+    },
+    {
+      "name": "Chromium CDP trusted swipe: CSS threshold, dominance, down, upward/tie no-op",
+      "passed": true
+    },
+    {
+      "name": "Chromium outside arena retains ordinary page scrolling",
+      "passed": true
+    },
+    {
+      "name": "AudioContext construction failure degrades visibly without blocking gameplay",
+      "passed": true
+    }
+  ],
+  "executed": 33,
+  "passed": 33,
+  "failed": 0,
+  "skipped": 0,
+  "diagnostics": [
+    {
+      "browser": "chromium-desktop",
+      "errors": [],
+      "requests": [
+        "http://127.0.0.1:3141/games/09-crossy/index.html",
+        "http://127.0.0.1:3141/games/09-crossy/style.css",
+        "http://127.0.0.1:3141/games/09-crossy/main.js",
+        "http://127.0.0.1:3141/games/09-crossy/engine.js",
+        "http://127.0.0.1:3141/games/09-crossy/save.js",
+        "http://127.0.0.1:3141/games/09-crossy/art.js",
+        "http://127.0.0.1:3141/games/09-crossy/index.html",
+        "http://127.0.0.1:3141/games/09-crossy/style.css",
+        "http://127.0.0.1:3141/games/09-crossy/main.js",
+        "http://127.0.0.1:3141/games/09-crossy/engine.js",
+        "http://127.0.0.1:3141/games/09-crossy/save.js",
+        "http://127.0.0.1:3141/games/09-crossy/art.js",
+        "http://127.0.0.1:3141/games/09-crossy/index.html",
+        "http://127.0.0.1:3141/games/09-crossy/style.css",
+        "http://127.0.0.1:3141/games/09-crossy/main.js",
+        "http://127.0.0.1:3141/games/09-crossy/engine.js",
+        "http://127.0.0.1:3141/games/09-crossy/save.js",
+        "http://127.0.0.1:3141/games/09-crossy/art.js"
+      ]
+    },
+    {
+      "browser": "chromium-320-touch",
+      "errors": [],
+      "requests": [
+        "http://127.0.0.1:3141/games/09-crossy/index.html",
+        "http://127.0.0.1:3141/games/09-crossy/style.css",
+        "http://127.0.0.1:3141/games/09-crossy/main.js",
+        "http://127.0.0.1:3141/games/09-crossy/engine.js",
+        "http://127.0.0.1:3141/games/09-crossy/save.js",
+        "http://127.0.0.1:3141/games/09-crossy/art.js",
+        "http://127.0.0.1:3141/games/09-crossy/index.html",
+        "http://127.0.0.1:3141/games/09-crossy/style.css",
+        "http://127.0.0.1:3141/games/09-crossy/main.js",
+        "http://127.0.0.1:3141/games/09-crossy/engine.js",
+        "http://127.0.0.1:3141/games/09-crossy/save.js",
+        "http://127.0.0.1:3141/games/09-crossy/art.js",
+        "http://127.0.0.1:3141/games/09-crossy/index.html",
+        "http://127.0.0.1:3141/games/09-crossy/style.css",
+        "http://127.0.0.1:3141/games/09-crossy/main.js",
+        "http://127.0.0.1:3141/games/09-crossy/engine.js",
+        "http://127.0.0.1:3141/games/09-crossy/save.js",
+        "http://127.0.0.1:3141/games/09-crossy/art.js"
+      ]
+    },
+    {
+      "browser": "webkit-mobile",
+      "errors": [],
+      "requests": [
+        "http://127.0.0.1:3141/games/09-crossy/index.html",
+        "http://127.0.0.1:3141/games/09-crossy/style.css",
+        "http://127.0.0.1:3141/games/09-crossy/main.js",
+        "http://127.0.0.1:3141/games/09-crossy/engine.js",
+        "http://127.0.0.1:3141/games/09-crossy/save.js",
+        "http://127.0.0.1:3141/games/09-crossy/art.js",
+        "http://127.0.0.1:3141/games/09-crossy/index.html",
+        "http://127.0.0.1:3141/games/09-crossy/style.css",
+        "http://127.0.0.1:3141/games/09-crossy/main.js",
+        "http://127.0.0.1:3141/games/09-crossy/engine.js",
+        "http://127.0.0.1:3141/games/09-crossy/save.js",
+        "http://127.0.0.1:3141/games/09-crossy/art.js",
+        "http://127.0.0.1:3141/games/09-crossy/index.html",
+        "http://127.0.0.1:3141/games/09-crossy/style.css",
+        "http://127.0.0.1:3141/games/09-crossy/main.js",
+        "http://127.0.0.1:3141/games/09-crossy/engine.js",
+        "http://127.0.0.1:3141/games/09-crossy/save.js",
+        "http://127.0.0.1:3141/games/09-crossy/art.js"
+      ]
+    }
+  ]
+}

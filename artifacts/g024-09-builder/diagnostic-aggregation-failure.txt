@@ -1,0 +1,26 @@
+Diagnostic-only aggregation failure (not product or test FAIL)
+Command: Node one-line report aggregation used readdir names filtered only by prefix 'early-'.
+Result: exit 1, ENOENT trying to open
+E:\Work2\Project\SimpleGames\worktrees\g024-09-crossy\artifacts\g024-09-builder\early-smoke.mjs\report.json
+
+Raw tool error:
+node:fs:561
+  return binding.open(
+                 ^
+Error: ENOENT: no such file or directory, open 'E:\Work2\Project\SimpleGames\worktrees\g024-09-crossy\artifacts\g024-09-builder\early-smoke.mjs\report.json'
+    at Object.openSync (node:fs:561:18)
+    at Object.readFileSync (node:fs:445:35)
+    at file:///E:/Work2/Project/SimpleGames/worktrees/g024-09-crossy/[eval1]:1:286
+    at ModuleJob.run (node:internal/modules/esm/module_job:439:25)
+    at async ModuleLoader.executeModuleJob (node:internal/modules/esm/loader:227:20)
+    at async asyncRunEntryPointWithESMLoader (node:internal/modules/run_main:101:5) {
+  errno: -4058,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: 'E:\\Work2\\Project\\SimpleGames\\worktrees\\g024-09-crossy\\artifacts\\g024-09-builder\\early-smoke.mjs\\report.json'
+}
+Node.js v24.16.0
+
+Correction: use readdirSync({withFileTypes:true}) and isDirectory() before prefix matching.
+Corrected output: latest early report executed/passed 7/7 failed/skipped 0/0; browser 33/33 failed/skipped 0/0.
+No source or assertion was changed to resolve this report-reader error.

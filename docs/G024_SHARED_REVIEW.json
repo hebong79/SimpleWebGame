@@ -1,0 +1,1092 @@
+{
+  "schema_version": 1,
+  "task_id": "G024-SHARED-REVIEW",
+  "reviewer": {
+    "role": "Independent shared-delta reviewer, distinct from the implementer and integrator",
+    "independent": true,
+    "game_engine_review_repeated": false
+  },
+  "created_utc": "2026-10-28T16:16:04.902036+00:00",
+  "passed": true,
+  "verdict": "PASS_SHARED_SCOPE_ONLY_NOT_RELEASE_ACCEPTANCE",
+  "summary": "공통 변경 13파일의 독립 변경분 검토를 통과했습니다. 보안 우려 및 논리 오류는 발견하지 않았습니다. 구현자 원시 213브라우저/438단위/79HTTP 결과를 해시와 대조했으며, 게임10 수정 후 최종 후보 및 LAN 승인을 의미하지 않습니다.",
+  "security_concerns": [],
+  "logic_errors": [],
+  "scope": {
+    "base": "c0a08a55dd39c0c32440d9aaab37eccc85cf85f4",
+    "shared_commit": "ca0ea50a5e5990f346a0ab9734057e66cb8619ef",
+    "observed_head": "ca0ea50a5e5990f346a0ab9734057e66cb8619ef",
+    "changed_files": [
+      "artifacts/g024-integration/browser-gate.py",
+      "docs/G024_SHARED_IMPLEMENTATION.md",
+      "ecosystem.config.cjs",
+      "package.json",
+      "scripts/g024-verify.mjs",
+      "src/client/library.ts",
+      "tests/e2e/breakout-integration.spec.ts",
+      "tests/e2e/g024-new-games.spec.ts",
+      "tests/e2e/library-integration.spec.ts",
+      "tests/e2e/live-server.spec.ts",
+      "tests/e2e/multi-game-integration.spec.ts",
+      "tests/e2e/runner-jumper.spec.ts",
+      "tests/g024-playwright.config.ts"
+    ],
+    "diff": {
+      "files": 13,
+      "insertions": 570,
+      "deletions": 28
+    },
+    "binding": "13 listed file bytes, not the whole subsequent HEAD",
+    "physical_root": "E:\\Work2\\Project\\SimpleGames\\worktrees\\g024-ten-game-release",
+    "branch": "feature/g024-ten-game-release",
+    "manifest_path": "artifacts/g024-integration/handoff-manifest.json",
+    "manifest_sha256": "5829a6298ee4da385edf9fccf2325372e7ce62ce33b5af27042c3a7ee9b5b109",
+    "whole_head_acceptance": false,
+    "observed_head_at_report": "90d14128e93300e6ef7c2bc69406195337c57c85",
+    "excluded": [
+      "Game engine/source/test deep reviews and separately accepted game10 fix 73907be",
+      "PM-owned game10 merge/rebuild/final regression",
+      "main, Git/index writes, dependencies/installs, runtime/PM2/LAN3116/service operations, board publication"
+    ],
+    "authorized_writes_only": [
+      "artifacts/g024-shared-review/**",
+      "docs/G024_SHARED_REVIEW.json"
+    ]
+  },
+  "inputs_sha256": {
+    "artifacts/g024-integration/browser-gate.py": "8611e2724f864f99d9d96ca94ec2fbe2a938f7d0bd58ed8dfcd624cd7eda3c6a",
+    "docs/G024_SHARED_IMPLEMENTATION.md": "33ec5ad32188eef2cb5d62383405638d595da18901bdc78e15373490895f8ed3",
+    "ecosystem.config.cjs": "aa3149ad3062b0540e3fedd987cd1bbf7f708723dc43d35944f359615503d538",
+    "package.json": "4833a4ebf3f679b7d038bce9bada9d0e372da5b0ca43fe9921f3d145e62f7009",
+    "scripts/g024-verify.mjs": "d01fbe367b24a5590cd0ec1781246b4930641a3777dc358797a05861ea21b6e0",
+    "src/client/library.ts": "f3181f79bf336ab536b0358d290502a0b7d47e0cbe520342ae4ce0d115fc3d89",
+    "tests/e2e/breakout-integration.spec.ts": "6ee9807c6f3c6a1bfb7e3b50d7280a4cd89fc24f25a68b2039810cdcf0190ae4",
+    "tests/e2e/g024-new-games.spec.ts": "04ec4fd7b0cc53768176c58ff0cd4c28a2903ec341f7ed9d8b087d204e4caccc",
+    "tests/e2e/library-integration.spec.ts": "f8751b72550df031b31f6f07081be50620346044c864374ec1fcd4d0177a529f",
+    "tests/e2e/live-server.spec.ts": "8255aff28aa5b0e0275b8a916ef1043f37a8b394e31a1f74866e1d6489727711",
+    "tests/e2e/multi-game-integration.spec.ts": "513af0a313efc5615dfa220bb96f286e8eaf33036d180c33dd354a11cc5f8759",
+    "tests/e2e/runner-jumper.spec.ts": "53b03b974b70df2e45ab5663017a018bc41d7a419c8a684febd3bb92d7baa7db",
+    "tests/g024-playwright.config.ts": "7bbb6cdeac9c34f46d6c2a549ff557111043c0fc223868bf38fa55e379ce5f8c"
+  },
+  "physical_mapping": {
+    "artifacts/g024-integration/browser-gate.py": "E:\\Work2\\Project\\SimpleGames\\worktrees\\g024-ten-game-release\\artifacts\\g024-integration\\browser-gate.py",
+    "docs/G024_SHARED_IMPLEMENTATION.md": "E:\\Work2\\Project\\SimpleGames\\worktrees\\g024-ten-game-release\\docs\\G024_SHARED_IMPLEMENTATION.md",
+    "ecosystem.config.cjs": "E:\\Work2\\Project\\SimpleGames\\worktrees\\g024-ten-game-release\\ecosystem.config.cjs",
+    "package.json": "E:\\Work2\\Project\\SimpleGames\\worktrees\\g024-ten-game-release\\package.json",
+    "scripts/g024-verify.mjs": "E:\\Work2\\Project\\SimpleGames\\worktrees\\g024-ten-game-release\\scripts\\g024-verify.mjs",
+    "src/client/library.ts": "E:\\Work2\\Project\\SimpleGames\\worktrees\\g024-ten-game-release\\src\\client\\library.ts",
+    "tests/e2e/breakout-integration.spec.ts": "E:\\Work2\\Project\\SimpleGames\\worktrees\\g024-ten-game-release\\tests\\e2e\\breakout-integration.spec.ts",
+    "tests/e2e/g024-new-games.spec.ts": "E:\\Work2\\Project\\SimpleGames\\worktrees\\g024-ten-game-release\\tests\\e2e\\g024-new-games.spec.ts",
+    "tests/e2e/library-integration.spec.ts": "E:\\Work2\\Project\\SimpleGames\\worktrees\\g024-ten-game-release\\tests\\e2e\\library-integration.spec.ts",
+    "tests/e2e/live-server.spec.ts": "E:\\Work2\\Project\\SimpleGames\\worktrees\\g024-ten-game-release\\tests\\e2e\\live-server.spec.ts",
+    "tests/e2e/multi-game-integration.spec.ts": "E:\\Work2\\Project\\SimpleGames\\worktrees\\g024-ten-game-release\\tests\\e2e\\multi-game-integration.spec.ts",
+    "tests/e2e/runner-jumper.spec.ts": "E:\\Work2\\Project\\SimpleGames\\worktrees\\g024-ten-game-release\\tests\\e2e\\runner-jumper.spec.ts",
+    "tests/g024-playwright.config.ts": "E:\\Work2\\Project\\SimpleGames\\worktrees\\g024-ten-game-release\\tests\\g024-playwright.config.ts"
+  },
+  "git_content_binding": {
+    "artifacts/g024-integration/browser-gate.py": {
+      "candidate_blob": "1be83209d853ce0a548706eba0f92247f2097dbf",
+      "worktree_filtered_blob": "1be83209d853ce0a548706eba0f92247f2097dbf"
+    },
+    "docs/G024_SHARED_IMPLEMENTATION.md": {
+      "candidate_blob": "7d4afaf8ccb641590043c020f4efda0b65a7d81a",
+      "worktree_filtered_blob": "7d4afaf8ccb641590043c020f4efda0b65a7d81a"
+    },
+    "ecosystem.config.cjs": {
+      "candidate_blob": "6fc2099b2a2c922b85ce1b7a1cb97e0e87320762",
+      "worktree_filtered_blob": "6fc2099b2a2c922b85ce1b7a1cb97e0e87320762"
+    },
+    "package.json": {
+      "candidate_blob": "18ff4fb9d29e84274c6d78e07ec9ffff42e040df",
+      "worktree_filtered_blob": "18ff4fb9d29e84274c6d78e07ec9ffff42e040df"
+    },
+    "scripts/g024-verify.mjs": {
+      "candidate_blob": "fc4919396e9da9f7e50c81f1e8fce3fbb3cb5931",
+      "worktree_filtered_blob": "fc4919396e9da9f7e50c81f1e8fce3fbb3cb5931"
+    },
+    "src/client/library.ts": {
+      "candidate_blob": "2177e6e43e55d11a2d30fb981b03c92a7a5be2d2",
+      "worktree_filtered_blob": "2177e6e43e55d11a2d30fb981b03c92a7a5be2d2"
+    },
+    "tests/e2e/breakout-integration.spec.ts": {
+      "candidate_blob": "6ca19aeb5418019937005c4efe2f02c1fd2d1d98",
+      "worktree_filtered_blob": "6ca19aeb5418019937005c4efe2f02c1fd2d1d98"
+    },
+    "tests/e2e/g024-new-games.spec.ts": {
+      "candidate_blob": "0e3efd1135008a548bb603a1a3c63c21dd986355",
+      "worktree_filtered_blob": "0e3efd1135008a548bb603a1a3c63c21dd986355"
+    },
+    "tests/e2e/library-integration.spec.ts": {
+      "candidate_blob": "5a2eb4251575192ff2975d14e2fbb773c292763b",
+      "worktree_filtered_blob": "5a2eb4251575192ff2975d14e2fbb773c292763b"
+    },
+    "tests/e2e/live-server.spec.ts": {
+      "candidate_blob": "2b3158c7487201692ee5a315bf42b27c14b83148",
+      "worktree_filtered_blob": "2b3158c7487201692ee5a315bf42b27c14b83148"
+    },
+    "tests/e2e/multi-game-integration.spec.ts": {
+      "candidate_blob": "e5357ad5e464ffd7ae8b5187531e0acdd776e917",
+      "worktree_filtered_blob": "e5357ad5e464ffd7ae8b5187531e0acdd776e917"
+    },
+    "tests/e2e/runner-jumper.spec.ts": {
+      "candidate_blob": "bd4958e7b960d6d2535f1b22ccca79b265af4ac0",
+      "worktree_filtered_blob": "bd4958e7b960d6d2535f1b22ccca79b265af4ac0"
+    },
+    "tests/g024-playwright.config.ts": {
+      "candidate_blob": "1f14162df4ad68310bb8223b726e6a5d513d074c",
+      "worktree_filtered_blob": "1f14162df4ad68310bb8223b726e6a5d513d074c"
+    }
+  },
+  "catalog_preservation": {
+    "old_literal_records": 37,
+    "old_records_unchanged": true,
+    "new_total": 39,
+    "available": 10,
+    "upcoming": 29,
+    "new_ids": [
+      "chick-picnic",
+      "hamster-depot"
+    ],
+    "new_launches": {
+      "chick-picnic": "/games/09-crossy/index.html",
+      "hamster-depot": "/games/10-sokoban/index.html"
+    },
+    "memory-pieces": "upcoming, no href",
+    "leisure-line": "upcoming, no href",
+    "favorites_key": "simplegames.library.favorites.v1",
+    "favorites_and_all_other_library_code": "Removing only the two added literal records and the fixed miniature branch exactly reconstructs the base module, with line-ending normalization only."
+  },
+  "security_review": [
+    {
+      "path": "src/client/library.ts",
+      "lines": "33-34,175-211",
+      "result": "Fixed catalog routes and inert SVG rect/ellipse/circle/path literals only. No new innerHTML/eval/event handler/foreignObject/use/image, external asset or user-controlled attribute/URL sink; no favorite migration/delete behavior."
+    },
+    {
+      "path": "scripts/g024-verify.mjs",
+      "lines": "13-36,57-75,127-177",
+      "result": "Finite CLI options and exact candidate/live origins are validated before network/server/child activity. shell:false with executable/argument arrays; no user-controlled port, command or report path. Parent sets task build/artifact/mode/origin before child/config imports."
+    },
+    {
+      "path": "scripts/g024-verify.mjs",
+      "lines": "29-36,94-110,146-164,181-192",
+      "result": "Fresh UTC/UUID task report root, hash-bound build source/output, unchanged launcher bytes copied into a run-owned snapshot, and historical before/after hash+size+mtime equality. Missing/mismatched builds fail closed; old evidence and occupied servers are not reused or stopped."
+    },
+    {
+      "path": "scripts/g024-verify.mjs",
+      "lines": "112-125,153-184",
+      "result": "Live never builds/starts/reuses/restarts/stops a server or runs server unit fixtures. HTTP is GET-only with redirects rejected. Imported server module has a direct-invocation guard. Candidate owns only loopback3145 and closes/refusal-checks its own server."
+    },
+    {
+      "path": "tests/g024-playwright.config.ts",
+      "lines": "4-33",
+      "result": "Task path regexp rejects traversal; exact origin/build/mutex environment gates; three projects, one worker, retries0; no webServer. New-browser output uses TestInfo-owned paths."
+    },
+    {
+      "path": "artifacts/g024-integration/browser-gate.py",
+      "lines": "14-44",
+      "result": "CreateMutexW returns HANDLE, WaitForSingleObject takes HANDLE/DWORD and returns DWORD, ReleaseMutex/CloseHandle use HANDLE. Wait accepts acquired/abandoned ownership only, blocks with INFINITE, releases and closes via nested finally. Real Win32 acquisition/release with a harmless Node child and pointer-width check passed; no browser was launched."
+    },
+    {
+      "path": "ecosystem.config.cjs",
+      "lines": "5",
+      "result": "Only g022-build to g024-build script path changed. App/cwd/interpreter/host0.0.0.0/port3116/other settings are unchanged; config was not executed."
+    },
+    {
+      "path": "package.json",
+      "lines": "6",
+      "result": "Description-only JSON delta. Dependencies, scripts, engines and lockfile remain unchanged."
+    }
+  ],
+  "test_delta_review": {
+    "existing": "Only expected counts/pagination/home links and corresponding titles changed; all five existing suites retain their assertions and security observers. No skip/only/fixme additions or weakened CSP/request/storage checks.",
+    "metrics_evidence": "artifacts/g024-shared-review/test-delta-metrics.json",
+    "new_cases": 3,
+    "new_cases_detail": "Two real/unfrozen card/start/input/pause/resume/mute/wardrobe/home flows use native Playwright clicks with delay80ms and keyboard input. Paused snapshots stay equal over180ms. Third case creates all eight old profiles and favorites through public controls, completes/saves both new games, reloads and compares prior bytes. No virtual-clock or localStorage seed setter in the new spec.",
+    "runtime_security_audits_parsed": 9,
+    "runtime_security_audits": "All nine new-spec executions retain empty, unfiltered console/pageError/CSP/external/failedHTTP/failedRequest arrays."
+  },
+  "tests_ran_by_reviewer": {
+    "kind": "New independent syntax/type/guard/mutex checks and deterministic evidence parsing, not browser/game regression reruns",
+    "effective_checks": 58,
+    "all_effective_checks_passed": true,
+    "checks": [
+      {
+        "name": "manifest-authenticity",
+        "passed": true,
+        "details": null
+      },
+      {
+        "name": "exact-allowlist-and-diff",
+        "passed": true,
+        "details": {
+          "files": 13,
+          "insertions": 570,
+          "deletions": 28
+        }
+      },
+      {
+        "name": "13-raw-hashes-and-git-blobs",
+        "passed": true,
+        "details": null
+      },
+      {
+        "name": "diff-whitespace",
+        "passed": true,
+        "details": null
+      },
+      {
+        "name": "catalog-37-literal-records-preserved",
+        "passed": true,
+        "details": null
+      },
+      {
+        "name": "catalog-39-10-29-and-upcoming",
+        "passed": true,
+        "details": {
+          "old": 37,
+          "total": 39,
+          "available": 10,
+          "upcoming": 29,
+          "new_ids": [
+            "chick-picnic",
+            "hamster-depot"
+          ]
+        }
+      },
+      {
+        "name": "favorites-and-rest-of-library-identical",
+        "passed": true,
+        "details": null
+      },
+      {
+        "name": "package-description-only",
+        "passed": true,
+        "details": null
+      },
+      {
+        "name": "ecosystem-sole-script-delta",
+        "passed": true,
+        "details": null
+      },
+      {
+        "name": "browser-213-actually-executed-all-projects",
+        "passed": true,
+        "details": {
+          "discovered": 213,
+          "executed_tests": 213,
+          "actual_result_entries": 213,
+          "all_passed_without_retry_or_skip": true,
+          "by_project": {
+            "desktop-chromium": 71,
+            "mobile-chromium": 71,
+            "mobile-webkit": 71
+          },
+          "by_spec": {
+            "breakout-integration.spec.ts": 6,
+            "flappy-input.spec.ts": 9,
+            "g024-new-games.spec.ts": 9,
+            "library-integration.spec.ts": 18,
+            "live-server.spec.ts": 15,
+            "multi-game-integration.spec.ts": 18,
+            "runner-jumper.spec.ts": 138
+          },
+          "stats": {
+            "startTime": "2026-10-28T15:49:05.333Z",
+            "duration": 441018.914,
+            "expected": 213,
+            "skipped": 0,
+            "unexpected": 0,
+            "flaky": 0
+          },
+          "discovery_is_execution": false
+        }
+      },
+      {
+        "name": "new-spec-nine-unfiltered-security-audits",
+        "passed": true,
+        "details": {
+          "audits": 9
+        }
+      },
+      {
+        "name": "executed-input-hash-binding",
+        "passed": true,
+        "details": null
+      },
+      {
+        "name": "unchanged-flappy-evidence-input",
+        "passed": true,
+        "details": null
+      },
+      {
+        "name": "raw-TAP-438-actually-passed",
+        "passed": true,
+        "details": {
+          "common": {
+            "tests": 48,
+            "pass": 48,
+            "fail": 0,
+            "skipped": 0,
+            "todo": 0,
+            "ok_lines": 48,
+            "not_ok_lines": 0
+          },
+          "games": {
+            "tests": 361,
+            "pass": 361,
+            "fail": 0,
+            "skipped": 0,
+            "todo": 0,
+            "ok_lines": 361,
+            "not_ok_lines": 0
+          },
+          "launcher": {
+            "tests": 29,
+            "pass": 29,
+            "fail": 0,
+            "skipped": 0,
+            "todo": 0,
+            "ok_lines": 29,
+            "not_ok_lines": 0
+          }
+        }
+      },
+      {
+        "name": "TAP-summary-correspondence",
+        "passed": true,
+        "details": null
+      },
+      {
+        "name": "invocation-successful-children-and-cleanup",
+        "passed": true,
+        "details": {
+          "children": {
+            "browser-discovery": 0,
+            "browser-execution": 0,
+            "typecheck": 0,
+            "unit-common": 0,
+            "unit-games": 0,
+            "unit-launcher": 0
+          },
+          "runner_exit_note": "No separate top-level OS exit-code field exists; all child exits are raw 0 and final status/cleanup imply normal completion."
+        }
+      },
+      {
+        "name": "raw-HTTP-79-byte-hashes-and-CSP",
+        "passed": true,
+        "details": null
+      },
+      {
+        "name": "historical-178-hash-size-mtime-equality",
+        "passed": true,
+        "details": null
+      },
+      {
+        "name": "launcher-unchanged-snapshot-containment",
+        "passed": true,
+        "details": null
+      },
+      {
+        "name": "pre-fix-build-manifest-and-output-binding",
+        "passed": true,
+        "details": {
+          "source_files": 84,
+          "output_files": 112,
+          "designation": "pre-game10-fix build, not final release evidence"
+        }
+      },
+      {
+        "name": "runtime-evidence-source-matches-shared-commit",
+        "passed": true,
+        "details": null
+      },
+      {
+        "name": "live-discovery-not-runtime-acceptance",
+        "passed": true,
+        "details": null
+      },
+      {
+        "name": "node-runner-syntax",
+        "passed": true,
+        "details": null
+      },
+      {
+        "name": "ecosystem-syntax",
+        "passed": true,
+        "details": null
+      },
+      {
+        "name": "python-mutex-syntax",
+        "passed": true,
+        "details": null
+      },
+      {
+        "name": "project-types",
+        "passed": true,
+        "details": null
+      },
+      {
+        "name": "new-spec-config-types",
+        "passed": true,
+        "resolution": "Reviewer command corrected with --ignoreConfig and --types node; original failures preserved."
+      },
+      {
+        "name": "mutex-pure-child",
+        "passed": true,
+        "details": null
+      },
+      {
+        "name": "mutex-acquire-release-real-Win32",
+        "passed": true,
+        "details": null
+      },
+      {
+        "name": "mutex-HANDLE-pointer-width",
+        "passed": true,
+        "details": null
+      },
+      {
+        "name": "origin-missing",
+        "passed": true,
+        "details": null
+      },
+      {
+        "name": "origin-missing-expected-pre-network-guard",
+        "passed": true,
+        "details": null
+      },
+      {
+        "name": "origin-wrong",
+        "passed": true,
+        "details": null
+      },
+      {
+        "name": "origin-wrong-expected-pre-network-guard",
+        "passed": true,
+        "details": null
+      },
+      {
+        "name": "origin-candidate-explicit",
+        "passed": true,
+        "details": null
+      },
+      {
+        "name": "origin-candidate-explicit-expected-pre-network-guard",
+        "passed": true,
+        "details": null
+      },
+      {
+        "name": "origin-candidate-inherited",
+        "passed": true,
+        "details": null
+      },
+      {
+        "name": "origin-candidate-inherited-expected-pre-network-guard",
+        "passed": true,
+        "details": null
+      },
+      {
+        "name": "build-missing-build",
+        "passed": true,
+        "details": null
+      },
+      {
+        "name": "build-missing-build-pre-network-no-child",
+        "passed": true,
+        "details": null
+      },
+      {
+        "name": "build-missing-manifest",
+        "passed": true,
+        "details": null
+      },
+      {
+        "name": "build-missing-manifest-pre-network-no-child",
+        "passed": true,
+        "details": null
+      },
+      {
+        "name": "build-source-mismatch",
+        "passed": true,
+        "details": null
+      },
+      {
+        "name": "build-source-mismatch-pre-network-no-child",
+        "passed": true,
+        "details": null
+      },
+      {
+        "name": "build-output-mismatch",
+        "passed": true,
+        "details": null
+      },
+      {
+        "name": "build-output-mismatch-pre-network-no-child",
+        "passed": true,
+        "details": null
+      },
+      {
+        "name": "config-valid-no-browser",
+        "passed": true,
+        "details": null
+      },
+      {
+        "name": "config-single-worker-three-projects-no-server",
+        "passed": true,
+        "details": null
+      },
+      {
+        "name": "config-path-traversal",
+        "passed": true,
+        "details": null
+      },
+      {
+        "name": "config-path-traversal-guard",
+        "passed": true,
+        "details": null
+      },
+      {
+        "name": "config-wrong-origin",
+        "passed": true,
+        "details": null
+      },
+      {
+        "name": "config-wrong-origin-guard",
+        "passed": true,
+        "details": null
+      },
+      {
+        "name": "config-no-mutex",
+        "passed": true,
+        "details": null
+      },
+      {
+        "name": "config-no-mutex-guard",
+        "passed": true,
+        "details": null
+      },
+      {
+        "name": "reviewed-13-bytes-still-frozen",
+        "passed": true,
+        "details": null
+      },
+      {
+        "name": "existing-assertions-tests-and-no-skip-delta",
+        "passed": true
+      },
+      {
+        "name": "original-evidence-hashes-still-identical",
+        "passed": true
+      },
+      {
+        "name": "13-reviewed-files-still-frozen-at-report",
+        "passed": true
+      }
+    ],
+    "commands": [
+      {
+        "label": "diff-whitespace",
+        "argv": [
+          "git",
+          "diff",
+          "--check",
+          "c0a08a55dd39c0c32440d9aaab37eccc85cf85f4",
+          "ca0ea50a5e5990f346a0ab9734057e66cb8619ef"
+        ],
+        "cwd": "E:\\Work2\\Project\\SimpleGames\\worktrees\\g024-ten-game-release",
+        "exit_code": 0,
+        "expected_exit_code": 0
+      },
+      {
+        "label": "node-runner-syntax",
+        "argv": [
+          "C:/Program Files/nodejs/node.exe",
+          "--check",
+          "scripts/g024-verify.mjs"
+        ],
+        "cwd": "E:\\Work2\\Project\\SimpleGames\\worktrees\\g024-ten-game-release",
+        "exit_code": 0,
+        "expected_exit_code": 0
+      },
+      {
+        "label": "ecosystem-syntax",
+        "argv": [
+          "C:/Program Files/nodejs/node.exe",
+          "--check",
+          "ecosystem.config.cjs"
+        ],
+        "cwd": "E:\\Work2\\Project\\SimpleGames\\worktrees\\g024-ten-game-release",
+        "exit_code": 0,
+        "expected_exit_code": 0
+      },
+      {
+        "label": "project-types",
+        "argv": [
+          "C:/Program Files/nodejs/node.exe",
+          "node_modules/typescript/bin/tsc",
+          "--noEmit"
+        ],
+        "cwd": "E:\\Work2\\Project\\SimpleGames\\worktrees\\g024-ten-game-release",
+        "exit_code": 0,
+        "expected_exit_code": 0
+      },
+      {
+        "label": "new-spec-config-types",
+        "argv": [
+          "C:/Program Files/nodejs/node.exe",
+          "node_modules/typescript/bin/tsc",
+          "--noEmit",
+          "--strict",
+          "--skipLibCheck",
+          "--target",
+          "ES2022",
+          "--module",
+          "NodeNext",
+          "--moduleResolution",
+          "NodeNext",
+          "--lib",
+          "ES2022,DOM,DOM.Iterable",
+          "tests/e2e/g024-new-games.spec.ts",
+          "tests/g024-playwright.config.ts"
+        ],
+        "cwd": "E:\\Work2\\Project\\SimpleGames\\worktrees\\g024-ten-game-release",
+        "exit_code": 1,
+        "expected_exit_code": 0
+      },
+      {
+        "label": "mutex-pure-child",
+        "argv": [
+          "C:\\Users\\hebon\\AppData\\Local\\hermes\\installs\\8a6d0f0a666dcfd4\\environments\\a26f7a713a454a5ea5537543986ea8cb\\venv\\Scripts\\python.exe",
+          "E:\\Work2\\Project\\SimpleGames\\worktrees\\g024-ten-game-release\\artifacts\\g024-integration\\browser-gate.py",
+          "C:/Program Files/nodejs/node.exe",
+          "-e",
+          "if(process.env.GAME_G024_BROWSER_GATE !== 'Local\\\\HermesG024BrowserGate')process.exit(7); console.log('pure child gate confirmed');"
+        ],
+        "cwd": "E:\\Work2\\Project\\SimpleGames\\worktrees\\g024-ten-game-release",
+        "exit_code": 0,
+        "expected_exit_code": 0
+      },
+      {
+        "label": "origin-missing",
+        "argv": [
+          "C:/Program Files/nodejs/node.exe",
+          "scripts/g024-verify.mjs",
+          "--target",
+          "live",
+          "--mode",
+          "smoke"
+        ],
+        "cwd": "E:\\Work2\\Project\\SimpleGames\\worktrees\\g024-ten-game-release",
+        "exit_code": 1,
+        "expected_exit_code": 1
+      },
+      {
+        "label": "origin-wrong",
+        "argv": [
+          "C:/Program Files/nodejs/node.exe",
+          "scripts/g024-verify.mjs",
+          "--target",
+          "live",
+          "--mode",
+          "full",
+          "--origin",
+          "http://127.0.0.1:3116"
+        ],
+        "cwd": "E:\\Work2\\Project\\SimpleGames\\worktrees\\g024-ten-game-release",
+        "exit_code": 1,
+        "expected_exit_code": 1
+      },
+      {
+        "label": "origin-candidate-explicit",
+        "argv": [
+          "C:/Program Files/nodejs/node.exe",
+          "scripts/g024-verify.mjs",
+          "--target",
+          "candidate",
+          "--mode",
+          "smoke",
+          "--origin",
+          "http://192.168.0.195:3116"
+        ],
+        "cwd": "E:\\Work2\\Project\\SimpleGames\\worktrees\\g024-ten-game-release",
+        "exit_code": 1,
+        "expected_exit_code": 1
+      },
+      {
+        "label": "origin-candidate-inherited",
+        "argv": [
+          "C:/Program Files/nodejs/node.exe",
+          "scripts/g024-verify.mjs",
+          "--target",
+          "candidate",
+          "--mode",
+          "smoke"
+        ],
+        "cwd": "E:\\Work2\\Project\\SimpleGames\\worktrees\\g024-ten-game-release",
+        "exit_code": 1,
+        "expected_exit_code": 1
+      },
+      {
+        "label": "build-missing-build",
+        "argv": [
+          "C:/Program Files/nodejs/node.exe",
+          "scripts/g024-verify.mjs",
+          "--target",
+          "live",
+          "--mode",
+          "smoke",
+          "--origin",
+          "http://192.168.0.195:3116"
+        ],
+        "cwd": "E:\\Work2\\Project\\SimpleGames\\worktrees\\g024-ten-game-release\\artifacts\\g024-shared-review\\guard-snapshots\\missing-build",
+        "exit_code": 1,
+        "expected_exit_code": 1
+      },
+      {
+        "label": "build-missing-manifest",
+        "argv": [
+          "C:/Program Files/nodejs/node.exe",
+          "scripts/g024-verify.mjs",
+          "--target",
+          "live",
+          "--mode",
+          "smoke",
+          "--origin",
+          "http://192.168.0.195:3116"
+        ],
+        "cwd": "E:\\Work2\\Project\\SimpleGames\\worktrees\\g024-ten-game-release\\artifacts\\g024-shared-review\\guard-snapshots\\missing-manifest",
+        "exit_code": 1,
+        "expected_exit_code": 1
+      },
+      {
+        "label": "build-source-mismatch",
+        "argv": [
+          "C:/Program Files/nodejs/node.exe",
+          "scripts/g024-verify.mjs",
+          "--target",
+          "live",
+          "--mode",
+          "smoke",
+          "--origin",
+          "http://192.168.0.195:3116"
+        ],
+        "cwd": "E:\\Work2\\Project\\SimpleGames\\worktrees\\g024-ten-game-release\\artifacts\\g024-shared-review\\guard-snapshots\\source-mismatch",
+        "exit_code": 1,
+        "expected_exit_code": 1
+      },
+      {
+        "label": "build-output-mismatch",
+        "argv": [
+          "C:/Program Files/nodejs/node.exe",
+          "scripts/g024-verify.mjs",
+          "--target",
+          "live",
+          "--mode",
+          "smoke",
+          "--origin",
+          "http://192.168.0.195:3116"
+        ],
+        "cwd": "E:\\Work2\\Project\\SimpleGames\\worktrees\\g024-ten-game-release\\artifacts\\g024-shared-review\\guard-snapshots\\output-mismatch",
+        "exit_code": 1,
+        "expected_exit_code": 1
+      },
+      {
+        "label": "config-valid-no-browser",
+        "argv": [
+          "C:/Program Files/nodejs/node.exe",
+          "--input-type=module",
+          "-e",
+          "const c=(await import('./tests/g024-playwright.config.ts')).default; console.log(JSON.stringify({workers:c.workers,retries:c.retries,projects:c.projects.map(p=>p.name),hasWebServer:!!c.webServer}));"
+        ],
+        "cwd": "E:\\Work2\\Project\\SimpleGames\\worktrees\\g024-ten-game-release",
+        "exit_code": 0,
+        "expected_exit_code": 0
+      },
+      {
+        "label": "config-path-traversal",
+        "argv": [
+          "C:/Program Files/nodejs/node.exe",
+          "--input-type=module",
+          "-e",
+          "const c=(await import('./tests/g024-playwright.config.ts')).default; console.log(JSON.stringify({workers:c.workers,retries:c.retries,projects:c.projects.map(p=>p.name),hasWebServer:!!c.webServer}));"
+        ],
+        "cwd": "E:\\Work2\\Project\\SimpleGames\\worktrees\\g024-ten-game-release",
+        "exit_code": 1,
+        "expected_exit_code": 1
+      },
+      {
+        "label": "config-wrong-origin",
+        "argv": [
+          "C:/Program Files/nodejs/node.exe",
+          "--input-type=module",
+          "-e",
+          "const c=(await import('./tests/g024-playwright.config.ts')).default; console.log(JSON.stringify({workers:c.workers,retries:c.retries,projects:c.projects.map(p=>p.name),hasWebServer:!!c.webServer}));"
+        ],
+        "cwd": "E:\\Work2\\Project\\SimpleGames\\worktrees\\g024-ten-game-release",
+        "exit_code": 1,
+        "expected_exit_code": 1
+      },
+      {
+        "label": "config-no-mutex",
+        "argv": [
+          "C:/Program Files/nodejs/node.exe",
+          "--input-type=module",
+          "-e",
+          "const c=(await import('./tests/g024-playwright.config.ts')).default; console.log(JSON.stringify({workers:c.workers,retries:c.retries,projects:c.projects.map(p=>p.name),hasWebServer:!!c.webServer}));"
+        ],
+        "cwd": "E:\\Work2\\Project\\SimpleGames\\worktrees\\g024-ten-game-release",
+        "exit_code": 1,
+        "expected_exit_code": 1
+      },
+      {
+        "command": [
+          "C:/Program Files/nodejs/node.exe",
+          "node_modules/typescript/bin/tsc",
+          "--ignoreConfig",
+          "--noEmit",
+          "--strict",
+          "--skipLibCheck",
+          "--target",
+          "ES2022",
+          "--module",
+          "NodeNext",
+          "--moduleResolution",
+          "NodeNext",
+          "--lib",
+          "ES2022,DOM,DOM.Iterable",
+          "tests/e2e/g024-new-games.spec.ts",
+          "tests/g024-playwright.config.ts"
+        ],
+        "exit_code": 1,
+        "passed": false,
+        "diagnosis": "Initial reviewer command omitted TypeScript 7 --ignoreConfig when specifying standalone files; TS5112 is a reviewer invocation error, not a candidate type error. Original failure logs preserved.",
+        "resolves": "new-spec-config-types",
+        "production_edits": false
+      },
+      {
+        "command": [
+          "C:/Program Files/nodejs/node.exe",
+          "node_modules/typescript/bin/tsc",
+          "--ignoreConfig",
+          "--noEmit",
+          "--strict",
+          "--skipLibCheck",
+          "--types",
+          "node",
+          "--target",
+          "ES2022",
+          "--module",
+          "NodeNext",
+          "--moduleResolution",
+          "NodeNext",
+          "--lib",
+          "ES2022,DOM,DOM.Iterable",
+          "tests/e2e/g024-new-games.spec.ts",
+          "tests/g024-playwright.config.ts"
+        ],
+        "exit_code": 0,
+        "passed": true,
+        "resolves": "new-spec-config-types",
+        "diagnosis": "Reviewer standalone commands require both TypeScript7 --ignoreConfig and explicit --types node, matching project tsconfig node types. Earlier two reviewer-invocation failures remain preserved; no source/test/dependency change or weakening.",
+        "production_edits": false
+      }
+    ],
+    "fresh_origin_negative_cases": 4,
+    "fresh_build_negative_cases": 4,
+    "fresh_config_checks": {
+      "positive_import_no_browser": 1,
+      "negative_path_origin_mutex": 3
+    },
+    "real_mutex_harmless_child": 1,
+    "browser_cases_rerun": 0,
+    "unit_cases_rerun": 0,
+    "http_requests_by_reviewer": 0,
+    "server_lifecycle_actions_by_reviewer": 0
+  },
+  "parsed_implementer_evidence": {
+    "kind": "Existing implementer actual-run evidence independently parsed/read back; not relabelled as reviewer browser execution",
+    "physical_root": "E:\\Work2\\Project\\SimpleGames\\worktrees\\g024-ten-game-release\\artifacts\\g024-integration\\runs\\20261028T154903911Z-8db1851a",
+    "run_path": "artifacts/g024-integration/runs/20261028T154903911Z-8db1851a",
+    "browser": {
+      "discovered": 213,
+      "executed_tests": 213,
+      "actual_result_entries": 213,
+      "all_passed_without_retry_or_skip": true,
+      "by_project": {
+        "desktop-chromium": 71,
+        "mobile-chromium": 71,
+        "mobile-webkit": 71
+      },
+      "by_spec": {
+        "breakout-integration.spec.ts": 6,
+        "flappy-input.spec.ts": 9,
+        "g024-new-games.spec.ts": 9,
+        "library-integration.spec.ts": 18,
+        "live-server.spec.ts": 15,
+        "multi-game-integration.spec.ts": 18,
+        "runner-jumper.spec.ts": 138
+      },
+      "stats": {
+        "startTime": "2026-10-28T15:49:05.333Z",
+        "duration": 441018.914,
+        "expected": 213,
+        "skipped": 0,
+        "unexpected": 0,
+        "flaky": 0
+      },
+      "discovery_is_execution": false
+    },
+    "units": {
+      "common": {
+        "tests": 48,
+        "pass": 48,
+        "fail": 0,
+        "skipped": 0,
+        "todo": 0,
+        "ok_lines": 48,
+        "not_ok_lines": 0
+      },
+      "games": {
+        "tests": 361,
+        "pass": 361,
+        "fail": 0,
+        "skipped": 0,
+        "todo": 0,
+        "ok_lines": 361,
+        "not_ok_lines": 0
+      },
+      "launcher": {
+        "tests": 29,
+        "pass": 29,
+        "fail": 0,
+        "skipped": 0,
+        "todo": 0,
+        "ok_lines": 29,
+        "not_ok_lines": 0
+      }
+    },
+    "unit_total_actual_passed": 438,
+    "http": {
+      "actual_records": 79,
+      "unique_routes": 79,
+      "bytes_match_build_sha256": true,
+      "strict_csp_matches": true,
+      "nosniff": "Enforced in reviewed runner assertions; not retained as a separate per-response JSON field."
+    },
+    "historical": {
+      "files": 178,
+      "before_after_sha256_size_mtime_equal": true
+    },
+    "build": {
+      "manifest_sha256": "81f94f0bbf2dbdce7edb9944ec73af459129e355c7cf9413da8bf87328657f97",
+      "compiled_library_sha256": "7c409d98f06ec1c9df35c321752cac2d0e963f4dca98ab07f3bbab0052f7f460",
+      "runtime_source_files": 84,
+      "output_files": 112,
+      "all_hashes_match": true,
+      "designation": "Pre-game10-fix shared ready build only; never final accepted-fix output"
+    },
+    "invocation": {
+      "all_six_child_exit_codes": 0,
+      "all_signals": null,
+      "final_status": "passed",
+      "finished_recorded": true,
+      "candidate_owned3145_cleanup_refused": true,
+      "independentAcceptance": false,
+      "top_level_os_exit_code": null,
+      "top_level_os_exit_note": "Raw invocation records child exits, not a separate top-level OS exit code. Normal runner completion is supported by final passed status, no error, all child0, successful history and owned-server cleanup; not presented as an independently observed parent process status."
+    },
+    "input_binding": {
+      "matched_changed_files": [
+        "artifacts/g024-integration/browser-gate.py",
+        "ecosystem.config.cjs",
+        "package.json",
+        "scripts/g024-verify.mjs",
+        "src/client/library.ts",
+        "tests/e2e/breakout-integration.spec.ts",
+        "tests/e2e/g024-new-games.spec.ts",
+        "tests/e2e/library-integration.spec.ts",
+        "tests/e2e/live-server.spec.ts",
+        "tests/e2e/multi-game-integration.spec.ts",
+        "tests/e2e/runner-jumper.spec.ts",
+        "tests/g024-playwright.config.ts"
+      ],
+      "nonexecuting_doc_bound_to_manifest_and_commit_only": "docs/G024_SHARED_IMPLEMENTATION.md",
+      "additional_unchanged_input": "tests/e2e/flappy-input.spec.ts",
+      "verification_input_count": 13,
+      "clarification": "13 executed-input entries = 12 changed executable/data files + unchanged Flappy spec; the changed handoff document is not a test runtime input."
+    },
+    "live_discovery": {
+      "discovered": 171,
+      "executed": 0,
+      "http_actions": 0,
+      "server_lifecycle_actions": 0,
+      "not_live_runtime_acceptance": true
+    },
+    "evidence_sha256": {
+      "artifacts/g024-integration/handoff-manifest.json": "5829a6298ee4da385edf9fccf2325372e7ce62ce33b5af27042c3a7ee9b5b109",
+      "artifacts/g024-integration/runs/20261028T154903911Z-8db1851a/invocation.json": "01fb3b9e18b2d2c5638f324f4b7e42b1f3306e9b54abc85dd79bb7aabec2f96d",
+      "artifacts/g024-integration/runs/20261028T154903911Z-8db1851a/playwright-results.json": "59114c7822d9bcd95a1092a01d76453f3588c65a7577aa24468a92496e0a06da",
+      "artifacts/g024-integration/runs/20261028T154903911Z-8db1851a/discovery.json": "e9e4c1cc5c1d236714363c32e4099cc8b5522cb2f695eacac3d1d4cfc31b7549",
+      "artifacts/g024-integration/runs/20261028T154903911Z-8db1851a/verification-input-sha256.json": "e45f06ff3fbc644e1884ef394c900056e0c2d1d1225b37d91f40a7ed76bac855",
+      "artifacts/g024-integration/runs/20261028T154903911Z-8db1851a/unit-common.stdout.log": "72ed3368a31d263bb07d036f21a5e47414abe34cfa1193cb9b56de1f54dc001d",
+      "artifacts/g024-integration/runs/20261028T154903911Z-8db1851a/unit-games.stdout.log": "920dcab40ebdce10a2382896b48f1edb1fa9250a0be4d978e772a6ebac67e58f",
+      "artifacts/g024-integration/runs/20261028T154903911Z-8db1851a/unit-launcher.stdout.log": "2bd90d474655efce2b58e53fa38f5522508de6f3b7c3844ce4c4dea35b44ea1b",
+      "artifacts/g024-integration/runs/20261028T154903911Z-8db1851a/unit-summary.json": "622049feaaa1cf2a6d82082838ccc823c67a8b4f12ffbe62fed239abae2588cc",
+      "artifacts/g024-integration/runs/20261028T154903911Z-8db1851a/http-bytecheck.json": "78445eb463a3e2f2e7faf99313e62d55b19dac5b7a7a5fc8ccbbcd7e38daecff",
+      "artifacts/g024-integration/runs/20261028T154903911Z-8db1851a/historical-before.json": "29401a2da3c7e6079dbe97bacd6c27d6c66b1e21156bbd87e931a0e05afeab3f",
+      "artifacts/g024-integration/runs/20261028T154903911Z-8db1851a/historical-after.json": "29401a2da3c7e6079dbe97bacd6c27d6c66b1e21156bbd87e931a0e05afeab3f",
+      "artifacts/g024-integration/runs/20261028T154903911Z-8db1851a/launcher-same-byte-snapshot.json": "9a0b063970e859ba985575e7ef1e39389a0d23ae22c2fd634d3e4a88baa3cdf9",
+      "artifacts/g024-build/g024-build-manifest.json": "81f94f0bbf2dbdce7edb9944ec73af459129e355c7cf9413da8bf87328657f97",
+      "artifacts/g024-integration/runs/20261028T154903911Z-8db1851a/runtime-source-sha256.json": "15ff68f2f05bf3cfd931e05db0dc57a39108409c07b7a43398f832af37da0bab",
+      "artifacts/g024-integration/runs/20261028T155751801Z-de51caca/invocation.json": "082d4b1f6989349be4211bd621df82e89849ab2b97eb32d68e26c938aaaaaa24"
+    }
+  },
+  "reviewer_diagnostics": [
+    {
+      "issue": "Initial standalone TypeScript7 command omitted --ignoreConfig and returned TS5112.",
+      "disposition": "Reviewer invocation error only; original stdout/exit1 preserved."
+    },
+    {
+      "issue": "Second standalone invocation omitted explicit --types node after ignoring tsconfig.",
+      "disposition": "Reviewer invocation error only; original stdout/exit1 preserved. Final strict command includes the same node types as tsconfig and returned0. No source edits/install/assertion relaxation."
+    }
+  ],
+  "suggestions": [
+    {
+      "severity": "non-blocking",
+      "topic": "Evidence input-count wording",
+      "detail": "handoff full_input_hash_match13 should not be read as all13 changed files being runtime inputs: executed verification manifest contains12 changed inputs plus unchanged Flappy spec; the nonexecuting handoff doc is separately bound by raw SHA256 and candidate blob."
+    },
+    {
+      "severity": "non-blocking",
+      "topic": "Top-level process status",
+      "detail": "PM final regression wrapper should persist the actual parent runner OS exit code beside invocation.json, rather than relying only on successful child exits and final metadata."
+    }
+  ],
+  "pm_mid_review_update": {
+    "source": "Direct PM message, not a new independent game10 verdict by this reviewer",
+    "game10_delta": "73907be",
+    "reported_independent_QA10": "PASS;10 input SHA; raw4+106+115 TAP all passed",
+    "reported_integration_head": "90d14128e93300e6ef7c2bc69406195337c57c85",
+    "reported_merged_scope": "game10 engine+test+fixdoc only",
+    "shared_review_policy": "The13 shared bytes alone remain frozen; expected game10-only HEAD/runtime-source delta does not invalidate shared acceptance.",
+    "remaining_PM_gate": "Archive pre-fix build, build accepted candidate anew and run fresh final full213 regression."
+  },
+  "limits": [
+    "PASS applies only to the13 frozen shared files listed above, at ca0ea50a5e5990f346a0ab9734057e66cb8619ef relative to c0a08a55dd39c0c32440d9aaab37eccc85cf85f4; later HEAD changes do not inherit whole-tree acceptance.",
+    "Game10 fix73907be and its independent delta review remain outside this review. PM reports fresh QA10 PASS and narrow engine/test/fixdoc merge at90d14128e93300e6ef7c2bc69406195337c57c85; the pre-fix build/evidence remain unchanged. PM must archive/rebuild and rerun the final full213 candidate regression.",
+    "No deep game engine/history/design review repeated, no fresh browser/438unit/HTTP regression run by this reviewer, and no physical phone/audible listening acceptance.",
+    "No main/LAN3116/runtime/PM2/install/source/test/old-evidence/Git state or board changes. Review artifacts and the requested JSON report are the only writes.",
+    "Named mutex abandoned-owner/failure branches and occupied-port race were inspected, not newly forced with real browsers. The real mutex smoke used only a harmless child.",
+    "Original initial smoke FAIL, interrupted full run and observer diagnoses remain untouched; only the completed 20261028T154903911Z-8db1851a run supplies the213 execution total."
+  ],
+  "report_paths": {
+    "verdict": "docs/G024_SHARED_REVIEW.json",
+    "independent_checks": "artifacts/g024-shared-review/check-results.json",
+    "resolved_types": "artifacts/g024-shared-review/typecheck-final.json",
+    "test_delta_metrics": "artifacts/g024-shared-review/test-delta-metrics.json",
+    "raw_guard_and_type_logs": "artifacts/g024-shared-review/",
+    "same_byte_negative_build_snapshots": "artifacts/g024-shared-review/guard-snapshots/"
+  }
+}
