@@ -42,6 +42,7 @@ export function createGame(level = 1) {
   return seal({ board, player: board.initialPlayer, boxes: board.initialBoxes, moves: 0, pushes: 0, won: false, history: [] });
 }
 export function move(state, direction) {
+  if (typeof direction !== 'string' || !Object.hasOwn(DIRECTIONS, direction)) return state;
   const delta = DIRECTIONS[direction];
   if (!delta || state.won || state.moves === Number.MAX_SAFE_INTEGER) return state;
   const [dx, dy] = delta;
