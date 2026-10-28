@@ -25,6 +25,26 @@ for(const level of LEVELS)test(`all-level replay ${level.id}: ${level.name}`,()=
   assert.equal(move(state,'U'),state);assert.equal(undo(state),state);
 });
 test('invalid walls and directions are exact no-ops, including history',()=>{let s=createGame(1);s=move(s,'U');const before=s;assert.equal(move(s,'U'),before);assert.equal(move(s,'diagonal'),before);assert.equal(undo(createGame(1)).moves,0);});
+const invalidDirections=[
+  ...Object.getOwnPropertyNames(Object.prototype).map(value=>[`inherited ${value}`,value]),
+  ...['','u','r','RR',' R','R ','diagonal'].map(value=>[`unknown string ${JSON.stringify(value)}`,value]),
+  ['null',null],['undefined',undefined],['zero',0],['number',1],['negative number',-1],['NaN',NaN],['infinity',Infinity],['bigint',1n],['true',true],['false',false],
+  ['object',{}],['null-prototype object',Object.create(null)],['array',[]],['direction array',['R']],['boxed direction',new String('R')],
+  ['stringifying direction',{toString:()=> 'R'}],['primitive direction',{[Symbol.toPrimitive]:()=> 'R'}],
+  ['throwing coercion',{[Symbol.toPrimitive](){throw new Error('Invalid direction must not be coerced');}}],
+  ['function',()=> 'R'],['stringifying function',Object.assign(()=>{}, {toString:()=> 'R'})],['symbol',Symbol('R')],
+  ['throwing proxy',new Proxy({}, {get(){throw new Error('Invalid direction properties must not be read');}})],
+  ['revoked proxy',(()=>{const {proxy,revoke}=Proxy.revocable({},{});revoke();return proxy;})()],
+];
+for(const [name,direction] of invalidDirections)test(`invalid direction is an identical-state no-op: ${name}`,()=>{
+  for(const state of [createGame(1),move(createGame(1),'R'),play(createGame(1),'RR')]){
+    const before=snapshot(state),history=state.history,boxes=state.boxes;
+    assert.strictEqual(move(state,direction),state);
+    assert.deepEqual(state,before);
+    assert.strictEqual(state.history,history);assert.strictEqual(state.boxes,boxes);
+    assert.equal(state.moves,before.moves);assert.equal(state.pushes,before.pushes);
+  }
+});
 test('cannot push two adjacent boxes or pull a box',()=>{const s=fixture(['#######','#     #','# @$$.#','#   . #','#######']);assert.equal(move(s,'R'),s);const left=move(s,'L');assert.deepEqual(left.boxes,s.boxes);assert.equal(left.pushes,0);});
 test('cannot push box through wall',()=>{const s=fixture(['######','# @$##','# .  #','######']);assert.equal(move(s,'R'),s);});
 test('goals remain static beneath moving boxes and player',()=>{
