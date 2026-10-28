@@ -1,0 +1,291 @@
+{
+  "task_id": "G024-QA09",
+  "role": "independent tester09; not builder; read-only production review",
+  "passed": true,
+  "status": "PASS_WITH_EXPLICIT_LIMITATIONS",
+  "summary_ko": "동결 후보의 규칙·저장·입력·보안 및 실제HTTP Chromium/WebKit 자동 검증 범위에서 제품 결함을 발견하지 못했습니다. 네이티브 OS/탭 숨김 이벤트 전달과 WebKit 이미지 수용은 미검증이며 PASS에 포함하지 않았습니다. 릴리스/운영 수용은 PM의 별도 단계입니다.",
+  "root": "E:/Work2/Project/SimpleGames/worktrees/g024-09-crossy",
+  "branch": "feature/g024-09-crossy",
+  "source_commit": "9ad8ca2c13a498bd5ccdc27deda560feefdb92bc",
+  "completed_at_kst": "2026-10-29T01:01:27.753303+09:00",
+  "inputs_sha256": {
+    "E:/Work2/Project/SimpleGames/worktrees/g024-09-crossy/public/games/09-crossy/art.js": "d458e5b46914894eb9312c17755d55c1ab64fb3128e495f0a908a6286a586b8b",
+    "E:/Work2/Project/SimpleGames/worktrees/g024-09-crossy/public/games/09-crossy/engine.js": "9e0ad9873fd6f10b80b5b60e6e5f4fac4c58e35ae8f01db7b8cd8ebf06ec2577",
+    "E:/Work2/Project/SimpleGames/worktrees/g024-09-crossy/public/games/09-crossy/icon.svg": "c5ee6cd60fb00e4d1f946308d30c5a081e325ac3ce690d58ad66083df3d02823",
+    "E:/Work2/Project/SimpleGames/worktrees/g024-09-crossy/public/games/09-crossy/index.html": "9de43791c4b65551a204b718c091f962a1c018d2b57e3395b4cda6f11e32c0d7",
+    "E:/Work2/Project/SimpleGames/worktrees/g024-09-crossy/public/games/09-crossy/main.js": "6eceb9b54a4499568b20991ba6ecc8368659930c6f5825579bec29afcfd6b159",
+    "E:/Work2/Project/SimpleGames/worktrees/g024-09-crossy/public/games/09-crossy/save.js": "fe10d257f28b1aa18f2d1277f429ad37d02a763524025bb563b2bd87677a4e89",
+    "E:/Work2/Project/SimpleGames/worktrees/g024-09-crossy/public/games/09-crossy/style.css": "f88d46326326db80489aaa52cfeb357363fc8c407c2814cb29c14a6ca18632d5",
+    "E:/Work2/Project/SimpleGames/worktrees/g024-09-crossy/tests/games/09-crossy.test.mjs": "81cec6b9aa8183520658ad384932911333a1c6c148380195208869c1ea0e9966",
+    "E:/Work2/Project/SimpleGames/worktrees/g024-09-crossy/docs/G024_09_IMPLEMENTATION.md": "6a308a998a65107917b832f970e68b51a9fc2adf0787f2a3fe417deca91d5b15",
+    "E:/Work2/Project/SimpleGames/worktrees/g024-09-crossy/scripts/build.mjs": "5a8f45a58183be08cdbab9e66458017ef59d097001290352e001173c33a8b3d3",
+    "E:/Work2/Project/SimpleGames/worktrees/g024-09-crossy/src/server/index.ts": "07981d63620ea7cc3633766fc657996f47fa0e513506d31a8dc3f09bede5de4c",
+    "E:/Work2/Project/SimpleGames/worktrees/g024-09-crossy/package.json": "0190c58edcfb077f455554c0e9f2bdf8741ce3a280e44b7254cdedbcf2d075ea",
+    "E:/Work2/Project/SimpleGames/worktrees/g024-ten-game-release/docs/G024_PM_CONTRACT.md": "2b39ddf53b5689e97c92e313487b887af09603da447d514cc5776d585985454a"
+  },
+  "input_manifest_path": "E:/Work2/Project/SimpleGames/worktrees/g024-09-crossy/artifacts/g024-qa09/input-manifest.json",
+  "post_verification_manifest_path": "E:/Work2/Project/SimpleGames/worktrees/g024-09-crossy/artifacts/g024-qa09/final-source-recheck.json",
+  "inputs_unchanged": true,
+  "security_concerns": [],
+  "logic_errors": [],
+  "suggestions": [
+    {
+      "severity": "Low",
+      "category": "UX/non-blocking",
+      "physical_path": "E:/Work2/Project/SimpleGames/worktrees/g024-09-crossy/public/games/09-crossy/index.html",
+      "lines": [
+        15,
+        17
+      ],
+      "detail_ko": "320px 상단 게임목록·음소거 버튼의 한글이 두 줄로 줄바꿈됩니다. 문구 손실·겹침·44px 미달은 없으나 다음 디자인 수정에서 짧은 문구 또는 nowrap을 고려할 수 있습니다.",
+      "evidence": "E:/Work2/Project/SimpleGames/worktrees/g024-09-crossy/artifacts/g024-qa09/mobile320-active.png"
+    }
+  ],
+  "tests": {
+    "unit_baseline": {
+      "collected": 32,
+      "executed": 32,
+      "passed": 32,
+      "failed": 0,
+      "skipped": 0,
+      "command": [
+        "C:/Program Files/nodejs/node.exe",
+        "--test",
+        "--test-reporter=tap",
+        "tests/games/09-crossy.test.mjs"
+      ],
+      "log": "E:/Work2/Project/SimpleGames/worktrees/g024-09-crossy/artifacts/g024-qa09/unit-baseline.tap"
+    },
+    "unit_independent_final": {
+      "collected": 14,
+      "executed": 14,
+      "passed": 14,
+      "failed": 0,
+      "skipped": 0,
+      "command": [
+        "C:/Program Files/nodejs/node.exe",
+        "--test",
+        "--test-reporter=tap",
+        "artifacts/g024-qa09/independent.test.mjs"
+      ],
+      "log": "E:/Work2/Project/SimpleGames/worktrees/g024-09-crossy/artifacts/g024-qa09/unit-independent-corrected.tap"
+    },
+    "actual_http_functional_final": {
+      "collected": 52,
+      "executed": 52,
+      "passed": 52,
+      "failed": 0,
+      "skipped": 0,
+      "reports": [
+        "E:/Work2/Project/SimpleGames/worktrees/g024-09-crossy/artifacts/g024-qa09/early-report.json",
+        "E:/Work2/Project/SimpleGames/worktrees/g024-09-crossy/artifacts/g024-qa09/deep-report.json",
+        "E:/Work2/Project/SimpleGames/worktrees/g024-09-crossy/artifacts/g024-qa09/supplement-corrected-report.json"
+      ]
+    },
+    "hidden_handler_environment_fixture": {
+      "collected": 3,
+      "executed": 3,
+      "passed": 3,
+      "failed": 0,
+      "skipped": 0,
+      "report": "E:/Work2/Project/SimpleGames/worktrees/g024-09-crossy/artifacts/g024-qa09/visibility-fixture-report.json",
+      "classification": "Pre-load document.hidden=true environment fixture plus synthetic/untrusted visibilitychange. No live engine or record setter. NOT native OS/tab event delivery."
+    },
+    "build": {
+      "executed": 1,
+      "passed": 1,
+      "failed": 0,
+      "command_record": "E:/Work2/Project/SimpleGames/worktrees/g024-09-crossy/artifacts/g024-qa09/build-command.json",
+      "log": "E:/Work2/Project/SimpleGames/worktrees/g024-09-crossy/artifacts/g024-qa09/build.log",
+      "output": "E:/Work2/Project/SimpleGames/worktrees/g024-09-crossy/artifacts/g024-qa09/build"
+    },
+    "syntax": {
+      "executed": 5,
+      "passed": 5,
+      "failed": 0,
+      "record": "E:/Work2/Project/SimpleGames/worktrees/g024-09-crossy/artifacts/g024-qa09/static-review.json"
+    },
+    "captures": {
+      "created": 10,
+      "visually_inspected": 7,
+      "inspected_files": [
+        "E:/Work2/Project/SimpleGames/worktrees/g024-09-crossy/artifacts/g024-qa09/desktop-game.png",
+        "E:/Work2/Project/SimpleGames/worktrees/g024-09-crossy/artifacts/g024-qa09/mobile320-game.png",
+        "E:/Work2/Project/SimpleGames/worktrees/g024-09-crossy/artifacts/g024-qa09/landscape667-wardrobe.png",
+        "E:/Work2/Project/SimpleGames/worktrees/g024-09-crossy/artifacts/g024-qa09/desktop-wardrobe.png",
+        "E:/Work2/Project/SimpleGames/worktrees/g024-09-crossy/artifacts/g024-qa09/desktop-active.png",
+        "E:/Work2/Project/SimpleGames/worktrees/g024-09-crossy/artifacts/g024-qa09/mobile320-active.png",
+        "E:/Work2/Project/SimpleGames/worktrees/g024-09-crossy/artifacts/g024-qa09/landscape667-active.png"
+      ],
+      "counted_as_functional_tests": false
+    },
+    "raw_execution_history_including_diagnostics": {
+      "unit": {
+        "tests": 60,
+        "pass": 58,
+        "fail": 2,
+        "skipped": 0
+      },
+      "browser_including_captures_and_environment_failures": {
+        "collected": 75,
+        "executed": 68,
+        "passed": 66,
+        "failed": 2,
+        "skipped": 0
+      },
+      "browser_reports": [
+        "E:/Work2/Project/SimpleGames/worktrees/g024-09-crossy/artifacts/g024-qa09/early-report.json",
+        "E:/Work2/Project/SimpleGames/worktrees/g024-09-crossy/artifacts/g024-qa09/deep-report.json",
+        "E:/Work2/Project/SimpleGames/worktrees/g024-09-crossy/artifacts/g024-qa09/supplement-report.json",
+        "E:/Work2/Project/SimpleGames/worktrees/g024-09-crossy/artifacts/g024-qa09/supplement-corrected-report.json",
+        "E:/Work2/Project/SimpleGames/worktrees/g024-09-crossy/artifacts/g024-qa09/visual-report.json",
+        "E:/Work2/Project/SimpleGames/worktrees/g024-09-crossy/artifacts/g024-qa09/active-native-report.json",
+        "E:/Work2/Project/SimpleGames/worktrees/g024-09-crossy/artifacts/g024-qa09/visibility-fixture-report.json"
+      ],
+      "note_ko": "원본 실패를 제거하거나 PASS로 덮지 않았습니다. 아래 QA 관측 오류/환경 실패는 제품 결함 및 최종 고유 수용 case와 별도로 분류합니다. 최초 supplement의 미실행 7개는 corrected 6개 수용 + 별도 네이티브 환경 진단으로 재구성했습니다."
+    }
+  },
+  "coverage": {
+    "rules": "Independent closed-slab trajectory oracle; in-hop collision and loss-before-score; periodic seam both directions; body28/car56-or68x26 source geometry; endpoint RNG lane generation; <=3 roads, >=120 empty gap and speed thresholds/cap; one queue and invalid no-op; backtracking score; split fixed ticks; idle8/10 and once-only result.",
+    "storage": "Independent small-history DP aggregates; BigInt safe extremes and overflow; zero-score rounds; corrupt schema recovery; getter/getItem/setItem failures both pure and real UI; no auto load/recovery/midround writes; own literal key only; no deletion; persistent warnings and cloned memory fallback.",
+    "cosmetics": "Independent 299/300 and49/50 truth tables with valid initial records from pure settlement API; locked/full/free/mixed three parts; all64 pure cosmetic combinations identical; cancel and persistence; four directions and four preview poses.",
+    "input_ui": "Real monotonic clock, trusted80ms controls, stable descendant MutationObserver; focused keys, modifiers/repeat/outside ignore; native trusted boundary/one-queue cases; CDP touch tap, cancel, inside/outside second finger including mixed keyboard hop; exact CSS24 threshold, dominance/tie/up no-op, normal outside scroll; immutable cloned snapshot with no setter; nested WebKit dialogs immediate/RAF/280ms actual-trigger focus; Tab/ShiftTab, Escape, restart/home cancel/quit/result/retry/reload and late-focus protection.",
+    "timing_completion": "All three browser profiles independently scored using public inputs and naturally lost to moving cars and real-clock idle; 8-second visible warning/10-second once-only settlement. Real300ms UI stall froze the first callback at exactly zero physical ticks, cleared queue/gesture, and required explicit resume. Blur event handler tested synthetically, hidden handler tested with clearly labeled environment fixture.",
+    "http_security": "Fresh strict build, own loopback3143 createGameServer; first smoke verified seven HTTP asset SHA256 values against frozen physical source, unchanged strict CSP and nosniff. Unfiltered console/warning/pageerror and local-only request assertions in functional suites. All seven production files and dedicated test reviewed for remote fetch/eval/HTML injection/secrets. SVG namespace and Set.clear candidates adjudicated benign.",
+    "visual_layout": "Chromium desktop1366, 320px and667x375 captures manually inspected; original warm grass/road/chick and wardrobe visible. DOM no horizontal overflow, every visible actionable button >=44px, short-viewport dialogs scroll; reduced motion exercised. WebKit functional and geometry tests passed without screenshot-induced CSP injection."
+  },
+  "diagnostics_preserved": [
+    {
+      "kind": "QA test fixture/oracle correction",
+      "path": "E:/Work2/Project/SimpleGames/worktrees/g024-09-crossy/artifacts/g024-qa09/diagnostic-first-unit",
+      "original_counts": {
+        "executed": 14,
+        "passed": 12,
+        "failed": 2
+      },
+      "cause": "Constructed row8 fixture had not generated lanes needed by a valid hop; valid-hop RNG use was incorrectly guarded. Prior120ms landing leaves5ms fixed-tick phase; idle expiry oracle incorrectly demanded unphased10.000. Preserved original source/TAP. Corrected fixture plus exact independent tick oracle passed14/14; production unchanged."
+    },
+    {
+      "kind": "Native visibility environment attempt1",
+      "path": "E:/Work2/Project/SimpleGames/worktrees/g024-09-crossy/artifacts/g024-qa09/diagnostic-first-supplement",
+      "cause": "Headed ctx.newPage/bringToFront did not change original document.hidden or deliver blur; assertion demanding pause without an event was invalid. Original report2 executed/1 passed/1 diagnostic failure retained."
+    },
+    {
+      "kind": "Native visibility environment attempt2; STOPPED after this",
+      "path": "E:/Work2/Project/SimpleGames/worktrees/g024-09-crossy/artifacts/g024-qa09/active-native-report.json",
+      "cause": "Disabled default Chromium focus emulation and minimized its own headed browser window via CDP, but document.hidden stayed false and lifecycle event list stayed empty. Three active captures succeeded; one native-environment prerequisite failed. Cause not established; native acceptance unavailable, not a product pause failure. No third native attempt."
+    },
+    {
+      "kind": "Static scan command quoting",
+      "path": "E:/Work2/Project/SimpleGames/worktrees/g024-09-crossy/artifacts/g024-qa09/static-review.json",
+      "cause": "Initial one-line Python string failed to parse before running any scan; standalone static_review.py executed successfully."
+    },
+    {
+      "kind": "Python cleanup probe unavailable; Node probe authoritative",
+      "paths": [
+        "E:/Work2/Project/SimpleGames/worktrees/g024-09-crossy/artifacts/g024-qa09/post-verification-manifest.json",
+        "E:/Work2/Project/SimpleGames/worktrees/g024-09-crossy/artifacts/g024-qa09/final-source-recheck.json",
+        "E:/Work2/Project/SimpleGames/worktrees/g024-09-crossy/artifacts/g024-qa09/final-node-port-probe.json"
+      ],
+      "cause": "Two Python socket probes timed out. A provisional POSIX errno explanation recorded in final-source-recheck.json was not established and is superseded by this note. Existing Node probes before/after every browser run and the final fresh Node probe returned ECONNREFUSED. No unrelated service was stopped."
+    }
+  ],
+  "limitations": [
+    "Native OS/tab hide/blur delivery remains unverified on this Windows runner after two environment attempts. Hidden=true branch and synthetic blur behavior passed, but these do not prove native lifecycle delivery.",
+    "WebKit screenshot/image acceptance unavailable: known Playwright screenshotter inline-style injection under unchanged strict CSP. WebKit functional, focus, layout, console and CSP checks ran without filters or security weakening; no WebKit screenshot PASS claimed.",
+    "PC/mobile Chromium and Windows WebKit are automation/emulation, not a physical phone or actual iPhone Safari.",
+    "Audio failure fallback/API behavior reviewed/tested; no real audio listening acceptance.",
+    "No human20-second-to2-minute play-duration validation; real-clock idle tests are not human play-time evidence.",
+    "Shared catalog integration, main merge, LAN3116 and deployment/PM2 acceptance are outside this QA worktree assignment."
+  ],
+  "blockers": [],
+  "environment_unavailable_checks": [
+    "native OS/tab lifecycle event delivery",
+    "WebKit screenshot visual acceptance"
+  ],
+  "cleanup": {
+    "own_servers_closed": true,
+    "loopback3143_final": {
+      "time": "2026-10-28T15:58:20.547Z",
+      "host": "127.0.0.1",
+      "port": 3143,
+      "refused": true,
+      "code": "ECONNREFUSED"
+    },
+    "browser_gate": {
+      "name": "Local\\HermesG024BrowserGate",
+      "win32_HANDLE_restypes": "ctypes.wintypes.HANDLE; CreateMutex/Wait/Release/Close typed explicitly",
+      "blocking_wait": true,
+      "runs": [
+        {
+          "path": "E:/Work2/Project/SimpleGames/worktrees/g024-09-crossy/artifacts/g024-qa09/active-native-gate.json",
+          "exit_code": 1,
+          "released": true,
+          "closed": true
+        },
+        {
+          "path": "E:/Work2/Project/SimpleGames/worktrees/g024-09-crossy/artifacts/g024-qa09/deep-gate.json",
+          "exit_code": 0,
+          "released": true,
+          "closed": true
+        },
+        {
+          "path": "E:/Work2/Project/SimpleGames/worktrees/g024-09-crossy/artifacts/g024-qa09/early-gate.json",
+          "exit_code": 0,
+          "released": true,
+          "closed": true
+        },
+        {
+          "path": "E:/Work2/Project/SimpleGames/worktrees/g024-09-crossy/artifacts/g024-qa09/supplement-corrected-gate.json",
+          "exit_code": 0,
+          "released": true,
+          "closed": true
+        },
+        {
+          "path": "E:/Work2/Project/SimpleGames/worktrees/g024-09-crossy/artifacts/g024-qa09/supplement-gate.json",
+          "exit_code": 1,
+          "released": true,
+          "closed": true
+        },
+        {
+          "path": "E:/Work2/Project/SimpleGames/worktrees/g024-09-crossy/artifacts/g024-qa09/visibility-fixture-gate.json",
+          "exit_code": 0,
+          "released": true,
+          "closed": true
+        },
+        {
+          "path": "E:/Work2/Project/SimpleGames/worktrees/g024-09-crossy/artifacts/g024-qa09/visual-gate.json",
+          "exit_code": 0,
+          "released": true,
+          "closed": true
+        }
+      ]
+    },
+    "source_or_existing_tests_modified": false,
+    "git_writes": false,
+    "installs_or_dependency_changes": false,
+    "pm2_lan3116_board_model_config_changes": false,
+    "write_scope": [
+      "E:/Work2/Project/SimpleGames/worktrees/g024-09-crossy/artifacts/g024-qa09/**",
+      "E:/Work2/Project/SimpleGames/worktrees/g024-09-crossy/docs/G024_QA09.json"
+    ]
+  },
+  "evidence_manifest_path": "E:/Work2/Project/SimpleGames/worktrees/g024-09-crossy/artifacts/g024-qa09/evidence-sha256.json",
+  "commands": {
+    "working_directory": "E:/Work2/Project/SimpleGames/worktrees/g024-09-crossy",
+    "node": "C:/Program Files/nodejs/node.exe",
+    "build": "\"C:/Program Files/nodejs/node.exe\" scripts/build.mjs --out-dir artifacts/g024-qa09/build",
+    "unit_baseline": "\"C:/Program Files/nodejs/node.exe\" --test --test-reporter=tap tests/games/09-crossy.test.mjs",
+    "unit_independent": "\"C:/Program Files/nodejs/node.exe\" --test --test-reporter=tap artifacts/g024-qa09/independent.test.mjs",
+    "browser": [
+      "python artifacts/g024-qa09/browser_gate.py artifacts/g024-qa09/early.mjs",
+      "python artifacts/g024-qa09/browser_gate.py artifacts/g024-qa09/deep.mjs",
+      "python artifacts/g024-qa09/browser_gate.py artifacts/g024-qa09/supplement.mjs",
+      "python artifacts/g024-qa09/browser_gate.py artifacts/g024-qa09/supplement-corrected.mjs",
+      "python artifacts/g024-qa09/browser_gate.py artifacts/g024-qa09/visual.mjs",
+      "python artifacts/g024-qa09/browser_gate.py artifacts/g024-qa09/active-native.mjs",
+      "python artifacts/g024-qa09/browser_gate.py artifacts/g024-qa09/visibility-fixture.mjs"
+    ],
+    "static": "python artifacts/g024-qa09/static_review.py"
+  }
+}
