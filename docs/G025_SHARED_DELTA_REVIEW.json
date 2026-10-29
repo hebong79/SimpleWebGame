@@ -1,0 +1,600 @@
+{
+  "passed": true,
+  "security_concerns": [],
+  "logic_errors": [],
+  "suggestions": [
+    {
+      "id": "S01",
+      "severity": "non-blocking-hardening",
+      "location": "scripts/g025-verify.mjs:195-196",
+      "message": "Common/game unit file lists should explicitly require a nonzero length before spawning node --test; otherwise an empty list invokes Node automatic discovery. The current contracted build emits tests/unit and prerequisites require both dedicated game tests, so no current missing-test execution was observed.",
+      "requestedFollowUp": "원소 수 0에서 BLOCKED를 반환하는 방어를 선택적으로 추가하고 이후 실제 full 인수에서 검증하십시오.",
+      "status": "inherited_non_blocking_unimplemented_follow_up",
+      "currentDeltaFinding": false
+    },
+    {
+      "id": "S02",
+      "severity": "non-blocking-resilience",
+      "location": "artifacts/g025-integration/browser-gate.py:53-70",
+      "message": "Raw-log pump exceptions occur on threads and are not explicitly re-raised by main. Consider collecting thread failures and failing the browser-session even if the subprocess exits zero, so a future disk/log failure cannot look like complete raw evidence. No such failure was observed in this static-only review.",
+      "status": "inherited_non_blocking_unimplemented_follow_up",
+      "currentDeltaFinding": false
+    }
+  ],
+  "inputs_sha256": {
+    "E:\\Work2\\Project\\SimpleGames\\worktrees\\g025-twelve-game-release\\src\\client\\library.ts": "f7f5402c07a044d342c6969f277e9b8843590e44c3ce5a52784dc5524854318f",
+    "E:\\Work2\\Project\\SimpleGames\\worktrees\\g025-twelve-game-release\\tests\\e2e\\g025-new-games.spec.ts": "3f9e0310bc83a8bc61e6ca1be784a95c529b78dce1ae892df0b9fdd27eceab12",
+    "E:\\Work2\\Project\\SimpleGames\\worktrees\\g025-twelve-game-release\\tests\\e2e\\g024-new-games.spec.ts": "1a40e99d73f357cd0f453d95aaab79d14269b428c230ed00e08cc8e5dc19b23b",
+    "E:\\Work2\\Project\\SimpleGames\\worktrees\\g025-twelve-game-release\\docs\\G025_SHARED_CORE_REVIEW.json": "cd97106d23183b29d200378621929a809482e2b41a1006c40bda77e728721fd2",
+    "E:\\Work2\\Project\\SimpleGames\\01-2048\\artifacts\\g025-pm\\shared-core-review-intake.json": "3ad5fbf01faf10114be4d9042f5d63d1ef29f1c8803762e8208da43efa411c67",
+    "E:\\Work2\\Project\\SimpleGames\\worktrees\\g025-twelve-game-release\\artifacts\\g025-build\\g025-build-manifest.json": "1194c875f9f50e147429fbee54051f36c3ee0905be749aa7707f5c5cd7a66654",
+    "E:\\Work2\\Project\\SimpleGames\\worktrees\\g025-twelve-game-release\\artifacts\\g025-integration\\pagination-fix-20261029T132713-1b81dda8-2ce4-49f2-9799-2c6ba2bd925e\\results.json": "65aa02b09889c6261883716825b8c84436162ad3a5aeb46dd60fba6c203692ab",
+    "E:\\Work2\\Project\\SimpleGames\\worktrees\\g025-twelve-game-release\\artifacts\\g025-integration\\shared-final-20261029T130822\\results.json": "90097a7e59c68888bd38fdccab0ec2e5cf8f733195a9da081b37a1bca6ab0553",
+    "E:\\Work2\\Project\\SimpleGames\\worktrees\\g025-twelve-game-release\\artifacts\\g025-integration\\runs\\20261029T132955396Z-7b607f11-4c41-44ab-9edc-489f50bdfe77\\children\\browser-session-a6c4eab5-6c9a-4d10-9f4a-7c650fbb0bc7\\execution-394e8926-8a4c-4476-bcf7-89c5617b7dd2\\playwright-results.json": "6793f712f7869fa20c5066fc417e74c707eeaee018fe4c9e388f3cfa48a4fd2d",
+    "E:\\Work2\\Project\\SimpleGames\\worktrees\\g025-twelve-game-release\\artifacts\\g025-integration\\runs\\20261029T131027587Z-846f013b-f2bf-4ffd-acc4-9418298e0b85\\children\\browser-session-63ef206b-baf1-4f4d-9463-30637a293720\\execution-c25660ad-e0e5-41a0-b152-d3840dd6c64c\\playwright-results.json": "e06746bd94296ff706114b2f2deeed26671d9744860fdfea7d938d752f203138",
+    "E:\\Work2\\Project\\SimpleGames\\worktrees\\g025-twelve-game-release\\artifacts\\g025-integration\\runs\\20261029T132955396Z-7b607f11-4c41-44ab-9edc-489f50bdfe77\\children\\browser-session-a6c4eab5-6c9a-4d10-9f4a-7c650fbb0bc7\\discovery-4c93c0d2-f9f8-42bb-8c42-a85de7e303a8\\discovery.json": "fbadf9240d24fe42500c80c0413a7900e30fced8464cfbb0fb33a92679665bc1",
+    "E:\\Work2\\Project\\SimpleGames\\worktrees\\g025-twelve-game-release\\public\\games\\11-mines\\main.mjs": "c328e73ba3a6ae447656938974a813de7146026915d15682b352402240a5ddec",
+    "E:\\Work2\\Project\\SimpleGames\\worktrees\\g025-twelve-game-release\\public\\games\\11-mines\\engine.mjs": "3bbf6d1d999207a00a1d11d5f2254ed0f262eafcef47214b240aafbc0160f453",
+    "E:\\Work2\\Project\\SimpleGames\\worktrees\\g025-twelve-game-release\\public\\games\\11-mines\\index.html": "e8f6c467c95ef36bd4e6766ea68a2adc24887a132db772df06fb1955170736c6",
+    "E:\\Work2\\Project\\SimpleGames\\worktrees\\g025-twelve-game-release\\public\\games\\12-fifteen\\main.mjs": "584dfd858b40e4b02ec302ac855efc8073a24cce85d430a11799f1b50eee9534",
+    "E:\\Work2\\Project\\SimpleGames\\worktrees\\g025-twelve-game-release\\public\\games\\12-fifteen\\engine.mjs": "b1c21bbf4fcdf4b46a7be1626649da43eb9eae1dba27bc88bdb092a9ff0c832d",
+    "E:\\Work2\\Project\\SimpleGames\\worktrees\\g025-twelve-game-release\\public\\games\\12-fifteen\\index.html": "9afcb35b42e203f4e345e88194530265e93aff4f302e4cc020457cddb55113f9",
+    "E:\\Work2\\Project\\SimpleGames\\worktrees\\g025-twelve-game-release\\public\\games\\12-fifteen\\puzzles-manifest.json": "d40d68cec58f277658f42d8821d1154c9290f3d21f37ba7442e100ec5102eb24",
+    "E:\\Work2\\Project\\SimpleGames\\worktrees\\g025-twelve-game-release\\tests\\g025-playwright.config.ts": "a6f99b17eaf834d54fc63a9746c1e176d0d4bad5ebde1c55c8ac2473ec9d799d"
+  },
+  "scope": {
+    "verdict": "PASS_SHARED_DELTA_ONLY",
+    "reviewer": "fresh independent delta reviewer; not implementer",
+    "language": "ko-KR",
+    "physicalRoot": "E:\\Work2\\Project\\SimpleGames\\worktrees\\g025-twelve-game-release",
+    "branch": "feature/g025-twelve-game-release",
+    "baseCommit": "f3eacae5dfb448c25f6ab2297cc856f8b549133b",
+    "frozenHead": "a68fa820105f4b4bb517dd869045d90a20c48321",
+    "reviewedFiles": [
+      "src/client/library.ts",
+      "tests/e2e/g025-new-games.spec.ts",
+      "tests/e2e/g024-new-games.spec.ts"
+    ],
+    "delta": {
+      "insertions": 148,
+      "deletions": 44
+    },
+    "mode": "독립 정적·strict 타입·제품 profile factory 실제 실행 + 고정 기존 smoke 원시 JSON/첨부 재집계. 독립 브라우저 재실행 아님.",
+    "coreReuse": {
+      "intake": "E:\\Work2\\Project\\SimpleGames\\01-2048\\artifacts\\g025-pm\\shared-core-review-intake.json",
+      "coreReport": "E:\\Work2\\Project\\SimpleGames\\worktrees\\g025-twelve-game-release\\docs\\G025_SHARED_CORE_REVIEW.json",
+      "intakeMatches": 71,
+      "reportHashMatches": true,
+      "deepCoreRereview": false,
+      "unchangedSuggestions": [
+        "S01",
+        "S02"
+      ]
+    },
+    "buildBinding": {
+      "manifest": "E:\\Work2\\Project\\SimpleGames\\worktrees\\g025-twelve-game-release\\artifacts\\g025-build\\g025-build-manifest.json",
+      "buildId": "ae9f1f9d-bb76-4d23-a5f8-b3c145222785",
+      "physicalRoot": "E:\\Work2\\Project\\SimpleGames\\worktrees\\g025-twelve-game-release",
+      "sourceHashesMatched": 149,
+      "outputHashesMatched": 127,
+      "manifestSHA256": "1194c875f9f50e147429fbee54051f36c3ee0905be749aa7707f5c5cd7a66654"
+    },
+    "excluded": [
+      "변경없는 origin/manifest/output 보호코어 재심층검토",
+      "게임11/12 및 기존10게임 전체 재검토",
+      "브라우저/서버/PM2/LAN/설치/재위임/Git index 변경",
+      "PM 병렬 full 결과 열람·대기·poll"
+    ],
+    "implementationDocumentUse": "docs/G025_SHARED_IMPLEMENTATION.md는 실제수행/미수행 구분 참조만 사용. mutable 문서는 inputs_sha256에 포함하지 않음."
+  },
+  "findings": [
+    {
+      "id": "D01",
+      "location": "src/client/library.ts:34-37,71-92,310,356-360",
+      "result": "PASS",
+      "detail": "신규2 record의 위치만 이동했습니다. 기존39개 literal·상대순서와 나머지 library/favorites 구현은 줄바꿈 정규화 후 그대로이며41/12/29입니다. 기존 available10 뒤/upcoming29 앞에 두 신규카드가 배치되어 기본 limit12에 모두 들어갑니다.",
+      "evidence": {
+        "records": 41,
+        "available": 12,
+        "upcoming": 29,
+        "old39AndAllOtherLibraryTextUnchanged": true,
+        "first12": [
+          "number-garden",
+          "little-dragon",
+          "neon-rally",
+          "cosmic-cleanup",
+          "block-workshop",
+          "balloon-sparrow",
+          "desert-post",
+          "cloud-bunny",
+          "chick-picnic",
+          "hamster-depot",
+          "gem-survey",
+          "number-postbox"
+        ]
+      }
+    },
+    {
+      "id": "D02",
+      "location": "tests/e2e/g025-new-games.spec.ts:13-52,90-118",
+      "result": "PASS",
+      "detail": "11은 game.status·최상위 elapsedMs/record,12는 game.status/elapsedMs/preview·save를 관측합니다. 전체 raw clone을 보관하고 board/flags/history/counters만 비교할 때 lifecycle/clock을 분리하며, paused·modal close·protection 경계에서는 raw 및 시간도 별도로 검사합니다. selectors는 실제 두 제품 UI와 일치합니다."
+    },
+    {
+      "id": "D03",
+      "location": "tests/e2e/g025-new-games.spec.ts:47,128-185,216-241",
+      "result": "PASS",
+      "detail": "UI 조작은 native80ms click/hold, 실제 시계, 읽기 snapshot입니다. 공개 flag mode로 안전 이웃1을 닫아 첫칸 flood 우발완료를 막고 armed=false/time0와 공개 후 playing을 검사합니다. modal 취소 후 board·raw game·elapsed 불변/paused와 명시재개를 검사합니다. 정상 goal release의 playing 복귀 예외와 blur 보호우선 paused를 구별합니다. blur는 합성이며 실물 OS/tab 동작으로 주장하지 않습니다."
+    },
+    {
+      "id": "D04",
+      "location": "tests/e2e/g025-new-games.spec.ts:120-126,198-214",
+      "result": "PASS",
+      "detail": "44px 미만 허용오차 없이 가시 controls를 검사하고320px에서 문서 가로넘침0, 지도 내부 scroll·양끝 도달과 snapshot 불변을 단언합니다. 기존 smoke의9개 geometry와3개 내부scroll 첨부를 직접 대조했으며 이 리뷰에서 브라우저를 실행하지 않았습니다."
+    },
+    {
+      "id": "D05",
+      "location": "tests/e2e/g025-new-games.spec.ts:243-297",
+      "result": "PASS_STATIC_AND_FACTORY_ONLY",
+      "detail": "제품의 정상 factory/정산/메모리 store에서 정확10개 profile을 만드는 실제 함수 그대로를 독립 Node 실행해 exit0을 확인했습니다.01/02/03 기본 factory,04~10 정산 결과입니다. 임의 통계 tuple 없이 fresh storage에 단1회 seed하며 sentinel·기존 upcoming favorites와10 profile 원문 바이트를 각 왕복/reload 후 검사하고 추가키도 정확히 제한합니다. reload reseed/게임상태 setter는 없습니다. 브라우저 보존 case는 smoke에 없으므로 해당 동작의 실행 PASS는 주장하지 않습니다.",
+      "factoryProbe": {
+        "sourceFunctionExact": true,
+        "productProfiles": 10,
+        "browserPreservationExecuted": false,
+        "recordsLog": "E:\\Work2\\Project\\SimpleGames\\worktrees\\g025-twelve-game-release\\artifacts\\g025-shared-delta-review\\fixture-probe.stdout.log"
+      }
+    },
+    {
+      "id": "D06",
+      "location": "tests/e2e/g024-new-games.spec.ts:92-106",
+      "result": "PASS",
+      "detail": "준비블록+15/-1만 바뀌고 그 외 파일은 줄바꿈 정규화 후 정확히 동일합니다. catalog-total/초기노출수로 계산한 유한상한 안에서 공개 load-more만 trusted80ms로 눌러 memory-pieces 존재/가시성을 확인합니다. 검색·필터·제품 순서 원복·skip·선택축소는 없습니다. 기존45초/fixture/플레이 단언/즐겨찾기 순서와 저장 원문 바이트 단언은 그대로입니다. 기존3프로젝트 첨부는 초기12에 memory 없음→더보기1회→24장 노출을 입증합니다.",
+      "evidence": {
+        "changeOnlyPreparationBlock": true,
+        "unchangedAssertionsFixtureAuditFavoriteOrderSaveByteChecks": true,
+        "delta": "+15/-1",
+        "finitePublicLoadMoreBound": true
+      }
+    },
+    {
+      "id": "D07",
+      "location": "tests/e2e/g025-new-games.spec.ts:54-88;tests/e2e/g024-new-games.spec.ts:15-34",
+      "result": "PASS",
+      "detail": "추가된 제품 runtime 변경은 고정 카드 재배치뿐이며 새로운 외부송신/동적 코드실행/입력 sink가 없습니다. G025 console/CSP/pageerror/HTTP/요청오류/unsafe-method 무필터 단언과 네트워크 차단은 유지됐습니다. G024의 기존 console 수집조건을 포함한 감사 코드는 미변경이며 새 오류필터는 없습니다. 원시18개 G024/G025 runtime audit의 모든 목록0을 재확인했습니다."
+    }
+  ],
+  "executed_checks": [
+    {
+      "label": "independent-delta-harness",
+      "command": [
+        "python",
+        "artifacts/g025-shared-delta-review/review-checks.py"
+      ],
+      "cwd": "E:\\Work2\\Project\\SimpleGames\\worktrees\\g025-twelve-game-release",
+      "exitCode": 0,
+      "rawEvidence": "E:\\Work2\\Project\\SimpleGames\\worktrees\\g025-twelve-game-release\\artifacts\\g025-shared-delta-review\\checks-results.json",
+      "checksInclude": "frozen Git/source equality, whitespace, catalog/G024 exact reconstruction,149inputs/127outputs SHA,prior smoke raw aggregation,strictTS,exact product fixture factory,index/source protection"
+    },
+    {
+      "label": "index-path",
+      "command": [
+        "git",
+        "--no-optional-locks",
+        "rev-parse",
+        "--git-path",
+        "index"
+      ],
+      "cwd": "E:\\Work2\\Project\\SimpleGames\\worktrees\\g025-twelve-game-release",
+      "exitCode": 0,
+      "stdout": "E:\\Work2\\Project\\SimpleGames\\worktrees\\g025-twelve-game-release\\artifacts\\g025-shared-delta-review\\index-path.stdout.log",
+      "stderr": "E:\\Work2\\Project\\SimpleGames\\worktrees\\g025-twelve-game-release\\artifacts\\g025-shared-delta-review\\index-path.stderr.log"
+    },
+    {
+      "label": "head",
+      "command": [
+        "git",
+        "--no-optional-locks",
+        "rev-parse",
+        "HEAD"
+      ],
+      "cwd": "E:\\Work2\\Project\\SimpleGames\\worktrees\\g025-twelve-game-release",
+      "exitCode": 0,
+      "stdout": "E:\\Work2\\Project\\SimpleGames\\worktrees\\g025-twelve-game-release\\artifacts\\g025-shared-delta-review\\head.stdout.log",
+      "stderr": "E:\\Work2\\Project\\SimpleGames\\worktrees\\g025-twelve-game-release\\artifacts\\g025-shared-delta-review\\head.stderr.log"
+    },
+    {
+      "label": "branch",
+      "command": [
+        "git",
+        "--no-optional-locks",
+        "branch",
+        "--show-current"
+      ],
+      "cwd": "E:\\Work2\\Project\\SimpleGames\\worktrees\\g025-twelve-game-release",
+      "exitCode": 0,
+      "stdout": "E:\\Work2\\Project\\SimpleGames\\worktrees\\g025-twelve-game-release\\artifacts\\g025-shared-delta-review\\branch.stdout.log",
+      "stderr": "E:\\Work2\\Project\\SimpleGames\\worktrees\\g025-twelve-game-release\\artifacts\\g025-shared-delta-review\\branch.stderr.log"
+    },
+    {
+      "label": "status-before",
+      "command": [
+        "git",
+        "--no-optional-locks",
+        "status",
+        "--porcelain=v1",
+        "-z"
+      ],
+      "cwd": "E:\\Work2\\Project\\SimpleGames\\worktrees\\g025-twelve-game-release",
+      "exitCode": 0,
+      "stdout": "E:\\Work2\\Project\\SimpleGames\\worktrees\\g025-twelve-game-release\\artifacts\\g025-shared-delta-review\\status-before.stdout.log",
+      "stderr": "E:\\Work2\\Project\\SimpleGames\\worktrees\\g025-twelve-game-release\\artifacts\\g025-shared-delta-review\\status-before.stderr.log"
+    },
+    {
+      "label": "delta",
+      "command": [
+        "git",
+        "--no-optional-locks",
+        "diff",
+        "--no-ext-diff",
+        "--unified=5",
+        "f3eacae5dfb448c25f6ab2297cc856f8b549133b",
+        "a68fa820105f4b4bb517dd869045d90a20c48321",
+        "--",
+        "src/client/library.ts",
+        "tests/e2e/g025-new-games.spec.ts",
+        "tests/e2e/g024-new-games.spec.ts"
+      ],
+      "cwd": "E:\\Work2\\Project\\SimpleGames\\worktrees\\g025-twelve-game-release",
+      "exitCode": 0,
+      "stdout": "E:\\Work2\\Project\\SimpleGames\\worktrees\\g025-twelve-game-release\\artifacts\\g025-shared-delta-review\\delta.stdout.log",
+      "stderr": "E:\\Work2\\Project\\SimpleGames\\worktrees\\g025-twelve-game-release\\artifacts\\g025-shared-delta-review\\delta.stderr.log"
+    },
+    {
+      "label": "whitespace",
+      "command": [
+        "git",
+        "--no-optional-locks",
+        "diff",
+        "--check",
+        "f3eacae5dfb448c25f6ab2297cc856f8b549133b",
+        "a68fa820105f4b4bb517dd869045d90a20c48321",
+        "--",
+        "src/client/library.ts",
+        "tests/e2e/g025-new-games.spec.ts",
+        "tests/e2e/g024-new-games.spec.ts"
+      ],
+      "cwd": "E:\\Work2\\Project\\SimpleGames\\worktrees\\g025-twelve-game-release",
+      "exitCode": 0,
+      "stdout": "E:\\Work2\\Project\\SimpleGames\\worktrees\\g025-twelve-game-release\\artifacts\\g025-shared-delta-review\\whitespace.stdout.log",
+      "stderr": "E:\\Work2\\Project\\SimpleGames\\worktrees\\g025-twelve-game-release\\artifacts\\g025-shared-delta-review\\whitespace.stderr.log"
+    },
+    {
+      "label": "numstat",
+      "command": [
+        "git",
+        "--no-optional-locks",
+        "diff",
+        "--numstat",
+        "f3eacae5dfb448c25f6ab2297cc856f8b549133b",
+        "a68fa820105f4b4bb517dd869045d90a20c48321",
+        "--",
+        "src/client/library.ts",
+        "tests/e2e/g025-new-games.spec.ts",
+        "tests/e2e/g024-new-games.spec.ts"
+      ],
+      "cwd": "E:\\Work2\\Project\\SimpleGames\\worktrees\\g025-twelve-game-release",
+      "exitCode": 0,
+      "stdout": "E:\\Work2\\Project\\SimpleGames\\worktrees\\g025-twelve-game-release\\artifacts\\g025-shared-delta-review\\numstat.stdout.log",
+      "stderr": "E:\\Work2\\Project\\SimpleGames\\worktrees\\g025-twelve-game-release\\artifacts\\g025-shared-delta-review\\numstat.stderr.log"
+    },
+    {
+      "label": "frozen-library",
+      "command": [
+        "git",
+        "--no-optional-locks",
+        "show",
+        "a68fa820105f4b4bb517dd869045d90a20c48321:src/client/library.ts"
+      ],
+      "cwd": "E:\\Work2\\Project\\SimpleGames\\worktrees\\g025-twelve-game-release",
+      "exitCode": 0,
+      "stdout": "E:\\Work2\\Project\\SimpleGames\\worktrees\\g025-twelve-game-release\\artifacts\\g025-shared-delta-review\\frozen-library.stdout.log",
+      "stderr": "E:\\Work2\\Project\\SimpleGames\\worktrees\\g025-twelve-game-release\\artifacts\\g025-shared-delta-review\\frozen-library.stderr.log"
+    },
+    {
+      "label": "frozen-g025-new-games.spec",
+      "command": [
+        "git",
+        "--no-optional-locks",
+        "show",
+        "a68fa820105f4b4bb517dd869045d90a20c48321:tests/e2e/g025-new-games.spec.ts"
+      ],
+      "cwd": "E:\\Work2\\Project\\SimpleGames\\worktrees\\g025-twelve-game-release",
+      "exitCode": 0,
+      "stdout": "E:\\Work2\\Project\\SimpleGames\\worktrees\\g025-twelve-game-release\\artifacts\\g025-shared-delta-review\\frozen-g025-new-games.spec.stdout.log",
+      "stderr": "E:\\Work2\\Project\\SimpleGames\\worktrees\\g025-twelve-game-release\\artifacts\\g025-shared-delta-review\\frozen-g025-new-games.spec.stderr.log"
+    },
+    {
+      "label": "frozen-g024-new-games.spec",
+      "command": [
+        "git",
+        "--no-optional-locks",
+        "show",
+        "a68fa820105f4b4bb517dd869045d90a20c48321:tests/e2e/g024-new-games.spec.ts"
+      ],
+      "cwd": "E:\\Work2\\Project\\SimpleGames\\worktrees\\g025-twelve-game-release",
+      "exitCode": 0,
+      "stdout": "E:\\Work2\\Project\\SimpleGames\\worktrees\\g025-twelve-game-release\\artifacts\\g025-shared-delta-review\\frozen-g024-new-games.spec.stdout.log",
+      "stderr": "E:\\Work2\\Project\\SimpleGames\\worktrees\\g025-twelve-game-release\\artifacts\\g025-shared-delta-review\\frozen-g024-new-games.spec.stderr.log"
+    },
+    {
+      "label": "baseline-library",
+      "command": [
+        "git",
+        "--no-optional-locks",
+        "show",
+        "f3eacae5dfb448c25f6ab2297cc856f8b549133b:src/client/library.ts"
+      ],
+      "cwd": "E:\\Work2\\Project\\SimpleGames\\worktrees\\g025-twelve-game-release",
+      "exitCode": 0,
+      "stdout": "E:\\Work2\\Project\\SimpleGames\\worktrees\\g025-twelve-game-release\\artifacts\\g025-shared-delta-review\\baseline-library.stdout.log",
+      "stderr": "E:\\Work2\\Project\\SimpleGames\\worktrees\\g025-twelve-game-release\\artifacts\\g025-shared-delta-review\\baseline-library.stderr.log"
+    },
+    {
+      "label": "baseline-g025-new-games.spec",
+      "command": [
+        "git",
+        "--no-optional-locks",
+        "show",
+        "f3eacae5dfb448c25f6ab2297cc856f8b549133b:tests/e2e/g025-new-games.spec.ts"
+      ],
+      "cwd": "E:\\Work2\\Project\\SimpleGames\\worktrees\\g025-twelve-game-release",
+      "exitCode": 0,
+      "stdout": "E:\\Work2\\Project\\SimpleGames\\worktrees\\g025-twelve-game-release\\artifacts\\g025-shared-delta-review\\baseline-g025-new-games.spec.stdout.log",
+      "stderr": "E:\\Work2\\Project\\SimpleGames\\worktrees\\g025-twelve-game-release\\artifacts\\g025-shared-delta-review\\baseline-g025-new-games.spec.stderr.log"
+    },
+    {
+      "label": "baseline-g024-new-games.spec",
+      "command": [
+        "git",
+        "--no-optional-locks",
+        "show",
+        "f3eacae5dfb448c25f6ab2297cc856f8b549133b:tests/e2e/g024-new-games.spec.ts"
+      ],
+      "cwd": "E:\\Work2\\Project\\SimpleGames\\worktrees\\g025-twelve-game-release",
+      "exitCode": 0,
+      "stdout": "E:\\Work2\\Project\\SimpleGames\\worktrees\\g025-twelve-game-release\\artifacts\\g025-shared-delta-review\\baseline-g024-new-games.spec.stdout.log",
+      "stderr": "E:\\Work2\\Project\\SimpleGames\\worktrees\\g025-twelve-game-release\\artifacts\\g025-shared-delta-review\\baseline-g024-new-games.spec.stderr.log"
+    },
+    {
+      "label": "strict-ts-delta",
+      "command": [
+        "C:/Program Files/nodejs/node.exe",
+        "node_modules/typescript/bin/tsc",
+        "--ignoreConfig",
+        "--noEmit",
+        "--strict",
+        "--target",
+        "ES2022",
+        "--module",
+        "NodeNext",
+        "--moduleResolution",
+        "NodeNext",
+        "--lib",
+        "ES2022,DOM,DOM.Iterable",
+        "--types",
+        "node",
+        "--skipLibCheck",
+        "src/client/library.ts",
+        "tests/e2e/g025-new-games.spec.ts",
+        "tests/e2e/g024-new-games.spec.ts"
+      ],
+      "cwd": "E:\\Work2\\Project\\SimpleGames\\worktrees\\g025-twelve-game-release",
+      "exitCode": 0,
+      "stdout": "E:\\Work2\\Project\\SimpleGames\\worktrees\\g025-twelve-game-release\\artifacts\\g025-shared-delta-review\\strict-ts-delta.stdout.log",
+      "stderr": "E:\\Work2\\Project\\SimpleGames\\worktrees\\g025-twelve-game-release\\artifacts\\g025-shared-delta-review\\strict-ts-delta.stderr.log"
+    },
+    {
+      "label": "fixture-probe",
+      "command": [
+        "C:/Program Files/nodejs/node.exe",
+        "E:\\Work2\\Project\\SimpleGames\\worktrees\\g025-twelve-game-release\\artifacts\\g025-shared-delta-review\\fixture-probe.mts"
+      ],
+      "cwd": "E:\\Work2\\Project\\SimpleGames\\worktrees\\g025-twelve-game-release",
+      "exitCode": 0,
+      "stdout": "E:\\Work2\\Project\\SimpleGames\\worktrees\\g025-twelve-game-release\\artifacts\\g025-shared-delta-review\\fixture-probe.stdout.log",
+      "stderr": "E:\\Work2\\Project\\SimpleGames\\worktrees\\g025-twelve-game-release\\artifacts\\g025-shared-delta-review\\fixture-probe.stderr.log"
+    },
+    {
+      "label": "status-after",
+      "command": [
+        "git",
+        "--no-optional-locks",
+        "status",
+        "--porcelain=v1",
+        "-z"
+      ],
+      "cwd": "E:\\Work2\\Project\\SimpleGames\\worktrees\\g025-twelve-game-release",
+      "exitCode": 0,
+      "stdout": "E:\\Work2\\Project\\SimpleGames\\worktrees\\g025-twelve-game-release\\artifacts\\g025-shared-delta-review\\status-after.stdout.log",
+      "stderr": "E:\\Work2\\Project\\SimpleGames\\worktrees\\g025-twelve-game-release\\artifacts\\g025-shared-delta-review\\status-after.stderr.log"
+    },
+    {
+      "label": "head-after",
+      "command": [
+        "git",
+        "--no-optional-locks",
+        "rev-parse",
+        "HEAD"
+      ],
+      "cwd": "E:\\Work2\\Project\\SimpleGames\\worktrees\\g025-twelve-game-release",
+      "exitCode": 0,
+      "stdout": "E:\\Work2\\Project\\SimpleGames\\worktrees\\g025-twelve-game-release\\artifacts\\g025-shared-delta-review\\head-after.stdout.log",
+      "stderr": "E:\\Work2\\Project\\SimpleGames\\worktrees\\g025-twelve-game-release\\artifacts\\g025-shared-delta-review\\head-after.stderr.log"
+    },
+    {
+      "label": "observation-attachments-and-final-report",
+      "command": [
+        "python",
+        "artifacts/g025-shared-delta-review/finalize-review.py"
+      ],
+      "cwd": "E:\\Work2\\Project\\SimpleGames\\worktrees\\g025-twelve-game-release",
+      "exitCode": 0,
+      "rawEvidence": "E:\\Work2\\Project\\SimpleGames\\worktrees\\g025-twelve-game-release\\artifacts\\g025-shared-delta-review\\observation-checks.json",
+      "actualChecks": {
+        "noSkipFixmeOnlyOrClockOverride": true,
+        "oneTimeStorageSeedOnly": true,
+        "noLiveGameSetterOrRNGOverride": true,
+        "goalAttachmentChecks": [
+          {
+            "project": "desktop-chromium",
+            "boardHistoryCountersExact": true,
+            "normalRelease": "playing",
+            "blurRelease": "paused/protection"
+          },
+          {
+            "project": "mobile-chromium",
+            "boardHistoryCountersExact": true,
+            "normalRelease": "playing",
+            "blurRelease": "paused/protection"
+          },
+          {
+            "project": "mobile-webkit",
+            "boardHistoryCountersExact": true,
+            "normalRelease": "playing",
+            "blurRelease": "paused/protection"
+          }
+        ],
+        "mapScrollAttachmentChecks": [
+          {
+            "project": "desktop-chromium",
+            "client": 274,
+            "scroll": 422,
+            "overflow": "auto",
+            "last": 148
+          },
+          {
+            "project": "mobile-chromium",
+            "client": 274,
+            "scroll": 422,
+            "overflow": "auto",
+            "last": 148
+          },
+          {
+            "project": "mobile-webkit",
+            "client": 274,
+            "scroll": 422,
+            "overflow": "auto",
+            "last": 148
+          }
+        ],
+        "puzzleFixtureMatchesProductManifest": true
+      }
+    }
+  ],
+  "reused_evidence": [
+    {
+      "statuses": {
+        "passed": 36
+      },
+      "byProject": {
+        "desktop-chromium": 12,
+        "mobile-chromium": 12,
+        "mobile-webkit": 12
+      },
+      "executed": 36,
+      "independentlyRerun": false,
+      "path": "E:\\Work2\\Project\\SimpleGames\\worktrees\\g025-twelve-game-release\\artifacts\\g025-integration\\runs\\20261029T132955396Z-7b607f11-4c41-44ab-9edc-489f50bdfe77\\children\\browser-session-a6c4eab5-6c9a-4d10-9f4a-7c650fbb0bc7\\execution-394e8926-8a4c-4476-bcf7-89c5617b7dd2\\playwright-results.json",
+      "kind": "completed_smoke_reaggregated_not_independent_browser_rerun",
+      "collected": 36,
+      "passed": 36,
+      "failed": 0,
+      "skipped": 0,
+      "flaky": 0,
+      "retries": 0,
+      "g025Passed": 12,
+      "g024TenPassed": 3,
+      "unfilteredAuditsEmpty": 18,
+      "navigationAttachments": 3,
+      "trustedSnapshotAttachments": 6,
+      "scope": "최종 source149/output127 manifest와 결합된 기존36PASS 원본 재사용; 현재 full 근거 아님"
+    },
+    {
+      "statuses": {
+        "passed": 33,
+        "timedOut": 3
+      },
+      "byProject": {
+        "desktop-chromium": 12,
+        "mobile-chromium": 12,
+        "mobile-webkit": 12
+      },
+      "executed": 36,
+      "independentlyRerun": false,
+      "path": "E:\\Work2\\Project\\SimpleGames\\worktrees\\g025-twelve-game-release\\artifacts\\g025-integration\\runs\\20261029T131027587Z-846f013b-f2bf-4ffd-acc4-9418298e0b85\\children\\browser-session-63ef206b-baf1-4f4d-9463-30637a293720\\execution-c25660ad-e0e5-41a0-b152-d3840dd6c64c\\playwright-results.json",
+      "kind": "preserved_original_failure_reaggregated",
+      "passed": 33,
+      "timedOut": 3,
+      "failureLocation": "원래 G024-10의memory-pieces locator;45000ms,3프로젝트",
+      "scope": "실패원본을 보존한 관측전제 수정 근거;현재 성공으로 재명명하지 않음"
+    },
+    {
+      "kind": "prior_core_intake",
+      "physicalPath": "E:\\Work2\\Project\\SimpleGames\\01-2048\\artifacts\\g025-pm\\shared-core-review-intake.json",
+      "reportedParentInputMatches": 71,
+      "coreReportSHA256Matches": true,
+      "independentlyRerun": false,
+      "scope": "변경없는 코어 재사용 근거만;이번 delta를 과거 core PASS로 대체하지 않음"
+    }
+  ],
+  "execution_counts": {
+    "independentBrowserRuns": 0,
+    "independentFullRuns": 0,
+    "independentGameUnitSuiteRuns": 0,
+    "independentTypecheckRuns": 1,
+    "independentFixtureFactoryRuns": 1,
+    "reusedSmokeCases": 36,
+    "reusedSmokePassed": 36,
+    "concurrentPMFullConsumed": false
+  },
+  "pending": [
+    {
+      "area": "G025-STORE 브라우저 보존 및 전체 full 회귀",
+      "status": "PM 소유 병렬 실행 결과 별도 인수 필요",
+      "reason": "본 검토는 static/factory와고정smoke36만 인수합니다. full을 기다리거나poll하지 않았고 현재출력을 입력hash에 묶지 않았습니다."
+    },
+    {
+      "area": "실물기기·실제 OS/tab 비활성화·WebKit 이미지·실청취·인간 플레이시간",
+      "status": "이번 scope 밖/미검증"
+    },
+    {
+      "area": "CORE S01/S02",
+      "status": "기존 비차단 하드닝 권고 그대로 미적용/후속",
+      "reason": "새 confirmed 결함이 아니므로 이번 delta blocker로 확대하지 않았습니다."
+    },
+    {
+      "area": "merge·production/PM2/LAN·runtime ZIP·배포수용",
+      "status": "범위 밖/수행0"
+    }
+  ],
+  "protected_state": {
+    "inputHashesStable": true,
+    "source149AndOutput127Stable": true,
+    "gitIndexSHA256Unchanged": "8c3b21560c1a23498e1a8511f74853f0cd6d229bcb8382411abbc52cb145d56a",
+    "HEAD": "a68fa820105f4b4bb517dd869045d90a20c48321",
+    "writesOnly": [
+      "artifacts/g025-shared-delta-review/**",
+      "docs/G025_SHARED_DELTA_REVIEW.json"
+    ]
+  },
+  "evidence_sha256": {
+    "E:\\Work2\\Project\\SimpleGames\\worktrees\\g025-twelve-game-release\\artifacts\\g025-shared-delta-review\\review-checks.py": "508722cbf8efc35f0ee1d8bcc7220f359835a0dfc867c2fe71fd587c3653ee9c",
+    "E:\\Work2\\Project\\SimpleGames\\worktrees\\g025-twelve-game-release\\artifacts\\g025-shared-delta-review\\checks-results.json": "0d00f51abb4960a3ff62905d8c634870e2a5cf95393a14b3e7990afa813236ba",
+    "E:\\Work2\\Project\\SimpleGames\\worktrees\\g025-twelve-game-release\\artifacts\\g025-shared-delta-review\\fixture-probe.mts": "a395e4a8ef95fc088449ccca69b18b96379fb6d006a3cc553a6f1dc9f37e33e0",
+    "E:\\Work2\\Project\\SimpleGames\\worktrees\\g025-twelve-game-release\\artifacts\\g025-shared-delta-review\\fixture-probe.stdout.log": "c593057bd171a11a8effc1175f45cc81f8d7a70046bc33269396a27b3752fb39",
+    "E:\\Work2\\Project\\SimpleGames\\worktrees\\g025-twelve-game-release\\artifacts\\g025-shared-delta-review\\strict-ts-delta.stdout.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "E:\\Work2\\Project\\SimpleGames\\worktrees\\g025-twelve-game-release\\artifacts\\g025-shared-delta-review\\strict-ts-delta.stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "E:\\Work2\\Project\\SimpleGames\\worktrees\\g025-twelve-game-release\\artifacts\\g025-shared-delta-review\\observation-checks.json": "c805fe7a86b2c06a8dc1e02364e7099f7d95cf9c50ef11d17319e78e111e2bdf"
+  },
+  "completedUTC": "2026-10-29T13:47:08.385042+00:00",
+  "summary": "동결a68fa820의공통3소스 delta 한정 독립PASS입니다. 보안·논리결함을 발견하지 못했습니다. 신규2카드의기본첫12·기존39/favorites보존,실제snapshot/UI관측,공개flag/모달/goal 예외,320px44px,정상10profile factory 및단1회seed/보존단언,G024공개유한더보기+15/-1을 확인했습니다. 독립 strictTS/fixture는exit0이며 기존 raw36PASS/이전33PASS+3timeout를 직접 재집계한 재사용입니다. 독립브라우저/full 실행 또는 릴리스 수용을 뜻하지 않습니다."
+}

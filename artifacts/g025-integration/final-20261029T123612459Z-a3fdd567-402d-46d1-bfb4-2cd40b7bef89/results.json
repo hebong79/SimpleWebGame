@@ -1,0 +1,188 @@
+{
+  "reports": "artifacts/g025-integration/final-20261029T123612459Z-a3fdd567-402d-46d1-bfb4-2cd40b7bef89",
+  "root": "E:\\Work2\\Project\\SimpleGames\\worktrees\\g025-twelve-game-release",
+  "started": "2026-10-29T12:36:12.462Z",
+  "status": "STATIC_DELTA_VERIFIED_GAME_EXECUTION_BLOCKED",
+  "staticCommands": [
+    {
+      "label": "typecheck-project",
+      "executable": "C:/Program Files/nodejs/node.exe",
+      "args": [
+        "node_modules/typescript/bin/tsc",
+        "--noEmit"
+      ],
+      "exitCode": 0,
+      "error": null
+    },
+    {
+      "label": "typecheck-common-e2e",
+      "executable": "C:/Program Files/nodejs/node.exe",
+      "args": [
+        "node_modules/typescript/bin/tsc",
+        "--ignoreConfig",
+        "--noEmit",
+        "--strict",
+        "--target",
+        "ES2022",
+        "--module",
+        "NodeNext",
+        "--moduleResolution",
+        "NodeNext",
+        "--lib",
+        "ES2022,DOM,DOM.Iterable",
+        "--types",
+        "node",
+        "--skipLibCheck",
+        "tests/g025-playwright.config.ts",
+        "tests/e2e/library-integration.spec.ts",
+        "tests/e2e/multi-game-integration.spec.ts",
+        "tests/e2e/breakout-integration.spec.ts",
+        "tests/e2e/runner-jumper.spec.ts",
+        "tests/e2e/live-server.spec.ts",
+        "tests/e2e/flappy-input.spec.ts",
+        "tests/e2e/g024-new-games.spec.ts",
+        "tests/e2e/g025-new-games.spec.ts"
+      ],
+      "exitCode": 0,
+      "error": null
+    },
+    {
+      "label": "syntax-runner",
+      "executable": "C:/Program Files/nodejs/node.exe",
+      "args": [
+        "--check",
+        "scripts/g025-verify.mjs"
+      ],
+      "exitCode": 0,
+      "error": null
+    },
+    {
+      "label": "syntax-final-check",
+      "executable": "C:/Program Files/nodejs/node.exe",
+      "args": [
+        "--check",
+        "artifacts/g025-integration/final-static-check.mjs"
+      ],
+      "exitCode": 0,
+      "error": null
+    },
+    {
+      "label": "diff-check",
+      "executable": "git",
+      "args": [
+        "diff",
+        "--check"
+      ],
+      "exitCode": 0,
+      "error": null
+    },
+    {
+      "label": "scoped-diff",
+      "executable": "git",
+      "args": [
+        "diff",
+        "--",
+        "src/client/library.ts",
+        "package.json",
+        "ecosystem.config.cjs",
+        "scripts/g025-verify.mjs",
+        "tests/g025-playwright.config.ts",
+        "tests/e2e/library-integration.spec.ts",
+        "tests/e2e/multi-game-integration.spec.ts",
+        "tests/e2e/breakout-integration.spec.ts",
+        "tests/e2e/runner-jumper.spec.ts",
+        "tests/e2e/live-server.spec.ts",
+        "tests/e2e/flappy-input.spec.ts",
+        "tests/e2e/g024-new-games.spec.ts",
+        "tests/e2e/g025-new-games.spec.ts",
+        "docs/G025_SHARED_IMPLEMENTATION.md",
+        "artifacts/g025-integration/browser-gate.py",
+        "artifacts/g025-integration/prep-check.mjs",
+        "artifacts/g025-integration/final-static-check.mjs"
+      ],
+      "exitCode": 0,
+      "error": null
+    },
+    {
+      "label": "catalog-base",
+      "executable": "git",
+      "args": [
+        "show",
+        "7d72954896845e7cf2152e4a4857a6f00a6c14b7:src/client/library.ts"
+      ],
+      "exitCode": 0,
+      "error": null
+    }
+  ],
+  "reusedMissingGameBlocks": [
+    {
+      "label": "candidate-smoke-missing-games",
+      "expectedStatus": "BLOCKED",
+      "actualStatus": "BLOCKED",
+      "exitCode": 2,
+      "reports": "artifacts/g025-integration/runs/20261029T122725560Z-db464dc4-a4a8-43c9-8cf2-a081f68daa25",
+      "missingFiles": [
+        "public/games/11-mines/index.html",
+        "public/games/11-mines/styles.css",
+        "public/games/11-mines/engine.mjs",
+        "public/games/11-mines/save.mjs",
+        "public/games/11-mines/main.mjs",
+        "tests/games/11-mines.test.mjs",
+        "public/games/12-fifteen/index.html",
+        "public/games/12-fifteen/styles.css",
+        "public/games/12-fifteen/engine.mjs",
+        "public/games/12-fifteen/save.mjs",
+        "public/games/12-fifteen/main.mjs",
+        "tests/games/12-fifteen.test.mjs"
+      ],
+      "childrenStarted": 0,
+      "browserExecuted": 0,
+      "notCountedAsGamePass": true
+    },
+    {
+      "label": "live-full-list-missing-games",
+      "expectedStatus": "BLOCKED",
+      "actualStatus": "BLOCKED",
+      "exitCode": 2,
+      "reports": "artifacts/g025-integration/runs/20261029T122726980Z-7309f37e-de09-487b-bc7f-524603626365",
+      "missingFiles": [
+        "public/games/11-mines/index.html",
+        "public/games/11-mines/styles.css",
+        "public/games/11-mines/engine.mjs",
+        "public/games/11-mines/save.mjs",
+        "public/games/11-mines/main.mjs",
+        "tests/games/11-mines.test.mjs",
+        "public/games/12-fifteen/index.html",
+        "public/games/12-fifteen/styles.css",
+        "public/games/12-fifteen/engine.mjs",
+        "public/games/12-fifteen/save.mjs",
+        "public/games/12-fifteen/main.mjs",
+        "tests/games/12-fifteen.test.mjs"
+      ],
+      "childrenStarted": 0,
+      "browserExecuted": 0,
+      "notCountedAsGamePass": true
+    }
+  ],
+  "browserExecuted": 0,
+  "gameplayPassed": 0,
+  "buildExecuted": 0,
+  "independentReview": false,
+  "catalog": {
+    "originalRecordsPreserved": 39,
+    "total": 41,
+    "available": 12,
+    "upcoming": 29,
+    "favoritesCodePreserved": true,
+    "existingMultiGameIdAssertionAligned": true
+  },
+  "guardCoreUnchanged": true,
+  "preparationEvidence": "artifacts/g025-integration/prep-20261029T122724057Z-b3a46514-d9a6-4830-8434-4113e8b2a486",
+  "invalidInvocations": 12,
+  "directGuardChecks": 3,
+  "historicalPreserved": {
+    "integration": 53,
+    "original": 4567
+  },
+  "finished": "2026-10-29T12:36:14.764Z"
+}

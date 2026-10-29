@@ -25,13 +25,13 @@ test.afterEach(async ({ page }, info) => {
   expect(evidence.external, 'external requests').toEqual([]);
 });
 
-test('18 library 39 entries pagination search genre state sorting and zero reset', async ({ page }) => {
+test('18 library 41 entries pagination search genre state sorting and zero reset', async ({ page }) => {
   await page.goto('/'); await expect(page.locator('.game-card')).toHaveCount(12);
-  await expect(page.locator('#result-count')).toHaveText('39개');
+  await expect(page.locator('#result-count')).toHaveText('41개');
   await page.locator('#load-more').click(); await expect(page.locator('.game-card')).toHaveCount(24);
   await page.locator('#load-more').click(); await expect(page.locator('.game-card')).toHaveCount(36);
-  await page.locator('#load-more').click(); await expect(page.locator('.game-card')).toHaveCount(39);
-  const all = await ids(page); expect(new Set(all).size).toBe(39);
+  await page.locator('#load-more').click(); await expect(page.locator('.game-card')).toHaveCount(41);
+  const all = await ids(page); expect(new Set(all).size).toBe(41);
   const byDuration = await page.locator('.game-card').evaluateAll(cards => cards.map(card => ({ id: (card as HTMLElement).dataset.id, minutes: Number(card.querySelector('.duration')!.textContent!.match(/\d+/)![0]) })).sort((a, b) => a.minutes - b.minutes).map(card => card.id));
   await expect(page.locator('a.card-action[href="/game.html"],a.card-action[href="game.html"]')).toHaveCount(1);
   await expect(page.locator('button.card-action:disabled')).toHaveCount(29); await expect(page.locator('#load-more')).toBeHidden();
@@ -104,7 +104,7 @@ test('23 home responsive controls scrolling last entry and return to top', async
     expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth)).toBe(true);
     const small = await page.locator('button:visible,input[type=search]:visible,summary:visible,a.card-action').evaluateAll(nodes => nodes.filter(node => node.getBoundingClientRect().width < 43.9 || node.getBoundingClientRect().height < 43.9).map(node => node.textContent));
     expect(small).toEqual([]);
-    await page.locator('#genre-tabs button[data-genre="숫자"]').click(); await expect(page.locator('#result-count')).toHaveText('5개'); await page.locator('#genre-tabs button[data-genre="전체"]').click();
+    await page.locator('#genre-tabs button[data-genre="숫자"]').click(); await expect(page.locator('#result-count')).toHaveText('7개'); await page.locator('#genre-tabs button[data-genre="전체"]').click();
     await more(page); await page.locator('.game-card').last().scrollIntoViewIfNeeded(); expect(await page.evaluate(() => scrollY)).toBeGreaterThan(0);
     await page.locator('#back-to-top').click(); await expect.poll(() => page.evaluate(() => scrollY)).toBeLessThan(2);
   }

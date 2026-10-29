@@ -1,0 +1,19 @@
+{
+  "label": "live-build-forbidden",
+  "executable": "C:/Program Files/nodejs/node.exe",
+  "args": [
+    "scripts/g025-verify.mjs",
+    "--target",
+    "live",
+    "--mode",
+    "build",
+    "--origin",
+    "http://192.168.0.195:3116"
+  ],
+  "expectedExit": 64,
+  "actualExit": 64,
+  "signal": null,
+  "error": null,
+  "stdout": "live-build-forbidden.stdout.log",
+  "stderr": "live-build-forbidden.stderr.log"
+}

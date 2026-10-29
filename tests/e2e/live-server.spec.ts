@@ -28,6 +28,8 @@ const ALL_GAMES = [
   { id: 'cloud-bunny', href: '/games/08-doodle/index.html' },
   { id: 'chick-picnic', href: '/games/09-crossy/index.html' },
   { id: 'hamster-depot', href: '/games/10-sokoban/index.html' },
+  { id: 'gem-survey', href: '/games/11-mines/index.html' },
+  { id: 'number-postbox', href: '/games/12-fifteen/index.html' },
 ] as const;
 const STRICT_CSP = "default-src 'none'; script-src 'self'; style-src 'self'; img-src 'self'; font-src 'self'; connect-src 'none'; media-src 'none'; object-src 'none'; base-uri 'none'; form-action 'none'; frame-ancestors 'none'";
 interface Audit {
@@ -109,15 +111,15 @@ const test = base.extend<{ audit: Audit }>({
 });
 async function home(page: Page, origin: string) {
   await expect(page).toHaveURL(`${origin}/`);
-  await expect(page.locator('#catalog-total')).toHaveText('39');
-  await expect(page.locator('#intro-preview')).toHaveText('플레이 가능 10 · 준비 중 29');
+  await expect(page.locator('#catalog-total')).toHaveText('41');
+  await expect(page.locator('#intro-preview')).toHaveText('플레이 가능 12 · 준비 중 29');
   await expect(page.getByText('시안 보기', { exact: false })).toHaveCount(0);
   await expect(page.locator('a[href*="prototype"]')).toHaveCount(0);
 }
 async function available(page: Page) {
   await page.locator('#include-upcoming').uncheck();
-  await expect(page.locator('.game-card')).toHaveCount(10);
-  await expect(page.locator('#result-count')).toHaveText('10개');
+  await expect(page.locator('.game-card')).toHaveCount(12);
+  await expect(page.locator('#result-count')).toHaveText('12개');
   expect(await page.locator('.game-card').evaluateAll(nodes => nodes.map(node => (node as HTMLElement).dataset.id))).toEqual(ALL_GAMES.map(game => game.id));
   const hrefs: string[] = [];
   for (const game of ALL_GAMES) {
@@ -125,7 +127,7 @@ async function available(page: Page) {
     await expect(link).toHaveAttribute('href', game.href);
     hrefs.push((await link.getAttribute('href'))!);
   }
-  expect(new Set(hrefs).size, '열 게임의 주소는 모두 달라야 합니다.').toBe(10);
+  expect(new Set(hrefs).size, '열두 게임의 주소는 모두 달라야 합니다.').toBe(12);
 }
 async function freeze(page: Page) {
   const time = new Date('2026-10-25T12:00:00Z');
@@ -160,19 +162,19 @@ async function paddle(page: Page, kind: 'pong' | 'breakout') {
   return positions.reduce((sum, value) => sum + value, 0) / positions.length;
 }
 
-test('G022-LIVE01 홈 39/10/29, 시안 제거, 정확한 열 링크와 375/320 레이아웃을 확인합니다.', async ({ page, baseURL }, info) => {
+test('G022-LIVE01 홈 41/12/29, 시안 제거, 정확한 열두 링크와 375/320 레이아웃을 확인합니다.', async ({ page, baseURL }, info) => {
   const origin = new URL(baseURL!).origin;
   await page.goto('/');
   await home(page, origin);
-  await expect(page.locator('#result-count')).toHaveText('39개');
+  await expect(page.locator('#result-count')).toHaveText('41개');
   await expect(page.locator('.game-card')).toHaveCount(12);
   await page.locator('#load-more').click();
   await expect(page.locator('.game-card')).toHaveCount(24);
   await page.locator('#load-more').click();
   await expect(page.locator('.game-card')).toHaveCount(36);
   await page.locator('#load-more').click();
-  await expect(page.locator('.game-card')).toHaveCount(39);
-  await expect(page.locator('.game-card.available')).toHaveCount(10);
+  await expect(page.locator('.game-card')).toHaveCount(41);
+  await expect(page.locator('.game-card.available')).toHaveCount(12);
   await expect(page.locator('.game-card.upcoming')).toHaveCount(29);
   await expect(page.locator('.game-card.upcoming a')).toHaveCount(0);
   expect(await page.locator('.game-card.upcoming .card-action').evaluateAll(nodes => nodes.every(node => (node as HTMLButtonElement).disabled))).toBe(true);

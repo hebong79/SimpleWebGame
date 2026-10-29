@@ -32,6 +32,8 @@ const GAME_CATALOG: CatalogGame[] = [
   { id: 'cloud-bunny', title: '구름 토끼', genre: '순발력', description: '다음 구름에 발을 맞춰 조금 더 높이', tags: ['점프', 'doodle', '토끼', '발판', '코스튬'], minutes: 1, maxMinutes: 3, status: 'available', href: '/games/08-doodle/index.html' },
   { id: 'chick-picnic', title: '병아리의 소풍', genre: '순발력', description: '차량의 틈을 보고 한 칸씩 떠나는 소풍', tags: ['길건너기', 'crossy', '병아리', '소풍', '코스튬'], minutes: 1, maxMinutes: 2, status: 'available', href: '/games/09-crossy/index.html' },
   { id: 'hamster-depot', title: '햄스터 택배 창고', genre: '퍼즐', description: '택배를 목표에 밀어 넣는 스무 개의 창고', tags: ['상자밀기', 'sokoban', '햄스터', '택배', '20단계', '코스튬'], minutes: 1, maxMinutes: 5, status: 'available', href: '/games/10-sokoban/index.html' },
+  { id: 'gem-survey', title: '보석 탐사 지도', genre: '숫자', description: '숫자 단서를 읽고 안전한 보석 지도를 펼쳐요', tags: ['지뢰찾기', 'mines', '보석', '지도', '논리'], minutes: 2, maxMinutes: 6, status: 'available', href: '/games/11-mines/index.html' },
+  { id: 'number-postbox', title: '숫자 우체통', genre: '숫자', description: '빈칸을 옮기며 번호 엽서를 차례로 정리해요', tags: ['15퍼즐', 'fifteen', '숫자', '엽서', '슬라이드'], minutes: 2, maxMinutes: 8, status: 'available', href: '/games/12-fifteen/index.html' },
   { id: 'memory-pieces', title: '기억의 조각', genre: '기억', description: '뒤집고 기억하며 찾아내는 한 쌍', tags: ['카드', '맞추기'], minutes: 2, maxMinutes: 5, status: 'upcoming' },
   { id: 'leisure-line', title: '한 줄의 여유', genre: '퍼즐', description: '빈칸을 채우고 한 줄을 비우는 시간', tags: ['블록', '채우기'], minutes: 3, maxMinutes: 8, status: 'upcoming' },
   { id: 'color-walk', title: '색의 산책', genre: '퍼즐', description: '같은 색을 이어 완성하는 작은 풍경', tags: ['색깔', '연결'], minutes: 2, maxMinutes: 5, status: 'upcoming' },
@@ -207,6 +209,35 @@ function artwork(game: CatalogGame, index: number): HTMLDivElement {
       shape('path', { d: 'M45 48h6l-3 4z', fill: '#aa7367' });
       shape('rect', { x: '31', y: '61', width: '34', height: '26', rx: '3', fill: '#b77c48', stroke: '#805a37', 'stroke-width': '2' });
       shape('path', { d: 'M44 62v9h8v-9M43 77h10', fill: '#efdab3', stroke: '#efdab3', 'stroke-width': '3' });
+    }
+    art.append(svg);
+  } else if (game.id === 'gem-survey' || game.id === 'number-postbox') {
+    // Original G025 map/postcard miniatures. Fixed local SVG primitives only;
+    // existing miniature CSS supplies geometry without new styles or assets.
+    const map = game.id === 'gem-survey';
+    art.classList.add(map ? 'art-cloud-bunny' : 'art-desert');
+    const svg = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
+    svg.setAttribute('viewBox', '0 0 96 96');
+    svg.classList.add('mini-g022');
+    const shape = (tag: 'rect' | 'path' | 'text', attributes: Record<string, string>, text?: string) => {
+      const node = document.createElementNS('http://www.w3.org/2000/svg', tag);
+      for (const [key, value] of Object.entries(attributes)) node.setAttribute(key, value);
+      if (text !== undefined) node.textContent = text;
+      svg.append(node);
+    };
+    shape('rect', { x: '5', y: '8', width: '86', height: '80', rx: '7', fill: '#fffdf7', stroke: map ? '#355d48' : '#a34d37', 'stroke-width': '2' });
+    if (map) {
+      shape('path', { d: 'M12 32h72M12 56h72M12 80h72M30 16v64M54 16v64M78 16v64', fill: 'none', stroke: '#d9ded2', 'stroke-width': '2' });
+      shape('path', { d: 'M42 34l10 11-10 11-10-11z', fill: '#529879', stroke: '#355d48', 'stroke-width': '2' });
+      shape('path', { d: 'M65 72V40l15 6-15 6', fill: '#ad7735', stroke: '#805722', 'stroke-width': '3' });
+      shape('text', { x: '18', y: '27', fill: '#355d48', 'font-size': '14', 'font-weight': '700', 'text-anchor': 'middle' }, '1');
+      shape('text', { x: '42', y: '74', fill: '#355d48', 'font-size': '14', 'font-weight': '700', 'text-anchor': 'middle' }, '2');
+    } else {
+      shape('path', { d: 'M13 26h70M13 49h70M13 72h70M36 14v65M60 14v65', fill: 'none', stroke: '#e6d4bd', 'stroke-width': '2' });
+      for (const [x, y, number] of [['24', '43', '1'], ['48', '43', '2'], ['72', '43', '3'], ['24', '66', '4'], ['48', '66', '5']]) {
+        shape('text', { x, y, fill: '#a34d37', 'font-size': '18', 'font-weight': '700', 'text-anchor': 'middle' }, number);
+      }
+      shape('rect', { x: '64', y: '54', width: '16', height: '14', rx: '2', fill: 'none', stroke: '#375e60', 'stroke-dasharray': '3 2' });
     }
     art.append(svg);
   } else if (game.id === 'number-garden') {

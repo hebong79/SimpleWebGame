@@ -1,0 +1,17 @@
+{
+  "label": "candidate-smoke-missing-games",
+  "executable": "C:/Program Files/nodejs/node.exe",
+  "args": [
+    "scripts/g025-verify.mjs",
+    "--target",
+    "candidate",
+    "--mode",
+    "smoke"
+  ],
+  "expectedExit": 2,
+  "actualExit": 2,
+  "signal": null,
+  "error": null,
+  "stdout": "candidate-smoke-missing-games.stdout.log",
+  "stderr": "candidate-smoke-missing-games.stderr.log"
+}

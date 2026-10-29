@@ -1,0 +1,19 @@
+{
+  "label": "live-origin-loopback",
+  "executable": "C:/Program Files/nodejs/node.exe",
+  "args": [
+    "scripts/g025-verify.mjs",
+    "--target",
+    "live",
+    "--mode",
+    "full",
+    "--origin",
+    "http://127.0.0.1:3116"
+  ],
+  "expectedExit": 64,
+  "actualExit": 64,
+  "signal": null,
+  "error": null,
+  "stdout": "live-origin-loopback.stdout.log",
+  "stderr": "live-origin-loopback.stderr.log"
+}

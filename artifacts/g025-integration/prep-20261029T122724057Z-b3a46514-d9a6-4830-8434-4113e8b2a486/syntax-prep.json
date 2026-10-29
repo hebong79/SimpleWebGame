@@ -1,0 +1,14 @@
+{
+  "label": "syntax-prep",
+  "executable": "C:/Program Files/nodejs/node.exe",
+  "args": [
+    "--check",
+    "artifacts/g025-integration/prep-check.mjs"
+  ],
+  "expectedExit": 0,
+  "actualExit": 0,
+  "signal": null,
+  "error": null,
+  "stdout": "syntax-prep.stdout.log",
+  "stderr": "syntax-prep.stderr.log"
+}

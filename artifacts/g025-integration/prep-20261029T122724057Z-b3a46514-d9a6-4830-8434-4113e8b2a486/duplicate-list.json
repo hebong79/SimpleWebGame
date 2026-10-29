@@ -1,0 +1,19 @@
+{
+  "label": "duplicate-list",
+  "executable": "C:/Program Files/nodejs/node.exe",
+  "args": [
+    "scripts/g025-verify.mjs",
+    "--target",
+    "candidate",
+    "--mode",
+    "smoke",
+    "--list",
+    "--list"
+  ],
+  "expectedExit": 64,
+  "actualExit": 64,
+  "signal": null,
+  "error": null,
+  "stdout": "duplicate-list.stdout.log",
+  "stderr": "duplicate-list.stderr.log"
+}

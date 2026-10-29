@@ -1,0 +1,166 @@
+{
+  "originalRecords": 39,
+  "total": 41,
+  "available": 12,
+  "upcoming": 29,
+  "originalRecordLiteralsAndOrderPreserved": true,
+  "favoritesStorageCodePreserved": true,
+  "originalRecordsSha256": [
+    {
+      "id": "number-garden",
+      "sha256": "95037d2ef6e1ea758b4a0eac423bd85636db0cc3e376c693437294d08839b410"
+    },
+    {
+      "id": "little-dragon",
+      "sha256": "b5e7cdd1393e5761cb4f4dbfcaf31303ef0599f3f6be66434aaec07889836bae"
+    },
+    {
+      "id": "neon-rally",
+      "sha256": "eb89a4534e40829c1438b309deae9b024feecbdd0037408d4015564b02efe8e3"
+    },
+    {
+      "id": "cosmic-cleanup",
+      "sha256": "0e9ee5225f979a86c405543749d154025663f06682ba7526edb8f5dc80597d1e"
+    },
+    {
+      "id": "block-workshop",
+      "sha256": "2929e9563b56522437593776c6608b1d9222992222ae07383ff43e3d704633b7"
+    },
+    {
+      "id": "balloon-sparrow",
+      "sha256": "6d11ce1177dad3db8ac7dbf393417dd497b6bce0258962cf568eb54a7c7d521a"
+    },
+    {
+      "id": "desert-post",
+      "sha256": "b8b1793323e0b59563ec60e9825874ff9602ec04ffc4036aba677737c180f964"
+    },
+    {
+      "id": "cloud-bunny",
+      "sha256": "48aa8c59b205f3a1222d78b1895c10464d4d6ccd364230acfc5e299e39f1ac81"
+    },
+    {
+      "id": "chick-picnic",
+      "sha256": "a92f7e3520714a5c587e101a66db5d50308a8703a0fea8f9286324b66f0194d7"
+    },
+    {
+      "id": "hamster-depot",
+      "sha256": "6687dcf1c83850fb72999c8cc15c2f4ad4643e6f1a7bc82ca5e3448dc383ead6"
+    },
+    {
+      "id": "memory-pieces",
+      "sha256": "736c82ebd3976ced3366449b194c31cd99ee4e0de681cce9bfb95476ecc54192"
+    },
+    {
+      "id": "leisure-line",
+      "sha256": "cb7f81d0094db588380ef931fd5e6573a9fa0058d985a9bf570b2af611b1296a"
+    },
+    {
+      "id": "color-walk",
+      "sha256": "5a70c55281af8b54f063d998c460f6e21a2066442138a3e840e863c8b882a838"
+    },
+    {
+      "id": "morning-sudoku",
+      "sha256": "d4e783bfa81444899bf710821f939ad4ce9c122e9313cd72fdd6bd6f009e8f86"
+    },
+    {
+      "id": "leaf-cards",
+      "sha256": "05b376ff948e5766ea834efd34f676e294be2485e8c29be58dd3c332bf53e7a0"
+    },
+    {
+      "id": "raindrop",
+      "sha256": "1c3984339cd033c2eb10ed581a98912e0667471c0585778df967d9d2e7f18bd0"
+    },
+    {
+      "id": "garden-gomoku",
+      "sha256": "e71df2343182b615f5ac07ae21b3c76b01adcb8465be27b700c7d08a55530d1a"
+    },
+    {
+      "id": "little-maze",
+      "sha256": "96c71ad8e4c4a57bae95dbb79bc429524a33e8f599694b8b24862bb4762919a5"
+    },
+    {
+      "id": "make-ten",
+      "sha256": "1353aa448c5b3331c0f334eca3f44f813e09a37abcf0f3169f9a42080ffea14b"
+    },
+    {
+      "id": "shape-note",
+      "sha256": "ee7bee7157436ed9b0523df9cdcb2ce159163a399f2464fc8583e43dd8d3e448"
+    },
+    {
+      "id": "balloon",
+      "sha256": "b0f5d2666053e63b034c09ce82e20f06b44b94e4178147518714b9f9e9af6656"
+    },
+    {
+      "id": "leaf-reversi",
+      "sha256": "b45b8e85e0e120b9f37e842c24e3c56cb86430920c137d78b090a1dfc402a0ed"
+    },
+    {
+      "id": "sliding-view",
+      "sha256": "3b5b5b0611dfc01bcd077d219e3f3fe96a2a8e68c06e109de4b3239e3562171d"
+    },
+    {
+      "id": "number-road",
+      "sha256": "a14eede555e1c1339b349ec671aa75e7a9047ce80500c4dbff914ce7c2d7d096"
+    },
+    {
+      "id": "forest-melody",
+      "sha256": "d3255437aaffbb6e207d760b7dce9015d6f44864d341e4997adbb8aa1a6c9f78"
+    },
+    {
+      "id": "star-catch",
+      "sha256": "bb2a92400fdf882df3b450851dbc62f5984a6f4a87521b97936135aee9eccf27"
+    },
+    {
+      "id": "afternoon-cards",
+      "sha256": "9103cc557f0e9647050315a1418453326616ca23547f96f5f0bfda46d42b12b6"
+    },
+    {
+      "id": "waterway",
+      "sha256": "1c729cddefea410f629f9a633153d60db75dc63214cb52f4461c80cabc2b9e42"
+    },
+    {
+      "id": "tiny-calculation",
+      "sha256": "52eeb8a96f616b54c1d91c7c56b97e3c47c1991f5dfb81d3033dad2b711ecc19"
+    },
+    {
+      "id": "word-basket",
+      "sha256": "3ab22e1292521c00dac19e3b8cb3dfc29dde4d6bd9c1fa4164b51f365c24f983"
+    },
+    {
+      "id": "green-signal",
+      "sha256": "4955305fdb31a8517e23046d98baa47e44c6465865d383fc3cb43c5970bd4319"
+    },
+    {
+      "id": "round-checkers",
+      "sha256": "cca6d28150c3ad47d28c864b736f43228405cfe4d66d661685e60a70fdabaf45"
+    },
+    {
+      "id": "constellation",
+      "sha256": "b65d4c1c280697bb078d8830b1938173d1301d632cf0df84e2356bb959277252"
+    },
+    {
+      "id": "falling-leaves",
+      "sha256": "ad475d4a5e345d6b8c14b589d08b42e2ac0661f2d733877cfeac54e6e5917034"
+    },
+    {
+      "id": "quiet-chess",
+      "sha256": "9553a052baa3ed45d8e3c6a49f574c3d1c2708eaee95dba699caaeb529150981"
+    },
+    {
+      "id": "mirror-lake",
+      "sha256": "db5c5ba977127be0ad0b241657243532a16d38996a8ab31cfc5103d8aafe0e3c"
+    },
+    {
+      "id": "pebble-stack",
+      "sha256": "98587fcbb80d6978be3bc5e7a10930177d08c8cb024b2d12ffb4dfcfd79e0926"
+    },
+    {
+      "id": "pocket-tangram",
+      "sha256": "dd7df008d948e035cd06b6f82c681095376aba1943e4eadb33942876b73100ea"
+    },
+    {
+      "id": "dice-picnic",
+      "sha256": "406e86dab6b1be79defe25332768caac099e47dfbbb84efb12831e2d0649d0da"
+    }
+  ]
+}
