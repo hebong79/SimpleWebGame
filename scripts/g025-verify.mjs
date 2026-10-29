@@ -194,7 +194,7 @@ export async function main(args = process.argv.slice(2)) {
   async function units() {
     const base = await command('unit-common', NODE, ['--test', '--test-reporter=tap', ...(await files(ROOT, `${BUILD}/tests/unit`)).filter(p => p.endsWith('.test.js'))]);
     const games = await command('unit-games', NODE, ['--test', '--test-reporter=tap', ...(await files(ROOT, 'tests/games')).filter(p => p.endsWith('.test.mjs'))]);
-    const snapshot = join(out, `launcher-snapshot-${randomUUID()}`), proof = [];
+    const snapshot = join(out, 'l'), proof = []; // The run UUID isolates this short Windows fixture cwd.
     for (const path of ['tests/launch-local.test.mjs', 'scripts/serve_local.mjs', 'package.json']) {
       const dest = join(snapshot, path); await mkdir(dirname(dest), { recursive: true }); await copyFile(resolve(ROOT, path), dest);
       const source = hash(await readFile(resolve(ROOT, path))), copy = hash(await readFile(dest)); assert.equal(copy, source);
