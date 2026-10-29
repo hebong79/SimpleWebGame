@@ -32,6 +32,8 @@ const GAME_CATALOG: CatalogGame[] = [
   { id: 'cloud-bunny', title: '구름 토끼', genre: '순발력', description: '다음 구름에 발을 맞춰 조금 더 높이', tags: ['점프', 'doodle', '토끼', '발판', '코스튬'], minutes: 1, maxMinutes: 3, status: 'available', href: '/games/08-doodle/index.html' },
   { id: 'chick-picnic', title: '병아리의 소풍', genre: '순발력', description: '차량의 틈을 보고 한 칸씩 떠나는 소풍', tags: ['길건너기', 'crossy', '병아리', '소풍', '코스튬'], minutes: 1, maxMinutes: 2, status: 'available', href: '/games/09-crossy/index.html' },
   { id: 'hamster-depot', title: '햄스터 택배 창고', genre: '퍼즐', description: '택배를 목표에 밀어 넣는 스무 개의 창고', tags: ['상자밀기', 'sokoban', '햄스터', '택배', '20단계', '코스튬'], minutes: 1, maxMinutes: 5, status: 'available', href: '/games/10-sokoban/index.html' },
+  { id: 'gem-survey', title: '보석 탐사 지도', genre: '숫자', description: '숫자 단서를 읽고 안전한 보석 지도를 펼쳐요', tags: ['지뢰찾기', 'mines', '보석', '지도', '논리'], minutes: 2, maxMinutes: 6, status: 'available', href: '/games/11-mines/index.html' },
+  { id: 'number-postbox', title: '숫자 우체통', genre: '숫자', description: '빈칸을 옮기며 번호 엽서를 차례로 정리해요', tags: ['15퍼즐', 'fifteen', '숫자', '엽서', '슬라이드'], minutes: 2, maxMinutes: 8, status: 'available', href: '/games/12-fifteen/index.html' },
   { id: 'memory-pieces', title: '기억의 조각', genre: '기억', description: '뒤집고 기억하며 찾아내는 한 쌍', tags: ['카드', '맞추기'], minutes: 2, maxMinutes: 5, status: 'upcoming' },
   { id: 'leisure-line', title: '한 줄의 여유', genre: '퍼즐', description: '빈칸을 채우고 한 줄을 비우는 시간', tags: ['블록', '채우기'], minutes: 3, maxMinutes: 8, status: 'upcoming' },
   { id: 'color-walk', title: '색의 산책', genre: '퍼즐', description: '같은 색을 이어 완성하는 작은 풍경', tags: ['색깔', '연결'], minutes: 2, maxMinutes: 5, status: 'upcoming' },
@@ -61,8 +63,6 @@ const GAME_CATALOG: CatalogGame[] = [
   { id: 'pebble-stack', title: '조약돌 쌓기', genre: '순발력', description: '흔들리지 않게 조심조심 쌓는 돌탑', tags: ['균형', '타이밍'], minutes: 2, maxMinutes: 4, status: 'upcoming' },
   { id: 'pocket-tangram', title: '주머니 칠교', genre: '퍼즐', description: '일곱 조각에 숨어 있는 모양 찾기', tags: ['칠교', '조각'], minutes: 3, maxMinutes: 10, status: 'upcoming' },
   { id: 'dice-picnic', title: '주사위 소풍', genre: '보드', description: '가벼운 선택으로 완성하는 주사위 한 판', tags: ['주사위', '선택'], minutes: 5, maxMinutes: 10, status: 'upcoming' },
-  { id: 'gem-survey', title: '보석 탐사 지도', genre: '숫자', description: '숫자 단서를 읽고 안전한 보석 지도를 펼쳐요', tags: ['지뢰찾기', 'mines', '보석', '지도', '논리'], minutes: 2, maxMinutes: 6, status: 'available', href: '/games/11-mines/index.html' },
-  { id: 'number-postbox', title: '숫자 우체통', genre: '숫자', description: '빈칸을 옮기며 번호 엽서를 차례로 정리해요', tags: ['15퍼즐', 'fifteen', '숫자', '엽서', '슬라이드'], minutes: 2, maxMinutes: 8, status: 'available', href: '/games/12-fifteen/index.html' },
 ];
 
 const preferredGenres = ['퍼즐', '숫자', '기억', '순발력', '보드'];

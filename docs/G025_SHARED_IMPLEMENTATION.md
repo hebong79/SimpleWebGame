@@ -1,4 +1,42 @@
-# G025 공통 구현 준비 — 게임 미통합 / 실행 BLOCKED
+# G025 공통 구현 — 준비 이력 및 병합 후 초기 실행
+
+## G025-SHARED-FINAL 후속 — 신규 어댑터 PASS / 기존 동결 E2E 차단
+
+- 물리 root/branch는 아래와 같습니다. 시작 HEAD `388165537b493f5b8acd1c2a01d93bfb8b0ce816`에서 작업했고 두 builder 커밋의 **19파일 전부 원본 바이트/SHA를 보존**했습니다. 아래의 ‘게임 미통합’ 부분은 최초 준비 시점 이력이며 최신 상태가 아닙니다.
+- `src/client/library.ts`의 신규 두 record **위치만** 기존 available10개 뒤/upcoming29개 앞으로 이동했습니다. 두 줄을 제외한 library 전체·기존39개 record 내용/상대순서·즐겨찾기 코드는 그대로입니다. **41/12/29**, 필터/검색/더보기 전 기본 첫12장 DOM의 마지막 두 카드가 실제 신규 게임임을 세 브라우저에서 단언했습니다.
+- 실제 11 API는 `{game,record,mode,elapsedMs,settled,pauseReason,dialog,preview,storageBlocked}`, 12는 `{game,save,storageBlocked,recovered,settled,improved,modal}`입니다. 상태는 둘 다 `game.status`; 12 시간/goal은 `game.elapsedMs/preview`입니다. 읽기 clone 원문을 보관하고 board/flags/history/counters와 상태/시계 필드의 관측을 분리했습니다. 라이브 setter·RNG 주입·가상시계는 없습니다.
+- 실제 locator에 맞췄습니다: 홈은 `#home` anchor, 11 시작/재개 `#start`, 지도 `#grid .cell`/`#map-window`/`#dialog-*`, 12 시작 `#start`·정지/재개 `#pause`·`#board .tile[data-index]`·`#modal-*`·`#goal`. 12 기본 배열은 builder의 `post-20-v1` 실제 fixture와 대조합니다.
+- 11은 공개 깃발모드 버튼으로 안전 이웃1을 막은 후0을 열어 원자적 flood의 우발적 즉시승리를 차단합니다. flag-only armed=false/time0, 공개 후 playing을 단언합니다. 모달 취소 후 paused/board·확정시간 불변/명시재개, 두 mute 전환과 테마 미리보기 취소를 실제80ms trusted 입력으로 검사했습니다.
+- 정상 goal hold/release는 이전 playing 복귀 예외이며 hold 중 시계/board 동결을 검사합니다. 별도 hold→합성 blur→release는 보호정지 우선/명시재개입니다. blur 합성 이벤트는 실제 OS/tab 비활성화나 실물 증거가 아닙니다.
+- 320px에서44px 미만 허용오차 없이 실제 셀/버튼 기하, 문서 가로넘침0, 지도 내부 scroll과 양끝 도달을 검사했습니다. WebKit screenshotter는 부르지 않아 이미지 수용은 **미검증**입니다. CSP/console/pageerror/HTTP/외부요청 단언을 필터링하거나 완화하지 않았습니다.
+- `G025-STORE full`은 기존10개 profile+임의 sentinel+기존 upcoming 즐겨찾기를 **한 번만 seed**하고 새 게임 왕복/reload 뒤 원문 바이트·키집합을 보존하도록 정합했습니다. 04~10은 실제 순수 정산/메모리 저장 API 결과를 쓰며 01/02는 제품 기본 factory, 별도 순수 정산 helper가 없는03은 정상 zero-match factory를 씁니다. 수동 통계 tuple이나 reload init-script 재seed는 없습니다. **해당 fixture 함수만 Node에서 실제 실행해 정상10키 생성을 확인했으며, 브라우저 보존 case는 이번 smoke에 포함하지 않았습니다.**
+
+### 실제 실행과 차단
+
+실측 종료 시각과 전체 경로/수치는 `artifacts/g025-integration/shared-final-20261029T130822/results.json` 및 `baseline-invariants.json`에 있습니다.
+
+| 검증 | 실제 결과 |
+|---|---|
+| 프로젝트/선택8개 E2E+config strict 타입, runner/Python 구문, whitespace | 모두 exit0 |
+| 새 candidate/build | **1회**, 기존 build 부재 확인 후 exit0; source149/output127 SHA 결합 |
+| candidate/smoke discovery / 실제실행 | **36 수집 / 36 실행 / 33 PASS / 3 FAIL / skip0 / flaky0**, exit1 |
+| 신규 G025 어댑터 smoke 부분집합 | **12 수집 / 12 실행 / 12 PASS**, 세 프로젝트 각4개 |
+| 실제 공개 HTTP 바이트/CSP/nosniff | **93/93 일치** |
+| 단위 suite / 전체 full | **0회** — 요청대로 중복 실행하지 않음 |
+| mutex / 자기서버 | 정확 `Local\SimpleGamesG025BrowserGate` acquired/released/HANDLE closed;3155 close 후 connectEx10061 |
+
+**남은 차단은 변경 금지된 기존 E2E의 페이지 전제입니다.** `tests/e2e/g024-new-games.spec.ts:92`가 첫 화면에서 `memory-pieces` 즐겨찾기를 바로 누릅니다. 신규 두 카드가 요구된 위치로 옮겨지면서 이 record는13번째가 되어 아직 DOM에 없으며, 같은45초 locator timeout이 세 프로젝트에서 발생했습니다. 기능/CSP 실패가 아니라 기존 시험의 초기 카드 가정 충돌입니다. 원본 FAIL JSON/trace/로그를 보존했고 **기존 spec/config를 수정하거나 필터/skip/재시도로 가리지 않았습니다.** 이 단일 smoke invocation 뒤 동일 실패를 다시 실행하지 않았습니다.
+
+- build UUID: `162e7276-a341-4cbd-9596-2640feaca864`; manifest SHA256 `91b1238d897900e4899f85f73c34bac47d6fd44f7968f323e20a7d8935813c31`.
+- build raw: `artifacts/g025-integration/runs/20261029T131016122Z-d6f5a1c4-ddae-4a8d-b36f-2cca541aec4f/invocation.json`.
+- smoke raw root: `artifacts/g025-integration/runs/20261029T131027587Z-846f013b-f2bf-4ffd-acc4-9418298e0b85/`; exact Playwright JSON 경로는 집계 `results.json`의 `smoke.rawJSON`입니다.
+- 변경 후 source/output manifest 재검산 일치,19게임파일 불변, 기존 artifact211개(build 전)/371개(smoke 전)의 SHA/size/mtime 보존을 확인했습니다. mutable 인계 문서는 빌드 입력에 추가하지 않았습니다.
+- **runner/config/browser gate/core 변경0**입니다. 기존 독립 core 검토의 S01/S02 비차단 권고도 불변으로 남겼습니다. 신규 delta 자체는 제작자 확인이며 독립 delta 수용은 부모 후속입니다.
+- 부모 후속: 기존 E2E의 최소 준비동작 보완에 대한 쓰기 승인/담당 결정 → source freeze 갱신 시 구빌드 보존 → 독립 delta 검토와 최종 full/필요 단위. 현재 결과를 smoke 전체 PASS·릴리스 수용·3116 반영으로 표시하지 마십시오. 이번 작업에는 main merge/PM2/3116/타서비스/설치/원격 작업이 없습니다. 작업일지·게시판·HANDOFF 최종화는 부모 소유이므로 자기 artifact 작업명 요약만 남깁니다.
+
+---
+
+## 최초 공통 준비 이력 — 당시 게임 미통합 / 실행 BLOCKED
 
 ## 범위와 결과
 
