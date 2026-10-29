@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="ko">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="color-scheme" content="light dark"><title>보석 탐사 지도 · 작은 쉼표</title><link rel="icon" href="./assets/kit.svg" type="image/svg+xml"><link rel="stylesheet" href="./styles.css"><script type="module" src="./main.mjs"></script></head>
+<body data-theme="paper">
+<main class="expedition">
+  <header class="header"><div class="brand"><img src="./assets/kit.svg" width="48" height="48" alt=""><div><p class="eyebrow">GEM SURVEY / EXPEDITION NOTES</p><h1>보석 탐사 지도</h1></div></div><span class="edition">탐사수첩 № 11</span></header>
+  <nav class="toolbar" aria-label="탐사 도구"><a id="home" href="/">← 게임 서재</a><button id="help" type="button">도움말</button><button id="theme" type="button">지도 테마</button><button id="mute" type="button" aria-pressed="true">음소거: 켜짐</button></nav>
+  <p id="storage-warning" class="warning" role="status" hidden></p>
+  <p id="limit-notice" class="warning" role="status" hidden>완료 기록이 10억 판 한도에 도달했습니다. 플레이와 설정 저장은 가능하지만 완료 횟수와 최고 기록은 더 이상 갱신하지 않습니다.</p>
+  <div class="workspace">
+    <section class="paper" aria-label="탐사 지도와 조작">
+      <div class="stats"><div><span>남은 표식</span><strong id="remaining">10</strong></div><div><span>탐사 시간</span><strong id="time">00:00</strong></div><div><span>열린 안전칸</span><strong id="opened">0 / 71</strong></div></div>
+      <div class="map-frame"><div id="map-window" class="map-window" tabindex="-1" aria-label="좌우로 밀어 지도 보기"><div id="grid" class="grid" role="grid" aria-label="9행 9열 탐사 지도" aria-rowcount="9" aria-colcount="9"></div></div><div id="board-cover" class="board-cover"><p id="cover-note">첫 선택은 안전한 빈 땅입니다.</p><button id="start" class="primary" type="button">탐사 시작</button></div></div>
+      <p class="map-hint">↔ 작은 화면에서는 좌우로 밀어 지도 보기 · 각 칸은 44px입니다.</p>
+      <p id="status" class="status" role="status" aria-live="polite">준비 · 안전한 71칸을 찾아보세요.</p>
+      <div class="toolbar controls"><button id="mode" type="button" aria-pressed="false">깃발 모드: 꺼짐</button><button id="pause" type="button" disabled>일시정지</button><button id="restart" type="button">새 탐사</button></div>
+      <section id="result" class="result" aria-labelledby="result-title" hidden><h2 id="result-title"></h2><p id="result-detail"></p><button id="retry" class="primary" type="button">다시 탐사</button></section>
+    </section>
+    <aside class="notes"><p class="eyebrow">FIELD GUIDE</p><h2>숫자는 땅의 단서</h2><p>숫자는 주변 여덟 칸의 위험한 바위 수입니다. 바위를 피해 안전한 땅 <b>71칸</b>을 모두 열면 탐사가 끝납니다.</p><ul class="legend"><li><i class="legend-gem" aria-hidden="true">◇</i>안전한 땅을 밝히세요</li><li><i class="legend-flag" aria-hidden="true">⚑</i>깃발은 의심 위치 메모</li><li><i class="legend-rock" aria-hidden="true">◆</i>위험한 바위는 10개</li></ul><p class="small">탭·클릭으로 열기 / 우클릭 또는 450ms 길게 눌러 깃발. 깃발 모드를 켜면 탭도 표식만 바꿉니다.</p><div class="records"><h3>나의 탐사 기록</h3><p id="best">최고 기록 · 아직 없음</p><p id="totals">완료 0 · 성공 0 · 실패 0</p></div><p class="small">첫 칸과 그 주변은 안전합니다. 모든 판이 추론만으로 풀리는 것은 아닙니다. 진행 중인 지도는 새로고침하면 사라집니다.</p></aside>
+  </div>
+  <footer>직접 그린 탐사 지도 · 외부 이미지와 음원 없음 · 기록은 이 브라우저에만 보관</footer>
+</main>
+<dialog id="dialog" aria-labelledby="dialog-title"><div class="dialog-content"><h2 id="dialog-title"></h2><div id="help-panel" hidden><p>9×9 지도에서 위험한 바위 10개를 피해 안전한 71칸을 모두 여세요. 첫 선택과 주변 칸은 바위가 없습니다.</p><p>빈 땅은 이어진 빈 땅과 경계 숫자까지 열립니다. 깃발을 꽂은 칸은 자동으로 열리지 않습니다. 표식 10개만 꽂는 것으로는 성공하지 않습니다.</p><p>PC: 클릭·Enter·Space로 열기, 우클릭·F·Shift+F10으로 깃발. 방향키는 지도 안에서 초점만 옮깁니다. Esc는 보호 정지입니다.</p><p>모바일: 탭으로 열기, 450ms 길게 눌러 깃발. 움직이거나 스크롤하면 누름을 취소합니다. 지도는 좌우 스크롤, 페이지는 위아래 스크롤·확대가 가능합니다.</p><p>첫 유효 열기부터 시간이 흐릅니다. 정지·도움말·테마·창 이탈 중에는 멈추며, 닫은 뒤 직접 재개해야 합니다.</p></div><div id="theme-panel" hidden><p>세 지도는 모두 기본 제공입니다. 규칙과 기록은 바뀌지 않습니다.</p><div class="theme-options"><button type="button" data-theme-choice="paper" aria-pressed="true">◇ 종이 지도</button><button type="button" data-theme-choice="forest" aria-pressed="false">♧ 초록 탐사</button><button type="button" data-theme-choice="night" aria-pressed="false">☾ 밤 탐사</button></div><p>선택하면 미리보기, 적용하면 저장합니다.</p></div><p id="confirm-panel" hidden></p><div class="toolbar"><button id="dialog-apply" class="primary" type="button" hidden>적용</button><button id="dialog-close" type="button">닫기</button></div></div></dialog>
+</body></html>
