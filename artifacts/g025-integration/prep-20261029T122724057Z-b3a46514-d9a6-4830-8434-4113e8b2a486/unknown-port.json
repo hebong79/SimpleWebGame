@@ -1,0 +1,19 @@
+{
+  "label": "unknown-port",
+  "executable": "C:/Program Files/nodejs/node.exe",
+  "args": [
+    "scripts/g025-verify.mjs",
+    "--target",
+    "candidate",
+    "--mode",
+    "smoke",
+    "--port",
+    "3116"
+  ],
+  "expectedExit": 64,
+  "actualExit": 64,
+  "signal": null,
+  "error": null,
+  "stdout": "unknown-port.stdout.log",
+  "stderr": "unknown-port.stderr.log"
+}

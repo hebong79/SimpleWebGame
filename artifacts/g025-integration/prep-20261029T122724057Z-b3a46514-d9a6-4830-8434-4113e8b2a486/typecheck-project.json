@@ -1,0 +1,14 @@
+{
+  "label": "typecheck-project",
+  "executable": "C:/Program Files/nodejs/node.exe",
+  "args": [
+    "node_modules/typescript/bin/tsc",
+    "--noEmit"
+  ],
+  "expectedExit": 0,
+  "actualExit": 0,
+  "signal": null,
+  "error": null,
+  "stdout": "typecheck-project.stdout.log",
+  "stderr": "typecheck-project.stderr.log"
+}

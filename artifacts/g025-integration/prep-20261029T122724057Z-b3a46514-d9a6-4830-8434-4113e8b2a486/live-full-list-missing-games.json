@@ -1,0 +1,20 @@
+{
+  "label": "live-full-list-missing-games",
+  "executable": "C:/Program Files/nodejs/node.exe",
+  "args": [
+    "scripts/g025-verify.mjs",
+    "--target",
+    "live",
+    "--mode",
+    "full",
+    "--origin",
+    "http://192.168.0.195:3116",
+    "--list"
+  ],
+  "expectedExit": 2,
+  "actualExit": 2,
+  "signal": null,
+  "error": null,
+  "stdout": "live-full-list-missing-games.stdout.log",
+  "stderr": "live-full-list-missing-games.stderr.log"
+}

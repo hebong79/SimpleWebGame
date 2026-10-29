@@ -1,0 +1,11 @@
+{
+  "artifact": "artifacts/g025-integration/G025_SHARED_PREP_EVIDENCE.zip",
+  "kind": "preparation evidence; not a runtime/game build",
+  "sha256": "914d72ac9f78a3dad30b2d1d098fba2596006de418a09527e147ffc319ac3e36",
+  "size": 340626,
+  "members": 102,
+  "crcVerified": true,
+  "everyMemberShaMatchesOriginalFile": true,
+  "rawLogsUnmodified": true,
+  "note": "Raw stdout/stderr/diff logs are committed byte-for-byte inside this ZIP and retained in the local UUID folders. Structured JSON/manifests and helpers are also staged directly. Raw diff logs are not rewritten to satisfy whitespace checks. This receipt is outside the ZIP to avoid a self-hash cycle."
+}

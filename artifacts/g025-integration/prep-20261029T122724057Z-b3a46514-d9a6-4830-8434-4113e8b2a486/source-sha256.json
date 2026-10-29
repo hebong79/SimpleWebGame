@@ -1,0 +1,20 @@
+{
+  "physicalRoot": "E:\\Work2\\Project\\SimpleGames\\worktrees\\g025-twelve-game-release",
+  "source": {
+    "src/client/library.ts": "a76d548a3fc3386e518506490bbf23020d2213b0f85f4151284c3a7e9486bbfa",
+    "package.json": "600bbbf37a99156159badd23242f1243e79726f42debc76dd6504d5377330077",
+    "ecosystem.config.cjs": "2e3c4facb54d8a0a55ea263792f967729d568981a24ee61a9a00d650d6f99ad1",
+    "scripts/g025-verify.mjs": "c4dc5013e1550993a105ce8ae350f0d4b560cce03a0486b393b3c5e6c047b1f4",
+    "tests/g025-playwright.config.ts": "a6f99b17eaf834d54fc63a9746c1e176d0d4bad5ebde1c55c8ac2473ec9d799d",
+    "tests/e2e/library-integration.spec.ts": "cb1cb435831dffbf799a42ed0139e73ace56b3772ba58dd49f11ed63290e7ea9",
+    "tests/e2e/multi-game-integration.spec.ts": "f8275ecee3353931187709f0e36903cf0bb688c5429df71f89d0e82872328d54",
+    "tests/e2e/breakout-integration.spec.ts": "ba4833ee5f297949d88a62b6c00a85464a9e455721a525452bc9562113e88d5f",
+    "tests/e2e/runner-jumper.spec.ts": "755ca77b6dce0bbbd1e56ba71135945e4c566d4a41b46979c5f144d4582cfa23",
+    "tests/e2e/live-server.spec.ts": "38a58388543d753bd51035d7bc23c5ee68c87128511861d9a38fff32d3f15e4e",
+    "tests/e2e/flappy-input.spec.ts": "6f8d27b5239121bdacc0cc4eb8f44573e1532380dfc2343032f32add4604e651",
+    "tests/e2e/g024-new-games.spec.ts": "94e328eacb4d9ade1100ab4e79ebd12b98b8d184f3e7f3bfb7004bbdc781782f",
+    "tests/e2e/g025-new-games.spec.ts": "00df76d04bee6e503814c1233b67318d978b4b03736ca6eedd3c9bbfe3761d37",
+    "artifacts/g025-integration/browser-gate.py": "04f29ea93f8bdecaf2e2d29bb1784c6598a1c7ffedfde11002ef2aa281455aa4",
+    "artifacts/g025-integration/prep-check.mjs": "bc477e965230114650de0b6284eca6f0deb0bd927458917893e5cb46c5df56c1"
+  }
+}

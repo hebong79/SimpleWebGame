@@ -1,0 +1,405 @@
+[
+  {
+    "path": "tests/e2e/breakout-integration.spec.ts",
+    "selected": true,
+    "policy": "fresh child environment + TestInfo outputPath/attach",
+    "matches": []
+  },
+  {
+    "path": "tests/e2e/breakout.spec.ts",
+    "selected": false,
+    "policy": "not selected for G025 browser execution",
+    "matches": [
+      {
+        "line": 16,
+        "text": "    await info.attach(name, { body: await page.screenshot({ fullPage: true, caret: 'initial', animations: 'allow' }), contentType: 'image/png' });"
+      },
+      {
+        "line": 31,
+        "text": "  await info.attach(`${name}-webkit-readonly-dom-layout`, { body: JSON.stringify({ evidenceKind: 'read-only DOM/layout/game snapshot; not a screenshot', webkitImageAcceptance: 'UNVERIFIED', dom, snapshot: await snapshot(page) }, null, 2), contentType: 'application/json' });"
+      },
+      {
+        "line": 82,
+        "text": "  await info.attach('http-runtime-evidence', { body: JSON.stringify(record, null, 2), contentType: 'application/json' });"
+      },
+      {
+        "line": 84,
+        "text": "    await info.attach('readonly-final-snapshot', { body: JSON.stringify(await snapshot(page), null, 2), contentType: 'application/json' });"
+      },
+      {
+        "line": 282,
+        "text": "  await info.attach('native-touch-transport', { body: 'Real Chromium Input.dispatchTouchEvent: lower drag, cancel, outside second finger, outside vertical scroll; native touchscreen upper tap rejection and lower tap launch. No state mutation or pointer-capture override.', contentType: 'text/plain' });"
+      }
+    ]
+  },
+  {
+    "path": "tests/e2e/diagnostic.mjs",
+    "selected": false,
+    "policy": "not selected for G025 browser execution",
+    "matches": [
+      {
+        "line": 2,
+        "text": "import { writeFile } from 'node:fs/promises';"
+      },
+      {
+        "line": 11,
+        "text": " await page.screenshot({path:`artifacts/qa/diagnostic-${name}.png`,fullPage:true});const afterScreenshot=[...events];"
+      },
+      {
+        "line": 17,
+        "text": "await writeFile('artifacts/qa/diagnostic.json',JSON.stringify(results,null,2));console.log(JSON.stringify(results,null,2));"
+      }
+    ]
+  },
+  {
+    "path": "tests/e2e/flappy-input.spec.ts",
+    "selected": true,
+    "policy": "fresh child environment + TestInfo outputPath/attach",
+    "matches": [
+      {
+        "line": 35,
+        "text": "  await info.attach('trusted-enter-control-versus-repeat', { body: JSON.stringify({ control, repeated, diagnostics }, null, 2), contentType: 'application/json' });"
+      },
+      {
+        "line": 71,
+        "text": "  await info.attach('part-button-geometry-and-diagnostics', { body: JSON.stringify({ geometry, diagnostics }, null, 2), contentType: 'application/json' });"
+      },
+      {
+        "line": 96,
+        "text": "  await info.attach('real-clock-native-press', { body: JSON.stringify({ observations, errors }, null, 2), contentType: 'application/json' });"
+      }
+    ]
+  },
+  {
+    "path": "tests/e2e/g024-new-games.spec.ts",
+    "selected": true,
+    "policy": "fresh child environment + TestInfo outputPath/attach",
+    "matches": [
+      {
+        "line": 13,
+        "text": "const attach = (info: TestInfo, name: string, data: unknown) => info.attach(name, { body: JSON.stringify(data, null, 2), contentType: 'application/json' });"
+      },
+      {
+        "line": 68,
+        "text": "  if (browserName === 'chromium') await page.locator('.game-card[data-id=\"chick-picnic\"]').screenshot({ path: info.outputPath('chick-card.png') });"
+      },
+      {
+        "line": 94,
+        "text": "  if (browserName === 'chromium') await page.locator('.game-card[data-id=\"hamster-depot\"]').screenshot({ path: info.outputPath('hamster-card.png') });"
+      }
+    ]
+  },
+  {
+    "path": "tests/e2e/g025-new-games.spec.ts",
+    "selected": true,
+    "policy": "fresh child environment + TestInfo outputPath/attach",
+    "matches": [
+      {
+        "line": 20,
+        "text": "const attach = (info: TestInfo, name: string, value: unknown) => info.attach(name, { body: JSON.stringify(value, null, 2), contentType: 'application/json' });"
+      },
+      {
+        "line": 144,
+        "text": "    if (browserName === 'chromium') await info.attach(`${game.id}-home`, { body: await page.screenshot({ fullPage: true, animations: 'allow', caret: 'initial' }), contentType: 'image/png' });"
+      }
+    ]
+  },
+  {
+    "path": "tests/e2e/hybrid-input.spec.ts",
+    "selected": false,
+    "policy": "not selected for G025 browser execution",
+    "matches": []
+  },
+  {
+    "path": "tests/e2e/independent-qa.spec.ts",
+    "selected": false,
+    "policy": "not selected for G025 browser execution",
+    "matches": [
+      {
+        "line": 2,
+        "text": "import { mkdir, writeFile } from 'node:fs/promises';"
+      },
+      {
+        "line": 5,
+        "text": "const out = process.env.GAME_TEST_ARTIFACT_DIR ?? 'artifacts/g013-qa';"
+      },
+      {
+        "line": 19,
+        "text": "  takingScreenshot.add(page);try{await page.screenshot({path:`${out}/${test.info().project.name}-${name}.png`,fullPage:true});}finally{takingScreenshot.delete(page);}"
+      },
+      {
+        "line": 47,
+        "text": "  await writeFile(`${out}/security-${info.project.name}-${info.title.replace(/[^a-z0-9-]/gi,'_')}.json`,JSON.stringify(evidence,null,2));"
+      },
+      {
+        "line": 186,
+        "text": "  await writeFile(`${out}/layout-${test.info().project.name}.json`,JSON.stringify(measurements,null,2));"
+      },
+      {
+        "line": 243,
+        "text": "  for(const theme of result.themes)expect(theme).toEqual(result.themes[0]);await writeFile(`${out}/rules-${test.info().project.name}.json`,JSON.stringify(result,null,2));"
+      },
+      {
+        "line": 269,
+        "text": "  const actual=await snapshot(page);await writeFile(`${out}/multitouch-${test.info().project.name}.json`,JSON.stringify({before,actual,mode:browserName==='chromium'?'CDP real browser touch dispatch':'synthetic PointerEvent capture adapter'},null,2));"
+      }
+    ]
+  },
+  {
+    "path": "tests/e2e/library-integration.spec.ts",
+    "selected": true,
+    "policy": "fresh child environment + TestInfo outputPath/attach",
+    "matches": [
+      {
+        "line": 23,
+        "text": "  await info.attach('runtime-evidence', { body: JSON.stringify(evidence, null, 2), contentType: 'application/json' });"
+      }
+    ]
+  },
+  {
+    "path": "tests/e2e/live-server.spec.ts",
+    "selected": true,
+    "policy": "fresh child environment + TestInfo outputPath/attach",
+    "matches": [
+      {
+        "line": 46,
+        "text": "  await info.attach(name, { body: JSON.stringify(value, null, 2), contentType: 'application/json' });"
+      }
+    ]
+  },
+  {
+    "path": "tests/e2e/multi-game-integration.spec.ts",
+    "selected": true,
+    "policy": "fresh child environment + TestInfo outputPath/attach",
+    "matches": [
+      {
+        "line": 75,
+        "text": "  await info.attach('multi-game-runtime', { body: JSON.stringify(evidence, null, 2), contentType: 'application/json' });"
+      }
+    ]
+  },
+  {
+    "path": "tests/e2e/runner-jumper.spec.ts",
+    "selected": true,
+    "policy": "fresh child environment + TestInfo outputPath/attach",
+    "matches": [
+      {
+        "line": 33,
+        "text": "  await info.attach(name, { body: JSON.stringify(value, null, 2), contentType: 'application/json' });"
+      }
+    ]
+  },
+  {
+    "path": "tests/e2e/security-audit.mjs",
+    "selected": false,
+    "policy": "not selected for G025 browser execution",
+    "matches": [
+      {
+        "line": 2,
+        "text": "import { readFile, readdir, writeFile } from 'node:fs/promises';"
+      },
+      {
+        "line": 17,
+        "text": "const data={host:'127.0.0.1',port:3101,results,unsafeSinks:found,imports,runtimeDependencies:JSON.parse(await readFile('package.json','utf8')).dependencies??{},symlinkEvidence:'artifacts/qa/unit-tests.log:40 (outside junction ->403)'};"
+      },
+      {
+        "line": 18,
+        "text": "await writeFile('artifacts/qa/security-http-static.json',JSON.stringify(data,null,2));console.log(JSON.stringify({rawRequests:results.length,unsafeSinks:found.length,status:'pass'}));"
+      }
+    ]
+  },
+  {
+    "path": "tests/g024-playwright.config.ts",
+    "selected": false,
+    "policy": "not selected for G025 browser execution",
+    "matches": [
+      {
+        "line": 5,
+        "text": "const reports = process.env.GAME_TEST_ARTIFACT_DIR;"
+      },
+      {
+        "line": 9,
+        "text": "if (build !== 'artifacts/g024-build') throw new Error('G024 requires the explicit current-task build.');"
+      },
+      {
+        "line": 10,
+        "text": "if (!reports || !/^artifacts\\/g024-integration\\/runs\\/[A-Za-z0-9_-]+$/.test(reports)) throw new Error('G024 requires a fresh task-owned report directory.');"
+      }
+    ]
+  },
+  {
+    "path": "tests/g025-playwright.config.ts",
+    "selected": false,
+    "policy": "not selected for G025 browser execution",
+    "matches": [
+      {
+        "line": 6,
+        "text": "const reports = process.env.GAME_TEST_ARTIFACT_DIR;"
+      },
+      {
+        "line": 10,
+        "text": "if (build !== 'artifacts/g025-build') throw new Error('BLOCKED: explicit G025 build required');"
+      },
+      {
+        "line": 11,
+        "text": "if (!reports || !/^artifacts\\/g025-integration\\/runs\\/[A-Za-z0-9_-]+\\/children\\/[A-Za-z0-9_-]+\\/(discovery|execution)-[a-f0-9-]+$/.test(reports)) throw new Error('BLOCKED: fresh child-specific G025 reports required');"
+      }
+    ]
+  },
+  {
+    "path": "tests/games/02-snake.test.mjs",
+    "selected": false,
+    "policy": "not selected for G025 browser execution",
+    "matches": []
+  },
+  {
+    "path": "tests/games/03-pong.test.mjs",
+    "selected": false,
+    "policy": "not selected for G025 browser execution",
+    "matches": []
+  },
+  {
+    "path": "tests/games/04-breakout.test.mjs",
+    "selected": false,
+    "policy": "not selected for G025 browser execution",
+    "matches": []
+  },
+  {
+    "path": "tests/games/05-falling-blocks.test.mjs",
+    "selected": false,
+    "policy": "not selected for G025 browser execution",
+    "matches": []
+  },
+  {
+    "path": "tests/games/06-flappy.test.mjs",
+    "selected": false,
+    "policy": "not selected for G025 browser execution",
+    "matches": []
+  },
+  {
+    "path": "tests/games/07-dino.test.mjs",
+    "selected": false,
+    "policy": "not selected for G025 browser execution",
+    "matches": []
+  },
+  {
+    "path": "tests/games/08-doodle.test.mjs",
+    "selected": false,
+    "policy": "not selected for G025 browser execution",
+    "matches": []
+  },
+  {
+    "path": "tests/games/09-crossy.test.mjs",
+    "selected": false,
+    "policy": "not selected for G025 browser execution",
+    "matches": []
+  },
+  {
+    "path": "tests/games/10-sokoban.test.mjs",
+    "selected": false,
+    "policy": "not selected for G025 browser execution",
+    "matches": []
+  },
+  {
+    "path": "tests/launch-local.test.mjs",
+    "selected": false,
+    "policy": "unchanged-byte snapshot only; fixed g017 paths remain inside snapshot",
+    "matches": [
+      {
+        "line": 4,
+        "text": "import { mkdir, readFile, writeFile } from 'node:fs/promises';"
+      },
+      {
+        "line": 27,
+        "text": "const fixtures = join(root, 'artifacts/g017-builder/fixtures', randomUUID());"
+      },
+      {
+        "line": 31,
+        "text": "  await mkdir(join(dir, 'artifacts/local-server-build/src/server'), { recursive: true });"
+      },
+      {
+        "line": 32,
+        "text": "  await writeFile(join(dir, 'scripts/serve_local.mjs'), source);"
+      },
+      {
+        "line": 33,
+        "text": "  await writeFile(join(dir, 'package.json'), '{\"type\":\"module\"}');"
+      },
+      {
+        "line": 34,
+        "text": "  await writeFile(join(dir, 'scripts/build.mjs'), `console.log('BUILD_ARGS', JSON.stringify(process.argv.slice(2))); process.exit(${buildExit});`);"
+      },
+      {
+        "line": 35,
+        "text": "  await writeFile(join(dir, 'artifacts/local-server-build/src/server/index.js'), `"
+      },
+      {
+        "line": 92,
+        "text": "    assert.match(stdout, /BUILD_ARGS \\[\"--out-dir\",\"artifacts\\/local-server-build\"\\]/);"
+      }
+    ]
+  },
+  {
+    "path": "tests/unit/engine.test.ts",
+    "selected": false,
+    "policy": "not selected for G025 browser execution",
+    "matches": []
+  },
+  {
+    "path": "tests/unit/input.test.ts",
+    "selected": false,
+    "policy": "not selected for G025 browser execution",
+    "matches": []
+  },
+  {
+    "path": "tests/unit/server.test.ts",
+    "selected": false,
+    "policy": "not selected for G025 browser execution",
+    "matches": [
+      {
+        "line": 4,
+        "text": "import { mkdir, mkdtemp, writeFile, rm, symlink } from 'node:fs/promises';"
+      },
+      {
+        "line": 39,
+        "text": "  await writeFile(join(root, 'index.html'), '<!doctype html><title>Garden</title>');"
+      },
+      {
+        "line": 40,
+        "text": "  await writeFile(join(root, 'style.css'), 'body{color:green}');"
+      },
+      {
+        "line": 42,
+        "text": "  await writeFile(join(root, 'games', '02-snake', 'index.html'), '<title>Snake</title>');"
+      },
+      {
+        "line": 43,
+        "text": "  await writeFile(join(root, 'games', '02-snake', 'engine.mjs'), 'export const size = 20;');"
+      },
+      {
+        "line": 44,
+        "text": "  await writeFile(join(root, 'assets', 'leaf.svg'), '<svg xmlns=\"http://www.w3.org/2000/svg\"/>');"
+      },
+      {
+        "line": 45,
+        "text": "  await writeFile(join(folder, 'private.html'), 'DO_NOT_SERVE');"
+      },
+      {
+        "line": 90,
+        "text": "    const outside = join(folder, 'outside'); await mkdir(outside); await writeFile(join(outside, 'secret.html'), 'DO_NOT_SERVE');"
+      }
+    ]
+  },
+  {
+    "path": "tests/unit/state.test.ts",
+    "selected": false,
+    "policy": "not selected for G025 browser execution",
+    "matches": []
+  },
+  {
+    "path": "tests/unit/storage.test.ts",
+    "selected": false,
+    "policy": "not selected for G025 browser execution",
+    "matches": []
+  }
+]

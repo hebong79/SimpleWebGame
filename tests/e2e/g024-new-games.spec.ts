@@ -35,8 +35,8 @@ const test = base.extend<{ audit: Audit }>({
 });
 async function home(page: Page) {
   await expect(page).toHaveURL(/\/$/);
-  await expect(page.locator('#catalog-total')).toHaveText('39');
-  await expect(page.locator('#intro-preview')).toHaveText('플레이 가능 10 · 준비 중 29');
+  await expect(page.locator('#catalog-total')).toHaveText('41');
+  await expect(page.locator('#intro-preview')).toHaveText('플레이 가능 12 · 준비 중 29');
 }
 async function launch(page: Page, id: string, route: string, info?: TestInfo) {
   const link = page.locator(`.game-card[data-id="${id}"] a.card-action`);

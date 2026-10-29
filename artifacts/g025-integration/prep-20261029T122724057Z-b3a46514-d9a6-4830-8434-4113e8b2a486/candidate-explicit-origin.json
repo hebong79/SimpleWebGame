@@ -1,0 +1,19 @@
+{
+  "label": "candidate-explicit-origin",
+  "executable": "C:/Program Files/nodejs/node.exe",
+  "args": [
+    "scripts/g025-verify.mjs",
+    "--target",
+    "candidate",
+    "--mode",
+    "smoke",
+    "--origin",
+    "http://127.0.0.1:3155"
+  ],
+  "expectedExit": 64,
+  "actualExit": 64,
+  "signal": null,
+  "error": null,
+  "stdout": "candidate-explicit-origin.stdout.log",
+  "stderr": "candidate-explicit-origin.stderr.log"
+}

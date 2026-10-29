@@ -1,0 +1,11 @@
+{
+  "stagedFiles": 59,
+  "stagedByteMismatch": [],
+  "secretPatternCandidates": [],
+  "scope": "explicit13 source/doc plus46 G025 evidence files",
+  "pmOwnedExcluded": "docs/G025_DESIGN_DECISIONS.md",
+  "allStagedMatchWorkingBytes": true,
+  "kst": "2026-10-29T21:40:31.051009+09:00",
+  "worklogStamp": "20261029-214031",
+  "independentReview": false
+}

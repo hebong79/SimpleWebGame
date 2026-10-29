@@ -1,0 +1,50 @@
+{
+  "task": "G025-SHARED",
+  "root": "E:\\Work2\\Project\\SimpleGames\\worktrees\\g025-twelve-game-release",
+  "runId": "20261029T122725560Z-db464dc4-a4a8-43c9-8cf2-a081f68daa25",
+  "target": "candidate",
+  "mode": "smoke",
+  "origin": "http://127.0.0.1:3155",
+  "build": "artifacts/g025-build",
+  "reports": "artifacts/g025-integration/runs/20261029T122725560Z-db464dc4-a4a8-43c9-8cf2-a081f68daa25",
+  "node": "C:\\Program Files\\nodejs\\node.exe",
+  "nodeVersion": "v24.16.0",
+  "listOnly": false,
+  "unitsOnly": false,
+  "commands": [],
+  "browserExecuted": 0,
+  "discovered": 0,
+  "unitExecuted": 0,
+  "independentAcceptance": false,
+  "liveServerLifecycleActions": false,
+  "envBeforeChild": {
+    "GAME_TEST_BUILD_DIR": "artifacts/g025-build",
+    "GAME_TEST_ARTIFACT_DIR": "artifacts/g025-integration/runs/20261029T122725560Z-db464dc4-a4a8-43c9-8cf2-a081f68daa25",
+    "GAME_G025_TARGET": "candidate",
+    "GAME_G025_MODE": "smoke",
+    "GAME_G025_ORIGIN": "http://127.0.0.1:3155",
+    "GAME_LIVE_ORIGIN": "",
+    "GAME_G025_LIST": "0"
+  },
+  "status": "BLOCKED",
+  "error": "Error: BLOCKED: required 11/12 game implementation and dedicated tests are missing/empty; no browser/build may start\n    at need (file:///E:/Work2/Project/SimpleGames/worktrees/g025-twelve-game-release/scripts/g025-verify.mjs:18:71)\n    at prerequisites (file:///E:/Work2/Project/SimpleGames/worktrees/g025-twelve-game-release/scripts/g025-verify.mjs:70:3)\n    at async main (file:///E:/Work2/Project/SimpleGames/worktrees/g025-twelve-game-release/scripts/g025-verify.mjs:230:5)\n    at async file:///E:/Work2/Project/SimpleGames/worktrees/g025-twelve-game-release/scripts/g025-verify.mjs:304:90",
+  "blockers": [
+    "public/games/11-mines/index.html",
+    "public/games/11-mines/styles.css",
+    "public/games/11-mines/engine.mjs",
+    "public/games/11-mines/save.mjs",
+    "public/games/11-mines/main.mjs",
+    "tests/games/11-mines.test.mjs",
+    "public/games/12-fifteen/index.html",
+    "public/games/12-fifteen/styles.css",
+    "public/games/12-fifteen/engine.mjs",
+    "public/games/12-fifteen/save.mjs",
+    "public/games/12-fifteen/main.mjs",
+    "tests/games/12-fifteen.test.mjs"
+  ],
+  "historicalPreserved": {
+    "files": 117,
+    "shaSizeMtime": true
+  },
+  "finished": "2026-10-29T12:27:26.918Z"
+}

@@ -1,0 +1,14 @@
+{
+  "label": "node-version",
+  "executable": "C:/Program Files/nodejs/node.exe",
+  "args": [
+    "-e",
+    "console.log(JSON.stringify({execPath:process.execPath,node:process.version,typescript:require('typescript/package.json').version,playwright:require('@playwright/test/package.json').version}))"
+  ],
+  "expectedExit": 0,
+  "actualExit": 0,
+  "signal": null,
+  "error": null,
+  "stdout": "node-version.stdout.log",
+  "stderr": "node-version.stderr.log"
+}

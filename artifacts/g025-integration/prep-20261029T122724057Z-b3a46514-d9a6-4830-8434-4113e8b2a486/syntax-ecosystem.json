@@ -1,0 +1,14 @@
+{
+  "label": "syntax-ecosystem",
+  "executable": "C:/Program Files/nodejs/node.exe",
+  "args": [
+    "--check",
+    "ecosystem.config.cjs"
+  ],
+  "expectedExit": 0,
+  "actualExit": 0,
+  "signal": null,
+  "error": null,
+  "stdout": "syntax-ecosystem.stdout.log",
+  "stderr": "syntax-ecosystem.stderr.log"
+}

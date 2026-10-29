@@ -1,0 +1,36 @@
+{
+  "physicalRoot": "E:\\Work2\\Project\\SimpleGames\\worktrees\\g025-twelve-game-release",
+  "baseHead": "7d72954896845e7cf2152e4a4857a6f00a6c14b7",
+  "source": {
+    "src/client/library.ts": "f7eb0bc1e5146fc6c3538aa02a673733b3761e58a6ca2dcf5f6d96274c4ac539",
+    "package.json": "600bbbf37a99156159badd23242f1243e79726f42debc76dd6504d5377330077",
+    "ecosystem.config.cjs": "2e3c4facb54d8a0a55ea263792f967729d568981a24ee61a9a00d650d6f99ad1",
+    "scripts/g025-verify.mjs": "c4dc5013e1550993a105ce8ae350f0d4b560cce03a0486b393b3c5e6c047b1f4",
+    "tests/g025-playwright.config.ts": "a6f99b17eaf834d54fc63a9746c1e176d0d4bad5ebde1c55c8ac2473ec9d799d",
+    "tests/e2e/library-integration.spec.ts": "cb1cb435831dffbf799a42ed0139e73ace56b3772ba58dd49f11ed63290e7ea9",
+    "tests/e2e/multi-game-integration.spec.ts": "20139cca392d8b0a087aa5cdd36a831a46bc8c723b24bc08e337000f3535e3f3",
+    "tests/e2e/breakout-integration.spec.ts": "ba4833ee5f297949d88a62b6c00a85464a9e455721a525452bc9562113e88d5f",
+    "tests/e2e/runner-jumper.spec.ts": "755ca77b6dce0bbbd1e56ba71135945e4c566d4a41b46979c5f144d4582cfa23",
+    "tests/e2e/live-server.spec.ts": "38a58388543d753bd51035d7bc23c5ee68c87128511861d9a38fff32d3f15e4e",
+    "tests/e2e/flappy-input.spec.ts": "6f8d27b5239121bdacc0cc4eb8f44573e1532380dfc2343032f32add4604e651",
+    "tests/e2e/g024-new-games.spec.ts": "94e328eacb4d9ade1100ab4e79ebd12b98b8d184f3e7f3bfb7004bbdc781782f",
+    "tests/e2e/g025-new-games.spec.ts": "b7ad5fdb594fcee91781ee6dfadbdd1c02b7f1c8abea1ae7d8afb29335561f59",
+    "docs/G025_SHARED_IMPLEMENTATION.md": "dc0e2e07eb49e2ab417eecad931905481dfa561a34087b44f1b716a578647333",
+    "artifacts/g025-integration/browser-gate.py": "04f29ea93f8bdecaf2e2d29bb1784c6598a1c7ffedfde11002ef2aa281455aa4",
+    "artifacts/g025-integration/prep-check.mjs": "bc477e965230114650de0b6284eca6f0deb0bd927458917893e5cb46c5df56c1",
+    "artifacts/g025-integration/final-static-check.mjs": "074b22f87a2a1e8de0d0f078cbc121315aa3dd6121a1416beaddb439291e250e"
+  },
+  "protectedSource": {
+    "scripts/g024-verify.mjs": "d01fbe367b24a5590cd0ec1781246b4930641a3777dc358797a05861ea21b6e0",
+    "tests/g024-playwright.config.ts": "7bbb6cdeac9c34f46d6c2a549ff557111043c0fc223868bf38fa55e379ce5f8c",
+    "artifacts/g024-integration/browser-gate.py": "8611e2724f864f99d9d96ca94ec2fbe2a938f7d0bd58ed8dfcd624cd7eda3c6a",
+    "scripts/build.mjs": "5a8f45a58183be08cdbab9e66458017ef59d097001290352e001173c33a8b3d3",
+    "scripts/serve_local.mjs": "de5c523115b7abbec4b63bd55115c386a700ece512340318c6718d1259478f20",
+    "src/server/index.ts": "07981d63620ea7cc3633766fc657996f47fa0e513506d31a8dc3f09bede5de4c",
+    "package-lock.json": "20b47cd647dabf189913efa4a40a0a6fdcee6f0ad15f135794f4c3fdbdf6743f",
+    "tests/launch-local.test.mjs": "f5b1bd924c46fbf57608dac90fa382ed49139c4e574edc327cf34b396ed5ffdd"
+  },
+  "pmOwnedExcluded": [
+    "docs/G025_DESIGN_DECISIONS.md"
+  ]
+}

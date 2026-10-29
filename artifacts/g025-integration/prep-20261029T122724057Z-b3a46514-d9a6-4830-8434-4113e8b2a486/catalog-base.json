@@ -1,0 +1,14 @@
+{
+  "label": "catalog-base",
+  "executable": "git",
+  "args": [
+    "show",
+    "7d72954896845e7cf2152e4a4857a6f00a6c14b7:src/client/library.ts"
+  ],
+  "expectedExit": 0,
+  "actualExit": 0,
+  "signal": null,
+  "error": null,
+  "stdout": "catalog-base.stdout.log",
+  "stderr": "catalog-base.stderr.log"
+}

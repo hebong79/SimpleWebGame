@@ -1,0 +1,8 @@
+{
+  "unchanged": {
+    "integration": 53,
+    "original": 4567
+  },
+  "changes": [],
+  "scope": "every pre-existing file SHA256/size/mtimeNs; concurrent new PM artifacts are not historical overwrites"
+}

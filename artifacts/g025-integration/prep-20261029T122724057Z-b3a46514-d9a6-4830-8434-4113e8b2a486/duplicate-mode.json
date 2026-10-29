@@ -1,0 +1,19 @@
+{
+  "label": "duplicate-mode",
+  "executable": "C:/Program Files/nodejs/node.exe",
+  "args": [
+    "scripts/g025-verify.mjs",
+    "--target",
+    "candidate",
+    "--mode",
+    "smoke",
+    "--mode",
+    "full"
+  ],
+  "expectedExit": 64,
+  "actualExit": 64,
+  "signal": null,
+  "error": null,
+  "stdout": "duplicate-mode.stdout.log",
+  "stderr": "duplicate-mode.stderr.log"
+}

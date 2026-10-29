@@ -61,6 +61,8 @@ const GAME_CATALOG: CatalogGame[] = [
   { id: 'pebble-stack', title: '조약돌 쌓기', genre: '순발력', description: '흔들리지 않게 조심조심 쌓는 돌탑', tags: ['균형', '타이밍'], minutes: 2, maxMinutes: 4, status: 'upcoming' },
   { id: 'pocket-tangram', title: '주머니 칠교', genre: '퍼즐', description: '일곱 조각에 숨어 있는 모양 찾기', tags: ['칠교', '조각'], minutes: 3, maxMinutes: 10, status: 'upcoming' },
   { id: 'dice-picnic', title: '주사위 소풍', genre: '보드', description: '가벼운 선택으로 완성하는 주사위 한 판', tags: ['주사위', '선택'], minutes: 5, maxMinutes: 10, status: 'upcoming' },
+  { id: 'gem-survey', title: '보석 탐사 지도', genre: '숫자', description: '숫자 단서를 읽고 안전한 보석 지도를 펼쳐요', tags: ['지뢰찾기', 'mines', '보석', '지도', '논리'], minutes: 2, maxMinutes: 6, status: 'available', href: '/games/11-mines/index.html' },
+  { id: 'number-postbox', title: '숫자 우체통', genre: '숫자', description: '빈칸을 옮기며 번호 엽서를 차례로 정리해요', tags: ['15퍼즐', 'fifteen', '숫자', '엽서', '슬라이드'], minutes: 2, maxMinutes: 8, status: 'available', href: '/games/12-fifteen/index.html' },
 ];
 
 const preferredGenres = ['퍼즐', '숫자', '기억', '순발력', '보드'];
@@ -207,6 +209,35 @@ function artwork(game: CatalogGame, index: number): HTMLDivElement {
       shape('path', { d: 'M45 48h6l-3 4z', fill: '#aa7367' });
       shape('rect', { x: '31', y: '61', width: '34', height: '26', rx: '3', fill: '#b77c48', stroke: '#805a37', 'stroke-width': '2' });
       shape('path', { d: 'M44 62v9h8v-9M43 77h10', fill: '#efdab3', stroke: '#efdab3', 'stroke-width': '3' });
+    }
+    art.append(svg);
+  } else if (game.id === 'gem-survey' || game.id === 'number-postbox') {
+    // Original G025 map/postcard miniatures. Fixed local SVG primitives only;
+    // existing miniature CSS supplies geometry without new styles or assets.
+    const map = game.id === 'gem-survey';
+    art.classList.add(map ? 'art-cloud-bunny' : 'art-desert');
+    const svg = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
+    svg.setAttribute('viewBox', '0 0 96 96');
+    svg.classList.add('mini-g022');
+    const shape = (tag: 'rect' | 'path' | 'text', attributes: Record<string, string>, text?: string) => {
+      const node = document.createElementNS('http://www.w3.org/2000/svg', tag);
+      for (const [key, value] of Object.entries(attributes)) node.setAttribute(key, value);
+      if (text !== undefined) node.textContent = text;
+      svg.append(node);
+    };
+    shape('rect', { x: '5', y: '8', width: '86', height: '80', rx: '7', fill: '#fffdf7', stroke: map ? '#355d48' : '#a34d37', 'stroke-width': '2' });
+    if (map) {
+      shape('path', { d: 'M12 32h72M12 56h72M12 80h72M30 16v64M54 16v64M78 16v64', fill: 'none', stroke: '#d9ded2', 'stroke-width': '2' });
+      shape('path', { d: 'M42 34l10 11-10 11-10-11z', fill: '#529879', stroke: '#355d48', 'stroke-width': '2' });
+      shape('path', { d: 'M65 72V40l15 6-15 6', fill: '#ad7735', stroke: '#805722', 'stroke-width': '3' });
+      shape('text', { x: '18', y: '27', fill: '#355d48', 'font-size': '14', 'font-weight': '700', 'text-anchor': 'middle' }, '1');
+      shape('text', { x: '42', y: '74', fill: '#355d48', 'font-size': '14', 'font-weight': '700', 'text-anchor': 'middle' }, '2');
+    } else {
+      shape('path', { d: 'M13 26h70M13 49h70M13 72h70M36 14v65M60 14v65', fill: 'none', stroke: '#e6d4bd', 'stroke-width': '2' });
+      for (const [x, y, number] of [['24', '43', '1'], ['48', '43', '2'], ['72', '43', '3'], ['24', '66', '4'], ['48', '66', '5']]) {
+        shape('text', { x, y, fill: '#a34d37', 'font-size': '18', 'font-weight': '700', 'text-anchor': 'middle' }, number);
+      }
+      shape('rect', { x: '64', y: '54', width: '16', height: '14', rx: '2', fill: 'none', stroke: '#375e60', 'stroke-dasharray': '3 2' });
     }
     art.append(svg);
   } else if (game.id === 'number-garden') {

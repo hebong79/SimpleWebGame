@@ -1,0 +1,17 @@
+{
+  "label": "live-origin-missing",
+  "executable": "C:/Program Files/nodejs/node.exe",
+  "args": [
+    "scripts/g025-verify.mjs",
+    "--target",
+    "live",
+    "--mode",
+    "smoke"
+  ],
+  "expectedExit": 64,
+  "actualExit": 64,
+  "signal": null,
+  "error": null,
+  "stdout": "live-origin-missing.stdout.log",
+  "stderr": "live-origin-missing.stderr.log"
+}

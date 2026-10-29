@@ -1,0 +1,205 @@
+{
+  "task": "G025-SHARED-PREP",
+  "root": "E:\\Work2\\Project\\SimpleGames\\worktrees\\g025-twelve-game-release",
+  "reports": "artifacts/g025-integration/prep-20261029T122724057Z-b3a46514-d9a6-4830-8434-4113e8b2a486",
+  "started": "2026-10-29T12:27:24.059Z",
+  "staticChecks": [
+    {
+      "label": "node-version",
+      "exitCode": 0,
+      "stdout": "node-version.stdout.log",
+      "stderr": "node-version.stderr.log"
+    },
+    {
+      "label": "syntax-runner",
+      "exitCode": 0,
+      "stdout": "syntax-runner.stdout.log",
+      "stderr": "syntax-runner.stderr.log"
+    },
+    {
+      "label": "syntax-ecosystem",
+      "exitCode": 0,
+      "stdout": "syntax-ecosystem.stdout.log",
+      "stderr": "syntax-ecosystem.stderr.log"
+    },
+    {
+      "label": "syntax-prep",
+      "exitCode": 0,
+      "stdout": "syntax-prep.stdout.log",
+      "stderr": "syntax-prep.stderr.log"
+    },
+    {
+      "label": "syntax-python-gate",
+      "exitCode": 0,
+      "stdout": "syntax-python-gate.stdout.log",
+      "stderr": "syntax-python-gate.stderr.log"
+    },
+    {
+      "label": "typecheck-project",
+      "exitCode": 0,
+      "stdout": "typecheck-project.stdout.log",
+      "stderr": "typecheck-project.stderr.log"
+    },
+    {
+      "label": "typecheck-common-e2e",
+      "exitCode": 0,
+      "stdout": "typecheck-common-e2e.stdout.log",
+      "stderr": "typecheck-common-e2e.stderr.log"
+    }
+  ],
+  "invalidInvocations": [
+    {
+      "label": "duplicate-target",
+      "exitCode": 64,
+      "stdout": "duplicate-target.stdout.log",
+      "stderr": "duplicate-target.stderr.log"
+    },
+    {
+      "label": "duplicate-mode",
+      "exitCode": 64,
+      "stdout": "duplicate-mode.stdout.log",
+      "stderr": "duplicate-mode.stderr.log"
+    },
+    {
+      "label": "duplicate-origin",
+      "exitCode": 64,
+      "stdout": "duplicate-origin.stdout.log",
+      "stderr": "duplicate-origin.stderr.log"
+    },
+    {
+      "label": "candidate-explicit-origin",
+      "exitCode": 64,
+      "stdout": "candidate-explicit-origin.stdout.log",
+      "stderr": "candidate-explicit-origin.stderr.log"
+    },
+    {
+      "label": "live-origin-missing",
+      "exitCode": 64,
+      "stdout": "live-origin-missing.stdout.log",
+      "stderr": "live-origin-missing.stderr.log"
+    },
+    {
+      "label": "live-origin-loopback",
+      "exitCode": 64,
+      "stdout": "live-origin-loopback.stdout.log",
+      "stderr": "live-origin-loopback.stderr.log"
+    },
+    {
+      "label": "live-build-forbidden",
+      "exitCode": 64,
+      "stdout": "live-build-forbidden.stdout.log",
+      "stderr": "live-build-forbidden.stderr.log"
+    },
+    {
+      "label": "build-list-conflict",
+      "exitCode": 64,
+      "stdout": "build-list-conflict.stdout.log",
+      "stderr": "build-list-conflict.stderr.log"
+    },
+    {
+      "label": "list-unit-conflict",
+      "exitCode": 64,
+      "stdout": "list-unit-conflict.stdout.log",
+      "stderr": "list-unit-conflict.stderr.log"
+    },
+    {
+      "label": "duplicate-list",
+      "exitCode": 64,
+      "stdout": "duplicate-list.stdout.log",
+      "stderr": "duplicate-list.stderr.log"
+    },
+    {
+      "label": "unknown-port",
+      "exitCode": 64,
+      "stdout": "unknown-port.stdout.log",
+      "stderr": "unknown-port.stderr.log"
+    },
+    {
+      "label": "candidate-inherited-live",
+      "exitCode": 64,
+      "stdout": "candidate-inherited-live.stdout.log",
+      "stderr": "candidate-inherited-live.stderr.log"
+    }
+  ],
+  "prerequisiteBlocks": [
+    {
+      "label": "candidate-smoke-missing-games",
+      "expectedStatus": "BLOCKED",
+      "actualStatus": "BLOCKED",
+      "exitCode": 2,
+      "reports": "artifacts/g025-integration/runs/20261029T122725560Z-db464dc4-a4a8-43c9-8cf2-a081f68daa25",
+      "missingFiles": [
+        "public/games/11-mines/index.html",
+        "public/games/11-mines/styles.css",
+        "public/games/11-mines/engine.mjs",
+        "public/games/11-mines/save.mjs",
+        "public/games/11-mines/main.mjs",
+        "tests/games/11-mines.test.mjs",
+        "public/games/12-fifteen/index.html",
+        "public/games/12-fifteen/styles.css",
+        "public/games/12-fifteen/engine.mjs",
+        "public/games/12-fifteen/save.mjs",
+        "public/games/12-fifteen/main.mjs",
+        "tests/games/12-fifteen.test.mjs"
+      ],
+      "childrenStarted": 0,
+      "browserExecuted": 0,
+      "notCountedAsGamePass": true
+    },
+    {
+      "label": "live-full-list-missing-games",
+      "expectedStatus": "BLOCKED",
+      "actualStatus": "BLOCKED",
+      "exitCode": 2,
+      "reports": "artifacts/g025-integration/runs/20261029T122726980Z-7309f37e-de09-487b-bc7f-524603626365",
+      "missingFiles": [
+        "public/games/11-mines/index.html",
+        "public/games/11-mines/styles.css",
+        "public/games/11-mines/engine.mjs",
+        "public/games/11-mines/save.mjs",
+        "public/games/11-mines/main.mjs",
+        "tests/games/11-mines.test.mjs",
+        "public/games/12-fifteen/index.html",
+        "public/games/12-fifteen/styles.css",
+        "public/games/12-fifteen/engine.mjs",
+        "public/games/12-fifteen/save.mjs",
+        "public/games/12-fifteen/main.mjs",
+        "tests/games/12-fifteen.test.mjs"
+      ],
+      "childrenStarted": 0,
+      "browserExecuted": 0,
+      "notCountedAsGamePass": true
+    }
+  ],
+  "guardChecks": [
+    {
+      "check": "missing-fresh-manifest",
+      "rejected": true,
+      "gameplayPassed": 0
+    },
+    {
+      "check": "path-traversal",
+      "rejected": true
+    },
+    {
+      "check": "read-only-dependency-junction-not-writable",
+      "rejected": true
+    }
+  ],
+  "browserExecuted": 0,
+  "gameplayPassed": 0,
+  "buildExecuted": 0,
+  "independentReview": false,
+  "toolchain": {
+    "execPath": "C:\\Program Files\\nodejs\\node.exe",
+    "node": "v24.16.0",
+    "typescript": "7.0.2",
+    "playwright": "1.64.1"
+  },
+  "historicalPreserved": {
+    "integration": 53,
+    "original": 4567
+  },
+  "status": "PREPARATION_VERIFIED_GAME_EXECUTION_BLOCKED",
+  "finished": "2026-10-29T12:27:44.162Z"
+}

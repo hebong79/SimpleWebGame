@@ -1,0 +1,14 @@
+{
+  "label": "syntax-runner",
+  "executable": "C:/Program Files/nodejs/node.exe",
+  "args": [
+    "--check",
+    "scripts/g025-verify.mjs"
+  ],
+  "expectedExit": 0,
+  "actualExit": 0,
+  "signal": null,
+  "error": null,
+  "stdout": "syntax-runner.stdout.log",
+  "stderr": "syntax-runner.stderr.log"
+}

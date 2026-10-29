@@ -1,0 +1,14 @@
+{
+  "label": "syntax-python-gate",
+  "executable": "python",
+  "args": [
+    "-c",
+    "import ast,pathlib; p=pathlib.Path('artifacts/g025-integration/browser-gate.py'); ast.parse(p.read_text(encoding='utf-8')); print('browser gate AST syntax OK; no browser invoked')"
+  ],
+  "expectedExit": 0,
+  "actualExit": 0,
+  "signal": null,
+  "error": null,
+  "stdout": "syntax-python-gate.stdout.log",
+  "stderr": "syntax-python-gate.stderr.log"
+}

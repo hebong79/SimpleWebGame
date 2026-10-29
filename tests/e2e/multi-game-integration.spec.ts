@@ -81,10 +81,10 @@ test.afterEach(async ({ page }, info) => {
 
 test('G014-01 three available cards launch their own game and return to the shared home', async ({ page }) => {
   await page.goto('/');
-  await expect(page.locator('#catalog-total')).toHaveText('39');
-  await expect(page.locator('#intro-preview')).toHaveText('플레이 가능 10 · 준비 중 29');
+  await expect(page.locator('#catalog-total')).toHaveText('41');
+  await expect(page.locator('#intro-preview')).toHaveText('플레이 가능 12 · 준비 중 29');
   await page.locator('#include-upcoming').uncheck();
-  expect(await cardIds(page)).toEqual(['number-garden', 'little-dragon', 'neon-rally', 'cosmic-cleanup', 'block-workshop', 'balloon-sparrow', 'desert-post', 'cloud-bunny', 'chick-picnic', 'hamster-depot']);
+  expect(await cardIds(page)).toEqual(['number-garden', 'little-dragon', 'neon-rally', 'cosmic-cleanup', 'block-workshop', 'balloon-sparrow', 'desert-post', 'cloud-bunny', 'chick-picnic', 'hamster-depot', 'gem-survey', 'number-postbox']);
   const games = [
     { id: 'number-garden', href: paths.garden, ready: '#board' },
     { id: 'little-dragon', href: paths.snake, ready: '#primary' },
