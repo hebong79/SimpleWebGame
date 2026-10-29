@@ -89,7 +89,21 @@ test('G024-09 @smoke real HTTP card start input pause resume mute wardrobe home,
 });
 
 test('G024-10 @smoke real HTTP card start input pause resume mute wardrobe confirmed home, trusted80ms', async ({ page, browserName }, info) => {
-  await page.goto('/'); await home(page); await favorite(page, 'memory-pieces'); await favorite(page, 'hamster-depot');
+  await page.goto('/'); await home(page);
+  // Upcoming cards may be beyond the initial page; reveal through public UI.
+  const memoryCard = page.locator('.game-card[data-id="memory-pieces"]');
+  const initialCards = await page.locator('.game-card').evaluateAll(cards => cards.map(card => (card as HTMLElement).dataset.id));
+  expect(initialCards.length).toBeGreaterThan(0);
+  const maxMoreClicks = Math.ceil(Number(await page.locator('#catalog-total').innerText()) / initialCards.length);
+  let loadMoreClicks = 0;
+  while (await memoryCard.count() === 0 && loadMoreClicks < maxMoreClicks) {
+    await expect(page.locator('#load-more')).toBeVisible();
+    await press(page, '#load-more'); loadMoreClicks++;
+  }
+  await expect(memoryCard).toBeVisible();
+  await attach(info, '10-upcoming-card-public-navigation', { initialCards, loadMoreClicks,
+    exposedCards: await page.locator('.game-card').evaluateAll(cards => cards.map(card => (card as HTMLElement).dataset.id)) });
+  await favorite(page, 'memory-pieces'); await favorite(page, 'hamster-depot');
   const before = await storage(page);
   if (browserName === 'chromium') await page.locator('.game-card[data-id="hamster-depot"]').screenshot({ path: info.outputPath('hamster-card.png') });
   await launch(page, 'hamster-depot', '/games/10-sokoban/index.html', info);

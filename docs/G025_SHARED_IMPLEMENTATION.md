@@ -1,5 +1,34 @@
 # G025 공통 구현 — 준비 이력 및 병합 후 초기 실행
 
+## G025-PAGING-FIX — 기존 카드 탐색 전제 수정 / 새 빌드·초기 smoke PASS
+
+- 시작 HEAD `00458994cfb58bb4f412d5f755bd2d5bd3e0d375`, 동일 물리 root/branch에서 공통 owner 후속만 수행했습니다. 아래의 기존 **33 PASS / 3 timeout** 및 ‘동결 spec 수정 금지’ 설명은 이전 계약의 원본 이력이며 삭제하지 않았습니다.
+- 이번 승인으로 `tests/e2e/g024-new-games.spec.ts`의 **기존92행 준비동작만 +15/-1** 수정했습니다. `memory-pieces` 카드의 실제 DOM 존재 여부를 확인하면서 공개 `#load-more`를 trusted80ms로 누릅니다. 공개 전체 수/초기 노출 수로 계산한 유한 상한 안에서만 탐색하고 실제 카드 가시성을 단언한 후 기존 순서대로 `memory-pieces`와 `hamster-depot`를 즐겨찾기합니다. 카드 위치13 상수·검색·필터 변경·제품 순서 원복은 없습니다.
+- `home`/`favorite`/launch helper, 기존 즐겨찾기 정확 순서와 저장 원문 바이트, 게임 플레이/정지/복귀 단언, fixture·감사 코드는 전부 보존했습니다. 전체 파일의 기존 준비행 앞/뒤 바이트 일치도 검사했습니다. 다른 선택 RO spec의 정적 조사에서 같은 upcoming 첫12 가정은 추가 발견하지 못했으며 해당 파일은 수정하지 않았습니다.
+- 세 프로젝트의 새 `10-upcoming-card-public-navigation` 원시 첨부는 모두 **초기12장에 memory-pieces 없음 → 공개 더보기1회 →24장에 memory-pieces·hamster-depot 노출**을 보여 줍니다. 같은 G024-10이 세 프로젝트에서 모두 PASS하여 원래 locator timeout 위치를 실제로 통과했습니다. 기존45초 제한, 비동결80ms, CSP/console/error 무필터 단언은 그대로입니다.
+
+| 검증 | 실제 결과 |
+|---|---|
+| 선택8개 E2E+config strict 타입 / Node·Python 구문 / whitespace | 모두 exit0; 프로젝트 타입도 새 build에서 exit0 |
+| 구빌드 보존 | 정상 rename **1회 성공**, `artifacts/g025-build-pre-pagination20261029T132940903327Z`; 출력127+manifest1의 SHA/size/mtime 불변 |
+| 새 `candidate --mode build` | **1회 exit0**, UUID `ae9f1f9d-bb76-4d23-a5f8-b3c145222785`, input149/output127; 제품 출력127은 구빌드와 동일 |
+| 새 `candidate --mode smoke` | **1회 exit0**,36발견/36실행/**36 PASS**, fail/skip/flaky/retry 모두0; PC Chromium·모바일 Chromium·모바일 WebKit 각12 |
+| 신규 G025 / 기존 G024-10 | 각각12/12 PASS,3/3 PASS |
+| 공개 HTTP 바이트/CSP/nosniff | **93/93 일치** |
+| 원시 감사 첨부 | G024/G025의18개 무필터 감사에서 모든 오류 목록0 |
+| 과거 artifact 보존 | 최초404파일 SHA/size/mtime 전부 일치(구빌드 경로 mapping 포함); runner build420/smoke580파일 보존 |
+| source 동결 / 자기서버 |149입력 중 기존 G024 spec만 SHA 변경, 병합19파일·타 owner CORE_REVIEW 불변;3155 close 후 connectEx10061 |
+| browser gate | 정확 `Local\SimpleGamesG025BrowserGate` acquired/released/HANDLE closed |
+| full / 전체 unit / 독립 delta 수용 | **각0회 / 미수행** — 부모 후속으로 남김 |
+
+- 새 집계·원본 stdout/stderr/exit·최종149입력 SHA·보존 metadata·개별36판정·timeout/노출 비교: `artifacts/g025-integration/pagination-fix-20261029T132713-1b81dda8-2ce4-49f2-9799-2c6ba2bd925e/results.json`와 동반 파일입니다.
+- 새 build raw: `artifacts/g025-integration/runs/20261029T132941486Z-84f0b866-45a6-40c2-91a3-d8613d36e6ad/invocation.json`.
+- 새 smoke raw: `artifacts/g025-integration/runs/20261029T132955396Z-7b607f11-4c41-44ab-9edc-489f50bdfe77/invocation.json`; 정확 Playwright JSON은 위 집계의 `smoke.rawJSON`입니다. 원본 FAIL JSON/trace/구빌드는 그대로 보존했습니다.
+- G024 test SHA256 `1a40e99d73f357cd0f453d95aaab79d14269b428c230ed00e08cc8e5dc19b23b`; 새 manifest SHA256 `1194c875f9f50e147429fbee54051f36c3ee0905be749aa7707f5c5cd7a66654`. 구 manifest를 고치거나 새 시험의 수용 근거로 재사용하지 않았습니다.
+- **제품/runtime·게임19파일·신규 G025 spec·runner/config/mutex/library/package/ecosystem/lockfile 변경0**입니다.3153/3154·타서비스·PM2/3116·main/remote·설치·재위임은 수행하지 않았습니다. 부모가 독립 delta 검토와 최종 full/필요 unit, HANDOFF·게시·배포 여부를 별도 인수합니다. WebKit 이미지·실물 기기·실청취·인간 플레이 시간 수용은 여전히 미검증입니다.
+
+---
+
 ## G025-SHARED-FINAL 후속 — 신규 어댑터 PASS / 기존 동결 E2E 차단
 
 - 물리 root/branch는 아래와 같습니다. 시작 HEAD `388165537b493f5b8acd1c2a01d93bfb8b0ce816`에서 작업했고 두 builder 커밋의 **19파일 전부 원본 바이트/SHA를 보존**했습니다. 아래의 ‘게임 미통합’ 부분은 최초 준비 시점 이력이며 최신 상태가 아닙니다.
