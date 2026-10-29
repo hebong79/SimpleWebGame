@@ -1,5 +1,13 @@
 # 숫자 정원 · 2048 — 최종 인수인계
 
+## 2026-10-29 — main 푸시·3116 재기동 완료
+- G024 feature는 main에 이미 병합되어 merge no-op. 코드 `9029f30b05c769b24fbd7e5bc45e03cdfc8a1b7d`를 origin/main에 정상 push하고 원격 SHA 일치 확인. 이번 마감 기록은 별도 문서 커밋으로 같은 main에 push합니다.
+- number-garden-2048 ID3/PID31636, g024-build, 0.0.0.0:3116 LISTEN. 실제 http://192.168.0.195:3116/ 홈39/10/29. agent-board PID2504/restarts0/uptime 불변.
+- 독립 LAN smoke24/24(PC8/모바일Chromium8/WebKit8), 79HTTP 바이트/CSP 일치, 소스84·빌드112 SHA 일치, 과거 증거4425개 보존. PM 원시재집계·Chromium 카드 PNG 확인. 새 빌드/단위/전체회귀·물리기기·실청취·수동플레이 미실행.
+- 실제 실행 명령: `pm2 restart ecosystem.config.cjs --only number-garden-2048 --update-env`; 검증: `& 'C:/Program Files/nodejs/node.exe' scripts/g024-verify.mjs --target live --mode smoke --origin http://192.168.0.195:3116`.
+- 게시 `mvtgt5re-51-t45o` / http://localhost:18787/api/posts/mvtgt5re-51-t45o.md — done·전체본문·Markdown 재조회 확인. 일지 `docs/worklogs/20261029-203331_main푸시_3116재기동_검증.md`; 원시 `artifacts/g024-integration/runs/20261029T113009006Z-f7cf27c7/`; 독립 보고 `artifacts/restart-20261029-qa/report.json`.
+- 차단 없음(이번 요청). 다음: 기존 저장dump g016복귀 위험의 단일앱정보교정은 별도 승인 작업. 이번 dump/전체save/시작항목 변경 없음. 기존 미커밋 변경 보존.
+
 ## 최신 G022 — 최종 후보 PASS / 병합·3116 재기동·푸시 수행 중
 - 사용자 새 명시승인: **“머지 재기동 푸시까지 해줘.”** 현재 G022의 main 정상 병합·해당 게임 앱 재기동·origin/main 정상 push/readback까지 수행합니다. 이전 대기 Git 클라이언트 정리·새 로그인/자격 변경·force push·타서비스 변경은 포함하지 않습니다.
 - 07/08 각 feature의 clockfix를 통합한 후보 HEAD `00c7228bae0aa8a08da820f844ddce9e1f552303`. 독립 clock 12/12 및 spec91행 정적 PASS를 해시로 인수했습니다.

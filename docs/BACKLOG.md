@@ -1,5 +1,10 @@
 # 작업 목록 — 최종 PM 수용
 
+## 2026-10-29 — 요청된 main 푸시·재기동
+- [x] G024 기존 main 병합 확인(no-op), origin/main 정상 push·SHA 9029f30 일치.
+- [x] 해당 PM2 앱만 PID31636/g024-build/3116 재기동, 타앱 불변, 독립 LAN smoke24/24·79HTTP 일치·기록/게시 readback.
+- 증거 `docs/worklogs/20261029-203331_main푸시_3116재기동_검증.md`, `artifacts/g024-integration/runs/20261029T113009006Z-f7cf27c7/`; 기존 저장dump 교정/실기기 후속은 별도 유지합니다.
+
 ## G022 07·08 제작과 실제3116 운영 수용 — 최종 운영 반영 중
 - [x] PM 설계·독자 SVG / 각 feature branch와 worktree 제작.
 - [x] 07·08 구현, 원본 FAIL 보존과 후속 수정·독립 delta 수용.
