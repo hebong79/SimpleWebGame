@@ -1,0 +1,58 @@
+{
+  "task_id": "G026-HOME-RACE-REVIEW",
+  "passed": true,
+  "acceptance_scope": "G024-STORE 최종 9줄 await/read-only 관측 delta의 독립 정적 수용검토만 해당합니다.",
+  "independent_of_implementer": true,
+  "source": {
+    "path": "tests/e2e/g024-new-games.spec.ts",
+    "sha256": "f7d787c5e8c8a97323aa6920eae58376e083411b755c4ff4df2e12e89dc1b4cd",
+    "reviewed_lines": "130-164; 추가 구간 135-144",
+    "pre_delta_sha256": "77b73fdffd7cf271258c94b760c6c0e40704d77d3032a2004024dbbc8b828a3c"
+  },
+  "patch": {
+    "path": "artifacts/g026-integration/runs/5b3412e5/home-race-spec.patch",
+    "sha256": "9e6d0288ea2cfdd6db95118ae1152d135f427a1f43ac388db9db996e748771ec",
+    "added_lines": 9,
+    "deleted_lines": 0,
+    "exact_current_hunk_match": true,
+    "reverse_delta_matches_previous_review_source_sha256": true
+  },
+  "security_concerns": [],
+  "logic_errors": [],
+  "suggestions": [],
+  "checks": {
+    "response_observation_order": "PASS: #result-home 클릭 전에 같은 origin의 정확한 kit.svg URL 3개에 대한 waitForResponse를 등록합니다.",
+    "navigation_barrier": "PASS: 홈 URL 및 load, 기존 home(page) 카탈로그 확인 후 3개 응답 모두 HTTP 200 및 finished() === null을 확인해야 기존 다음 goto에 도달합니다.",
+    "native_render_readiness": "PASS: native SVG use 6개의 양수 bbox와 document.images의 complete/naturalWidth를 읽기 전용으로 확인합니다. 별도 fetch, routing, DOM/style 주입은 없습니다.",
+    "preserved_behavior": "PASS: 기존 공개 UI 입력, 게임 순회, favorites 및 모든 storage 보존 assertion을 삭제하거나 변경하지 않습니다. 역 delta의 전체 소스 SHA가 선행 검토본과 일치합니다.",
+    "preserved_audit_and_limits": "PASS: 이 delta에는 console/network/CSP 필터, 실패 예외 처리, trusted/hold 입력 조건 변경, CSP 완화, sleep, timeout 변경, test retry 또는 skip 추가가 없습니다. expect.poll은 준비 상태 확인이며 실패를 무시하는 재실행이 아닙니다.",
+    "causal_fit": "PASS: 선행 진단에 기록된 미완료 홈 SVG 3개와 다음 goto의 경합을 해당 문서의 native 응답 완료 및 렌더 확인 장벽으로 직접 차단합니다. 제품 자산이나 전역 감사 기준을 바꾸지 않는 국소 수정입니다."
+  },
+  "evidence_reuse_scope": {
+    "prior_review": "docs/G026_SHARED_DELTA_REVIEW.json",
+    "prior_review_sha256": "522aa5365d00c8d97e60486f917bff3c937a077ed0d583b5c3b22cfb20d7a733",
+    "reused_keys": [
+      "g024_network_diagnosis.original_unfiltered_audit",
+      "g024_network_diagnosis.original_trace_next_goto",
+      "g024_network_diagnosis.original_failed_request_timeline",
+      "g024_network_diagnosis.before_navigation_negative_document",
+      "g024_network_diagnosis.before_navigation_barrier_document",
+      "g024_network_diagnosis.minimal_observer_correction_proposal"
+    ],
+    "limits": "기존 JSON에 기록된 trace/음성·양성 대조 근거만 재사용하며 원 trace나 과거 로그는 재독하지 않았습니다. 원래 no-route 경합의 자연 재현 및 WebKit 내부 스케줄링 확정은 주장하지 않습니다. 선행 screenshot 유발 CSP/console 실패도 지우거나 전역 0으로 재분류하지 않습니다.",
+    "full_report_counts_only": {
+      "path": "artifacts/g026-integration/runs/ff404c79/report.json",
+      "sha256": "a53fc36df11cdc8d5626384bc645da95544eddf0e2eafe9ec063412ed3d0f99d",
+      "units": { "tests": 626, "passed": 626, "failed": 0, "skipped": 0 },
+      "browser": { "passed": 246, "failed": 0, "skipped": 0 },
+      "browserStats": { "expected": 246, "unexpected": 0, "flaky": 0, "skipped": 0 },
+      "independently_verified_full_execution": false,
+      "note": "기존 보고서 counts만 프로그램으로 추출했습니다. 실제 full 실행 및 증거 수용은 별도 PM 검증 범위입니다."
+    },
+    "new_browser_or_full_runs": 0,
+    "release_acceptance_assessed": false
+  },
+  "summary": "수용합니다. 최종 9줄은 다음 탐색 전에 홈 native 자산과 렌더 완료를 기다리는 강화이며 기존 기능·storage·입력·감사·CSP·retry·timeout·skip을 완화하지 않습니다. 발견된 보안 또는 논리 결함은 없습니다.",
+  "source_changes_by_reviewer": [],
+  "issues_encountered": []
+}

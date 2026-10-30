@@ -2,7 +2,7 @@ import { test, expect } from '@playwright/test';
 
 test('17 held touch keyboard feedback lock outside second touch cancels gesture', async ({ page }) => {
   await page.addInitScript(() => { Math.random = () => 0; });
-  await page.goto('/game.html');
+  await page.goto('/games/01-2048/index.html');
   await page.evaluate(() => {
     const board = document.querySelector('#board') as HTMLElement;
     // Test adapter only: allow deterministic PointerEvent ordering without a physical finger.

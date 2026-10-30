@@ -1,0 +1,1167 @@
+{
+  "task_id": "G026-QA14",
+  "status": "PASS",
+  "acceptance_scope": "Frozen game14 runtime/unit/build only; scoped shared static review of recorded original SHA, not release-wide full approval or unreviewed helper delta.",
+  "completed_at": "2026-10-30T01:43:57.598022+09:00",
+  "physical_root": "E:\\Work2\\Project\\SimpleGames\\worktrees\\g026-fourteen-game-release",
+  "tester_independent_of_builder": true,
+  "builder_id_not_this_worker": "sa-1-110a1ee1",
+  "source_modified": false,
+  "source_hashes": [
+    {
+      "path": "public/games/14-tic-tac-toe/assets/night-o.svg",
+      "sha256": "c2be8f7c83190dc88274145f8bfce5b3e664ac6c129a92bd7637165898e2be19",
+      "bytes": 375,
+      "frozen_sha256": "c2be8f7c83190dc88274145f8bfce5b3e664ac6c129a92bd7637165898e2be19",
+      "freeze_match": true,
+      "build_path": "E:\\Work2\\Project\\SimpleGames\\worktrees\\g026-fourteen-game-release\\artifacts\\g026-qa-build\\public\\games\\14-tic-tac-toe\\assets\\night-o.svg",
+      "build_sha256": "c2be8f7c83190dc88274145f8bfce5b3e664ac6c129a92bd7637165898e2be19",
+      "build_match": true
+    },
+    {
+      "path": "public/games/14-tic-tac-toe/assets/night-x.svg",
+      "sha256": "b2dce378e607834ab0fbd8701a587b1a1ee5537e436e7a1ba74168d8ad504a78",
+      "bytes": 389,
+      "frozen_sha256": "b2dce378e607834ab0fbd8701a587b1a1ee5537e436e7a1ba74168d8ad504a78",
+      "freeze_match": true,
+      "build_path": "E:\\Work2\\Project\\SimpleGames\\worktrees\\g026-fourteen-game-release\\artifacts\\g026-qa-build\\public\\games\\14-tic-tac-toe\\assets\\night-x.svg",
+      "build_sha256": "b2dce378e607834ab0fbd8701a587b1a1ee5537e436e7a1ba74168d8ad504a78",
+      "build_match": true
+    },
+    {
+      "path": "public/games/14-tic-tac-toe/assets/paper-o.svg",
+      "sha256": "bf67c182dcdd20f3640d611461b0470cd7265b09bf6fbcb97ca2e3e6a592c1e2",
+      "bytes": 315,
+      "frozen_sha256": "bf67c182dcdd20f3640d611461b0470cd7265b09bf6fbcb97ca2e3e6a592c1e2",
+      "freeze_match": true,
+      "build_path": "E:\\Work2\\Project\\SimpleGames\\worktrees\\g026-fourteen-game-release\\artifacts\\g026-qa-build\\public\\games\\14-tic-tac-toe\\assets\\paper-o.svg",
+      "build_sha256": "bf67c182dcdd20f3640d611461b0470cd7265b09bf6fbcb97ca2e3e6a592c1e2",
+      "build_match": true
+    },
+    {
+      "path": "public/games/14-tic-tac-toe/assets/paper-x.svg",
+      "sha256": "8143dda03f7c83940aa99d05b4c9566f1c8c0bde2fd3df863a5d562a2f238813",
+      "bytes": 338,
+      "frozen_sha256": "8143dda03f7c83940aa99d05b4c9566f1c8c0bde2fd3df863a5d562a2f238813",
+      "freeze_match": true,
+      "build_path": "E:\\Work2\\Project\\SimpleGames\\worktrees\\g026-fourteen-game-release\\artifacts\\g026-qa-build\\public\\games\\14-tic-tac-toe\\assets\\paper-x.svg",
+      "build_sha256": "8143dda03f7c83940aa99d05b4c9566f1c8c0bde2fd3df863a5d562a2f238813",
+      "build_match": true
+    },
+    {
+      "path": "public/games/14-tic-tac-toe/assets/provenance.json",
+      "sha256": "e34edc982c0d17ea8d3d7dbc9f0897ce390f73ace92a93c03734f8b51871c0fb",
+      "bytes": 1103,
+      "frozen_sha256": "e34edc982c0d17ea8d3d7dbc9f0897ce390f73ace92a93c03734f8b51871c0fb",
+      "freeze_match": true,
+      "build_path": "E:\\Work2\\Project\\SimpleGames\\worktrees\\g026-fourteen-game-release\\artifacts\\g026-qa-build\\public\\games\\14-tic-tac-toe\\assets\\provenance.json",
+      "build_sha256": "e34edc982c0d17ea8d3d7dbc9f0897ce390f73ace92a93c03734f8b51871c0fb",
+      "build_match": true
+    },
+    {
+      "path": "public/games/14-tic-tac-toe/audio.mjs",
+      "sha256": "d35ebc138b79fe56c7c36fc3b48c752c8dea6a6f3d344f5b532c02f8c188dac6",
+      "bytes": 1475,
+      "frozen_sha256": "d35ebc138b79fe56c7c36fc3b48c752c8dea6a6f3d344f5b532c02f8c188dac6",
+      "freeze_match": true,
+      "build_path": "E:\\Work2\\Project\\SimpleGames\\worktrees\\g026-fourteen-game-release\\artifacts\\g026-qa-build\\public\\games\\14-tic-tac-toe\\audio.mjs",
+      "build_sha256": "d35ebc138b79fe56c7c36fc3b48c752c8dea6a6f3d344f5b532c02f8c188dac6",
+      "build_match": true
+    },
+    {
+      "path": "public/games/14-tic-tac-toe/engine.mjs",
+      "sha256": "9d72b7abd305f8f6da267665f2aacf82b5cd3af168a3042a8a66ba13757ce7e4",
+      "bytes": 3739,
+      "frozen_sha256": "9d72b7abd305f8f6da267665f2aacf82b5cd3af168a3042a8a66ba13757ce7e4",
+      "freeze_match": true,
+      "build_path": "E:\\Work2\\Project\\SimpleGames\\worktrees\\g026-fourteen-game-release\\artifacts\\g026-qa-build\\public\\games\\14-tic-tac-toe\\engine.mjs",
+      "build_sha256": "9d72b7abd305f8f6da267665f2aacf82b5cd3af168a3042a8a66ba13757ce7e4",
+      "build_match": true
+    },
+    {
+      "path": "public/games/14-tic-tac-toe/index.html",
+      "sha256": "0a5abca82c22b593a10433c03e65b150937ed5806f872631315c62307ab8bd06",
+      "bytes": 3482,
+      "frozen_sha256": "0a5abca82c22b593a10433c03e65b150937ed5806f872631315c62307ab8bd06",
+      "freeze_match": true,
+      "build_path": "E:\\Work2\\Project\\SimpleGames\\worktrees\\g026-fourteen-game-release\\artifacts\\g026-qa-build\\public\\games\\14-tic-tac-toe\\index.html",
+      "build_sha256": "0a5abca82c22b593a10433c03e65b150937ed5806f872631315c62307ab8bd06",
+      "build_match": true
+    },
+    {
+      "path": "public/games/14-tic-tac-toe/main.mjs",
+      "sha256": "79dfd32f2c10f1164580599deb767ca69b474d4b9eab2492ee34d27a21e1b5e6",
+      "bytes": 16161,
+      "frozen_sha256": "79dfd32f2c10f1164580599deb767ca69b474d4b9eab2492ee34d27a21e1b5e6",
+      "freeze_match": true,
+      "build_path": "E:\\Work2\\Project\\SimpleGames\\worktrees\\g026-fourteen-game-release\\artifacts\\g026-qa-build\\public\\games\\14-tic-tac-toe\\main.mjs",
+      "build_sha256": "79dfd32f2c10f1164580599deb767ca69b474d4b9eab2492ee34d27a21e1b5e6",
+      "build_match": true
+    },
+    {
+      "path": "public/games/14-tic-tac-toe/save.mjs",
+      "sha256": "7f8ae57e11bfa6d66f382e6224377bf2fa382c0e9b2830afdcef5f1e0a9685c8",
+      "bytes": 3160,
+      "frozen_sha256": "7f8ae57e11bfa6d66f382e6224377bf2fa382c0e9b2830afdcef5f1e0a9685c8",
+      "freeze_match": true,
+      "build_path": "E:\\Work2\\Project\\SimpleGames\\worktrees\\g026-fourteen-game-release\\artifacts\\g026-qa-build\\public\\games\\14-tic-tac-toe\\save.mjs",
+      "build_sha256": "7f8ae57e11bfa6d66f382e6224377bf2fa382c0e9b2830afdcef5f1e0a9685c8",
+      "build_match": true
+    },
+    {
+      "path": "public/games/14-tic-tac-toe/styles.css",
+      "sha256": "1c86289069bde5aa69f19175461d7e40b350976cdc372e1ec9cbf36a39657cbc",
+      "bytes": 4585,
+      "frozen_sha256": "1c86289069bde5aa69f19175461d7e40b350976cdc372e1ec9cbf36a39657cbc",
+      "freeze_match": true,
+      "build_path": "E:\\Work2\\Project\\SimpleGames\\worktrees\\g026-fourteen-game-release\\artifacts\\g026-qa-build\\public\\games\\14-tic-tac-toe\\styles.css",
+      "build_sha256": "1c86289069bde5aa69f19175461d7e40b350976cdc372e1ec9cbf36a39657cbc",
+      "build_match": true
+    },
+    {
+      "path": "tests/games/14-tic-tac-toe.test.mjs",
+      "sha256": "938f8800dd5f5656fb267c272431c78bc269bd3d1b22dd0bfe7633e6874f117e",
+      "bytes": 12771,
+      "frozen_sha256": "938f8800dd5f5656fb267c272431c78bc269bd3d1b22dd0bfe7633e6874f117e",
+      "freeze_match": true
+    }
+  ],
+  "build_binding": {
+    "qa_build_root": "E:\\Work2\\Project\\SimpleGames\\worktrees\\g026-fourteen-game-release\\artifacts\\g026-qa-build",
+    "freeze_path": "artifacts/g026-pm/game-freeze.json",
+    "freeze_sha256": "378c3cd161c0ce87fab11e064b8ecb02b7bcdc86d59944da6eac59499c7fa4cb",
+    "runtime_source_to_build_files": 11,
+    "dedicated_unit_files": 1,
+    "total_frozen_build_files": 155,
+    "all_inputs_before_after_current_identical": true,
+    "full_build_input_ledger": "artifacts/g026-qa14/runs/20261029T163817Z-browser-3cbd053c/inputs-before.json",
+    "actual_http_binding": "artifacts/g026-qa14/runs/20261029T163504Z-browser-41410698/http-binding.json",
+    "served_runtime_responses": 10,
+    "provenance_json": "Included in frozen byte ledger, not a fetched runtime asset; server intentionally does not serve JSON.",
+    "server_origin": "http://127.0.0.1:3166",
+    "server_module": "artifacts/g026-qa-build/src/server/index.js",
+    "server_public": "artifacts/g026-qa-build/public",
+    "all_owned_servers_closed_and_ports_refused": true,
+    "all_browser_mutex_acquire_release_close_verified": true
+  },
+  "toolchain": {
+    "node_exec": "C:/Program Files/nodejs/node.exe",
+    "node": "24.16.0",
+    "typescript": "7.0.2",
+    "playwright": "1.64.1",
+    "shared_install_read_only": true
+  },
+  "commands": [
+    {
+      "stage": "unit",
+      "cwd": "E:\\Work2\\Project\\SimpleGames\\worktrees\\g026-fourteen-game-release",
+      "command": [
+        "C:/Program Files/nodejs/node.exe",
+        "--test",
+        "--test-reporter=tap",
+        "tests/games/14-tic-tac-toe.test.mjs"
+      ],
+      "exit_code": 0,
+      "qa14_targeted": null,
+      "started": "2026-10-30T01:14:22.469085+09:00",
+      "finished": "2026-10-30T01:14:22.709032+09:00",
+      "mutex": null,
+      "execution": "artifacts/g026-qa14/runs/20261029T161422Z-unit-f2a6b4c8/execution.json",
+      "stdout": "artifacts/g026-qa14/runs/20261029T161422Z-unit-f2a6b4c8/stdout.log",
+      "stderr": "artifacts/g026-qa14/runs/20261029T161422Z-unit-f2a6b4c8/stderr.log"
+    },
+    {
+      "stage": "functional",
+      "cwd": "E:\\Work2\\Project\\SimpleGames\\worktrees\\g026-fourteen-game-release",
+      "command": [
+        "C:/Program Files/nodejs/node.exe",
+        "--test",
+        "--test-reporter=tap",
+        "E:\\Work2\\Project\\SimpleGames\\worktrees\\g026-fourteen-game-release\\artifacts\\g026-qa14\\independent.test.mjs"
+      ],
+      "exit_code": 0,
+      "qa14_targeted": null,
+      "started": "2026-10-30T01:14:23.298096+09:00",
+      "finished": "2026-10-30T01:14:23.558983+09:00",
+      "mutex": null,
+      "execution": "artifacts/g026-qa14/runs/20261029T161423Z-functional-cca76031/execution.json",
+      "stdout": "artifacts/g026-qa14/runs/20261029T161423Z-functional-cca76031/stdout.log",
+      "stderr": "artifacts/g026-qa14/runs/20261029T161423Z-functional-cca76031/stderr.log"
+    },
+    {
+      "stage": "initial_browser",
+      "cwd": "E:\\Work2\\Project\\SimpleGames\\worktrees\\g026-fourteen-game-release",
+      "command": [
+        "C:/Program Files/nodejs/node.exe",
+        "E:\\Work2\\Project\\SimpleGames\\worktrees\\g026-fourteen-game-release\\artifacts\\g026-qa14\\browser.mjs",
+        "E:\\Work2\\Project\\SimpleGames\\worktrees\\g026-fourteen-game-release\\artifacts\\g026-qa14\\runs\\20261029T161933Z-browser-04db56fa"
+      ],
+      "exit_code": 1,
+      "qa14_targeted": null,
+      "started": "2026-10-30T01:19:33.330579+09:00",
+      "finished": "2026-10-30T01:20:46.799322+09:00",
+      "mutex": {
+        "name": "Local\\SimpleGamesG026BrowserGate",
+        "wait_result": 0,
+        "acquired": "2026-10-30T01:19:33.330753+09:00",
+        "released": true,
+        "closed": true
+      },
+      "execution": "artifacts/g026-qa14/runs/20261029T161933Z-browser-04db56fa/execution.json",
+      "stdout": "artifacts/g026-qa14/runs/20261029T161933Z-browser-04db56fa/stdout.log",
+      "stderr": "artifacts/g026-qa14/runs/20261029T161933Z-browser-04db56fa/stderr.log"
+    },
+    {
+      "stage": "diagnostic",
+      "cwd": "E:\\Work2\\Project\\SimpleGames\\worktrees\\g026-fourteen-game-release",
+      "command": [
+        "C:/Program Files/nodejs/node.exe",
+        "E:\\Work2\\Project\\SimpleGames\\worktrees\\g026-fourteen-game-release\\artifacts\\g026-qa14\\diagnostic.mjs",
+        "E:\\Work2\\Project\\SimpleGames\\worktrees\\g026-fourteen-game-release\\artifacts\\g026-qa14\\runs\\20261029T162643Z-diagnostic-cd35991d"
+      ],
+      "exit_code": 0,
+      "qa14_targeted": null,
+      "started": "2026-10-30T01:26:43.290342+09:00",
+      "finished": "2026-10-30T01:33:02.155326+09:00",
+      "mutex": {
+        "name": "Local\\SimpleGamesG026BrowserGate",
+        "wait_result": 0,
+        "acquired": "2026-10-30T01:33:00.278845+09:00",
+        "released": true,
+        "closed": true
+      },
+      "execution": "artifacts/g026-qa14/runs/20261029T162643Z-diagnostic-cd35991d/execution.json",
+      "stdout": "artifacts/g026-qa14/runs/20261029T162643Z-diagnostic-cd35991d/stdout.log",
+      "stderr": "artifacts/g026-qa14/runs/20261029T162643Z-diagnostic-cd35991d/stderr.log"
+    },
+    {
+      "stage": "main_browser",
+      "cwd": "E:\\Work2\\Project\\SimpleGames\\worktrees\\g026-fourteen-game-release",
+      "command": [
+        "C:/Program Files/nodejs/node.exe",
+        "E:\\Work2\\Project\\SimpleGames\\worktrees\\g026-fourteen-game-release\\artifacts\\g026-qa14\\browser.mjs",
+        "E:\\Work2\\Project\\SimpleGames\\worktrees\\g026-fourteen-game-release\\artifacts\\g026-qa14\\runs\\20261029T163504Z-browser-41410698"
+      ],
+      "exit_code": 1,
+      "qa14_targeted": null,
+      "started": "2026-10-30T01:35:04.506605+09:00",
+      "finished": "2026-10-30T01:36:22.556054+09:00",
+      "mutex": {
+        "name": "Local\\SimpleGamesG026BrowserGate",
+        "wait_result": 0,
+        "acquired": "2026-10-30T01:35:04.506738+09:00",
+        "released": true,
+        "closed": true
+      },
+      "execution": "artifacts/g026-qa14/runs/20261029T163504Z-browser-41410698/execution.json",
+      "stdout": "artifacts/g026-qa14/runs/20261029T163504Z-browser-41410698/stdout.log",
+      "stderr": "artifacts/g026-qa14/runs/20261029T163504Z-browser-41410698/stderr.log"
+    },
+    {
+      "stage": "targeted_browser",
+      "cwd": "E:\\Work2\\Project\\SimpleGames\\worktrees\\g026-fourteen-game-release",
+      "command": [
+        "C:/Program Files/nodejs/node.exe",
+        "E:\\Work2\\Project\\SimpleGames\\worktrees\\g026-fourteen-game-release\\artifacts\\g026-qa14\\browser.mjs",
+        "E:\\Work2\\Project\\SimpleGames\\worktrees\\g026-fourteen-game-release\\artifacts\\g026-qa14\\runs\\20261029T163817Z-browser-3cbd053c"
+      ],
+      "exit_code": 0,
+      "qa14_targeted": "webkit-pointer",
+      "started": "2026-10-30T01:38:17.610753+09:00",
+      "finished": "2026-10-30T01:38:21.492542+09:00",
+      "mutex": {
+        "name": "Local\\SimpleGamesG026BrowserGate",
+        "wait_result": 0,
+        "acquired": "2026-10-30T01:38:17.610957+09:00",
+        "released": true,
+        "closed": true
+      },
+      "execution": "artifacts/g026-qa14/runs/20261029T163817Z-browser-3cbd053c/execution.json",
+      "stdout": "artifacts/g026-qa14/runs/20261029T163817Z-browser-3cbd053c/stdout.log",
+      "stderr": "artifacts/g026-qa14/runs/20261029T163817Z-browser-3cbd053c/stderr.log"
+    },
+    {
+      "stage": "diagnostic-launch-interrupted-before-execution",
+      "command": [
+        "python",
+        "artifacts/g026-qa14/run.py",
+        "diagnostic"
+      ],
+      "tool_exit_code": 124,
+      "child_exit_code": null,
+      "actual_tests_executed": 0,
+      "evidence": "artifacts/g026-qa14/runs/20261029T162238Z-diagnostic-991f7b5f/launcher-tool-result.json"
+    }
+  ],
+  "executed_counts": {
+    "frozen_original_unit_fresh": {
+      "executed": 46,
+      "pass": 46,
+      "fail": 0,
+      "skip": 0
+    },
+    "independent_functional_adversarial": {
+      "executed": 12,
+      "pass": 12,
+      "fail": 0,
+      "skip": 0
+    },
+    "independent_oracle": {
+      "states": 10956,
+      "legal_edges": 32334,
+      "terminal_states": 1916,
+      "count_as_extra_tests": false
+    },
+    "unique_accepted_http_browser_cases": {
+      "executed": 67,
+      "pass": 67,
+      "fail": 0,
+      "skip": 1
+    },
+    "per_project_unique_accepted": {
+      "chromium-desktop": {
+        "pass": 21,
+        "fail": 0,
+        "skip": 1,
+        "executed": 21
+      },
+      "chromium-mobile": {
+        "pass": 22,
+        "fail": 0,
+        "skip": 0,
+        "executed": 22
+      },
+      "http": {
+        "pass": 2,
+        "fail": 0,
+        "skip": 0,
+        "executed": 2
+      },
+      "webkit-mobile": {
+        "pass": 22,
+        "fail": 0,
+        "skip": 0,
+        "executed": 22
+      }
+    },
+    "raw_browser_attempts": {
+      "initial_browser": {
+        "executed": 67,
+        "pass": 61,
+        "fail": 6,
+        "skip": 1
+      },
+      "main_browser": {
+        "executed": 67,
+        "pass": 66,
+        "fail": 1,
+        "skip": 1
+      },
+      "targeted_browser": {
+        "executed": 4,
+        "pass": 4,
+        "fail": 0,
+        "skip": 0
+      }
+    },
+    "raw_browser_attempts_cumulative_not_unique": {
+      "executed": 138,
+      "pass": 131,
+      "fail": 7,
+      "skip": 2
+    },
+    "supporting_diagnostic": {
+      "actual_projects": 3,
+      "errors": 0,
+      "count_as_acceptance_tests": false
+    },
+    "static_game_checks": {
+      "executed": 3,
+      "pass": 3,
+      "fail": 0,
+      "skip": 0
+    },
+    "shared_static_checks_not_runtime": {
+      "static_checks": 7,
+      "static_pass": 7,
+      "actual_tests_executed": 0
+    },
+    "browser_after_game_qa_completion": 0
+  },
+  "coverage": [
+    {
+      "criterion": "AC-14-01",
+      "status": "PASS",
+      "evidence": [
+        "unit46",
+        "independent12: 10956 reachable states/32334 legal edges/8 lines/both starters",
+        "actual UI double-line ninth win and draw/postresult cases"
+      ]
+    },
+    {
+      "criterion": "AC-14-02",
+      "status": "PASS",
+      "evidence": [
+        "prior starter not winner including X-win in O-start round",
+        "confirmed O-starter abandon stays O/no settlement",
+        "native held next Enter cannot skip or place while held; repeat noops"
+      ]
+    },
+    {
+      "criterion": "AC-14-03",
+      "status": "PASS",
+      "evidence": [
+        "session vs lifetime reload",
+        "single settlement/writes",
+        "pure cap session/lifetime BigInt",
+        "3 browsers corrupt/version/partial/settings/sum/getter/read/write/cap",
+        "12 prior-game keys+favorites+game13 sentinel bytes retained"
+      ]
+    },
+    {
+      "criterion": "AC-14-04",
+      "status": "PASS",
+      "evidence": [
+        "native roving clamps/Enter/Space/repeat/modifier/unrelated-toolbar/dialog focus",
+        "normal UI X win/O starter/X win while O started/legal draw",
+        "cancel/early lostcapture/secondary outside/8px and9px/2.1s outside/recovery",
+        "both mobile trusted tap and implicit lostcapture ordering"
+      ]
+    },
+    {
+      "criterion": "AC-14-05",
+      "status": "PASS",
+      "evidence": [
+        "theme preview/cancel/apply exact board/turn preservation",
+        "Apply only writes once; Cancel writes0",
+        "immediate/RAF/260ms trigger focus/explicit resume no steal",
+        "real X/O image loads and Chromium direct PNG review"
+      ]
+    },
+    {
+      "criterion": "AC-C01..C06 applied game14",
+      "status": "PASS_WITH_LISTED_LIMITS",
+      "evidence": [
+        "actual built server/public on owned3166;10 runtime HTTP SHA/MIME/CSP/nosniff",
+        "3 browser environments and short320x480/reduced44px/nooverflow",
+        "trusted nonfrozen major controls actual>=80ms",
+        "modal/blur protection/native keys/storage/audio fallback",
+        "all console types/pageerrors/CSP/external/failedHTTP/requestfailed final+targeted zero"
+      ]
+    }
+  ],
+  "findings": [
+    {
+      "id": "QA14-H01",
+      "classification": "qa_harness",
+      "severity": "P3",
+      "status": "RESOLVED_WITH_DIAGNOSTIC_EVIDENCE",
+      "summary": "Immediate image assertion preceded SVG load; exact loaded assertion retained after synchronous wait. WebKit touch click compatibility metadata corrected to trusted touch down/up/lostcapture+click ordering.",
+      "evidence": [
+        "artifacts/g026-qa14/runs/20261029T161933Z-browser-04db56fa/browser-results.json",
+        "artifacts/g026-qa14/runs/20261029T162643Z-diagnostic-cd35991d/diagnostic.json",
+        "artifacts/g026-qa14/runs/20261029T163504Z-browser-41410698/browser-results.json"
+      ]
+    },
+    {
+      "id": "QA14-E01",
+      "classification": "browser_host_transport",
+      "severity": "P2",
+      "status": "NOT_REPRODUCED_AFTER_FIRST_ATTEMPT; original failure retained",
+      "summary": "Chromium-mobile HTML navigation ERR_NO_BUFFER_SPACE before product script; QA init SecurityError in resulting error document. No product defect inferred and no filtering/retry applied.",
+      "evidence": [
+        "artifacts/g026-qa14/runs/20261029T161933Z-browser-04db56fa/diagnostics.json"
+      ]
+    },
+    {
+      "id": "QA14-H02",
+      "classification": "qa_tool_capability",
+      "severity": "P3",
+      "status": "RESOLVED_BY_TARGETED_DIFFERENT_SUPPORTED_SCROLL_OBSERVATION",
+      "summary": "Mobile WebKit mouse.wheel unsupported. All original pointer assertions plus <=8px allowed/>8px canceled and 2.1s outside hold retained in targeted rerun; actual DOM page scroll separately labelled nonphysical.",
+      "evidence": [
+        "artifacts/g026-qa14/runs/20261029T163504Z-browser-41410698/browser-results.json",
+        "artifacts/g026-qa14/runs/20261029T163817Z-browser-3cbd053c/browser-results.json"
+      ]
+    },
+    {
+      "id": "SHARED-H01",
+      "classification": "test-harness timing, not game14 production",
+      "severity": "P2",
+      "source": "tests/e2e/g026-new-games.spec.ts:18",
+      "failing_assertion": "tests/e2e/g026-new-games.spec.ts:122",
+      "minimum_required_ms": 80,
+      "actual_original_ms": 79.80000001192093,
+      "raw_original_full": "artifacts/g026-integration/runs/da9025b4/report.json",
+      "raw_original_full_sha256": "12fb1a4e51170f5a2bee9e1f774d1b7c4a1bec2b0aa7c826ae937d3655592732",
+      "status": "Original full remains FAILED; new helper assigned to sa-0-60e80d87 is NOT REVIEWED/ACCEPTED here; keep >=80 threshold unchanged."
+    }
+  ],
+  "production_findings": [],
+  "shared_static_review": {
+    "reviewed_spec_sha256": "08572166f85e44d5849aca0bf4be747055fa0ac7458cbd3f1ecb6e0c13215481",
+    "current_spec_sha256_observation_only": "3dcc9794dadc4ec45c73bcd0d5be266251305651351251feccbc6313b89c5fb5",
+    "reviewed_scope": [
+      {
+        "path": "scripts/g026-verify.mjs",
+        "sha256": "d6444e96b07201e088a1319558955724bf2ed36058416c279a578c2121c3fac9",
+        "manifest_source_sha256": "d6444e96b07201e088a1319558955724bf2ed36058416c279a578c2121c3fac9",
+        "manifest_match": true
+      },
+      {
+        "path": "tests/g026-playwright.config.ts",
+        "sha256": "88e64303d88630cf8df1bc1f9b6f076011912b18a60251db081b8109b701fdf2",
+        "manifest_source_sha256": "88e64303d88630cf8df1bc1f9b6f076011912b18a60251db081b8109b701fdf2",
+        "manifest_match": true
+      },
+      {
+        "path": "tests/e2e/g026-new-games.spec.ts",
+        "sha256": "08572166f85e44d5849aca0bf4be747055fa0ac7458cbd3f1ecb6e0c13215481",
+        "manifest_source_sha256": "08572166f85e44d5849aca0bf4be747055fa0ac7458cbd3f1ecb6e0c13215481",
+        "manifest_match": true
+      },
+      {
+        "path": "tests/e2e/breakout-integration.spec.ts",
+        "sha256": "1706f4270868d2f29184f9a78a4b85cbdb578158f04826c663c43df0f02a9636",
+        "manifest_source_sha256": "1706f4270868d2f29184f9a78a4b85cbdb578158f04826c663c43df0f02a9636",
+        "manifest_match": true
+      },
+      {
+        "path": "tests/e2e/g024-new-games.spec.ts",
+        "sha256": "77b73fdffd7cf271258c94b760c6c0e40704d77d3032a2004024dbbc8b828a3c",
+        "manifest_source_sha256": "77b73fdffd7cf271258c94b760c6c0e40704d77d3032a2004024dbbc8b828a3c",
+        "manifest_match": true
+      },
+      {
+        "path": "tests/e2e/g025-new-games.spec.ts",
+        "sha256": "b66745f63386220d0f0a20c2e05a150769162e04bde27e284c3388ba0fb91b36",
+        "manifest_source_sha256": "b66745f63386220d0f0a20c2e05a150769162e04bde27e284c3388ba0fb91b36",
+        "manifest_match": true
+      },
+      {
+        "path": "tests/e2e/library-integration.spec.ts",
+        "sha256": "148c6568000557fda9bc3d6b41a6097df8a282180e40cea0bc1f58095b215d7c",
+        "manifest_source_sha256": "148c6568000557fda9bc3d6b41a6097df8a282180e40cea0bc1f58095b215d7c",
+        "manifest_match": true
+      },
+      {
+        "path": "tests/e2e/live-server.spec.ts",
+        "sha256": "1c894910aab894390997dce1eea0b7a7ab179741e563f03a29cafe441fa99473",
+        "manifest_source_sha256": "1c894910aab894390997dce1eea0b7a7ab179741e563f03a29cafe441fa99473",
+        "manifest_match": true
+      },
+      {
+        "path": "tests/e2e/multi-game-integration.spec.ts",
+        "sha256": "c9669bb7c9b9f0b1d90dcb8f8a3ef96dbeaec3da9caef4cb4434b80b0f688505",
+        "manifest_source_sha256": "c9669bb7c9b9f0b1d90dcb8f8a3ef96dbeaec3da9caef4cb4434b80b0f688505",
+        "manifest_match": true
+      },
+      {
+        "path": "tests/e2e/runner-jumper.spec.ts",
+        "sha256": "bf0cffd8f424e40ac0dbf8591eb18842b6e5d820a459c189a67e3f57fd38626f",
+        "manifest_source_sha256": "bf0cffd8f424e40ac0dbf8591eb18842b6e5d820a459c189a67e3f57fd38626f",
+        "manifest_match": true
+      }
+    ],
+    "static_review": "artifacts/g026-qa14/shared-static-review.json",
+    "static_checks": {
+      "static_checks": 7,
+      "static_pass": 7,
+      "actual_tests_executed": 0
+    },
+    "known_original_shared_helper_issue": {
+      "classification": "test-harness timing, not game14 production",
+      "severity": "P2",
+      "source": "tests/e2e/g026-new-games.spec.ts:18",
+      "failing_assertion": "tests/e2e/g026-new-games.spec.ts:122",
+      "minimum_required_ms": 80,
+      "actual_original_ms": 79.80000001192093,
+      "raw_original_full": "artifacts/g026-integration/runs/da9025b4/report.json",
+      "raw_original_full_sha256": "12fb1a4e51170f5a2bee9e1f774d1b7c4a1bec2b0aa7c826ae937d3655592732",
+      "status": "Original full remains FAILED; new helper assigned to sa-0-60e80d87 is NOT REVIEWED/ACCEPTED here; keep >=80 threshold unchanged."
+    },
+    "new_helper_delta": "NOT_REVIEWED; separate PM small-delta acceptance, do not bind old static PASS to new helper SHA",
+    "pm_full": {
+      "status": "FAILED",
+      "unit_pass": 621,
+      "browser": {
+        "discovered": 246,
+        "executed": 246,
+        "passed": 245,
+        "failed": 1,
+        "skipped": 0,
+        "pending": 0
+      },
+      "executed_by_this_worker": false
+    },
+    "initial_smoke": {
+      "evidence": "artifacts/g026-integration/runs/2dc9e6ab/finish-verification.json",
+      "sha256": "e9498f35fbe561abaae03ad69d7e653caf87cef1e9d4f550233d8e89c2bce10c",
+      "raw_report": "artifacts/g026-integration/runs/93605244/report.json",
+      "raw_report_sha256": "3966aebe56ac794b2fc9f8d4586f2c4c49a49924f966c60864178a3a776c8f3e",
+      "executed": 18,
+      "pass": 18,
+      "fail": 0,
+      "skip": 0,
+      "http_responses": 119,
+      "raw_http_sha256": "c286e7687dcbf55dfb49addc0f14b04a87cabe3a5b064d5c4c3f9c54ad6ad191",
+      "all_http_200_sha_csp_match": true,
+      "count_as_independent_qa_execution": false
+    },
+    "extra_shared_browser_or_full_executed": false
+  },
+  "native_85ms_control_measurements": {
+    "chromium-desktop": {
+      "holds": [
+        {
+          "id": "start",
+          "ms": 96.30000001192093
+        },
+        {
+          "id": "pause",
+          "ms": 87
+        },
+        {
+          "id": "resume",
+          "ms": 95
+        },
+        {
+          "id": "mute",
+          "ms": 85.80000001192093
+        },
+        {
+          "id": "mute",
+          "ms": 94.60000002384186
+        },
+        {
+          "id": "theme",
+          "ms": 87.60000002384186
+        },
+        {
+          "id": "theme-night",
+          "ms": 93.09999999403954
+        },
+        {
+          "id": "modal-close",
+          "ms": 86.5
+        },
+        {
+          "id": "resume",
+          "ms": 94.7000000178814
+        },
+        {
+          "id": "theme",
+          "ms": 86.2999999821186
+        },
+        {
+          "id": "theme-night",
+          "ms": 93.59999999403954
+        },
+        {
+          "id": "modal-apply",
+          "ms": 101
+        },
+        {
+          "id": "resume",
+          "ms": 91
+        }
+      ],
+      "minimum_ms": 85.80000001192093,
+      "noVirtualClock": true,
+      "stableTextNode": true
+    },
+    "chromium-mobile": {
+      "holds": [
+        {
+          "id": "start",
+          "ms": 97.59999999403954
+        },
+        {
+          "id": "pause",
+          "ms": 90.40000000596046
+        },
+        {
+          "id": "resume",
+          "ms": 98
+        },
+        {
+          "id": "mute",
+          "ms": 89.69999998807907
+        },
+        {
+          "id": "mute",
+          "ms": 98.59999999403954
+        },
+        {
+          "id": "theme",
+          "ms": 89.2000000178814
+        },
+        {
+          "id": "theme-night",
+          "ms": 99.5
+        },
+        {
+          "id": "modal-close",
+          "ms": 90.40000000596046
+        },
+        {
+          "id": "resume",
+          "ms": 99.89999997615814
+        },
+        {
+          "id": "theme",
+          "ms": 92.2999999821186
+        },
+        {
+          "id": "theme-night",
+          "ms": 99.40000000596046
+        },
+        {
+          "id": "modal-apply",
+          "ms": 90.09999999403954
+        },
+        {
+          "id": "resume",
+          "ms": 97.30000001192093
+        }
+      ],
+      "minimum_ms": 89.2000000178814,
+      "noVirtualClock": true,
+      "stableTextNode": true
+    },
+    "webkit-mobile": {
+      "holds": [
+        {
+          "id": "start",
+          "ms": 93
+        },
+        {
+          "id": "pause",
+          "ms": 89
+        },
+        {
+          "id": "resume",
+          "ms": 91
+        },
+        {
+          "id": "mute",
+          "ms": 95
+        },
+        {
+          "id": "mute",
+          "ms": 88
+        },
+        {
+          "id": "theme",
+          "ms": 94
+        },
+        {
+          "id": "theme-night",
+          "ms": 90
+        },
+        {
+          "id": "modal-close",
+          "ms": 88
+        },
+        {
+          "id": "resume",
+          "ms": 93
+        },
+        {
+          "id": "theme",
+          "ms": 95
+        },
+        {
+          "id": "theme-night",
+          "ms": 91
+        },
+        {
+          "id": "modal-apply",
+          "ms": 90
+        },
+        {
+          "id": "resume",
+          "ms": 94
+        }
+      ],
+      "minimum_ms": 88,
+      "noVirtualClock": true,
+      "stableTextNode": true
+    }
+  },
+  "viewport_geometry": {
+    "chromium-desktop": {
+      "geometry": {
+        "viewport": 1366,
+        "scroll": 1366,
+        "targets": [
+          {
+            "id": "home",
+            "w": 109.84375,
+            "h": 45.796875
+          },
+          {
+            "id": "theme",
+            "w": 90.921875,
+            "h": 45.796875
+          },
+          {
+            "id": "help",
+            "w": 72,
+            "h": 45.796875
+          },
+          {
+            "id": "mute",
+            "w": 108.59375,
+            "h": 45.796875
+          },
+          {
+            "id": "cell-0",
+            "w": 117.328125,
+            "h": 117.328125
+          },
+          {
+            "id": "cell-1",
+            "w": 117.328125,
+            "h": 117.328125
+          },
+          {
+            "id": "cell-2",
+            "w": 117.34375,
+            "h": 117.34375
+          },
+          {
+            "id": "cell-3",
+            "w": 117.328125,
+            "h": 117.328125
+          },
+          {
+            "id": "cell-4",
+            "w": 117.328125,
+            "h": 117.328125
+          },
+          {
+            "id": "cell-5",
+            "w": 117.34375,
+            "h": 117.34375
+          },
+          {
+            "id": "cell-6",
+            "w": 117.328125,
+            "h": 117.328125
+          },
+          {
+            "id": "cell-7",
+            "w": 117.328125,
+            "h": 117.328125
+          },
+          {
+            "id": "cell-8",
+            "w": 117.34375,
+            "h": 117.34375
+          },
+          {
+            "id": "pause",
+            "w": 86,
+            "h": 45.796875
+          },
+          {
+            "id": "restart",
+            "w": 90.921875,
+            "h": 45.796875
+          }
+        ],
+        "images": [
+          {
+            "src": "./assets/paper-x.svg",
+            "loaded": true,
+            "mark": "X"
+          },
+          {
+            "src": "./assets/paper-o.svg",
+            "loaded": true,
+            "mark": "O"
+          }
+        ],
+        "reduced": true
+      },
+      "short": {
+        "left": 17,
+        "right": 303,
+        "top": 16,
+        "bottom": 464,
+        "inner": 480,
+        "scrollHeight": 593,
+        "clientHeight": 446,
+        "pageWidth": 320
+      },
+      "webkitPNG": null
+    },
+    "chromium-mobile": {
+      "geometry": {
+        "viewport": 320,
+        "scroll": 320,
+        "targets": [
+          {
+            "id": "home",
+            "w": 109.84375,
+            "h": 45.796875
+          },
+          {
+            "id": "theme",
+            "w": 90.921875,
+            "h": 45.796875
+          },
+          {
+            "id": "help",
+            "w": 72,
+            "h": 45.796875
+          },
+          {
+            "id": "mute",
+            "w": 108.59375,
+            "h": 45.796875
+          },
+          {
+            "id": "cell-0",
+            "w": 80,
+            "h": 80
+          },
+          {
+            "id": "cell-1",
+            "w": 80,
+            "h": 80
+          },
+          {
+            "id": "cell-2",
+            "w": 80,
+            "h": 80
+          },
+          {
+            "id": "cell-3",
+            "w": 80,
+            "h": 80
+          },
+          {
+            "id": "cell-4",
+            "w": 80,
+            "h": 80
+          },
+          {
+            "id": "cell-5",
+            "w": 80,
+            "h": 80
+          },
+          {
+            "id": "cell-6",
+            "w": 80,
+            "h": 80
+          },
+          {
+            "id": "cell-7",
+            "w": 80,
+            "h": 80
+          },
+          {
+            "id": "cell-8",
+            "w": 80,
+            "h": 80
+          },
+          {
+            "id": "pause",
+            "w": 86,
+            "h": 45.796875
+          },
+          {
+            "id": "restart",
+            "w": 90.921875,
+            "h": 45.796875
+          }
+        ],
+        "images": [
+          {
+            "src": "./assets/paper-x.svg",
+            "loaded": true,
+            "mark": "X"
+          },
+          {
+            "src": "./assets/paper-o.svg",
+            "loaded": true,
+            "mark": "O"
+          }
+        ],
+        "reduced": true
+      },
+      "short": {
+        "left": 17,
+        "right": 303,
+        "top": 16,
+        "bottom": 464,
+        "inner": 480,
+        "scrollHeight": 593,
+        "clientHeight": 446,
+        "pageWidth": 320
+      },
+      "webkitPNG": null
+    },
+    "webkit-mobile": {
+      "geometry": {
+        "viewport": 320,
+        "scroll": 320,
+        "targets": [
+          {
+            "id": "home",
+            "w": 109.84375,
+            "h": 45.796875
+          },
+          {
+            "id": "theme",
+            "w": 90.921875,
+            "h": 45.796875
+          },
+          {
+            "id": "help",
+            "w": 72,
+            "h": 45.796875
+          },
+          {
+            "id": "mute",
+            "w": 108.59375,
+            "h": 45.796875
+          },
+          {
+            "id": "cell-0",
+            "w": 80,
+            "h": 80
+          },
+          {
+            "id": "cell-1",
+            "w": 80,
+            "h": 80
+          },
+          {
+            "id": "cell-2",
+            "w": 80,
+            "h": 80
+          },
+          {
+            "id": "cell-3",
+            "w": 80,
+            "h": 80
+          },
+          {
+            "id": "cell-4",
+            "w": 80,
+            "h": 80
+          },
+          {
+            "id": "cell-5",
+            "w": 80,
+            "h": 80
+          },
+          {
+            "id": "cell-6",
+            "w": 80,
+            "h": 80
+          },
+          {
+            "id": "cell-7",
+            "w": 80,
+            "h": 80
+          },
+          {
+            "id": "cell-8",
+            "w": 80,
+            "h": 80
+          },
+          {
+            "id": "pause",
+            "w": 86,
+            "h": 45.796875
+          },
+          {
+            "id": "restart",
+            "w": 90.921875,
+            "h": 45.796875
+          }
+        ],
+        "images": [
+          {
+            "src": "./assets/paper-x.svg",
+            "loaded": true,
+            "mark": "X"
+          },
+          {
+            "src": "./assets/paper-o.svg",
+            "loaded": true,
+            "mark": "O"
+          }
+        ],
+        "reduced": true
+      },
+      "short": {
+        "left": 17,
+        "right": 303,
+        "top": 16,
+        "bottom": 464,
+        "inner": 480,
+        "scrollHeight": 593,
+        "clientHeight": 446,
+        "pageWidth": 320
+      },
+      "webkitPNG": "UNVERIFIED: not attempted because known screenshotter strict-CSP injected body-style limitation"
+    }
+  },
+  "visual_inspection": [
+    {
+      "path": "artifacts/g026-qa14/runs/20261029T163504Z-browser-41410698/chromium-desktop.png",
+      "sha256": "f0dd1250d59bf3a1f86d93da9cf73476c8815ffefdbaed7a2d96fac41e02320f",
+      "png_width": 1366,
+      "png_height": 1048,
+      "viewport": {
+        "width": 1366,
+        "height": 900
+      },
+      "full_page": true,
+      "direct_visual_inspection": "PASS: directly opened images; distinct geometric+text X/O, readable controls and no overlapping/cropped board; long mobile vertical document is intentional."
+    },
+    {
+      "path": "artifacts/g026-qa14/runs/20261029T163504Z-browser-41410698/chromium-mobile.png",
+      "sha256": "07594b97ea87b40bdd51a9bcafbaa11db4b26d5e7d6f0285b46619eaa921f07a",
+      "png_width": 320,
+      "png_height": 1446,
+      "viewport": {
+        "width": 320,
+        "height": 667
+      },
+      "full_page": true,
+      "direct_visual_inspection": "PASS: directly opened images; distinct geometric+text X/O, readable controls and no overlapping/cropped board; long mobile vertical document is intentional."
+    }
+  ],
+  "evidence_paths": [
+    "artifacts/g026-qa14/accepted-cases.json",
+    "artifacts/g026-qa14/static.json",
+    "artifacts/g026-qa14/initial-diagnosis.md",
+    "artifacts/g026-qa14/revalidation-notes.md",
+    "artifacts/g026-qa14/shared-static-review.json",
+    "artifacts/g026-qa14/shared-followup-boundary.json",
+    "artifacts/g026-qa14/shared-seven-specs.diff",
+    "artifacts/g026-qa14/runs/20261029T161422Z-unit-f2a6b4c8",
+    "artifacts/g026-qa14/runs/20261029T161423Z-functional-cca76031",
+    "artifacts/g026-qa14/runs/20261029T161933Z-browser-04db56fa",
+    "artifacts/g026-qa14/runs/20261029T162643Z-diagnostic-cd35991d",
+    "artifacts/g026-qa14/runs/20261029T163504Z-browser-41410698",
+    "artifacts/g026-qa14/runs/20261029T163817Z-browser-3cbd053c"
+  ],
+  "unverified_limits": [
+    "No physical Android/iPhone finger or pinch/scroll acceptance; Chromium/WebKit trusted Playwright touchscreen taps are browser automation.",
+    "WebKit PNG not taken; visual image acceptance UNVERIFIED. Actual WebKit DOM geometry, loaded SVGs, strict CSP, input and unfiltered console were verified.",
+    "Mobile WebKit mouse.wheel API explicitly unsupported; actual DOM scrollBy/scrollY and unchanged game were verified, not a trusted physical WebKit scroll gesture.",
+    "Blur/pagehide/visibility, pointercancel/earlylostcapture/scroll/secondary-pointer cancellation faults include labelled synthetic public events; OS-native hiding not performed.",
+    "No real sound listening or human play-duration study; absent/throwing AudioContext fallback and normal automated play were executed.",
+    "Shared original full remains FAILED (unit621 pass/browser245 of246 pass); helper-only replacement is NOT REVIEWED here. Initial shared18/18/119HTTP evidence is attributed reuse, not fresh independent QA14 execution.",
+    "No main/index/commit/push/PM2/3116/production transition, installation or board publication; explicit scope forbids them.",
+    "ERR_NO_BUFFER_SPACE appeared once before product script loading in first attempt and did not recur in same-boundary diagnostic/full; no claim of an OS-level root-cause fix.",
+    "Acceptance is a hash-identical case-wise combination of second suite66 passing cases plus one targeted corrected-tool case, not a fabricated all-green full-run exit. Raw failed executions remain preserved."
+  ]
+}

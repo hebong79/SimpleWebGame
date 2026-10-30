@@ -1,6 +1,6 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import { defaultProfile, normalizeProfile, ProfileStore, STORAGE_KEY, type StorageLike } from '../../src/client/storage.js';
+import { defaultProfile, normalizeProfile, ProfileStore, STORAGE_KEY, type StorageLike } from '../../public/games/01-2048/storage.js';
 class Memory implements StorageLike { data=new Map<string,string>(); writes=0; getItem(key:string):string|null{return this.data.get(key)??null} setItem(key:string,value:string):void{this.writes++;this.data.set(key,value)} }
 test('valid profile roundtrip and no board storage',()=>{
  const memory=new Memory();const store=new ProfileStore(memory);assert.deepEqual(store.load(),defaultProfile());assert.equal(memory.writes,0);

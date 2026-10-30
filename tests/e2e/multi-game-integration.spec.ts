@@ -1,7 +1,7 @@
 import { test, expect, type Page } from '@playwright/test';
 
 const paths = {
-  garden: '/game.html',
+  garden: '/games/01-2048/index.html',
   snake: '/games/02-snake/index.html',
   pong: '/games/03-pong/index.html',
 };
@@ -81,10 +81,11 @@ test.afterEach(async ({ page }, info) => {
 
 test('G014-01 three available cards launch their own game and return to the shared home', async ({ page }) => {
   await page.goto('/');
-  await expect(page.locator('#catalog-total')).toHaveText('41');
-  await expect(page.locator('#intro-preview')).toHaveText('플레이 가능 12 · 준비 중 29');
+  await expect(page.locator('#catalog-total')).toHaveText('43');
+  await expect(page.locator('#intro-preview')).toHaveText('플레이 가능 14 · 준비 중 29');
   await page.locator('#include-upcoming').uncheck();
-  expect(await cardIds(page)).toEqual(['number-garden', 'little-dragon', 'neon-rally', 'cosmic-cleanup', 'block-workshop', 'balloon-sparrow', 'desert-post', 'cloud-bunny', 'chick-picnic', 'hamster-depot', 'gem-survey', 'number-postbox']);
+  await page.locator('#load-more').click();
+  expect(await cardIds(page)).toEqual(['number-garden', 'little-dragon', 'neon-rally', 'cosmic-cleanup', 'block-workshop', 'balloon-sparrow', 'desert-post', 'cloud-bunny', 'chick-picnic', 'hamster-depot', 'gem-survey', 'number-postbox', 'snack-pairs', 'star-moon']);
   const games = [
     { id: 'number-garden', href: paths.garden, ready: '#board' },
     { id: 'little-dragon', href: paths.snake, ready: '#primary' },

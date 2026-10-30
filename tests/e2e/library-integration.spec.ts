@@ -25,15 +25,15 @@ test.afterEach(async ({ page }, info) => {
   expect(evidence.external, 'external requests').toEqual([]);
 });
 
-test('18 library 41 entries pagination search genre state sorting and zero reset', async ({ page }) => {
+test('18 library 43 entries pagination search genre state sorting and zero reset', async ({ page }) => {
   await page.goto('/'); await expect(page.locator('.game-card')).toHaveCount(12);
-  await expect(page.locator('#result-count')).toHaveText('41개');
+  await expect(page.locator('#result-count')).toHaveText('43개');
   await page.locator('#load-more').click(); await expect(page.locator('.game-card')).toHaveCount(24);
   await page.locator('#load-more').click(); await expect(page.locator('.game-card')).toHaveCount(36);
-  await page.locator('#load-more').click(); await expect(page.locator('.game-card')).toHaveCount(41);
-  const all = await ids(page); expect(new Set(all).size).toBe(41);
+  await page.locator('#load-more').click(); await expect(page.locator('.game-card')).toHaveCount(43);
+  const all = await ids(page); expect(new Set(all).size).toBe(43);
   const byDuration = await page.locator('.game-card').evaluateAll(cards => cards.map(card => ({ id: (card as HTMLElement).dataset.id, minutes: Number(card.querySelector('.duration')!.textContent!.match(/\d+/)![0]) })).sort((a, b) => a.minutes - b.minutes).map(card => card.id));
-  await expect(page.locator('a.card-action[href="/game.html"],a.card-action[href="game.html"]')).toHaveCount(1);
+  await expect(page.locator('a.card-action[href="/games/01-2048/index.html"]')).toHaveCount(1);
   await expect(page.locator('button.card-action:disabled')).toHaveCount(29); await expect(page.locator('#load-more')).toBeHidden();
   await sortBy(page, 'name'); await expect(page.locator('.game-card')).toHaveCount(12); await more(page);
   const names = await page.locator('.game-card h3').allTextContents(); expect(names).toEqual([...names].sort((a, b) => a.localeCompare(b, 'ko')));
@@ -64,7 +64,7 @@ test('19 library favorites keyboard persistence compound filter removal and bloc
 
 test('20 actual home game score exits through result then home and record persists', async ({ page }) => {
   await page.goto('/'); expect(await profile(page)).toBeNull(); await page.locator('.game-card[data-id="number-garden"] a.card-action').click();
-  await expect(page).toHaveURL(/\/game\.html$/); await expect(page.locator('#board')).toBeFocused();
+  await expect(page).toHaveURL(/\/games\/01-2048\/index\.html$/); await expect(page.locator('#board')).toBeFocused();
   expect((await board(page)).filter(Boolean)).toHaveLength(2); await page.keyboard.press('ArrowLeft'); await expect(page.locator('#score')).toHaveText('4');
   const before = await board(page); await page.locator('#pause-button').click();
   await expect(page.getByRole('button', { name: '이어서하기', exact: true })).toBeVisible();
@@ -79,7 +79,7 @@ test('20 actual home game score exits through result then home and record persis
 });
 
 test('21 paused restart cancel preserves pause and exit result cannot resume', async ({ page }) => {
-  await page.goto('/game.html'); await page.keyboard.press('ArrowLeft'); await expect(page.locator('#score')).toHaveText('4');
+  await page.goto('/games/01-2048/index.html'); await page.keyboard.press('ArrowLeft'); await expect(page.locator('#score')).toHaveText('4');
   const before = await board(page); await page.locator('#pause-button').click();
   await page.locator('#dialog-content').getByRole('button', { name: '다시시작', exact: true }).click(); await page.getByRole('button', { name: '취소 · 돌아가기', exact: true }).click();
   await expect(page.getByRole('button', { name: '이어서하기', exact: true })).toBeVisible(); expect(await board(page)).toEqual(before);
@@ -90,11 +90,11 @@ test('21 paused restart cancel preserves pause and exit result cannot resume', a
 });
 
 test('22 automatic blur pause uses game resume and home links require exit result', async ({ page }) => {
-  await page.goto('/game.html'); await page.evaluate(() => window.dispatchEvent(new Event('blur')));
+  await page.goto('/games/01-2048/index.html'); await page.evaluate(() => window.dispatchEvent(new Event('blur')));
   await expect(page.getByRole('button', { name: '게임 재개', exact: true })).toBeVisible();
   await expect(page.getByRole('button', { name: '이어서하기', exact: true })).toHaveCount(0);
   await page.getByRole('button', { name: '게임 재개', exact: true }).click();
-  await page.locator('a.exit-home').first().click(); await expect(page).toHaveURL(/\/game\.html$/); await expect(page.locator('#game-dialog')).toBeVisible();
+  await page.locator('a.exit-home').first().click(); await expect(page).toHaveURL(/\/games\/01-2048\/index\.html$/); await expect(page.locator('#game-dialog')).toBeVisible();
   await page.locator('#result-home').click(); await expect(page.locator('#game-grid')).toBeVisible();
 });
 

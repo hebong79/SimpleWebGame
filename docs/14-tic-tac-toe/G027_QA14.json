@@ -1,0 +1,64 @@
+{
+  "task_id": "G027-QA14",
+  "role": "qa (independent)",
+  "game": "14 star-moon (별과 달 3목)",
+  "status": "pass_with_minor_defects",
+  "report_md": "docs/14-tic-tac-toe/20261030-231700_G027_QA14.md",
+  "inputs": {
+    "manifest_sha256": "a73f41d971990657fe8d8ad006657ca5786c87741c83d75ce36cc2fb419d4802",
+    "manifest_matches_expected": true,
+    "source_equals_build_files": 11,
+    "source_build_mismatches": 0,
+    "unchanged_after_run": true,
+    "hash_files": ["artifacts/g027-qa14/input-hashes.json", "artifacts/g027-qa14/input-hashes-post.json"],
+    "key_sha256": {
+      "engine.mjs": "9d72b7abd305f8f6da267665f2aacf82b5cd3af168a3042a8a66ba13757ce7e4",
+      "main.mjs": "79dfd32f2c10f1164580599deb767ca69b474d4b9eab2492ee34d27a21e1b5e6",
+      "save.mjs": "7f8ae57e11bfa6d66f382e6224377bf2fa382c0e9b2830afdcef5f1e0a9685c8",
+      "index.html": "0a5abca82c22b593a10433c03e65b150937ed5806f872631315c62307ab8bd06",
+      "styles.css": "1c86289069bde5aa69f19175461d7e40b350976cdc372e1ec9cbf36a39657cbc"
+    }
+  },
+  "counts": {
+    "engine_save_node_test": { "executed": 46, "passed": 46, "failed": 0, "skipped": 0 },
+    "browser_desktop_chromium_156_1366x900": { "executed": 45, "passed": 45, "failed": 0, "skipped": 0 },
+    "browser_mobile_chromium_156_320x667_touch": { "executed": 45, "passed": 45, "failed": 0, "skipped": 0 },
+    "browser_mobile_webkit_27_2_320x667": { "executed": 45, "passed": 45, "failed": 0, "skipped": 0 },
+    "total_executed_final_runs": 181,
+    "total_passed_final_runs": 181
+  },
+  "defects": [
+    { "id": "D1", "severity": "minor", "kind": "product", "title": "Double click/tap on Next-round immediately pauses the new round", "repro": "Finish a round, double-click (or double-tap) '다음 판'. Round 2 starts with the correct opposite starter (not skipped, single round id), but the second click lands on '일시정지', which occupies the same slot, so the fresh round is paused (pauseCause manual).", "expected": "one activation -> one round; no accidental pause", "actual": "round started once, then paused", "evidence": ["artifacts/g027-qa14/debug-obs.log", "artifacts/g027-qa14/debug-obs.mjs"] },
+    { "id": "D2", "severity": "minor", "kind": "product", "title": "Resume resets roving selection and focus to cell 0", "repro": "Start, focus cell 4, ArrowDown (selection 7), click 일시정지, click 게임 재개.", "expected": "selection retained (design: retained selected cell)", "actual": "selection 0, focus cell-0 (fresh(resumeGame) forces selection=0)", "evidence": ["artifacts/g027-qa14/debug-obs.log"] }
+  ],
+  "harness_observations_not_product_defects": [
+    { "id": "H1", "title": "Playwright locator.click/tap waits forever on aria-disabled cells", "effect": "F01/F02/K03/P01 desktop run 1 timed out at 30s", "resolution": "force:true only for #cell-N", "evidence": "artifacts/g027-qa14/run-desktop-1-HARNESS-ABORTED-aria-disabled-timeout.log" },
+    { "id": "H2", "title": "Chromium/Windows middle-press starts autoscroll which swallows the next pointerdown", "effect": "I02 tiny-jitter tap failed after middle click", "resolution": "neutral click after middle press", "evidence": ["artifacts/g027-qa14/debug-i02.log", "artifacts/g027-qa14/run-desktop-2.log"] },
+    { "id": "H3", "title": "Test code errors: strict-mode .hint selector, SVG load race, focus assertion order, CDP touch ids", "evidence": ["artifacts/g027-qa14/run-desktop-2.log", "artifacts/g027-qa14/run-mobile-chromium-1.log"] },
+    { "id": "H4", "title": "WebKit page.screenshot injects an inline <style> and triggers a CSP style-src-elem console error (8 occurrences, only in tests that screenshot)", "proof": "debug script: csp/console empty before screenshot, one violation after", "evidence": ["artifacts/g027-qa14/debug-webkit-csp.log", "artifacts/g027-qa14/browser/mobile-webkit/results.json"] }
+  ],
+  "unverified": [
+    "physical Android/iPhone finger input",
+    "actual sound listening (only silent/AudioContext-constructed behaviour checked)",
+    "human feel/20-60s play length",
+    "native OS-level hiding / real window blur by OS (blur/pagehide/visibilitychange were dispatched synthetically; a real second-tab switch was observed in headless only)",
+    "WebKit: 80ms press uses mouse events, touch-cancel/scroll/two-finger CDP tests run on Chromium only",
+    "WebKit screenshots contain tool-injected CSP error (see H4)",
+    "existing 12-game regression suite not run here (only link/HTTP/console load check)"
+  ],
+  "evidence_paths": [
+    "artifacts/g027-qa14/engine-save.qa.test.mjs",
+    "artifacts/g027-qa14/engine-save.run1.log",
+    "artifacts/g027-qa14/browser.qa.mjs",
+    "artifacts/g027-qa14/browser-gate.py",
+    "artifacts/g027-qa14/run-desktop-3.log",
+    "artifacts/g027-qa14/run-mobile-chromium-2.log",
+    "artifacts/g027-qa14/run-mobile-webkit-1.log",
+    "artifacts/g027-qa14/browser/desktop-chromium/results.json",
+    "artifacts/g027-qa14/browser/mobile-chromium/results.json",
+    "artifacts/g027-qa14/browser/mobile-webkit/results.json",
+    "artifacts/g027-qa14/browser/*/screens/",
+    "artifacts/g027-qa14/input-hashes.json"
+  ],
+  "server": { "command": "node artifacts/g027-build/src/server/index.js --host 127.0.0.1 --port 3173", "pid_stopped": 24496, "connection_refused_after_stop": true, "other_ports_touched": false }
+}

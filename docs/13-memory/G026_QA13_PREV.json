@@ -1,0 +1,880 @@
+{
+  "task_id": "G026-QA13",
+  "status": "FAIL",
+  "game": "13 / 간식 짝꿍 / snack-pairs",
+  "language": "ko-KR",
+  "independent_of_builder": true,
+  "completed_at": "2026-10-30T01:40:17.235514+09:00",
+  "summary": "동결 게임13의 독립 실제 실행을 완료했습니다. 정상 모바일 trusted touch가 Chromium/WebKit 양쪽에서 차단되어 수용 FAIL입니다. 마우스 양 모드 완주·엔진/저장 경계·레이아웃 검증은 통과했으나 WebKit reload 구간의 무필터 CSP 진단도 실패했습니다. 제품 수정·배포는 하지 않았습니다.",
+  "source_hashes": [
+    {
+      "path": "public/games/13-memory/assets/apple.svg",
+      "sha256": "9cb9488b568c399e0e6665f08bd0045c9ea35e5076f268dace13e8668f7fb42c",
+      "bytes": 387,
+      "freeze_match": true,
+      "qa_build_sha256": "9cb9488b568c399e0e6665f08bd0045c9ea35e5076f268dace13e8668f7fb42c",
+      "final_build_sha256": "9cb9488b568c399e0e6665f08bd0045c9ea35e5076f268dace13e8668f7fb42c"
+    },
+    {
+      "path": "public/games/13-memory/assets/back-cream.svg",
+      "sha256": "57314c44ecb3cb39703bc51e64ea691d528283e81aa0d6528a052e7e7816f397",
+      "bytes": 336,
+      "freeze_match": true,
+      "qa_build_sha256": "57314c44ecb3cb39703bc51e64ea691d528283e81aa0d6528a052e7e7816f397",
+      "final_build_sha256": "57314c44ecb3cb39703bc51e64ea691d528283e81aa0d6528a052e7e7816f397"
+    },
+    {
+      "path": "public/games/13-memory/assets/back-evening.svg",
+      "sha256": "6681eb22d8eb26036738db944668ddaea03e003c1dfda3e418dad092093416be",
+      "bytes": 356,
+      "freeze_match": true,
+      "qa_build_sha256": "6681eb22d8eb26036738db944668ddaea03e003c1dfda3e418dad092093416be",
+      "final_build_sha256": "6681eb22d8eb26036738db944668ddaea03e003c1dfda3e418dad092093416be"
+    },
+    {
+      "path": "public/games/13-memory/assets/back-meadow.svg",
+      "sha256": "864e3e00fbcbf95db7a9ba9ad5d79853d67a4102eee0f9a3cade8853b0292068",
+      "bytes": 319,
+      "freeze_match": true,
+      "qa_build_sha256": "864e3e00fbcbf95db7a9ba9ad5d79853d67a4102eee0f9a3cade8853b0292068",
+      "final_build_sha256": "864e3e00fbcbf95db7a9ba9ad5d79853d67a4102eee0f9a3cade8853b0292068"
+    },
+    {
+      "path": "public/games/13-memory/assets/berry.svg",
+      "sha256": "f6bd4501672787d3ecdd8426c0e17ae466a9624e2fdf0bc98cd91dc15d5b2ae9",
+      "bytes": 428,
+      "freeze_match": true,
+      "qa_build_sha256": "f6bd4501672787d3ecdd8426c0e17ae466a9624e2fdf0bc98cd91dc15d5b2ae9",
+      "final_build_sha256": "f6bd4501672787d3ecdd8426c0e17ae466a9624e2fdf0bc98cd91dc15d5b2ae9"
+    },
+    {
+      "path": "public/games/13-memory/assets/bread.svg",
+      "sha256": "3259cc5cbe1b2469e1613e15fe954080a2f05e21e0c03b3fa3bd622b5ca9cfe7",
+      "bytes": 345,
+      "freeze_match": true,
+      "qa_build_sha256": "3259cc5cbe1b2469e1613e15fe954080a2f05e21e0c03b3fa3bd622b5ca9cfe7",
+      "final_build_sha256": "3259cc5cbe1b2469e1613e15fe954080a2f05e21e0c03b3fa3bd622b5ca9cfe7"
+    },
+    {
+      "path": "public/games/13-memory/assets/candy.svg",
+      "sha256": "502095639e34d9e79335b5f51b4a2e66ca9b3b7fc7b634fbb224ab70a6078f3e",
+      "bytes": 379,
+      "freeze_match": true,
+      "qa_build_sha256": "502095639e34d9e79335b5f51b4a2e66ca9b3b7fc7b634fbb224ab70a6078f3e",
+      "final_build_sha256": "502095639e34d9e79335b5f51b4a2e66ca9b3b7fc7b634fbb224ab70a6078f3e"
+    },
+    {
+      "path": "public/games/13-memory/assets/cherry.svg",
+      "sha256": "b3666bb8017b9d887a6c44981b07fff91a4197dae375c3e859ee16d8d0c25353",
+      "bytes": 482,
+      "freeze_match": true,
+      "qa_build_sha256": "b3666bb8017b9d887a6c44981b07fff91a4197dae375c3e859ee16d8d0c25353",
+      "final_build_sha256": "b3666bb8017b9d887a6c44981b07fff91a4197dae375c3e859ee16d8d0c25353"
+    },
+    {
+      "path": "public/games/13-memory/assets/cookie.svg",
+      "sha256": "3dd1aadc360b8c179c9931ceef5ecd2c3004bae8e10b0637701759b99c84016b",
+      "bytes": 484,
+      "freeze_match": true,
+      "qa_build_sha256": "3dd1aadc360b8c179c9931ceef5ecd2c3004bae8e10b0637701759b99c84016b",
+      "final_build_sha256": "3dd1aadc360b8c179c9931ceef5ecd2c3004bae8e10b0637701759b99c84016b"
+    },
+    {
+      "path": "public/games/13-memory/assets/manifest.json",
+      "sha256": "0b24ada073b686c94b468a13bacdbd541283bee8a8e9f68498bbd205e01e13c9",
+      "bytes": 1974,
+      "freeze_match": true,
+      "qa_build_sha256": "0b24ada073b686c94b468a13bacdbd541283bee8a8e9f68498bbd205e01e13c9",
+      "final_build_sha256": "0b24ada073b686c94b468a13bacdbd541283bee8a8e9f68498bbd205e01e13c9"
+    },
+    {
+      "path": "public/games/13-memory/assets/orange.svg",
+      "sha256": "0ec256ddd464783a5919a786376d045b985e3eb135a1609a569ec5f5b43d0da9",
+      "bytes": 423,
+      "freeze_match": true,
+      "qa_build_sha256": "0ec256ddd464783a5919a786376d045b985e3eb135a1609a569ec5f5b43d0da9",
+      "final_build_sha256": "0ec256ddd464783a5919a786376d045b985e3eb135a1609a569ec5f5b43d0da9"
+    },
+    {
+      "path": "public/games/13-memory/assets/pear.svg",
+      "sha256": "4ebd746f2c03ad850a68bd4670aef081042806be72733eca8744d2c994980f1c",
+      "bytes": 380,
+      "freeze_match": true,
+      "qa_build_sha256": "4ebd746f2c03ad850a68bd4670aef081042806be72733eca8744d2c994980f1c",
+      "final_build_sha256": "4ebd746f2c03ad850a68bd4670aef081042806be72733eca8744d2c994980f1c"
+    },
+    {
+      "path": "public/games/13-memory/engine.mjs",
+      "sha256": "3b8c3025af2205daa06ad760d8be2e05b6a5e178bf92b83cd15c1b1dbcd990a9",
+      "bytes": 4149,
+      "freeze_match": true,
+      "qa_build_sha256": "3b8c3025af2205daa06ad760d8be2e05b6a5e178bf92b83cd15c1b1dbcd990a9",
+      "final_build_sha256": "3b8c3025af2205daa06ad760d8be2e05b6a5e178bf92b83cd15c1b1dbcd990a9"
+    },
+    {
+      "path": "public/games/13-memory/index.html",
+      "sha256": "c66725b71bea8d4dcc34b8fb2670d98d13a95dbb93746018d63496bea28b0cbe",
+      "bytes": 2744,
+      "freeze_match": true,
+      "qa_build_sha256": "c66725b71bea8d4dcc34b8fb2670d98d13a95dbb93746018d63496bea28b0cbe",
+      "final_build_sha256": "c66725b71bea8d4dcc34b8fb2670d98d13a95dbb93746018d63496bea28b0cbe"
+    },
+    {
+      "path": "public/games/13-memory/main.mjs",
+      "sha256": "bc34646ef3d0cc56d43ce95e98df6239e416e888fd5d4526a30d12a93627e5e4",
+      "bytes": 16246,
+      "freeze_match": true,
+      "qa_build_sha256": "bc34646ef3d0cc56d43ce95e98df6239e416e888fd5d4526a30d12a93627e5e4",
+      "final_build_sha256": "bc34646ef3d0cc56d43ce95e98df6239e416e888fd5d4526a30d12a93627e5e4"
+    },
+    {
+      "path": "public/games/13-memory/save.mjs",
+      "sha256": "869963fe5ee9ac48a28bebea7a131270b1f8ede5531d3111ce9a3213ac1da3f7",
+      "bytes": 4392,
+      "freeze_match": true,
+      "qa_build_sha256": "869963fe5ee9ac48a28bebea7a131270b1f8ede5531d3111ce9a3213ac1da3f7",
+      "final_build_sha256": "869963fe5ee9ac48a28bebea7a131270b1f8ede5531d3111ce9a3213ac1da3f7"
+    },
+    {
+      "path": "public/games/13-memory/styles.css",
+      "sha256": "b199889b0ef03386b2136f9c61893ac18eaa266e3cbb1b5ffee570f270a2bf11",
+      "bytes": 3696,
+      "freeze_match": true,
+      "qa_build_sha256": "b199889b0ef03386b2136f9c61893ac18eaa266e3cbb1b5ffee570f270a2bf11",
+      "final_build_sha256": "b199889b0ef03386b2136f9c61893ac18eaa266e3cbb1b5ffee570f270a2bf11"
+    },
+    {
+      "path": "tests/games/13-memory.test.mjs",
+      "sha256": "c12831cf5a363ec3bb25e736fcd8f845cc7cb681279bd97248f539eb179e949e",
+      "bytes": 13421,
+      "freeze_match": true
+    }
+  ],
+  "build_binding": {
+    "physical_root": "E:\\Work2\\Project\\SimpleGames\\worktrees\\g026-fourteen-game-release",
+    "branch": "feature/g026-fourteen-game-release",
+    "head": "5e7eb28e87fb14f3c0725aad1f420370c76736bf",
+    "freeze_manifest": "artifacts/g026-pm/game-freeze.json",
+    "freeze_manifest_sha256": "378c3cd161c0ce87fab11e064b8ecb02b7bcdc86d59944da6eac59499c7fa4cb",
+    "tested_build": "artifacts/g026-qa-build",
+    "public_root": "E:\\Work2\\Project\\SimpleGames\\worktrees\\g026-fourteen-game-release\\artifacts\\g026-qa-build\\public",
+    "server_module": "artifacts/g026-qa-build/src/server/index.js",
+    "server_sha256": "436120b4672a190bc80a13f518e07e6207741c5a7f8adb35a76b99d8ab0b168e",
+    "server": {
+      "host": "127.0.0.1",
+      "port": 3165,
+      "publicRoot": "/E:/Work2/Project/SimpleGames/worktrees/g026-fourteen-game-release/artifacts/g026-qa-build/public/",
+      "preProbe": "ECONNREFUSED",
+      "pid": 812,
+      "address": {
+        "address": "127.0.0.1",
+        "family": "IPv4",
+        "port": 3165
+      },
+      "postProbe": "ECONNREFUSED"
+    },
+    "browser_server_owner": "QA13 child only, finally closed; pre/post ECONNREFUSED in both actual runs",
+    "browser_gate": "Local\\SimpleGamesG026BrowserGate; exact HANDLE/DWORD ctypes signatures, infinite blockingWait, finally ReleaseMutex/CloseHandle; no global kill",
+    "pre_post_hash_checks": "18 source inputs (17 game files + existing dedicated unit) match freeze before/after every execution; QA build17 and final build17 all byte-identical. Full hashes in listed evidence.",
+    "final_shared_build_manifest": {
+      "path": "artifacts/g026-build/g026-build-manifest.json",
+      "sha256": "2c4238142c63cc507f3efa5f8e6445f4cd092d335818eda43025aee7898ea648",
+      "buildId": "d3bed4e1-c76c-4d89-8536-24fda9c71a71",
+      "note": "User-suggested .g026-manifest.json absent; actual runner finish-verify.mjs:14 names g026-build-manifest.json"
+    },
+    "runtime_http_binding": {
+      "actual_fetches": 16,
+      "sha_headers_pass": true,
+      "metadata_exception": "assets/manifest.json is non-browser provenance metadata; static server MIME intentionally excludes JSON. Initial broad17-file HTTP assertion produced preserved harness FAIL; all16 browser-loadable files independently checked in deep with no source/server change."
+    }
+  },
+  "environment": {
+    "node": "v24.16.0",
+    "node_executable": "C:/Program Files/nodejs/node.exe",
+    "typescript": "7.0.2",
+    "playwright": "1.64.1",
+    "installed_or_updated_packages": false,
+    "browsers": [
+      {
+        "engine": "Chromium",
+        "viewport": "1366x900",
+        "input": "trusted native mouse80ms + keyboard"
+      },
+      {
+        "engine": "Chromium",
+        "viewport": "320x667",
+        "input": "trusted touchscreen.tap FAIL; separate mouse path tests"
+      },
+      {
+        "engine": "WebKit",
+        "viewport": "320x667",
+        "input": "trusted touchscreen.tap FAIL; separate mouse path tests"
+      },
+      {
+        "viewport": "320x480",
+        "engines": "all3",
+        "input": "short theme dialog geometry/reducedmotion"
+      }
+    ]
+  },
+  "commands": [
+    {
+      "command": [
+        "C:/Program Files/nodejs/node.exe",
+        "--test",
+        "--test-reporter=tap",
+        "tests/games/13-memory.test.mjs"
+      ],
+      "cwd": "E:\\Work2\\Project\\SimpleGames\\worktrees\\g026-fourteen-game-release",
+      "started": "2026-10-30T01:14:57.460467+09:00",
+      "pid": 26496,
+      "exit_code": 0,
+      "finished": "2026-10-30T01:14:57.622445+09:00",
+      "stdout_path": "artifacts/g026-qa13/run-dbb20cea/original-unit-stdout.txt",
+      "stderr_path": "artifacts/g026-qa13/run-dbb20cea/original-unit-stderr.txt"
+    },
+    {
+      "command": [
+        "C:/Program Files/nodejs/node.exe",
+        "--test",
+        "--test-reporter=tap",
+        "artifacts/g026-qa13/independent.test.mjs"
+      ],
+      "cwd": "E:\\Work2\\Project\\SimpleGames\\worktrees\\g026-fourteen-game-release",
+      "started": "2026-10-30T01:14:58.308357+09:00",
+      "pid": 23724,
+      "exit_code": 0,
+      "finished": "2026-10-30T01:14:58.460585+09:00",
+      "stdout_path": "artifacts/g026-qa13/run-dbb20cea/independent-unit-stdout.txt",
+      "stderr_path": "artifacts/g026-qa13/run-dbb20cea/independent-unit-stderr.txt"
+    },
+    {
+      "command": [
+        "C:/Program Files/nodejs/node.exe",
+        "artifacts/g026-qa13/browser.mjs",
+        "smoke",
+        "E:\\Work2\\Project\\SimpleGames\\worktrees\\g026-fourteen-game-release\\artifacts\\g026-qa13\\run-dbb20cea"
+      ],
+      "cwd": "E:\\Work2\\Project\\SimpleGames\\worktrees\\g026-fourteen-game-release",
+      "started": "2026-10-30T01:18:48.608675+09:00",
+      "mutex_wait_result": 0,
+      "pid": 29904,
+      "exit_code": 1,
+      "mutex_released": true,
+      "mutex_closed": true,
+      "finished": "2026-10-30T01:18:48.660380+09:00",
+      "stdout_path": "artifacts/g026-qa13/run-dbb20cea/smoke-stdout.txt",
+      "stderr_path": "artifacts/g026-qa13/run-dbb20cea/smoke-stderr.txt"
+    },
+    {
+      "command": [
+        "C:/Program Files/nodejs/node.exe",
+        "artifacts/g026-qa13/browser.mjs",
+        "smoke2",
+        "E:\\Work2\\Project\\SimpleGames\\worktrees\\g026-fourteen-game-release\\artifacts\\g026-qa13\\run-dbb20cea"
+      ],
+      "cwd": "E:\\Work2\\Project\\SimpleGames\\worktrees\\g026-fourteen-game-release",
+      "started": "2026-10-30T01:19:57.553843+09:00",
+      "mutex_wait_result": 0,
+      "pid": 30792,
+      "exit_code": 1,
+      "mutex_released": true,
+      "mutex_closed": true,
+      "finished": "2026-10-30T01:20:52.793791+09:00",
+      "stdout_path": "artifacts/g026-qa13/run-dbb20cea/smoke2-stdout.txt",
+      "stderr_path": "artifacts/g026-qa13/run-dbb20cea/smoke2-stderr.txt"
+    },
+    {
+      "command": [
+        "C:/Program Files/nodejs/node.exe",
+        "artifacts/g026-qa13/browser.mjs",
+        "deep",
+        "E:\\Work2\\Project\\SimpleGames\\worktrees\\g026-fourteen-game-release\\artifacts\\g026-qa13\\run-dbb20cea"
+      ],
+      "cwd": "E:\\Work2\\Project\\SimpleGames\\worktrees\\g026-fourteen-game-release",
+      "started": "2026-10-30T01:22:48.211629+09:00",
+      "qa_harness_hashes": {
+        "runner.py": "4b1427ef7e87e92127b29181d223eed6fe7d7c70e4cd0c379de417ccf4b7996b",
+        "browser.mjs": "67b36a3ad7f0388d9176ddad8347fa243c64b402aa1410243618ecf8b32f9944",
+        "independent.test.mjs": "4a161102488b607b54372340288474d0b9a7ca561477ae78143b18810c539dc7"
+      },
+      "mutex_wait_result": 0,
+      "pid": 812,
+      "exit_code": 1,
+      "mutex_released": true,
+      "mutex_closed": true,
+      "finished": "2026-10-30T01:33:00.278822+09:00",
+      "stdout_path": "artifacts/g026-qa13/run-dbb20cea/deep-stdout.txt",
+      "stderr_path": "artifacts/g026-qa13/run-dbb20cea/deep-stderr.txt"
+    },
+    {
+      "command": [
+        "python",
+        "artifacts/g026-qa13/art-audit.py"
+      ],
+      "exit_code": 0,
+      "stdout_and_raw": "artifacts/g026-qa13/run-dbb20cea/independent-art-audit.json"
+    },
+    {
+      "command": [
+        "python",
+        "artifacts/g026-qa13/shared-review.py"
+      ],
+      "exit_code": 0,
+      "stdout_and_raw": "artifacts/g026-qa13/run-dbb20cea/shared-static-raw.json",
+      "diffs": "artifacts/g026-qa13/run-dbb20cea/shared-*.diff.txt"
+    },
+    {
+      "command": [
+        "python",
+        "artifacts/g026-qa13/shared-review-finalize.py"
+      ],
+      "exit_code": 0,
+      "stdout_path": "artifacts/g026-qa13/run-dbb20cea/shared-finalize-stdout.json",
+      "no_browser_reexecution": true
+    }
+  ],
+  "executed_counts": {
+    "unit_suites": [
+      {
+        "suite": "original-unit",
+        "actual_executed": 30,
+        "pass": 30,
+        "fail": 0,
+        "skip": 0,
+        "pending": 0,
+        "cancelled": 0
+      },
+      {
+        "suite": "independent-unit",
+        "actual_executed": 20,
+        "pass": 20,
+        "fail": 0,
+        "skip": 0,
+        "pending": 0,
+        "cancelled": 0
+      }
+    ],
+    "unit_total": {
+      "actual_executed": 50,
+      "pass": 50,
+      "fail": 0,
+      "skip": 0,
+      "pending": 0
+    },
+    "browser_checkpoints_raw": {
+      "actual_executed": 84,
+      "pass": 80,
+      "fail": 4,
+      "skip": 0,
+      "pending": 0
+    },
+    "browser_runs": [
+      {
+        "name": "smoke2",
+        "actual": {
+          "executed": 13,
+          "pass": 10,
+          "fail": 3,
+          "skip": 0,
+          "pending": 0
+        },
+        "exit_code": 1
+      },
+      {
+        "name": "deep",
+        "actual": {
+          "executed": 71,
+          "pass": 70,
+          "fail": 1,
+          "skip": 0,
+          "pending": 0
+        },
+        "exit_code": 1
+      }
+    ],
+    "raw_fail_classification": {
+      "confirmed_product_touch_checkpoints": 2,
+      "unclassified_webkit_csp_diagnostic_checkpoints": 1,
+      "harness_metadata_http_scope_checkpoints": 1
+    },
+    "initial_harness_parse_failure": {
+      "exit_code": 1,
+      "product_checkpoints_executed": 0,
+      "evidence": "smoke-stderr.txt + harness-before-syntax-fix.mjs; a missing fixture object brace was corrected once, original failure retained"
+    },
+    "independent_static_svg_audit": {
+      "assets_executed": 11,
+      "pass": 11,
+      "fail": 0
+    },
+    "automated_UI_completions": {
+      "total": 14,
+      "details": [
+        {
+          "context": "chromium-desktop",
+          "mode": "normal",
+          "attempts": 8,
+          "phase": "success"
+        },
+        {
+          "context": "chromium-desktop",
+          "mode": "easy",
+          "attempts": 6,
+          "phase": "success"
+        },
+        {
+          "context": "chromium-mobile-mouse-only",
+          "mode": "normal",
+          "attempts": 8,
+          "phase": "success"
+        },
+        {
+          "context": "chromium-mobile-mouse-only",
+          "mode": "easy",
+          "attempts": 6,
+          "phase": "success"
+        },
+        {
+          "context": "webkit-mobile-mouse-only",
+          "mode": "normal",
+          "attempts": 8,
+          "phase": "success"
+        },
+        {
+          "context": "webkit-mobile-mouse-only",
+          "mode": "easy",
+          "attempts": 6,
+          "phase": "success"
+        },
+        {
+          "context": "chromium-fault",
+          "case": "storage getter exception full UI completion",
+          "mode": "normal",
+          "phase": "success"
+        },
+        {
+          "context": "chromium-fault",
+          "case": "storage read exception full UI completion",
+          "mode": "normal",
+          "phase": "success"
+        },
+        {
+          "context": "chromium-fault",
+          "case": "storage write exception full UI completion",
+          "mode": "normal",
+          "phase": "success"
+        },
+        {
+          "context": "chromium-fault",
+          "case": "malformed JSON recovery",
+          "mode": "normal",
+          "phase": "success"
+        },
+        {
+          "context": "chromium-fault",
+          "case": "invalid version recovery",
+          "mode": "normal",
+          "phase": "success"
+        },
+        {
+          "context": "chromium-fault",
+          "case": "cross-field partial mode + settings field recovery",
+          "mode": "easy",
+          "phase": "success"
+        },
+        {
+          "context": "chromium-fault",
+          "case": "AudioContext missing harmless",
+          "mode": "normal",
+          "phase": "success"
+        },
+        {
+          "context": "chromium-fault",
+          "case": "AudioContext throwing harmless",
+          "mode": "normal",
+          "phase": "success"
+        }
+      ],
+      "interpretation": "Read-only hidden-ID oracle + normal mouse clicks, no live setter; NOT human memory/timing or successful mobile touchscreen completion."
+    },
+    "reused_not_counted": {
+      "integrator_smoke_executed": 18,
+      "integrator_smoke_passed": 18,
+      "httpResponses": 119,
+      "qa13_independent_reexecution_of_this_shared_smoke": 0
+    },
+    "count_definition": "Unit test cases, browser checkpoints, static asset audits and reused evidence are distinct; not added into one misleading total. pending0 means no pending harness checkpoint, not manual acceptance."
+  },
+  "findings": [
+    {
+      "id": "G026-QA13-001",
+      "severity": "High",
+      "classification": "confirmed product functional defect",
+      "acceptance_blocker": true,
+      "title": "정상 단일 모바일 터치가 implicit lostpointercapture 때문에 차단됩니다",
+      "source": "public/games/13-memory/main.mjs:176,178-180",
+      "sha256": "bc34646ef3d0cc56d43ce95e98df6239e416e888fd5d4526a30d12a93627e5e4",
+      "repro": "mouse80ms Start -> visible card0 center touchscreen.tap once. Both engine event sequences are trusted down/gotcapture/up/lostcapture/click; no cancel/move/scroll/secondary. after remains unrevealed, firstFlipStarted=false.",
+      "observed_browsers": [
+        "Chromium mobile320x667",
+        "WebKit mobile320x667"
+      ],
+      "expected": "card opens and first-flip clock starts",
+      "actual": "card remains closed; clock0; phaseplaying",
+      "diagnosis": "178 unconditionally marks even normal post-pointerup implicit capture release as cancelled; 180 then blocks trusted click. Synthetic cancel PASS is not normal touch acceptance.",
+      "evidence": "artifacts/g026-qa13/FINDING-001.md; smoke2-raw.json contexts.touchEvidence",
+      "action": "Return to original builder; no QA production fix. New frozen bytes require independent revalidation. Same path was not retried after failure in two engines."
+    },
+    {
+      "id": "G026-QA13-002",
+      "severity": "Medium",
+      "classification": "unclassified strict-CSP diagnostic failure",
+      "acceptance_blocker": true,
+      "title": "WebKit meadow 저장 후 reload 구간에서 back-meadow.svg connect-src 위반",
+      "source": "Observed resource assets/back-meadow.svg:1, image assignment main.mjs:74; root cause line NOT established",
+      "observed": {
+        "console_error": 28,
+        "csp_violation": 14,
+        "requestfailed": 14,
+        "external": 0
+      },
+      "diagnosis": "7 documentTokens each have2 CSP violations during later reload fixtures. Product has no fetch/connect for this SVG. WebKit screenshots were never called, so known screenshotter inline-style cause is NOT assumed. Product/browser/harness attribution unresolved; original failure kept, no CSP relaxation/filter/retry.",
+      "evidence": "artifacts/g026-qa13/FINDING-002.md; deep-raw.json contexts[webkit-mobile-mouse-only]",
+      "action": "Separate WebKit reload/cache/tool interaction investigation required; do not claim unfiltered console/CSP0."
+    }
+  ],
+  "verified_coverage": [
+    "Independent20 unit cases + actual reexecution original30, no builder PASS substitution: exact6/8pairs, bounded deterministic shuffle, invalid/throw RNG atomic, malicious primitive/coercion index/dt identity/noops, no3rd, firstflip-only time.",
+    "Exact800=799+1 via valid<=250ms pure steps; paused311ms preserves489ms remainder. Pure state cap fixtures verify999999 attempts,86400000ms limit and final-success priority, lexicographic fewer-attempts then time, exact ties, completioncap still improving.",
+    "Actual HTTP/native-clock all3 contexts: both modes trusted mouse80ms completion, one synchronous settlement, records reload, matched border/check/text; theme preview cancel/apply write counts, mode abandonment confirm/cancel, home/restart cancellation.",
+    "Actual mismatch pause hides faces, excludes paused wall time, restores open cards/remaining delay, old restart callback cannot close new-round first card; native long-gap310ms protection before time advance.",
+    "Modal blur protection precedence/no auto-resume; focus actual trigger at close, nextRAF and250ms; Tab/ShiftTab cycle, Escape cancel; explicit resume does not steal later board focus. Native Enter repeats and Space controls tested.",
+    "Synthetic primary/cancel/lostcapture/>8px/scroll/second pointer outside board rejection with subsequent trusted mouse recovery, exact8px acceptance; clearly separate from failed trusted normal touch.",
+    "Browser fault fixtures independently getter/getItem/setItem throw each complete UI in memory with persistent warning; corrupt JSON/version and per-mode/settings crossfield recovery; AudioContext absent and throwing both harmless.",
+    "12 unrelated game keys + library favorites original sentinel bytes preserved through settings and completions. Fixture bytes deliberately identify preservation, not claim old-game behavior testing.",
+    "1366x900 and320x667 ready/result geometry,320x480 scrolling dialog,>=44px targets/no page overflow/no child clipping; reducedmotion media active. Chromium PNGs viewed directly:8 distinguishable snack drawings/Korean labels/checks; WebKit geometry only.",
+    "All16 browser-loadable runtime responses exactly frozen SHA + strictCSP/nosniff; no external requests. Chromium all diagnostics0; early WebKit smoke diagnostics0; later WebKit reload diagnostic FAILED as separate finding."
+  ],
+  "telemetry": [
+    {
+      "context": "chromium-desktop",
+      "trusted_mouse_holds_observed": 85,
+      "minimum_hold_ms": 80.7999999821186,
+      "console": 0,
+      "csp": 0,
+      "requestfailed": 0,
+      "responses": 81,
+      "external": 0
+    },
+    {
+      "context": "chromium-mobile-mouse-only",
+      "trusted_mouse_holds_observed": 85,
+      "minimum_hold_ms": 80.5,
+      "console": 0,
+      "csp": 0,
+      "requestfailed": 0,
+      "responses": 82,
+      "external": 0
+    },
+    {
+      "context": "webkit-mobile-mouse-only",
+      "trusted_mouse_holds_observed": 85,
+      "minimum_hold_ms": 81,
+      "console": 28,
+      "csp": 14,
+      "requestfailed": 14,
+      "responses": 84,
+      "external": 0
+    },
+    {
+      "context": "storage getter exception full UI completion",
+      "trusted_mouse_holds_observed": 17,
+      "minimum_hold_ms": 81.5,
+      "console": 0,
+      "csp": 0,
+      "requestfailed": 0,
+      "responses": 14,
+      "external": 0
+    },
+    {
+      "context": "storage read exception full UI completion",
+      "trusted_mouse_holds_observed": 17,
+      "minimum_hold_ms": 81.5,
+      "console": 0,
+      "csp": 0,
+      "requestfailed": 0,
+      "responses": 14,
+      "external": 0
+    },
+    {
+      "context": "storage write exception full UI completion",
+      "trusted_mouse_holds_observed": 17,
+      "minimum_hold_ms": 83.09999999403954,
+      "console": 0,
+      "csp": 0,
+      "requestfailed": 0,
+      "responses": 14,
+      "external": 0
+    },
+    {
+      "context": "malformed JSON recovery",
+      "trusted_mouse_holds_observed": 17,
+      "minimum_hold_ms": 81.40000000596046,
+      "console": 0,
+      "csp": 0,
+      "requestfailed": 0,
+      "responses": 14,
+      "external": 0
+    },
+    {
+      "context": "invalid version recovery",
+      "trusted_mouse_holds_observed": 17,
+      "minimum_hold_ms": 82.09999999403954,
+      "console": 0,
+      "csp": 0,
+      "requestfailed": 0,
+      "responses": 14,
+      "external": 0
+    },
+    {
+      "context": "cross-field partial mode + settings field recovery",
+      "trusted_mouse_holds_observed": 13,
+      "minimum_hold_ms": 81.09999999403954,
+      "console": 0,
+      "csp": 0,
+      "requestfailed": 0,
+      "responses": 12,
+      "external": 0
+    },
+    {
+      "context": "AudioContext missing harmless",
+      "trusted_mouse_holds_observed": 18,
+      "minimum_hold_ms": 81.40000000596046,
+      "console": 0,
+      "csp": 0,
+      "requestfailed": 0,
+      "responses": 14,
+      "external": 0
+    },
+    {
+      "context": "AudioContext throwing harmless",
+      "trusted_mouse_holds_observed": 18,
+      "minimum_hold_ms": 81.0,
+      "console": 0,
+      "csp": 0,
+      "requestfailed": 0,
+      "responses": 14,
+      "external": 0
+    }
+  ],
+  "shared_delta_review": {
+    "status": "PASS_STATIC_REVIEW_ONLY",
+    "browser_executed_for_shared_delta": 0,
+    "catalog": {
+      "before": 41,
+      "after": 43,
+      "available": 14,
+      "upcoming": 29,
+      "old_records_content_and_relative_order_preserved": true,
+      "first12_preserved": true,
+      "new_ids": [
+        "snack-pairs",
+        "star-moon"
+      ]
+    },
+    "package_changed_fields": [
+      "description"
+    ],
+    "manifest": {
+      "path": "artifacts/g026-build/g026-build-manifest.json",
+      "sha256": "2c4238142c63cc507f3efa5f8e6445f4cd092d335818eda43025aee7898ea648",
+      "buildId": "d3bed4e1-c76c-4d89-8536-24fda9c71a71",
+      "note": "User-suggested .g026-manifest.json absent; actual runner finish-verify.mjs:14 names g026-build-manifest.json"
+    },
+    "binding_checks": [
+      {
+        "path": "src/client/library.ts",
+        "sha256": "2d725d658e3c896efd908b693f900156aef869086f1def006826fdf4d33f59fe",
+        "manifest_sha256": "2d725d658e3c896efd908b693f900156aef869086f1def006826fdf4d33f59fe",
+        "match": true
+      },
+      {
+        "path": "package.json",
+        "sha256": "66b80103456e5b53f9dd8686c46628376e3cdb20fe0d147a0e45765109f43971",
+        "manifest_sha256": "66b80103456e5b53f9dd8686c46628376e3cdb20fe0d147a0e45765109f43971",
+        "match": true
+      },
+      {
+        "path": "tests/e2e/g026-new-games.spec.ts",
+        "sha256": "08572166f85e44d5849aca0bf4be747055fa0ac7458cbd3f1ecb6e0c13215481",
+        "manifest_sha256": "08572166f85e44d5849aca0bf4be747055fa0ac7458cbd3f1ecb6e0c13215481",
+        "match": true
+      },
+      {
+        "path": "artifacts/g026-build/public/games/13-memory/assets/apple.svg",
+        "sha256": "9cb9488b568c399e0e6665f08bd0045c9ea35e5076f268dace13e8668f7fb42c",
+        "freeze_sha256": "9cb9488b568c399e0e6665f08bd0045c9ea35e5076f268dace13e8668f7fb42c",
+        "match": true
+      },
+      {
+        "path": "artifacts/g026-build/public/games/13-memory/assets/back-cream.svg",
+        "sha256": "57314c44ecb3cb39703bc51e64ea691d528283e81aa0d6528a052e7e7816f397",
+        "freeze_sha256": "57314c44ecb3cb39703bc51e64ea691d528283e81aa0d6528a052e7e7816f397",
+        "match": true
+      },
+      {
+        "path": "artifacts/g026-build/public/games/13-memory/assets/back-evening.svg",
+        "sha256": "6681eb22d8eb26036738db944668ddaea03e003c1dfda3e418dad092093416be",
+        "freeze_sha256": "6681eb22d8eb26036738db944668ddaea03e003c1dfda3e418dad092093416be",
+        "match": true
+      },
+      {
+        "path": "artifacts/g026-build/public/games/13-memory/assets/back-meadow.svg",
+        "sha256": "864e3e00fbcbf95db7a9ba9ad5d79853d67a4102eee0f9a3cade8853b0292068",
+        "freeze_sha256": "864e3e00fbcbf95db7a9ba9ad5d79853d67a4102eee0f9a3cade8853b0292068",
+        "match": true
+      },
+      {
+        "path": "artifacts/g026-build/public/games/13-memory/assets/berry.svg",
+        "sha256": "f6bd4501672787d3ecdd8426c0e17ae466a9624e2fdf0bc98cd91dc15d5b2ae9",
+        "freeze_sha256": "f6bd4501672787d3ecdd8426c0e17ae466a9624e2fdf0bc98cd91dc15d5b2ae9",
+        "match": true
+      },
+      {
+        "path": "artifacts/g026-build/public/games/13-memory/assets/bread.svg",
+        "sha256": "3259cc5cbe1b2469e1613e15fe954080a2f05e21e0c03b3fa3bd622b5ca9cfe7",
+        "freeze_sha256": "3259cc5cbe1b2469e1613e15fe954080a2f05e21e0c03b3fa3bd622b5ca9cfe7",
+        "match": true
+      },
+      {
+        "path": "artifacts/g026-build/public/games/13-memory/assets/candy.svg",
+        "sha256": "502095639e34d9e79335b5f51b4a2e66ca9b3b7fc7b634fbb224ab70a6078f3e",
+        "freeze_sha256": "502095639e34d9e79335b5f51b4a2e66ca9b3b7fc7b634fbb224ab70a6078f3e",
+        "match": true
+      },
+      {
+        "path": "artifacts/g026-build/public/games/13-memory/assets/cherry.svg",
+        "sha256": "b3666bb8017b9d887a6c44981b07fff91a4197dae375c3e859ee16d8d0c25353",
+        "freeze_sha256": "b3666bb8017b9d887a6c44981b07fff91a4197dae375c3e859ee16d8d0c25353",
+        "match": true
+      },
+      {
+        "path": "artifacts/g026-build/public/games/13-memory/assets/cookie.svg",
+        "sha256": "3dd1aadc360b8c179c9931ceef5ecd2c3004bae8e10b0637701759b99c84016b",
+        "freeze_sha256": "3dd1aadc360b8c179c9931ceef5ecd2c3004bae8e10b0637701759b99c84016b",
+        "match": true
+      },
+      {
+        "path": "artifacts/g026-build/public/games/13-memory/assets/manifest.json",
+        "sha256": "0b24ada073b686c94b468a13bacdbd541283bee8a8e9f68498bbd205e01e13c9",
+        "freeze_sha256": "0b24ada073b686c94b468a13bacdbd541283bee8a8e9f68498bbd205e01e13c9",
+        "match": true
+      },
+      {
+        "path": "artifacts/g026-build/public/games/13-memory/assets/orange.svg",
+        "sha256": "0ec256ddd464783a5919a786376d045b985e3eb135a1609a569ec5f5b43d0da9",
+        "freeze_sha256": "0ec256ddd464783a5919a786376d045b985e3eb135a1609a569ec5f5b43d0da9",
+        "match": true
+      },
+      {
+        "path": "artifacts/g026-build/public/games/13-memory/assets/pear.svg",
+        "sha256": "4ebd746f2c03ad850a68bd4670aef081042806be72733eca8744d2c994980f1c",
+        "freeze_sha256": "4ebd746f2c03ad850a68bd4670aef081042806be72733eca8744d2c994980f1c",
+        "match": true
+      },
+      {
+        "path": "artifacts/g026-build/public/games/13-memory/engine.mjs",
+        "sha256": "3b8c3025af2205daa06ad760d8be2e05b6a5e178bf92b83cd15c1b1dbcd990a9",
+        "freeze_sha256": "3b8c3025af2205daa06ad760d8be2e05b6a5e178bf92b83cd15c1b1dbcd990a9",
+        "match": true
+      },
+      {
+        "path": "artifacts/g026-build/public/games/13-memory/index.html",
+        "sha256": "c66725b71bea8d4dcc34b8fb2670d98d13a95dbb93746018d63496bea28b0cbe",
+        "freeze_sha256": "c66725b71bea8d4dcc34b8fb2670d98d13a95dbb93746018d63496bea28b0cbe",
+        "match": true
+      },
+      {
+        "path": "artifacts/g026-build/public/games/13-memory/main.mjs",
+        "sha256": "bc34646ef3d0cc56d43ce95e98df6239e416e888fd5d4526a30d12a93627e5e4",
+        "freeze_sha256": "bc34646ef3d0cc56d43ce95e98df6239e416e888fd5d4526a30d12a93627e5e4",
+        "match": true
+      },
+      {
+        "path": "artifacts/g026-build/public/games/13-memory/save.mjs",
+        "sha256": "869963fe5ee9ac48a28bebea7a131270b1f8ede5531d3111ce9a3213ac1da3f7",
+        "freeze_sha256": "869963fe5ee9ac48a28bebea7a131270b1f8ede5531d3111ce9a3213ac1da3f7",
+        "match": true
+      },
+      {
+        "path": "artifacts/g026-build/public/games/13-memory/styles.css",
+        "sha256": "b199889b0ef03386b2136f9c61893ac18eaa266e3cbb1b5ffee570f270a2bf11",
+        "freeze_sha256": "b199889b0ef03386b2136f9c61893ac18eaa266e3cbb1b5ffee570f270a2bf11",
+        "match": true
+      }
+    ],
+    "new_spec_diff_command": {
+      "argv": [
+        "git",
+        "diff",
+        "--no-index",
+        "--no-ext-diff",
+        "--unified=3",
+        "--",
+        "E:\\Work2\\Project\\SimpleGames\\worktrees\\g026-fourteen-game-release\\artifacts\\g026-qa13\\run-dbb20cea\\empty-baseline.txt",
+        "tests/e2e/g026-new-games.spec.ts"
+      ],
+      "exit_code": 1,
+      "meaning": "1 means expected new-file difference, not failing test"
+    },
+    "manual_review": {
+      "library.ts": "Two catalog rows and 28-line self-contained SVG branch only; old rows unchanged. Dynamic attributes are hardcoded geometry. No external URL/innerHTML/style injection in new branch. New titles/ids/routes distinct from existing memory-pieces/leisure-line.",
+      "package.json": "Only description changes; no runtime/dependency/script/lock changes in this delta.",
+      "memoryLifecycle": "137..160 uses actual ready/playing/paused state, read-only snapshot, live80ms Locator.click, pause freeze, mute, theme cancel/apply, home cancel timing, explicit resume. No live setter/virtual clock. Correct API. Does NOT test trusted touch, mismatch800, completion, malformed storage, or hold repeat; independent QA supplies separate coverage.",
+      "favorites_catalog": "214..244 exposes via public search/reset/filter/More, checks first12 exact baseline, totals43/14/29, upcoming distinct disabled controls, newroutes and favorites reload/remove/compound filtering. No fixed new-game first12 assumption.",
+      "not_reviewed": "runner/config/14 adapter assigned QA14; PM full regression was not rerun by QA13."
+    },
+    "reused_smoke": {
+      "path": "artifacts/g026-integration/runs/2dc9e6ab/finish-verification.json",
+      "owner": "integrator",
+      "counts": {
+        "executed": 18,
+        "passed": 18,
+        "failed": 0
+      },
+      "httpResponses": 119,
+      "independently_reexecuted_by_qa13": false
+    },
+    "findings": []
+  },
+  "harness_notes": [
+    "First smoke parse SyntaxError (fixture closing brace) prevented any product browser execution; original stderr and source copy retained. --check repeated the same parse error once for diagnosis; one narrow syntax correction, no product change.",
+    "Broad HTTP17 assertion incorrectly included metadata manifest.json; actual server read shows JSON intentionally unserved. Corrected scope is16 browser-loadable files; metadata disk hash remains checked. Raw original HTTP FAIL remains counted.",
+    "smoke2 full-page arrays were appended twice by flush/close; touchEvidence is the direct nonduplicated slice. Derived smoke2-observation-summary deduplicates identical event rows explicitly. deep has documentToken/cursor accounting and exact executed harness hash snapshot. Neither checkpoint result nor source changed.",
+    "One deep case label mentions secondary mouse control, but its assertions exercise exact8px synthetic acceptance; separate right/primary cancellation cases provide rejection evidence. No extra unexecuted assertion is inferred from label.",
+    "No further browser run was started for the shared delta after gameQA; static shared surface only. Existing integrator smoke counts are reused and not added to QA13 totals."
+  ],
+  "unverified_limits": [
+    "Physical Android/iPhone finger hardware input, actual audio listening, OS-native hide/restore and human memory/play duration not performed.",
+    "Mobile normal touchscreen completion is NOT accepted: first normal tap fails in both engines. Mouse automation in mobile viewport does not replace it.",
+    "WebKit PNG visual acceptance not performed to avoid known screenshotter/CSP side effect; DOM geometry only. Later WebKit CSP0 gate also remains failed/unclassified.",
+    "Gesture cancel/move/secondary/scroll adversity was synthetic PointerEvent/Event input; no claim of physical multi-finger gestures or real-world touch scroll acceptance.",
+    "Exact799/800 and24h/attempt caps are pure engine fixture checks, not24h wall-clock play or pixel-exact browser deadline measurement.",
+    "Browser storage/audio fault injection was Chromium desktop; mobile fault exceptions covered by pure API tests only, not separate fault-browser matrices.",
+    "Shared final build static hash binding and relevant delta reviewed only. PM full regression/runner/config/14 adapter not independently executed/reviewed here; gameQA used frozen g026-qa-build. Finalshared byte-equal13 binding does not fix observed defects.",
+    "No main merge, remote push, PM2/3116 changes, package installation, board publication or out-of-scope document changes performed. This is candidateQA, not userLAN release acceptance."
+  ],
+  "evidence_paths": [
+    "docs/G026_QA13.json",
+    "artifacts/g026-qa13/FINDING-001.md",
+    "artifacts/g026-qa13/FINDING-002.md",
+    "artifacts/g026-qa13/run-dbb20cea/evidence-manifest.json",
+    "artifacts/g026-qa13/run-dbb20cea/final-source-binding.json",
+    "artifacts/g026-qa13/run-dbb20cea/smoke2-raw.json",
+    "artifacts/g026-qa13/run-dbb20cea/deep-raw.json",
+    "artifacts/g026-qa13/run-dbb20cea/shared-static-review.json",
+    "artifacts/g026-qa13/run-dbb20cea/independent-art-audit.json"
+  ],
+  "required_next": "원제작자와 PM께 FAIL을 반환합니다. 정상 pointerup 이후 implicit lostcapture 처리를 수정하고 새 동결 후 두 엔진의 trusted touch를 독립 재검증해야 합니다. WebKit reload/CSP 원인은 별도 분리 진단이 필요합니다. 공통 delta 정적검토의 무결함 판정은 게임13 기능 FAIL을 대체하지 않습니다."
+}

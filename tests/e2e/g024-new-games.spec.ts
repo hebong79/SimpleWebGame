@@ -35,8 +35,8 @@ const test = base.extend<{ audit: Audit }>({
 });
 async function home(page: Page) {
   await expect(page).toHaveURL(/\/$/);
-  await expect(page.locator('#catalog-total')).toHaveText('41');
-  await expect(page.locator('#intro-preview')).toHaveText('플레이 가능 12 · 준비 중 29');
+  await expect(page.locator('#catalog-total')).toHaveText('43');
+  await expect(page.locator('#intro-preview')).toHaveText('플레이 가능 14 · 준비 중 29');
 }
 async function launch(page: Page, id: string, route: string, info?: TestInfo) {
   const link = page.locator(`.game-card[data-id="${id}"] a.card-action`);
@@ -131,8 +131,17 @@ test('G024-STORE all eight existing profiles and old upcoming favorites survive 
   // No storage seeds/setters: all records and favorites below come from public controls.
   await page.goto('/'); await favorite(page, 'number-garden');
   await page.locator('#game-search').fill('주사위 소풍'); await favorite(page, 'dice-picnic');
-  await page.goto('/game.html'); await press(page, '#exit-button');
+  await page.goto('/games/01-2048/index.html'); await press(page, '#exit-button');
+  // Observe this home document's native assets before its existing next navigation.
+  const homeAssets = ['06-flappy', '07-dino', '08-doodle'].map(game =>
+    page.waitForResponse(new URL(`/games/${game}/assets/kit.svg`, page.url()).href));
   await press(page, '#result-home');
+  await page.waitForURL('/', { waitUntil: 'load' }); await home(page);
+  for (const response of await Promise.all(homeAssets)) {
+    expect(response.status()).toBe(200); expect(await response.finished()).toBeNull();
+  }
+  await expect.poll(() => page.locator('.card-art use').evaluateAll(nodes => nodes.length === 6 && nodes.every(n => { const box = (n as SVGGraphicsElement).getBBox(); return box.width > 0 && box.height > 0; }))).toBe(true);
+  await expect.poll(() => page.evaluate(() => [...document.images].every(image => image.complete && image.naturalWidth > 0))).toBe(true);
   for (const [route, control] of [
     ['02-snake', '#sound'], ['03-pong', '#mute'], ['04-breakout', '#mute'], ['05-falling-blocks', '#mute'],
     ['06-flappy', '#mute'], ['07-dino', '#mute'], ['08-doodle', '#mute'],

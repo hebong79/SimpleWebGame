@@ -1,6 +1,6 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import { canMove, cloneBoard, createBoard, emptyBoard, isTile, maxTile, move, spawnTile, validateBoard, type Board, type Direction } from '../../src/client/engine.js';
+import { canMove, cloneBoard, createBoard, emptyBoard, isTile, maxTile, move, spawnTile, validateBoard, type Board, type Direction } from '../../public/games/01-2048/engine.js';
 const row = (values: number[]): Board => [values, [0,0,0,0], [0,0,0,0], [0,0,0,0]];
 function sequence(...values: number[]): () => number { let i=0; return () => { assert.ok(i<values.length, 'unexpected RNG call'); return values[i++]; }; }
 test('single merge vectors and score', () => {

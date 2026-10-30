@@ -21,6 +21,7 @@
   },
   "include": [
     "src/**/*.ts",
+    "public/games/01-2048/**/*.ts",
     "tests/unit/**/*.ts"
   ],
   "exclude": [

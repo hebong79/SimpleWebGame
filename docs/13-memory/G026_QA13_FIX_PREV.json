@@ -1,0 +1,661 @@
+{
+  "task_id": "G026-QA13-FIX1",
+  "status": "PASS",
+  "game": "13 / 간식 짝꿍 / snack-pairs",
+  "independent_of_builder": true,
+  "reviewer": "QA13-FIX1 / sa-0-b9167304",
+  "builder": "sa-0-ed42ff77",
+  "language": "ko-KR",
+  "completed_at": "2026-10-29T17:36:50.620353+00:00",
+  "summary": "수정된 터치·pagehide/CSP delta를 새 immutable QA build에서 독립 실제 재검증하여 수용합니다. 수정본17/17 checkpoint와 기존+신규35/35 unit PASS. 원본의 정상 touch2건 및 WebKit reload CSP1건은 negative FAIL로 보존했고 신규5 unit도 원본에서 실패했습니다. 나머지16개 런타임은 원QA와 동일SHA로 결합해 재사용하며 전체14게임/엔진 광범위 중복 검수는 하지 않았습니다.",
+  "acceptance_scope": {
+    "decision": "Game13 FIX1 delta accepted; original findings001/002 closed for this exact candidate only",
+    "not_release_or_deployment_approval": true,
+    "pm_full_regression": "별도 통합 담당자 소관; 본 QA에서 실행하지 않음",
+    "shared_100ms_delta": "별도 독립 PASS(docs/G026_SHARED_DELTA_REVIEW.json)를 재리뷰하지 않음"
+  },
+  "build_binding": {
+    "physical_root": "E:\\Work2\\Project\\SimpleGames\\worktrees\\g026-fourteen-game-release",
+    "branch": "feature/g026-fourteen-game-release",
+    "head": "5e7eb28e87fb14f3c0725aad1f420370c76736bf",
+    "tested_build": "artifacts/g026-qa-build-fix1",
+    "public_root": "E:\\Work2\\Project\\SimpleGames\\worktrees\\g026-fourteen-game-release\\artifacts\\g026-qa-build-fix1\\public",
+    "main_sha256": "3c143220f2b4a343856cb6b69f653470830d5757bb486e63ab2efb746f08633b",
+    "unit_sha256": "8da6e5df0c3ea0516e52130624d15c2479cd0d91df09dd25976d8ba12741ceda",
+    "original_main_sha256": "bc34646ef3d0cc56d43ce95e98df6239e416e888fd5d4526a30d12a93627e5e4",
+    "server_module": "artifacts/g026-qa-build-fix1/src/server/index.js",
+    "server_sha256": "436120b4672a190bc80a13f518e07e6207741c5a7f8adb35a76b99d8ab0b168e",
+    "runtime_count": 17,
+    "source_build_match_count": 17,
+    "source_plus_unit_bound_inputs": 18,
+    "unit_cases_executed": 35,
+    "http_exact_bound_browser_loadable_count": 16,
+    "metadata_exception": "assets/manifest.json is disk-bound provenance JSON, not served by the unchanged MIME server.",
+    "before": "artifacts/g026-qa13/fix1/run-521116bc/binding-before.json",
+    "after": "artifacts/g026-qa13/fix1/run-521116bc/binding-after.json",
+    "final_immutable_readback": true,
+    "source_rows": [
+      {
+        "path": "public/games/13-memory/assets/apple.svg",
+        "source_sha256": "9cb9488b568c399e0e6665f08bd0045c9ea35e5076f268dace13e8668f7fb42c",
+        "old_qa_sha256": "9cb9488b568c399e0e6665f08bd0045c9ea35e5076f268dace13e8668f7fb42c",
+        "unchanged": true,
+        "build_sha256": "9cb9488b568c399e0e6665f08bd0045c9ea35e5076f268dace13e8668f7fb42c",
+        "build_match": true
+      },
+      {
+        "path": "public/games/13-memory/assets/back-cream.svg",
+        "source_sha256": "57314c44ecb3cb39703bc51e64ea691d528283e81aa0d6528a052e7e7816f397",
+        "old_qa_sha256": "57314c44ecb3cb39703bc51e64ea691d528283e81aa0d6528a052e7e7816f397",
+        "unchanged": true,
+        "build_sha256": "57314c44ecb3cb39703bc51e64ea691d528283e81aa0d6528a052e7e7816f397",
+        "build_match": true
+      },
+      {
+        "path": "public/games/13-memory/assets/back-evening.svg",
+        "source_sha256": "6681eb22d8eb26036738db944668ddaea03e003c1dfda3e418dad092093416be",
+        "old_qa_sha256": "6681eb22d8eb26036738db944668ddaea03e003c1dfda3e418dad092093416be",
+        "unchanged": true,
+        "build_sha256": "6681eb22d8eb26036738db944668ddaea03e003c1dfda3e418dad092093416be",
+        "build_match": true
+      },
+      {
+        "path": "public/games/13-memory/assets/back-meadow.svg",
+        "source_sha256": "864e3e00fbcbf95db7a9ba9ad5d79853d67a4102eee0f9a3cade8853b0292068",
+        "old_qa_sha256": "864e3e00fbcbf95db7a9ba9ad5d79853d67a4102eee0f9a3cade8853b0292068",
+        "unchanged": true,
+        "build_sha256": "864e3e00fbcbf95db7a9ba9ad5d79853d67a4102eee0f9a3cade8853b0292068",
+        "build_match": true
+      },
+      {
+        "path": "public/games/13-memory/assets/berry.svg",
+        "source_sha256": "f6bd4501672787d3ecdd8426c0e17ae466a9624e2fdf0bc98cd91dc15d5b2ae9",
+        "old_qa_sha256": "f6bd4501672787d3ecdd8426c0e17ae466a9624e2fdf0bc98cd91dc15d5b2ae9",
+        "unchanged": true,
+        "build_sha256": "f6bd4501672787d3ecdd8426c0e17ae466a9624e2fdf0bc98cd91dc15d5b2ae9",
+        "build_match": true
+      },
+      {
+        "path": "public/games/13-memory/assets/bread.svg",
+        "source_sha256": "3259cc5cbe1b2469e1613e15fe954080a2f05e21e0c03b3fa3bd622b5ca9cfe7",
+        "old_qa_sha256": "3259cc5cbe1b2469e1613e15fe954080a2f05e21e0c03b3fa3bd622b5ca9cfe7",
+        "unchanged": true,
+        "build_sha256": "3259cc5cbe1b2469e1613e15fe954080a2f05e21e0c03b3fa3bd622b5ca9cfe7",
+        "build_match": true
+      },
+      {
+        "path": "public/games/13-memory/assets/candy.svg",
+        "source_sha256": "502095639e34d9e79335b5f51b4a2e66ca9b3b7fc7b634fbb224ab70a6078f3e",
+        "old_qa_sha256": "502095639e34d9e79335b5f51b4a2e66ca9b3b7fc7b634fbb224ab70a6078f3e",
+        "unchanged": true,
+        "build_sha256": "502095639e34d9e79335b5f51b4a2e66ca9b3b7fc7b634fbb224ab70a6078f3e",
+        "build_match": true
+      },
+      {
+        "path": "public/games/13-memory/assets/cherry.svg",
+        "source_sha256": "b3666bb8017b9d887a6c44981b07fff91a4197dae375c3e859ee16d8d0c25353",
+        "old_qa_sha256": "b3666bb8017b9d887a6c44981b07fff91a4197dae375c3e859ee16d8d0c25353",
+        "unchanged": true,
+        "build_sha256": "b3666bb8017b9d887a6c44981b07fff91a4197dae375c3e859ee16d8d0c25353",
+        "build_match": true
+      },
+      {
+        "path": "public/games/13-memory/assets/cookie.svg",
+        "source_sha256": "3dd1aadc360b8c179c9931ceef5ecd2c3004bae8e10b0637701759b99c84016b",
+        "old_qa_sha256": "3dd1aadc360b8c179c9931ceef5ecd2c3004bae8e10b0637701759b99c84016b",
+        "unchanged": true,
+        "build_sha256": "3dd1aadc360b8c179c9931ceef5ecd2c3004bae8e10b0637701759b99c84016b",
+        "build_match": true
+      },
+      {
+        "path": "public/games/13-memory/assets/manifest.json",
+        "source_sha256": "0b24ada073b686c94b468a13bacdbd541283bee8a8e9f68498bbd205e01e13c9",
+        "old_qa_sha256": "0b24ada073b686c94b468a13bacdbd541283bee8a8e9f68498bbd205e01e13c9",
+        "unchanged": true,
+        "build_sha256": "0b24ada073b686c94b468a13bacdbd541283bee8a8e9f68498bbd205e01e13c9",
+        "build_match": true
+      },
+      {
+        "path": "public/games/13-memory/assets/orange.svg",
+        "source_sha256": "0ec256ddd464783a5919a786376d045b985e3eb135a1609a569ec5f5b43d0da9",
+        "old_qa_sha256": "0ec256ddd464783a5919a786376d045b985e3eb135a1609a569ec5f5b43d0da9",
+        "unchanged": true,
+        "build_sha256": "0ec256ddd464783a5919a786376d045b985e3eb135a1609a569ec5f5b43d0da9",
+        "build_match": true
+      },
+      {
+        "path": "public/games/13-memory/assets/pear.svg",
+        "source_sha256": "4ebd746f2c03ad850a68bd4670aef081042806be72733eca8744d2c994980f1c",
+        "old_qa_sha256": "4ebd746f2c03ad850a68bd4670aef081042806be72733eca8744d2c994980f1c",
+        "unchanged": true,
+        "build_sha256": "4ebd746f2c03ad850a68bd4670aef081042806be72733eca8744d2c994980f1c",
+        "build_match": true
+      },
+      {
+        "path": "public/games/13-memory/engine.mjs",
+        "source_sha256": "3b8c3025af2205daa06ad760d8be2e05b6a5e178bf92b83cd15c1b1dbcd990a9",
+        "old_qa_sha256": "3b8c3025af2205daa06ad760d8be2e05b6a5e178bf92b83cd15c1b1dbcd990a9",
+        "unchanged": true,
+        "build_sha256": "3b8c3025af2205daa06ad760d8be2e05b6a5e178bf92b83cd15c1b1dbcd990a9",
+        "build_match": true
+      },
+      {
+        "path": "public/games/13-memory/index.html",
+        "source_sha256": "c66725b71bea8d4dcc34b8fb2670d98d13a95dbb93746018d63496bea28b0cbe",
+        "old_qa_sha256": "c66725b71bea8d4dcc34b8fb2670d98d13a95dbb93746018d63496bea28b0cbe",
+        "unchanged": true,
+        "build_sha256": "c66725b71bea8d4dcc34b8fb2670d98d13a95dbb93746018d63496bea28b0cbe",
+        "build_match": true
+      },
+      {
+        "path": "public/games/13-memory/main.mjs",
+        "source_sha256": "3c143220f2b4a343856cb6b69f653470830d5757bb486e63ab2efb746f08633b",
+        "old_qa_sha256": "bc34646ef3d0cc56d43ce95e98df6239e416e888fd5d4526a30d12a93627e5e4",
+        "unchanged": false,
+        "build_sha256": "3c143220f2b4a343856cb6b69f653470830d5757bb486e63ab2efb746f08633b",
+        "build_match": true
+      },
+      {
+        "path": "public/games/13-memory/save.mjs",
+        "source_sha256": "869963fe5ee9ac48a28bebea7a131270b1f8ede5531d3111ce9a3213ac1da3f7",
+        "old_qa_sha256": "869963fe5ee9ac48a28bebea7a131270b1f8ede5531d3111ce9a3213ac1da3f7",
+        "unchanged": true,
+        "build_sha256": "869963fe5ee9ac48a28bebea7a131270b1f8ede5531d3111ce9a3213ac1da3f7",
+        "build_match": true
+      },
+      {
+        "path": "public/games/13-memory/styles.css",
+        "source_sha256": "b199889b0ef03386b2136f9c61893ac18eaa266e3cbb1b5ffee570f270a2bf11",
+        "old_qa_sha256": "b199889b0ef03386b2136f9c61893ac18eaa266e3cbb1b5ffee570f270a2bf11",
+        "unchanged": true,
+        "build_sha256": "b199889b0ef03386b2136f9c61893ac18eaa266e3cbb1b5ffee570f270a2bf11",
+        "build_match": true
+      },
+      {
+        "path": "tests/games/13-memory.test.mjs",
+        "source_sha256": "8da6e5df0c3ea0516e52130624d15c2479cd0d91df09dd25976d8ba12741ceda",
+        "old_qa_sha256": "c12831cf5a363ec3bb25e736fcd8f845cc7cb681279bd97248f539eb179e949e",
+        "unchanged": false
+      }
+    ]
+  },
+  "executed_counts": {
+    "fixed_unit": {
+      "executed": 35,
+      "pass": 35,
+      "fail": 0,
+      "skip": 0,
+      "cancelled": 0,
+      "exit": 0
+    },
+    "same_tests_original_source_negative": {
+      "executed": 35,
+      "pass": 30,
+      "fail": 5,
+      "skip": 0,
+      "cancelled": 0,
+      "exit": 1,
+      "failing_changed_test_names": [
+        "gesture: normal touch pointerup -> implicit lostcapture -> click activates once",
+        "gesture: early lostcapture cancels only the matching active pointer",
+        "gesture: cancel, outside secondary, wrong up, scroll and >8px still cancel; next tap recovers",
+        "gesture: exactly8px remains valid; scroll after up cancels; keyboard remains independent",
+        "lifecycle: pagehide pauses/cancels without new image renders; pageshow masks faces without resuming"
+      ]
+    },
+    "browser_raw": {
+      "executed": 20,
+      "pass": 17,
+      "fail": 3,
+      "expectedNegativeFailures": 3,
+      "unexpectedFailures": 0,
+      "skip": 0
+    },
+    "browser_fixed_acceptance": {
+      "executed": 17,
+      "pass": 17,
+      "fail": 0,
+      "skip": 0
+    },
+    "browser_original_negative": {
+      "executed": 3,
+      "pass": 0,
+      "fail": 3,
+      "expected_fail": 3,
+      "skip": 0
+    },
+    "browser_driver_exit": 0,
+    "wrapper_exit": 0,
+    "count_definition": "Node native testcases and browser checkpoints are separate, not summed. Checkpoints group nested gesture/fixture assertions; these are not Playwright testcase counts. Negative failures remain FAIL, not product PASS. Driver exit0 means fixed green AND expected negative failures, not all20 raw PASS."
+  },
+  "commands": [
+    {
+      "label": "unit-fixed",
+      "command": [
+        "C:/Program Files/nodejs/node.exe",
+        "--test",
+        "--test-reporter=tap",
+        "tests/games/13-memory.test.mjs"
+      ],
+      "exit": 0,
+      "duration_seconds": 0.1563112735748291,
+      "counts": {
+        "tests": 35,
+        "pass": 35,
+        "fail": 0,
+        "cancelled": 0,
+        "skipped": 0,
+        "todo": 0
+      }
+    },
+    {
+      "label": "unit-original-control",
+      "command": [
+        "C:/Program Files/nodejs/node.exe",
+        "--test",
+        "--test-reporter=tap",
+        "tests/games/13-memory.test.mjs"
+      ],
+      "exit": 1,
+      "duration_seconds": 0.15354681015014648,
+      "counts": {
+        "tests": 35,
+        "pass": 30,
+        "fail": 5,
+        "cancelled": 0,
+        "skipped": 0,
+        "todo": 0
+      }
+    },
+    {
+      "label": "browser",
+      "command": [
+        "C:/Program Files/nodejs/node.exe",
+        "E:\\Work2\\Project\\SimpleGames\\worktrees\\g026-fourteen-game-release\\artifacts\\g026-qa13\\fix1\\browser.mjs",
+        "E:\\Work2\\Project\\SimpleGames\\worktrees\\g026-fourteen-game-release\\artifacts\\g026-qa13\\fix1\\run-521116bc"
+      ],
+      "exit": 0,
+      "duration_seconds": 52.46352553367615
+    }
+  ],
+  "gate": {
+    "name": "Local\\SimpleGamesG026BrowserGate",
+    "wait_result": 0,
+    "wait_seconds": 5.0067901611328125e-06,
+    "released": true,
+    "closed": true
+  },
+  "servers": [
+    {
+      "original": false,
+      "publicRoot": "E:\\Work2\\Project\\SimpleGames\\worktrees\\g026-fourteen-game-release\\artifacts/g026-qa-build-fix1/public",
+      "pid": 30576,
+      "preProbe": "ECONNREFUSED",
+      "address": {
+        "address": "127.0.0.1",
+        "family": "IPv4",
+        "port": 3165
+      },
+      "postProbe": "ECONNREFUSED"
+    },
+    {
+      "original": true,
+      "publicRoot": "E:\\Work2\\Project\\SimpleGames\\worktrees\\g026-fourteen-game-release\\artifacts/g026-qa-build/public",
+      "pid": 30576,
+      "preProbe": "ECONNREFUSED",
+      "address": {
+        "address": "127.0.0.1",
+        "family": "IPv4",
+        "port": 3165
+      },
+      "postProbe": "ECONNREFUSED"
+    }
+  ],
+  "telemetry": [
+    {
+      "label": "fixed-chromium",
+      "instrumentation": "observer",
+      "console_total": 0,
+      "console_error": 0,
+      "console_warning": 0,
+      "pageerrors": 0,
+      "csp": 0,
+      "requestfailed": 0,
+      "failed_resource_types": {},
+      "external": 0,
+      "responses": 110,
+      "http_statuses": {
+        "200": 110
+      },
+      "document_tokens": [
+        1793295142506.6,
+        1793295144443.6,
+        1793295144605.9,
+        1793295144773.5,
+        1793295144939.5,
+        1793295145106.1,
+        1793295145271.5,
+        1793295145439.8,
+        1793295145605.7,
+        1793295145771.8,
+        1793295145938.8,
+        1793295146056.4,
+        1793295146189.7,
+        1793295146324.5,
+        1793295146994.4,
+        1793295150153.7
+      ],
+      "trusted_touch_downs": 73
+    },
+    {
+      "label": "fixed-webkit",
+      "instrumentation": "observer",
+      "console_total": 0,
+      "console_error": 0,
+      "console_warning": 0,
+      "pageerrors": 0,
+      "csp": 0,
+      "requestfailed": 0,
+      "failed_resource_types": {},
+      "external": 0,
+      "responses": 121,
+      "http_statuses": {
+        "200": 121
+      },
+      "document_tokens": [
+        1793295150451,
+        1793295154490,
+        1793295154875,
+        1793295155246,
+        1793295155624,
+        1793295156017,
+        1793295156388,
+        1793295156781,
+        1793295157154,
+        1793295157547,
+        1793295157920,
+        1793295158184,
+        1793295158432,
+        1793295158688,
+        1793295160003,
+        1793295163821
+      ],
+      "trusted_touch_downs": 73
+    },
+    {
+      "label": "fixed-webkit-plain",
+      "instrumentation": "plain",
+      "console_total": 0,
+      "console_error": 0,
+      "console_warning": 0,
+      "pageerrors": 0,
+      "csp": null,
+      "requestfailed": 0,
+      "failed_resource_types": {},
+      "external": 0,
+      "responses": 79,
+      "http_statuses": {
+        "200": 79
+      },
+      "document_tokens": [],
+      "trusted_touch_downs": 0
+    },
+    {
+      "label": "fixed-webkit-original-QA",
+      "instrumentation": "original-QA",
+      "console_total": 0,
+      "console_error": 0,
+      "console_warning": 0,
+      "pageerrors": 0,
+      "csp": 0,
+      "requestfailed": 0,
+      "failed_resource_types": {},
+      "external": 0,
+      "responses": 79,
+      "http_statuses": {
+        "200": 79
+      },
+      "document_tokens": [
+        1793295178088,
+        1793295185228,
+        1793295187823,
+        1793295188370,
+        1793295188948,
+        1793295189524,
+        1793295190082,
+        1793295190659,
+        1793295191236,
+        1793295191804
+      ],
+      "trusted_touch_downs": 0
+    },
+    {
+      "label": "negative-original-chromium",
+      "instrumentation": "observer",
+      "console_total": 0,
+      "console_error": 0,
+      "console_warning": 0,
+      "pageerrors": 0,
+      "csp": 0,
+      "requestfailed": 0,
+      "failed_resource_types": {},
+      "external": 0,
+      "responses": 6,
+      "http_statuses": {
+        "200": 6
+      },
+      "document_tokens": [
+        1793295192365.5
+      ],
+      "trusted_touch_downs": 1
+    },
+    {
+      "label": "negative-original-webkit",
+      "instrumentation": "observer",
+      "console_total": 4,
+      "console_error": 4,
+      "console_warning": 0,
+      "pageerrors": 0,
+      "csp": 2,
+      "requestfailed": 2,
+      "failed_resource_types": {
+        "ping": 2
+      },
+      "external": 0,
+      "responses": 15,
+      "http_statuses": {
+        "200": 15
+      },
+      "document_tokens": [
+        1793295192819,
+        1793295194277
+      ],
+      "trusted_touch_downs": 1
+    }
+  ],
+  "trusted_touch_completions": [
+    {
+      "context": "fixed-chromium",
+      "mode": "normal",
+      "phase": "success",
+      "attempts": 8,
+      "matchedPairs": 8,
+      "completions": 1
+    },
+    {
+      "context": "fixed-chromium",
+      "mode": "easy",
+      "phase": "success",
+      "attempts": 6,
+      "matchedPairs": 6,
+      "completions": 1
+    },
+    {
+      "context": "fixed-webkit",
+      "mode": "normal",
+      "phase": "success",
+      "attempts": 8,
+      "matchedPairs": 8,
+      "completions": 1
+    },
+    {
+      "context": "fixed-webkit",
+      "mode": "easy",
+      "phase": "success",
+      "attempts": 6,
+      "matchedPairs": 6,
+      "completions": 1
+    }
+  ],
+  "independent_executed_areas": [
+    {
+      "area": "normal touch / gesture lifecycle",
+      "result": "PASS",
+      "details": "Both Chromium/WebKit320x667: trusted down/gotcapture/up/implicit lostcapture/click first-card reveal, then both normal8/easy6 full completions and one settlement each;73 trusted touch-downs per fixed engine across normal UI and recovery. Early same-ID loss cancels, other-ID early loss does not; cancel/outside-secondary/wrong-up/nonprimary/right/>8px/scroll-before-or-after-up reject and next trusted tap recovers. Exact8px/post-up loss remain valid. No global gesture bypass."
+    },
+    {
+      "area": "pagehide/pageshow / CSP",
+      "result": "PASS",
+      "details": "Both engines: synthetic persisted pagehide immediately pauses/protects and cancels pump without changing departing board markup/image nodes; following blur also no render. Paused mismatch remaining/elapsed frozen850ms. Synthetic pageshow masks all faces, remains paused; only explicit trusted Resume restores cards/countdown. Actual reload both engines returns ready with preserved records. WebKit exact old7 cancel fixtures and exact8px use same fixed source under plain(no init/no route) and exact originalQA init+route.continue conditions; each 79 HTTP responses, all200, console/pageerror/requestfailed/external0, instrumented CSP0. Plain DOM CSP unmeasured, not asserted0. WebKit screenshot calls0."
+    },
+    {
+      "area": "test detection / delta impact boundary",
+      "result": "PASS",
+      "details": "Actual existing35 tests rerun. First5 new gesture/lifecycle tests fail against frozen original listener/lifecycle bytes (30pass5fail/exit1), all35 pass current. Browser native Enter autorepeat toggles once, Space toggles back; synthetic cancellation then trusted recovery. ModeConfirm/theme/restart cancel preserves cards/settings/round and returns focus. Mismatch resume uses remaining time; restart invalidates old callback so new first card remains revealed after850ms."
+    }
+  ],
+  "static_delta_review": {
+    "result": "PASS",
+    "shipping_changed_files": [
+      "public/games/13-memory/main.mjs"
+    ],
+    "runtime_unchanged_count": 16,
+    "notes": [
+      "lostpointercapture requires matching active pointerId and !ended; scroll cancellation remains separate; no new bypass in click/keyboard validator.",
+      "pageLeaving flag only suppresses departing-document protection render, retains pause/stopPump/held/gesture/audio cancellation, pageshow clears flag and renders paused masks without schedule/resume.",
+      "No CSP/server/cache/SVG/engine/save/rules change; no shipping test setter or test-only branch."
+    ]
+  },
+  "findings": [
+    {
+      "id": "G026-QA13-001",
+      "original_status": "FAIL preserved",
+      "closed": true,
+      "result": "PASS fixed",
+      "evidence": "artifacts/g026-qa13/fix1/run-521116bc/browser-report.json",
+      "proof": "Independent trusted normal touch passes both engines,4 actual touchscreen mode completions; frozen original same tap still fails both engines."
+    },
+    {
+      "id": "G026-QA13-002",
+      "original_status": "FAIL preserved",
+      "closed": true,
+      "result": "PASS fixed",
+      "evidence": "artifacts/g026-qa13/fix1/run-521116bc/browser-report.json",
+      "proof": "Independent original meadow/open/reload yields console4/CSP2/requestfailed2(type ping) with connect-src none. Fixed source original7-fixture sequence is clean both plain and exact originalQA instrumentation+routing. Synthetic direct lifecycle confirms departing render omission and return masks. Builder detailed pagehide->image request stack attribution is hash-bound reused corroboration, not represented as independently re-traced upstream binary."
+    }
+  ],
+  "original_qa_reuse": {
+    "source": "docs/G026_QA13.json",
+    "old_report_status_remains": "FAIL",
+    "unchanged_runtime_count": 16,
+    "changed_main_not_blanket_reused": true,
+    "protected_original_files": 215,
+    "sha_size_mtime_preserved": true,
+    "cross_bound_to_builder_earliest_ledger": true,
+    "all_immutable_files": 393,
+    "scope": [
+      "Unchanged pure engine rules/shuffle/noop/caps/exact799+1 timing and record/save parsing/fault behavior. Existing35 unit independently rerun, prior independent20 unit not rerun.",
+      "Original SVG provenance/art distinction and original desktop/mobile geometry/44px/reduced-motion results: same HTML/CSS/SVG bytes. No new screenshot visual acceptance claimed.",
+      "Original storage/audio fault UI, unrelated-key preservation and deeper modal focus traversal/250ms evidence; only relevant touch/lifecycle cancel/focus/mismatch impact boundary rerun.",
+      "Original fixed negative findings/raw traces preserved. Original gesture touch FAIL and CSP FAIL are not counted as accepted unchanged behavior."
+    ],
+    "reused_not_counted_as_new_execution": true,
+    "evidence_hashes": [
+      {
+        "path": "docs/G026_QA13.json",
+        "sha256": "de0d9148e0ec52db2e4c578edfdcb7adfcba253573fee67213e85cf87e3b2c83"
+      },
+      {
+        "path": "artifacts/g026-qa13/FINDING-001.md",
+        "sha256": "e7eb3a768eeca8a7edd87a8b2360764a7f804af9df392593dcb3f1697a1cbf7a"
+      },
+      {
+        "path": "artifacts/g026-qa13/FINDING-002.md",
+        "sha256": "a4164889e2e5b1128444965be625637fabb01a85b5e4dce8fa69e850c22cd802"
+      },
+      {
+        "path": "artifacts/g026-qa13/run-dbb20cea/deep-raw.json",
+        "sha256": "ca2045b60283f964bb4c6f6aa5a7e19a4b45613317353df30feddeaf12224388"
+      },
+      {
+        "path": "artifacts/g026-qa13/run-dbb20cea/smoke2-raw.json",
+        "sha256": "f7efb95f3afd6cb89c613770979bfc634f121a052d50c4e4c7cf4c550d6472aa"
+      },
+      {
+        "path": "artifacts/g026-qa13/run-dbb20cea/independent-unit-stdout.txt",
+        "sha256": "9bea352b92ce018930126a96fa8aaeb506b282eb9a9dde5d7c9f6fdf2c0132c9"
+      },
+      {
+        "path": "artifacts/g026-qa13/run-dbb20cea/independent-art-audit.json",
+        "sha256": "5c228dd982a4e5bd9ebe63f4b0e0242ce228cef7a3148b8893185717b2a5079a"
+      },
+      {
+        "path": "artifacts/g026-13-builder/fix1/product.patch",
+        "sha256": "d96770c57c32b9f4386842a63b4fb6683c238463b72f0b92242f39b071adbb21"
+      },
+      {
+        "path": "artifacts/g026-13-builder/fix1/final-verification.json",
+        "sha256": "d4ee150d679bac706b4b590316840a0f58e473df5526e0f8bbedbdf72820b9db"
+      },
+      {
+        "path": "artifacts/g026-13-builder/fix1/summary.json",
+        "sha256": "692f15dc8b2eab90d75d6da8015510eaacf3fc280d4639f15bc3888cff491783"
+      },
+      {
+        "path": "artifacts/g026-13-builder/fix1/csp-attribution.json",
+        "sha256": "1b63120dedbe09edd324dc6f7cc938434950c5da88441f35665d5ea226dc3111"
+      },
+      {
+        "path": "docs/G026_13_DESIGN.md",
+        "sha256": "6f668f4df0ef12a7925b65f50db734f41aefd293fa926e9d48135e333b41f1f8"
+      },
+      {
+        "path": "artifacts/g026-pm/fix13-intake.json",
+        "sha256": "12f1a6337922c0f600408bbd1fe49603972a5063ec6b606fbd142d45a8fc64b8"
+      }
+    ]
+  },
+  "unverified_limits": [
+    "Physical Android/iPhone input, real human memory play, native OS minimize/hide/restore, actual audio listening not performed. Playwright trusted touchscreen is browser emulation.",
+    "Actual BFCache eligibility/store/restore was not forced/proven. pagehide/pageshow persisted=true is synthetic lifecycle; real reload is separately executed in both engines.",
+    "Adversarial pointer cancel/secondary/move/scroll are synthetic events, not physical multitouch/scroll. Normal actions, recovery and full completion are trusted touchscreen.",
+    "Plain product DOM securitypolicyviolation events are deliberately uninstrumented; raw console/requestfailed and strict headers were measured. Instrumented condition observed CSP0.",
+    "No WebKit screenshots, no new broad visual review, no complete14game regression, no full engine/save retest beyond mandated35 unit. PM full regression/deployment is separate.",
+    "Exact799/800 boundary uses real Node pure engine tests; not millisecond wall-clock browser deadline proof."
+  ],
+  "issues_encountered": [
+    "수정본의 예상 밖 실패 또는 재시도 없음. Negative control에서만 보존된 원결함 재현.",
+    "새 unit의 grouped cancellation red-control test는 첫 실패에서 멈추므로 그 test 안의 모든 원본 하위 단언이 각각 실패했다고 주장하지 않음; 수정본 하위 경계는 별도 실제 브라우저로 실행."
+  ],
+  "writes_and_exclusions": {
+    "created": [
+      "docs/G026_QA13_FIX.json",
+      "artifacts/g026-qa13/fix1/**"
+    ],
+    "modified_product_tests_shared_build_oldQA_git_pm2_3116": false,
+    "installed_packages": false,
+    "redelegated": false,
+    "board_publication": "명시 금지에 따라 미수행",
+    "production": "untouched"
+  },
+  "evidence": {
+    "directory": "artifacts/g026-qa13/fix1/run-521116bc",
+    "manifest": "artifacts/g026-qa13/fix1/run-521116bc/evidence-manifest.json",
+    "summary": "artifacts/g026-qa13/fix1/run-521116bc/independent-summary.json",
+    "raw": "artifacts/g026-qa13/fix1/run-521116bc/browser-report.json",
+    "immutability": "artifacts/g026-qa13/fix1/run-521116bc/verification.json",
+    "executed_browser_harness_sha256": "f722aa0444066684637c9582b9383882b6ddfc01c97649448b6b0ac07e3dbac5",
+    "executed_wrapper_sha256": "3d30925b5994c1087f9f95f2941bec7cfae11ee26f153b5912eb1311ecd414de",
+    "reproduce": "python artifacts/g026-qa13/fix1/run.py (fresh UUID output; same immutable build must remain available)"
+  }
+}

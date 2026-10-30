@@ -12,7 +12,7 @@ const external = new WeakMap<Page, string[]>();
 const requests = new WeakMap<Page, string[]>();
 async function snapshot(page:Page) { return page.locator('#board .cell').evaluateAll(es => es.map(e => Number((e as HTMLElement).dataset.value))); }
 async function saved(page:Page) { return page.evaluate(key => JSON.parse(localStorage.getItem(key) || 'null'),KEY); }
-async function start(page:Page) { await page.goto('/game.html');  await expect(page.locator('#board')).toBeFocused(); }
+async function start(page:Page) { await page.goto('/games/01-2048/index.html');  await expect(page.locator('#board')).toBeFocused(); }
 async function shot(page:Page, name:string) {
   // WebKit screenshot sync injects inline body{} (Playwright coreBundle.js:22719).
   // Diagnostic without screenshots has zero CSP errors; retain separately, never weaken CSP.
@@ -20,7 +20,7 @@ async function shot(page:Page, name:string) {
 }
 async function fixture(page:Page, board:number[][], won=false) {
   // QA-only network adapter: production files and globals remain unchanged.
-  await page.route('**/scripts/state.js',async route => {
+  await page.route('**/games/01-2048/state.js',async route => {
     const response = await route.fetch();
     const original = await response.text();
     const source = original.replace('export function startGame(', 'function originalStartGame(') + `\nlet qaFirst=true; export function startGame(s,r) { const n=originalStartGame(s,r); if(!qaFirst)return n; qaFirst=false; const b=${JSON.stringify(board)}; return {...n,board:b,highestTile:Math.max(...b.flat()),won:${won}}; }`;
@@ -52,7 +52,7 @@ test.afterEach(async ({page},info) => {
 test('01 home selection auto start restart cancel confirm reload records',async ({page})=>{
   await page.goto('/'); await expect(page.locator('#game-grid')).toBeVisible();
   await page.keyboard.press('ArrowLeft'); expect(await saved(page)).toBeNull();
-  await page.locator('.game-card[data-id="number-garden"] a.card-action').click(); await expect(page).toHaveURL(/\/game\.html$/);
+  await page.locator('.game-card[data-id="number-garden"] a.card-action').click(); await expect(page).toHaveURL(/\/games\/01-2048\/index\.html$/);
   await expect(page.locator('#board')).toBeFocused();
   await page.locator('#help-button').click(); await expect(page.locator('#dialog-content')).toContainText('24px');
   await page.getByRole('button',{name:'도움말 닫기',exact:true}).click();
@@ -150,7 +150,7 @@ test('07 locked gardens unlock select reload preserve board',async ({page})=>{
 });
 
 test('08 corrupt storage and malicious theme safe recovery',async ({page})=>{
-  await page.goto('/game.html');await page.evaluate(key=>{localStorage.setItem('qa-other-app','keep');localStorage.setItem(key,'{broken');},KEY);
+  await page.goto('/games/01-2048/index.html');await page.evaluate(key=>{localStorage.setItem('qa-other-app','keep');localStorage.setItem(key,'{broken');},KEY);
   await page.reload();await expect(page.locator('#storage-warning')).toContainText('복구');expect(await page.evaluate(()=>localStorage.getItem('qa-other-app'))).toBe('keep');
   expect((await snapshot(page)).filter(Boolean)).toHaveLength(2);
   const malicious=profile({bestScore:128,totalScore:128,bestTile:256,selectedGarden:'<img src="https://invalid.test/x" onerror="window.qaXss=1">',unlockedGardens:['seed','evil','grove','grove'],muted:'bad'});
@@ -194,7 +194,7 @@ test('11 pointer boundaries real mouse capture and cancel adapter',async ({page}
     await expect(page.locator('#move-count')).toHaveText(`${expected}회 이동`);await page.waitForTimeout(130);
   }
   const result=await page.evaluate(async()=>{
-    const {bindInput}=await import('/scripts/input.js');const board=document.createElement('div');board.tabIndex=0;document.body.append(board);
+    const {bindInput}=await import('/games/01-2048/input.js');const board=document.createElement('div');board.tabIndex=0;document.body.append(board);
     board.setPointerCapture=()=>{};const moves:string[]=[];const binding=bindInput(board,{enabled:()=>true,move:(d:string)=>moves.push(d),pause:()=>{}});
     function fire(type:string,id:number,x:number,primary=true){board.dispatchEvent(new PointerEvent(type,{bubbles:true,pointerId:id,pointerType:'touch',isPrimary:primary,clientX:x,clientY:0}));}
     fire('pointerdown',1,0);fire('pointercancel',1,0);fire('pointerup',1,60);
@@ -224,9 +224,9 @@ test('12 audio oscillator automation mute pause fallback no listening',async ({p
 
 test('13 security headers independent modules and rules differential',async ({page,request})=>{
   const response=await request.get('/');expect(response.status()).toBe(200);expect(response.headers()['x-content-type-options']).toBe('nosniff');expect(response.headers()['content-security-policy']).toContain("connect-src 'none'");
-  await page.goto('/game.html');
+  await page.goto('/games/01-2048/index.html');
   const result=await page.evaluate(async()=>{
-    const e=await import('/scripts/engine.js'),s=await import('/scripts/state.js'),st=await import('/scripts/storage.js');
+    const e=await import('/games/01-2048/engine.js'),s=await import('/games/01-2048/state.js'),st=await import('/games/01-2048/storage.js');
     let checked=0;
     const ref=(a:number[])=>{const v=a.filter(Boolean),o:number[]=[];let score=0;for(let i=0;i<v.length;i++){if(v[i]===v[i+1]){o.push(v[i]*2);score+=v[i]*2;i++;}else o.push(v[i]);}return {line:[...o,...Array(4-o.length).fill(0)],score};};
     for(let n=0;n<625;n++) {let x=n;const row=[];for(let i=0;i<4;i++){row.push([0,2,4,8,16][x%5]);x=Math.floor(x/5);}for(const d of ['left','right','up','down']){
