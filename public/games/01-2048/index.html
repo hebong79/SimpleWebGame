@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#f6f3e9">
+  <meta name="description" content="작은 쉼표에서 즐기는 숫자 정원 2048 퍼즐">
+  <title>숫자 정원 · 작은 쉼표</title>
+  <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="./styles.css">
+  <script type="module" src="./main.js"></script>
+</head>
+<body data-garden="seed">
+  <header class="site-header">
+    <a class="brand exit-home" href="/" aria-label="작은 쉼표 홈"><span class="brand-mark" aria-hidden="true">,</span><span><strong>작은 쉼표</strong><span class="brand-sub">SIMPLE GAMES</span></span></a>
+    <nav class="breadcrumb" aria-label="현재 위치"><a class="exit-home" href="/">게임 서재</a><span aria-hidden="true">/</span><strong>숫자 정원</strong></nav>
+    <span class="header-note">NUMBER GARDEN</span>
+  </header>
+  <main class="app">
+    <div class="game-heading"><div><p class="eyebrow">NUMBER GARDEN · 2048</p><h1>숫자 정원<span class="heading-leaf" aria-hidden="true">❧</span></h1><p class="game-subtitle">작은 숫자들이 모여, 나만의 정원이 됩니다.</p></div><span class="play-status" id="play-status">플레이 중</span></div>
+    <p id="storage-warning" class="notice" role="status" hidden></p>
+    <div class="game-layout">
+      <section class="play-area" aria-label="2048 게임">
+        <div class="scores" aria-label="점수"><div class="score"><span>현재 점수</span><strong id="score">0</strong></div><div class="score best"><span>최고 기록</span><strong id="best-score">0</strong></div></div>
+        <div class="section-line"><span id="phase-label">같은 숫자끼리, 한 걸음씩</span><span id="move-count">0회 이동</span></div>
+        <div class="board-wrap">
+          <div id="board" class="board" tabindex="0" role="group" aria-roledescription="2048 게임 보드" aria-label="4행 4열 숫자 정원" aria-describedby="input-hint"></div>
+          <div id="ready-panel" class="ready-panel" hidden><span class="intro-leaf" aria-hidden="true">✳</span><h2>작은 숫자, 자라는 정원.</h2><p>같은 숫자를 만나게 해<br>2048의 꽃을 피워보세요.</p><button id="start-button" class="primary">정원 시작하기 <span aria-hidden="true">→</span></button></div>
+        </div>
+        <nav class="controls primary-controls" aria-label="게임 조작"><button id="pause-button"><span aria-hidden="true">Ⅱ</span> 일시정지</button><button id="restart-button"><span aria-hidden="true">↻</span> 다시시작</button><button id="exit-button"><span aria-hidden="true">↗</span> 게임종료</button></nav>
+        <p id="input-hint" class="input-hint"><kbd>↑</kbd><kbd>←</kbd><kbd>↓</kbd><kbd>→</kbd> 방향키 · 모바일은 보드를 밀어주세요</p>
+        <nav class="auxiliary-controls" aria-label="도움말과 설정"><button id="help-button">도움말</button><button id="gardens-button">기록·정원</button><button id="mute-button" aria-pressed="true">소리 꺼짐</button></nav>
+        <p class="save-note">기록과 정원은 자동 저장됩니다.<br>진행 중인 판은 저장되지 않으며 새로 열면 새 판을 시작합니다.</p>
+      </section>
+      <aside class="garden-area" aria-label="나의 정원과 목표">
+        <div class="garden-heading"><span class="eyebrow">MY GARDEN</span><span id="garden-number">01 / 03</span></div>
+        <figure class="garden-picture"><img id="garden-image" src="/assets/gardens/seed.svg" alt="씨앗 뜰의 새싹 풍경" width="600" height="400"><figcaption><span id="garden-name">씨앗 뜰</span><span>지금 머무는 정원</span></figcaption></figure>
+        <section class="goal-section" aria-labelledby="goal-title"><p class="eyebrow">NEXT LITTLE GOAL</p><h2 id="goal-title">다음 목표 <strong id="next-goal">128</strong></h2><p id="goal-description">같은 숫자를 합쳐 첫 새싹을 키워보세요.</p><ol class="milestones" id="milestones"><li data-goal="128"><span>✧</span>128</li><li data-goal="256"><span>❧</span>256</li><li data-goal="512"><span>✳</span>512</li><li data-goal="1024"><span>✿</span>1024</li><li data-goal="2048"><span>❋</span>2048</li></ol></section>
+        <div class="garden-note"><span aria-hidden="true">❧</span><p id="unlock-hint">256 타일을 만들면 초록 숲이 열립니다.</p></div>
+        <section class="howto"><h2>이렇게 즐겨요</h2><p>같은 숫자 두 개를 합쳐<br><strong>2048</strong>을 만들어 보세요.</p><p>PC는 방향키, 모바일은 스와이프.<br>보드 밖에서는 편하게 스크롤하세요.</p></section>
+      </aside>
+    </div>
+    <footer><span>작은 쉼표 · SIMPLE GAMES</span><a class="exit-home" href="/">← 게임 서재로</a></footer>
+    <p id="announcement" class="sr-only" aria-live="polite" aria-atomic="true"></p>
+  </main>
+  <dialog id="game-dialog" aria-labelledby="dialog-title"><div id="dialog-content"></div></dialog>
+  <noscript>숫자 정원은 JavaScript가 필요합니다. 브라우저에서 JavaScript를 허용해 주세요.</noscript>
+</body>
+</html>

@@ -29,8 +29,8 @@ def archive(name: str, files: dict[str, bytes]) -> dict[str, object]:
 
 
 def main() -> None:
-    required = ['dist/src/server/index.js', 'dist/public/index.html', 'dist/public/scripts/main.js',
-                'dist/public/style.css', 'docs/GAME_DESIGN.md', 'docs/QA_REPORT.md']
+    required = ['dist/src/server/index.js', 'dist/public/index.html', 'dist/public/games/01-2048/main.js',
+                'dist/public/games/01-2048/styles.css', 'docs/01-2048/init-design/20261024-231330_GAME_DESIGN.md', 'docs/01-2048/20261024-231330_QA_REPORT.md']
     for name in required:
         if not (ROOT / name).is_file():
             raise SystemExit('Build / QA artifact missing: ' + name)
@@ -67,7 +67,7 @@ node dist/src/server/index.js --host 0.0.0.0
 로컬 서버가 켜져 있으면 외부 인터넷 없이 플레이할 수 있습니다. file:// 직접 열기/PWA는 지원 범위가 아닙니다.
 기록·정원은 해당 브라우저 localStorage에 저장합니다. 진행판은 저장하지 않습니다.
 아트는 직접 제작 SVG15개, 효과음은 WebAudio 합성입니다. 기본 음소거입니다.
-실제 휴대폰·실제 음향 청취·Firefox 검증은 수행하지 않았습니다. 자세한 구현/검증/자산 원본은 별도 소스 ZIP과 docs/QA_REPORT.md에 있습니다.
+실제 휴대폰·실제 음향 청취·Firefox 검증은 수행하지 않았습니다. 자세한 구현/검증/자산 원본은 별도 소스 ZIP과 docs/01-2048/20261024-231330_QA_REPORT.md에 있습니다.
 '''.encode('utf-8')
     source: dict[str, bytes] = {}
     for directory in ['src', 'public', 'assets', 'docs', 'scripts', 'tests', '.game-team']:

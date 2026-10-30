@@ -402,7 +402,7 @@ def validate(expected):
                 checks=['exact paths', 'XML parse', 'dimensions/viewBox', 'distinct content',
                         'deterministic exact regeneration', 'no tile text/opaque rectangle',
                         'no scripts/events/animation/remote refs/embedded rasters/fonts', 'contact sheet XML'],
-                visual_check='See assets/contact-sheet.png and docs/ASSETS.md; not a gameplay test.')
+                visual_check='See assets/contact-sheet.png and docs/01-2048/init-design/20261024-231330_ASSETS.md; not a gameplay test.')
 
 
 def main():

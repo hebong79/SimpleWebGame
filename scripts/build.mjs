@@ -19,6 +19,6 @@ const result = spawnSync(process.execPath, [compiler, '-p', 'tsconfig.json', '--
 if (result.error) throw result.error;
 if (result.status !== 0) process.exit(result.status ?? 1);
 await mkdir(join(output, 'public'), { recursive: true });
-await cp(join(root, 'public'), join(output, 'public'), { recursive: true });
+await cp(join(root, 'public'), join(output, 'public'), { recursive: true, filter: (source) => !source.endsWith('.ts') });
 await cp(join(output, 'src/client'), join(output, 'public/scripts'), { recursive: true });
 console.log(`Build complete: ${relativeOutput}/public + ${relativeOutput}/src/server/index.js`);

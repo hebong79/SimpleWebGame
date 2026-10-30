@@ -8,7 +8,7 @@
 
 ## 확인한 내용
 
-AGENTS.md, .game-team/TEAM.md, .game-team/project.json 및 필수 문서 docs/GAME_DESIGN.md, docs/BACKLOG.md, docs/DECISIONS.md, docs/HANDOFF.md를 읽었습니다. IDE에 열려 있던 workers/cody-02/STATUS.md도 확인했습니다.
+AGENTS.md, .game-team/TEAM.md, .game-team/project.json 및 필수 문서 docs/01-2048/init-design/20261024-231330_GAME_DESIGN.md, docs/20261024-231330_BACKLOG.md, docs/20261024-231330_DECISIONS.md, docs/20261024-231330_HANDOFF.md를 읽었습니다. IDE에 열려 있던 workers/cody-02/STATUS.md도 확인했습니다.
 
 요청한 team/TEAM.md와 team/tasks/DEV-01.md는 존재하지 않습니다. team 디렉터리 자체도 없었습니다. 프로젝트 내부 파일 목록 및 DEV-000 / DEV-01 본문 검색에서 기존 작업 지시를 찾지 못했습니다. 기존 .game-team/TEAM.md를 새 team/TEAM.md로 임의 복사하거나 작업을 정의하지 않았습니다.
 
@@ -23,8 +23,8 @@ AGENTS.md, .game-team/TEAM.md, .game-team/project.json 및 필수 문서 docs/GA
 ## 변경 파일 / 산출물
 
 - team/reports/DEV-01.md: 현재 차단 원인과 확인 결과.
-- docs/worklogs/20261024-210355_아름.md: 한국 시간 기준 세션 기록.
-- docs/HANDOFF.md: DEV-000 대기 사유와 다음 작업을 끝에 추가.
+- docs/worklogs/20261024-210355_DEV01_DEV000_지시확인_대기.md: 한국 시간 기준 세션 기록.
+- docs/20261024-231330_HANDOFF.md: DEV-000 대기 사유와 다음 작업을 끝에 추가.
 
 ## 제한 사항과 다음 작업
 

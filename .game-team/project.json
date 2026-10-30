@@ -5,7 +5,7 @@
   "engine": "Node.js 24.16.0 + TypeScript, HTML DOM/CSS",
   "engine_version": "Node 24.16.0 / TypeScript 7.0.2",
   "platform": "PC browser + mobile touch browser",
-  "status": "six_games_deployed_verified_with_manual_limits",
+  "status": "twelve_games_designed_independently_verified_merged_live",
   "created_at": "2026-10-22T00:17:53.121532+09:00",
   "team_id": "game-dev-team",
   "team_version": "1.0.0",
@@ -19,9 +19,9 @@
   ],
   "mode": "on-demand-delegate-task",
   "runtime_or_engine_installed": true,
-  "last_verified_at": "2026-10-26T23:21:18.946011+09:00",
-  "unit_tests_passed": 269,
-  "browser_tests_passed": 66,
+  "last_verified_at": "2026-10-29T23:31:45.944354+09:00",
+  "unit_tests_passed": 545,
+  "browser_tests_passed": 228,
   "manual_acceptance_pending": true,
   "playable_games": [
     "number-garden",
@@ -29,9 +29,15 @@
     "neon-rally",
     "cosmic-cleanup",
     "block-workshop",
-    "balloon-sparrow"
+    "balloon-sparrow",
+    "desert-post",
+    "cloud-bunny",
+    "chick-picnic",
+    "hamster-depot",
+    "gem-survey",
+    "number-postbox"
   ],
-  "catalog_total": 35,
+  "catalog_total": 41,
   "connection_verification": {
     "task": "G017",
     "primary_url": "http://192.168.0.195:3116/",
@@ -40,7 +46,7 @@
     "browser_cases_passed": 18,
     "browser_cases_failed": 0,
     "independent_recheck_passed": true,
-    "report": "docs/G017_CONNECTION_FIX.md",
+    "report": "docs/20261026-230956_G017_CONNECTION_FIX.md",
     "overall_G016_acceptance_unchanged": true
   },
   "development_tasks": [
@@ -63,10 +69,69 @@
       "status": "implementation_verified",
       "contract_ack_verified": true,
       "current_playable_catalog_unchanged": false
+    },
+    {
+      "task_id": "G024-09",
+      "game_id": "chick-picnic",
+      "worker": "temporary Hermes builder09",
+      "builder_subagent_id": "sa-0-1ad54ae8",
+      "independent_tester_subagent_id": "sa-0-5487792a",
+      "status": "merged_live_independently_verified"
+    },
+    {
+      "task_id": "G024-10",
+      "game_id": "hamster-depot",
+      "worker": "temporary Hermes builder10",
+      "builder_subagent_id": "sa-1-d4265b77",
+      "independent_tester_subagent_id": "sa-0-7e0af4a4",
+      "status": "fix1_fresh_delta_accepted_merged_live",
+      "resolved_finding": "QA10-L01"
+    },
+    {
+      "task_id": "G025-11",
+      "game_id": "gem-survey",
+      "worker": "temporary Hermes builder11",
+      "builder_subagent_id": "sa-0-822e3298",
+      "independent_tester_subagent_id": "sa-0-e8712669",
+      "status": "designed_merged_live_independently_verified",
+      "automated_qa_effective_browser_passed": 113
+    },
+    {
+      "task_id": "G025-12",
+      "game_id": "number-postbox",
+      "worker": "temporary Hermes builder12",
+      "builder_subagent_id": "sa-1-9b8b0d9a",
+      "independent_tester_subagent_id": "sa-1-8383be48",
+      "status": "designed_merged_live_independently_verified",
+      "automated_qa_browser_passed": 66
     }
   ],
-  "browser_tests_scope": "G019 selected real HTTP integration regression,3 browser projects",
+  "browser_tests_scope": "Candidate browser228 unchanged runtime/spec + fresh unit545 after independently accepted one-line snapshot fix; actual LAN full186 exit0; original failed process preserved",
   "deployment": {
+    "task": "G025",
+    "primary_url": "http://192.168.0.195:3116/",
+    "build": "artifacts/g025-build",
+    "pm2_app": "number-garden-2048",
+    "status": "online_verified_actual_LAN",
+    "pid": 404,
+    "pm2_id": 4,
+    "listen": "0.0.0.0:3116",
+    "source_commit": "d268c96ec0b372d6c1de143b1930accfb123b46a",
+    "main_merge_commit": "6fce1fab1375742a3db478ba69c2c9c0e6c033d9",
+    "merge_status": "merged_no_ff_tree_verified",
+    "remote_push_requested": false,
+    "production_browser_tests_passed": 186,
+    "candidate_browser_tests_passed": 228,
+    "smoke_passed": 36,
+    "unit_tests_passed": 545,
+    "http_byte_checks": 93,
+    "verification": "docs/20261029-234550_G025_RELEASE.md",
+    "persistent_dump_modified": false,
+    "persistent_restart_risk": "Historical saved dump still references g016; separate scoped approval required",
+    "board_post_id": "mvtnibs7-52-wm66"
+  },
+  "production_browser_tests_passed": 186,
+  "deployment_history_before_G023": {
     "task": "G019",
     "primary_url": "http://192.168.0.195:3116/",
     "build": "artifacts/g019-build",
@@ -81,7 +146,59 @@
     "main_merge_commit": "e1637aa3449baa5695903002c7a3a5111d5f3ebb",
     "production_browser_tests_passed": 24,
     "http_byte_checks": 20,
-    "verification": "docs/G019_DEPLOYMENT.md"
+    "verification": "docs/20261026-232524_G019_DEPLOYMENT.md"
   },
-  "production_browser_tests_passed": 24
+  "requested_unimplemented_games": [
+    {
+      "id": "memory-pieces",
+      "status": "blocked_no_implementation_or_merge_target",
+      "href": null
+    },
+    {
+      "id": "leisure-line",
+      "status": "blocked_no_implementation_or_merge_target",
+      "href": null
+    }
+  ],
+  "deployment_history_before_G024": {
+    "task": "G023",
+    "primary_url": "http://192.168.0.195:3116/",
+    "build": "artifacts/g022-build",
+    "pm2_app": "number-garden-2048",
+    "status": "restored_online_verified",
+    "pid": 27224,
+    "pm2_id": 2,
+    "listen": "0.0.0.0:3116",
+    "source_commit": "1e40850c41b46bd6190f10d1407d731fac4ddbf4",
+    "merge_status": "already_merged_no_new_commit",
+    "remote_push_requested": false,
+    "production_browser_tests_passed": 162,
+    "smoke_passed": 12,
+    "http_byte_checks": 38,
+    "verification": "docs/20261028-231500_G023_RELEASE_RESTORE.md",
+    "persistent_dump_modified": false,
+    "persistent_restart_risk": "saved dump still references g016; separate scoped authorization required"
+  },
+  "deployment_history_before_G025": {
+    "task": "G024",
+    "primary_url": "http://192.168.0.195:3116/",
+    "build": "artifacts/g024-build",
+    "pm2_app": "number-garden-2048",
+    "status": "online_verified_actual_LAN",
+    "pid": 12080,
+    "pm2_id": 3,
+    "listen": "0.0.0.0:3116",
+    "source_commit": "90d14128e93300e6ef7c2bc69406195337c57c85",
+    "main_merge_commit": "0eb5dcc2339c7f6f0ce5748e6ecb579d7bfe985d",
+    "merge_status": "merged_no_ff_tree_verified",
+    "remote_push_requested": false,
+    "production_browser_tests_passed": 171,
+    "candidate_browser_tests_passed": 213,
+    "smoke_passed": 24,
+    "http_byte_checks": 79,
+    "verification": "docs/20261029-014725_G024_RELEASE.md",
+    "persistent_dump_modified": false,
+    "persistent_restart_risk": "Historical saved dump still references g016; separate scoped correction approval required",
+    "board_post_id": "mvscg724-50-8dyq"
+  }
 }

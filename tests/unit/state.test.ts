@@ -1,7 +1,7 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import { applyMove, closeModal, continueGame, createReady, exitGame, nextGoal, openModal, pauseGame, resumeGame, selectGarden, showResult, startGame, type GameState } from '../../src/client/state.js';
-import { defaultProfile } from '../../src/client/storage.js';
+import { applyMove, closeModal, continueGame, createReady, exitGame, nextGoal, openModal, pauseGame, resumeGame, selectGarden, showResult, startGame, type GameState } from '../../public/games/01-2048/state.js';
+import { defaultProfile } from '../../public/games/01-2048/storage.js';
 const failRandom=():number=>{throw new Error('RNG must not run');};
 function fixture(board:number[][],profile=defaultProfile()): GameState { const ready=createReady({...profile,gamesStarted:1}); return {...ready,phase:'playing',board}; }
 test('ready does not start a game, explicit start consumes 4 RNG calls',()=>{

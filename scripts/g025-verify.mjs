@@ -82,7 +82,7 @@ export async function prerequisites(root = ROOT) {
 async function sources(root) {
   return hashes(root, [...await files(root, 'src'), ...await files(root, 'public'), ...await files(root, 'tests'), ...await files(root, 'scripts'), ...await files(root, 'docs/g022-design'),
     'package.json', 'package-lock.json', 'tsconfig.json', 'ecosystem.config.cjs', 'artifacts/g025-integration/browser-gate.py',
-    'docs/G025_PM_CONTRACT.md', 'docs/G025_11_DESIGN.md', 'docs/G025_12_DESIGN.md', 'docs/G025_DESIGN_DECISIONS.md', 'docs/G025_DESIGN_BOARD.html']);
+    'docs/20261029-210318_G025_PM_CONTRACT.md', 'docs/11-mines/20261029-210318_G025_11_DESIGN.md', 'docs/12-fifteen/20261029-210318_G025_12_DESIGN.md', 'docs/20261029-214400_G025_DESIGN_DECISIONS.md', 'docs/G025_DESIGN_BOARD.html']);
 }
 export async function assertReady(root = ROOT) {
   await prerequisites(root);

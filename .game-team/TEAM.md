@@ -17,7 +17,7 @@
 ## 프로젝트 시작과 재개
 1. 마스터의 새 게임 요청에서 기존 프로젝트 경로가 있으면 먼저 그 프로젝트를 읽습니다. '새 프로젝트'가 아니라면 기존 작업을 복제하거나 초기화하지 않습니다.
 2. 새 게임일 때만 init_project.py로 새 폴더를 만듭니다. 기존 폴더가 있으면 중단하며 덮어쓰기 옵션은 없습니다.
-3. 프로젝트 루트의 AGENTS.md, .game-team/project.json, docs/GAME_DESIGN.md, docs/BACKLOG.md, docs/DECISIONS.md, docs/HANDOFF.md를 읽습니다.
+3. 프로젝트 루트의 AGENTS.md, .game-team/project.json, docs/01-2048/init-design/20261024-231330_GAME_DESIGN.md, docs/20261024-231330_BACKLOG.md, docs/20261024-231330_DECISIONS.md, docs/20261024-231330_HANDOFF.md를 읽습니다.
 4. 제목, 장르, 2D/3D, 타깃 플랫폼, 엔진/버전, 첫 플레이 가능한 MVP와 수용 기준을 정합니다. 미정인 것은 미정으로 기록하고, 설치·유료 자산·외부 계정·배포가 필요한 선택은 먼저 확인합니다.
 5. 기획 → 구현 → QA → PM 통합 순서를 지킵니다. 독립된 작업만 병렬 실행하며 앞 단계 산출물이 필요한 작업은 기다립니다.
 
@@ -32,7 +32,7 @@
 현재 세션의 실제 delegate_task 스키마와 동시 실행 한도를 따릅니다. worker는 재위임하지 않습니다. tool schema에 없는 background/role 필드를 만들지 않습니다.
 
 ## 충돌 방지
-- PM만 docs/BACKLOG.md 상태를 최종 변경하고 통합 완료를 선언합니다.
+- PM만 docs/20261024-231330_BACKLOG.md 상태를 최종 변경하고 통합 완료를 선언합니다.
 - 같은 파일·씬을 동시에 수정하지 않습니다. 공유 씬/프로젝트 설정은 한 명이 담당합니다.
 - Unity·Godot·Unreal 등 엔진 프로젝트의 메타데이터, scene/resource GUID, 엔진 설정 파일도 소스처럼 소유자를 배정합니다.
 - Git 저장소에서는 필요 시 worktree로 분리하고 기반 커밋과 병합 순서를 기록합니다. worktree를 보안 샌드박스로 취급하지 않습니다.
