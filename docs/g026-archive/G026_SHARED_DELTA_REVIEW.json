@@ -1,0 +1,520 @@
+{
+  "task_id": "G026-SHARED-DELTA-REVIEW",
+  "status": "PASS_SCOPED_HELPER_AND_NETWORK_CAUSAL_CLASSIFICATION_ONLY",
+  "helper_delta_verdict": "PASS",
+  "network_cause_classification_verdict": "PASS",
+  "whole_targeted_console_csp_acceptance": "FAIL: all six completed scenarios retain one late screenshot-generated inline style-src-elem event and one console error; no global-zero claim",
+  "release_acceptance": false,
+  "physical_root": "E:\\Work2\\Project\\SimpleGames\\worktrees\\g026-fourteen-game-release",
+  "independent_of_helper_implementer": true,
+  "source_changes_by_this_worker": [],
+  "write_scope": [
+    "artifacts/g026-pm/shared-delta-review/**",
+    "docs/G026_SHARED_DELTA_REVIEW.json"
+  ],
+  "scope": "Only current press helper delta and original G024-STORE WebKit kit.svg cancellations. No full246 rerun, no QA13/14 replacement or extra game13 CSP regression.",
+  "inputs_sha256": {
+    "artifacts/g026-build-r2/g026-build-manifest.json": "8ff52a0645b90236df5f20d7f0e48b2d8a6e1c9e284b8c3408b244e7f7751aa6",
+    "artifacts/g026-build/g026-build-manifest.json": "2c4238142c63cc507f3efa5f8e6445f4cd092d335818eda43025aee7898ea648",
+    "artifacts/g026-integration/runs/22903154/execution/playwright-results.json": "5f1478a1c5b2c03067f9f0457d5425037c5f5b9038981248ac6b0454386f5d72",
+    "artifacts/g026-integration/runs/22903154/report.json": "fa3642aa04f4ab09059c4ea428a0e4901d9bea61d3a7390107c2776231875add",
+    "artifacts/g026-integration/runs/a76e4c90/final-binding.json": "adac0b8768d99cc5bb6a7a9ba2b60f388274c517eccebd8574a0f9c34afb06ef",
+    "artifacts/g026-integration/runs/a76e4c90/final-verification.json": "ec1b4099b73004663cce7dace9df59bd1ae77af300df216ee34a8ba2d14688db",
+    "artifacts/g026-integration/runs/a76e4c90/helper-delta.patch": "500b6f486601053429ea5a9d510b41544b82a4ee36638f92a61730d14f5c832a",
+    "artifacts/g026-integration/runs/da9025b4/report.json": "12fb1a4e51170f5a2bee9e1f774d1b7c4a1bec2b0aa7c826ae937d3655592732",
+    "docs/G026_HOLD_HARNESS_FIX.md": "6c46dd70fd850730f964c3c1ceeb92c71ee781926b0e294ef5bac314d57f8f50",
+    "docs/G026_QA14.json": "1ee8a364c08cda05c3dac086720bd823f9b6ca3a2cbc4531c5aaf2e835922b31",
+    "scripts/g026-verify.mjs": "d6444e96b07201e088a1319558955724bf2ed36058416c279a578c2121c3fac9",
+    "tests/e2e/breakout-integration.spec.ts": "1706f4270868d2f29184f9a78a4b85cbdb578158f04826c663c43df0f02a9636",
+    "tests/e2e/g024-new-games.spec.ts": "77b73fdffd7cf271258c94b760c6c0e40704d77d3032a2004024dbbc8b828a3c",
+    "tests/e2e/g025-new-games.spec.ts": "b66745f63386220d0f0a20c2e05a150769162e04bde27e284c3388ba0fb91b36",
+    "tests/e2e/g026-new-games.spec.ts": "3dcc9794dadc4ec45c73bcd0d5be266251305651351251feccbc6313b89c5fb5",
+    "tests/e2e/library-integration.spec.ts": "148c6568000557fda9bc3d6b41a6097df8a282180e40cea0bc1f58095b215d7c",
+    "tests/e2e/live-server.spec.ts": "1c894910aab894390997dce1eea0b7a7ab179741e563f03a29cafe441fa99473",
+    "tests/e2e/multi-game-integration.spec.ts": "c9669bb7c9b9f0b1d90dcb8f8a3ef96dbeaec3da9caef4cb4434b80b0f688505",
+    "tests/e2e/runner-jumper.spec.ts": "bf0cffd8f424e40ac0dbf8591eb18842b6e5d820a459c189a67e3f57fd38626f",
+    "tests/g026-playwright.config.ts": "88e64303d88630cf8df1bc1f9b6f076011912b18a60251db081b8109b701fdf2"
+  },
+  "original_spec_sha256": "08572166f85e44d5849aca0bf4be747055fa0ac7458cbd3f1ecb6e0c13215481",
+  "current_spec_sha256": "3dcc9794dadc4ec45c73bcd0d5be266251305651351251feccbc6313b89c5fb5",
+  "helper_review": {
+    "exact_delta": {
+      "delay_before": 80,
+      "delay_after": 100,
+      "added_comment_lines": 2,
+      "other_spec_byte_changes": false
+    },
+    "actual_native_hold_threshold_ms": 80,
+    "preserved": [
+      "actual >=80ms assertion, no epsilon",
+      "isTrusted click",
+      "trusted same-target/pointerId down/up association",
+      "non-null measured hold",
+      "native/unfrozen clock",
+      "functional expectations and state observers",
+      "full unfiltered console/network/CSP assertions",
+      "retries=0, skips unchanged, timeout45000 and expect5000 unchanged"
+    ],
+    "security_concerns": [],
+    "logic_errors": [],
+    "reuse_actual_key": "docs/G026_QA14.json.shared_static_review",
+    "reuse_shared_hash_matched_unchanged_files": 9,
+    "reviewed_shared_files": [
+      {
+        "path": "scripts/g026-verify.mjs",
+        "reviewed_sha256": "d6444e96b07201e088a1319558955724bf2ed36058416c279a578c2121c3fac9",
+        "actual_sha256": "d6444e96b07201e088a1319558955724bf2ed36058416c279a578c2121c3fac9",
+        "unchanged": true
+      },
+      {
+        "path": "tests/g026-playwright.config.ts",
+        "reviewed_sha256": "88e64303d88630cf8df1bc1f9b6f076011912b18a60251db081b8109b701fdf2",
+        "actual_sha256": "88e64303d88630cf8df1bc1f9b6f076011912b18a60251db081b8109b701fdf2",
+        "unchanged": true
+      },
+      {
+        "path": "tests/e2e/g026-new-games.spec.ts",
+        "reviewed_sha256": "08572166f85e44d5849aca0bf4be747055fa0ac7458cbd3f1ecb6e0c13215481",
+        "actual_sha256": "3dcc9794dadc4ec45c73bcd0d5be266251305651351251feccbc6313b89c5fb5",
+        "unchanged": false
+      },
+      {
+        "path": "tests/e2e/breakout-integration.spec.ts",
+        "reviewed_sha256": "1706f4270868d2f29184f9a78a4b85cbdb578158f04826c663c43df0f02a9636",
+        "actual_sha256": "1706f4270868d2f29184f9a78a4b85cbdb578158f04826c663c43df0f02a9636",
+        "unchanged": true
+      },
+      {
+        "path": "tests/e2e/g024-new-games.spec.ts",
+        "reviewed_sha256": "77b73fdffd7cf271258c94b760c6c0e40704d77d3032a2004024dbbc8b828a3c",
+        "actual_sha256": "77b73fdffd7cf271258c94b760c6c0e40704d77d3032a2004024dbbc8b828a3c",
+        "unchanged": true
+      },
+      {
+        "path": "tests/e2e/g025-new-games.spec.ts",
+        "reviewed_sha256": "b66745f63386220d0f0a20c2e05a150769162e04bde27e284c3388ba0fb91b36",
+        "actual_sha256": "b66745f63386220d0f0a20c2e05a150769162e04bde27e284c3388ba0fb91b36",
+        "unchanged": true
+      },
+      {
+        "path": "tests/e2e/library-integration.spec.ts",
+        "reviewed_sha256": "148c6568000557fda9bc3d6b41a6097df8a282180e40cea0bc1f58095b215d7c",
+        "actual_sha256": "148c6568000557fda9bc3d6b41a6097df8a282180e40cea0bc1f58095b215d7c",
+        "unchanged": true
+      },
+      {
+        "path": "tests/e2e/live-server.spec.ts",
+        "reviewed_sha256": "1c894910aab894390997dce1eea0b7a7ab179741e563f03a29cafe441fa99473",
+        "actual_sha256": "1c894910aab894390997dce1eea0b7a7ab179741e563f03a29cafe441fa99473",
+        "unchanged": true
+      },
+      {
+        "path": "tests/e2e/multi-game-integration.spec.ts",
+        "reviewed_sha256": "c9669bb7c9b9f0b1d90dcb8f8a3ef96dbeaec3da9caef4cb4434b80b0f688505",
+        "actual_sha256": "c9669bb7c9b9f0b1d90dcb8f8a3ef96dbeaec3da9caef4cb4434b80b0f688505",
+        "unchanged": true
+      },
+      {
+        "path": "tests/e2e/runner-jumper.spec.ts",
+        "reviewed_sha256": "bf0cffd8f424e40ac0dbf8591eb18842b6e5d820a459c189a67e3f57fd38626f",
+        "actual_sha256": "bf0cffd8f424e40ac0dbf8591eb18842b6e5d820a459c189a67e3f57fd38626f",
+        "unchanged": true
+      }
+    ],
+    "candidate_source_delta": [
+      {
+        "path": "tests/e2e/g026-new-games.spec.ts",
+        "before": "08572166f85e44d5849aca0bf4be747055fa0ac7458cbd3f1ecb6e0c13215481",
+        "after": "3dcc9794dadc4ec45c73bcd0d5be266251305651351251feccbc6313b89c5fb5"
+      }
+    ],
+    "candidate_output_verification": {
+      "old": {
+        "count": 155,
+        "mismatches": []
+      },
+      "r2": {
+        "count": 155,
+        "mismatches": []
+      }
+    },
+    "normalized_candidate_runtime_byte_identical": true,
+    "independent_observer_control_count": 8,
+    "independent_observer_controls_all_expected": true,
+    "original_native_79_8ms_still_rejected": true,
+    "observer_control_evidence": "artifacts/g026-pm/shared-delta-review/independent-helper-controls.json",
+    "reused_raw_execution_evidence": [
+      {
+        "run": "d8e2dfe3",
+        "executed_by_this_worker": false,
+        "reused_measurement_count": 99,
+        "minimum_hold_ms": 100.5,
+        "all_trusted_and_actual_at_least_80": true,
+        "raw_audit_attachments": 12,
+        "raw_audits_all_zero": true
+      },
+      {
+        "run": "22903154",
+        "executed_by_this_worker": false,
+        "reused_measurement_count": 396,
+        "minimum_hold_ms": 100.09999999403954,
+        "all_trusted_and_actual_at_least_80": true,
+        "raw_audit_attachments": 18,
+        "raw_audits_all_zero": true
+      }
+    ],
+    "original_full_failure_not_relabelled": true,
+    "independent_browser_execution_of_games13_or14": 0
+  },
+  "g024_network_diagnosis": {
+    "classification": "Test navigation lifecycle/readiness race: home external SVG-use subresources are abandoned by the immediately scheduled page.goto(02-snake), not a demonstrated product asset-serving defect.",
+    "original_case": "mobile-webkit / G024-STORE all eight existing profiles and old upcoming favorites survive two new games via public UI",
+    "original_unfiltered_audit": {
+      "console": [],
+      "pageErrors": [],
+      "csp": [],
+      "external": [],
+      "failedHTTP": [],
+      "failedRequests": [
+        {
+          "url": "http://127.0.0.1:3160/games/08-doodle/assets/kit.svg",
+          "failure": {
+            "errorText": "Load request cancelled"
+          }
+        },
+        {
+          "url": "http://127.0.0.1:3160/games/06-flappy/assets/kit.svg",
+          "failure": {
+            "errorText": "Load request cancelled"
+          }
+        },
+        {
+          "url": "http://127.0.0.1:3160/games/07-dino/assets/kit.svg",
+          "failure": {
+            "errorText": "Load request cancelled"
+          }
+        }
+      ]
+    },
+    "original_g024_has_request_routing": false,
+    "g024_uses_separate_unchanged_80ms_helper": true,
+    "original_trace_next_goto": {
+      "type": "before",
+      "callId": "trsg@1290",
+      "startTime": 357885.056,
+      "class": "Frame",
+      "method": "goto",
+      "params": {
+        "url": "/games/02-snake/index.html",
+        "waitUntil": "load"
+      }
+    },
+    "original_failed_request_timeline": [
+      {
+        "url": "http://127.0.0.1:3160/games/08-doodle/assets/kit.svg",
+        "resource_type": "other",
+        "sec_fetch_dest": "image",
+        "request_start_monotonic_ms": 357910.826,
+        "cancel_monotonic_ms": 357912.05,
+        "cancel_after_next_goto_intent_ms": 26.994000000006054,
+        "failure": "Load request cancelled"
+      },
+      {
+        "url": "http://127.0.0.1:3160/games/06-flappy/assets/kit.svg",
+        "resource_type": "other",
+        "sec_fetch_dest": "image",
+        "request_start_monotonic_ms": 357910.696,
+        "cancel_monotonic_ms": 357912.288,
+        "cancel_after_next_goto_intent_ms": 27.23200000001816,
+        "failure": "Load request cancelled"
+      },
+      {
+        "url": "http://127.0.0.1:3160/games/07-dino/assets/kit.svg",
+        "resource_type": "other",
+        "sec_fetch_dest": "image",
+        "request_start_monotonic_ms": 357910.764,
+        "cancel_monotonic_ms": 357912.331,
+        "cancel_after_next_goto_intent_ms": 27.275000000023283,
+        "failure": "Load request cancelled"
+      }
+    ],
+    "own_counterexample": "Native required assets held in Playwright route, same immutable r2 served over real HTTP; next explicit navigation cancels all three with identical error and resourceType other. Original source was not modified.",
+    "controlled_cancel_after_navigation_intent_ms": [
+      3.811700000000201,
+      3.834799999999632,
+      4.08849999999984
+    ],
+    "before_navigation_negative_document": {
+      "url": "http://127.0.0.1:3167/",
+      "readyState": "interactive",
+      "pending": 3,
+      "svgUseCount": 6,
+      "allUseBoundsZero": true
+    },
+    "before_navigation_barrier_document": {
+      "url": "http://127.0.0.1:3167/",
+      "readyState": "complete",
+      "pending": 0,
+      "svgUseCount": 6,
+      "allUseBoundsNonZero": true
+    },
+    "all_three_original_http200_body_sha_and_csp_matched": [
+      {
+        "id": 26,
+        "url": "http://127.0.0.1:3167/games/06-flappy/assets/kit.svg",
+        "actualSha256": "f7d12fc5f09a6729097b5f775533585162016217cd66f09e177d60ac640687ec",
+        "expectedSha256": "f7d12fc5f09a6729097b5f775533585162016217cd66f09e177d60ac640687ec",
+        "status": 200,
+        "csp": "default-src 'none'; script-src 'self'; style-src 'self'; img-src 'self'; font-src 'self'; connect-src 'none'; media-src 'none'; object-src 'none'; base-uri 'none'; form-action 'none'; frame-ancestors 'none'"
+      },
+      {
+        "id": 27,
+        "url": "http://127.0.0.1:3167/games/07-dino/assets/kit.svg",
+        "actualSha256": "5ee9c18a0fdda88c67cc288ccf36e2cbde2b4882f05afcd6617c39b21cded4ac",
+        "expectedSha256": "5ee9c18a0fdda88c67cc288ccf36e2cbde2b4882f05afcd6617c39b21cded4ac",
+        "status": 200,
+        "csp": "default-src 'none'; script-src 'self'; style-src 'self'; img-src 'self'; font-src 'self'; connect-src 'none'; media-src 'none'; object-src 'none'; base-uri 'none'; form-action 'none'; frame-ancestors 'none'"
+      },
+      {
+        "id": 28,
+        "url": "http://127.0.0.1:3167/games/08-doodle/assets/kit.svg",
+        "actualSha256": "a42be682300bdc085c1caa11a100f46657dff9e5814f4ee8377539bc0a3199cb",
+        "expectedSha256": "a42be682300bdc085c1caa11a100f46657dff9e5814f4ee8377539bc0a3199cb",
+        "status": 200,
+        "csp": "default-src 'none'; script-src 'self'; style-src 'self'; img-src 'self'; font-src 'self'; connect-src 'none'; media-src 'none'; object-src 'none'; base-uri 'none'; form-action 'none'; frame-ancestors 'none'"
+      }
+    ],
+    "unchanged_failedRequests_empty_assertion_rejects_negative": true,
+    "failedRequests_empty_assertion_accepts_barrier": true,
+    "zero_assertion_filtering_or_exception_added": false,
+    "natural_no_route_short_reproduction": {
+      "old": 0,
+      "r2": 0,
+      "meaning": "Zero cancellations on these two single natural prefix runs; original no-route nondeterminism not deterministically replayed. Controlled route pair isolates the pending-navigation mechanism, not an attribution to routing in the original run."
+    },
+    "product_fault_established": false,
+    "link_to_game13_meadow_connect_src_failure": "NOT_ESTABLISHED: original G024 CSP array is empty; its external SVG-use requests have Sec-Fetch-Dest image and no connect-src diagnostic. Own late screenshot style-src-elem inline violation is distinct.",
+    "minimal_observer_correction_proposal": [
+      "At G024-STORE line135, register promises for the new home document native required kit.svg requests before clicking #result-home.",
+      "After the public home click, await the home document load, rendered catalog, and completion of all three original native responses (HTTP200 and response.finished() success) before explicit goto(02-snake).",
+      "Verify no pending requests from the document before leaving it; preserve original global failedRequests == [] assertion and all functional/CSP checks.",
+      "No URL/error/resourceType cancellation filters, extra fetch under connect-src none, fixed sleep, CSP relaxation, skipped cases, retry-until-green, product change or test timeout change.",
+      "A separately authorized test owner must apply/review this correction and run the exact original target against the next candidate; this worker did not edit it."
+    ],
+    "suggested_patch_applied": false
+  },
+  "actual_executed_counts": {
+    "targeted_prefix_scenario_attempts": 8,
+    "completed_targeted_prefix_scenarios": 6,
+    "artifact_diagnostic_implementation_errors": 2,
+    "network_zero_completed_scenarios": 5,
+    "intentional_pending_navigation_negative_control": 1,
+    "original_G024_STORE_complete_spec_executions": 0,
+    "full246_executions": 0,
+    "helper_observer_replay_controls": 8,
+    "helper_call_shape_controls": 1,
+    "whole_unfiltered_zero_completed_scenarios": 0
+  },
+  "targeted_case_results": [
+    {
+      "summary_path": "artifacts/g026-pm/shared-delta-review/targeted-results.json",
+      "name": "r2-original-immediate",
+      "build": "artifacts/g026-build-r2",
+      "barrier": false,
+      "routing": false,
+      "cached_status_not_final": "AUDIT_ZERO",
+      "final_raw_audit_counts": {
+        "console": 1,
+        "pageErrors": 0,
+        "csp": 1,
+        "external": 0,
+        "failedHTTP": 0,
+        "failedRequests": 0
+      },
+      "final_whole_audit_zero": false,
+      "failed_requests_zero": true,
+      "diagnostic_error": null,
+      "note": "Cached AUDIT_ZERO was computed before the screenshot. Raw console/CSP events emitted by screenshot are retained and override global-zero claims."
+    },
+    {
+      "summary_path": "artifacts/g026-pm/shared-delta-review/targeted-results.json",
+      "name": "r2-asset-barrier",
+      "build": "artifacts/g026-build-r2",
+      "barrier": true,
+      "routing": false,
+      "cached_status_not_final": "DIAGNOSTIC_ERROR",
+      "final_raw_audit_counts": {
+        "console": 0,
+        "pageErrors": 0,
+        "csp": 0,
+        "external": 0,
+        "failedHTTP": 0,
+        "failedRequests": 0
+      },
+      "final_whole_audit_zero": true,
+      "failed_requests_zero": true,
+      "diagnostic_error": "page.evaluate: TypeError: n.getBBox().toJSON is not a function. (In 'n.getBBox().toJSON()', 'n.getBBox().toJSON' is undefined)\n    at scenario (E:\\Work2\\Project\\SimpleGames\\worktrees\\g026-fourteen-game-release\\artifacts\\g026-pm\\shared-delta-review\\targeted-diagnostic.mjs:74:27)\n    at async file:///E:/Work2/Project/SimpleGames/worktrees/g026-fourteen-game-release/artifacts/g026-pm/shared-delta-review/targeted-diagnostic.mjs:98:161",
+      "note": "Cached AUDIT_ZERO was computed before the screenshot. Raw console/CSP events emitted by screenshot are retained and override global-zero claims."
+    },
+    {
+      "summary_path": "artifacts/g026-pm/shared-delta-review/followup/targeted-results.json",
+      "name": "r2-asset-barrier",
+      "build": "artifacts/g026-build-r2",
+      "barrier": true,
+      "routing": false,
+      "cached_status_not_final": "DIAGNOSTIC_ERROR",
+      "final_raw_audit_counts": {
+        "console": 0,
+        "pageErrors": 0,
+        "csp": 0,
+        "external": 0,
+        "failedHTTP": 0,
+        "failedRequests": 0
+      },
+      "final_whole_audit_zero": true,
+      "failed_requests_zero": true,
+      "diagnostic_error": "response.body: Protocol error (Network.getResponseBody): Missing resource for given requestId\nResponse body is not available for a response that was navigated away from. Read response.body() before triggering any navigation.\n    at scenario (E:\\Work2\\Project\\SimpleGames\\worktrees\\g026-fourteen-game-release\\artifacts\\g026-pm\\shared-delta-review\\targeted-diagnostic.mjs:107:196)\n    at async file:///E:/Work2/Project/SimpleGames/worktrees/g026-fourteen-game-release/artifacts/g026-pm/shared-delta-review/targeted-diagnostic.mjs:120:227",
+      "note": "Cached AUDIT_ZERO was computed before the screenshot. Raw console/CSP events emitted by screenshot are retained and override global-zero claims."
+    },
+    {
+      "summary_path": "artifacts/g026-pm/shared-delta-review/followup2/targeted-results.json",
+      "name": "r2-asset-barrier",
+      "build": "artifacts/g026-build-r2",
+      "barrier": true,
+      "routing": false,
+      "cached_status_not_final": "AUDIT_ZERO",
+      "final_raw_audit_counts": {
+        "console": 1,
+        "pageErrors": 0,
+        "csp": 1,
+        "external": 0,
+        "failedHTTP": 0,
+        "failedRequests": 0
+      },
+      "final_whole_audit_zero": false,
+      "failed_requests_zero": true,
+      "diagnostic_error": null,
+      "note": "Cached AUDIT_ZERO was computed before the screenshot. Raw console/CSP events emitted by screenshot are retained and override global-zero claims."
+    },
+    {
+      "summary_path": "artifacts/g026-pm/shared-delta-review/followup2/targeted-results.json",
+      "name": "old-original-immediate",
+      "build": "artifacts/g026-build",
+      "barrier": false,
+      "routing": false,
+      "cached_status_not_final": "AUDIT_ZERO",
+      "final_raw_audit_counts": {
+        "console": 1,
+        "pageErrors": 0,
+        "csp": 1,
+        "external": 0,
+        "failedHTTP": 0,
+        "failedRequests": 0
+      },
+      "final_whole_audit_zero": false,
+      "failed_requests_zero": true,
+      "diagnostic_error": null,
+      "note": "Cached AUDIT_ZERO was computed before the screenshot. Raw console/CSP events emitted by screenshot are retained and override global-zero claims."
+    },
+    {
+      "summary_path": "artifacts/g026-pm/shared-delta-review/followup2/targeted-results.json",
+      "name": "old-asset-barrier",
+      "build": "artifacts/g026-build",
+      "barrier": true,
+      "routing": false,
+      "cached_status_not_final": "AUDIT_ZERO",
+      "final_raw_audit_counts": {
+        "console": 1,
+        "pageErrors": 0,
+        "csp": 1,
+        "external": 0,
+        "failedHTTP": 0,
+        "failedRequests": 0
+      },
+      "final_whole_audit_zero": false,
+      "failed_requests_zero": true,
+      "diagnostic_error": null,
+      "note": "Cached AUDIT_ZERO was computed before the screenshot. Raw console/CSP events emitted by screenshot are retained and override global-zero claims."
+    },
+    {
+      "summary_path": "artifacts/g026-pm/shared-delta-review/followup2/targeted-results.json",
+      "name": "r2-controlled-held-original-immediate",
+      "build": "artifacts/g026-build-r2",
+      "barrier": false,
+      "routing": true,
+      "cached_status_not_final": "AUDIT_FAILED",
+      "final_raw_audit_counts": {
+        "console": 1,
+        "pageErrors": 0,
+        "csp": 1,
+        "external": 0,
+        "failedHTTP": 0,
+        "failedRequests": 3
+      },
+      "final_whole_audit_zero": false,
+      "failed_requests_zero": false,
+      "diagnostic_error": null,
+      "note": "Cached AUDIT_ZERO was computed before the screenshot. Raw console/CSP events emitted by screenshot are retained and override global-zero claims."
+    },
+    {
+      "summary_path": "artifacts/g026-pm/shared-delta-review/followup2/targeted-results.json",
+      "name": "r2-controlled-held-asset-barrier",
+      "build": "artifacts/g026-build-r2",
+      "barrier": true,
+      "routing": true,
+      "cached_status_not_final": "AUDIT_ZERO",
+      "final_raw_audit_counts": {
+        "console": 1,
+        "pageErrors": 0,
+        "csp": 1,
+        "external": 0,
+        "failedHTTP": 0,
+        "failedRequests": 0
+      },
+      "final_whole_audit_zero": false,
+      "failed_requests_zero": true,
+      "diagnostic_error": null,
+      "note": "Cached AUDIT_ZERO was computed before the screenshot. Raw console/CSP events emitted by screenshot are retained and override global-zero claims."
+    }
+  ],
+  "own_diagnostic_csp_finding": {
+    "status": "OBSERVED_FAIL_PRESERVED",
+    "raw_events": "artifacts/g026-pm/shared-delta-review/final-readback-verification.json.screenshot_csp_raw_timeline",
+    "count_completed_scenarios": 6,
+    "directive": "style-src-elem",
+    "blockedURI": "inline",
+    "document": "/games/02-snake/index.html",
+    "timing": "Each console error follows page.screenshot start; all raw CSP/console arrays are nonempty and retained.",
+    "local_primary_implementation": "node_modules/playwright-core/lib/coreBundle.js:22719-22725 injects style body {} for syncAnimations; lines22944-22948 invoke screenshot preparation with shouldToggleStyleSheetToSyncAnimations().",
+    "cached_status_warning": "Own initial script computed AUDIT_ZERO before screenshot. Treat cached statuses and otherAuditZero as pre-screenshot only; this report recomputes final raw array counts and does NOT accept whole-audit zero.",
+    "changed_or_suppressed": false
+  },
+  "issues_encountered": [
+    "First artifact-only barrier run stopped on WebKit SVGRect.getBBox().toJSON absence; fixed diagnostic serialization only, raw failure retained.",
+    "Second artifact-only barrier run stopped because WebKit response.body was requested after navigation; moved body verification before navigation, raw failure retained.",
+    "Installed TypeScript7 package did not expose expected ScriptTarget API; helper replay used the actual Node stripTypeScriptTypes API instead, which emitted its real experimental warning.",
+    "Final replay check caught late screenshot CSP events hidden by cached early counters; retained raw events and recomputed the final whole-audit FAIL rather than filtering or rerunning green."
+  ],
+  "protection": {
+    "original_evidence_and_candidates_sha_size_mtime_verified_files": 465,
+    "changes": [],
+    "game14_frozen_hash_matched_files": 12,
+    "all_browser_runs_typed_handle_blocking_mutex": "Local\\SimpleGamesG026BrowserGate",
+    "gate_evidence": [
+      "artifacts/g026-pm/shared-delta-review/browser-gate.json",
+      "artifacts/g026-pm/shared-delta-review/followup-browser-gate.json",
+      "artifacts/g026-pm/shared-delta-review/followup2-browser-gate.json"
+    ],
+    "server": "Owned empty loopback3167 only; all final servers closed, port refused. Never touched3116/PM2/Git/board."
+  },
+  "unclassified_limits": [
+    "Original no-routing cancellation was not reproduced naturally in the two short baseline runs; exact WebKit internal scheduling root cause below document navigation is not traced.",
+    "Controlled routing is an explicit diagnostic interleaving, not original runtime behavior and not a product/complete-spec PASS.",
+    "No complete G024 storage scenario rerun and no full246 rerun; old and r2 full reports remain FAILED.",
+    "Own screenshot creates a separate preserved strict-CSP audit failure; there is no all-console/CSP-zero acceptance for these diagnostic runs.",
+    "Game13 functional/CSP defects remain with the separate authorized builder/tester; no conclusion on its fix or release readiness.",
+    "No physical-device/touch/audio/deployment acceptance."
+  ],
+  "evidence_root": "artifacts/g026-pm/shared-delta-review",
+  "completed_at": "2026-10-29T17:14:21.932907+00:00"
+}

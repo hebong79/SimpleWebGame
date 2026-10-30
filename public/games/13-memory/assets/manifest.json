@@ -1,0 +1,65 @@
+{
+  "author": "Hermes builder13 / G026-BUILD13",
+  "provenance": "Original hand-authored vector geometry; no external assets or dependencies",
+  "license": "Original project asset, reusable within SimpleGames",
+  "viewBox": "0 0 64 64",
+  "fronts": [
+    {
+      "id": "apple",
+      "path": "assets/apple.svg",
+      "sha256": "9cb9488b568c399e0e6665f08bd0045c9ea35e5076f268dace13e8668f7fb42c"
+    },
+    {
+      "id": "pear",
+      "path": "assets/pear.svg",
+      "sha256": "4ebd746f2c03ad850a68bd4670aef081042806be72733eca8744d2c994980f1c"
+    },
+    {
+      "id": "orange",
+      "path": "assets/orange.svg",
+      "sha256": "0ec256ddd464783a5919a786376d045b985e3eb135a1609a569ec5f5b43d0da9"
+    },
+    {
+      "id": "berry",
+      "path": "assets/berry.svg",
+      "sha256": "f6bd4501672787d3ecdd8426c0e17ae466a9624e2fdf0bc98cd91dc15d5b2ae9"
+    },
+    {
+      "id": "cookie",
+      "path": "assets/cookie.svg",
+      "sha256": "3dd1aadc360b8c179c9931ceef5ecd2c3004bae8e10b0637701759b99c84016b"
+    },
+    {
+      "id": "bread",
+      "path": "assets/bread.svg",
+      "sha256": "3259cc5cbe1b2469e1613e15fe954080a2f05e21e0c03b3fa3bd622b5ca9cfe7"
+    },
+    {
+      "id": "cherry",
+      "path": "assets/cherry.svg",
+      "sha256": "b3666bb8017b9d887a6c44981b07fff91a4197dae375c3e859ee16d8d0c25353"
+    },
+    {
+      "id": "candy",
+      "path": "assets/candy.svg",
+      "sha256": "502095639e34d9e79335b5f51b4a2e66ca9b3b7fc7b634fbb224ab70a6078f3e"
+    }
+  ],
+  "backs": [
+    {
+      "id": "back-cream",
+      "path": "assets/back-cream.svg",
+      "sha256": "57314c44ecb3cb39703bc51e64ea691d528283e81aa0d6528a052e7e7816f397"
+    },
+    {
+      "id": "back-meadow",
+      "path": "assets/back-meadow.svg",
+      "sha256": "864e3e00fbcbf95db7a9ba9ad5d79853d67a4102eee0f9a3cade8853b0292068"
+    },
+    {
+      "id": "back-evening",
+      "path": "assets/back-evening.svg",
+      "sha256": "6681eb22d8eb26036738db944668ddaea03e003c1dfda3e418dad092093416be"
+    }
+  ]
+}

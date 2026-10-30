@@ -1,0 +1,86 @@
+{
+  "task_id": "G027-QA13",
+  "status": "pass",
+  "status_note": "blocker/major 제품 결함 0건. 미검증 항목(실기기·청취·사람 플레이·OS 네이티브)은 별도 명시.",
+  "game": "13 / 간식 짝꿍 / snack-pairs",
+  "independent_of_builder": true,
+  "completed_at": "2026-10-30T23:12:01+09:00",
+  "report": "docs/13-memory/20261030-231201_G027_QA13.md",
+  "inputs": {
+    "source_dir": "public/games/13-memory",
+    "build_dir": "artifacts/g027-build/public/games/13-memory",
+    "file_count": 17,
+    "source_equals_build": true,
+    "manifest_sha256": "a73f41d971990657fe8d8ad006657ca5786c87741c83d75ce36cc2fb419d4802",
+    "manifest_13_entries_match": true,
+    "hash_list": "artifacts/g027-qa13/input-hashes.json"
+  },
+  "server": { "command": "node artifacts/g027-build/src/server/index.js --host 127.0.0.1 --port 3172", "stopped": true, "connection_refused_after_stop": true, "other_ports_touched": false },
+  "counts": {
+    "engine_save_node_test": { "executed": 22, "passed": 22, "failed": 0, "skipped": 0 },
+    "browser_desktop_chromium_1366x900": { "executed": 33, "passed": 31, "failed": 0, "skipped": 2 },
+    "browser_mobile_chromium_320x667_touch": { "executed": 33, "passed": 30, "failed": 0, "skipped": 3 },
+    "browser_mobile_webkit_320x667": { "executed": 33, "passed": 29, "failed": 0, "skipped": 4 },
+    "browser_total": { "executed": 99, "passed": 90, "failed": 0, "skipped": 9 }
+  },
+  "defects": [
+    {
+      "id": "D1", "severity": "minor", "kind": "product",
+      "title": "재생 중 프레임마다 동일 값 속성 쓰기(aria-label/aria-pressed/hidden/disabled, 약 60회/초)",
+      "repro": "게임 시작 후 카드 1장 연 상태에서 MutationObserver(attributes)로 2.5초 관찰",
+      "actual": "#board aria-label, #mute aria-pressed, #storage-warning hidden, 카드 disabled 각 150회/2.5초 (텍스트 노드 변경은 0)",
+      "expected": "값이 바뀔 때만 쓰기",
+      "evidence": ["artifacts/g027-qa13/mutation-churn-desktop-chromium.json", "artifacts/g027-qa13/mutation-churn-mobile-chromium.json", "artifacts/g027-qa13/mutation-churn-mobile-webkit.json"]
+    },
+    {
+      "id": "D2", "severity": "minor", "kind": "product",
+      "title": "셔플 실패 오류 문구가 재개 후에도 다음 유효 입력까지 남음",
+      "repro": "진행 중 Math.random을 () => 2로 바꾼 뒤 다시 시작 → 새로 시작 적용 → 재개",
+      "actual": "상태줄이 '카드를 섞지 못했어요. 현재 판은 그대로입니다…' 유지",
+      "expected": "재개 시 오류 문구 해제",
+      "evidence": ["artifacts/g027-qa13/rng-failure-status-after-resume-desktop-chromium.json", "artifacts/g027-qa13/rng-failure-midgame-desktop-chromium.json"]
+    }
+  ],
+  "observations": [
+    "320px에서 맞춤 카드의 '짝 완료' 보이는 텍스트는 CSS로 숨김(✓+테두리 표시, 접근성 이름에는 포함)",
+    "assets/manifest.json은 서버 JSON MIME 미지원으로 404(페이지 미참조)",
+    "320px 보통 모드 그림 크기 24px(쉬움 30px), 한글 라벨 병기; 설계 문구 '44px minimum' 해석은 PM 판단"
+  ],
+  "harness_observations": [
+    "WebKit fullPage 스크린샷이 CSP style-src 위반 콘솔 오류를 유발(스크린샷 호출 구간만 tool-noise로 분리)",
+    "Playwright WebKit 빌드에 AudioContext 없음, 터치 누름 유지 불가(마우스 80ms로 대체)",
+    "Chromium 중간 버튼 자동 스크롤과 드래그 직후 첫 탭 click 미발생은 브라우저 동작",
+    "synthesizeScrollGesture가 스크롤하지 않아 수동 CDP 스와이프 사용",
+    "헤드리스에서 새 페이지 포커스로 실제 blur 미발생, blur/visibility/pagehide는 합성 이벤트로 검증"
+  ],
+  "unverified": [
+    "실기기 안드로이드/아이폰 손가락 입력",
+    "실제 소리 청취(WebKit은 AudioContext 없음)",
+    "사람 체감 플레이(1~3분 길이)",
+    "네이티브 OS 창 숨김/포커스 이동",
+    "WebKit 물리 키보드, 마우스 제스처, 멀티터치 취소",
+    "실제 3116 운영 반영/사용자 LAN 주소",
+    "전체 기존 회귀 스위트(AC-C08)와 다른 12게임 기능 정확성"
+  ],
+  "evidence_paths": [
+    "docs/13-memory/20261030-231201_G027_QA13.md",
+    "artifacts/g027-qa13/input-hashes.json",
+    "artifacts/g027-qa13/engine-adversarial.test.mjs",
+    "artifacts/g027-qa13/qa13.spec.mjs",
+    "artifacts/g027-qa13/playwright.qa13.config.mjs",
+    "artifacts/g027-qa13/browser-gate.py",
+    "artifacts/g027-qa13/logs/engine-final.log",
+    "artifacts/g027-qa13/logs/run-final-all.log",
+    "artifacts/g027-qa13/logs/engine-run1.log",
+    "artifacts/g027-qa13/logs/run-desktop-1.log",
+    "artifacts/g027-qa13/logs/run-mobile-chromium-1.log",
+    "artifacts/g027-qa13/logs/run-mobile-webkit-1.log",
+    "artifacts/g027-qa13/screens/",
+    "artifacts/g027-qa13/layout-normal-mobile-chromium.json",
+    "artifacts/g027-qa13/press80-desktop-chromium.json",
+    "artifacts/g027-qa13/mismatch-timing-desktop-chromium.json",
+    "artifacts/g027-qa13/security-desktop-chromium.json",
+    "artifacts/g027-qa13/launch-links.json",
+    "artifacts/g027-qa13/catalog-desktop-chromium.json"
+  ]
+}

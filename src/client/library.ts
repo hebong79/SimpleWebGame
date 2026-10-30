@@ -22,7 +22,7 @@ interface LibraryState {
   limit: number;
 }
 const GAME_CATALOG: CatalogGame[] = [
-  { id: 'number-garden', title: '숫자 정원', genre: '숫자', description: '같은 숫자를 합치며 키우는 작은 정원', tags: ['2048', '합치기', '정원'], minutes: 3, maxMinutes: 10, status: 'available', href: '/game.html' },
+  { id: 'number-garden', title: '숫자 정원', genre: '숫자', description: '같은 숫자를 합치며 키우는 작은 정원', tags: ['2048', '합치기', '정원'], minutes: 3, maxMinutes: 10, status: 'available', href: '/games/01-2048/index.html' },
   { id: 'little-dragon', title: '꼬마 용 간식 여행', genre: '순발력', description: '간식을 모으며 자라는 용과 나만의 코스튬', tags: ['스네이크', 'snake', '용', '간식', '코스튬'], minutes: 1, maxMinutes: 3, status: 'available', href: '/games/02-snake/index.html' },
   { id: 'neon-rally', title: '네온 랠리', genre: '순발력', description: '키보드와 터치로 받아치는 7점 선취 퐁', tags: ['퐁', 'pong', '패들', '랠리', 'AI'], minutes: 1, maxMinutes: 3, status: 'available', href: '/games/03-pong/index.html' },
   { id: 'cosmic-cleanup', title: '우주 청소부', genre: '순발력', description: '공을 튕겨 세 구역의 우주 잔해를 말끔하게', tags: ['벽돌깨기', 'breakout', '우주', '패들', '3스테이지'], minutes: 1, maxMinutes: 4, status: 'available', href: '/games/04-breakout/index.html' },
@@ -34,6 +34,8 @@ const GAME_CATALOG: CatalogGame[] = [
   { id: 'hamster-depot', title: '햄스터 택배 창고', genre: '퍼즐', description: '택배를 목표에 밀어 넣는 스무 개의 창고', tags: ['상자밀기', 'sokoban', '햄스터', '택배', '20단계', '코스튬'], minutes: 1, maxMinutes: 5, status: 'available', href: '/games/10-sokoban/index.html' },
   { id: 'gem-survey', title: '보석 탐사 지도', genre: '숫자', description: '숫자 단서를 읽고 안전한 보석 지도를 펼쳐요', tags: ['지뢰찾기', 'mines', '보석', '지도', '논리'], minutes: 2, maxMinutes: 6, status: 'available', href: '/games/11-mines/index.html' },
   { id: 'number-postbox', title: '숫자 우체통', genre: '숫자', description: '빈칸을 옮기며 번호 엽서를 차례로 정리해요', tags: ['15퍼즐', 'fifteen', '숫자', '엽서', '슬라이드'], minutes: 2, maxMinutes: 8, status: 'available', href: '/games/12-fifteen/index.html' },
+  { id: 'snack-pairs', title: '간식 짝꿍', genre: '기억', description: '간식의 자리를 기억하며 두 장씩 짝을 찾아요', tags: ['카드', 'memory', '짝맞추기', '간식'], minutes: 1, maxMinutes: 3, status: 'available', href: '/games/13-memory/index.html' },
+  { id: 'star-moon', title: '별과 달 3목', genre: '보드', description: '한 기기에서 번갈아 놓으며 완성하는 세 칸', tags: ['3목', '틱택토', 'tic-tac-toe', '2인', '별', '달'], minutes: 1, maxMinutes: 2, status: 'available', href: '/games/14-tic-tac-toe/index.html' },
   { id: 'memory-pieces', title: '기억의 조각', genre: '기억', description: '뒤집고 기억하며 찾아내는 한 쌍', tags: ['카드', '맞추기'], minutes: 2, maxMinutes: 5, status: 'upcoming' },
   { id: 'leisure-line', title: '한 줄의 여유', genre: '퍼즐', description: '빈칸을 채우고 한 줄을 비우는 시간', tags: ['블록', '채우기'], minutes: 3, maxMinutes: 8, status: 'upcoming' },
   { id: 'color-walk', title: '색의 산책', genre: '퍼즐', description: '같은 색을 이어 완성하는 작은 풍경', tags: ['색깔', '연결'], minutes: 2, maxMinutes: 5, status: 'upcoming' },
@@ -238,6 +240,34 @@ function artwork(game: CatalogGame, index: number): HTMLDivElement {
         shape('text', { x, y, fill: '#a34d37', 'font-size': '18', 'font-weight': '700', 'text-anchor': 'middle' }, number);
       }
       shape('rect', { x: '64', y: '54', width: '16', height: '14', rx: '2', fill: 'none', stroke: '#375e60', 'stroke-dasharray': '3 2' });
+    }
+    art.append(svg);
+  } else if (game.id === 'snack-pairs' || game.id === 'star-moon') {
+    // Original G026 snack tray / night notebook. No external artwork or styles.
+    const snacks = game.id === 'snack-pairs';
+    art.classList.add(snacks ? 'art-desert' : 'art-cloud-bunny');
+    const svg = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
+    svg.setAttribute('viewBox', '0 0 96 96');
+    svg.classList.add('mini-g022');
+    const shape = (tag: 'rect' | 'path' | 'circle', attributes: Record<string, string>) => {
+      const node = document.createElementNS('http://www.w3.org/2000/svg', tag);
+      for (const [key, value] of Object.entries(attributes)) node.setAttribute(key, value);
+      svg.append(node);
+    };
+    shape('rect', { x: '6', y: '7', width: '84', height: '82', rx: '9', fill: '#fffdf7', stroke: snacks ? '#c1a782' : '#345f63', 'stroke-width': '2' });
+    if (snacks) {
+      for (const x of ['14', '51']) shape('rect', { x, y: '20', width: '31', height: '53', rx: '5', fill: '#f8f1e7', stroke: '#c1a782', 'stroke-width': '2' });
+      for (const x of [29, 66]) {
+        shape('path', { d: `M${x} 38c-13-10-20 14-8 22q7 5 8 0q7 5 12-7q5-19-12-15`, fill: '#9b4934' });
+        shape('path', { d: `M${x} 39q-2-12 6-13m-4 8q12-10 13-2q-7 8-13 2`, fill: '#778d50', stroke: '#536e40', 'stroke-width': '2' });
+      }
+      shape('path', { d: 'M37 79l6 5 14-10', fill: 'none', stroke: '#345f63', 'stroke-width': '3', 'stroke-linecap': 'round' });
+    } else {
+      shape('path', { d: 'M34 16v64m28-64v64M16 36h64M16 60h64', fill: 'none', stroke: '#c8cebf', 'stroke-width': '2' });
+      shape('path', { d: 'M19 20l10 11m0-11L19 31M39 42l17 12m0-12L39 54M67 65l10 11m0-11L67 76', fill: 'none', stroke: '#345f63', 'stroke-width': '4', 'stroke-linecap': 'round' });
+      for (const [cx, cy] of [['47', '25'], ['24', '48']]) shape('circle', { cx, cy, r: '7', fill: 'none', stroke: '#9b4934', 'stroke-width': '3' });
+      shape('path', { d: 'M72 14l2 5 6 1-5 4 1 6-5-3-5 3 1-6-4-4 6-1z', fill: '#b68b45' });
+      shape('path', { d: 'M54 68a9 9 0 1 0 0 13a8 8 0 0 1 0-13', fill: '#9b4934' });
     }
     art.append(svg);
   } else if (game.id === 'number-garden') {

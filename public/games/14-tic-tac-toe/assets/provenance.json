@@ -1,0 +1,15 @@
+{
+  "task": "G026-BUILD14",
+  "author": "builder14 / original SVG source drawn directly for this project",
+  "externalAssets": false,
+  "referenceArtCopiedOrTraced": false,
+  "fonts": "System font stack only: Malgun Gothic, Apple SD Gothic Neo, sans-serif",
+  "sound": "Original sine oscillator/envelope cues synthesized in audio.mjs; no recordings",
+  "assets": [
+    {"file":"paper-x.svg","theme":"paper","player":"X / 별","width":96,"height":96,"method":"Hand-authored star polygon and geometric X"},
+    {"file":"paper-o.svg","theme":"paper","player":"O / 달","width":96,"height":96,"method":"Hand-authored crescent curve and geometric O"},
+    {"file":"night-x.svg","theme":"night","player":"X / 별","width":96,"height":96,"method":"Hand-authored curved star and geometric X"},
+    {"file":"night-o.svg","theme":"night","player":"O / 달","width":96,"height":96,"method":"Hand-authored crescent, small star and geometric O"}
+  ],
+  "rightsNote": "Project-original source; no third-party asset license or external fetch is required. No additional license/rights-transfer promise is made here."
+}

@@ -89,9 +89,9 @@ const test = base.extend<{ audit: Audit }>({
 });
 async function home(page: Page) {
   await expect(page).toHaveURL(/\/(?:index\.html)?$/);
-  await expect(page.locator('#catalog-total')).toHaveText('41');
-  await expect(page.locator('#intro-preview')).toHaveText('플레이 가능 12 · 준비 중 29');
-  // Default initial DOM, before search/filter/load-more. New two follow old ten.
+  await expect(page.locator('#catalog-total')).toHaveText('43');
+  await expect(page.locator('#intro-preview')).toHaveText('플레이 가능 14 · 준비 중 29');
+  // Preserve the existing first12 DOM before search/filter/load-more.
   await expect(page.locator('#include-upcoming')).toBeChecked();
   await expect(page.locator('#game-search')).toHaveValue('');
   await expect(page.locator('#game-sort')).toHaveText('기본순');
@@ -247,7 +247,7 @@ async function existingProfiles(): Promise<Record<string, string>> {
   const product = (path: string) => import(pathToFileURL(resolve(build, path)).href);
   const values: Record<string, string> = {};
   const put = (key: string, record: unknown) => { values[key] = JSON.stringify(record); };
-  const garden = await product('src/client/storage.js'); put(garden.STORAGE_KEY, garden.defaultProfile());
+  const garden = await product('public/games/01-2048/storage.js'); put(garden.STORAGE_KEY, garden.defaultProfile());
   const snake = await product('public/games/02-snake/engine.mjs'); put(snake.STORAGE_KEY, snake.defaultProfile());
   // Legacy Pong exposes no pure settlement helper: use its normal zero-match
   // factory rather than fabricating wins or copying a DOM-only settlement.

@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#eef0f1">
+  <title>별과 달 3목 · 게임 서재</title>
+  <link rel="icon" href="./assets/paper-x.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="./styles.css">
+  <script type="module" src="./main.mjs"></script>
+</head>
+<body data-theme="paper">
+<main>
+  <header>
+    <p class="eyebrow">14 / LOCAL TWO PLAYERS / NIGHT NOTEBOOK</p>
+    <h1>별과 달 3목</h1>
+    <nav class="toolbar" aria-label="게임 메뉴">
+      <a href="/" id="home">← 게임 서재</a>
+      <button id="theme">보드 테마</button><button id="help">도움말</button>
+      <button id="mute" aria-pressed="true">음소거: 켜짐</button>
+    </nav>
+  </header>
+  <p id="storage-warning" class="warning" role="status" hidden></p>
+  <div class="layout">
+    <section class="paper" aria-label="별과 달 3목 게임판">
+      <h2 class="small-heading">이번 세션의 전적</h2>
+      <div class="scores" aria-label="세션 전적">
+        <div><span>별 X 승리</span><strong id="session-x">0</strong></div>
+        <div><span>무승부</span><strong id="session-draw">0</strong></div>
+        <div><span>달 O 승리</span><strong id="session-o">0</strong></div>
+      </div>
+      <h2 id="turn">별 X부터 시작합니다</h2>
+      <div id="board" class="board" role="group" aria-label="3 곱하기 3 보드. 방향키로 선택, Enter 또는 Space로 놓기"></div>
+      <p id="state-message" class="state" role="status" aria-live="polite">시작을 눌러 한 기기에서 두 사람이 번갈아 놓으세요.</p>
+      <div class="toolbar controls">
+        <button id="start" class="primary">시작</button>
+        <button id="pause" class="primary" hidden>일시정지</button>
+        <button id="resume" class="primary" hidden>게임 재개</button>
+        <button id="next" class="primary" hidden>다음 판</button>
+        <button id="restart" hidden>다시 시작</button>
+      </div>
+      <p class="hint">세션 전적은 새로고침하면 초기화됩니다.<br>누적 전적은 별도로 저장해요. 진행 중인 판은 저장하지 않습니다.</p>
+    </section>
+    <aside>
+      <span class="pill">보드 · 한 기기 2인</span>
+      <h2>한 수씩, 번갈아</h2>
+      <p>가로·세로·대각선 중 먼저 세 칸을 이으면 승리합니다. 승리 없이 빈칸이 없으면 무승부예요.</p>
+      <div class="legend"><b>✦ 별 · X</b><b>☾ 달 · O</b></div>
+      <p>방향키로 칸을 고르고 Enter 또는 Space로 놓으세요. 빈칸을 터치해도 됩니다.</p>
+      <p class="hint">완료한 다음 판은 이전 후공부터 시작해요. 진행 중 다시 시작하면 선공은 그대로입니다.</p>
+      <section class="record" aria-labelledby="record-title"><h2 id="record-title">이 기기의 누적 전적</h2><p id="lifetime">별 X 0 · 무승부 0 · 달 O 0</p></section>
+      <p class="hint">온라인 대전·AI 상대는 없습니다.<br>두 가지 보드 테마를 모두 사용할 수 있어요.</p>
+    </aside>
+  </div>
+</main>
+<dialog id="modal" aria-labelledby="modal-title"><div class="modal-inner">
+  <h2 id="modal-title"></h2><div id="modal-content"></div>
+  <div class="toolbar"><button id="modal-apply" class="primary" hidden>적용</button><button id="modal-close">닫기</button></div>
+</div></dialog>
+</body>
+</html>
