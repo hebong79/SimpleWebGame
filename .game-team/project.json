@@ -5,7 +5,7 @@
   "engine": "Node.js 24.16.0 + TypeScript, HTML DOM/CSS",
   "engine_version": "Node 24.16.0 / TypeScript 7.0.2",
   "platform": "PC browser + mobile touch browser",
-  "status": "twelve_games_designed_independently_verified_merged_live",
+  "status": "fourteen_games_designed_independently_verified_merged_live",
   "created_at": "2026-10-22T00:17:53.121532+09:00",
   "team_id": "game-dev-team",
   "team_version": "1.0.0",
@@ -19,9 +19,9 @@
   ],
   "mode": "on-demand-delegate-task",
   "runtime_or_engine_installed": true,
-  "last_verified_at": "2026-10-29T23:31:45.944354+09:00",
-  "unit_tests_passed": 545,
-  "browser_tests_passed": 228,
+  "last_verified_at": "2026-10-30T15:06:46.520Z",
+  "unit_tests_passed": 626,
+  "browser_tests_passed": 246,
   "manual_acceptance_pending": true,
   "playable_games": [
     "number-garden",
@@ -35,9 +35,11 @@
     "chick-picnic",
     "hamster-depot",
     "gem-survey",
-    "number-postbox"
+    "number-postbox",
+    "snack-pairs",
+    "star-moon"
   ],
-  "catalog_total": 41,
+  "catalog_total": 43,
   "connection_verification": {
     "task": "G017",
     "primary_url": "http://192.168.0.195:3116/",
@@ -104,33 +106,51 @@
       "independent_tester_subagent_id": "sa-1-8383be48",
       "status": "designed_merged_live_independently_verified",
       "automated_qa_browser_passed": 66
+    },
+    {
+      "task_id": "G027-13",
+      "game_id": "snack-pairs",
+      "worker": "builder G027-BUILD (port of G026) + independent QA13",
+      "status": "merged_live_independently_verified",
+      "qa_browser_passed": 90,
+      "qa_engine_passed": 22
+    },
+    {
+      "task_id": "G027-14",
+      "game_id": "star-moon",
+      "worker": "builder G027-BUILD (port of G026) + independent QA14",
+      "status": "merged_live_independently_verified",
+      "qa_browser_passed": 135,
+      "qa_engine_passed": 46
     }
   ],
-  "browser_tests_scope": "Candidate browser228 unchanged runtime/spec + fresh unit545 after independently accepted one-line snapshot fix; actual LAN full186 exit0; original failed process preserved",
+  "browser_tests_scope": "G027 candidate build: builder self-check unit 626 / browser 246; independent QA13 browser 90 (9 conditional skips), QA14 browser 135; live LAN QA 13 per environment x3 = 39",
   "deployment": {
-    "task": "G025",
+    "task": "G027",
     "primary_url": "http://192.168.0.195:3116/",
-    "build": "artifacts/g025-build",
+    "build": "artifacts/g027-build",
     "pm2_app": "number-garden-2048",
     "status": "online_verified_actual_LAN",
-    "pid": 404,
-    "pm2_id": 4,
+    "pid": 26804,
+    "pm2_id": 2,
     "listen": "0.0.0.0:3116",
-    "source_commit": "d268c96ec0b372d6c1de143b1930accfb123b46a",
-    "main_merge_commit": "6fce1fab1375742a3db478ba69c2c9c0e6c033d9",
+    "source_commit": "9e1680a",
+    "main_merge_commit": "94338bf768f3361eb9515aa6d30e54ca68b8198b",
     "merge_status": "merged_no_ff_tree_verified",
-    "remote_push_requested": false,
-    "production_browser_tests_passed": 186,
-    "candidate_browser_tests_passed": 228,
-    "smoke_passed": 36,
-    "unit_tests_passed": 545,
-    "http_byte_checks": 93,
-    "verification": "docs/20261029-234550_G025_RELEASE.md",
+    "remote_push": "origin/main 398e06a..94338bf regular push, local and remote SHA equal",
+    "live_qa_browser_tests_passed": 39,
+    "live_qa_environments": [
+      "desktop-chromium",
+      "mobile-chromium",
+      "mobile-webkit"
+    ],
+    "http_byte_checks": "119 of 129 served files byte-identical, 129 CSP+nosniff; 10 .json/.js.map not served by design",
+    "verification": "docs/20261031-000346_G027_LIVE_QA.md",
     "persistent_dump_modified": false,
-    "persistent_restart_risk": "Historical saved dump still references g016; separate scoped approval required",
-    "board_post_id": "mvtnibs7-52-wm66"
+    "persistent_restart_risk": "Saved PM2 dump still references g016-build; a reboot can restore it. pm2 save needs separate approval (rewrites agent-board too).",
+    "board_post_id": "mvv3uhz7-61-2h7e"
   },
-  "production_browser_tests_passed": 186,
+  "production_browser_tests_passed": 39,
   "deployment_history_before_G023": {
     "task": "G019",
     "primary_url": "http://192.168.0.195:3116/",
@@ -200,5 +220,28 @@
     "persistent_dump_modified": false,
     "persistent_restart_risk": "Historical saved dump still references g016; separate scoped correction approval required",
     "board_post_id": "mvscg724-50-8dyq"
+  },
+  "deployment_history_before_G027": {
+    "task": "G025",
+    "primary_url": "http://192.168.0.195:3116/",
+    "build": "artifacts/g025-build",
+    "pm2_app": "number-garden-2048",
+    "status": "online_verified_actual_LAN",
+    "pid": 404,
+    "pm2_id": 4,
+    "listen": "0.0.0.0:3116",
+    "source_commit": "d268c96ec0b372d6c1de143b1930accfb123b46a",
+    "main_merge_commit": "6fce1fab1375742a3db478ba69c2c9c0e6c033d9",
+    "merge_status": "merged_no_ff_tree_verified",
+    "remote_push_requested": false,
+    "production_browser_tests_passed": 186,
+    "candidate_browser_tests_passed": 228,
+    "smoke_passed": 36,
+    "unit_tests_passed": 545,
+    "http_byte_checks": 93,
+    "verification": "docs/20261029-234550_G025_RELEASE.md",
+    "persistent_dump_modified": false,
+    "persistent_restart_risk": "Historical saved dump still references g016; separate scoped approval required",
+    "board_post_id": "mvtnibs7-52-wm66"
   }
 }

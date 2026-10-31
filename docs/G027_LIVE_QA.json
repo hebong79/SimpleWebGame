@@ -1,0 +1,41 @@
+{
+  "task_id": "G027-LIVE-QA",
+  "report": "docs/20261031-000346_G027_LIVE_QA.md",
+  "target": "http://192.168.0.195:3116/ (PM2 number-garden-2048, PID 26804)",
+  "status": "pass",
+  "ranAtKst": "2026-10-31T00:03:46+09:00",
+  "environments": {
+    "desktop-chromium": { "run": 13, "pass": 13, "fail": 0, "skip": 0, "checks": "119/119" },
+    "mobile-chromium": { "run": 13, "pass": 13, "fail": 0, "skip": 0, "checks": "119/119" },
+    "mobile-webkit": { "run": 13, "pass": 13, "fail": 0, "skip": 0, "checks": "119/119" }
+  },
+  "defects": [],
+  "knownMinorReconfirmed": [
+    "14 next-round double click -> new round immediately paused (manual), selection 0 (all 3 envs)",
+    "13 per-frame attribute writes: board aria-label/card disabled/mute aria-pressed/storage-warning hidden 150 each per 2.5s, 0 text nodes (desktop Chromium)"
+  ],
+  "harnessObservations": [
+    "WebKit page.screenshot injects inline style blocked by CSP (19 events isolated as toolCspNoise); WebKit text/plain 404 gets UA inline style",
+    "Playwright WebKit lacks CDP touch hold and AudioContext; 80ms press done with mouse in WebKit",
+    "Earlier failed runs were harness assumptions; originals preserved as results-*-run*.json"
+  ],
+  "unverified": [
+    "real phone devices / real Safari",
+    "audible sound",
+    "human-perceived play feel",
+    "native OS window hide/focus",
+    "other LAN clients",
+    "functional correctness of existing games other than 13/14/2048 beyond link/200/console/CSP",
+    "2048 touch swipe"
+  ],
+  "evidence_paths": [
+    "artifacts/g027-live-qa/live-qa.mjs",
+    "artifacts/g027-live-qa/results-desktop-chromium.json",
+    "artifacts/g027-live-qa/results-mobile-chromium.json",
+    "artifacts/g027-live-qa/results-mobile-webkit.json",
+    "artifacts/g027-live-qa/churn13-live.json",
+    "artifacts/g027-live-qa/screens/",
+    "artifacts/g027-live-qa/logs/"
+  ],
+  "productionServerTouched": false
+}
