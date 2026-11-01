@@ -5,7 +5,7 @@
   "engine": "Node.js 24.16.0 + TypeScript, HTML DOM/CSS",
   "engine_version": "Node 24.16.0 / TypeScript 7.0.2",
   "platform": "PC browser + mobile touch browser",
-  "status": "fourteen_games_designed_independently_verified_merged_live",
+  "status": "sixteen_games_merged_live_qa15_recheck_pending",
   "created_at": "2026-10-22T00:17:53.121532+09:00",
   "team_id": "game-dev-team",
   "team_version": "1.0.0",
@@ -19,9 +19,9 @@
   ],
   "mode": "on-demand-delegate-task",
   "runtime_or_engine_installed": true,
-  "last_verified_at": "2026-10-30T15:06:46.520Z",
-  "unit_tests_passed": 626,
-  "browser_tests_passed": 246,
+  "last_verified_at": "2026-11-01T04:24:43.340Z",
+  "unit_tests_passed": 692,
+  "browser_tests_passed": 264,
   "manual_acceptance_pending": true,
   "playable_games": [
     "number-garden",
@@ -37,9 +37,11 @@
     "gem-survey",
     "number-postbox",
     "snack-pairs",
-    "star-moon"
+    "star-moon",
+    "sun-sea-four",
+    "four-star-song"
   ],
-  "catalog_total": 43,
+  "catalog_total": 45,
   "connection_verification": {
     "task": "G017",
     "primary_url": "http://192.168.0.195:3116/",
@@ -124,31 +126,32 @@
       "qa_engine_passed": 46
     }
   ],
-  "browser_tests_scope": "G027 candidate build: builder self-check unit 626 / browser 246; independent QA13 browser 90 (9 conditional skips), QA14 browser 135; live LAN QA 13 per environment x3 = 39",
+  "browser_tests_scope": "G028 fix2 full regression 264/264 (3 envs); live LAN smoke 3 envs x (home, 2 cards, play, pause/resume, home) 0 failures",
   "deployment": {
-    "task": "G027",
+    "task": "G028",
     "primary_url": "http://192.168.0.195:3116/",
-    "build": "artifacts/g027-build",
+    "build": "artifacts/g028-build-fix2",
     "pm2_app": "number-garden-2048",
     "status": "online_verified_actual_LAN",
-    "pid": 26804,
-    "pm2_id": 2,
+    "pid": 28340,
+    "pm2_id": 3,
     "listen": "0.0.0.0:3116",
-    "source_commit": "9e1680a",
-    "main_merge_commit": "94338bf768f3361eb9515aa6d30e54ca68b8198b",
-    "merge_status": "merged_no_ff_tree_verified",
-    "remote_push": "origin/main 398e06a..94338bf regular push, local and remote SHA equal",
-    "live_qa_browser_tests_passed": 39,
-    "live_qa_environments": [
+    "source_commit": "31e676a",
+    "main_merge_commit": "9d2e889afb92641a5be32ebfbfe63354c8ec8be0",
+    "merge_status": "merged_no_ff",
+    "remote_push": "origin/main 0117047..9d2e889 regular push, local and remote SHA equal",
+    "full_regression_browser_passed": 264,
+    "live_lan_environments": [
       "desktop-chromium",
       "mobile-chromium",
       "mobile-webkit"
     ],
-    "http_byte_checks": "119 of 129 served files byte-identical, 129 CSP+nosniff; 10 .json/.js.map not served by design",
-    "verification": "docs/20261031-000346_G027_LIVE_QA.md",
+    "http_byte_checks": "131 of 142 served files byte-identical, 142 CSP+nosniff; 11 .map/.json/.md not served by design",
+    "verification": "docs/worklogs/20261101-132406_G028_15번16번_커밋_머지_push_3116재기동_운영검증.md",
+    "independent_qa_gap": "QA15 focus-boundary fix (G028-QA15-F01) in fix2 not independently re-verified; QA16 executed on fix1, fix2 16-simon files SHA-identical",
     "persistent_dump_modified": false,
-    "persistent_restart_risk": "Saved PM2 dump still references g016-build; a reboot can restore it. pm2 save needs separate approval (rewrites agent-board too).",
-    "board_post_id": "mvv3uhz7-61-2h7e"
+    "persistent_restart_risk": "Saved PM2 dump may still reference an old build; pm2 save needs separate approval (rewrites agent-board too).",
+    "board_post_id": "mvxbtl1k-62-kwlm"
   },
   "production_browser_tests_passed": 39,
   "deployment_history_before_G023": {
@@ -243,5 +246,30 @@
     "persistent_dump_modified": false,
     "persistent_restart_risk": "Historical saved dump still references g016; separate scoped approval required",
     "board_post_id": "mvtnibs7-52-wm66"
+  },
+  "deployment_history_before_G028": {
+    "task": "G027",
+    "primary_url": "http://192.168.0.195:3116/",
+    "build": "artifacts/g027-build",
+    "pm2_app": "number-garden-2048",
+    "status": "online_verified_actual_LAN",
+    "pid": 26804,
+    "pm2_id": 2,
+    "listen": "0.0.0.0:3116",
+    "source_commit": "9e1680a",
+    "main_merge_commit": "94338bf768f3361eb9515aa6d30e54ca68b8198b",
+    "merge_status": "merged_no_ff_tree_verified",
+    "remote_push": "origin/main 398e06a..94338bf regular push, local and remote SHA equal",
+    "live_qa_browser_tests_passed": 39,
+    "live_qa_environments": [
+      "desktop-chromium",
+      "mobile-chromium",
+      "mobile-webkit"
+    ],
+    "http_byte_checks": "119 of 129 served files byte-identical, 129 CSP+nosniff; 10 .json/.js.map not served by design",
+    "verification": "docs/20261031-000346_G027_LIVE_QA.md",
+    "persistent_dump_modified": false,
+    "persistent_restart_risk": "Saved PM2 dump still references g016-build; a reboot can restore it. pm2 save needs separate approval (rewrites agent-board too).",
+    "board_post_id": "mvv3uhz7-61-2h7e"
   }
 }
