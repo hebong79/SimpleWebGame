@@ -1,0 +1,297 @@
+{
+  "task_id": "G028-QA16",
+  "status": "QA_SCOPE_PASS_WITH_LIMITATIONS",
+  "recorded_at": "2026-11-01T02:38:39.567Z",
+  "recorded_at_kst": "2026-11-01 11:38:39 KST",
+  "project_root": "E:\\Work2\\Project\\SimpleGames\\01-2048",
+  "allowed_write_paths": [
+    "artifacts/g028-qa16/**",
+    "docs/16-simon/*QA*.md",
+    "docs/16-simon/*QA*.json"
+  ],
+  "source_mutations": [],
+  "candidate": "artifacts/g028-build-fix1",
+  "manifest_sha256": "F0D56AA86EA3EA1D80F489B4839A1F94D9FB0328F7B8C0C5CEB5841B077FEEED",
+  "source_build_http_sha256": [
+    {
+      "file": "index.html",
+      "status": 200,
+      "source": "c4486343cf688f98554145ecfd968ac89c1986d382b7d34f4cdf41474696b693",
+      "build": "c4486343cf688f98554145ecfd968ac89c1986d382b7d34f4cdf41474696b693",
+      "http": "c4486343cf688f98554145ecfd968ac89c1986d382b7d34f4cdf41474696b693",
+      "csp": "default-src 'none'; script-src 'self'; style-src 'self'; img-src 'self'; font-src 'self'; connect-src 'none'; media-src 'none'; object-src 'none'; base-uri 'none'; form-action 'none'; frame-ancestors 'none'",
+      "nosniff": "nosniff"
+    },
+    {
+      "file": "styles.css",
+      "status": 200,
+      "source": "e7d2a723865a75a44a6940152111d42df4197f1c6202a0ef8a84fbdb5bfbd6e4",
+      "build": "e7d2a723865a75a44a6940152111d42df4197f1c6202a0ef8a84fbdb5bfbd6e4",
+      "http": "e7d2a723865a75a44a6940152111d42df4197f1c6202a0ef8a84fbdb5bfbd6e4",
+      "csp": "default-src 'none'; script-src 'self'; style-src 'self'; img-src 'self'; font-src 'self'; connect-src 'none'; media-src 'none'; object-src 'none'; base-uri 'none'; form-action 'none'; frame-ancestors 'none'",
+      "nosniff": "nosniff"
+    },
+    {
+      "file": "main.mjs",
+      "status": 200,
+      "source": "4654eedf8c253828bc2e0d35d84c3c6a9f9741ebc885a0f256d81819a110bbbd",
+      "build": "4654eedf8c253828bc2e0d35d84c3c6a9f9741ebc885a0f256d81819a110bbbd",
+      "http": "4654eedf8c253828bc2e0d35d84c3c6a9f9741ebc885a0f256d81819a110bbbd",
+      "csp": "default-src 'none'; script-src 'self'; style-src 'self'; img-src 'self'; font-src 'self'; connect-src 'none'; media-src 'none'; object-src 'none'; base-uri 'none'; form-action 'none'; frame-ancestors 'none'",
+      "nosniff": "nosniff"
+    },
+    {
+      "file": "engine.mjs",
+      "status": 200,
+      "source": "9a25ae591b1c3cc27faa453d94d4cc8aaefa460456027af74a230613f9f0c95a",
+      "build": "9a25ae591b1c3cc27faa453d94d4cc8aaefa460456027af74a230613f9f0c95a",
+      "http": "9a25ae591b1c3cc27faa453d94d4cc8aaefa460456027af74a230613f9f0c95a",
+      "csp": "default-src 'none'; script-src 'self'; style-src 'self'; img-src 'self'; font-src 'self'; connect-src 'none'; media-src 'none'; object-src 'none'; base-uri 'none'; form-action 'none'; frame-ancestors 'none'",
+      "nosniff": "nosniff"
+    },
+    {
+      "file": "save.mjs",
+      "status": 200,
+      "source": "096b494102d82693b6cc8a1443158cbf0f8ffe32cba85ffc618fc5c99346399d",
+      "build": "096b494102d82693b6cc8a1443158cbf0f8ffe32cba85ffc618fc5c99346399d",
+      "http": "096b494102d82693b6cc8a1443158cbf0f8ffe32cba85ffc618fc5c99346399d",
+      "csp": "default-src 'none'; script-src 'self'; style-src 'self'; img-src 'self'; font-src 'self'; connect-src 'none'; media-src 'none'; object-src 'none'; base-uri 'none'; form-action 'none'; frame-ancestors 'none'",
+      "nosniff": "nosniff"
+    },
+    {
+      "file": "audio.mjs",
+      "status": 200,
+      "source": "b563134908427151fbd6779eadc13f5256b6ac32b740f7ee7d76b11cbd1fd72f",
+      "build": "b563134908427151fbd6779eadc13f5256b6ac32b740f7ee7d76b11cbd1fd72f",
+      "http": "b563134908427151fbd6779eadc13f5256b6ac32b740f7ee7d76b11cbd1fd72f",
+      "csp": "default-src 'none'; script-src 'self'; style-src 'self'; img-src 'self'; font-src 'self'; connect-src 'none'; media-src 'none'; object-src 'none'; base-uri 'none'; form-action 'none'; frame-ancestors 'none'",
+      "nosniff": "nosniff"
+    }
+  ],
+  "baseline": {
+    "evidence": "artifacts/g028-qa16/http-20261101-112729",
+    "checks": 213,
+    "passed": 209,
+    "failed": 4,
+    "exit": 1,
+    "errors": 0,
+    "environment_counts": [
+      {
+        "environment": "desktop-chromium",
+        "checks": 70,
+        "passed": 69,
+        "failed": 1
+      },
+      {
+        "environment": "mobile-chromium",
+        "checks": 73,
+        "passed": 71,
+        "failed": 2
+      },
+      {
+        "environment": "mobile-webkit",
+        "checks": 70,
+        "passed": 69,
+        "failed": 1
+      }
+    ],
+    "failed_checks_retained": true
+  },
+  "pure": {
+    "checks": 25,
+    "passed": 25,
+    "failed": 0,
+    "exit": 0,
+    "evidence": "artifacts/g028-qa16/unit-20261101-1145/output.log",
+    "actual_log_time": "2026-11-01T11:25:06.1888429+09:00",
+    "directory_label_note": "unit-20261101-1145 is a manually named evidence directory, not the actual execution timestamp. It was named ahead of the real time in error; preserved without renaming. Actual execution file metadata follows."
+  },
+  "fresh_delta": {
+    "evidence": "artifacts/g028-qa16/delta-20261101-113654",
+    "checks": 348,
+    "passed": 348,
+    "failed": 0,
+    "errors": [],
+    "exit": 0,
+    "environment_counts": [
+      {
+        "environment": "desktop-chromium",
+        "checks": 116,
+        "passed": 116,
+        "failed": 0
+      },
+      {
+        "environment": "mobile-chromium",
+        "checks": 116,
+        "passed": 116,
+        "failed": 0
+      },
+      {
+        "environment": "mobile-webkit",
+        "checks": 116,
+        "passed": 116,
+        "failed": 0
+      }
+    ],
+    "timing": "real non-frozen RAF; no virtual clock"
+  },
+  "scope_combination": "Baseline209 valid behavior checks + fresh view/focus/input delta; baseline4 original failures preserved. This is not a single rerun of the full baseline suite on fix1.",
+  "findings": [
+    {
+      "id": "QA16-V01",
+      "title": "Start focus scroll clips first row",
+      "status": "RESOLVED_FRESH_DELTA",
+      "baseline": "Chromium375 pad top -0.3125px; WebKit390 top -20.90625px; four failed geometry assertions; number/symbol/name remain visible."
+    },
+    {
+      "id": "QA16-V02",
+      "title": "Low landscape 440px group exceeds320px viewport",
+      "status": "RESOLVED_FRESH_DELTA",
+      "baseline": "All three engines at667x320: group top53.09375/bottom493.09375. Additional raw-geometry finding accepted by PM; old overflow/pad44/modal assertions did not detect it."
+    }
+  ],
+  "limitations": [
+    "실제Android/iPhone/Safari·실손가락·실청취·사람체감시간/난이도 미검증",
+    "실제OS숨김/백그라운드/pagehide 미검증; blur/pagehide 핸들러는합성이벤트검사",
+    "WebKit native held-touch/다중터치/스크롤취소 미검증; trusted mouse hold/tap 및합성경계와구분. MobileChromium은trusted CDP held-touch/다중터치/cancel/scroll검증",
+    "WebKit이미지미검증; DOM기하만검증. Chromium원PNG2개와수정PNG4개는실제시각검토PASS",
+    "기존14게임/전체런처회귀/Git/PM2/3116운영및최종상태는PM별도범위"
+  ],
+  "evidence_paths": [
+    "artifacts/g028-qa16/http-20261101-112729/result.json",
+    "artifacts/g028-qa16/http-20261101-112729/input-sha256.json",
+    "artifacts/g028-qa16/http-20261101-112729/final-sha256.json",
+    "artifacts/g028-qa16/http-20261101-112729/shutdown.json",
+    "artifacts/g028-qa16/delta-20261101-113654/result.json",
+    "artifacts/g028-qa16/delta-20261101-113654/shutdown.json",
+    "artifacts/g028-qa16/unit-20261101-1145/summary.json",
+    "artifacts/g028-qa16/delta-20261101-113654/visual-inspection.json",
+    "artifacts/g028-qa16/delta-20261101-113654/input-sha256.json",
+    "artifacts/g028-qa16/delta-20261101-113654/final-sha256.json",
+    "artifacts/g028-qa16/fix2-equivalence.json"
+  ],
+  "blockers": [],
+  "next_steps": [
+    "PM verifies raw outputs and screenshots, combines QA15/integration/regression, performs separately authorized Git/live release checks, HANDOFF/worklog/board readback."
+  ],
+  "visual_inspection": {
+    "recorded_at": "2026-11-01T11:38:39.307064+09:00",
+    "inspection": "Actual image view via view_image",
+    "files": [
+      "desktop-chromium-portrait.png",
+      "desktop-chromium-landscape.png",
+      "mobile-chromium-portrait.png",
+      "mobile-chromium-landscape.png"
+    ],
+    "observations": [
+      "375x667 viewport screenshots: all four complete pads, numbers/symbols/names readable and inside pads.",
+      "667x320 viewport screenshots: 224px pad group and four106px buttons fully visible, names and symbols fit; outer page header/controls require normal document scrolling.",
+      "No visual overlap of pad labels or lit/focus edges observed."
+    ],
+    "webkit": "No screenshots taken. DOM geometry verified separately to preserve strict CSP.",
+    "result": "PASS with stated scope"
+  },
+  "tests": [
+    {
+      "command": "node --test artifacts/g028-qa16/independent.test.mjs",
+      "passed": 25,
+      "failed": 0,
+      "exit": 0
+    },
+    {
+      "command": "GAME_TEST_BUILD_DIR=artifacts/g028-build node artifacts/g028-qa16/browser.mjs",
+      "passed": 209,
+      "failed": 4,
+      "exit": 1
+    },
+    {
+      "command": "GAME_TEST_BUILD_DIR=artifacts/g028-build-fix1 node artifacts/g028-qa16/viewport-delta.mjs",
+      "passed": 348,
+      "failed": 0,
+      "exit": 0
+    }
+  ],
+  "changed_files": [
+    "artifacts/g028-qa16/browser.mjs",
+    "artifacts/g028-qa16/delta-20261101-113654/desktop-chromium-landscape.png",
+    "artifacts/g028-qa16/delta-20261101-113654/desktop-chromium-portrait.png",
+    "artifacts/g028-qa16/delta-20261101-113654/final-sha256.json",
+    "artifacts/g028-qa16/delta-20261101-113654/input-sha256.json",
+    "artifacts/g028-qa16/delta-20261101-113654/mobile-chromium-landscape.png",
+    "artifacts/g028-qa16/delta-20261101-113654/mobile-chromium-portrait.png",
+    "artifacts/g028-qa16/delta-20261101-113654/output.log",
+    "artifacts/g028-qa16/delta-20261101-113654/result.json",
+    "artifacts/g028-qa16/delta-20261101-113654/server.log",
+    "artifacts/g028-qa16/delta-20261101-113654/shutdown.json",
+    "artifacts/g028-qa16/delta-20261101-113654/visual-inspection.json",
+    "artifacts/g028-qa16/fix1-input.json",
+    "artifacts/g028-qa16/http-20261101-112729/desktop-chromium-paused.png",
+    "artifacts/g028-qa16/http-20261101-112729/final-sha256.json",
+    "artifacts/g028-qa16/http-20261101-112729/input-sha256.json",
+    "artifacts/g028-qa16/http-20261101-112729/mobile-chromium-paused.png",
+    "artifacts/g028-qa16/http-20261101-112729/output.log",
+    "artifacts/g028-qa16/http-20261101-112729/qa-summary.json",
+    "artifacts/g028-qa16/http-20261101-112729/result.json",
+    "artifacts/g028-qa16/http-20261101-112729/server.log",
+    "artifacts/g028-qa16/http-20261101-112729/shutdown.json",
+    "artifacts/g028-qa16/independent.test.mjs",
+    "artifacts/g028-qa16/unit-20261101-1122/output.log",
+    "artifacts/g028-qa16/unit-20261101-1122/summary.json",
+    "artifacts/g028-qa16/unit-20261101-1145/output.log",
+    "artifacts/g028-qa16/unit-20261101-1145/summary.json",
+    "artifacts/g028-qa16/viewport-delta.mjs",
+    "artifacts/g028-qa16/write-report.mjs",
+    "docs/16-simon/20261101-113839_G028_QA16.md",
+    "docs/16-simon/20261101-113839_G028_QA16.json",
+    "artifacts/g028-qa16/fix2-equivalence.json"
+  ],
+  "reviewed_at": "2026-11-01T11:39:34.6912495+09:00",
+  "integrated_candidate_equivalence": {
+    "recorded_at": "2026-11-01T11:39:34.6644132+09:00",
+    "task_id": "G028-QA16",
+    "executed_candidate": "artifacts/g028-build-fix1",
+    "integrated_candidate": "artifacts/g028-build-fix2",
+    "manifest_sha256": "43D59591645FCF2E37060327F251F83869E45663A5C74C972E9426F2F8C3165F",
+    "files": [
+      {
+        "file": "audio.mjs",
+        "source": "B563134908427151FBD6779EADC13F5256B6AC32B740F7EE7D76B11CBD1FD72F",
+        "fix1": "B563134908427151FBD6779EADC13F5256B6AC32B740F7EE7D76B11CBD1FD72F",
+        "fix2": "B563134908427151FBD6779EADC13F5256B6AC32B740F7EE7D76B11CBD1FD72F"
+      },
+      {
+        "file": "engine.mjs",
+        "source": "9A25AE591B1C3CC27FAA453D94D4CC8AAEFA460456027AF74A230613F9F0C95A",
+        "fix1": "9A25AE591B1C3CC27FAA453D94D4CC8AAEFA460456027AF74A230613F9F0C95A",
+        "fix2": "9A25AE591B1C3CC27FAA453D94D4CC8AAEFA460456027AF74A230613F9F0C95A"
+      },
+      {
+        "file": "index.html",
+        "source": "C4486343CF688F98554145ECFD968AC89C1986D382B7D34F4CDF41474696B693",
+        "fix1": "C4486343CF688F98554145ECFD968AC89C1986D382B7D34F4CDF41474696B693",
+        "fix2": "C4486343CF688F98554145ECFD968AC89C1986D382B7D34F4CDF41474696B693"
+      },
+      {
+        "file": "main.mjs",
+        "source": "4654EEDF8C253828BC2E0D35D84C3C6A9F9741EBC885A0F256D81819A110BBBD",
+        "fix1": "4654EEDF8C253828BC2E0D35D84C3C6A9F9741EBC885A0F256D81819A110BBBD",
+        "fix2": "4654EEDF8C253828BC2E0D35D84C3C6A9F9741EBC885A0F256D81819A110BBBD"
+      },
+      {
+        "file": "save.mjs",
+        "source": "096B494102D82693B6CC8A1443158CBF0F8FFE32CBA85FFC618FC5C99346399D",
+        "fix1": "096B494102D82693B6CC8A1443158CBF0F8FFE32CBA85FFC618FC5C99346399D",
+        "fix2": "096B494102D82693B6CC8A1443158CBF0F8FFE32CBA85FFC618FC5C99346399D"
+      },
+      {
+        "file": "styles.css",
+        "source": "E7D2A723865A75A44A6940152111D42DF4197F1C6202A0EF8A84FBDB5BFBD6E4",
+        "fix1": "E7D2A723865A75A44A6940152111D42DF4197F1C6202A0EF8A84FBDB5BFBD6E4",
+        "fix2": "E7D2A723865A75A44A6940152111D42DF4197F1C6202A0EF8A84FBDB5BFBD6E4"
+      }
+    ],
+    "result": "six game16 files byte-identical by SHA256",
+    "browser_reexecuted": false,
+    "scope_note": "fix1 independent realHTTP result is bound to identical16bytes in fix2; no new3116/physical/audio execution claimed"
+  }
+}

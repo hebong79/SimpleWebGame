@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="ko"><head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#243746"><title>네 별의 노래 · 작은 쉼표</title>
+  <link rel="stylesheet" href="./styles.css"><script type="module" src="./main.mjs"></script>
+</head><body data-theme="night"><main>
+  <header><p class="eyebrow">16 / FOUR STAR SONG / 작은 쉼표</p><a href="/" id="home">← 게임 목록</a>
+    <h1>네 별의 노래</h1><p>빛나는 별을 보고, 같은 순서로 눌러요.</p>
+    <nav class="toolbar" aria-label="보조 메뉴"><button id="help">도움말</button><button id="theme">패드 테마</button><button id="mute" aria-pressed="true">소리 꺼짐</button></nav>
+  </header>
+  <p id="storage-warning" class="warning" role="status" hidden></p>
+  <div class="layout"><section class="surface" aria-label="순서 기억 게임">
+    <div class="stats"><div>현재 길이<strong id="current-length">0</strong></div><div>완성 길이<strong id="completed-length">0</strong></div><div>최고 길이<strong id="best-length">0</strong></div></div>
+    <h2 id="state-message" role="status" aria-live="polite">시작을 눌러 별의 노래를 들어 보세요</h2>
+    <p id="detail">보기 → 잠깐 준비 → 따라 하기</p>
+    <div id="pads" class="pads" role="group" aria-label="별 패드. 숫자 1부터 4 또는 각 패드 Enter와 Space">
+      <button class="pad" id="pad-0" data-pad="0" aria-label="1 햇빛 원"><b>1 ○</b><span>햇빛 원</span></button>
+      <button class="pad" id="pad-1" data-pad="1" aria-label="2 바다 삼각"><b>2 △</b><span>바다 삼각</span></button>
+      <button class="pad" id="pad-2" data-pad="2" aria-label="3 노을 마름모"><b>3 ◇</b><span>노을 마름모</span></button>
+      <button class="pad" id="pad-3" data-pad="3" aria-label="4 밤하늘 별"><b>4 ☆</b><span>밤하늘 별</span></button>
+    </div>
+    <div class="timer"><label id="timer-text" for="input-timer">따라 하기에서 입력마다 5초</label><progress id="input-timer" max="5000" value="5000"></progress></div>
+    <div class="toolbar controls"><button class="primary" id="start">시작</button><button id="pause" hidden>일시정지</button><button class="primary" id="resume" hidden>게임 재개</button><button id="restart" hidden>다시 시작</button><button class="primary" id="retry" hidden>재도전</button></div>
+    <section id="result" class="result" aria-labelledby="result-title" hidden><h2 id="result-title">이번 노래의 기록</h2><p id="result-detail"></p><a href="/" id="result-home">게임 목록으로</a></section>
+    <p class="hint">소리가 없어도 숫자와 문양으로 플레이할 수 있어요.<br>진행 중인 순서는 저장하지 않습니다.</p>
+  </section><aside><span class="pill">기억 · 혼자 즐기기</span><h2>별 하나, 기억 하나</h2><p>순서를 모두 맞히면 별이 하나 더해져요. 시범이 끝난 뒤 같은 순서로 눌러 주세요.</p><p>숫자 1 · 2 · 3 · 4<br>패드의 Enter / Space · 클릭 · 터치</p><p>입력마다 5초가 주어져요.<br>기록은 완전히 맞힌 길이예요.</p><section class="record"><h2>이 기기의 기록</h2><p id="record-detail">완료 0판 · 누적 완성 0개</p></section><p class="hint">밤하늘과 새벽 테마 모두 기본 제공.<br>새로고침하면 준비 화면으로 돌아옵니다.</p></aside></div>
+</main><dialog id="modal" aria-labelledby="modal-title"><div class="modal-inner"><h2 id="modal-title"></h2><div id="modal-content"></div><div class="toolbar"><button class="primary" id="modal-apply" hidden>적용</button><button id="modal-close">닫기</button></div></div></dialog></body></html>
