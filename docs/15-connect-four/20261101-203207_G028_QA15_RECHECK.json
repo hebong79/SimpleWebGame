@@ -1,0 +1,468 @@
+{
+ "task": "G028-QA15-RECHECK",
+ "verdict": "PASS_WITH_LIMITATIONS",
+ "build": "artifacts/g028-build-fix2",
+ "input_sha256": {
+  "index.html": {
+   "source": "6d0f06154b9a21b7f84962f6ed9fc77b41937c3802343bfbf549f13da957c926",
+   "build": "6d0f06154b9a21b7f84962f6ed9fc77b41937c3802343bfbf549f13da957c926",
+   "http": "6d0f06154b9a21b7f84962f6ed9fc77b41937c3802343bfbf549f13da957c926",
+   "status": 200,
+   "strict_csp": true,
+   "nosniff": "nosniff"
+  },
+  "main.mjs": {
+   "source": "85265822d376435e1db56aa7a827fb2d299f1a21c33dc840b0142e485c442063",
+   "build": "85265822d376435e1db56aa7a827fb2d299f1a21c33dc840b0142e485c442063",
+   "http": "85265822d376435e1db56aa7a827fb2d299f1a21c33dc840b0142e485c442063",
+   "status": 200,
+   "strict_csp": true,
+   "nosniff": "nosniff"
+  },
+  "engine.mjs": {
+   "source": "d17a175bf31494a8a76257a26894bfbd94480fd34f2be5c33bb09c56ee4b57dc",
+   "build": "d17a175bf31494a8a76257a26894bfbd94480fd34f2be5c33bb09c56ee4b57dc",
+   "http": "d17a175bf31494a8a76257a26894bfbd94480fd34f2be5c33bb09c56ee4b57dc",
+   "status": 200,
+   "strict_csp": true,
+   "nosniff": "nosniff"
+  },
+  "save.mjs": {
+   "source": "84562cd6e1d93278c12cd14d1a14921d974c7220d3530bebecb34298ea03f7fe",
+   "build": "84562cd6e1d93278c12cd14d1a14921d974c7220d3530bebecb34298ea03f7fe",
+   "http": "84562cd6e1d93278c12cd14d1a14921d974c7220d3530bebecb34298ea03f7fe",
+   "status": 200,
+   "strict_csp": true,
+   "nosniff": "nosniff"
+  },
+  "audio.mjs": {
+   "source": "3215e4cf613f09e4b92f48254bd1d723b4c06aadb74ec3af7a259f5c6b12db7c",
+   "build": "3215e4cf613f09e4b92f48254bd1d723b4c06aadb74ec3af7a259f5c6b12db7c",
+   "http": "3215e4cf613f09e4b92f48254bd1d723b4c06aadb74ec3af7a259f5c6b12db7c",
+   "status": 200,
+   "strict_csp": true,
+   "nosniff": "nosniff"
+  },
+  "styles.css": {
+   "source": "0817cc0a4f987fee556c56c3468351e4200daa286038334b8f37629fd99b08c2",
+   "build": "0817cc0a4f987fee556c56c3468351e4200daa286038334b8f37629fd99b08c2",
+   "http": "0817cc0a4f987fee556c56c3468351e4200daa286038334b8f37629fd99b08c2",
+   "status": 200,
+   "strict_csp": true,
+   "nosniff": "nosniff"
+  },
+  "ASSETS.md": {
+   "source": "43b29bad716de1a230486d3d346506a97b495a4fdcac3cf6ef32781d560f7bcb",
+   "build": "43b29bad716de1a230486d3d346506a97b495a4fdcac3cf6ef32781d560f7bcb",
+   "http": null,
+   "status": null,
+   "strict_csp": null,
+   "nosniff": null
+  }
+ },
+ "final_run": {
+  "dir": "artifacts/g028-qa15-recheck\\run3-fix2-final-201359\\",
+  "summary": {
+   "desktop-chromium": {
+    "assertions": 404,
+    "pass": 404,
+    "fail": 0,
+    "cases": 31
+   },
+   "mobile-chromium": {
+    "assertions": 410,
+    "pass": 410,
+    "fail": 0,
+    "cases": 31
+   },
+   "mobile-webkit": {
+    "assertions": 406,
+    "pass": 406,
+    "fail": 0,
+    "cases": 31
+   }
+  },
+  "boundaries": {
+   "desktop-chromium": {
+    "B1": {
+     "pass": true,
+     "activeElement": {
+      "tag": "BUTTON",
+      "id": "modal-close",
+      "label": "닫기",
+      "html": "<button id=\"modal-close\" class=\"primary\">닫기</button>",
+      "inModal": true,
+      "visible": true,
+      "enabled": true,
+      "modalOpen": true,
+      "kind": "help"
+     }
+    },
+    "B2": {
+     "pass": true,
+     "activeElement": {
+      "tag": "BUTTON",
+      "id": "modal-confirm",
+      "label": "새 판 시작",
+      "html": "<button id=\"modal-confirm\" class=\"primary\">새 판 시작</button>",
+      "inModal": true,
+      "visible": true,
+      "enabled": true,
+      "modalOpen": true,
+      "kind": "restart"
+     }
+    },
+    "B3": {
+     "pass": true,
+     "activeElement": {
+      "tag": "BUTTON",
+      "id": "modal-close",
+      "label": "취소",
+      "html": "<button id=\"modal-close\">취소</button>",
+      "inModal": true,
+      "visible": true,
+      "enabled": true,
+      "modalOpen": true,
+      "kind": "restart"
+     }
+    }
+   },
+   "mobile-chromium": {
+    "B1": {
+     "pass": true,
+     "activeElement": {
+      "tag": "BUTTON",
+      "id": "modal-close",
+      "label": "닫기",
+      "html": "<button id=\"modal-close\" class=\"primary\">닫기</button>",
+      "inModal": true,
+      "visible": true,
+      "enabled": true,
+      "modalOpen": true,
+      "kind": "help"
+     }
+    },
+    "B2": {
+     "pass": true,
+     "activeElement": {
+      "tag": "BUTTON",
+      "id": "modal-confirm",
+      "label": "새 판 시작",
+      "html": "<button id=\"modal-confirm\" class=\"primary\">새 판 시작</button>",
+      "inModal": true,
+      "visible": true,
+      "enabled": true,
+      "modalOpen": true,
+      "kind": "restart"
+     }
+    },
+    "B3": {
+     "pass": true,
+     "activeElement": {
+      "tag": "BUTTON",
+      "id": "modal-close",
+      "label": "취소",
+      "html": "<button id=\"modal-close\">취소</button>",
+      "inModal": true,
+      "visible": true,
+      "enabled": true,
+      "modalOpen": true,
+      "kind": "restart"
+     }
+    }
+   },
+   "mobile-webkit": {
+    "B1": {
+     "pass": true,
+     "activeElement": {
+      "tag": "BUTTON",
+      "id": "modal-close",
+      "label": "닫기",
+      "html": "<button id=\"modal-close\" class=\"primary\">닫기</button>",
+      "inModal": true,
+      "visible": true,
+      "enabled": true,
+      "modalOpen": true,
+      "kind": "help"
+     }
+    },
+    "B2": {
+     "pass": true,
+     "activeElement": {
+      "tag": "BUTTON",
+      "id": "modal-confirm",
+      "label": "새 판 시작",
+      "html": "<button id=\"modal-confirm\" class=\"primary\">새 판 시작</button>",
+      "inModal": true,
+      "visible": true,
+      "enabled": true,
+      "modalOpen": true,
+      "kind": "restart"
+     }
+    },
+    "B3": {
+     "pass": true,
+     "activeElement": {
+      "tag": "BUTTON",
+      "id": "modal-close",
+      "label": "취소",
+      "html": "<button id=\"modal-close\">취소</button>",
+      "inModal": true,
+      "visible": true,
+      "enabled": true,
+      "modalOpen": true,
+      "kind": "restart"
+     }
+    }
+   }
+  },
+  "audits": {
+   "desktop-chromium": {
+    "errors": 0,
+    "warnings": 0,
+    "external": 0,
+    "failed": 0,
+    "badHTTP": 0,
+    "csp": 0,
+    "screenshotArtifacts": 0,
+    "responses": 366,
+    "pages": 36
+   },
+   "mobile-chromium": {
+    "errors": 0,
+    "warnings": 0,
+    "external": 0,
+    "failed": 0,
+    "badHTTP": 0,
+    "csp": 0,
+    "screenshotArtifacts": 0,
+    "responses": 366,
+    "pages": 36
+   },
+   "mobile-webkit": {
+    "errors": 0,
+    "warnings": 0,
+    "external": 0,
+    "failed": 0,
+    "badHTTP": 0,
+    "csp": 0,
+    "screenshotArtifacts": 34,
+    "responses": 366,
+    "pages": 36
+   }
+  },
+  "port_final": {
+   "port": 3185,
+   "bindFree": true,
+   "listenLines": [],
+   "finished": "2026-11-01T11:20:37.344Z"
+  },
+  "browsers": {
+   "desktop-chromium": "156.0.8078.4",
+   "mobile-chromium": "156.0.8078.4",
+   "mobile-webkit": "27.2"
+  }
+ },
+ "live_3116": {
+  "dir": "artifacts/g028-qa15-recheck\\live2-3116-203041\\",
+  "summary": {
+   "desktop-chromium": {
+    "assertions": 30,
+    "pass": 30,
+    "fail": 0,
+    "cases": 1
+   },
+   "mobile-chromium": {
+    "assertions": 30,
+    "pass": 30,
+    "fail": 0,
+    "cases": 1
+   },
+   "mobile-webkit": {
+    "assertions": 30,
+    "pass": 30,
+    "fail": 0,
+    "cases": 1
+   }
+  },
+  "boundaries": {
+   "desktop-chromium": {
+    "B1": true,
+    "B2": true,
+    "B3": true
+   },
+   "mobile-chromium": {
+    "B1": true,
+    "B2": true,
+    "B3": true
+   },
+   "mobile-webkit": {
+    "B1": true,
+    "B2": true,
+    "B3": true
+   }
+  },
+  "audits": {
+   "desktop-chromium": {
+    "errors": 0,
+    "external": 0,
+    "failed": 0,
+    "badHTTP": 0,
+    "csp": 0
+   },
+   "mobile-chromium": {
+    "errors": 0,
+    "external": 0,
+    "failed": 0,
+    "badHTTP": 0,
+    "csp": 0
+   },
+   "mobile-webkit": {
+    "errors": 1,
+    "external": 0,
+    "failed": 0,
+    "badHTTP": 0,
+    "csp": 1
+   }
+  },
+  "http": [
+   {
+    "file": "index.html",
+    "status": 200,
+    "sha_equal_fix2": true
+   },
+   {
+    "file": "main.mjs",
+    "status": 200,
+    "sha_equal_fix2": true
+   },
+   {
+    "file": "engine.mjs",
+    "status": 200,
+    "sha_equal_fix2": true
+   },
+   {
+    "file": "save.mjs",
+    "status": 200,
+    "sha_equal_fix2": true
+   },
+   {
+    "file": "audio.mjs",
+    "status": 200,
+    "sha_equal_fix2": true
+   },
+   {
+    "file": "styles.css",
+    "status": 200,
+    "sha_equal_fix2": true
+   },
+   {
+    "file": "ASSETS.md",
+    "status": null,
+    "sha_equal_fix2": null
+   }
+  ]
+ },
+ "preserved_earlier_runs": {
+  "run1 (harness FAILs preserved)": {
+   "dir": "artifacts/g028-qa15-recheck/run1-fix2-195404/",
+   "summary": {
+    "desktop-chromium": {
+     "assertions": 397,
+     "pass": 389,
+     "fail": 8,
+     "cases": 30
+    },
+    "mobile-chromium": {
+     "assertions": 384,
+     "pass": 369,
+     "fail": 15,
+     "cases": 30
+    },
+    "mobile-webkit": {
+     "assertions": 380,
+     "pass": 365,
+     "fail": 15,
+     "cases": 30
+    }
+   }
+  },
+  "run2 (control-case harness bug preserved)": {
+   "dir": "artifacts/g028-qa15-recheck/run2-fix2-200355/",
+   "summary": {
+    "desktop-chromium": {
+     "assertions": 404,
+     "pass": 403,
+     "fail": 1,
+     "cases": 31
+    },
+    "mobile-chromium": {
+     "assertions": 410,
+     "pass": 409,
+     "fail": 1,
+     "cases": 31
+    },
+    "mobile-webkit": {
+     "assertions": 406,
+     "pass": 405,
+     "fail": 1,
+     "cases": 31
+    }
+   }
+  },
+  "negative control fix1 (focus cases only, bug reproduced)": {
+   "dir": "artifacts/g028-qa15-recheck\\negctl-fix1-195336\\",
+   "summary": {
+    "desktop-chromium": {
+     "assertions": 24,
+     "pass": 12,
+     "fail": 12,
+     "cases": 1
+    },
+    "mobile-chromium": {
+     "assertions": 24,
+     "pass": 12,
+     "fail": 12,
+     "cases": 1
+    },
+    "mobile-webkit": {
+     "assertions": 24,
+     "pass": 14,
+     "fail": 10,
+     "cases": 1
+    }
+   },
+   "boundaries": {
+    "desktop-chromium": {
+     "B1": false,
+     "B3": false,
+     "B2": true
+    },
+    "mobile-chromium": {
+     "B1": false,
+     "B3": false,
+     "B2": true
+    },
+    "mobile-webkit": {
+     "B1": false,
+     "B3": false,
+     "B2": true
+    }
+   }
+  },
+  "live1 (gate wait timed out, never ran)": "artifacts/g028-qa15-recheck/live1-3116-201359.log"
+ },
+ "product_defects": [],
+ "harness_errors_fixed": [
+  "run1: no-op comparison included focus-driven selectedColumn; Playwright click on aria-disabled column waits forever (needs force); sea-first reference model assumed sun first; repeat-keydown validity listener was bubble-phase (product stops propagation); hold-mutation window included focus-driven tabindex change; second click coordinates stale after scrollIntoView on mobile",
+  " run2: control case referenced out-of-scope variable; WebKit screenshot tool injects inline style flagged by CSP (reclassified into screenshotArtifacts, not product)"
+ ],
+ "unverified": [
+  "real Android/iPhone/Safari devices",
+  "real finger touch (WebKit touch only via Playwright tap; trusted CDP touch only in Mobile Chromium)",
+  "real audio listening",
+  "human-perceived play time",
+  "native OS window hide/blur (blur/pagehide were synthetic events; bringToFront did not blur in headless)",
+  "real visibilitychange hidden"
+ ]
+}

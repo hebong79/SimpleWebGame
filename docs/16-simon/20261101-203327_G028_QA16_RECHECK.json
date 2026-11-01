@@ -1,0 +1,258 @@
+{
+  "task_id": "G028-QA16-RECHECK",
+  "written_kst": "20261101-203327",
+  "status": "PASS_WITH_LIMITATIONS",
+  "candidate": "artifacts/g028-build-fix2",
+  "manifest_sha256": "43D59591645FCF2E37060327F251F83869E45663A5C74C972E9426F2F8C3165F",
+  "files": [
+    {
+      "file": "index.html",
+      "status": 200,
+      "source": "C4486343CF688F98554145ECFD968AC89C1986D382B7D34F4CDF41474696B693",
+      "build": "C4486343CF688F98554145ECFD968AC89C1986D382B7D34F4CDF41474696B693",
+      "http": "C4486343CF688F98554145ECFD968AC89C1986D382B7D34F4CDF41474696B693",
+      "nosniff": "nosniff"
+    },
+    {
+      "file": "styles.css",
+      "status": 200,
+      "source": "E7D2A723865A75A44A6940152111D42DF4197F1C6202A0EF8A84FBDB5BFBD6E4",
+      "build": "E7D2A723865A75A44A6940152111D42DF4197F1C6202A0EF8A84FBDB5BFBD6E4",
+      "http": "E7D2A723865A75A44A6940152111D42DF4197F1C6202A0EF8A84FBDB5BFBD6E4",
+      "nosniff": "nosniff"
+    },
+    {
+      "file": "main.mjs",
+      "status": 200,
+      "source": "4654EEDF8C253828BC2E0D35D84C3C6A9F9741EBC885A0F256D81819A110BBBD",
+      "build": "4654EEDF8C253828BC2E0D35D84C3C6A9F9741EBC885A0F256D81819A110BBBD",
+      "http": "4654EEDF8C253828BC2E0D35D84C3C6A9F9741EBC885A0F256D81819A110BBBD",
+      "nosniff": "nosniff"
+    },
+    {
+      "file": "engine.mjs",
+      "status": 200,
+      "source": "9A25AE591B1C3CC27FAA453D94D4CC8AAEFA460456027AF74A230613F9F0C95A",
+      "build": "9A25AE591B1C3CC27FAA453D94D4CC8AAEFA460456027AF74A230613F9F0C95A",
+      "http": "9A25AE591B1C3CC27FAA453D94D4CC8AAEFA460456027AF74A230613F9F0C95A",
+      "nosniff": "nosniff"
+    },
+    {
+      "file": "save.mjs",
+      "status": 200,
+      "source": "096B494102D82693B6CC8A1443158CBF0F8FFE32CBA85FFC618FC5C99346399D",
+      "build": "096B494102D82693B6CC8A1443158CBF0F8FFE32CBA85FFC618FC5C99346399D",
+      "http": "096B494102D82693B6CC8A1443158CBF0F8FFE32CBA85FFC618FC5C99346399D",
+      "nosniff": "nosniff"
+    },
+    {
+      "file": "audio.mjs",
+      "status": 200,
+      "source": "B563134908427151FBD6779EADC13F5256B6AC32B740F7EE7D76B11CBD1FD72F",
+      "build": "B563134908427151FBD6779EADC13F5256B6AC32B740F7EE7D76B11CBD1FD72F",
+      "http": "B563134908427151FBD6779EADC13F5256B6AC32B740F7EE7D76B11CBD1FD72F",
+      "nosniff": "nosniff"
+    }
+  ],
+  "unit": {
+    "command": "QA_BUILD_DIR=artifacts/g028-build-fix2 QA_OUT=<dir> node --test artifacts/g028-qa16-recheck/unit.test.mjs",
+    "tests": 20,
+    "tests_pass": 20,
+    "assertion_calls": 10258,
+    "passed": 10258,
+    "failed": 0,
+    "exit": 0,
+    "evidence": "artifacts/g028-qa16-recheck/unit-20261101-194009/"
+  },
+  "browser": {
+    "command": "GAME_TEST_BUILD_DIR=artifacts/g028-build-fix2 GAME_TEST_ARTIFACT_DIR=artifacts/g028-qa16-recheck/final-20261101-201449 python artifacts/g028-qa16-recheck/gate.py node artifacts/g028-qa16-recheck/browser.mjs",
+    "exit": 1,
+    "started": "2026-11-01T11:20:37.655Z",
+    "finished": "2026-11-01T11:31:40.120Z",
+    "passed": 2026,
+    "failed": 3,
+    "by_environment": {
+      "http": {
+        "pass": 14,
+        "fail": 0,
+        "total": 14
+      },
+      "desktop-chromium": {
+        "pass": 670,
+        "fail": 1,
+        "total": 671
+      },
+      "mobile-chromium": {
+        "pass": 673,
+        "fail": 1,
+        "total": 674
+      },
+      "mobile-webkit": {
+        "pass": 669,
+        "fail": 1,
+        "total": 670
+      }
+    },
+    "app_errors": 0,
+    "harness_errors": 0,
+    "browsers": [
+      {
+        "name": "desktop-chromium",
+        "version": "156.0.8078.4",
+        "options": {
+          "viewport": {
+            "width": 1366,
+            "height": 900
+          }
+        },
+        "started": "2026-11-01T11:20:37.906Z",
+        "finished": "2026-11-01T11:24:14.838Z"
+      },
+      {
+        "name": "mobile-chromium",
+        "version": "156.0.8078.4",
+        "options": {
+          "viewport": {
+            "width": 375,
+            "height": 667
+          },
+          "isMobile": true,
+          "hasTouch": true,
+          "deviceScaleFactor": 1
+        },
+        "started": "2026-11-01T11:24:14.928Z",
+        "finished": "2026-11-01T11:27:52.567Z"
+      },
+      {
+        "name": "mobile-webkit",
+        "version": "27.2",
+        "options": {
+          "viewport": {
+            "width": 390,
+            "height": 844
+          },
+          "isMobile": true,
+          "hasTouch": true,
+          "deviceScaleFactor": 1
+        },
+        "started": "2026-11-01T11:27:52.618Z",
+        "finished": "2026-11-01T11:31:40.115Z"
+      }
+    ],
+    "failed_checks": [
+      {
+        "environment": "desktop-chromium",
+        "scenario": "flow",
+        "name": "no same-value attribute rewrites per frame outside pads (contract line 27 hygiene)",
+        "detail": [
+          [
+            "BODY@data-theme(same-value)",
+            55
+          ],
+          [
+            "start@hidden(same-value)",
+            55
+          ],
+          [
+            "resume@hidden(same-value)",
+            55
+          ],
+          [
+            "retry@hidden(same-value)",
+            55
+          ],
+          [
+            "result@hidden(same-value)",
+            55
+          ],
+          [
+            "storage-warning@hidden(same-value)",
+            55
+          ]
+        ]
+      },
+      {
+        "environment": "mobile-chromium",
+        "scenario": "flow",
+        "name": "no same-value attribute rewrites per frame outside pads (contract line 27 hygiene)",
+        "detail": [
+          [
+            "BODY@data-theme(same-value)",
+            54
+          ],
+          [
+            "start@hidden(same-value)",
+            54
+          ],
+          [
+            "resume@hidden(same-value)",
+            54
+          ],
+          [
+            "retry@hidden(same-value)",
+            54
+          ],
+          [
+            "result@hidden(same-value)",
+            54
+          ],
+          [
+            "storage-warning@hidden(same-value)",
+            54
+          ]
+        ]
+      },
+      {
+        "environment": "mobile-webkit",
+        "scenario": "flow",
+        "name": "no same-value attribute rewrites per frame outside pads (contract line 27 hygiene)",
+        "detail": [
+          [
+            "BODY@data-theme(same-value)",
+            57
+          ],
+          [
+            "start@hidden(same-value)",
+            57
+          ],
+          [
+            "resume@hidden(same-value)",
+            57
+          ],
+          [
+            "retry@hidden(same-value)",
+            57
+          ],
+          [
+            "result@hidden(same-value)",
+            57
+          ],
+          [
+            "storage-warning@hidden(same-value)",
+            57
+          ]
+        ]
+      }
+    ],
+    "evidence": "artifacts/g028-qa16-recheck/final-20261101-201449/result.json"
+  },
+  "live_3116": {
+    "command": "... gate.py node artifacts/g028-qa16-recheck/live.mjs",
+    "passed": 102,
+    "failed": 0,
+    "errors": 0,
+    "harness": 0,
+    "evidence": "artifacts/g028-qa16-recheck\\live-20261101-203247\\live-result.json",
+    "first_run_preserved": "artifacts/g028-qa16-recheck\\live-20261101-203205\\live-result.json",
+    "first_run_failed": 6
+  },
+  "defects": [
+    {
+      "id": "QA16R-O1",
+      "severity": "LOW (contract hygiene, no functional impact observed)",
+      "summary": "Every frame the product re-sets identical attribute values: body[data-theme], and hidden on #start,#resume,#retry,#result,#storage-warning (about 54-57 mutation records per 900ms, all 3 environments). Contract line 27 forbids rewriting same-value attributes per frame. Pads: 0 mutations; real 100ms presses on Start/Pause/Resume/pads all succeeded.",
+      "repro": "Start game, wait for input, observe MutationObserver(attributes, attributeOldValue) on document.body for 900ms; entries with oldValue===current value.",
+      "evidence": "artifacts/g028-qa16-recheck/final-20261101-201449/result.json (measurements: steady-input DOM churn outside pads)"
+    }
+  ]
+}

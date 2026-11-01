@@ -5,7 +5,7 @@
   "engine": "Node.js 24.16.0 + TypeScript, HTML DOM/CSS",
   "engine_version": "Node 24.16.0 / TypeScript 7.0.2",
   "platform": "PC browser + mobile touch browser",
-  "status": "sixteen_games_merged_live_qa15_recheck_pending",
+  "status": "sixteen_games_merged_live_independently_verified_fix2",
   "created_at": "2026-10-22T00:17:53.121532+09:00",
   "team_id": "game-dev-team",
   "team_version": "1.0.0",
@@ -19,7 +19,7 @@
   ],
   "mode": "on-demand-delegate-task",
   "runtime_or_engine_installed": true,
-  "last_verified_at": "2026-11-01T04:24:43.340Z",
+  "last_verified_at": "2026-11-01T11:35:16.246Z",
   "unit_tests_passed": 692,
   "browser_tests_passed": 264,
   "manual_acceptance_pending": true,
@@ -148,10 +148,31 @@
     ],
     "http_byte_checks": "131 of 142 served files byte-identical, 142 CSP+nosniff; 11 .map/.json/.md not served by design",
     "verification": "docs/worklogs/20261101-132406_G028_15번16번_커밋_머지_push_3116재기동_운영검증.md",
-    "independent_qa_gap": "QA15 focus-boundary fix (G028-QA15-F01) in fix2 not independently re-verified; QA16 executed on fix1, fix2 16-simon files SHA-identical",
+    "independent_qa_gap": "closed: QA15-RECHECK and QA16-RECHECK executed on fix2 (PASS_WITH_LIMITATIONS); open LOW defect QA16R-O1",
     "persistent_dump_modified": false,
     "persistent_restart_risk": "Saved PM2 dump may still reference an old build; pm2 save needs separate approval (rewrites agent-board too).",
-    "board_post_id": "mvxbtl1k-62-kwlm"
+    "board_post_id": "mvxbtl1k-62-kwlm",
+    "independent_qa": {
+      "qa15": {
+        "verdict": "PASS_WITH_LIMITATIONS",
+        "report": "docs/15-connect-four/20261101-203207_G028_QA15_RECHECK.md",
+        "assertions": {
+          "desktop-chromium": "404/404",
+          "mobile-chromium": "410/410",
+          "mobile-webkit": "406/406"
+        },
+        "live_3116": "30/30 x3"
+      },
+      "qa16": {
+        "verdict": "PASS_WITH_LIMITATIONS",
+        "report": "docs/16-simon/20261101-203327_G028_QA16_RECHECK.md",
+        "unit": "10258/10258",
+        "browser_failed_each_env": 1,
+        "open_defect": "QA16R-O1 same-value attribute writes every frame (LOW)",
+        "live_3116": "102/102"
+      }
+    },
+    "qa_board_post_id": "mvxr79d0-63-8yqu"
   },
   "production_browser_tests_passed": 39,
   "deployment_history_before_G023": {
