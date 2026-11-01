@@ -36,6 +36,8 @@ const GAME_CATALOG: CatalogGame[] = [
   { id: 'number-postbox', title: '숫자 우체통', genre: '숫자', description: '빈칸을 옮기며 번호 엽서를 차례로 정리해요', tags: ['15퍼즐', 'fifteen', '숫자', '엽서', '슬라이드'], minutes: 2, maxMinutes: 8, status: 'available', href: '/games/12-fifteen/index.html' },
   { id: 'snack-pairs', title: '간식 짝꿍', genre: '기억', description: '간식의 자리를 기억하며 두 장씩 짝을 찾아요', tags: ['카드', 'memory', '짝맞추기', '간식'], minutes: 1, maxMinutes: 3, status: 'available', href: '/games/13-memory/index.html' },
   { id: 'star-moon', title: '별과 달 3목', genre: '보드', description: '한 기기에서 번갈아 놓으며 완성하는 세 칸', tags: ['3목', '틱택토', 'tic-tac-toe', '2인', '별', '달'], minutes: 1, maxMinutes: 2, status: 'available', href: '/games/14-tic-tac-toe/index.html' },
+  { id: 'sun-sea-four', title: '햇빛과 바다 4목', genre: '보드', description: '햇빛과 바다의 원반을 번갈아 네 개씩 이어요', tags: ['4목', 'connect four', '2인', '햇빛', '바다'], minutes: 1, maxMinutes: 4, status: 'available', href: '/games/15-connect-four/index.html' },
+  { id: 'four-star-song', title: '네 별의 노래', genre: '기억', description: '네 별의 빛을 기억하고 같은 순서로 눌러요', tags: ['순서', '기억', 'simon', '별', '패드'], minutes: 0.5, maxMinutes: 3, status: 'available', href: '/games/16-simon/index.html' },
   { id: 'memory-pieces', title: '기억의 조각', genre: '기억', description: '뒤집고 기억하며 찾아내는 한 쌍', tags: ['카드', '맞추기'], minutes: 2, maxMinutes: 5, status: 'upcoming' },
   { id: 'leisure-line', title: '한 줄의 여유', genre: '퍼즐', description: '빈칸을 채우고 한 줄을 비우는 시간', tags: ['블록', '채우기'], minutes: 3, maxMinutes: 8, status: 'upcoming' },
   { id: 'color-walk', title: '색의 산책', genre: '퍼즐', description: '같은 색을 이어 완성하는 작은 풍경', tags: ['색깔', '연결'], minutes: 2, maxMinutes: 5, status: 'upcoming' },
@@ -268,6 +270,46 @@ function artwork(game: CatalogGame, index: number): HTMLDivElement {
       for (const [cx, cy] of [['47', '25'], ['24', '48']]) shape('circle', { cx, cy, r: '7', fill: 'none', stroke: '#9b4934', 'stroke-width': '3' });
       shape('path', { d: 'M72 14l2 5 6 1-5 4 1 6-5-3-5 3 1-6-4-4 6-1z', fill: '#b68b45' });
       shape('path', { d: 'M54 68a9 9 0 1 0 0 13a8 8 0 0 1 0-13', fill: '#9b4934' });
+    }
+    art.append(svg);
+  } else if (game.id === 'sun-sea-four' || game.id === 'four-star-song') {
+    // Original G028 board/pad miniatures, drawn here from local SVG primitives.
+    const four = game.id === 'sun-sea-four';
+    art.classList.add(four ? 'art-desert' : 'art-cloud-bunny');
+    const svg = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
+    svg.setAttribute('viewBox', '0 0 96 96');
+    svg.classList.add('mini-g022');
+    const shape = (tag: 'rect' | 'path' | 'circle' | 'text', attributes: Record<string, string>, text?: string) => {
+      const node = document.createElementNS('http://www.w3.org/2000/svg', tag);
+      for (const [key, value] of Object.entries(attributes)) node.setAttribute(key, value);
+      if (text !== undefined) node.textContent = text;
+      svg.append(node);
+    };
+    if (four) {
+      shape('rect', { x: '3', y: '13', width: '90', height: '73', rx: '8', fill: '#245c70' });
+      for (let row = 0; row < 6; row++) for (let col = 0; col < 7; col++) {
+        const sun = row === 5 && col < 4;
+        const sea = row === 4 && col > 0 && col < 4;
+        const cx = String(12 + col * 12), cy = String(23 + row * 11);
+        shape('circle', { cx, cy, r: '4.5', fill: sun ? '#eab34c' : sea ? '#6ebac9' : '#fffdf8' });
+        if (sun) shape('circle', { cx, cy, r: '2.5', fill: 'none', stroke: '#263c40', 'stroke-width': '1' });
+        if (sea) shape('path', { d: `M${Number(cx)} ${Number(cy) - 3}l3 5h-6z`, fill: 'none', stroke: '#263c40', 'stroke-width': '1' });
+      }
+      shape('path', { d: 'M12 78h36', stroke: '#fff3bc', 'stroke-width': '2', 'stroke-linecap': 'round' });
+    } else {
+      shape('rect', { x: '5', y: '6', width: '86', height: '84', rx: '12', fill: '#243746' });
+      shape('path', { d: 'M45 29h5M67 45v6M50 67h-5', fill: 'none', stroke: '#fff3bc', 'stroke-width': '2' });
+      const pads = [
+        { x: 12, y: 13, fill: '#eab34c', mark: '○', ink: '#263c40' },
+        { x: 50, y: 13, fill: '#326d70', mark: '△', ink: '#fffdf8' },
+        { x: 12, y: 51, fill: '#814b5e', mark: '◇', ink: '#fffdf8' },
+        { x: 50, y: 51, fill: '#5c536d', mark: '☆', ink: '#fffdf8' },
+      ];
+      pads.forEach((pad, i) => {
+        shape('rect', { x: String(pad.x), y: String(pad.y), width: '33', height: '32', rx: '7', fill: pad.fill, stroke: i === 0 ? '#fff3bc' : '#b8c8c4', 'stroke-width': i === 0 ? '3' : '1' });
+        shape('text', { x: String(pad.x + 16.5), y: String(pad.y + 14), fill: pad.ink, 'font-size': '12', 'font-weight': '700', 'text-anchor': 'middle' }, String(i + 1));
+        shape('text', { x: String(pad.x + 16.5), y: String(pad.y + 27), fill: pad.ink, 'font-size': '14', 'text-anchor': 'middle' }, pad.mark);
+      });
     }
     art.append(svg);
   } else if (game.id === 'number-garden') {

@@ -89,8 +89,8 @@ const test = base.extend<{ audit: Audit }>({
 });
 async function home(page: Page) {
   await expect(page).toHaveURL(/\/(?:index\.html)?$/);
-  await expect(page.locator('#catalog-total')).toHaveText('43');
-  await expect(page.locator('#intro-preview')).toHaveText('플레이 가능 14 · 준비 중 29');
+  await expect(page.locator('#catalog-total')).toHaveText('45');
+  await expect(page.locator('#intro-preview')).toHaveText('플레이 가능 16 · 준비 중 29');
   // Preserve the existing first12 DOM before search/filter/load-more.
   await expect(page.locator('#include-upcoming')).toBeChecked();
   await expect(page.locator('#game-search')).toHaveValue('');
