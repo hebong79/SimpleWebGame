@@ -5,7 +5,7 @@
   "engine": "Node.js 24.16.0 + TypeScript, HTML DOM/CSS",
   "engine_version": "Node 24.16.0 / TypeScript 7.0.2",
   "platform": "PC browser + mobile touch browser",
-  "status": "G029_design_build_in_progress",
+  "status": "eighteen_games_merged_live_verified_g030_19_20_in_qa_fix",
   "created_at": "2026-10-22T00:17:53.121532+09:00",
   "team_id": "game-dev-team",
   "team_version": "1.0.0",
@@ -19,7 +19,7 @@
   ],
   "mode": "on-demand-delegate-task",
   "runtime_or_engine_installed": true,
-  "last_verified_at": "2026-11-01T11:35:16.246Z",
+  "last_verified_at": "2026-11-03T11:11:53.516Z",
   "unit_tests_passed": 692,
   "browser_tests_passed": 264,
   "manual_acceptance_pending": true,
@@ -39,9 +39,11 @@
     "snack-pairs",
     "star-moon",
     "sun-sea-four",
-    "four-star-song"
+    "four-star-song",
+    "starlight-switch",
+    "jelly-bite"
   ],
-  "catalog_total": 45,
+  "catalog_total": 47,
   "connection_verification": {
     "task": "G017",
     "primary_url": "http://192.168.0.195:3116/",
@@ -124,55 +126,65 @@
       "status": "merged_live_independently_verified",
       "qa_browser_passed": 135,
       "qa_engine_passed": 46
+    },
+    {
+      "task_id": "G029-17",
+      "game_id": "starlight-switch",
+      "worker": "BUILD17 + FIX17 + independent QA17 + integrated QA",
+      "status": "merged_live_independently_verified",
+      "first_qa": "FAIL(D1 WebKit tap, D2 link 21px) fixed",
+      "reverify": "PASS_WITH_LIMITATIONS",
+      "unit_tests": 61
+    },
+    {
+      "task_id": "G029-18",
+      "game_id": "jelly-bite",
+      "worker": "BUILD18 + FIX18 + independent QA18 + integrated QA",
+      "status": "merged_live_independently_verified",
+      "first_qa": "PASS_WITH_LIMITATIONS (2 low) fixed",
+      "reverify": "PASS_WITH_LIMITATIONS",
+      "unit_tests": 59,
+      "open_low": [
+        "O1 stale warning banner after recovery",
+        "O2 personal-best text when unsaved"
+      ]
+    },
+    {
+      "task_id": "G030-19",
+      "game_id": "pebble-solo",
+      "status": "qa_FAIL_low_D1_fix_in_progress"
+    },
+    {
+      "task_id": "G030-20",
+      "game_id": "paint-spread",
+      "status": "qa_PASS_WITH_LIMITATIONS_D2_fix_in_progress"
     }
   ],
   "browser_tests_scope": "G028 fix2 full regression 264/264 (3 envs); live LAN smoke 3 envs x (home, 2 cards, play, pause/resume, home) 0 failures",
   "deployment": {
-    "task": "G028",
+    "task": "G029",
     "primary_url": "http://192.168.0.195:3116/",
-    "build": "artifacts/g028-build-fix2",
+    "build": "artifacts/g029-build",
     "pm2_app": "number-garden-2048",
     "status": "online_verified_actual_LAN",
-    "pid": 28340,
-    "pm2_id": 3,
+    "pid": 16532,
+    "pm2_id": 4,
     "listen": "0.0.0.0:3116",
-    "source_commit": "31e676a",
-    "main_merge_commit": "9d2e889afb92641a5be32ebfbfe63354c8ec8be0",
-    "merge_status": "merged_no_ff",
-    "remote_push": "origin/main 0117047..9d2e889 regular push, local and remote SHA equal",
-    "full_regression_browser_passed": 264,
-    "live_lan_environments": [
-      "desktop-chromium",
-      "mobile-chromium",
-      "mobile-webkit"
-    ],
-    "http_byte_checks": "131 of 142 served files byte-identical, 142 CSP+nosniff; 11 .map/.json/.md not served by design",
-    "verification": "docs/worklogs/20261101-132406_G028_15번16번_커밋_머지_push_3116재기동_운영검증.md",
-    "independent_qa_gap": "closed: QA15-RECHECK and QA16-RECHECK executed on fix2 (PASS_WITH_LIMITATIONS); open LOW defect QA16R-O1",
-    "persistent_dump_modified": false,
-    "persistent_restart_risk": "Saved PM2 dump may still reference an old build; pm2 save needs separate approval (rewrites agent-board too).",
-    "board_post_id": "mvxbtl1k-62-kwlm",
-    "independent_qa": {
-      "qa15": {
-        "verdict": "PASS_WITH_LIMITATIONS",
-        "report": "docs/15-connect-four/20261101-203207_G028_QA15_RECHECK.md",
-        "assertions": {
-          "desktop-chromium": "404/404",
-          "mobile-chromium": "410/410",
-          "mobile-webkit": "406/406"
-        },
-        "live_3116": "30/30 x3"
-      },
-      "qa16": {
-        "verdict": "PASS_WITH_LIMITATIONS",
-        "report": "docs/16-simon/20261101-203327_G028_QA16_RECHECK.md",
-        "unit": "10258/10258",
-        "browser_failed_each_env": 1,
-        "open_defect": "QA16R-O1 same-value attribute writes every frame (LOW)",
-        "live_3116": "102/102"
-      }
+    "source_commit": "2c211c0",
+    "main_merge_commit": "42dd9b01eceed15e5d8059e6cab75111c53db4c3",
+    "merge_status": "merged_no_ff_tree_verified",
+    "remote_push": "origin/main b5bccb8..42dd9b0 regular push, local, origin/main and ls-remote SHA equal",
+    "integrated_qa": {
+      "verdict": "PASS_WITH_LIMITATIONS",
+      "report": "docs/20261103-194844_G029_INTEGRATED_QA.md",
+      "open_low": [
+        "17 and 18 layout shift at width <=372px (status line 2 lines to 1 line)"
+      ]
     },
-    "qa_board_post_id": "mvxr79d0-63-8yqu"
+    "live_lan_check": "docs/worklogs/ (G029 release worklog); artifacts/g029-release/live-20261103-final: Chromium PC 20/20 (rerun x2), Chromium mobile 20/20, WebKit mobile 20/20",
+    "http_byte_checks": "17/18 index/main/styles + 16 main byte-identical to source SHA256; home 47 cards / 18 playable",
+    "persistent_dump_modified": false,
+    "persistent_restart_risk": "Saved PM2 dump may still reference an old build; pm2 save needs separate approval (rewrites agent-board too)."
   },
   "production_browser_tests_passed": 39,
   "deployment_history_before_G023": {
@@ -292,5 +304,52 @@
     "persistent_dump_modified": false,
     "persistent_restart_risk": "Saved PM2 dump still references g016-build; a reboot can restore it. pm2 save needs separate approval (rewrites agent-board too).",
     "board_post_id": "mvv3uhz7-61-2h7e"
+  },
+  "deployment_history_before_G029": {
+    "task": "G028",
+    "primary_url": "http://192.168.0.195:3116/",
+    "build": "artifacts/g028-build-fix2",
+    "pm2_app": "number-garden-2048",
+    "status": "online_verified_actual_LAN",
+    "pid": 28340,
+    "pm2_id": 3,
+    "listen": "0.0.0.0:3116",
+    "source_commit": "31e676a",
+    "main_merge_commit": "9d2e889afb92641a5be32ebfbfe63354c8ec8be0",
+    "merge_status": "merged_no_ff",
+    "remote_push": "origin/main 0117047..9d2e889 regular push, local and remote SHA equal",
+    "full_regression_browser_passed": 264,
+    "live_lan_environments": [
+      "desktop-chromium",
+      "mobile-chromium",
+      "mobile-webkit"
+    ],
+    "http_byte_checks": "131 of 142 served files byte-identical, 142 CSP+nosniff; 11 .map/.json/.md not served by design",
+    "verification": "docs/worklogs/20261101-132406_G028_15번16번_커밋_머지_push_3116재기동_운영검증.md",
+    "independent_qa_gap": "closed: QA15-RECHECK and QA16-RECHECK executed on fix2 (PASS_WITH_LIMITATIONS); open LOW defect QA16R-O1",
+    "persistent_dump_modified": false,
+    "persistent_restart_risk": "Saved PM2 dump may still reference an old build; pm2 save needs separate approval (rewrites agent-board too).",
+    "board_post_id": "mvxbtl1k-62-kwlm",
+    "independent_qa": {
+      "qa15": {
+        "verdict": "PASS_WITH_LIMITATIONS",
+        "report": "docs/15-connect-four/20261101-203207_G028_QA15_RECHECK.md",
+        "assertions": {
+          "desktop-chromium": "404/404",
+          "mobile-chromium": "410/410",
+          "mobile-webkit": "406/406"
+        },
+        "live_3116": "30/30 x3"
+      },
+      "qa16": {
+        "verdict": "PASS_WITH_LIMITATIONS",
+        "report": "docs/16-simon/20261101-203327_G028_QA16_RECHECK.md",
+        "unit": "10258/10258",
+        "browser_failed_each_env": 1,
+        "open_defect": "QA16R-O1 same-value attribute writes every frame (LOW)",
+        "live_3116": "102/102"
+      }
+    },
+    "qa_board_post_id": "mvxr79d0-63-8yqu"
   }
 }
