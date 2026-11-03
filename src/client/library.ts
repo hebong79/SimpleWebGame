@@ -38,6 +38,8 @@ const GAME_CATALOG: CatalogGame[] = [
   { id: 'star-moon', title: '별과 달 3목', genre: '보드', description: '한 기기에서 번갈아 놓으며 완성하는 세 칸', tags: ['3목', '틱택토', 'tic-tac-toe', '2인', '별', '달'], minutes: 1, maxMinutes: 2, status: 'available', href: '/games/14-tic-tac-toe/index.html' },
   { id: 'sun-sea-four', title: '햇빛과 바다 4목', genre: '보드', description: '햇빛과 바다의 원반을 번갈아 네 개씩 이어요', tags: ['4목', 'connect four', '2인', '햇빛', '바다'], minutes: 1, maxMinutes: 4, status: 'available', href: '/games/15-connect-four/index.html' },
   { id: 'four-star-song', title: '네 별의 노래', genre: '기억', description: '네 별의 빛을 기억하고 같은 순서로 눌러요', tags: ['순서', '기억', 'simon', '별', '패드'], minutes: 0.5, maxMinutes: 3, status: 'available', href: '/games/16-simon/index.html' },
+  { id: 'starlight-switch', title: '별빛 스위치', genre: '퍼즐', description: '십자로 함께 뒤집히는 별을 모두 켜요', tags: ['별', '스위치', '불끄기', 'lights out', '논리', '15단계'], minutes: 0.5, maxMinutes: 4, status: 'available', href: '/games/17-flip/index.html' },
+  { id: 'jelly-bite', title: '젤리 한입', genre: '퍼즐', description: '같은 색 젤리 묶음을 한입에 없애요', tags: ['젤리', '같은색', 'samegame', '점수', '제과점'], minutes: 1, maxMinutes: 2, status: 'available', href: '/games/18-samegame/index.html' },
   { id: 'memory-pieces', title: '기억의 조각', genre: '기억', description: '뒤집고 기억하며 찾아내는 한 쌍', tags: ['카드', '맞추기'], minutes: 2, maxMinutes: 5, status: 'upcoming' },
   { id: 'leisure-line', title: '한 줄의 여유', genre: '퍼즐', description: '빈칸을 채우고 한 줄을 비우는 시간', tags: ['블록', '채우기'], minutes: 3, maxMinutes: 8, status: 'upcoming' },
   { id: 'color-walk', title: '색의 산책', genre: '퍼즐', description: '같은 색을 이어 완성하는 작은 풍경', tags: ['색깔', '연결'], minutes: 2, maxMinutes: 5, status: 'upcoming' },
@@ -310,6 +312,44 @@ function artwork(game: CatalogGame, index: number): HTMLDivElement {
         shape('text', { x: String(pad.x + 16.5), y: String(pad.y + 14), fill: pad.ink, 'font-size': '12', 'font-weight': '700', 'text-anchor': 'middle' }, String(i + 1));
         shape('text', { x: String(pad.x + 16.5), y: String(pad.y + 27), fill: pad.ink, 'font-size': '14', 'text-anchor': 'middle' }, pad.mark);
       });
+    }
+    art.append(svg);
+  } else if (game.id === 'starlight-switch' || game.id === 'jelly-bite') {
+    // Original G029 miniatures drawn from local SVG primitives only.
+    const star = game.id === 'starlight-switch';
+    art.classList.add('art-cloud-bunny');
+    const svg = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
+    svg.setAttribute('viewBox', '0 0 96 96');
+    svg.classList.add('mini-g022');
+    const shape = (tag: 'rect' | 'path' | 'text', attributes: Record<string, string>, text?: string) => {
+      const node = document.createElementNS('http://www.w3.org/2000/svg', tag);
+      for (const [key, value] of Object.entries(attributes)) node.setAttribute(key, value);
+      if (text !== undefined) node.textContent = text;
+      svg.append(node);
+    };
+    if (star) {
+      shape('rect', { x: '8', y: '14', width: '80', height: '80', rx: '10', fill: '#243746' });
+      for (let row = 0; row < 3; row++) for (let col = 0; col < 3; col++) {
+        const lit = (row + col) % 2 === 0;
+        const focus = row === 1 && col === 1;
+        const reach = !focus && (row === 1 || col === 1);
+        const x = 11 + col * 26, y = 17 + row * 26;
+        shape('rect', { x: String(x), y: String(y), width: '22', height: '22', rx: '5', fill: lit ? '#f3c35e' : '#35506a', stroke: focus ? '#fff3bc' : reach ? '#b8c8c4' : 'none', 'stroke-width': focus ? '3' : '1.5' });
+        shape('text', { x: String(x + 11), y: String(y + 16), fill: lit ? '#263c40' : '#9db3c6', 'font-size': '15', 'text-anchor': 'middle' }, lit ? '★' : '☆');
+      }
+    } else {
+      shape('rect', { x: '8', y: '14', width: '80', height: '80', rx: '10', fill: '#fffdf8', stroke: '#c1a782', 'stroke-width': '2' });
+      const rows = ['ccmg', 'cpmg', 'mppg', 'mmcp'];
+      const fills: Record<string, string> = { c: '#e8806f', m: '#6fc4a4', g: '#eab34c', p: '#9a7bc4' };
+      rows.forEach((line, row) => [...line].forEach((color, col) => {
+        const cx = 20 + col * 19.3, cy = 26 + row * 19.3;
+        const chosen = row + col === 0 || (row === 0 && col === 1) || (row === 1 && col === 0);
+        const common = { fill: fills[color], stroke: chosen ? '#263c40' : 'none', 'stroke-width': chosen ? '2.5' : '0' };
+        if (color === 'c') shape('path', { d: `M${cx - 7} ${cy}a7 7 0 1 0 14 0a7 7 0 1 0-14 0`, ...common });
+        else if (color === 'm') shape('path', { d: `M${cx} ${cy - 7}l7.5 13h-15z`, ...common });
+        else if (color === 'g') shape('path', { d: `M${cx} ${cy - 8}l7 8l-7 8l-7-8z`, ...common });
+        else shape('path', { d: `M${cx} ${cy - 8}l2.3 5.4l5.9 0.5l-4.5 3.9l1.4 5.7l-5.1-3.1l-5.1 3.1l1.4-5.7l-4.5-3.9l5.9-0.5z`, ...common });
+      }));
     }
     art.append(svg);
   } else if (game.id === 'number-garden') {
