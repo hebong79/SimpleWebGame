@@ -74,8 +74,8 @@ const test = base.extend<{ audit: Audit }>({
 });
 async function home(page: Page) {
   await expect(page).toHaveURL(/\/(?:index\.html)?$/);
-  await expect(page.locator('#catalog-total')).toHaveText('45');
-  await expect(page.locator('#intro-preview')).toHaveText('플레이 가능 16 · 준비 중 29');
+  await expect(page.locator('#catalog-total')).toHaveText('47');
+  await expect(page.locator('#intro-preview')).toHaveText('플레이 가능 18 · 준비 중 29');
 }
 async function reveal(page: Page, id: string) {
   // Search is a public route to any card; never assume a first12 position.
@@ -210,11 +210,11 @@ async function lifecycle(page: Page, game: Game, info: TestInfo): Promise<void> 
   return songLifecycle(page, info);
 }
 
-test('G028-CATALOG @smoke 45/16/29, public More reveals new cards, old upcoming records remain separate', async ({ page }, info) => {
+test('G028-CATALOG @smoke 47/18/29, public More reveals new cards, old upcoming records remain separate', async ({ page }, info) => {
   const r = await page.goto('/'); expect(r?.headers()['content-security-policy']).toBe(CSP); await home(page);
   await expect(page.locator('.game-card')).toHaveCount(12); expect(await cardIds(page)).toEqual(FIRST12);
-  for (const count of [24, 36, 45]) { await press(page.locator('#load-more')); await expect(page.locator('.game-card')).toHaveCount(count); }
-  expect(new Set(await cardIds(page)).size).toBe(45); await expect(page.locator('.game-card.available')).toHaveCount(16); await expect(page.locator('.game-card.upcoming')).toHaveCount(29);
+  for (const count of [24, 36, 47]) { await press(page.locator('#load-more')); await expect(page.locator('.game-card')).toHaveCount(count); }
+  expect(new Set(await cardIds(page)).size).toBe(47); await expect(page.locator('.game-card.available')).toHaveCount(18); await expect(page.locator('.game-card.upcoming')).toHaveCount(29);
   for (const id of ['memory-pieces', 'leisure-line']) {
     const card = page.locator(`.game-card[data-id="${id}"]`); await expect(card.locator('button.card-action')).toBeDisabled(); await expect(card.locator('a.card-action')).toHaveCount(0);
   }

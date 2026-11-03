@@ -1,0 +1,12 @@
+<!doctype html>
+<html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="theme-color" content="#243746"><title>별빛 스위치 · 작은 쉼표</title><link rel="stylesheet" href="./styles.css"><script type="module" src="./main.mjs"></script></head>
+<body data-theme="night"><header><a id="home" href="/">← 게임 목록</a><p class="eyebrow">작은 쉼표 · 한 수의 빛</p><h1>별빛 스위치</h1><p>누른 별과 상하좌우의 빛이 뒤집혀요. 모든 별을 밝혀 보세요.</p></header>
+<main class="layout"><section class="surface" aria-label="별빛 스위치 게임"><div class="stats"><div>현재 단계<strong id="stage-label">1 / 15</strong></div><div>이동 수<strong id="moves">0</strong></div><div>★★★ 목표<strong id="target">1수</strong></div></div>
+<p id="status" class="status" role="status" aria-live="polite"></p>
+<section id="ready-panel" class="panel"><h2>작은 밤하늘을 밝혀요</h2><p>단계를 고르고 시작해 주세요. 시간 제한 없이 한 수씩 생각할 수 있어요.</p><button id="start" class="primary">게임 시작</button><h3>단계 선택</h3><div id="stage-select" class="stage-select" aria-label="단계 선택"></div></section>
+<section id="pause-panel" class="panel" hidden><h2>잠시 쉬고 있어요</h2><p id="pause-note"></p><button id="resume" class="primary">이어서하기</button></section>
+<section id="result-panel" class="panel" hidden><h2 id="result-title"></h2><p id="result-detail"></p><div class="controls"><button id="next" class="primary">다음 단계</button><button id="retry">다시 도전</button><button id="choose">단계 선택</button><a class="button" href="/">홈으로</a></div></section>
+<div id="board" class="board" role="group" aria-label="별빛 보드"></div><p class="caption">★ 켜짐 · ☆ 꺼짐 · 테두리는 함께 뒤집힐 별이에요.</p>
+<div class="controls"><button id="undo">되돌리기</button><button id="restart">처음부터</button><button id="pause">일시정지</button><button id="help">도움말</button></div></section>
+<aside><h2>십자 모양으로 반짝</h2><p>선택한 별과 바로 위·아래·왼쪽·오른쪽 별이 함께 바뀌어요. 두 번 누르면 원래 모습으로 돌아와요.</p><p>방향키로 별 선택<br>Enter / Space로 반전<br>Esc로 일시정지</p><hr><h2>나의 별빛 기록</h2><p id="stage-best"></p><p id="lifetime"></p><p class="caption">완료한 단계와 설정만 저장해요. 진행 중인 별판은 새로고침하면 사라져요.</p><hr><h2>밤하늘과 소리</h2><p id="theme-name"></p><div class="controls"><button id="settings">테마 선택</button><button id="mute" aria-pressed="true">소리 켜기</button></div><p id="warning" class="warning" role="status" hidden></p></aside></main>
+<dialog id="modal" aria-labelledby="modal-title"><div class="modal-content"><h2 id="modal-title"></h2><div id="modal-body"></div><div id="modal-actions" class="controls"></div></div></dialog><footer>별빛 스위치 · 열다섯 장의 작은 밤하늘</footer></body></html>

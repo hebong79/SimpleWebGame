@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "private": true,
   "type": "module",
-  "description": "SimpleGames library with 2048, Snake, Pong, Breakout, Falling Blocks, Flappy, Dino, Doodle, Crossy, Sokoban, Mines, Fifteen, Memory Match, Tic-Tac-Toe, Connect Four and Simon for PC and mobile",
+  "description": "SimpleGames library with 2048, Snake, Pong, Breakout, Falling Blocks, Flappy, Dino, Doodle, Crossy, Sokoban, Mines, Fifteen, Memory Match, Tic-Tac-Toe, Connect Four, Simon, Starlight Switch and Jelly Bite for PC and mobile",
   "engines": {
     "node": ">=24.0.0"
   },
