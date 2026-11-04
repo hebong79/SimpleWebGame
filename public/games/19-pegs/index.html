@@ -1,0 +1,17 @@
+<!doctype html>
+<html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="theme-color" content="#f7f5ee"><title>조약돌 하나 · 작은 쉼표</title><link rel="stylesheet" href="./styles.css"><script type="module" src="./main.mjs"></script></head>
+<body data-theme="river"><header><a id="home" href="/">← 게임 목록</a><p class="eyebrow">19 · 작은 쉼표 · 혼자 생각하는 퍼즐</p><h1>조약돌 하나</h1><p>돌을 뛰어넘어 하나만 남기세요</p></header>
+<main class="layout"><section class="surface" aria-label="조약돌 하나 게임">
+<p id="warning" class="warning" role="status" hidden></p>
+<div class="stats"><strong id="remaining" class="stat-main">남은 돌 4</strong><span id="stage-label">단계 1 / 10</span><span id="undo-count">되돌리기 0회</span><span id="stage-best">이 단계 기록 없음</span></div>
+<p id="status" class="status" role="status" aria-live="polite"></p>
+<div class="board-wrap"><div id="board" class="board" role="group" aria-label="조약돌 판"></div></div>
+<div id="play-controls" class="bar" hidden><button id="undo" type="button" aria-disabled="true">되돌리기</button><button id="restart" type="button">처음부터</button><button id="pause" type="button">정지</button><button id="resume" class="primary" type="button" hidden>이어서하기</button></div>
+<section id="ready-panel" class="panel" aria-label="게임 준비"><h2>단계를 고르고 시작해요</h2><div id="stage-select" class="stage-select" role="group" aria-label="단계 선택"></div><button id="start" class="primary wide" type="button">게임 시작</button><p class="caption">잠긴 단계는 앞 단계를 풀면 열려요. 시간 제한은 없어요.</p></section>
+<section id="result-panel" class="panel" aria-label="결과" hidden><h2 id="result-title"></h2><p id="result-detail"></p><p id="result-save" class="caption"></p><p id="all-clear" class="all-clear" hidden>모든 단계를 완료했어요</p><div class="results"><button id="next" class="primary" type="button">다음 단계</button><button id="undo-continue" class="primary" type="button">한 수 되돌리기</button><button id="retry" type="button">다시 도전</button><button id="choose" type="button">단계 선택</button><a id="result-home" class="button" href="/">홈으로</a></div></section>
+</section>
+<aside><h2>하는 법</h2><p>돌 하나를 고른 뒤, 바로 옆의 돌을 뛰어넘어 빈 구멍에 내려요. 뛰어넘은 돌은 사라져요.</p><p class="keys">방향키로 칸 이동<br>Enter / Space로 선택·점프<br>Esc로 선택 해제·정지</p>
+<div class="side-buttons"><button id="help" type="button">도움말</button><button id="settings" type="button">설정</button><button id="mute" type="button" aria-pressed="false">소리 꺼짐</button></div>
+<hr><h2>나의 기록</h2><p id="lifetime">클리어한 단계 0 / 10 · 총 0회</p><p class="caption">완료 기록과 설정만 저장해요. 진행 중인 판은 새로고침하면 사라져요.</p></aside></main>
+<dialog id="modal" aria-labelledby="modal-title"><div class="modal-content"><h2 id="modal-title"></h2><div id="modal-body"></div><div id="modal-actions" class="bar modal-actions"></div></div></dialog>
+<footer>조약돌 하나 · 열 개의 작은 강가</footer></body></html>
