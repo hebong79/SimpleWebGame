@@ -40,6 +40,8 @@ const GAME_CATALOG: CatalogGame[] = [
   { id: 'four-star-song', title: '네 별의 노래', genre: '기억', description: '네 별의 빛을 기억하고 같은 순서로 눌러요', tags: ['순서', '기억', 'simon', '별', '패드'], minutes: 0.5, maxMinutes: 3, status: 'available', href: '/games/16-simon/index.html' },
   { id: 'starlight-switch', title: '별빛 스위치', genre: '퍼즐', description: '십자로 함께 뒤집히는 별을 모두 켜요', tags: ['별', '스위치', '불끄기', 'lights out', '논리', '15단계'], minutes: 0.5, maxMinutes: 4, status: 'available', href: '/games/17-flip/index.html' },
   { id: 'jelly-bite', title: '젤리 한입', genre: '퍼즐', description: '같은 색 젤리 묶음을 한입에 없애요', tags: ['젤리', '같은색', 'samegame', '점수', '제과점'], minutes: 1, maxMinutes: 2, status: 'available', href: '/games/18-samegame/index.html' },
+  { id: 'pebble-solo', title: '조약돌 하나', genre: '퍼즐', description: '조약돌을 뛰어넘어 하나만 남겨요', tags: ['조약돌', '페그', 'peg solitaire', '하나만', '논리', '10단계'], minutes: 1, maxMinutes: 5, status: 'available', href: '/games/19-pegs/index.html' },
+  { id: 'paint-spread', title: '물감 번지기', genre: '퍼즐', description: '색을 바꿔 판 전체를 한 색으로 칠해요', tags: ['물감', '번지기', 'flood fill', '색칠', '횟수', '15단계'], minutes: 1, maxMinutes: 3, status: 'available', href: '/games/20-flood/index.html' },
   { id: 'memory-pieces', title: '기억의 조각', genre: '기억', description: '뒤집고 기억하며 찾아내는 한 쌍', tags: ['카드', '맞추기'], minutes: 2, maxMinutes: 5, status: 'upcoming' },
   { id: 'leisure-line', title: '한 줄의 여유', genre: '퍼즐', description: '빈칸을 채우고 한 줄을 비우는 시간', tags: ['블록', '채우기'], minutes: 3, maxMinutes: 8, status: 'upcoming' },
   { id: 'color-walk', title: '색의 산책', genre: '퍼즐', description: '같은 색을 이어 완성하는 작은 풍경', tags: ['색깔', '연결'], minutes: 2, maxMinutes: 5, status: 'upcoming' },
@@ -349,6 +351,39 @@ function artwork(game: CatalogGame, index: number): HTMLDivElement {
         else if (color === 'm') shape('path', { d: `M${cx} ${cy - 7}l7.5 13h-15z`, ...common });
         else if (color === 'g') shape('path', { d: `M${cx} ${cy - 8}l7 8l-7 8l-7-8z`, ...common });
         else shape('path', { d: `M${cx} ${cy - 8}l2.3 5.4l5.9 0.5l-4.5 3.9l1.4 5.7l-5.1-3.1l-5.1 3.1l1.4-5.7l-4.5-3.9l5.9-0.5z`, ...common });
+      }));
+    }
+    art.append(svg);
+  } else if (game.id === 'pebble-solo' || game.id === 'paint-spread') {
+    // Original G030 miniatures drawn from local SVG primitives only.
+    const pebble = game.id === 'pebble-solo';
+    art.classList.add('art-cloud-bunny');
+    const svg = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
+    svg.setAttribute('viewBox', '0 0 96 96');
+    svg.classList.add('mini-g022');
+    const shape = (tag: 'rect' | 'circle', attributes: Record<string, string>) => {
+      const node = document.createElementNS('http://www.w3.org/2000/svg', tag);
+      for (const [key, value] of Object.entries(attributes)) node.setAttribute(key, value);
+      svg.append(node);
+    };
+    if (pebble) {
+      shape('rect', { x: '8', y: '14', width: '80', height: '80', rx: '10', fill: '#7d8f8a' });
+      const rows = ['.ooo.', 'ooooo', 'oo.oo', 'ooooo', '.ooo.'];
+      rows.forEach((line, row) => [...line].forEach((mark, col) => {
+        if (mark === '.') return;
+        const cx = 18 + col * 15, cy = 24 + row * 15;
+        const centre = row === 2 && col === 2;
+        const reach = (row === 2 && (col === 0 || col === 4)) || (col === 2 && (row === 0 || row === 4));
+        shape('circle', { cx: String(cx), cy: String(cy), r: centre ? '5.5' : '6', fill: centre ? '#f7f5ee' : '#e6e0d2', stroke: centre ? '#263c40' : 'none', 'stroke-width': '2' });
+        if (!centre) shape('circle', { cx: String(cx), cy: String(cy), r: '5', fill: reach ? '#263c40' : '#52646a' });
+      }));
+    } else {
+      shape('rect', { x: '8', y: '14', width: '80', height: '80', rx: '10', fill: '#fffdf8', stroke: '#c1a782', 'stroke-width': '2' });
+      const rows = ['rrbyg', 'rrbgg', 'rbbgy', 'ybyyg', 'gbyrr'];
+      const fills: Record<string, string> = { r: '#e8806f', b: '#5b8fd1', y: '#eab34c', g: '#6fc4a4' };
+      rows.forEach((line, row) => [...line].forEach((color, col) => {
+        const mine = row < 2 && col < 2;
+        shape('rect', { x: String(12 + col * 15), y: String(18 + row * 15), width: '14', height: '14', rx: '3', fill: fills[color], stroke: mine ? '#263c40' : 'none', 'stroke-width': mine ? '2.5' : '0' });
       }));
     }
     art.append(svg);
