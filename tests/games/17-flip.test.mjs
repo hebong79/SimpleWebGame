@@ -123,3 +123,6 @@ test('D1: pointer gesture validation and key repeat guards are still present', a
 test('D2: header home link has a 44px touch target', async () => {
   const css = await fixSource('styles.css'); assert.match(css, /#home\{[^}]*min-height:44px/); assert.match(css, /#home\{[^}]*display:inline-flex/);
 });
+test('G031-FIX17 INT-1: narrow screens reserve two status lines so the board does not jump (source guard; browser proof in artifacts/g031-fix)', async () => {
+  const css = await fixSource('styles.css'); assert.match(css, /@media\(max-width:400px\)\{\.status\{min-height:62px\}\}/);
+});

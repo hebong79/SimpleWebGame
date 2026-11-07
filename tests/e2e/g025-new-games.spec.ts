@@ -1,3 +1,4 @@
+import { CATALOG_TOTAL, CATALOG_SUMMARY } from './vol2-catalog';
 import { test as base, expect, type Page, type TestInfo, type Locator } from '@playwright/test';
 import { resolve } from 'node:path';
 import { pathToFileURL } from 'node:url';
@@ -89,8 +90,8 @@ const test = base.extend<{ audit: Audit }>({
 });
 async function home(page: Page) {
   await expect(page).toHaveURL(/\/(?:index\.html)?$/);
-  await expect(page.locator('#catalog-total')).toHaveText('49');
-  await expect(page.locator('#intro-preview')).toHaveText('플레이 가능 20 · 준비 중 29');
+  await expect(page.locator('#catalog-total')).toHaveText(String(CATALOG_TOTAL));
+  await expect(page.locator('#intro-preview')).toHaveText(CATALOG_SUMMARY);
   // Preserve the existing first12 DOM before search/filter/load-more.
   await expect(page.locator('#include-upcoming')).toBeChecked();
   await expect(page.locator('#game-search')).toHaveValue('');

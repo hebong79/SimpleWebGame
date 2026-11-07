@@ -1,3 +1,4 @@
+import { CATALOG_TOTAL, CATALOG_SUMMARY } from './vol2-catalog';
 import { test as base, expect, type Page, type TestInfo } from '@playwright/test';
 
 const FAVORITES = 'simplegames.library.favorites.v1';
@@ -35,8 +36,8 @@ const test = base.extend<{ audit: Audit }>({
 });
 async function home(page: Page) {
   await expect(page).toHaveURL(/\/$/);
-  await expect(page.locator('#catalog-total')).toHaveText('49');
-  await expect(page.locator('#intro-preview')).toHaveText('플레이 가능 20 · 준비 중 29');
+  await expect(page.locator('#catalog-total')).toHaveText(String(CATALOG_TOTAL));
+  await expect(page.locator('#intro-preview')).toHaveText(CATALOG_SUMMARY);
 }
 async function launch(page: Page, id: string, route: string, info?: TestInfo) {
   const link = page.locator(`.game-card[data-id="${id}"] a.card-action`);

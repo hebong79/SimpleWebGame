@@ -1,0 +1,15 @@
+export const sourceIndex=n=>Math.floor(n/2)*n+Math.floor(n/2);
+export const DIRS=[[-1,0,1,4],[0,1,2,8],[1,0,4,1],[0,-1,8,2]];
+export const rotate=m=>((m<<1)&15)|((m>>3)&1);
+export function inspect(board,n){const seen=new Set([sourceIndex(n)]),queue=[...seen];let open=0,edges=0;for(let i=0;i<n*n;i++){const r=Math.floor(i/n),c=i%n;for(const [dr,dc,bit,other]of DIRS)if(board[i]&bit){const nr=r+dr,nc=c+dc;if(nr<0||nr>=n||nc<0||nc>=n||!(board[nr*n+nc]&other))open++;else edges++;}}while(queue.length){const i=queue.shift(),r=Math.floor(i/n),c=i%n;for(const[dr,dc,bit,other]of DIRS){const nr=r+dr,nc=c+dc,j=nr*n+nc;if(nr>=0&&nr<n&&nc>=0&&nc<n&&(board[i]&bit)&&(board[j]&other)&&!seen.has(j)){seen.add(j);queue.push(j);}}}return{seen,open,edges:edges/2,won:seen.size===n*n&&open===0&&edges/2===n*n-1};}
+export function solve(level,limit=2){
+ const{n}=level,out=[];
+ const initial=level.board.map((m,i)=>{const values=new Set();for(let k=0;k<4;k++){values.add(m);m=rotate(m);}const r=Math.floor(i/n),c=i%n;return[...values].filter(v=>DIRS.every(([dr,dc,bit])=>r+dr>=0&&r+dr<n&&c+dc>=0&&c+dc<n||!(v&bit)));});
+ function visit(domains){if(out.length>=limit)return;let change=true;while(change){change=false;for(let i=0;i<domains.length;i++){const r=Math.floor(i/n),c=i%n,next=domains[i].filter(mask=>DIRS.every(([dr,dc,bit,other])=>{const rr=r+dr,cc=c+dc;if(rr<0||rr>=n||cc<0||cc>=n)return!(mask&bit);return domains[rr*n+cc].some(v=>Boolean(v&other)===Boolean(mask&bit));}));if(!next.length)return;if(next.length!==domains[i].length){domains[i]=next;change=true;}}}
+  const parent=Array.from({length:n*n},(_,i)=>i);function root(i){while(parent[i]!==i)i=parent[i];return i;}
+  for(let i=0;i<n*n;i++)if(domains[i].length===1){const r=Math.floor(i/n),c=i%n;for(const[dr,dc,bit,other]of DIRS){const j=(r+dr)*n+c+dc;if(j<=i||r+dr<0||r+dr>=n||c+dc<0||c+dc>=n||domains[j].length!==1||!(domains[i][0]&bit)||!(domains[j][0]&other))continue;const a=root(i),b=root(j);if(a===b)return;parent[a]=b;}}
+  let chosen=-1;domains.forEach((d,i)=>{if(d.length>1&&(chosen<0||d.length<domains[chosen].length))chosen=i;});if(chosen<0){const board=domains.map(d=>d[0]);if(inspect(board,n).won)out.push(board);return;}for(const mask of domains[chosen]){const next=domains.map(d=>[...d]);next[chosen]=[mask];visit(next);}}
+ visit(initial);return out;
+}
+function fixed(seed,n){let s=seed;const rnd=()=>{s=(Math.imul(s,1664525)+1013904223)>>>0;return s/4294967296;};const solution=Array(n*n).fill(0),seen=new Set([0]),stack=[0];while(stack.length){const i=stack.at(-1),r=Math.floor(i/n),c=i%n,choices=DIRS.filter(([dr,dc])=>r+dr>=0&&r+dr<n&&c+dc>=0&&c+dc<n&&!seen.has((r+dr)*n+c+dc));if(!choices.length){stack.pop();continue;}const [dr,dc,bit,other]=choices[Math.floor(rnd()*choices.length)],j=(r+dr)*n+c+dc;solution[i]|=bit;solution[j]|=other;seen.add(j);stack.push(j);}const board=solution.map(m=>{for(let k=Math.floor(rnd()*4);k>0;k--)m=rotate(m);return m;});return{n,name:`배선 ${seed}`,solution,board};}
+export const LEVELS=[11,29,47,83,101,139,173,211].map((s,i)=>fixed(s,i<5?4:5));

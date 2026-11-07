@@ -1,0 +1,7 @@
+export function match(trees,tents,n){const owner=new Map();function pair(t,seen){for(const tree of trees){if(seen.has(tree)||Math.abs(Math.floor(tree/n)-Math.floor(t/n))+Math.abs(tree%n-t%n)!==1)continue;seen.add(tree);if(!owner.has(tree)||pair(owner.get(tree),seen)){owner.set(tree,t);return true;}}return false;}return tents.length===trees.length&&tents.every(t=>pair(t,new Set()));}
+export function inspect(level,board){const{n,trees,rows,cols}=level,tents=board.flatMap((v,i)=>v===1?[i]:[]),bad=new Set(),rc=Array(n).fill(0),cc=Array(n).fill(0);for(const i of tents){rc[Math.floor(i/n)]++;cc[i%n]++;for(const j of tents)if(i!==j&&Math.abs(Math.floor(i/n)-Math.floor(j/n))<=1&&Math.abs(i%n-j%n)<=1){bad.add(i);bad.add(j);}}const matching=match(trees,tents,n);return{tents,bad,rows:rc,cols:cc,matching,won:bad.size===0&&trees.every(i=>board[i]!==1)&&rc.every((v,i)=>v===rows[i])&&cc.every((v,i)=>v===cols[i])&&matching};}
+const data=[
+ [[1,9,16,23],[0,4,15,24]],[[0,8,15,23],[1,9,10,24]],[[2,9,15,23],[1,4,10,24]],[[1,8,17,23],[0,9,16,24]],
+ [[1,8,15,23],[0,9,10,24]],[[2,6,17,23],[3,5,16,24]],[[1,9,15,22],[0,4,10,23]],[[2,8,16,23],[1,9,15,24]]
+];
+export const LEVELS=data.map(([trees,tents],k)=>{const n=5,solution=Array(25).fill(0),rows=Array(5).fill(0),cols=Array(5).fill(0);tents.forEach(i=>{solution[i]=1;rows[Math.floor(i/5)]++;cols[i%5]++;});return{name:`야영지 ${k+1}`,n,trees,solution,rows,cols};});

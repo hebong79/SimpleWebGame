@@ -23,7 +23,7 @@ export default defineConfig({
   outputDir: resolve(root, reports, 'test-results'),
   reporter: [['list'], ['json', { outputFile: resolve(root, reports, list ? 'discovery.json' : 'playwright-results.json') }]],
   use: { baseURL: origin, locale: 'ko-KR', trace: 'retain-on-failure', screenshot: 'off', video: 'off' },
-  // Runner alone owns its loopback server. Never reuse a service or start3116.
+  // Runner alone owns its loopback server. Never reuse a service or start15010.
   projects: [
     { name: 'desktop-chromium', use: { ...devices['Desktop Chrome'], viewport: { width: 1366, height: 900 } } },
     { name: 'mobile-chromium', use: { ...devices['Pixel 7'], viewport: { width: 320, height: 667 } } },

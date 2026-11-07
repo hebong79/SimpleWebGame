@@ -9,7 +9,7 @@ const origin = process.env.GAME_G024_ORIGIN;
 if (build !== 'artifacts/g024-build') throw new Error('G024 requires the explicit current-task build.');
 if (!reports || !/^artifacts\/g024-integration\/runs\/[A-Za-z0-9_-]+$/.test(reports)) throw new Error('G024 requires a fresh task-owned report directory.');
 if (!['candidate', 'live'].includes(target ?? '') || !['smoke', 'full'].includes(mode ?? '')) throw new Error('Explicit G024 target/mode required.');
-if (origin !== (target === 'candidate' ? 'http://127.0.0.1:3145' : 'http://192.168.0.195:3116')) throw new Error('Origin is not authorized for this mode.');
+if (origin !== (target === 'candidate' ? 'http://127.0.0.1:3145' : 'http://192.168.0.195:15010')) throw new Error('Origin is not authorized for this mode.');
 if (process.env.GAME_G024_BROWSER_GATE !== 'Local\\HermesG024BrowserGate') throw new Error('Run through the named Win32 browser gate.');
 const list = process.env.GAME_G024_LIST === '1';
 export default defineConfig({

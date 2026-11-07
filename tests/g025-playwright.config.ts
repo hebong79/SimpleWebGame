@@ -10,7 +10,7 @@ const origin = process.env.GAME_G025_ORIGIN;
 if (build !== 'artifacts/g025-build') throw new Error('BLOCKED: explicit G025 build required');
 if (!reports || !/^artifacts\/g025-integration\/runs\/[A-Za-z0-9_-]+\/children\/[A-Za-z0-9_-]+\/(discovery|execution)-[a-f0-9-]+$/.test(reports)) throw new Error('BLOCKED: fresh child-specific G025 reports required');
 if (!['candidate', 'live'].includes(target ?? '') || !['smoke', 'full'].includes(mode ?? '')) throw new Error('Explicit G025 target/mode required');
-if (origin !== (target === 'candidate' ? 'http://127.0.0.1:3155' : 'http://192.168.0.195:3116')) throw new Error('Origin is not authorized');
+if (origin !== (target === 'candidate' ? 'http://127.0.0.1:3155' : 'http://192.168.0.195:15010')) throw new Error('Origin is not authorized');
 if (target === 'live' && process.env.GAME_LIVE_ORIGIN !== origin) throw new Error('Live requires explicit authorized LAN profile');
 if (target === 'candidate' && process.env.GAME_LIVE_ORIGIN) throw new Error('Candidate must not inherit a live origin');
 if (process.env.GAME_G025_BROWSER_GATE !== 'Local\\SimpleGamesG025BrowserGate') throw new Error('Use the exact G025 Win32 mutex runner');
