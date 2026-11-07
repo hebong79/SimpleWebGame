@@ -5,7 +5,7 @@
   "engine": "Node.js 24.16.0 + TypeScript, HTML DOM/CSS",
   "engine_version": "Node 24.16.0 / TypeScript 7.0.2",
   "platform": "PC browser + mobile touch browser",
-  "status": "forty_games_live_verified_uncommitted",
+  "status": "forty_games_merged_pushed_live_verified",
   "created_at": "2026-10-22T00:17:53.121532+09:00",
   "team_id": "game-dev-team",
   "team_version": "1.0.0",
@@ -198,12 +198,16 @@
     "pm2_id": 2,
     "pid": 30832,
     "status": "online_verified_actual_LAN",
-    "source_commit": null,
-    "git_status": "not_committed_or_pushed",
+    "source_commit": "169408bbf15da70715363c573f26bb943d804c87",
+    "git_status": "main_merged_and_pushed",
     "evidence": "artifacts/g032-release/2026-11-07T14-48-20-255Z/after.json",
     "live_browser": "artifacts/g032-smoke/2026-11-07T14-50-48-857Z/results.json",
     "persistent_dump_modified": false,
-    "board_post_id": "mw6j1hbu-68-6x05"
+    "board_post_id": "mw6j1hbu-68-6x05",
+    "main_merge_commit": "bf234a9f80c465a9cd865bd653691a77a8c39337",
+    "remote_push": "origin/main bf234a9f80c465a9cd865bd653691a77a8c39337",
+    "git_worklog": "docs/worklogs/20261108-001049_G032_20게임_커밋_main병합_원격푸시.md",
+    "git_board_post_id": "mw6jj6eq-69-nbjs"
   },
   "deployment_history_before_G030": {
     "task": "G029",
