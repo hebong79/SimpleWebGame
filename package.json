@@ -18,7 +18,8 @@
     "test:e2e": "playwright test",
     "verify": "npm run test && npm run test:e2e",
     "preview:design": "node scripts/preview_prototype.mjs",
-    "test:launcher": "node --test tests/launch-local.test.mjs"
+    "test:launcher": "node --test tests/launch-local.test.mjs",
+    "test:vol2": "node scripts/vol2-validate.mjs && node scripts/vol2-smoke.mjs"
   },
   "devDependencies": {
     "typescript": "7.0.2",

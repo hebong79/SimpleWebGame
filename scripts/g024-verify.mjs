@@ -14,14 +14,14 @@ const args = process.argv.slice(2), options = {};
 for (let i = 0; i < args.length; i++) {
   const key = args[i];
   if (key === '--list' || key === '--units-only') { assert(!options[key], 'Duplicate option'); options[key] = true; continue; }
-  assert(['--target', '--mode', '--origin'].includes(key) && args[i + 1] && !options[key], 'Usage: g024-verify.mjs --target candidate|live --mode smoke|full [--origin http://192.168.0.195:3116] [--list|--units-only]');
+  assert(['--target', '--mode', '--origin'].includes(key) && args[i + 1] && !options[key], 'Usage: g024-verify.mjs --target candidate|live --mode smoke|full [--origin http://192.168.0.195:15010] [--list|--units-only]');
   options[key] = args[++i];
 }
 const target = options['--target'], mode = options['--mode'];
 assert(['candidate', 'live'].includes(target) && ['smoke', 'full'].includes(mode), 'Explicit target/mode required');
 assert(!(options['--list'] && options['--units-only']), 'List and units-only are distinct modes');
 assert(!options['--units-only'] || (target === 'candidate' && mode === 'full'), 'Units-only is candidate/full only');
-assert(target !== 'live' || options['--origin'] === 'http://192.168.0.195:3116', 'Live requires explicit authorized --origin');
+assert(target !== 'live' || options['--origin'] === 'http://192.168.0.195:15010', 'Live requires explicit authorized --origin');
 assert(target !== 'candidate' || (!options['--origin'] && !process.env.GAME_LIVE_ORIGIN), 'Candidate must not inherit or specify live origin');
 assert(target !== 'live' || !options['--units-only'], 'Live never builds or executes server unit fixtures');
 assert.equal(process.version, 'v24.16.0', 'Use the contracted absolute Node executable');

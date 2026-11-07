@@ -1,0 +1,1 @@
+.orbit-canvas{display:block;width:100%;height:auto;aspect-ratio:1;touch-action:none;border-radius:20px;background:#211735}.orbit-tools{display:flex;gap:8px;flex-wrap:wrap}.orbit-controls{display:grid;grid-template-columns:1fr 1fr;gap:12px}.orbit-controls button{min-height:58px;touch-action:none;user-select:none}

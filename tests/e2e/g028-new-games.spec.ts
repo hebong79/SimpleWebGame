@@ -1,3 +1,4 @@
+import { CATALOG_TOTAL, CATALOG_AVAILABLE, CATALOG_SUMMARY, CATALOG_MORE_COUNTS } from './vol2-catalog';
 import { test as base, expect, type Page, type TestInfo, type Locator } from '@playwright/test';
 import { resolve } from 'node:path';
 import { pathToFileURL } from 'node:url';
@@ -74,8 +75,8 @@ const test = base.extend<{ audit: Audit }>({
 });
 async function home(page: Page) {
   await expect(page).toHaveURL(/\/(?:index\.html)?$/);
-  await expect(page.locator('#catalog-total')).toHaveText('49');
-  await expect(page.locator('#intro-preview')).toHaveText('플레이 가능 20 · 준비 중 29');
+  await expect(page.locator('#catalog-total')).toHaveText(String(CATALOG_TOTAL));
+  await expect(page.locator('#intro-preview')).toHaveText(CATALOG_SUMMARY);
 }
 async function reveal(page: Page, id: string) {
   // Search is a public route to any card; never assume a first12 position.
@@ -210,11 +211,11 @@ async function lifecycle(page: Page, game: Game, info: TestInfo): Promise<void> 
   return songLifecycle(page, info);
 }
 
-test('G028-CATALOG @smoke 49/20/29, public More reveals new cards, old upcoming records remain separate', async ({ page }, info) => {
+test('G028-CATALOG @smoke 69/40/29, public More reveals new cards, old upcoming records remain separate', async ({ page }, info) => {
   const r = await page.goto('/'); expect(r?.headers()['content-security-policy']).toBe(CSP); await home(page);
   await expect(page.locator('.game-card')).toHaveCount(12); expect(await cardIds(page)).toEqual(FIRST12);
-  for (const count of [24, 36, 48, 49]) { await press(page.locator('#load-more')); await expect(page.locator('.game-card')).toHaveCount(count); }
-  expect(new Set(await cardIds(page)).size).toBe(49); await expect(page.locator('.game-card.available')).toHaveCount(20); await expect(page.locator('.game-card.upcoming')).toHaveCount(29);
+  for (const count of CATALOG_MORE_COUNTS) { await press(page.locator('#load-more')); await expect(page.locator('.game-card')).toHaveCount(count); }
+  expect(new Set(await cardIds(page)).size).toBe(CATALOG_TOTAL); await expect(page.locator('.game-card.available')).toHaveCount(CATALOG_AVAILABLE); await expect(page.locator('.game-card.upcoming')).toHaveCount(29);
   for (const id of ['memory-pieces', 'leisure-line']) {
     const card = page.locator(`.game-card[data-id="${id}"]`); await expect(card.locator('button.card-action')).toBeDisabled(); await expect(card.locator('a.card-action')).toHaveCount(0);
   }

@@ -5,7 +5,7 @@
   "engine": "Node.js 24.16.0 + TypeScript, HTML DOM/CSS",
   "engine_version": "Node 24.16.0 / TypeScript 7.0.2",
   "platform": "PC browser + mobile touch browser",
-  "status": "twenty_games_merged_live_verified",
+  "status": "forty_games_live_verified_uncommitted",
   "created_at": "2026-10-22T00:17:53.121532+09:00",
   "team_id": "game-dev-team",
   "team_version": "1.0.0",
@@ -43,9 +43,36 @@
     "starlight-switch",
     "jelly-bite",
     "pebble-solo",
-    "paint-spread"
+    "paint-spread",
+    "ink-postcard",
+    "four-notebook",
+    "lamp-network",
+    "island-bridges",
+    "night-lamps",
+    "forest-camp",
+    "glass-roof",
+    "tangled-stars",
+    "specimen-vault",
+    "moon-sun-garden",
+    "three-specimens",
+    "seed-jars",
+    "firefly-post",
+    "star-patrol",
+    "lighthouse-shield",
+    "gap-orbit",
+    "cloud-stamp",
+    "moon-mushrooms",
+    "juice-workshop",
+    "cloud-cookie"
   ],
-  "catalog_total": 49,
+  "live_port_change": {
+    "date": "2026-11-04",
+    "primary_url": "http://192.168.0.195:15010/",
+    "listen": "0.0.0.0:15010",
+    "previous_port": 3116,
+    "note": "Requested by user. Entries above that mention 3116 are historical records of what was verified at that time and are intentionally unchanged."
+  },
+  "catalog_total": 69,
   "connection_verification": {
     "task": "G017",
     "primary_url": "http://192.168.0.195:3116/",
@@ -164,32 +191,19 @@
   ],
   "browser_tests_scope": "G028 fix2 full regression 264/264 (3 envs); live LAN smoke 3 envs x (home, 2 cards, play, pause/resume, home) 0 failures",
   "deployment": {
-    "task": "G030",
-    "primary_url": "http://192.168.0.195:3116/",
-    "build": "artifacts/g030-build",
+    "task": "G032",
+    "primary_url": "http://192.168.0.195:15010/",
+    "build": "artifacts/g032-build",
     "pm2_app": "number-garden-2048",
+    "pm2_id": 2,
+    "pid": 30832,
     "status": "online_verified_actual_LAN",
-    "pid": 10596,
-    "pm2_id": 5,
-    "listen": "0.0.0.0:3116",
-    "source_commit": "52f0057",
-    "main_merge_commit": "aeee713a10d57f2de7e00aebe2cb68edffc828b2",
-    "merge_status": "merged_no_ff_tree_verified",
-    "remote_push": "origin/main 5b43e06..aeee713 regular push, local, origin/main and ls-remote SHA equal",
-    "integrated_qa": {
-      "verdict": "PASS_WITH_LIMITATIONS",
-      "report": "docs/20261104-222211_G030_INTEGRATED_QA.md",
-      "open_low": [
-        "17 and 18 layout shift at width <=372px (carried over)",
-        "19 warning shifts board; contrast/hover observations",
-        "20 focus-less synthetic click ignored; vertical fit"
-      ]
-    },
-    "live_lan_check": "docs/worklogs/20261104-222655_G030_19번20번_홈통합_머지_push_3116운영반영_검증.md; artifacts/g030-release/live-20261104: Chromium PC 22/22, Chromium mobile 22/22, WebKit mobile 22/22 (first run 21/22 was a check-script threshold bug)",
-    "http_byte_checks": "19/20 index/main/styles + 17 main byte-identical to source SHA256; home 49 cards / 20 playable",
-    "board_post": "mw25juwp-67-yq6j",
+    "source_commit": null,
+    "git_status": "not_committed_or_pushed",
+    "evidence": "artifacts/g032-release/2026-11-07T14-48-20-255Z/after.json",
+    "live_browser": "artifacts/g032-smoke/2026-11-07T14-50-48-857Z/results.json",
     "persistent_dump_modified": false,
-    "persistent_restart_risk": "Saved PM2 dump may still reference an old build; pm2 save needs separate approval (rewrites agent-board too)."
+    "board_post_id": "mw6j1hbu-68-6x05"
   },
   "deployment_history_before_G030": {
     "task": "G029",
@@ -381,5 +395,47 @@
       }
     },
     "qa_board_post_id": "mvxr79d0-63-8yqu"
+  },
+  "deployment_history_before_G032": {
+    "task": "G030",
+    "primary_url": "http://192.168.0.195:3116/",
+    "build": "artifacts/g030-build",
+    "pm2_app": "number-garden-2048",
+    "status": "online_verified_actual_LAN",
+    "pid": 10596,
+    "pm2_id": 5,
+    "listen": "0.0.0.0:3116",
+    "source_commit": "52f0057",
+    "main_merge_commit": "aeee713a10d57f2de7e00aebe2cb68edffc828b2",
+    "merge_status": "merged_no_ff_tree_verified",
+    "remote_push": "origin/main 5b43e06..aeee713 regular push, local, origin/main and ls-remote SHA equal",
+    "integrated_qa": {
+      "verdict": "PASS_WITH_LIMITATIONS",
+      "report": "docs/20261104-222211_G030_INTEGRATED_QA.md",
+      "open_low": [
+        "17 and 18 layout shift at width <=372px (carried over)",
+        "19 warning shifts board; contrast/hover observations",
+        "20 focus-less synthetic click ignored; vertical fit"
+      ]
+    },
+    "live_lan_check": "docs/worklogs/20261104-222655_G030_19번20번_홈통합_머지_push_3116운영반영_검증.md; artifacts/g030-release/live-20261104: Chromium PC 22/22, Chromium mobile 22/22, WebKit mobile 22/22 (first run 21/22 was a check-script threshold bug)",
+    "http_byte_checks": "19/20 index/main/styles + 17 main byte-identical to source SHA256; home 49 cards / 20 playable",
+    "board_post": "mw25juwp-67-yq6j",
+    "persistent_dump_modified": false,
+    "persistent_restart_risk": "Saved PM2 dump may still reference an old build; pm2 save needs separate approval (rewrites agent-board too)."
+  },
+  "vol2_verification": {
+    "verified_at": "2026-11-07T14:57:03.761Z",
+    "unit_server": 48,
+    "game_suites_including_shared_browser": 1057,
+    "launcher": 29,
+    "total_automated_checks": 1134,
+    "existing_browser_regression": 27,
+    "candidate_browser": 60,
+    "live_browser": 60,
+    "manual_acceptance_pending": true,
+    "worklog": "docs/worklogs/20261107-235703_G032_신규20게임_제작_15010운영검증.md",
+    "board_post_id": "mw6j1hbu-68-6x05",
+    "historical_qa_overwrite_unrecovered": true
   }
 }

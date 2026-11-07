@@ -1,4 +1,5 @@
 import { cp, mkdir } from 'node:fs/promises';
+import { existsSync } from 'node:fs';
 import { spawnSync } from 'node:child_process';
 import { createRequire } from 'node:module';
 import { fileURLToPath } from 'node:url';
@@ -11,6 +12,9 @@ if (args.length && (args.length !== 2 || args[0] !== '--out-dir')) {
 }
 const output = resolve(root, args[1] ?? 'dist');
 const relativeOutput = relative(root, output);
+if (existsSync(join(output, 'RELEASE_LOCK.json'))) {
+  throw new Error('This directory is a verified live release. Build into a new, unused artifacts directory with --out-dir.');
+}
 if (relativeOutput !== 'dist' && !relativeOutput.startsWith(`artifacts${sep}`)) {
   throw new Error('Build output must be dist or a directory inside artifacts.');
 }

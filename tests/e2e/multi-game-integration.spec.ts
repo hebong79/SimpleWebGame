@@ -1,3 +1,4 @@
+import { CATALOG_TOTAL, CATALOG_SUMMARY } from './vol2-catalog';
 import { test, expect, type Page } from '@playwright/test';
 
 const paths = {
@@ -81,8 +82,8 @@ test.afterEach(async ({ page }, info) => {
 
 test('G014-01 three available cards launch their own game and return to the shared home', async ({ page }) => {
   await page.goto('/');
-  await expect(page.locator('#catalog-total')).toHaveText('49');
-  await expect(page.locator('#intro-preview')).toHaveText('플레이 가능 20 · 준비 중 29');
+  await expect(page.locator('#catalog-total')).toHaveText(String(CATALOG_TOTAL));
+  await expect(page.locator('#intro-preview')).toHaveText(CATALOG_SUMMARY);
   await page.locator('#include-upcoming').uncheck();
   await page.locator('#load-more').click();
   expect(await cardIds(page)).toEqual(['number-garden', 'little-dragon', 'neon-rally', 'cosmic-cleanup', 'block-workshop', 'balloon-sparrow', 'desert-post', 'cloud-bunny', 'chick-picnic', 'hamster-depot', 'gem-survey', 'number-postbox', 'snack-pairs', 'star-moon', 'sun-sea-four', 'four-star-song', 'starlight-switch', 'jelly-bite', 'pebble-solo', 'paint-spread']);

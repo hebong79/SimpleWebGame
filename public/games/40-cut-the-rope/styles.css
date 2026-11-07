@@ -1,0 +1,1 @@
+.rope-canvas{display:block;width:100%;height:auto;aspect-ratio:1;touch-action:none;border-radius:20px;background:#344455}.rope-levels{display:flex;gap:5px;flex-wrap:wrap}.rope-levels button{min-width:44px}.rope-selected{outline:3px solid #e9b569}.rope-tools{display:flex;gap:8px;flex-wrap:wrap}

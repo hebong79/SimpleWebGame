@@ -42,6 +42,26 @@ const GAME_CATALOG: CatalogGame[] = [
   { id: 'jelly-bite', title: '젤리 한입', genre: '퍼즐', description: '같은 색 젤리 묶음을 한입에 없애요', tags: ['젤리', '같은색', 'samegame', '점수', '제과점'], minutes: 1, maxMinutes: 2, status: 'available', href: '/games/18-samegame/index.html' },
   { id: 'pebble-solo', title: '조약돌 하나', genre: '퍼즐', description: '조약돌을 뛰어넘어 하나만 남겨요', tags: ['조약돌', '페그', 'peg solitaire', '하나만', '논리', '10단계'], minutes: 1, maxMinutes: 5, status: 'available', href: '/games/19-pegs/index.html' },
   { id: 'paint-spread', title: '물감 번지기', genre: '퍼즐', description: '색을 바꿔 판 전체를 한 색으로 칠해요', tags: ['물감', '번지기', 'flood fill', '색칠', '횟수', '15단계'], minutes: 1, maxMinutes: 3, status: 'available', href: '/games/20-flood/index.html' },
+  { id: 'ink-postcard', title: '잉크 엽서', genre: '퍼즐', description: '숫자 단서로 복원하는 여덟 장의 잉크 엽서', tags: ['노노그램', '패턴', '논리', '21'], minutes: 1, maxMinutes: 4, status: 'available', href: '/games/21-pattern/index.html' },
+  { id: 'four-notebook', title: '네 칸 수첩', genre: '숫자', description: '작은 수첩에 채우는 4×4 스도쿠 열두 문제', tags: ['스도쿠', 'solo', '메모', '22'], minutes: 1, maxMinutes: 5, status: 'available', href: '/games/22-solo/index.html' },
+  { id: 'lamp-network', title: '전등 배선실', genre: '퍼즐', description: '전선을 돌려 모든 전등에 빛을 보내요', tags: ['net', '회전', '배선', '23'], minutes: 1, maxMinutes: 4, status: 'available', href: '/games/23-net/index.html' },
+  { id: 'island-bridges', title: '섬 사이 징검교', genre: '퍼즐', description: '숫자만큼 다리를 놓아 섬들을 하나로', tags: ['하시', 'bridges', '섬', '24'], minutes: 2, maxMinutes: 6, status: 'available', href: '/games/24-bridges/index.html' },
+  { id: 'night-lamps', title: '밤길 램프', genre: '퍼즐', description: '서로 마주 보지 않는 램프로 골목을 밝혀요', tags: ['아카리', 'lightup', '빛', '25'], minutes: 2, maxMinutes: 5, status: 'available', href: '/games/25-lightup/index.html' },
+  { id: 'forest-camp', title: '숲속 야영지', genre: '퍼즐', description: '나무 옆에 텐트를 놓아 완성하는 조용한 숲', tags: ['tents', '텐트', '야영', '26'], minutes: 2, maxMinutes: 6, status: 'available', href: '/games/26-tents/index.html' },
+  { id: 'glass-roof', title: '유리 지붕', genre: '퍼즐', description: '고리가 생기지 않게 유리 지붕을 이어요', tags: ['slant', '대각선', '지붕', '27'], minutes: 1, maxMinutes: 5, status: 'available', href: '/games/27-slant/index.html' },
+  { id: 'tangled-stars', title: '얽힌 별자리', genre: '퍼즐', description: '별을 옮겨 교차한 별자리의 선을 풀어요', tags: ['untangle', '드래그', '별자리', '28'], minutes: 0.5, maxMinutes: 3, status: 'available', href: '/games/28-untangle/index.html' },
+  { id: 'specimen-vault', title: '표본 금고', genre: '퍼즐', description: '위치와 색의 단서를 읽고 금고의 암호를 찾아요', tags: ['guess', '마스터마인드', '암호', '29'], minutes: 1, maxMinutes: 4, status: 'available', href: '/games/29-guess/index.html' },
+  { id: 'moon-sun-garden', title: '달과 해의 정원', genre: '보드', description: '달과 해로 뒤집는 8×8 두 사람의 정원', tags: ['오셀로', '리버시', '2인', '30'], minutes: 3, maxMinutes: 8, status: 'available', href: '/games/30-othello/index.html' },
+  { id: 'three-specimens', title: '삼색 표본관', genre: '퍼즐', description: '네 가지 속성이 맞는 표본 세 장을 찾아요', tags: ['set', '세트', '카드', '31'], minutes: 1, maxMinutes: 3, status: 'available', href: '/games/31-set/index.html' },
+  { id: 'seed-jars', title: '씨앗 항아리', genre: '보드', description: '씨앗을 한 알씩 나누며 겨루는 두 사람의 만칼라', tags: ['만칼라', '칼라', '2인', '32'], minutes: 3, maxMinutes: 8, status: 'available', href: '/games/32-mancala/index.html' },
+  { id: 'firefly-post', title: '반딧불 우편소', genre: '순발력', description: '추적 로봇을 피해 미로 속 편지를 모아요', tags: ['미로', '팩맨', '코스튬', '33'], minutes: 1, maxMinutes: 3, status: 'available', href: '/games/33-maze/index.html' },
+  { id: 'star-patrol', title: '조각별 순찰', genre: '순발력', description: '관성으로 항해하며 우주 잔해를 조각내요', tags: ['asteroids', '슈팅', '우주', '34'], minutes: 0.5, maxMinutes: 3, status: 'available', href: '/games/34-asteroids/index.html' },
+  { id: 'lighthouse-shield', title: '등대 보호막', genre: '순발력', description: '요격 보호막으로 얼음 조각에서 등대를 지켜요', tags: ['요격', '디펜스', '35'], minutes: 1, maxMinutes: 3, status: 'available', href: '/games/35-missile-command/index.html' },
+  { id: 'gap-orbit', title: '틈새 궤도', genre: '순발력', description: '다가오는 고리의 빈틈으로 작은 드론을 옮겨요', tags: ['hexagon', '회피', '궤도', '36'], minutes: 0.2, maxMinutes: 1, status: 'available', href: '/games/36-hexagon/index.html' },
+  { id: 'cloud-stamp', title: '구름 계단 도장', genre: '순발력', description: '구름 계단을 뛰어 모든 타일에 별도장을 콕', tags: ['qbert', '점프', '코스튬', '37'], minutes: 0.5, maxMinutes: 3, status: 'available', href: '/games/37-qbert/index.html' },
+  { id: 'moon-mushrooms', title: '달빛 버섯 채집', genre: '순발력', description: '달빛 버섯을 톡, 별 버섯은 보너스 점수', tags: ['두더지', '반응', '탭', '38'], minutes: 0.5, maxMinutes: 0.75, status: 'available', href: '/games/38-whac-a-mole/index.html' },
+  { id: 'juice-workshop', title: '과즙 공방', genre: '순발력', description: '폭탄을 피해 과일을 가르며 주문을 완성해요', tags: ['과일', '스와이프', 'fruit ninja', '39'], minutes: 0.5, maxMinutes: 1, status: 'available', href: '/games/39-fruit-ninja/index.html' },
+  { id: 'cloud-cookie', title: '한입 구름 공방', genre: '퍼즐', description: '줄을 끊어 달토끼에게 구름 과자를 보내요', tags: ['로프', '물리', '별', '40'], minutes: 0.3, maxMinutes: 2, status: 'available', href: '/games/40-cut-the-rope/index.html' },
   { id: 'memory-pieces', title: '기억의 조각', genre: '기억', description: '뒤집고 기억하며 찾아내는 한 쌍', tags: ['카드', '맞추기'], minutes: 2, maxMinutes: 5, status: 'upcoming' },
   { id: 'leisure-line', title: '한 줄의 여유', genre: '퍼즐', description: '빈칸을 채우고 한 줄을 비우는 시간', tags: ['블록', '채우기'], minutes: 3, maxMinutes: 8, status: 'upcoming' },
   { id: 'color-walk', title: '색의 산책', genre: '퍼즐', description: '같은 색을 이어 완성하는 작은 풍경', tags: ['색깔', '연결'], minutes: 2, maxMinutes: 5, status: 'upcoming' },
@@ -109,7 +129,8 @@ function create<K extends keyof HTMLElementTagNameMap>(tag: K, className: string
 }
 
 function matchesBase(game: CatalogGame): boolean {
-  const text = [game.title, game.genre, ...game.tags].join(' ').toLocaleLowerCase('ko-KR');
+  const series = game.href && /^\/games\/(?:2[1-9]|3[0-9]|40)-/.test(game.href) ? 'vol2 2권 새게임' : '';
+  const text = [game.title, game.genre, series, ...game.tags].join(' ').toLocaleLowerCase('ko-KR');
   return (!state.query || text.includes(state.query))
     && (!state.onlyFavorites || favorites.has(game.id))
     && (state.includeUpcoming || game.status === 'available');
@@ -137,7 +158,14 @@ function artwork(game: CatalogGame, index: number): HTMLDivElement {
   const art = create('div', `card-art art-${genreArtwork[game.genre] ?? 'puzzle'}`);
   art.setAttribute('aria-hidden', 'true');
   art.style.setProperty('--variation', String(index % 4));
-  if (game.id === 'little-dragon') {
+  const vol2 = game.href?.match(/^\/games\/((?:2[1-9]|3[0-9]|40)-[^/]+)\/index\.html$/);
+  if (vol2) {
+    art.classList.add('art-vol2');
+    const image = create('img', 'vol2-cover');
+    image.src = `/games/vol2/covers/${vol2[1].split('-')[0]}.svg`;
+    image.alt = ''; image.loading = 'lazy'; image.width = 600; image.height = 360;
+    art.append(image);
+  } else if (game.id === 'little-dragon') {
     art.classList.add('art-snake');
     const mini = create('div', 'mini-snake');
     for (let i = 0; i < 6; i++) mini.append(create('i', ''));
@@ -475,6 +503,13 @@ function render() {
 }
 
 function changeFilters() { state.limit = 12; render(); }
+el('vol2-collection').addEventListener('click', () => {
+  Object.assign(state, { query: '2권', genre: '전체', onlyFavorites: false, includeUpcoming: false, sort: 'default', limit: 24 });
+  el<HTMLInputElement>('game-search').value = '2권'; el<HTMLInputElement>('include-upcoming').checked = false;
+  closeSortMenu(false); render();
+  el('game-list').scrollIntoView({ behavior: matchMedia('(prefers-reduced-motion: reduce)').matches ? 'instant' : 'smooth', block: 'start' });
+  grid.querySelector<HTMLAnchorElement>('a.card-action')?.focus({ preventScroll: true });
+});
 el<HTMLInputElement>('game-search').addEventListener('input', () => { state.query = el<HTMLInputElement>('game-search').value.trim().toLocaleLowerCase('ko-KR'); changeFilters(); });
 el('clear-search').addEventListener('click', () => { el<HTMLInputElement>('game-search').value = ''; state.query = ''; changeFilters(); el<HTMLInputElement>('game-search').focus(); });
 el('favorites-only').addEventListener('click', () => { state.onlyFavorites = !state.onlyFavorites; changeFilters(); });

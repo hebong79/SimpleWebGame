@@ -1,0 +1,1 @@
+.steps-canvas{display:block;width:100%;height:auto;aspect-ratio:1;touch-action:none;border-radius:20px;background:#20304e}.steps-controls{display:grid;grid-template-columns:1fr 1fr;gap:8px}.steps-controls button{min-height:48px}.steps-skins{display:flex;gap:8px;flex-wrap:wrap}

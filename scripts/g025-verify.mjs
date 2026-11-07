@@ -114,7 +114,7 @@ function parse(args) {
   assert(['candidate', 'live'].includes(target) && ['build', 'smoke', 'full'].includes(mode), 'Explicit --target candidate|live --mode build|smoke|full required');
   assert(!(options['--list'] && options['--units-only']), '--list is discovery only, not units/execution');
   assert(!options['--units-only'] || (target === 'candidate' && mode === 'full'), 'units-only is candidate/full only');
-  assert(target !== 'live' || (mode !== 'build' && options['--origin'] === 'http://192.168.0.195:3116'), 'live requires the exact explicitly authorized LAN origin and never builds');
+  assert(target !== 'live' || (mode !== 'build' && options['--origin'] === 'http://192.168.0.195:15010'), 'live requires the exact explicitly authorized LAN origin and never builds');
   assert(target !== 'candidate' || (!Object.hasOwn(options, '--origin') && !process.env.GAME_LIVE_ORIGIN && !process.env.GAME_G025_ORIGIN), 'candidate must not inherit/specify an origin');
   assert(mode !== 'build' || (!options['--list'] && !options['--units-only']), 'build is not discovery/units');
   return { options, target, mode };

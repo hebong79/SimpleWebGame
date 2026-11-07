@@ -1,0 +1,1 @@
+.fruit-canvas{display:block;width:100%;height:auto;aspect-ratio:1;touch-action:none;border-radius:20px;background:#39233e}.fruit-modes,.fruit-access{display:flex;gap:8px;flex-wrap:wrap}.fruit-access button{min-width:80px}.fruit-note{font-size:.85rem;color:var(--muted,#657080)}

@@ -1,0 +1,7 @@
+export function conflicts(board) { const bad=new Set(); const groups=[];for(let r=0;r<4;r++)groups.push([0,1,2,3].map(c=>r*4+c));for(let c=0;c<4;c++)groups.push([0,1,2,3].map(r=>r*4+c));for(let r=0;r<4;r+=2)for(let c=0;c<4;c+=2)groups.push([r*4+c,r*4+c+1,(r+1)*4+c,(r+1)*4+c+1]);for(const g of groups)for(const i of g)if(board[i]&&g.some(j=>i!==j&&board[j]===board[i]))bad.add(i);return bad; }
+export const valid=board=>board.length===16&&board.every(v=>Number.isInteger(v)&&v>=1&&v<=4)&&conflicts(board).size===0;
+export function solve(input,limit=2){const board=[...input],out=[];function visit(){if(out.length>=limit)return;const i=board.indexOf(0);if(i<0){if(valid(board))out.push([...board]);return;}for(let v=1;v<=4;v++){board[i]=v;if(!conflicts(board).size)visit();}board[i]=0;}visit();return out;}
+export function write(board,givens,i,value){if(givens[i]||i<0||i>=16||!Number.isInteger(value)||value<0||value>4)return board;const next=[...board];next[i]=value;return next;}
+const solved=[1,2,3,4,3,4,1,2,2,1,4,3,4,3,2,1];
+const masks=['1111111000001101','1101101111010001','1011110100101011','0111110010110101','1110010111000101','1100111010101001','1011010101000111','0110101011011001','1010011110000101','0110100111010001','1001110001101010','0011011010001101'];
+export const LEVELS=masks.map((mask,k)=>{const solution=solved.map(v=>((v+k)%4)+1),givens=[...mask].map((v,i)=>v==='1'?solution[i]:0);return {name:`수첩 ${k+1}`,n:4,givens,solution};});

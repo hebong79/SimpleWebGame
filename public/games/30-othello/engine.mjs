@@ -1,0 +1,5 @@
+export const DIRS=[[-1,-1],[-1,0],[-1,1],[0,-1],[0,1],[1,-1],[1,0],[1,1]];
+export function initial(n=8){const b=Array(n*n).fill(0),m=n/2;b[(m-1)*n+m-1]=b[m*n+m]=1;b[(m-1)*n+m]=b[m*n+m-1]=2;return b;}
+export function flips(board,n,index,player){if(board[index])return [];const out=[],r=Math.floor(index/n),c=index%n;for(const [dy,dx]of DIRS){let y=r+dy,x=c+dx,line=[];while(y>=0&&y<n&&x>=0&&x<n&&board[y*n+x]===3-player){line.push(y*n+x);y+=dy;x+=dx;}if(line.length&&y>=0&&y<n&&x>=0&&x<n&&board[y*n+x]===player)out.push(...line);}return out;}
+export function legal(board,n,p){return board.map((_,i)=>i).filter(i=>flips(board,n,i,p).length);}
+export function move(board,n,index,player){const f=flips(board,n,index,player);if(!f.length)return null;const next=[...board];next[index]=player;for(const i of f)next[i]=player;let turn=3-player,pass=false,done=false;if(!legal(next,n,turn).length){turn=player;pass=true;if(!legal(next,n,turn).length)done=true;}return {board:next,turn,pass,done,counts:[next.filter(x=>x===1).length,next.filter(x=>x===2).length]};}
