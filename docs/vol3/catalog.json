@@ -1,0 +1,182 @@
+[
+  {
+    "folder": "41-rectangles",
+    "id": "market-zones",
+    "title": "시장 구획도",
+    "genre": "퍼즐",
+    "description": "숫자 면적에 맞춰 시장을 직사각형 구역으로 나눠요",
+    "minutes": 1,
+    "maxMinutes": 4
+  },
+  {
+    "folder": "42-dominosa",
+    "id": "tile-warehouse",
+    "title": "숫자 타일 창고",
+    "genre": "숫자",
+    "description": "숫자 쌍을 한 번씩 써서 도미노 창고를 채워요",
+    "minutes": 2,
+    "maxMinutes": 6
+  },
+  {
+    "folder": "43-loopy",
+    "id": "garden-loop",
+    "title": "울타리 한 바퀴",
+    "genre": "퍼즐",
+    "description": "숫자 단서를 따라 하나의 닫힌 산책로를 이어요",
+    "minutes": 2,
+    "maxMinutes": 6
+  },
+  {
+    "folder": "44-tracks",
+    "id": "ridge-railway",
+    "title": "산마루 철길",
+    "genre": "퍼즐",
+    "description": "행과 열의 수량을 맞춰 보급 철길을 놓아요",
+    "minutes": 2,
+    "maxMinutes": 5
+  },
+  {
+    "folder": "45-map",
+    "id": "four-borders",
+    "title": "네 빛깔 국경",
+    "genre": "퍼즐",
+    "description": "공유한 경계마다 다른 색과 기호를 칠해요",
+    "minutes": 1,
+    "maxMinutes": 4
+  },
+  {
+    "folder": "46-towers",
+    "id": "tower-atelier",
+    "title": "전망대 설계소",
+    "genre": "숫자",
+    "description": "네 방향의 전망에 맞춰 작은 도시를 설계해요",
+    "minutes": 2,
+    "maxMinutes": 6
+  },
+  {
+    "folder": "47-galaxies",
+    "id": "twin-star-chart",
+    "title": "쌍별 성도",
+    "genre": "퍼즐",
+    "description": "중심별 하나마다 회전 대칭 구역을 만들어요",
+    "minutes": 2,
+    "maxMinutes": 6
+  },
+  {
+    "folder": "48-blackbox",
+    "id": "reflection-lab",
+    "title": "반사 연구실",
+    "genre": "퍼즐",
+    "description": "광선의 반응으로 숨은 두 구슬을 찾아요",
+    "minutes": 2,
+    "maxMinutes": 5
+  },
+  {
+    "folder": "49-magnets",
+    "id": "magnet-sorter",
+    "title": "자석 분류대",
+    "genre": "숫자",
+    "description": "극성 수를 맞추고 같은 극의 접촉을 피해요",
+    "minutes": 2,
+    "maxMinutes": 6
+  },
+  {
+    "folder": "50-signpost",
+    "id": "arrow-journal",
+    "title": "화살표 탐사록",
+    "genre": "퍼즐",
+    "description": "여덟 방향 화살표를 번호 순서로 이어요",
+    "minutes": 1,
+    "maxMinutes": 4
+  },
+  {
+    "folder": "51-nim",
+    "id": "last-pebbles",
+    "title": "마지막 조약돌",
+    "genre": "보드",
+    "description": "한 더미에서 돌을 가져오는 로컬 2인 전략",
+    "minutes": 0.5,
+    "maxMinutes": 2
+  },
+  {
+    "folder": "52-abalone",
+    "id": "marble-arena",
+    "title": "구슬 경기장",
+    "genre": "보드",
+    "description": "구슬을 밀어 가장자리 밖으로 보내는 2인 대전",
+    "minutes": 5,
+    "maxMinutes": 10
+  },
+  {
+    "folder": "53-rush-hour",
+    "id": "dawn-garage",
+    "title": "새벽 차고",
+    "genre": "퍼즐",
+    "description": "차량을 밀어 배송차의 출구를 열어요",
+    "minutes": 1,
+    "maxMinutes": 6
+  },
+  {
+    "folder": "54-quoridor",
+    "id": "garden-crossing",
+    "title": "정원 건너기",
+    "genre": "보드",
+    "description": "울타리와 점프로 반대편에 먼저 도착해요",
+    "minutes": 3,
+    "maxMinutes": 7
+  },
+  {
+    "folder": "55-dobble",
+    "id": "instant-fieldguide",
+    "title": "순간 도감",
+    "genre": "순발력",
+    "description": "두 카드에 딱 하나 같은 자연 기호를 찾아요",
+    "minutes": 0.5,
+    "maxMinutes": 1
+  },
+  {
+    "folder": "56-rhythm-doctor",
+    "id": "heartstar-repair",
+    "title": "심장별 수리소",
+    "genre": "순발력",
+    "description": "일곱 번째 박자에 심장별 신호를 복구해요",
+    "minutes": 0.6,
+    "maxMinutes": 1.5
+  },
+  {
+    "folder": "57-downwell",
+    "id": "crystal-well",
+    "title": "수정 우물 탐사",
+    "genre": "순발력",
+    "description": "아래로 펄스를 쏘며 세 수정 구간을 탐사해요",
+    "minutes": 0.75,
+    "maxMinutes": 3
+  },
+  {
+    "folder": "58-dig-dug",
+    "id": "mole-rescue",
+    "title": "두더지 구조굴",
+    "genre": "순발력",
+    "description": "굴을 파고 펌프로 진동기를 안전하게 격리해요",
+    "minutes": 1,
+    "maxMinutes": 3
+  },
+  {
+    "folder": "59-vvvvvv",
+    "id": "gravity-room",
+    "title": "위아래 우주실",
+    "genre": "순발력",
+    "description": "중력을 뒤집어 여섯 우주실의 출구에 닿아요",
+    "minutes": 0.5,
+    "maxMinutes": 3
+  },
+  {
+    "folder": "60-mini-metro",
+    "id": "island-shuttle",
+    "title": "섬마을 셔틀",
+    "genre": "보드",
+    "description": "두 셔틀 노선으로 승객을 목적지까지 보내요",
+    "minutes": 2,
+    "maxMinutes": 3
+  }
+]

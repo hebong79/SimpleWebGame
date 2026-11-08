@@ -1,0 +1,12 @@
+export const N=5;
+export function entry(p){if(p<5)return{x:p,y:-1,dx:0,dy:1};if(p<10)return{x:5,y:p-5,dx:-1,dy:0};if(p<15)return{x:p-10,y:5,dx:0,dy:-1};return{x:-1,y:p-15,dx:1,dy:0};}
+function exit(x,y){return y<0?x:x>4?5+y:y>4?10+x:15+y;}
+export function ray(balls,port){if(!Number.isInteger(port)||port<0||port>=20)throw new Error('invalid port');const occupied=new Set(balls);let{x,y,dx,dy}=entry(port);const path=[[x,y]],visited=new Set();const has=(a,b)=>a>=0&&a<5&&b>=0&&b<5&&occupied.has(b*5+a);for(let step=0;step<1000;step++){const key=[x,y,dx,dy].join(',');if(visited.has(key))return{kind:'R',exit:port,path};visited.add(key);if(has(x+dx,y+dy))return{kind:'H',exit:null,path:[...path,[x+dx,y+dy]]};const left=has(x+dx+dy,y+dy-dx),right=has(x+dx-dy,y+dy+dx);if(left||right){if(x<0||x>=5||y<0||y>=5)return{kind:'R',exit:port,path};if(left&&right){dx=-dx;dy=-dy;}else if(left){[dx,dy]=[-dy,dx];}else{[dx,dy]=[dy,-dx];}continue;}x+=dx;y+=dy;path.push([x,y]);if(x<0||x>=5||y<0||y>=5){const out=exit(x,y);return{kind:out===port?'R':'E',exit:out,path};}}throw new Error('ray bound');}
+export function signature(balls){return Array.from({length:20},(_,p)=>{const r=ray(balls,p);return r.kind==='E'?`E${r.exit}`:r.kind;});}
+export const ALL=Array.from({length:25},(_,a)=>Array.from({length:24-a},(_,b)=>[a,a+b+1])).flat();
+export function distinguish(balls){const target=signature(balls);let candidates=ALL.filter(b=>b[0]!==balls[0]||b[1]!==balls[1]).map(signature),ports=[];while(candidates.length){let best=-1,count=-1;for(let p=0;p<20;p++){const score=candidates.filter(s=>s[p]!==target[p]).length;if(score>count){count=score;best=p;}}if(count<=0)return null;ports.push(best);candidates=candidates.filter(s=>s[best]===target[best]);}return ports;}
+const layouts=[[6,18],[7,16],[8,17],[2,21],[5,19],[1,23],[11,13],[4,20]];
+export const LEVELS=layouts.map((balls,i)=>({id:i,name:`광학 실험 ${i+1}`,n:5,balls}));
+export function create(l){return{guesses:[],shots:{},attempts:0,submitted:0,done:false,won:false};}
+export function shoot(s,l,p){if(Object.hasOwn(s.shots,p))return{ok:true,repeated:true,result:s.shots[p]};if(s.done||s.attempts>=12)return{ok:false,reason:'조사 포트 12회를 모두 사용했어요. 후보 두 개를 제출하세요.'};s.shots[p]=ray(l.balls,p);s.attempts++;return{ok:true,repeated:false,result:s.shots[p]};}
+export function submit(s,l){if(s.done||s.guesses.length!==2)return false;s.submitted++;s.won=l.balls.every(a=>s.guesses.includes(a));s.done=s.won||s.submitted>=3;return s.won;}

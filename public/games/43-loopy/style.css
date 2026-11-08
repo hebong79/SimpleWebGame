@@ -1,0 +1,1 @@
+body{--paper:#e4efe3;--accent:#28715e;--ink:#244d43;--tile:#f3f8ef;--line:#b4c7b8}.edge-board{background:linear-gradient(135deg,#edf4e9,#e0ecdf);border-radius:10px}.edge-board .clue{color:#49675a}.edge-board .edge.on{background:transparent}.edge-board .edge:hover{background:#b8d6bf3b}.edge-board .clue.over:after{content:'!';margin-left:3px}
