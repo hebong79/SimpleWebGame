@@ -5,7 +5,7 @@
   "engine": "Node.js 24.16.0 + TypeScript, HTML DOM/CSS",
   "engine_version": "Node 24.16.0 / TypeScript 7.0.2",
   "platform": "PC browser + mobile touch browser",
-  "status": "hundred_games_live_verified",
+  "status": "hundred_games_merged_pushed_live_verified",
   "created_at": "2026-10-22T00:17:53.121532+09:00",
   "team_id": "game-dev-team",
   "team_version": "1.0.0",
@@ -258,12 +258,15 @@
     "pm2_id": 5,
     "pid": 28628,
     "status": "online_verified_actual_LAN",
-    "source_state": "uncommitted_task_changes",
-    "git_status": "not_requested_for_G035",
+    "source_state": "committed_and_merged",
+    "git_status": "main_merged_and_pushed",
     "evidence": "artifacts/g035-release/2026-11-08T13-11-09-111Z/after.json",
     "live_browser": "artifacts/g035-smoke/live-2026-11-08T13-11-32-770Z/results.json",
     "persistent_dump_modified": false,
-    "board_post_id": "mw7utbod-74-j20j"
+    "board_post_id": "mw7utbod-74-j20j",
+    "source_commit": "3f2a36913b32fd13474ffeda9995799c4be60c06",
+    "main_merge_commit": "59ca6ebdc05a9b08890b2c6269fa47f213b40baf",
+    "git_evidence": "artifacts/g035-git-20261108-224143"
   },
   "deployment_history_before_G030": {
     "task": "G029",
@@ -546,7 +549,7 @@
     "candidate_browser": 60,
     "build": "artifacts/g034-release-build",
     "operating": "deployed_verified",
-    "git": "not_requested_for_G034",
+    "git": "included_in_G034_G035_main_merge_push",
     "worklog": "docs/worklogs/20261108-141703_G034_61번부터80번_제작_검증완료_운영승인대기.md",
     "final_worklog": "docs/worklogs/20261108-145658_G034_61번부터80번_20게임_제작_운영반영_검증.md"
   },
@@ -601,7 +604,7 @@
     "candidate_browser": 60,
     "build": "artifacts/g035-release-build",
     "operating": "deployed_verified",
-    "git": "not_requested_for_G035",
+    "git": "included_in_G034_G035_main_merge_push",
     "worklog": "docs/worklogs/20261108-212941_G035_81번부터100번_제작_검증완료_운영승인대기.md",
     "final_worklog": "docs/worklogs/20261108-221424_G035_81번부터100번_20게임_제작_운영반영_검증.md"
   },
@@ -647,5 +650,23 @@
       "docs/vol5/QA_PM.md",
       "docs/vol5/QA_C.md"
     ]
+  },
+  "git_completion_G034_G035": {
+    "completed_at": "2026-11-08T13:46:34.994Z",
+    "base_commit": "f23200ff2c8e664bb25e0f88a9c0e76039a85a16",
+    "feature_commit": "3f2a36913b32fd13474ffeda9995799c4be60c06",
+    "main_merge_commit": "59ca6ebdc05a9b08890b2c6269fa47f213b40baf",
+    "feature_branch": "feat/g034-g035-games-61-100-20261108-224143",
+    "tree_equal": true,
+    "remote": "origin/main",
+    "regular_push_verified_commit": "59ca6ebdc05a9b08890b2c6269fa47f213b40baf",
+    "staged_files": 318,
+    "evidence": "artifacts/g035-git-20261108-224143",
+    "fresh_build": "artifacts/g035-git-20261108-224143-build",
+    "runtime_public_files": 581,
+    "eof_only_source_files": 8,
+    "worklog": "docs/worklogs/20261108-224634_G035_61번부터100번_커밋_main병합_원격푸시.md",
+    "board_post_id": "mw7vyp2g-75-9ri7",
+    "documentation_followup": "Final documentation commit/push HEAD is reported in the final response and ignored final-receipt.json."
   }
 }
