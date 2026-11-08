@@ -1,0 +1,10 @@
+import {mount,button} from '../vol4/shared.mjs';import {layout,complete} from '../61-cube/puzzle-ui.mjs';import {create,move} from './engine.mjs';import {levels} from './levels.mjs';
+mount({id:'62-twiddle',title:'회전 표지판',subtitle:'네 장의 번호를 함께 돌려 길을 정리해요',theme:'violet',help:'3×3 숫자판을 행 순서대로 1~9로 맞추세요. 회전 중심 4개 중 하나를 선택하고 Q(반시계), E(시계) 또는 회전 버튼을 누릅니다. 숫자를 탭하면 그 칸을 포함하는 가까운 묶음이 선택됩니다. 방향키로 회전 중심을 옮깁니다.',create(ctx){
+ let level=0,s,selected=0,history=[];const ui=layout(ctx,levels,3,i=>{level=i;});const choices=[];
+ for(let c=0;c<4;c++){const b=button(`중심 ${Math.floor(c/2)+1}·${c%2+1}`,()=>{if(ctx.active()){selected=c;render();}});ctx.tools.append(b);choices.push(b);}
+ ui.cells.forEach((b,i)=>{function choose(){if(ctx.active()){selected=Math.min(1,Math.floor(i/3))*2+Math.min(1,i%3);render();}}b.addEventListener('click',choose);b.addEventListener('focus',choose);});
+ function render(){ui.level(level);const r=Math.floor(selected/2),c=selected%2,ids=[r*3+c,r*3+c+1,(r+1)*3+c,(r+1)*3+c+1];ui.cells.forEach((b,i)=>{b.textContent=s.board[i];b.className='puzzle-cell'+(ids.includes(i)?' tile-selected':'');b.setAttribute('aria-label',`${Math.floor(i/3)+1}행 ${i%3+1}열 ${s.board[i]}`);});choices.forEach((b,i)=>b.setAttribute('aria-pressed',String(i===selected)));ctx.meta(`${level+1}/8 · 회전 ${s.moves}회`);ctx.score(s.board.filter((v,i)=>v===i+1).length);ctx.status(`선택 중심 ${r+1}·${c+1} · Q 반시계 / E 시계`);}
+ function act(cw){if(!ctx.active())return;const n=move(s,selected,cw);if(n===s)return;history.push(s);s=n;render();if(s.won)complete(ctx,level,s.moves);}
+ ctx.tools.append(button('↶ Q 반시계',()=>act(false)),button('↷ E 시계',()=>act(true)));
+ return {reset(){s=create(levels[level]);history=[];selected=0;render();},undo(){if(history.length){s=history.pop();render();}},key(e){if(['q','Q','e','E'].includes(e.key)){e.preventDefault();act(e.key.toLowerCase()==='e');}else if(e.key.startsWith('Arrow')){e.preventDefault();selected=e.key==='ArrowLeft'?selected&2:e.key==='ArrowRight'?selected|1:e.key==='ArrowUp'?selected%2:selected%2+2;render();}},snapshot:()=>({...s,selected,level})};
+}});

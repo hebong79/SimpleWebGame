@@ -1,0 +1,6 @@
+export const HOUSES=[{at:8,side:0,target:true},{at:16,side:2,target:true},{at:24,side:0,target:false},{at:34,side:2,target:true},{at:43,side:0,target:false},{at:52,side:0,target:true}];
+export function createGame(alley=0){return {alley,time:0,lane:1,papers:6,delivered:[],hits:0,state:'playing',last:'봉투 표식 네 집에 배달하세요.',obstacles:[{at:11,lane:(alley+1)%3,type:'cart'},{at:20,lane:alley%3,type:'puddle'},{at:29,lane:(alley+2)%3,type:'cart'},{at:39,lane:(alley+1)%3,type:'puddle'},{at:48,lane:alley%3,type:'cart'},{at:57,lane:(alley+2)%3,type:'puddle'}]};}
+export function input(s,key){if(s.state!=='playing')return;if(key==='left')s.lane=Math.max(0,s.lane-1);if(key==='right')s.lane=Math.min(2,s.lane+1);if(key==='action'&&s.papers>0){s.papers--;const i=HOUSES.findIndex((h,i)=>h.target&&h.side===s.lane&&Math.abs(h.at-s.time)<=1.6&&!s.delivered.includes(i));if(i>=0){s.delivered.push(i);s.last='배달 성공!';}else s.last='투척창·차선을 확인하세요. 종이 한 장을 썼어요.';}}
+export function clear(){}
+export function release(){}
+export function step(s,dt){if(s.state!=='playing')return;const before=s.time;s.time=Math.min(60,s.time+dt);for(const o of s.obstacles)if(!o.passed&&before<=o.at&&s.time>=o.at){o.passed=true;if(o.lane===s.lane){s.hits++;s.last='장애물 충돌!';}}if(s.hits>=3)s.state='lost';else if(s.time>=60)s.state=s.delivered.length>=3?'won':'lost';}

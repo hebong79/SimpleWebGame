@@ -1,0 +1,182 @@
+[
+  {
+    "folder": "81-the-game",
+    "id": "ascending-archive",
+    "title": "오름내림 기록실",
+    "genre": "숫자",
+    "description": "역방향 10 예외를 찾아 네 숫자 더미에 카드를 분류해요",
+    "minutes": 3,
+    "maxMinutes": 7
+  },
+  {
+    "folder": "82-skull",
+    "id": "flower-or-thorn",
+    "title": "꽃인가 가시인가",
+    "genre": "보드",
+    "description": "꽃과 가시를 숨기고 안전하게 뒤집을 수를 입찰해요",
+    "minutes": 4,
+    "maxMinutes": 8
+  },
+  {
+    "folder": "83-no-thanks",
+    "id": "spare-one-chip",
+    "title": "칩 하나 아끼기",
+    "genre": "보드",
+    "description": "칩으로 번호를 피하고 연속 카드의 벌점을 줄여요",
+    "minutes": 3,
+    "maxMinutes": 6
+  },
+  {
+    "folder": "84-six-nimmt",
+    "id": "sixth-carriage",
+    "title": "여섯째 짐칸",
+    "genre": "보드",
+    "description": "동시에 고른 번호를 줄에 잇고 여섯째 짐칸을 피해요",
+    "minutes": 4,
+    "maxMinutes": 8
+  },
+  {
+    "folder": "85-labyrinth",
+    "id": "moving-museum",
+    "title": "움직이는 박물관",
+    "genre": "보드",
+    "description": "미로를 밀어 보물 두 개를 찾고 입구로 돌아와요",
+    "minutes": 4,
+    "maxMinutes": 8
+  },
+  {
+    "folder": "86-tsuro",
+    "id": "cloud-path-tiles",
+    "title": "구름길 타일",
+    "genre": "보드",
+    "description": "길 타일을 돌려 종이 연의 다음 경로를 이어요",
+    "minutes": 3,
+    "maxMinutes": 7
+  },
+  {
+    "folder": "87-space-invaders",
+    "id": "satellite-defense",
+    "title": "위성 방어선",
+    "genre": "순발력",
+    "description": "엄폐판 사이에서 두 드론 편대를 요격해요",
+    "minutes": 1,
+    "maxMinutes": 3
+  },
+  {
+    "folder": "88-centipede",
+    "id": "spore-garden",
+    "title": "포자 정원 방제",
+    "genre": "순발력",
+    "description": "버섯에 따라 길이 바뀌는 포자벌레를 방제해요",
+    "minutes": 1,
+    "maxMinutes": 3
+  },
+  {
+    "folder": "89-joust",
+    "id": "cloud-joust",
+    "title": "구름 창 경기",
+    "genre": "순발력",
+    "description": "날갯짓으로 높은 위치를 선점하고 깃발을 모아요",
+    "minutes": 1,
+    "maxMinutes": 3
+  },
+  {
+    "folder": "90-marble-madness",
+    "id": "glass-marble",
+    "title": "유리구슬 경사로",
+    "genre": "순발력",
+    "description": "경사와 관성을 제어해 유리구슬을 깃발로 굴려요",
+    "minutes": 1,
+    "maxMinutes": 2
+  },
+  {
+    "folder": "91-lunar-lander",
+    "id": "moonlight-landing",
+    "title": "달빛 착륙 시험",
+    "genre": "순발력",
+    "description": "연료와 기울기를 조절해 달 기지에 안전하게 착륙해요",
+    "minutes": 1,
+    "maxMinutes": 2
+  },
+  {
+    "folder": "92-paperboy",
+    "id": "dawn-bicycle",
+    "title": "새벽 자전거 배달",
+    "genre": "순발력",
+    "description": "세 차선을 오가며 배달창에 맞춰 소식지를 던져요",
+    "minutes": 1,
+    "maxMinutes": 3
+  },
+  {
+    "folder": "93-lode-runner",
+    "id": "ladder-vault",
+    "title": "사다리 금고",
+    "genre": "퍼즐",
+    "description": "사다리와 복구되는 구멍을 이용해 금고 열쇠를 모아요",
+    "minutes": 1,
+    "maxMinutes": 4
+  },
+  {
+    "folder": "94-tapper",
+    "id": "four-lane-teahouse",
+    "title": "네 줄 찻집",
+    "genre": "순발력",
+    "description": "여러 카운터에 차를 보내고 돌아오는 빈 잔을 받아요",
+    "minutes": 1,
+    "maxMinutes": 3
+  },
+  {
+    "folder": "95-warioware",
+    "id": "five-second-workshop",
+    "title": "5초 작업실",
+    "genre": "순발력",
+    "description": "누르기와 놓기 등 다섯 짧은 작업을 연달아 해결해요",
+    "minutes": 1,
+    "maxMinutes": 2
+  },
+  {
+    "folder": "96-katamari",
+    "id": "rolling-toyroom",
+    "title": "굴러가는 장난감방",
+    "genre": "순발력",
+    "description": "작은 장난감부터 붙여 솜뭉치를 크게 키워요",
+    "minutes": 1,
+    "maxMinutes": 3
+  },
+  {
+    "folder": "97-one-finger-death-punch",
+    "id": "two-sided-dojo",
+    "title": "양쪽 수련장",
+    "genre": "순발력",
+    "description": "양쪽 인형이 사정거리에 들어오는 순간을 맞춰요",
+    "minutes": 1,
+    "maxMinutes": 2
+  },
+  {
+    "folder": "98-baba-is-you",
+    "id": "word-rule-room",
+    "title": "단어가 움직이는 방",
+    "genre": "퍼즐",
+    "description": "단어 블록을 밀어 조작 대상과 도착 규칙을 바꿔요",
+    "minutes": 2,
+    "maxMinutes": 6
+  },
+  {
+    "folder": "99-overcooked",
+    "id": "one-bowl-kitchen",
+    "title": "한 그릇 급식소",
+    "genre": "순발력",
+    "description": "재료를 손질하고 수프 주문 다섯 그릇을 완성해요",
+    "minutes": 1,
+    "maxMinutes": 3
+  },
+  {
+    "folder": "100-superhot",
+    "id": "frozen-guardroom",
+    "title": "멈춘 경비실",
+    "genre": "퍼즐",
+    "description": "한 틱씩 움직이는 경비 빔을 읽고 탈출해요",
+    "minutes": 1,
+    "maxMinutes": 4
+  }
+]

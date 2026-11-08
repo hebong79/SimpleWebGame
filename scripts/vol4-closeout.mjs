@@ -1,0 +1,65 @@
+import{readFile,writeFile,readdir}from'node:fs/promises';import{existsSync}from'node:fs';import{hostname}from'node:os';import{createHash}from'node:crypto';
+async function latest(root,file,predicate){for(const dir of(await readdir(root)).sort().reverse()){try{const path=`${root}/${dir}/${file}`,value=JSON.parse(await readFile(path,'utf8'));if(predicate(value))return{path,value};}catch{}}throw Error('Missing successful evidence '+root);}
+const validation=await latest('artifacts/g034-validation','results.json',v=>v.pass),candidate=await latest('artifacts/g034-smoke','results.json',v=>v.passed===60&&v.failed===0&&v.origin.startsWith('http://127.0.0.1:')),live=await latest('artifacts/g034-smoke','results.json',v=>v.passed===60&&v.failed===0&&v.origin==='http://192.168.0.195:15010'),release=await latest('artifacts/g034-release','after.json',v=>v.verifiedHttpFiles>450),regression=await latest('artifacts/g034-regression','playwright-results.json',v=>v.stats?.expected===36&&v.stats?.unexpected===0);const game=release.value.applications.find(p=>p.name==='number-garden-2048');if(!game?.script?.replaceAll('\\','/').includes('/artifacts/g034-release-build/')||!release.value.listeners.some(l=>l.LocalPort===15010&&l.OwningProcess===game.pid))throw Error('PM2 actual evidence mismatch');const approval=JSON.parse(await readFile('artifacts/g034-pm/operating-approval.json','utf8'));if(approval.task!=='G034'||approval.approved!==true)throw Error('Missing approval');
+for(const f of['QA_A.md','QA_PM.md','QA_B.md','QA_C.md'])if(!(await readFile('docs/vol4/'+f,'utf8')).includes('PASS'))throw Error('Missing QA '+f);const counts=Object.fromEntries(validation.value.results.map(r=>[r.name,r.passed])),total=counts['unit-server']+counts['all-games']+counts.launcher,catalog=JSON.parse(await readFile('docs/vol4/catalog.json','utf8'));const packageFile=(await readdir('releases')).filter(n=>n.startsWith('simple-games-vol4-80games-')&&n.endsWith('.manifest.json')).sort().at(-1),packageReceipt=JSON.parse(await readFile('releases/'+packageFile,'utf8'));if(createHash('sha256').update(await readFile(packageReceipt.zip)).digest('hex')!==packageReceipt.sha256||!JSON.parse(await readFile('artifacts/g034-pm/package-smoke.json','utf8')).pass)throw Error('Package proof mismatch');
+const planPath='artifacts/g034-pm/closeout-plan.json';let plan;if(existsSync(planPath))plan=JSON.parse(await readFile(planPath,'utf8'));else{const p=Object.fromEntries(new Intl.DateTimeFormat('en-CA',{timeZone:'Asia/Seoul',year:'numeric',month:'2-digit',day:'2-digit',hour:'2-digit',minute:'2-digit',second:'2-digit',hourCycle:'h23'}).formatToParts(new Date()).map(x=>[x.type,x.value])),stamp=`${p.year}${p.month}${p.day}-${p.hour}${p.minute}${p.second}`,worklog=`docs/worklogs/${stamp}_G034_61번부터80번_20게임_제작_운영반영_검증.md`;const body=`# G034 · 61~80번 게임 제작 및 운영 검증
+
+- 마감: ${stamp} KST (Asia/Seoul).
+- 사용자 지정 폴더의 기획서·디자인 중 61~80번을 구현했습니다. 기존 60게임과 89개 ID를 보존하여 **109카드 / 실행 80 / 준비 29**로 확장했습니다.
+- [게임 목록과 제한](../vol4/README.md), [기획](../vol4/PLAN.md), [자산 출처](../vol4/ASSETS.md). 고정 문제 104개, 대전·협력 게임과 직접 제작한 SVG 커버 20종을 포함합니다.
+
+## 실제 검증
+
+| 구분 | 결과 | 증거 |
+|---|---|---|
+| 타입 검사·후보 빌드·신규 모듈 구문 | PASS | ${validation.path} |
+| 서버·단위 / 게임 / 실행기 | ${counts['unit-server']} / ${counts['all-games']} / ${counts.launcher}, 합계 **${total}/${total} PASS** | 같은 검증 기록 |
+| 기존 홈·2048·Snake·Pong 브라우저 회귀 | **36/36 PASS** | ${regression.path} |
+| 신규 20게임 후보 실행 | **60/60 PASS** | ${candidate.path} |
+| 실제 15010 주소 신규 게임 실행 | **60/60 PASS** | ${live.path} |
+| 실제 PM2·PID·LISTEN 및 HTTP 바이트 | **${release.value.verifiedHttpFiles}파일 일치** | ${release.path} |
+
+- 브라우저 환경: PC Chromium, 모바일 Chromium, 모바일 WebKit. 실제 시계의 80ms trusted 입력, 게임별 입력, 정지·재개·blur, 재시작 확인·취소, 모달 초점, 320px 화면과 홈 복귀를 확인했습니다. CSP·console·request 오류는 0건입니다.
+- 독립 QA: [61~65](../vol4/QA_A.md), [66~70](../vol4/QA_PM.md), [71~75](../vol4/QA_B.md), [76~80](../vol4/QA_C.md). 내부 브라우저 사례를 단위 시험 수에 중복 합산하지 않았습니다.
+- 20종 PC 화면을 실제 이미지로 검토했습니다: \`artifacts/g034-visual/2026-11-08T05-09-20-812Z/contact-{1,2}.png\`. 사람이 직접 전부 플레이한 결과와 구분합니다.
+- 실행 ZIP: \`${packageReceipt.zip}\`. 실행 파일 ${packageReceipt.files}개의 CRC·개별 SHA256과 ZIP SHA256을 확인했습니다. 별도 압축 해제 후 Node CLI → 홈 80게임 → 80번 시작·주사위 입력까지 PASS했습니다. \`artifacts/g034-pm/package-smoke.json\`.
+
+## 운영 반영
+
+- 사용자 명시 승인 \`${approval.answer}\` 후 \`number-garden-2048\` 하나만 전환했습니다.
+- PM2 id ${game.id}, PID ${game.pid}, \`artifacts/g034-release-build/src/server/index.js\`, \`0.0.0.0:15010\`의 실제 일치를 확인했습니다. HTTP 응답은 검증 빌드와 동일하며 엄격 CSP와 nosniff를 유지합니다.
+- 다른 앱의 PID·재시작 수는 그대로입니다. 이전 G033 빌드와 ecosystem 백업을 보존했습니다. 전역 PM2 save는 수행하지 않았습니다.
+- 사용: http://192.168.0.195:15010/ → **61–80 · 네 번째 게임 모음**.
+
+## 수정 사항과 제한
+
+- 69번의 키보드 대상·진주 오류 표시·44px 입력 영역, 공유 퍼즐의 연속 방향키 초점을 수정했습니다. 73번은 숨긴 손패·덱과 미확정 타일 정보 노출을 막았고, 64·65번은 undo 후에도 힌트 사용 수를 보존합니다. 모두 수정 후 재검증했습니다.
+- WebKit의 native select와 스크린샷 CSS 주입에 따른 CSP 문제는 버튼 선택과 캡처 분리로 처리했습니다. 오류 필터나 CSP 완화는 적용하지 않았습니다. 초기 검사 실패 기록은 최종 통과 기록과 함께 보존했습니다.
+- **실물 모바일·실제 Safari·물리 멀티터치·음향 청취·스크린리더·사람 난이도/플레이 시간은 미검증**입니다. 일부 고정 문제는 회전·숫자 변형과 도입형 문제입니다. 외형은 직접 제작한 도형·색·테두리 중심이며 시안의 세부 묘사와 차이가 있습니다.
+- 좁은 보드는 44px 입력 영역을 유지하는 내부 가로 스크롤을 사용합니다. 63번의 실패 후 undo는 재시작으로 대체하며 진행 중 undo는 제공합니다.
+- 기존 PM2 저장 dump의 구버전 복귀 위험, 이전 LOW와 과거 G013 증거 미복구 이력은 유지합니다. G034 Git 커밋·병합·push는 별도로 요청되지 않아 수행하지 않았습니다.
+
+## 확인 명령과 다음 작업
+
+- \`node scripts/vol4-runtime.mjs\`: 실제 운영 앱·포트 상태.
+- \`node scripts/vol4-smoke.mjs --live\`: 실제 주소에서 신규 게임 60사례.
+- \`npm run test:games\`: 기존·신규 규칙 및 자동 브라우저 시험.
+- 다음: 실물·음향·사람 대전/협력 수용, 고급 문제와 난이도·시안 세부 조정. Git 및 대상 앱 재부팅 복구 범위는 별도 요청 시 진행합니다. 현재 기능·운영 차단 사항은 없습니다.
+- 운영 빌드를 덮어쓰지 말고 새 실험은 별도 디렉터리에서 빌드합니다.
+`;plan={stamp,worklog,body};await writeFile(planPath,JSON.stringify(plan,null,2));await writeFile(worklog,body,{flag:'wx'});}
+const title='G034: Games61-80 added and live80-game service verified',koTitle='G034 61~80 신규20게임·총80게임 15010 운영검증 완료',english=`Added games61-80 from the supplied plans/designs, preserving the existing60 games and89 IDs. The library now has109 cards:80 playable and29 upcoming.\n\nValidated ${total} automated checks,36 legacy browser cases,60 candidate and60 live game cases. Independent QA covered all four groups, fixed input/hint/privacy issues and rechecked them. Real-clock80ms trusted inputs, pause/restart/modals/320px and strict CSP were checked in PC Chromium/mobile Chromium/mobile WebKit. Actual PM2 script/PID/listener matched; ${release.value.verifiedHttpFiles} live files matched bytes. Standalone ZIP CLI/home/game80 input passed.\n\nLive: http://192.168.0.195:15010/ →61-80 collection. Worklog: \`${plan.worklog}\`. ZIP: \`${packageReceipt.zip}\` (local artifact, not uploaded).\n\nLimits: physical devices, listening, human playtime/difficulty and screen readers remain unverified. Some puzzles use transformations and cosmetics use original simplified shapes. Existing PM2 dump/old evidence limits remain. Only the explicitly approved game app changed; no global save, firewall, installation, unrelated service or Git changes. Next: physical/human acceptance and tuning.`,korean=`사용자가 지정한 기획·디자인에 따라 61~80번 신규 20게임을 제작했습니다. 기존 60게임과 89 ID를 보존하여 총 109카드 / 실행 80 / 준비 29로 확장했습니다.
+
+실제 검증: 자동 ${total}/${total}, 기존 브라우저 회귀 36/36, 후보 60/60, 실제 15010 운영 60/60 PASS. 네 묶음의 독립 QA에서 발견한 입력·힌트 기록·손패 정보 노출 결함을 수정하고 재검증했습니다. PC Chromium·모바일 Chromium·모바일 WebKit에서 실제 80ms 입력, 정지·재시작·모달·320px 화면과 엄격 CSP를 확인했습니다. 실제 PM2 경로·PID·LISTEN이 일치하며 HTTP ${release.value.verifiedHttpFiles}파일도 검증 빌드와 동일합니다. 실행 ZIP은 별도 압축 해제 후 CLI·홈 80게임·80번 주사위 입력을 통과했습니다.
+
+사용: http://192.168.0.195:15010/ → 61–80 네 번째 게임 모음.
+작업일지: \`${plan.worklog}\`.
+실행 ZIP: \`${packageReceipt.zip}\` (로컬 파일, 게시판 업로드 첨부 아님).
+
+한계: 실물 휴대폰·음향 청취·사람 난이도/시간·스크린리더는 미검증입니다. 일부 문제는 대칭·숫자 변형과 도입형이며 외형은 직접 만든 도형 중심입니다. 기존 PM2 dump와 과거 증거 제한은 유지합니다. 명시 승인된 게임 앱 하나만 전환했으며 전역 save·방화벽·설치·다른 서비스·Git은 변경하지 않았습니다. 다음은 실물·사람 수용과 난이도·외형 조정입니다.`;
+const board='http://localhost:18787',list=await(await fetch(board+'/api/posts?q=G034&limit=50')).json();let post=list.posts?.find(p=>p.title===title);if(!post){const r=await fetch(board+'/api/posts',{method:'POST',headers:{'Content-Type':'application/json; charset=utf-8'},body:JSON.stringify({topic:'게임개발',author:`codex@${hostname()}`,title,body:english,status:'done',repo:'01-2048',assignee:'대현자 PM',files:[plan.worklog,'docs/vol4/README.md','docs/vol4/QA_C.md'],tags:['G034','61-80','15010'],next:'Physical-device/human/audio acceptance and difficulty/cosmetic tuning.',translation:{language:'ko',title:koTitle,body:korean,next:'실물·사람·음향수용과난이도/외형튜닝.'}})});const receipt=await r.json();await writeFile('artifacts/g034-pm/board-response.json',JSON.stringify(receipt,null,2));if(!r.ok)throw Error('Board failed');post=receipt.post||receipt;}
+const readback=await(await fetch(`${board}/api/posts/${post.id}`)).json(),actual=readback.post||readback,md=await(await fetch(`${board}/api/posts/${post.id}.md`)).text();if(actual.body!==english||actual.translation?.body!==korean||!md.includes(plan.worklog))throw Error('Board readback mismatch');await writeFile('artifacts/g034-pm/board-readback.json',JSON.stringify(readback,null,2));await writeFile('artifacts/g034-pm/board-readback.md',md);const link=`${board}/api/posts/${post.id}.md`;await writeFile(plan.worklog,plan.body+`\n## 게시판 readback\n\n- ID \`${post.id}\` · ${link}\n- 영문 본문·한국어 번역·Markdown을 다시 읽어 확인했습니다. 완료 게시 1개이며, ZIP은 로컬 파일입니다.\n`);
+async function prepend(path,text){const old=await readFile(path);if(old.toString('utf8').includes(plan.worklog))return;const e=old.includes(Buffer.from('\r\n'))?'\r\n':'\n';await writeFile(path,Buffer.concat([Buffer.from(text.replaceAll('\n',e)),old]));}
+await prepend('docs/20261024-231330_HANDOFF.md',`## G034 · 신규61~80 총80게임 운영 완료 (${plan.stamp} KST)\n- 사용자명시승인후id${game.id}/PID${game.pid}/g034-release-build/0.0.0.0:15010,109/80/29·기존ID/게임/저장보존. HTTP${release.value.verifiedHttpFiles}바이트일치·다른앱보존.\n- 타입/빌드·자동${total}·기존회귀36·후보60·운영60 PASS,독립4묶음수용/수정재검증. ZIPCLI/홈80/주사위입력PASS.\n- 기록 ${plan.worklog}; 게시판 ${post.id} · ${link} · 본문/한국어/Markdown readback완료. docs/vol4/README.md.\n- 실제명령 node scripts/vol4-runtime.mjs, node scripts/vol4-smoke.mjs --live, npm run test:games. 실물/체감/청취·시안/문제다양성·기존dump/과거증거제한유지,Git미수행.다음은실물수용/튜닝·별도Git/재부팅복구범위.운영빌드덮어쓰기금지.\n\n`);
+await prepend('docs/20261024-231330_BACKLOG.md',`## G034 · 원안61~80 추가20게임 완료\n- [x] 원안/갤러리20종·소유권·104고정문제/대전협력규칙·전체구현/독립QA/결함수정재검증.\n- [x] 기존89ID보존+20추가109/80/29·홈모음·새빌드·자동${total}/회귀36/후보60 PASS.\n- [x] 사용자운영승인·단일앱전환·실제경로/PID/LISTEN/HTTP${release.value.verifiedHttpFiles}/운영60 PASS.\n- [x] ZIP독립실행·KST일지 ${plan.worklog} ·게시판 ${post.id} readback.\n- [ ] 후속:실물/음향/사람체감·난이도/디테일·별도Git/대상앱재부팅복구범위.\n\n`);
+await prepend('README.md',`## 신규61~80 · 총80게임\n\nhttp://192.168.0.195:15010/ 의 **61–80 · 네 번째 게임 모음**에서 실행합니다. [Vol.4 안내](docs/vol4/README.md), [검증/제한 작업일지](${plan.worklog}).\n\n`);
+const path='.game-team/project.json',old=await readFile(path,'utf8'),project=JSON.parse(old);project.deployment_history_before_G034??=project.deployment;project.status='eighty_games_live_verified';if(project.vol4_candidate){project.vol4_candidate.operating='deployed_verified';project.vol4_candidate.final_worklog=plan.worklog;}project.catalog_total=109;project.playable_games=[...new Set([...project.playable_games,...catalog.map(g=>g.id)])];project.last_verified_at=new Date().toISOString();project.verification_counters_note='Legacy counters refer to earlier releases. Current authoritative G034 counters are in vol4_verification.';project.deployment={task:'G034',primary_url:'http://192.168.0.195:15010/',build:'artifacts/g034-release-build',pm2_app:game.name,pm2_id:game.id,pid:game.pid,status:'online_verified_actual_LAN',source_state:'uncommitted_task_changes',git_status:'not_requested_for_G034',evidence:release.path,live_browser:live.path,persistent_dump_modified:false,board_post_id:post.id};project.vol4_verification={verified_at:project.last_verified_at,automated_checks:total,unit_server:counts['unit-server'],game_suites_including_automated_browser:counts['all-games'],launcher:counts.launcher,existing_browser_regression:36,candidate_browser:60,live_browser:60,http_files:release.value.verifiedHttpFiles,manual_acceptance_pending:true,worklog:plan.worklog,board_post_id:post.id,package:packageReceipt.zip,independent_qa:['docs/vol4/QA_A.md','docs/vol4/QA_PM.md','docs/vol4/QA_B.md','docs/vol4/QA_C.md']};let json=JSON.stringify(project,null,2)+'\n';if(old.includes('\r\n'))json=json.replaceAll('\n','\r\n');await writeFile(path,json);const lock='artifacts/g034-release-build/RELEASE_LOCK.json';if(!existsSync(lock))await writeFile(lock,JSON.stringify({task:'G034',verifiedAt:project.last_verified_at,release:release.path,live:live.path,sourceManifest:'artifacts/g034-pm/final-source-public.json',warning:'Verified live build. Use a new build directory.'},null,2),{flag:'wx'});const summary={worklog:plan.worklog,postId:post.id,postUrl:link,package:packageReceipt.zip,automated:total,regression:36,candidate:60,live:60,release:release.path,liveEvidence:live.path};await writeFile('artifacts/g034-pm/closeout.json',JSON.stringify(summary,null,2));console.log(JSON.stringify(summary,null,2));
