@@ -26,7 +26,7 @@ test.afterEach(async ({ page }, info) => {
   expect(evidence.external, 'external requests').toEqual([]);
 });
 
-test('18 library 69 entries pagination search genre state sorting and zero reset', async ({ page }) => {
+test('18 library 89 entries pagination search genre state sorting and zero reset', async ({ page }) => {
   await page.goto('/'); await expect(page.locator('.game-card')).toHaveCount(12);
   await expect(page.locator('#result-count')).toHaveText(`${CATALOG_TOTAL}개`);
   for (const count of CATALOG_MORE_COUNTS) { await page.locator('#load-more').click(); await expect(page.locator('.game-card')).toHaveCount(count); }
@@ -103,7 +103,7 @@ test('23 home responsive controls scrolling last entry and return to top', async
     expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth)).toBe(true);
     const small = await page.locator('button:visible,input[type=search]:visible,summary:visible,a.card-action').evaluateAll(nodes => nodes.filter(node => node.getBoundingClientRect().width < 43.9 || node.getBoundingClientRect().height < 43.9).map(node => node.textContent));
     expect(small).toEqual([]);
-    await page.locator('#genre-tabs button[data-genre="숫자"]').click(); await expect(page.locator('#result-count')).toHaveText('8개'); await page.locator('#genre-tabs button[data-genre="전체"]').click();
+    await page.locator('#genre-tabs button[data-genre="숫자"]').click(); await expect(page.locator('#result-count')).toHaveText('11개'); await page.locator('#genre-tabs button[data-genre="전체"]').click();
     await more(page); await page.locator('.game-card').last().scrollIntoViewIfNeeded(); expect(await page.evaluate(() => scrollY)).toBeGreaterThan(0);
     await page.locator('#back-to-top').click(); await expect.poll(() => page.evaluate(() => scrollY)).toBeLessThan(2);
   }

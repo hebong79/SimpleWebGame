@@ -22,8 +22,10 @@ export const VOL2_GAMES = [
   { id: 'juice-workshop', href: '/games/39-fruit-ninja/index.html' },
   { id: 'cloud-cookie', href: '/games/40-cut-the-rope/index.html' },
 ] as const;
-export const CATALOG_TOTAL = 49 + VOL2_GAMES.length;
-export const CATALOG_AVAILABLE = 20 + VOL2_GAMES.length;
+// G033 adds twenty independent games while preserving the G032 list above.
+export const VOL3_ADDITIONS = 20;
+export const CATALOG_TOTAL = 49 + VOL2_GAMES.length + VOL3_ADDITIONS;
+export const CATALOG_AVAILABLE = 20 + VOL2_GAMES.length + VOL3_ADDITIONS;
 export const CATALOG_UPCOMING = 29;
 export const CATALOG_SUMMARY = `플레이 가능 ${CATALOG_AVAILABLE} · 준비 중 ${CATALOG_UPCOMING}`;
 export const CATALOG_MORE_COUNTS = Array.from({ length: Math.ceil(CATALOG_TOTAL / 12) - 1 }, (_, i) => Math.min((i + 2) * 12, CATALOG_TOTAL));

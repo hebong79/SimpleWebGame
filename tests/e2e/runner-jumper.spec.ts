@@ -1,4 +1,4 @@
-import { CATALOG_AVAILABLE, CATALOG_SUMMARY } from './vol2-catalog';
+import { CATALOG_AVAILABLE, CATALOG_SUMMARY, CATALOG_MORE_COUNTS } from './vol2-catalog';
 import { test as base, expect, type BrowserContext, type Page, type TestInfo } from '@playwright/test';
 
 // G022 provenance: accepted 08 18afb7533ca515224056774523b126834114bda7; candidate 07 56ad2e6fb12f7be4c7182a470658726ffd9c30b7.
@@ -820,7 +820,7 @@ test('G022-07-11 atomic cap preserves whole record repeated rounds zero aggregat
 });
 test('G022-07-12 compiled real home 69 cards pagination 12 24 36 48 60 69 40 playable 29 pending and dino launch return',async({page})=>{
   const r=await page.goto('/');expect(r?.status()).toBe(200);await expect(page.locator('#intro-preview')).toHaveText(CATALOG_SUMMARY);
-  for(const count of [12,24,36,48,60,69]){if(count!==12)await press(page,'#load-more');await expect(page.locator('.game-card')).toHaveCount(count);}
+  for(const count of [12,...CATALOG_MORE_COUNTS]){if(count!==12)await press(page,'#load-more');await expect(page.locator('.game-card')).toHaveCount(count);}
   await expect(page.locator('button.card-action:disabled')).toHaveCount(29);await expect(page.locator('a.card-action')).toHaveCount(CATALOG_AVAILABLE);
   await press(page,'.game-card[data-id="desert-post"] a.card-action');await expect(page).toHaveURL(new RegExp(`${DINO.replaceAll('.','\\.')}$`));
   await dinoStart(page);await press(page,'#home');await press(page,'#confirm-ok');await expect(page).toHaveURL(/\/$/);

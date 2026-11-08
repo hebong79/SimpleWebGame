@@ -1,0 +1,2 @@
+@import url('../55-dobble/style.css');
+.station-list{display:flex;gap:6px;flex-wrap:wrap;justify-content:center;padding-top:14px}.station-button{min-width:46px;font-weight:700;background:#f1f7e7!important;color:#24475c}.route-edit{display:flex;gap:6px;flex-wrap:wrap}.route-edit button{font-size:12px}.route-draft{font-size:12px;line-height:1.7;margin:0;width:100%}

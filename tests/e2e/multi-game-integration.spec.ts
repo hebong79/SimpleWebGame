@@ -1,4 +1,4 @@
-import { CATALOG_TOTAL, CATALOG_SUMMARY } from './vol2-catalog';
+import { CATALOG_TOTAL, CATALOG_SUMMARY, VOL2_GAMES } from './vol2-catalog';
 import { test, expect, type Page } from '@playwright/test';
 
 const paths = {
@@ -86,7 +86,7 @@ test('G014-01 three available cards launch their own game and return to the shar
   await expect(page.locator('#intro-preview')).toHaveText(CATALOG_SUMMARY);
   await page.locator('#include-upcoming').uncheck();
   await page.locator('#load-more').click();
-  expect(await cardIds(page)).toEqual(['number-garden', 'little-dragon', 'neon-rally', 'cosmic-cleanup', 'block-workshop', 'balloon-sparrow', 'desert-post', 'cloud-bunny', 'chick-picnic', 'hamster-depot', 'gem-survey', 'number-postbox', 'snack-pairs', 'star-moon', 'sun-sea-four', 'four-star-song', 'starlight-switch', 'jelly-bite', 'pebble-solo', 'paint-spread']);
+  expect(await cardIds(page)).toEqual(['number-garden', 'little-dragon', 'neon-rally', 'cosmic-cleanup', 'block-workshop', 'balloon-sparrow', 'desert-post', 'cloud-bunny', 'chick-picnic', 'hamster-depot', 'gem-survey', 'number-postbox', 'snack-pairs', 'star-moon', 'sun-sea-four', 'four-star-song', 'starlight-switch', 'jelly-bite', 'pebble-solo', 'paint-spread', ...VOL2_GAMES.slice(0, 4).map(game => game.id)]);
   const games = [
     { id: 'number-garden', href: paths.garden, ready: '#board' },
     { id: 'little-dragon', href: paths.snake, ready: '#primary' },

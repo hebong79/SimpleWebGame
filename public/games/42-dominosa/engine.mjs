@@ -1,0 +1,8 @@
+import {LEVELS} from './levels.mjs';
+export {LEVELS};
+export const pairKey=(a,b)=>a<b?`${a}:${b}`:`${b}:${a}`;
+export function adjacent(a,b,cols){return Math.abs(Math.floor(a/cols)-Math.floor(b/cols))+Math.abs(a%cols-b%cols)===1;}
+export function pairSet(max){return Array.from({length:max+1},(_,a)=>Array.from({length:max-a+1},(_,i)=>pairKey(a,a+i))).flat();}
+export function canPlace(level,pairs,a,b){if(!Number.isInteger(a)||!Number.isInteger(b)||a<0||b<0||a>=level.values.length||b>=level.values.length||!adjacent(a,b,level.cols))return {ok:false,reason:'가로나 세로로 이웃한 두 칸을 골라 주세요.'};if(pairs.some(p=>p.includes(a)||p.includes(b)))return {ok:false,reason:'이미 상자에 묶인 칸이에요. 먼저 제거해 주세요.'};const key=pairKey(level.values[a],level.values[b]);if(pairs.some(p=>pairKey(level.values[p[0]],level.values[p[1]])===key))return {ok:false,reason:`${key.replace(':','·')} 쌍은 이미 사용했어요.`};return {ok:true,pair:[a,b]};}
+export function valid(level,pairs){const all=[];for(const pair of pairs){if(!Array.isArray(pair)||pair.length!==2||!canPlace(level,all,...pair).ok)return false;all.push(pair);}return all.length*2===level.values.length&&new Set(all.map(p=>pairKey(...p.map(i=>level.values[i])))).size===pairSet(level.max).length;}
+export function solve(level,limit=2){const answers=[],n=level.values.length;function walk(used,keys,pairs){if(answers.length>=limit)return;if(used.size===n){answers.push(pairs);return;}let a=0;while(used.has(a))a++;for(const b of [a-1,a+1,a-level.cols,a+level.cols]){if(b<0||b>=n||used.has(b)||!adjacent(a,b,level.cols))continue;const key=pairKey(level.values[a],level.values[b]);if(keys.has(key))continue;walk(new Set([...used,a,b]),new Set([...keys,key]),[...pairs,[a,b]]);}}walk(new Set(),new Set(),[]);return answers;}

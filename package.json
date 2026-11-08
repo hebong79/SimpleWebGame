@@ -19,7 +19,8 @@
     "verify": "npm run test && npm run test:e2e",
     "preview:design": "node scripts/preview_prototype.mjs",
     "test:launcher": "node --test tests/launch-local.test.mjs",
-    "test:vol2": "node scripts/vol2-validate.mjs && node scripts/vol2-smoke.mjs"
+    "test:vol2": "node scripts/vol2-validate.mjs && node scripts/vol2-smoke.mjs",
+    "test:vol3": "node scripts/vol3-validate.mjs && node scripts/vol3-smoke.mjs"
   },
   "devDependencies": {
     "typescript": "7.0.2",

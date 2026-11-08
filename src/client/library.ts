@@ -62,6 +62,26 @@ const GAME_CATALOG: CatalogGame[] = [
   { id: 'moon-mushrooms', title: '달빛 버섯 채집', genre: '순발력', description: '달빛 버섯을 톡, 별 버섯은 보너스 점수', tags: ['두더지', '반응', '탭', '38'], minutes: 0.5, maxMinutes: 0.75, status: 'available', href: '/games/38-whac-a-mole/index.html' },
   { id: 'juice-workshop', title: '과즙 공방', genre: '순발력', description: '폭탄을 피해 과일을 가르며 주문을 완성해요', tags: ['과일', '스와이프', 'fruit ninja', '39'], minutes: 0.5, maxMinutes: 1, status: 'available', href: '/games/39-fruit-ninja/index.html' },
   { id: 'cloud-cookie', title: '한입 구름 공방', genre: '퍼즐', description: '줄을 끊어 달토끼에게 구름 과자를 보내요', tags: ['로프', '물리', '별', '40'], minutes: 0.3, maxMinutes: 2, status: 'available', href: '/games/40-cut-the-rope/index.html' },
+  { id: 'market-zones', title: '시장 구획도', genre: '퍼즐', description: '숫자 면적에 맞춰 시장을 직사각형 구역으로 나눠요', tags: ['rectangles', '41', '3권'], minutes: 1, maxMinutes: 4, status: 'available', href: '/games/41-rectangles/index.html' },
+  { id: 'tile-warehouse', title: '숫자 타일 창고', genre: '숫자', description: '숫자 쌍을 한 번씩 써서 도미노 창고를 채워요', tags: ['dominosa', '42', '3권'], minutes: 2, maxMinutes: 6, status: 'available', href: '/games/42-dominosa/index.html' },
+  { id: 'garden-loop', title: '울타리 한 바퀴', genre: '퍼즐', description: '숫자 단서를 따라 하나의 닫힌 산책로를 이어요', tags: ['loopy', '43', '3권'], minutes: 2, maxMinutes: 6, status: 'available', href: '/games/43-loopy/index.html' },
+  { id: 'ridge-railway', title: '산마루 철길', genre: '퍼즐', description: '행과 열의 수량을 맞춰 보급 철길을 놓아요', tags: ['tracks', '44', '3권'], minutes: 2, maxMinutes: 5, status: 'available', href: '/games/44-tracks/index.html' },
+  { id: 'four-borders', title: '네 빛깔 국경', genre: '퍼즐', description: '공유한 경계마다 다른 색과 기호를 칠해요', tags: ['map', '45', '3권'], minutes: 1, maxMinutes: 4, status: 'available', href: '/games/45-map/index.html' },
+  { id: 'tower-atelier', title: '전망대 설계소', genre: '숫자', description: '네 방향의 전망에 맞춰 작은 도시를 설계해요', tags: ['towers', '46', '3권'], minutes: 2, maxMinutes: 6, status: 'available', href: '/games/46-towers/index.html' },
+  { id: 'twin-star-chart', title: '쌍별 성도', genre: '퍼즐', description: '중심별 하나마다 회전 대칭 구역을 만들어요', tags: ['galaxies', '47', '3권'], minutes: 2, maxMinutes: 6, status: 'available', href: '/games/47-galaxies/index.html' },
+  { id: 'reflection-lab', title: '반사 연구실', genre: '퍼즐', description: '광선의 반응으로 숨은 두 구슬을 찾아요', tags: ['blackbox', '48', '3권'], minutes: 2, maxMinutes: 5, status: 'available', href: '/games/48-blackbox/index.html' },
+  { id: 'magnet-sorter', title: '자석 분류대', genre: '숫자', description: '극성 수를 맞추고 같은 극의 접촉을 피해요', tags: ['magnets', '49', '3권'], minutes: 2, maxMinutes: 6, status: 'available', href: '/games/49-magnets/index.html' },
+  { id: 'arrow-journal', title: '화살표 탐사록', genre: '퍼즐', description: '여덟 방향 화살표를 번호 순서로 이어요', tags: ['signpost', '50', '3권'], minutes: 1, maxMinutes: 4, status: 'available', href: '/games/50-signpost/index.html' },
+  { id: 'last-pebbles', title: '마지막 조약돌', genre: '보드', description: '한 더미에서 돌을 가져오는 로컬 2인 전략', tags: ['nim', '51', '3권'], minutes: 0.5, maxMinutes: 2, status: 'available', href: '/games/51-nim/index.html' },
+  { id: 'marble-arena', title: '구슬 경기장', genre: '보드', description: '구슬을 밀어 가장자리 밖으로 보내는 2인 대전', tags: ['abalone', '52', '3권'], minutes: 5, maxMinutes: 10, status: 'available', href: '/games/52-abalone/index.html' },
+  { id: 'dawn-garage', title: '새벽 차고', genre: '퍼즐', description: '차량을 밀어 배송차의 출구를 열어요', tags: ['rush-hour', '53', '3권'], minutes: 1, maxMinutes: 6, status: 'available', href: '/games/53-rush-hour/index.html' },
+  { id: 'garden-crossing', title: '정원 건너기', genre: '보드', description: '울타리와 점프로 반대편에 먼저 도착해요', tags: ['quoridor', '54', '3권'], minutes: 3, maxMinutes: 7, status: 'available', href: '/games/54-quoridor/index.html' },
+  { id: 'instant-fieldguide', title: '순간 도감', genre: '순발력', description: '두 카드에 딱 하나 같은 자연 기호를 찾아요', tags: ['dobble', '55', '3권'], minutes: 0.5, maxMinutes: 1, status: 'available', href: '/games/55-dobble/index.html' },
+  { id: 'heartstar-repair', title: '심장별 수리소', genre: '순발력', description: '일곱 번째 박자에 심장별 신호를 복구해요', tags: ['rhythm-doctor', '56', '3권'], minutes: 0.6, maxMinutes: 1.5, status: 'available', href: '/games/56-rhythm-doctor/index.html' },
+  { id: 'crystal-well', title: '수정 우물 탐사', genre: '순발력', description: '아래로 펄스를 쏘며 세 수정 구간을 탐사해요', tags: ['downwell', '57', '3권'], minutes: 0.75, maxMinutes: 3, status: 'available', href: '/games/57-downwell/index.html' },
+  { id: 'mole-rescue', title: '두더지 구조굴', genre: '순발력', description: '굴을 파고 펌프로 진동기를 안전하게 격리해요', tags: ['dig-dug', '58', '3권'], minutes: 1, maxMinutes: 3, status: 'available', href: '/games/58-dig-dug/index.html' },
+  { id: 'gravity-room', title: '위아래 우주실', genre: '순발력', description: '중력을 뒤집어 여섯 우주실의 출구에 닿아요', tags: ['vvvvvv', '59', '3권'], minutes: 0.5, maxMinutes: 3, status: 'available', href: '/games/59-vvvvvv/index.html' },
+  { id: 'island-shuttle', title: '섬마을 셔틀', genre: '보드', description: '두 셔틀 노선으로 승객을 목적지까지 보내요', tags: ['mini-metro', '60', '3권'], minutes: 2, maxMinutes: 3, status: 'available', href: '/games/60-mini-metro/index.html' },
   { id: 'memory-pieces', title: '기억의 조각', genre: '기억', description: '뒤집고 기억하며 찾아내는 한 쌍', tags: ['카드', '맞추기'], minutes: 2, maxMinutes: 5, status: 'upcoming' },
   { id: 'leisure-line', title: '한 줄의 여유', genre: '퍼즐', description: '빈칸을 채우고 한 줄을 비우는 시간', tags: ['블록', '채우기'], minutes: 3, maxMinutes: 8, status: 'upcoming' },
   { id: 'color-walk', title: '색의 산책', genre: '퍼즐', description: '같은 색을 이어 완성하는 작은 풍경', tags: ['색깔', '연결'], minutes: 2, maxMinutes: 5, status: 'upcoming' },
@@ -129,7 +149,7 @@ function create<K extends keyof HTMLElementTagNameMap>(tag: K, className: string
 }
 
 function matchesBase(game: CatalogGame): boolean {
-  const series = game.href && /^\/games\/(?:2[1-9]|3[0-9]|40)-/.test(game.href) ? 'vol2 2권 새게임' : '';
+  const series = game.href && /^\/games\/(?:2[1-9]|3[0-9]|40)-/.test(game.href) ? 'vol2 2권 새게임' : game.href && /^\/games\/(?:4[1-9]|5[0-9]|60)-/.test(game.href) ? 'vol3 3권 새게임' : '';
   const text = [game.title, game.genre, series, ...game.tags].join(' ').toLocaleLowerCase('ko-KR');
   return (!state.query || text.includes(state.query))
     && (!state.onlyFavorites || favorites.has(game.id))
@@ -158,8 +178,15 @@ function artwork(game: CatalogGame, index: number): HTMLDivElement {
   const art = create('div', `card-art art-${genreArtwork[game.genre] ?? 'puzzle'}`);
   art.setAttribute('aria-hidden', 'true');
   art.style.setProperty('--variation', String(index % 4));
+  const vol3 = game.href?.match(/^\/games\/((?:4[1-9]|5[0-9]|60)-[^/]+)\/index\.html$/);
   const vol2 = game.href?.match(/^\/games\/((?:2[1-9]|3[0-9]|40)-[^/]+)\/index\.html$/);
-  if (vol2) {
+  if (vol3) {
+    art.classList.add('art-vol2');
+    const image = create('img', 'vol2-cover');
+    image.src = `/games/vol3/covers/${vol3[1].split('-')[0]}.svg`;
+    image.alt = ''; image.loading = 'lazy'; image.width = 600; image.height = 360;
+    art.append(image);
+  } else if (vol2) {
     art.classList.add('art-vol2');
     const image = create('img', 'vol2-cover');
     image.src = `/games/vol2/covers/${vol2[1].split('-')[0]}.svg`;
@@ -506,6 +533,13 @@ function changeFilters() { state.limit = 12; render(); }
 el('vol2-collection').addEventListener('click', () => {
   Object.assign(state, { query: '2권', genre: '전체', onlyFavorites: false, includeUpcoming: false, sort: 'default', limit: 24 });
   el<HTMLInputElement>('game-search').value = '2권'; el<HTMLInputElement>('include-upcoming').checked = false;
+  closeSortMenu(false); render();
+  el('game-list').scrollIntoView({ behavior: matchMedia('(prefers-reduced-motion: reduce)').matches ? 'instant' : 'smooth', block: 'start' });
+  grid.querySelector<HTMLAnchorElement>('a.card-action')?.focus({ preventScroll: true });
+});
+el('vol3-collection').addEventListener('click', () => {
+  Object.assign(state, { query: '3권', genre: '전체', onlyFavorites: false, includeUpcoming: false, sort: 'default', limit: 24 });
+  el<HTMLInputElement>('game-search').value = '3권'; el<HTMLInputElement>('include-upcoming').checked = false;
   closeSortMenu(false); render();
   el('game-list').scrollIntoView({ behavior: matchMedia('(prefers-reduced-motion: reduce)').matches ? 'instant' : 'smooth', block: 'start' });
   grid.querySelector<HTMLAnchorElement>('a.card-action')?.focus({ preventScroll: true });

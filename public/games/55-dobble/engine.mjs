@@ -1,0 +1,7 @@
+export const SYMBOLS=[['잎','❧'],['별','★'],['달','☽'],['꽃','✿'],['새싹','♧'],['해','☀'],['수정','◆'],['물방울','●'],['나비','✦'],['산','▲'],['고리','◎'],['눈송이','✳'],['파도','≋']];
+export const DECK=(()=>{const a=[];for(let m=0;m<3;m++)for(let b=0;b<3;b++)a.push([0,1,2].map(x=>((m*x+b)%3)*3+x).concat(9+m));for(let x=0;x<3;x++)a.push([x,x+3,x+6,12]);a.push([9,10,11,12]);return a;})();
+export function common(a,b){return a.filter(x=>b.includes(x));}
+function shuffle(a,rng){const b=[...a];for(let i=b.length-1;i>0;i--){const j=Math.floor(Math.max(0,Math.min(.999999999,rng()))*(i+1));[b[i],b[j]]=[b[j],b[i]];}return b;}
+export function initial(rng=Math.random,mode='calm'){const order=shuffle(DECK.map((_,i)=>i),rng);return{mode,order,cursor:2,left:order[0],right:order[1],time:0,lock:0,score:0,attempts:0,done:false,last:null};}
+export function tick(s,dt){if(s.done||!Number.isFinite(dt)||dt<0)return;s.time=Math.min(45,s.time+dt);s.lock=Math.max(0,s.lock-dt);if(s.time>=45)s.done=true;}
+export function pick(s,symbol,rng=Math.random){if(s.done||s.lock>1e-9||!DECK[s.right].includes(symbol))return null;s.attempts++;if(!DECK[s.left].includes(symbol)){s.lock=.6;s.last='wrong';return false;}s.score++;s.last=symbol;s.left=s.right;if(s.cursor>=s.order.length){s.order=shuffle(DECK.map((_,i)=>i),rng);s.cursor=0;if(s.order[0]===s.left)[s.order[0],s.order[1]]=[s.order[1],s.order[0]];}s.right=s.order[s.cursor++];if(s.right===s.left){const j=s.cursor<s.order.length?s.cursor:0;[s.right,s.order[j]]=[s.order[j],s.right];}return true;}
