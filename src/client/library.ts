@@ -82,6 +82,46 @@ const GAME_CATALOG: CatalogGame[] = [
   { id: 'mole-rescue', title: '두더지 구조굴', genre: '순발력', description: '굴을 파고 펌프로 진동기를 안전하게 격리해요', tags: ['dig-dug', '58', '3권'], minutes: 1, maxMinutes: 3, status: 'available', href: '/games/58-dig-dug/index.html' },
   { id: 'gravity-room', title: '위아래 우주실', genre: '순발력', description: '중력을 뒤집어 여섯 우주실의 출구에 닿아요', tags: ['vvvvvv', '59', '3권'], minutes: 0.5, maxMinutes: 3, status: 'available', href: '/games/59-vvvvvv/index.html' },
   { id: 'island-shuttle', title: '섬마을 셔틀', genre: '보드', description: '두 셔틀 노선으로 승객을 목적지까지 보내요', tags: ['mini-metro', '60', '3권'], minutes: 2, maxMinutes: 3, status: 'available', href: '/games/60-mini-metro/index.html' },
+  { id: 'six-face-stamp', title: '여섯 면 도장', genre: '퍼즐', description: '큐브를 굴려 여섯 면에 도장을 담아요', tags: ['cube', '61', '4권'], minutes: 1, maxMinutes: 4, status: 'available', href: '/games/61-cube/index.html' },
+  { id: 'turning-signs', title: '회전 표지판', genre: '퍼즐', description: '네 칸씩 돌려 표지판 번호를 정리해요', tags: ['twiddle', '62', '4권'], minutes: 1, maxMinutes: 4, status: 'available', href: '/games/62-twiddle/index.html' },
+  { id: 'glacier-delivery', title: '빙하 보석 배달', genre: '퍼즐', description: '얼음길의 정지 위치를 읽고 보석을 배달해요', tags: ['inertia', '63', '4권'], minutes: 0.5, maxMinutes: 3, status: 'available', href: '/games/63-inertia/index.html' },
+  { id: 'number-flowerbed', title: '숫자 화단', genre: '숫자', description: '같은 크기의 연결된 숫자 화단을 만들어요', tags: ['filling', '64', '4권'], minutes: 2, maxMinutes: 6, status: 'available', href: '/games/64-filling/index.html' },
+  { id: 'arithmetic-bench', title: '산수 작업대', genre: '숫자', description: '행과 열, 산술 구획을 함께 완성해요', tags: ['keen', '65', '4권'], minutes: 2, maxMinutes: 6, status: 'available', href: '/games/65-keen/index.html' },
+  { id: 'number-screen', title: '번호 가림막', genre: '숫자', description: '중복을 가리고 남은 벽보를 하나로 이어요', tags: ['singles', '66', '4권'], minutes: 1, maxMinutes: 5, status: 'available', href: '/games/66-singles/index.html' },
+  { id: 'view-corridor', title: '전망 통로', genre: '퍼즐', description: '자신을 포함한 십자 시야 길이를 맞춰요', tags: ['range', '67', '4권'], minutes: 2, maxMinutes: 5, status: 'available', href: '/games/67-range/index.html' },
+  { id: 'mirror-exhibit', title: '거울 야간 전시', genre: '퍼즐', description: '직시와 반사의 차이로 전시 조각을 배치해요', tags: ['undead', '68', '4권'], minutes: 2, maxMinutes: 7, status: 'available', href: '/games/68-undead/index.html' },
+  { id: 'pearl-loop', title: '진주길 한 바퀴', genre: '퍼즐', description: '흑백 진주의 꺾임을 따라 한 고리를 만들어요', tags: ['pearl', '69', '4권'], minutes: 2, maxMinutes: 6, status: 'available', href: '/games/69-pearl/index.html' },
+  { id: 'tile-shadow', title: '타일 그림자', genre: '퍼즐', description: '주변 아홉 칸의 그림자로 모자이크를 복원해요', tags: ['mosaic', '70', '4권'], minutes: 1, maxMinutes: 4, status: 'available', href: '/games/70-mosaic/index.html' },
+  { id: 'little-paddock', title: '작은 목장 울타리', genre: '퍼즐', description: '같은 면적의 목장을 울타리로 나눠요', tags: ['palisade', '71', '4권'], minutes: 2, maxMinutes: 6, status: 'available', href: '/games/71-palisade/index.html' },
+  { id: 'daynight-checks', title: '낮밤 체크판', genre: '퍼즐', description: '해와 달을 같은 수로 균형 있게 채워요', tags: ['unruly', '72', '4권'], minutes: 1, maxMinutes: 4, status: 'available', href: '/games/72-unruly/index.html' },
+  { id: 'pattern-market', title: '문양 장터', genre: '보드', description: '색과 모양을 이어 줄 점수를 만드는 2인 장터', tags: ['qwirkle', '73', '4권'], minutes: 4, maxMinutes: 8, status: 'available', href: '/games/73-qwirkle/index.html' },
+  { id: 'corner-territory', title: '모서리 영토', genre: '보드', description: '모서리로 만나며 영역을 넓히는 도형 대전', tags: ['blokus', '74', '4권'], minutes: 4, maxMinutes: 8, status: 'available', href: '/games/74-blokus/index.html' },
+  { id: 'rooftop-step', title: '지붕 위 한 걸음', genre: '보드', description: '이동하고 건설해 세 번째 층에 먼저 올라요', tags: ['santorini', '75', '4권'], minutes: 4, maxMinutes: 8, status: 'available', href: '/games/75-santorini/index.html' },
+  { id: 'unstoppable-robots', title: '정지선 없는 로봇', genre: '퍼즐', description: '세 로봇을 서로의 정지벽으로 써서 목표에 멈춰요', tags: ['ricochet-robots', '76', '4권'], minutes: 1, maxMinutes: 5, status: 'available', href: '/games/76-ricochet-robots/index.html' },
+  { id: 'five-square-stamp', title: '다섯 칸 도장', genre: '보드', description: '이동 카드를 교환하며 사범의 도장에 도전해요', tags: ['onitama', '77', '4권'], minutes: 3, maxMinutes: 7, status: 'available', href: '/games/77-onitama/index.html' },
+  { id: 'starfire-ensemble', title: '별불꽃 합주', genre: '보드', description: '동료의 힌트로 불꽃을 완성하는 정보 제한 협력', tags: ['hanabi', '78', '4권'], minutes: 5, maxMinutes: 10, status: 'available', href: '/games/78-hanabi/index.html' },
+  { id: 'palace-note', title: '궁전 쪽지', genre: '보드', description: '카드 한 장의 효과로 겨루는 2인 쪽지 추리', tags: ['love-letter', '79', '4권'], minutes: 3, maxMinutes: 7, status: 'available', href: '/games/79-love-letter/index.html' },
+  { id: 'ridge-stop', title: '능선에서 멈출까', genre: '보드', description: '주사위로 능선을 오르고 저장할 순간을 골라요', tags: ['cant-stop', '80', '4권'], minutes: 4, maxMinutes: 8, status: 'available', href: '/games/80-cant-stop/index.html' },
+  { id: 'ascending-archive', title: '오름내림 기록실', genre: '숫자', description: '역방향 10 예외를 찾아 네 숫자 더미에 카드를 분류해요', tags: ['the-game', '81', '5권'], minutes: 3, maxMinutes: 7, status: 'available', href: '/games/81-the-game/index.html' },
+  { id: 'flower-or-thorn', title: '꽃인가 가시인가', genre: '보드', description: '꽃과 가시를 숨기고 안전하게 뒤집을 수를 입찰해요', tags: ['skull', '82', '5권'], minutes: 4, maxMinutes: 8, status: 'available', href: '/games/82-skull/index.html' },
+  { id: 'spare-one-chip', title: '칩 하나 아끼기', genre: '보드', description: '칩으로 번호를 피하고 연속 카드의 벌점을 줄여요', tags: ['no-thanks', '83', '5권'], minutes: 3, maxMinutes: 6, status: 'available', href: '/games/83-no-thanks/index.html' },
+  { id: 'sixth-carriage', title: '여섯째 짐칸', genre: '보드', description: '동시에 고른 번호를 줄에 잇고 여섯째 짐칸을 피해요', tags: ['six-nimmt', '84', '5권'], minutes: 4, maxMinutes: 8, status: 'available', href: '/games/84-six-nimmt/index.html' },
+  { id: 'moving-museum', title: '움직이는 박물관', genre: '보드', description: '미로를 밀어 보물 두 개를 찾고 입구로 돌아와요', tags: ['labyrinth', '85', '5권'], minutes: 4, maxMinutes: 8, status: 'available', href: '/games/85-labyrinth/index.html' },
+  { id: 'cloud-path-tiles', title: '구름길 타일', genre: '보드', description: '길 타일을 돌려 종이 연의 다음 경로를 이어요', tags: ['tsuro', '86', '5권'], minutes: 3, maxMinutes: 7, status: 'available', href: '/games/86-tsuro/index.html' },
+  { id: 'satellite-defense', title: '위성 방어선', genre: '순발력', description: '엄폐판 사이에서 두 드론 편대를 요격해요', tags: ['space-invaders', '87', '5권'], minutes: 1, maxMinutes: 3, status: 'available', href: '/games/87-space-invaders/index.html' },
+  { id: 'spore-garden', title: '포자 정원 방제', genre: '순발력', description: '버섯에 따라 길이 바뀌는 포자벌레를 방제해요', tags: ['centipede', '88', '5권'], minutes: 1, maxMinutes: 3, status: 'available', href: '/games/88-centipede/index.html' },
+  { id: 'cloud-joust', title: '구름 창 경기', genre: '순발력', description: '날갯짓으로 높은 위치를 선점하고 깃발을 모아요', tags: ['joust', '89', '5권'], minutes: 1, maxMinutes: 3, status: 'available', href: '/games/89-joust/index.html' },
+  { id: 'glass-marble', title: '유리구슬 경사로', genre: '순발력', description: '경사와 관성을 제어해 유리구슬을 깃발로 굴려요', tags: ['marble-madness', '90', '5권'], minutes: 1, maxMinutes: 2, status: 'available', href: '/games/90-marble-madness/index.html' },
+  { id: 'moonlight-landing', title: '달빛 착륙 시험', genre: '순발력', description: '연료와 기울기를 조절해 달 기지에 안전하게 착륙해요', tags: ['lunar-lander', '91', '5권'], minutes: 1, maxMinutes: 2, status: 'available', href: '/games/91-lunar-lander/index.html' },
+  { id: 'dawn-bicycle', title: '새벽 자전거 배달', genre: '순발력', description: '세 차선을 오가며 배달창에 맞춰 소식지를 던져요', tags: ['paperboy', '92', '5권'], minutes: 1, maxMinutes: 3, status: 'available', href: '/games/92-paperboy/index.html' },
+  { id: 'ladder-vault', title: '사다리 금고', genre: '퍼즐', description: '사다리와 복구되는 구멍을 이용해 금고 열쇠를 모아요', tags: ['lode-runner', '93', '5권'], minutes: 1, maxMinutes: 4, status: 'available', href: '/games/93-lode-runner/index.html' },
+  { id: 'four-lane-teahouse', title: '네 줄 찻집', genre: '순발력', description: '여러 카운터에 차를 보내고 돌아오는 빈 잔을 받아요', tags: ['tapper', '94', '5권'], minutes: 1, maxMinutes: 3, status: 'available', href: '/games/94-tapper/index.html' },
+  { id: 'five-second-workshop', title: '5초 작업실', genre: '순발력', description: '누르기와 놓기 등 다섯 짧은 작업을 연달아 해결해요', tags: ['warioware', '95', '5권'], minutes: 1, maxMinutes: 2, status: 'available', href: '/games/95-warioware/index.html' },
+  { id: 'rolling-toyroom', title: '굴러가는 장난감방', genre: '순발력', description: '작은 장난감부터 붙여 솜뭉치를 크게 키워요', tags: ['katamari', '96', '5권'], minutes: 1, maxMinutes: 3, status: 'available', href: '/games/96-katamari/index.html' },
+  { id: 'two-sided-dojo', title: '양쪽 수련장', genre: '순발력', description: '양쪽 인형이 사정거리에 들어오는 순간을 맞춰요', tags: ['one-finger-death-punch', '97', '5권'], minutes: 1, maxMinutes: 2, status: 'available', href: '/games/97-one-finger-death-punch/index.html' },
+  { id: 'word-rule-room', title: '단어가 움직이는 방', genre: '퍼즐', description: '단어 블록을 밀어 조작 대상과 도착 규칙을 바꿔요', tags: ['baba-is-you', '98', '5권'], minutes: 2, maxMinutes: 6, status: 'available', href: '/games/98-baba-is-you/index.html' },
+  { id: 'one-bowl-kitchen', title: '한 그릇 급식소', genre: '순발력', description: '재료를 손질하고 수프 주문 다섯 그릇을 완성해요', tags: ['overcooked', '99', '5권'], minutes: 1, maxMinutes: 3, status: 'available', href: '/games/99-overcooked/index.html' },
+  { id: 'frozen-guardroom', title: '멈춘 경비실', genre: '퍼즐', description: '한 틱씩 움직이는 경비 빔을 읽고 탈출해요', tags: ['superhot', '100', '5권'], minutes: 1, maxMinutes: 4, status: 'available', href: '/games/100-superhot/index.html' },
   { id: 'memory-pieces', title: '기억의 조각', genre: '기억', description: '뒤집고 기억하며 찾아내는 한 쌍', tags: ['카드', '맞추기'], minutes: 2, maxMinutes: 5, status: 'upcoming' },
   { id: 'leisure-line', title: '한 줄의 여유', genre: '퍼즐', description: '빈칸을 채우고 한 줄을 비우는 시간', tags: ['블록', '채우기'], minutes: 3, maxMinutes: 8, status: 'upcoming' },
   { id: 'color-walk', title: '색의 산책', genre: '퍼즐', description: '같은 색을 이어 완성하는 작은 풍경', tags: ['색깔', '연결'], minutes: 2, maxMinutes: 5, status: 'upcoming' },
@@ -149,7 +189,7 @@ function create<K extends keyof HTMLElementTagNameMap>(tag: K, className: string
 }
 
 function matchesBase(game: CatalogGame): boolean {
-  const series = game.href && /^\/games\/(?:2[1-9]|3[0-9]|40)-/.test(game.href) ? 'vol2 2권 새게임' : game.href && /^\/games\/(?:4[1-9]|5[0-9]|60)-/.test(game.href) ? 'vol3 3권 새게임' : '';
+  const series = game.href && /^\/games\/(?:2[1-9]|3[0-9]|40)-/.test(game.href) ? 'vol2 2권 새게임' : game.href && /^\/games\/(?:4[1-9]|5[0-9]|60)-/.test(game.href) ? 'vol3 3권 새게임' : game.href && /^\/games\/(?:6[1-9]|7[0-9]|80)-/.test(game.href) ? 'vol4 4권 새게임' : game.href && /^\/games\/(?:8[1-9]|9[0-9]|100)-/.test(game.href) ? 'vol5 5권 새게임' : '';
   const text = [game.title, game.genre, series, ...game.tags].join(' ').toLocaleLowerCase('ko-KR');
   return (!state.query || text.includes(state.query))
     && (!state.onlyFavorites || favorites.has(game.id))
@@ -178,9 +218,22 @@ function artwork(game: CatalogGame, index: number): HTMLDivElement {
   const art = create('div', `card-art art-${genreArtwork[game.genre] ?? 'puzzle'}`);
   art.setAttribute('aria-hidden', 'true');
   art.style.setProperty('--variation', String(index % 4));
+  const vol5 = game.href?.match(/^\/games\/((?:8[1-9]|9[0-9]|100)-[^/]+)\/index\.html$/);
+  const vol4 = game.href?.match(/^\/games\/((?:6[1-9]|7[0-9]|80)-[^/]+)\/index\.html$/);
   const vol3 = game.href?.match(/^\/games\/((?:4[1-9]|5[0-9]|60)-[^/]+)\/index\.html$/);
   const vol2 = game.href?.match(/^\/games\/((?:2[1-9]|3[0-9]|40)-[^/]+)\/index\.html$/);
-  if (vol3) {
+  if (vol5) {
+    art.classList.add('art-vol2');
+    const image = create('img', 'vol2-cover');
+    image.src = `/games/vol5/covers/${vol5[1].split('-')[0]}.svg`;
+    image.alt = ''; image.loading = 'lazy'; image.width = 600; image.height = 360; art.append(image);
+  } else if (vol4) {
+    art.classList.add('art-vol2');
+    const image = create('img', 'vol2-cover');
+    image.src = `/games/vol4/covers/${vol4[1].split('-')[0]}.svg`;
+    image.alt = ''; image.loading = 'lazy'; image.width = 600; image.height = 360;
+    art.append(image);
+  } else if (vol3) {
     art.classList.add('art-vol2');
     const image = create('img', 'vol2-cover');
     image.src = `/games/vol3/covers/${vol3[1].split('-')[0]}.svg`;
@@ -540,6 +593,20 @@ el('vol2-collection').addEventListener('click', () => {
 el('vol3-collection').addEventListener('click', () => {
   Object.assign(state, { query: '3권', genre: '전체', onlyFavorites: false, includeUpcoming: false, sort: 'default', limit: 24 });
   el<HTMLInputElement>('game-search').value = '3권'; el<HTMLInputElement>('include-upcoming').checked = false;
+  closeSortMenu(false); render();
+  el('game-list').scrollIntoView({ behavior: matchMedia('(prefers-reduced-motion: reduce)').matches ? 'instant' : 'smooth', block: 'start' });
+  grid.querySelector<HTMLAnchorElement>('a.card-action')?.focus({ preventScroll: true });
+});
+el('vol4-collection').addEventListener('click', () => {
+  Object.assign(state, { query: '4권', genre: '전체', onlyFavorites: false, includeUpcoming: false, sort: 'default', limit: 24 });
+  el<HTMLInputElement>('game-search').value = '4권'; el<HTMLInputElement>('include-upcoming').checked = false;
+  closeSortMenu(false); render();
+  el('game-list').scrollIntoView({ behavior: matchMedia('(prefers-reduced-motion: reduce)').matches ? 'instant' : 'smooth', block: 'start' });
+  grid.querySelector<HTMLAnchorElement>('a.card-action')?.focus({ preventScroll: true });
+});
+el('vol5-collection').addEventListener('click', () => {
+  Object.assign(state, { query: '5권', genre: '전체', onlyFavorites: false, includeUpcoming: false, sort: 'default', limit: 24 });
+  el<HTMLInputElement>('game-search').value = '5권'; el<HTMLInputElement>('include-upcoming').checked = false;
   closeSortMenu(false); render();
   el('game-list').scrollIntoView({ behavior: matchMedia('(prefers-reduced-motion: reduce)').matches ? 'instant' : 'smooth', block: 'start' });
   grid.querySelector<HTMLAnchorElement>('a.card-action')?.focus({ preventScroll: true });
