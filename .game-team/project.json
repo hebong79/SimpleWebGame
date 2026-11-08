@@ -5,7 +5,7 @@
   "engine": "Node.js 24.16.0 + TypeScript, HTML DOM/CSS",
   "engine_version": "Node 24.16.0 / TypeScript 7.0.2",
   "platform": "PC browser + mobile touch browser",
-  "status": "sixty_games_live_verified",
+  "status": "sixty_games_merged_pushed_live_verified",
   "created_at": "2026-10-22T00:17:53.121532+09:00",
   "team_id": "game-dev-team",
   "team_version": "1.0.0",
@@ -218,12 +218,17 @@
     "pm2_id": 3,
     "pid": 16172,
     "status": "online_verified_actual_LAN",
-    "source_state": "uncommitted_task_changes",
-    "git_status": "not_requested_not_performed",
+    "source_state": "committed_with_four_eof_blank_line_cleanups_vs_running_build",
+    "git_status": "main_merged_and_pushed",
     "evidence": "artifacts/g033-release/2026-11-08T03-22-02-290Z/after.json",
     "live_browser": "artifacts/g033-smoke/live-2026-11-08T03-22-39-506Z/results.json",
     "persistent_dump_modified": false,
-    "board_post_id": "mw79rxho-71-45a7"
+    "board_post_id": "mw79rxho-71-45a7",
+    "source_commit": "63ab247cbef2ab1ac894c8a387810564355738c1",
+    "main_merge_commit": "532dcd425cfaf90925131d9d3f08373dfc47f5e4",
+    "remote_push": "origin/main 532dcd425cfaf90925131d9d3f08373dfc47f5e4; subsequent audit documentation commit follows",
+    "git_worklog": "docs/worklogs/20261108-124244_G033_20게임_커밋_main병합_원격푸시.md",
+    "git_board_post_id": "mw7ae5as-72-fm32"
   },
   "deployment_history_before_G030": {
     "task": "G029",
@@ -492,6 +497,8 @@
     "worklog": "docs/worklogs/20261108-122527_G033_41번부터60번_20게임_제작_운영반영_검증.md",
     "board_post_id": "mw79rxho-71-45a7",
     "package": "releases/simple-games-vol3-60games-20261108-121933.zip",
-    "independent_qa": "docs/vol3/QA_{LOGIC,PM5,BOARD,ACTION}.md"
+    "independent_qa": "docs/vol3/QA_{LOGIC,PM5,BOARD,ACTION}.md",
+    "git_worklog": "docs/worklogs/20261108-124244_G033_20게임_커밋_main병합_원격푸시.md",
+    "git_board_post_id": "mw7ae5as-72-fm32"
   }
 }
